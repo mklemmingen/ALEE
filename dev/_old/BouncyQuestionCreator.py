@@ -753,7 +753,7 @@ class BouncyQuestionCreator:
     def load_reference_texts(self) -> Dict[str, str]:
         """Load reference texts from explanation_metadata.csv"""
         try:
-            df = pd.read_csv("providedProjectFromStakeHolder/explanation_metadata.csv")
+            df = pd.read_csv("../providedProjectFromStakeHolder/explanation_metadata.csv")
             
             reference_texts = {}
             for _, row in df.iterrows():
