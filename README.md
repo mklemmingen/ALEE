@@ -620,10 +620,8 @@ export HIP_DEBUG=1
 ## Additional Resources
 
 ### Documentation
-- **API Reference**: `/docs` endpoint when running
 - **Expert Prompts**: `ALEE_Agent/prompts/` directory for customization
 - **Test Reports**: Generated in `CallersWithTexts/results/` with timestamps
-- **System Info**: `CLAUDE.md` contains system memory for AI assistant
 
 ### Model Information
 - **Ollama Models**: [https://ollama.com/library](https://ollama.com/library)
@@ -648,5 +646,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Educational Research Community** - For parameter frameworks and validation methods
 
 ---
-
-** The Educational AI Parameter-Expert System represents the next evolution in AI-powered educational content generation, combining specialized domain expertise with efficient resource utilization for unprecedented quality in question generation.**
