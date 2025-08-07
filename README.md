@@ -6,10 +6,12 @@
 ![Ollama](https://img.shields.io/badge/Ollama-Latest-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
+An educational AI system that uses parameter-specific expert LLMs running on Ollama servers to generate and validate educational questions. The system features specialized experts for different aspects of question design, running in a memory-optimized architecture for AMD GPUs.
+
 - **Parameter-Specific Experts**: 7+ specialized LLMs, each mastering specific aspects of educational question design
-- **Memory-Optimized Architecture**: Intelligent model swapping system for 20GB VRAM efficiency
-- **Async Orchestration**: FastAPI-based system with concurrent parameter validation
-- **Self-Perfecting Loop**: Iterative refinement with expert feedback until parameters are perfected
+- **Memory-Optimized Architecture**: Intelligent model swapping system for 20GB VRAM efficiency  
+- **Modular Structure**: Clean separation of agent, callers, and development files
+- **Result Management**: Timestamped result folders with prompt snapshots and CSV exports
 
 ## System Architecture
 
@@ -74,8 +76,8 @@ graph TD
 
 2. **Install ROCm and Dependencies**
    ```bash
-   chmod +x setup_rocm_optimized.sh
-   ./setup_rocm_optimized.sh
+   chmod +x setup_rocm_ManjArch_AMD7kSeries.sh
+   ./setup_rocm_ManjArch_AMD7kSeries.sh
    
    # Reboot required for ROCm
    sudo reboot
@@ -101,17 +103,17 @@ graph TD
 
 5. **Start the System**
    ```bash
-   # Launch complete AI orchestrator
-   python3 start_system.py
+   # Start Ollama servers first
+   ./start_ollama_servers.sh
    
-   # Or start FastAPI directly
-   uvicorn educational_ai_orchestrator:app --host 0.0.0.0 --port 8000
+   # Then start the main orchestrator
+   python3 ALEE_Agent/educational_ai_orchestrator.py
    ```
 
 6. **Verify System Health**
    ```bash
    # Run comprehensive tests
-   python3 test_system.py
+   python3 CallersWithTexts/test_system.py
    
    # Access API documentation
    # http://localhost:8000/docs
@@ -262,7 +264,29 @@ async def main():
 asyncio.run(main())
 ```
 
-## 📋 Parameter Validation System
+## Project Structure
+
+```
+/
+├── _dev/                                   # Development files
+│   ├── README_DEPLOYMENT.md               # System documentation
+│   ├── _old/                              # Legacy files
+│   └── providedProjectFromStakeHolder/    # Stakeholder data
+├── ALEE_Agent/                            # Main AI system
+│   ├── educational_ai_orchestrator.py     # FastAPI server
+│   └── prompts/                           # Expert prompts
+├── CallersWithTexts/                      # Testing & results
+│   ├── test_system.py                     # System tests
+│   ├── result_manager.py                  # Result organization
+│   ├── task_metadata_with_answers_final2_colcleaned.csv  # CSV data
+│   └── results/                           # Timestamped outputs
+│       └── YYYY-MM-DD_HH-MM-SS/          # Session folders
+│           ├── prompts/                   # Used prompts
+│           └── results/                   # Generated CSV
+└── *.sh                                   # Setup scripts
+```
+
+## Parameter Validation System
 
 ### Supported Parameters
 
@@ -336,7 +360,7 @@ Evaluates linguistic barriers and text accessibility.
 
 ### Model Configuration
 ```python
-# educational_ai_orchestrator.py
+# ALEE_Agent/educational_ai_orchestrator.py
 PARAMETER_EXPERTS = {
     "variation_expert": ParameterExpertConfig(
         name="variation_expert",
@@ -384,9 +408,9 @@ The system includes extensive testing capabilities:
 
 ```bash
 # Run all tests
-python3 test_system.py
+python3 CallersWithTexts/test_system.py
 
-# Individual test components
+# Individual test components (if pytest setup exists)
 python3 -m pytest tests/ -v
 ```
 
@@ -412,7 +436,7 @@ TEST_RESULTS = {
 }
 ```
 
-## 📊 Monitoring and Observability
+## Monitoring and Observability
 
 ### System Monitoring
 ```bash
@@ -527,7 +551,7 @@ services:
       - ./nginx.conf:/etc/nginx/nginx.conf
 ```
 
-## 🔒 Security Considerations
+## Security Considerations
 
 ### API Security
 - **Rate Limiting**: Implement request throttling for production use
@@ -573,7 +597,7 @@ ollama run llama3.1:8b "Hello"
 watch -n 1 'rocm-smi && echo "---" && curl -s http://localhost:8000/models/status'
 
 # Reduce concurrent models
-# Edit educational_ai_orchestrator.py: model_semaphore = asyncio.Semaphore(1)
+# Edit ALEE_Agent/educational_ai_orchestrator.py: model_semaphore = asyncio.Semaphore(1)
 ```
 
 #### Slow Response Times
@@ -586,7 +610,7 @@ watch -n 1 'rocm-smi && echo "---" && curl -s http://localhost:8000/models/statu
 ```bash
 # Run with verbose logging
 export PYTHONPATH=.
-python3 -m uvicorn educational_ai_orchestrator:app --log-level debug
+python3 -m uvicorn ALEE_Agent.educational_ai_orchestrator:app --log-level debug
 
 # Enable detailed ROCm logging
 export ROCM_DEBUG=1
@@ -597,8 +621,9 @@ export HIP_DEBUG=1
 
 ### Documentation
 - **API Reference**: `/docs` endpoint when running
-- **Expert Prompts**: `prompts/` directory for customization
-- **Test Reports**: Generated in `test_report.json` and `test_results.csv`
+- **Expert Prompts**: `ALEE_Agent/prompts/` directory for customization
+- **Test Reports**: Generated in `CallersWithTexts/results/` with timestamps
+- **System Info**: `CLAUDE.md` contains system memory for AI assistant
 
 ### Model Information
 - **Ollama Models**: [https://ollama.com/library](https://ollama.com/library)

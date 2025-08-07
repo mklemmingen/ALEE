@@ -143,7 +143,7 @@ class SystemTester:
     
     async def test_parameter_coverage(self):
         """Test coverage of all parameter types"""
-        logger.info("📊 Testing parameter expert coverage...")
+        logger.info("Testing parameter expert coverage...")
         
         parameter_test_cases = [
             {
@@ -275,7 +275,7 @@ class SystemTester:
             
             await asyncio.sleep(1)
         
-        logger.info(f"📊 Memory efficiency results:")
+        logger.info(f"Memory efficiency results:")
         logger.info(f"   - Initial VRAM: {initial_vram:.1f}GB")
         logger.info(f"   - Max VRAM seen: {max_vram_seen:.1f}GB") 
         logger.info(f"   - Memory overhead: {max_vram_seen - initial_vram:.1f}GB")
@@ -344,7 +344,8 @@ class SystemTester:
             return False
         
         # Test 2: Model status
-        if not await self.test_model_status_endpoint()[0]:
+        model_status_result = await self.test_model_status_endpoint()
+        if not model_status_result[0]:
             logger.error("Model status check failed - aborting tests")
             return False
         

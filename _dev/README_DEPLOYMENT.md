@@ -1,10 +1,10 @@
 # Educational AI System - Parameter-Expert LLM Architecture
 
-## 🎯 Overview
+## Overview
 
 This system transforms your original question generation script into a cutting-edge **parameter-specific expert LLM architecture** optimized for Manjaro Linux with AMD GPU (20GB VRAM). Instead of 4 large monolithic models, you now have **specialized expert LLMs** that focus on individual question parameters, creating a self-perfecting educational AI system.
 
-## 🏗️ Architecture Revolution
+## Architecture Revolution
 
 ### Original System → New Expert System
 - **Before**: 4 large models (Mother, Principal, 3 Student Personas)
@@ -21,13 +21,13 @@ This system transforms your original question generation script into a cutting-e
 6. **Content Expert** (`p.root_text_contains_irrelevant_information`) - Relevance validator
 7. **Reference Expert** (`p.root_text_reference_explanatory_text`) - Text reference analyzer
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Install ROCm and Dependencies
 ```bash
 # Run the optimized setup script
-chmod +x setup_rocm_Arch.sh
-./setup_rocm_Arch.sh
+chmod +x setup_rocm_ManjArch_AMD7kSeries.sh
+./setup_rocm_ManjArch_AMD7kSeries.sh
 
 # Reboot after installation
 sudo reboot
@@ -63,7 +63,7 @@ python3 test_system.py
 # http://localhost:8000/docs
 ```
 
-## 📊 System Configuration
+## System Configuration
 
 ### Model Configuration (20GB VRAM Optimized)
 ```python
@@ -81,7 +81,7 @@ MODELS_CONFIG = {
 - **VRAM Buffer**: 2GB reserved for operations
 - **Automatic Cleanup**: Unused models unloaded automatically
 
-## 🧠 Expert LLM Workflow
+## Expert LLM Workflow
 
 ### Sequential Parameter Validation
 ```
@@ -97,7 +97,7 @@ Question Generation → Parameter Expert 1 → Parameter Expert 2 → ... → Pa
 5. **Final Validation**: All parameters approved or max iterations reached
 6. **CSV Export**: Question formatted for stakeholder requirements
 
-## 🔧 API Endpoints
+## API Endpoints
 
 ### Core Endpoints
 - `POST /generate-question` - Generate single question with expert validation
@@ -154,7 +154,7 @@ print(f"Generated question in {result['total_processing_time']:.2f}s with {resul
 - **Criteria**: Passive voice, negation, complex noun phrases
 - **Prompt**: `prompts/obstacle_expert.txt`
 
-## 🎯 Compared to Original System
+## Compared to Original System
 
 ### Performance Improvements
 | Metric | Original System | New Expert System |
@@ -172,7 +172,7 @@ print(f"Generated question in {result['total_processing_time']:.2f}s with {resul
 - **Better Validation**: Detailed, parameter-specific feedback
 - **CSV Integration**: Direct output in stakeholder format
 
-## 🔍 Monitoring and Debugging
+## Monitoring and Debugging
 
 ### System Monitoring
 ```bash
@@ -202,7 +202,7 @@ echo 2097152 | sudo tee /proc/sys/vm/max_map_count
 3. **VRAM Overflow**: Reduce concurrent models or use smaller model variants
 4. **Slow Response**: Check model download status with `ollama list`
 
-## 📊 Testing and Validation
+## Testing and Validation
 
 ### Comprehensive Test Suite
 ```bash
@@ -222,7 +222,7 @@ python3 -c "import asyncio; from test_system import SystemTester; asyncio.run(Sy
 - ✅ Memory efficiency under load
 - ✅ CSV output format validation
 
-## 🚀 Production Deployment
+## Production Deployment
 
 ### Docker Deployment (Recommended)
 ```bash
@@ -244,7 +244,7 @@ sudo systemctl enable educational-ai
 sudo systemctl start educational-ai
 ```
 
-## 🎉 Next Steps
+## Next Steps
 
 1. **Fine-tune Expert Prompts**: Customize `prompts/` directory for your specific needs
 2. **Add More Experts**: Create specialists for additional parameters
@@ -262,4 +262,4 @@ sudo systemctl start educational-ai
 
 ---
 
-**🎯 Your educational AI system is now a specialized, memory-efficient, parameter-expert architecture optimized for AMD GPU on Manjaro Linux. Each question parameter has its own expert, creating unprecedented quality and consistency in educational content generation.**
+**Your educational AI system is now a specialized, memory-efficient, parameter-expert architecture optimized for AMD GPU on Manjaro Linux. Each question parameter has its own expert, creating unprecedented quality and consistency in educational content generation.**

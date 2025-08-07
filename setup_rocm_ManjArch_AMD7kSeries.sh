@@ -23,10 +23,10 @@ echo "Installing optimized ROCm packages..."
 sudo pacman -S --noconfirm \
     rocm-hip-sdk \
     rocm-opencl-sdk \
-    rocm-hip-runtime \
-    rocm-smi \
     clblast \
-    opencl-amd
+
+yay -S rocm-smi
+yay -S opencl-amd
 
 # Install Ollama with ROCm support (primary recommendation)
 echo "Installing Ollama with ROCm support..."
@@ -40,8 +40,8 @@ sudo gpasswd -a $USER video
 # Set optimized environment variables
 echo "Setting up optimized environment variables..."
 cat >> ~/.bashrc << 'EOF'
-
 # ROCm Environment Variables - Optimized for Multi-LLM
+
 export ROCM_PATH=/opt/rocm
 export PATH=$PATH:$ROCM_PATH/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$ROCM_PATH/lib
@@ -61,7 +61,7 @@ export OLLAMA_FLASH_ATTENTION=1
 EOF
 
 # System optimizations for large model inference
-echo "⚙Applying system optimizations..."
+echo "Applying system optimizations..."
 sudo tee -a /etc/sysctl.conf << 'EOF'
 
 # Memory optimizations for large LLMs
@@ -89,10 +89,9 @@ chmod +x optimize_gpu.sh
 
 # Install Python dependencies for the orchestration system
 echo "Installing Python dependencies..."
-pip3 install --user fastapi uvicorn aiohttp pydantic
-pip3 install --user ollama-python
-pip3 install --user asyncio-semaphore
-pip3 install --user python-multipart
+pip3 install fastapi uvicorn aiohttp pydantic
+pip3 install ollama-python
+pip3 install python-multipart
 
 # Create Ollama systemd service
 echo "Setting up Ollama systemd service..."
@@ -160,7 +159,7 @@ if command -v rocm-smi &> /dev/null; then
     echo "ROCm installed successfully"
     rocm-smi
 else
-    echo "❌ ROCm not found"
+    echo "ROCm not found"
     exit 1
 fi
 
@@ -191,19 +190,21 @@ chmod +x validate_setup.sh
 sudo sysctl -p
 
 echo ""
-echo "🎉 Optimized ROCm setup complete!"
+echo "ROCm setup complete!"
 echo ""
-echo "📋 Next steps:"
+echo "Next steps:"
 echo "1. REBOOT REQUIRED: sudo reboot"
 echo "2. After reboot, run: ./validate_setup.sh"
 echo "3. Optimize GPU: ./optimize_gpu.sh"
+echo "3.5 Start the Ollama server in the background: ollama serve | or enable the systemd service: sudo systemctl enable --now ollama"
 echo "4. Download models: ./download_models.sh"
 echo "5. Start Ollama service: sudo systemctl enable --now ollama"
+echo "6. Start Ollama server: ./start_ollama_servers.sh"
 echo ""
-echo "💡 Architecture Summary:"
+echo "Architecture Summary:"
 echo "   - Primary: Ollama with ROCm acceleration"
 echo "   - Memory: 2 concurrent models max (~10-11GB VRAM)"
 echo "   - API: OpenAI-compatible endpoints"
 echo "   - Models: Q4_K_M quantized for optimal balance"
 echo ""
-echo "⚠️  Important: Verify your GPU architecture and adjust HSA_OVERRIDE_GFX_VERSION if needed"
+echo "Important: Verify your GPU architecture and adjust HSA_OVERRIDE_GFX_VERSION if needed"

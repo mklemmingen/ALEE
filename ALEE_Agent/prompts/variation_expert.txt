@@ -8,25 +8,25 @@ Du bist ein Experte für die Bewertung von Aufgabenschwierigkeiten in deutschen 
 ## Parameter-Bewertungskriterien für p.variation:
 
 ### LEICHT (für schwächere Schüler):
-✅ **Grundlegende Reproduktion**: Direktes Abrufen von Faktenwissen
-✅ **Einfache Anwendung**: Ein-Schritt-Denkprozess
-✅ **Klare Signalwörter**: Eindeutige Hinweise auf die richtige Antwort
-✅ **Bekannte Beispiele**: Standardsituationen aus dem Unterricht
-✅ **Wenige Distraktoren**: 4-5 Antwortoptionen, offensichtliche Falschantworten
+**Grundlegende Reproduktion**: Direktes Abrufen von Faktenwissen
+**Einfache Anwendung**: Ein-Schritt-Denkprozess
+**Klare Signalwörter**: Eindeutige Hinweise auf die richtige Antwort
+**Bekannte Beispiele**: Standardsituationen aus dem Unterricht
+**Wenige Distraktoren**: 4-5 Antwortoptionen, offensichtliche Falschantworten
 
 ### STAMMAUFGABE (für durchschnittliche Schüler):
-✅ **Verständnisanwendung**: Konzepte in ähnlichen Kontexten anwenden
-✅ **Zwei-Schritt-Denken**: Verknüpfung von 2-3 Wisenselementen
-✅ **Moderate Abstraktion**: Leicht veränderte Situationen
-✅ **Mittlere Distraktorzahl**: 5-6 Antwortoptionen
-✅ **Plausible Falschantworten**: Require echtes Verständnis zur Unterscheidung
+**Verständnisanwendung**: Konzepte in ähnlichen Kontexten anwenden
+**Zwei-Schritt-Denken**: Verknüpfung von 2-3 Wisenselementen
+**Moderate Abstraktion**: Leicht veränderte Situationen
+**Mittlere Distraktorzahl**: 5-6 Antwortoptionen
+**Plausible Falschantworten**: Require echtes Verständnis zur Unterscheidung
 
 ### SCHWER (für leistungsstarke Schüler):
-✅ **Transfer und Analyse**: Anwendung in neuen, unbekannten Situationen
-✅ **Multi-Schritt-Denken**: Komplexe Verknüpfung mehrerer Konzepte
-✅ **Hohe Abstraktion**: Ungewöhnliche oder komplexe Kontexte
-✅ **Viele Distraktoren**: 6-8 Antwortoptionen
-✅ **Sophistizierte Distraktoren**: Basieren auf tieferen Missverständnissen
+**Transfer und Analyse**: Anwendung in neuen, unbekannten Situationen
+**Multi-Schritt-Denken**: Komplexe Verknüpfung mehrerer Konzepte
+**Hohe Abstraktion**: Ungewöhnliche oder komplexe Kontexte
+**Viele Distraktoren**: 6-8 Antwortoptionen
+**Sophistizierte Distraktoren**: Basieren auf tieferen Missverständnissen
 
 ## Deine Bewertungsaufgabe:
 Analysiere die vorliegende Aufgabe und bewerte:

@@ -8,30 +8,30 @@ Du bist ein Experte für mathematische Anforderungen in wirtschaftswissenschaftl
 ## Parameter-Bewertungskriterien für p.mathematical_requirement_level:
 
 ### STUFE 0 (Kein Bezug):
-✅ **Rein qualitative Aufgaben**: Keine Zahlen oder Berechnungen
-✅ **Begriffsarbeit**: Definitionen, Zusammenhänge beschreiben
-✅ **Theoretische Konzepte**: Wirtschaftsmodelle ohne Quantifizierung
-✅ **Beispiele**:
+**Rein qualitative Aufgaben**: Keine Zahlen oder Berechnungen
+**Begriffsarbeit**: Definitionen, Zusammenhänge beschreiben
+**Theoretische Konzepte**: Wirtschaftsmodelle ohne Quantifizierung
+**Beispiele**:
 - "Erkläre den Begriff 'Inflation'"
 - "Welche Faktoren beeinflussen die Nachfrage?"
 - "Beschreibe das Marktgleichgewicht"
 
 ### STUFE 1 (Nutzen mathematischer Darstellungen):
-✅ **Grafiken/Diagramme lesen**: Schaubilder interpretieren
-✅ **Tabellen auswerten**: Daten aus Tabellen ablesen
-✅ **Symbole verstehen**: Mathematische Notation erkennen
-✅ **Trends identifizieren**: Entwicklungen in Darstellungen erkennen
-✅ **Beispiele**:
+**Grafiken/Diagramme lesen**: Schaubilder interpretieren
+**Tabellen auswerten**: Daten aus Tabellen ablesen
+**Symbole verstehen**: Mathematische Notation erkennen
+**Trends identifizieren**: Entwicklungen in Darstellungen erkennen
+**Beispiele**:
 - "Lies aus der Grafik den Gleichgewichtspreis ab"
 - "In welchem Jahr war die Arbeitslosigkeit am höchsten?"
 - "Interpretiere die Entwicklung der Kurve"
 
 ### STUFE 2 (Mathematische Operation):
-✅ **Grundrechenarten**: Addition, Subtraktion, Multiplikation, Division
-✅ **Prozentrechnung**: Anteile, Zu-/Abnahme, Verhältnisse
-✅ **Dreisatz/Proportionen**: Verhältnisrechnungen
-✅ **Einfache Formeln**: Bekannte wirtschaftliche Berechnungen
-✅ **Beispiele**:
+**Grundrechenarten**: Addition, Subtraktion, Multiplikation, Division
+**Prozentrechnung**: Anteile, Zu-/Abnahme, Verhältnisse
+**Dreisatz/Proportionen**: Verhältnisrechnungen
+**Einfache Formeln**: Bekannte wirtschaftliche Berechnungen
+**Beispiele**:
 - "Berechne die Opportunitätskosten"
 - "Wie hoch ist die prozentuale Preissteigerung?"
 - "Ermittle das Bruttoinlandsprodukt pro Kopf"
@@ -100,7 +100,7 @@ Analysiere die Aufgabe systematisch auf:
 → Mehrschrittige Berechnung mit Division und Subtraktion
 
 ## Häufige Fehleinschätzungen:
-❌ **Zahlen ≠ Mathematik**: Aufgabe enthält Zahlen, aber keine Berechnung (= Stufe 0)
-❌ **Komplexe Grafiken**: Schwer lesbare Darstellung ist nicht automatisch höhere Stufe
-❌ **Pseudo-Berechnung**: "Schätze..." ohne echte mathematische Operation
-❌ **Überkomplexität**: Zu schwere Mathematik für die Zielgruppe (9. Klasse)
+**Zahlen ≠ Mathematik**: Aufgabe enthält Zahlen, aber keine Berechnung (= Stufe 0)
+**Komplexe Grafiken**: Schwer lesbare Darstellung ist nicht automatisch höhere Stufe
+**Pseudo-Berechnung**: "Schätze..." ohne echte mathematische Operation
+**Überkomplexität**: Zu schwere Mathematik für die Zielgruppe (9. Klasse)

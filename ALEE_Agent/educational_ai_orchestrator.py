@@ -235,12 +235,12 @@ class ModelManager:
             # We just need to make a test request to ensure it's ready
             test_payload = {
                 "model": expert_config.model,
-                "messages": [{"role": "user", "content": "test"}],
+                "prompt": "test",
                 "stream": False
             }
             
             async with session_pool.post(
-                f"http://localhost:{expert_config.port}/v1/chat/completions",
+                f"http://localhost:{expert_config.port}/api/generate",
                 json=test_payload,
                 timeout=aiohttp.ClientTimeout(total=30)
             ) as response:
@@ -250,7 +250,7 @@ class ModelManager:
                     logger.warning(f"Model loading may have issues: {response.status}")
                     
         except Exception as e:
-            logger.error(f"❌ Failed to load model {expert_config.model}: {e}")
+            logger.error(f"[ERROR] Failed to load model {expert_config.model}: {e}")
             raise
     
     async def unload_model(self, port: int):
@@ -328,18 +328,18 @@ class EducationalAISystem:
         
         prompt = f"""Du bist ein Experte für die Erstellung von Bildungsaufgaben. Erstelle eine deutsche Wirtschaftsaufgabe mit folgenden Spezifikationen:
 
-Thema: {request.topic}
-Schwierigkeitsgrad: {request.difficulty.value}
-Zielgruppe: {request.age_group}
-Kontext: {request.context or 'Wirtschaftliche Grundbegriffe'}
-
-Die Aufgabe soll alle notwendigen Parameter für eine vollständige Multiple-Choice-Frage enthalten:
-- Aufgabenstellung (klar und präzise)
-- 6-8 Antwortoptionen (eine korrekte, 5-7 Distraktoren)
-- Bezug zum Referenztext wenn relevant
-- Angemessene sprachliche Komplexität für das Niveau
-
-Antworte im JSON-Format mit allen Komponenten der Aufgabe."""
+        Thema: {request.topic}
+        Schwierigkeitsgrad: {request.difficulty.value}
+        Zielgruppe: {request.age_group}
+        Kontext: {request.context or 'Wirtschaftliche Grundbegriffe'}
+        
+        Die Aufgabe soll alle notwendigen Parameter für eine vollständige Multiple-Choice-Frage enthalten:
+        - Aufgabenstellung (klar und präzise)
+        - 6-8 Antwortoptionen (eine korrekte, 5-7 Distraktoren)
+        - Bezug zum Referenztext wenn relevant
+        - Angemessene sprachliche Komplexität für das Niveau
+        
+        Antworte im JSON-Format mit allen Komponenten der Aufgabe."""
 
         response = await self._call_expert_llm(generator_config, prompt)
         
@@ -392,15 +392,15 @@ Antworte im JSON-Format mit allen Komponenten der Aufgabe."""
         # Create specialized prompt for this expert
         prompt = f"""Du bist ein Experte für {expert_config.expertise}.
 
-Analysiere diese Bildungsaufgabe und bewerte die folgenden Parameter:
-{', '.join(expert_config.parameters)}
-
-Aufgabe: {json.dumps(question, indent=2, ensure_ascii=False)}
-Zielgruppe: {request.age_group}
-Schwierigkeit: {request.difficulty.value}
-
-Bewerte jeden Parameter auf einer Skala von 1-10 und gib spezifisches Feedback.
-Antworte im JSON-Format mit 'parameter_scores', 'overall_score', 'status' (approved/rejected/needs_refinement), 'feedback'."""
+        Analysiere diese Bildungsaufgabe und bewerte die folgenden Parameter:
+        {', '.join(expert_config.parameters)}
+        
+        Aufgabe: {json.dumps(question, indent=2, ensure_ascii=False)}
+        Zielgruppe: {request.age_group}
+        Schwierigkeit: {request.difficulty.value}
+        
+        Bewerte jeden Parameter auf einer Skala von 1-10 und gib spezifisches Feedback.
+        Antworte im JSON-Format mit 'parameter_scores', 'overall_score', 'status' (approved/rejected/needs_refinement), 'feedback'."""
 
         response = await self._call_expert_llm(expert_config, prompt)
         
@@ -449,13 +449,13 @@ Antworte im JSON-Format mit 'parameter_scores', 'overall_score', 'status' (appro
         
         prompt = f"""Du bist ein Experte für Bildungsaufgaben. Verbessere diese Aufgabe basierend auf dem Expertenfeedback:
 
-Aktuelle Aufgabe: {json.dumps(question, indent=2, ensure_ascii=False)}
-
-Expertenfeedback:
-{chr(10).join(f"- {fb}" for fb in feedback)}
-
-Überarbeite die Aufgabe unter Berücksichtigung aller Verbesserungsvorschläge.
-Antworte im JSON-Format mit der verbesserten Aufgabe."""
+        Aktuelle Aufgabe: {json.dumps(question, indent=2, ensure_ascii=False)}
+        
+        Expertenfeedback:
+        {chr(10).join(f"- {fb}" for fb in feedback)}
+        
+        Überarbeite die Aufgabe unter Berücksichtigung aller Verbesserungsvorschläge.
+        Antworte im JSON-Format mit der verbesserten Aufgabe."""
 
         response = await self._call_expert_llm(generator_config, prompt)
         
@@ -469,17 +469,22 @@ Antworte im JSON-Format mit der verbesserten Aufgabe."""
     
     async def _call_expert_llm(self, expert_config: ParameterExpertConfig, prompt: str) -> str:
         """Call specific expert LLM via Ollama API"""
+        logger.info(f"[EXPERT_CALL] Calling {expert_config.name} ({expert_config.model}) on port {expert_config.port}")
+        logger.info(f"[PROMPT] TO {expert_config.name}:\n{'-'*50}\n{prompt[:300]}{'...' if len(prompt) > 300 else ''}\n{'-'*50}")
+        
         payload = {
             "model": expert_config.model,
-            "messages": [{"role": "user", "content": prompt}],
-            "temperature": expert_config.temperature,
-            "max_tokens": expert_config.max_tokens,
-            "stream": False
+            "prompt": prompt,
+            "stream": False,
+            "options": {
+                "temperature": expert_config.temperature,
+                "num_predict": expert_config.max_tokens
+            }
         }
         
         try:
             async with session_pool.post(
-                f"http://localhost:{expert_config.port}/v1/chat/completions",
+                f"http://localhost:{expert_config.port}/api/generate",
                 json=payload,
                 timeout=aiohttp.ClientTimeout(total=60)
             ) as response:
@@ -487,10 +492,14 @@ Antworte im JSON-Format mit der verbesserten Aufgabe."""
                     raise HTTPException(status_code=500, detail=f"LLM API error: {response.status}")
                 
                 data = await response.json()
-                return data["choices"][0]["message"]["content"]
+                response_text = data["response"]
+                
+                logger.info(f"[RESPONSE] FROM {expert_config.name}:\n{'-'*50}\n{response_text[:300]}{'...' if len(response_text) > 300 else ''}\n{'-'*50}")
+                
+                return response_text
                 
         except Exception as e:
-            logger.error(f"❌ Failed to call {expert_config.name}: {e}")
+            logger.error(f"[ERROR] Failed to call {expert_config.name}: {e}")
             raise HTTPException(status_code=500, detail=f"Expert LLM error: {e}")
     
     def _prepare_csv_output(self, question: Dict[str, Any], 
@@ -540,7 +549,7 @@ async def generate_question(request: QuestionRequest):
         return result
         
     except Exception as e:
-        logger.error(f"❌ Question generation failed: {e}")
+        logger.error(f"Question generation failed: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 @app.get("/health")
@@ -572,7 +581,7 @@ async def model_status():
 async def batch_generate_questions(requests: List[QuestionRequest]):
     """Generate multiple questions in batch with proper memory management"""
     try:
-        logger.info(f"📦 Batch generation request: {len(requests)} questions")
+        logger.info(f"Batch generation request: {len(requests)} questions")
         
         results = []
         for i, request in enumerate(requests):
@@ -587,7 +596,7 @@ async def batch_generate_questions(requests: List[QuestionRequest]):
         return {"results": results, "total_questions": len(results)}
         
     except Exception as e:
-        logger.error(f"❌ Batch generation failed: {e}")
+        logger.error(f"Batch generation failed: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
 if __name__ == "__main__":
