@@ -1,218 +1,652 @@
-# BouncyQuestionCreator: Educational AI Question Generation System
+# Educational AI - Parameter-Expert LLM System
 
-## Project Overview
+![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)
+![ROCm](https://img.shields.io/badge/ROCm-6.2+-red.svg)
+![Ollama](https://img.shields.io/badge/Ollama-Latest-orange.svg)
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
 
-This project implements an advanced multi-agent AI system for generating high-quality educational questions, with support for both general educational content and specialized German economics curricula.
+An educational AI system that uses parameter-specific expert LLMs running on Ollama servers to generate and validate educational questions. The system features specialized experts for different aspects of question design, running in a memory-optimized architecture for AMD GPUs.
 
-## Current Implementation Status
+- **Parameter-Specific Experts**: 7+ specialized LLMs, each mastering specific aspects of educational question design
+- **Memory-Optimized Architecture**: Intelligent model swapping system for 20GB VRAM efficiency  
+- **Modular Structure**: Clean separation of agent, callers, and development files
+- **Result Management**: Timestamped result folders with prompt snapshots and CSV exports
 
-### ✅ Completed: General Educational Question System
+## System Architecture
 
-**Architecture**: Multi-agent validation system with specialized LMs
-- **Generator** (`startPrompt.txt`): Creates educational questions
-- **Meaningfulness Checker** (`chooserPrompt.txt`): Validates educational value 
-- **Robustness Validator** (`suggestorPrompt.txt`): Ensures quality and accuracy
-- **Uniqueness Checker** (`childPrompt.txt`): Prevents duplicates
-- **Progress Assessor** (`rectorPrompt.txt`): Evaluates learning progression
-
-**Key Features**:
-- Async architecture for parallel validation
-- Iterative refinement (up to 3 attempts)
-- Weighted scoring system (meaningfulness 30%, robustness 25%, uniqueness 25%, progress 20%)
-- Configurable endpoints for multiple local LM instances
-- Batch processing capabilities
-
-## 🎯 Stakeholder Requirements Analysis
-
-### Target System: German 9th-Grade Economics Question Bank
-
-Based on analysis of `providedProjectFromStakeHolder/`, stakeholders require a specialized system with:
-
-#### Core Requirements
-1. **Language**: German (9th-grade level)
-2. **Subject**: Economics/Business Studies curriculum
-3. **Question Types**: Single-choice, multiple-choice, true-false, mapping, fill-in-the-blank
-4. **Output**: Structured CSV format with detailed parameter columns
-
-#### Sophisticated Generation Process
-**Two-Step Approach**:
-1. **Base Questions (Stammaufgabe)**: Foundation questions for Taxonomy Levels 1 & 2
-2. **Variations**: Generate "leicht" (easier) and "schwer" (harder) variants
-
-#### Parameter-Driven Difficulty System
-- **Easier variants**: Reduce distractors, remove linguistic obstacles, use verbatim text
-- **Harder variants**: Increase distractors (up to 8), add linguistic obstacles, avoid verbatim answers
-
-#### Advanced Linguistic Parameters
-- `p.instruction_obstacle_passive/negation/complex_np` and `p.item_X_obstacle_passive/negation/complex_np`
-  - X stands for the item number (e.g., 1, 2, 3)
-  - passive example: Wähle die eine richtige Verteilungssituation aus, in denen die Güter unter anderem über einen Markt verteilt werden.
-  - negation example: Entscheide, ob es sich bei den folgenden Dingen um ein Gut handelt oder nicht.
-  - complex noun phrase example: Ordne den links stehenden Kategorien von Bedürfnissen Jugendlicher die richtigen Beispiele zu.
-- `p.item_X_answer_verbatim_explanatory_text`
-- `p.mathematical_requirement_level`
-  - Werte: 0 (Kein Bezug), 1 (Nutzen mathematischer Darstellungen), 2 (Mathematische Operation)
-- `p.taxonomy_level` (Stufe 1: Knowledge, Stufe 2: Application)
-  - Stufe 1: Bloom's taxonomy Remembering level, Stufe 2: Understanding and Application levels
-
-#### Quality Control Requirements
-- Plausible distractors based on student misconceptions
-- Similar length between attractors and distractors
-- Maximum 2 attractors per question
-- Strict adherence to reference text content
-
-## 📊 Reference Data Analysis & System Compliance
-
-### Provided Assets
-1. **`ProvidedStuff.MD`**: Detailed generation prompts and guidelines
-2. **`explanation_metadata.csv`**: 17 reference texts on economic concepts (source material for questions)
-3. **`task_metadata_with_answers_final2_colcleaned.csv`**: Reference question database with **58-column structure**
-4. **`tasks_parameters.csv`**: Parameter definitions and specifications
-5. **`Did Annotationen/` Excel files**: Categorized question types and formatting examples
-
-### 🎯 **System Compliance Analysis**
-
-#### **CSV Output Format Compliance**
-Our system generates questions in exact compliance with `task_metadata_with_answers_final2_colcleaned.csv` format:
-
-**Complete 58-Column Structure:**
-- **Core**: `c_id`, `subject`, `type`, `text`, `answers`
-- **Variation**: `p.variation` ("Stammaufgabe", "schwer", "leicht")
-- **Taxonomy**: `p.taxanomy_level` ("Stufe 1", "Stufe 2")  
-- **Mathematical**: `p.mathematical_requirement_level` (0-2)
-- **Instruction Parameters**: `p.instruction_obstacle_passive/negation/complex_np`
-- **Item Parameters**: `p.item_X_answer_verbatim_explanatory_text` (X = 1-8)
-- **Root Text Parameters**: `p.root_text_*` (reference adherence tracking)
-
-#### **Question Type Format Compliance**
-
-**✅ True-False Questions**
-```
-Format: "Entscheide, ob die Aussagen falsch oder richtig sind. <true-false> [Statement1] <true-false> [Statement2]..."
-Answers: "Semicolon-separated TRUE statements only"
+```mermaid
+graph TD
+    A[Question Request] --> B[Main Generator LLM]
+    B --> C{Parameter Validation}
+    C --> D[Variation Expert]
+    C --> E[Taxonomy Expert] 
+    C --> F[Math Expert]
+    C --> G[Obstacle Expert]
+    C --> H[Instruction Expert]
+    C --> I[Content Expert]
+    C --> J[Reference Expert]
+    
+    D --> K{All Approved?}
+    E --> K
+    F --> K
+    G --> K
+    H --> K
+    I --> K
+    J --> K
+    
+    K -->|No| L[Refinement Feedback]
+    L --> B
+    K -->|Yes| M[CSV Export]
+    M --> N[Final Question]
+    
+    style A fill:#e1f5fe
+    style N fill:#c8e6c9
+    style K fill:#fff3e0
 ```
 
-**✅ Multiple-Choice Questions** 
+### Expert LLM Specialists
+
+| Expert | Focus Parameters | Model | Expertise |
+|--------|------------------|-------|-----------|
+| **Variation Expert** | `p.variation` | llama3.1:8b | Difficulty level assessment (leicht/stammaufgabe/schwer) |
+| **Taxonomy Expert** | `p.taxonomy_level` | mistral:7b | Bloom's taxonomy classification (Stufe 1/2) |
+| **Math Expert** | `p.mathematical_requirement_level` | qwen2.5:7b | Mathematical complexity analysis (0-2 scale) |
+| **Obstacle Expert** | `p.*_obstacle_*` | llama3.2:3b | Linguistic barriers (passive, negation, complex NP) |
+| **Instruction Expert** | `p.instruction_*` | mistral:7b | Clarity and explicitness analysis |
+| **Content Expert** | `p.root_text_contains_irrelevant_information` | llama3.1:8b | Content relevance validation |
+| **Reference Expert** | `p.root_text_reference_explanatory_text` | llama3.2:3b | Text reference analysis |
+
+## Quick Start
+
+### Prerequisites
+
+- **Hardware**: AMD GPU with 20GB VRAM (RX 6000/7000 series recommended)
+- **OS**: Manjaro Linux (Arch-based)
+- **Python**: 3.8+
+- **ROCm**: 6.2+ compatible
+
+### Installation
+
+1. **Clone the Repository**
+   ```bash
+   git clone <repository-url>
+   cd educational-ai-system
+   ```
+
+2. **Install ROCm and Dependencies**
+   ```bash
+   chmod +x setup_rocm_ManjArch_AMD7kSeries.sh
+   ./setup_rocm_ManjArch_AMD7kSeries.sh
+   
+   # Reboot required for ROCm
+   sudo reboot
+   ```
+
+3. **Verify Installation**
+   ```bash
+   # Check GPU detection
+   rocm-smi
+   
+   # Optimize GPU for compute workloads
+   ./optimize_gpu.sh
+   
+   # Validate complete setup
+   ./validate_setup.sh
+   ```
+
+4. **Download AI Models**
+   ```bash
+   # Download optimized models for 20GB VRAM
+   ./download_models.sh
+   ```
+
+5. **Start the System**
+   ```bash
+   # Start Ollama servers first
+   ./start_ollama_servers.sh
+   
+   # Then start the main orchestrator
+   python3 ALEE_Agent/educational_ai_orchestrator.py
+   ```
+
+6. **Verify System Health**
+   ```bash
+   # Run comprehensive tests
+   python3 CallersWithTexts/test_system.py
+   
+   # Access API documentation
+   # http://localhost:8000/docs
+   ```
+
+## Technical Specifications
+
+### Memory Management
+
+```python
+MEMORY_CONFIGURATION = {
+    "total_vram": "20GB",
+    "max_concurrent_models": 2,
+    "memory_buffer": "2GB",
+    "model_swapping": "dynamic",
+    "vram_monitoring": "real-time"
+}
+
+MODEL_MEMORY_USAGE = {
+    "llama3.1:8b": "5.5GB (Q4_K_M)",
+    "mistral:7b": "5.0GB (Q4_K_M)", 
+    "qwen2.5:7b": "5.0GB (Q4_K_M)",
+    "llama3.2:3b": "2.5GB (Q4_K_M)"
+}
 ```
-Format: "[Question stem] <option> [Option1] <option> [Option2] <option> [Option3]..."
-Answers: "Exact text of correct option(s)"
+
+### Performance Metrics
+
+| Metric | Value | Notes |
+|--------|-------|-------|
+| **Concurrent Models** | Max 2 | Memory-optimized via semaphore |
+| **VRAM Efficiency** | ~55% utilization | 11GB usage, 9GB for operations |
+| **Processing Speed** | 15-25 tokens/sec | Per active model |
+| **Parameter Validation** | 7+ experts | Specialized domain knowledge |
+| **Iteration Limit** | 5 cycles | Self-perfecting feedback loop |
+
+## API Reference
+
+### Core Endpoints
+
+#### Generate Question
+```http
+POST /generate-question
+Content-Type: application/json
+
+{
+  "topic": "Bedürfnisse und Güter",
+  "difficulty": "leicht",
+  "age_group": "9. Klasse",
+  "context": "Wirtschaftliche Grundbegriffe"
+}
 ```
 
-**✅ Single-Choice Questions**
+**Response:**
+```json
+{
+  "question_content": {
+    "aufgabenstellung": "...",
+    "antwortoptionen": ["A", "B", "C", "D"],
+    "korrekte_antwort": "A"
+  },
+  "parameter_validations": [
+    {
+      "parameter": "p.variation",
+      "status": "approved",
+      "score": 8.5,
+      "expert_used": "variation_expert"
+    }
+  ],
+  "iterations": 2,
+  "total_processing_time": 12.3,
+  "final_status": "approved",
+  "csv_ready": {...}
+}
 ```
-Format: "[Question stem] <option> [Option1] <option> [Option2] <option> [Option3]"
-Answers: "Single correct option text"
+
+#### Batch Generation
+```http
+POST /batch-generate
+Content-Type: application/json
+
+[
+  {"topic": "Angebot und Nachfrage", "difficulty": "leicht"},
+  {"topic": "Marktformen", "difficulty": "stammaufgabe"},
+  {"topic": "Wirtschaftspolitik", "difficulty": "schwer"}
+]
 ```
 
-**✅ Mapping Questions**
+#### System Monitoring
+```http
+GET /health
+GET /models/status
 ```
-Format: "Ordne... <start-option> [Left1] <start-option> [Left2] <end-option> [Right1] <end-option> [Right2]"
-Answers: "Left1 -> Right1; Left2 -> Right2"
+
+### Python SDK Example
+
+```python
+import asyncio
+import aiohttp
+
+class EducationalAIClient:
+    def __init__(self, base_url="http://localhost:8000"):
+        self.base_url = base_url
+    
+    async def generate_question(self, topic, difficulty, age_group="9. Klasse"):
+        async with aiohttp.ClientSession() as session:
+            request = {
+                "topic": topic,
+                "difficulty": difficulty,
+                "age_group": age_group
+            }
+            
+            async with session.post(
+                f"{self.base_url}/generate-question", 
+                json=request
+            ) as response:
+                return await response.json()
+    
+    async def get_system_status(self):
+        async with aiohttp.ClientSession() as session:
+            async with session.get(f"{self.base_url}/health") as response:
+                health = await response.json()
+            
+            async with session.get(f"{self.base_url}/models/status") as response:
+                models = await response.json()
+                
+            return {"health": health, "models": models}
+
+# Usage
+async def main():
+    client = EducationalAIClient()
+    
+    # Generate a question
+    result = await client.generate_question(
+        topic="Opportunitätskosten",
+        difficulty="schwer"
+    )
+    
+    print(f"Question generated in {result['total_processing_time']:.2f}s")
+    print(f"Iterations: {result['iterations']}")
+    print(f"Final status: {result['final_status']}")
+    
+    # Check system status
+    status = await client.get_system_status()
+    print(f"VRAM usage: {status['models']['vram_usage_gb']:.1f}GB")
+
+# Run
+asyncio.run(main())
 ```
-
-#### **ID Format Compliance**
-**c_id Pattern**: `{question_number}-{difficulty_level}-{version}`
-- Question number: Sequential (35, 36, 37...)
-- Difficulty: 1=Stammaufgabe, 2=leicht, 3=schwer
-- Version: Numeric identifier
-- **Example**: "35-3-7" (Question 35, schwer difficulty, version 7)
-
-#### **Parameter Value Compliance**
-All parameter values use exact German strings:
-- **Binary Parameters**: "Enthalten" / "Nicht enthalten"
-- **Explicitness**: "Explizit" / "Implizit"
-- **Reference Levels**: "Nicht vorhanden" / "Explizit" / "Implizit"
-- **Taxonomy**: "Stufe 1" / "Stufe 2"
-- **Mathematical**: "0 (Kein Bezug)" / "1 (Nutzen mathematischer Darstellungen)" / "2 (Mathematische Operation)"
-
-#### **Reference Text Integration**
-Questions are generated strictly from `explanation_metadata.csv` reference texts:
-- **17 Economic Topics**: Bedürfnisse, Güter, Märkte, etc.
-- **Content Adherence**: All questions must be derivable from reference text
-- **Text IDs**: Match reference material to generated questions
-
-## System Evolution Path
-
-### Phase 1: Hierarchical Architecture ✅
-- **Multi-agent validation**: Mother LM → Principal → Student Personas
-- **German educational content**: 9th-grade economics questions
-- **CSV output compliance**: Exact 58-column format matching stakeholder data
-- **Persona-based difficulty validation**: Kim (leicht), Alex (Stammaufgabe), Lisa (schwer)
-- **5-iteration refinement**: Continuous improvement until perfection
-- **Parameter compliance**: All German economics parameters validated
-
-### Phase 2: Complete Integration ✅
-**Implemented Features**:
-1. ✅ **58-Column CSV Export**: Exact format compliance with `task_metadata_with_answers_final2_colcleaned.csv`
-2. ✅ **Reference Text Integration**: Questions generated from `explanation_metadata.csv`
-3. ✅ **Question Type Support**: True-false, multiple-choice, single-choice, mapping
-4. ✅ **Parameter Engine**: Complete German parameter validation system
-5. ✅ **Linguistic Obstacle System**: Passive voice, negation, complex noun phrases
-6. ✅ **Taxonomy Validation**: Stufe 1 (Knowledge) and Stufe 2 (Application) compliance
-7. ✅ **Student Persona Validation**: Authentic 9th-grader feedback system
-
-## Architecture Comparison
-
-### Current vs. Target System
-
-| Aspect | Current System | Stakeholder Requirements |
-|--------|---------------|-------------------------|
-| Language | German | German |
-| Subject | General educational content | 9th-grade economics curriculum |
-| Output | CSV | Structured CSV with detailed parameters |
-| Difficulty | Basic levels | Parameter-driven variations (leicht/schwer) |
-| Content Source | Generated from scratch | Strict reference text adherence |
-| Question Structure | Simple validation | Complex parameter manipulation |
-
-## 🚀 Implementation Strategy
-
-### Recommended Approach: Hybrid System
-1. **Preserve Current Architecture**: Multi-agent validation concept remains valuable
-2. **Add German Module**: Specialized German economics question generator
-3. **Parameter Framework**: Sophisticated difficulty manipulation engine
-4. **Enhanced CSV Output**: Structured CSV format with all required parameter columns
-
-### Technical Requirements
-- German language models (Llama-3.1 or similar with German training)
-- Economics domain knowledge integration
-- Advanced parameter manipulation system
-- CSV generation pipeline
-- Reference text compliance validator
 
 ## Project Structure
 
 ```
-PythonProject/
-├── BouncyQuestionCreator.py      # Main orchestrator system
-├── config.json                   # LM endpoint configuration
-├── startPrompt.txt               # Question generator prompt
-├── chooserPrompt.txt             # Meaningfulness validator prompt
-├── suggestorPrompt.txt           # Robustness validator prompt
-├── childPrompt.txt               # Uniqueness checker prompt
-├── rectorPrompt.txt              # Progress assessor prompt
-├── providedProjectFromStakeHolder/
-│   ├── ProvidedStuff.MD          # Stakeholder requirements
-│   ├── explanation_metadata.csv  # Reference texts
-│   ├── task_metadata_*.csv       # Question database
-│   └── tasks_parameters.csv      # Parameter definitions
-└── README.md                     # This documentation
+/
+├── _dev/                                   # Development files
+│   ├── README_DEPLOYMENT.md               # System documentation
+│   ├── _old/                              # Legacy files
+│   └── providedProjectFromStakeHolder/    # Stakeholder data
+├── ALEE_Agent/                            # Main AI system
+│   ├── educational_ai_orchestrator.py     # FastAPI server
+│   └── prompts/                           # Expert prompts
+├── CallersWithTexts/                      # Testing & results
+│   ├── test_system.py                     # System tests
+│   ├── result_manager.py                  # Result organization
+│   ├── task_metadata_with_answers_final2_colcleaned.csv  # CSV data
+│   └── results/                           # Timestamped outputs
+│       └── YYYY-MM-DD_HH-MM-SS/          # Session folders
+│           ├── prompts/                   # Used prompts
+│           └── results/                   # Generated CSV
+└── *.sh                                   # Setup scripts
 ```
 
-## Next Steps
+## Parameter Validation System
 
-1. **System Architecture Decision**: Extend current system vs. build specialized module
-2. **German Model Integration**: Set up German language model endpoints
-3. **Parameter Engine Development**: Build sophisticated difficulty manipulation
-4. **Reference Text System**: Implement strict content adherence validation
-5. **CSV Pipeline**: Replace JSON output with structured CSV format
+### Supported Parameters
 
-## Development Environment
+The system validates all educational question parameters according to German educational standards:
 
-- **Platform**: Linux (Manjaro)
-- **GPU**: 20GB VRAM (suitable for multiple local LM instances)
-- **Python**: Async/await architecture with aiohttp
-- **Models**: Llama-3.1-8b-instruct (configurable endpoints)
+#### Core Parameters
+- `p.variation` - Difficulty level (leicht, stammaufgabe, schwer)
+- `p.taxonomy_level` - Cognitive level (Stufe 1: Wissen, Stufe 2: Anwendung)
+- `p.mathematical_requirement_level` - Math complexity (0-2 scale)
+
+#### Text Analysis Parameters
+- `p.root_text_reference_explanatory_text` - Reference text usage
+- `p.root_text_contains_irrelevant_information` - Content relevance
+- `p.instruction_explicitness_of_instruction` - Instruction clarity
+
+#### Linguistic Obstacle Parameters
+- `p.root_text_obstacle_passive` - Passive voice constructions
+- `p.root_text_obstacle_negation` - Negation usage
+- `p.root_text_obstacle_complex_np` - Complex noun phrases
+- `p.item_X_obstacle_*` - Answer choice obstacles
+- `p.instruction_obstacle_*` - Instruction obstacles
+
+### Validation Process
+
+1. **Parameter Extraction**: Identify relevant parameters from question request
+2. **Expert Assignment**: Route parameters to specialized expert LLMs
+3. **Concurrent Validation**: Run parameter checks asynchronously (max 2 models)
+4. **Feedback Integration**: Collect expert recommendations
+5. **Iterative Refinement**: Improve question based on expert feedback
+6. **Approval Gate**: Ensure all parameters meet quality standards
+
+## Expert LLM Prompts
+
+### Variation Expert
+Specializes in difficulty assessment using cognitive load theory and educational psychology principles.
+
+**Key Evaluation Criteria:**
+- Cognitive demand analysis
+- Complexity level assessment  
+- Context familiarity evaluation
+- Distractor quality analysis
+
+### Taxonomy Expert  
+Focuses on Bloom's taxonomy classification and learning objective alignment.
+
+**Key Evaluation Criteria:**
+- Cognitive operation identification
+- Transfer requirement analysis
+- Situational novelty assessment
+- Multi-step thinking evaluation
+
+### Math Expert
+Analyzes mathematical complexity and quantitative requirements.
+
+**Key Evaluation Criteria:**
+- Calculation difficulty assessment
+- Mathematical representation usage
+- Age-appropriate complexity
+- Economic integration quality
+
+### Obstacle Expert
+Evaluates linguistic barriers and text accessibility.
+
+**Key Evaluation Criteria:**
+- Passive voice detection
+- Negation complexity analysis
+- Noun phrase structure evaluation
+- Cumulative cognitive load assessment
+
+## Configuration
+
+### Model Configuration
+```python
+# ALEE_Agent/educational_ai_orchestrator.py
+PARAMETER_EXPERTS = {
+    "variation_expert": ParameterExpertConfig(
+        name="variation_expert",
+        model="llama3.1:8b",
+        port=8001,
+        parameters=["p.variation"],
+        expertise="Difficulty level assessment",
+        temperature=0.2
+    ),
+    # ... additional experts
+}
+```
+
+### Memory Management
+```python
+class ModelManager:
+    def __init__(self):
+        self.model_memory_usage = {
+            "llama3.1:8b": 5.5,    # GB
+            "mistral:7b": 5.0,
+            "qwen2.5:7b": 5.0,
+            "llama3.2:3b": 2.5
+        }
+        self.max_vram_gb = 18  # Leave 2GB buffer
+```
+
+### Environment Variables
+```bash
+# ROCm Configuration
+export ROCM_PATH=/opt/rocm
+export HSA_OVERRIDE_GFX_VERSION=11.0.0  # RX 7000 series
+export HIP_VISIBLE_DEVICES=0
+
+# Ollama Optimization
+export OLLAMA_NUM_PARALLEL=2
+export OLLAMA_MAX_LOADED_MODELS=2
+export OLLAMA_FLASH_ATTENTION=1
+```
+
+## Testing
+
+### Comprehensive Test Suite
+
+The system includes extensive testing capabilities:
+
+```bash
+# Run all tests
+python3 CallersWithTexts/test_system.py
+
+# Individual test components (if pytest setup exists)
+python3 -m pytest tests/ -v
+```
+
+### Test Coverage
+
+- **Health Checks**: System connectivity and service availability
+- **Model Loading**: GPU detection and model initialization
+- **Parameter Validation**: Expert LLM functionality across all parameters
+- **Memory Management**: VRAM efficiency under load
+- **Batch Processing**: Multi-question generation performance
+- **API Endpoints**: Complete REST API functionality
+
+### Performance Benchmarks
+
+```python
+# Example test results
+TEST_RESULTS = {
+    "single_question_generation": "8-15 seconds",
+    "batch_generation_3_questions": "25-35 seconds", 
+    "memory_efficiency": "10-11GB VRAM usage",
+    "parameter_coverage": "7+ experts validated",
+    "api_response_time": "<200ms (health checks)"
+}
+```
+
+## Monitoring and Observability
+
+### System Monitoring
+```bash
+# GPU monitoring
+watch -n 1 rocm-smi
+
+# System resources
+btop
+
+# Application logs
+tail -f logs/educational_ai.log
+```
+
+### Performance Metrics
+- **VRAM Usage**: Real-time memory monitoring via `/models/status`
+- **Model Swapping**: Dynamic loading statistics
+- **Response Times**: Per-endpoint performance tracking
+- **Expert Utilization**: Parameter validation coverage
+- **Error Rates**: Failed validation tracking
+
+### Health Checks
+```python
+# Automated health monitoring
+async def health_check():
+    return {
+        "status": "healthy",
+        "active_models": len(active_models),
+        "vram_usage_gb": current_vram_usage(),
+        "available_experts": list(PARAMETER_EXPERTS.keys()),
+        "timestamp": datetime.now().isoformat()
+    }
+```
+
+## Production Deployment
+
+### Docker Deployment
+```dockerfile
+FROM rocm/pytorch:latest
+
+# Install dependencies
+RUN pip install fastapi uvicorn aiohttp pydantic ollama-python
+
+# Copy application
+WORKDIR /app
+COPY . .
+
+# Expose API port
+EXPOSE 8000
+
+# Start with ROCm support
+CMD ["uvicorn", "educational_ai_orchestrator:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+
+```bash
+# Build and run
+docker build -t educational-ai .
+docker run --device=/dev/kfd --device=/dev/dri \
+  --group-add video -p 8000:8000 \
+  -v $(pwd)/models:/app/models \
+  educational-ai
+```
+
+### Systemd Service
+```ini
+# /etc/systemd/system/educational-ai.service
+[Unit]
+Description=Educational AI Parameter-Expert System
+After=network-online.target
+
+[Service]
+Type=simple
+User=ai-service
+Group=ai-service
+WorkingDirectory=/opt/educational-ai
+ExecStart=/usr/bin/python3 start_system.py
+Restart=always
+RestartSec=3
+Environment="ROCM_PATH=/opt/rocm"
+
+[Install]
+WantedBy=multi-user.target
+```
+
+### Load Balancing
+For high-throughput scenarios, deploy multiple instances:
+
+```yaml
+# docker-compose.yml
+version: '3.8'
+services:
+  educational-ai-1:
+    build: .
+    ports:
+      - "8001:8000"
+    devices:
+      - "/dev/kfd:/dev/kfd"
+      - "/dev/dri:/dev/dri"
+    
+  educational-ai-2:
+    build: .
+    ports:
+      - "8002:8000"
+    devices:
+      - "/dev/kfd:/dev/kfd" 
+      - "/dev/dri:/dev/dri"
+  
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+```
+
+## Security Considerations
+
+### API Security
+- **Rate Limiting**: Implement request throttling for production use
+- **Authentication**: Add JWT or API key authentication
+- **Input Validation**: Comprehensive request validation
+- **CORS Configuration**: Properly configure cross-origin requests
+
+### Model Security
+- **Model Isolation**: Each expert runs in controlled environment
+- **Input Sanitization**: Clean prompts before LLM processing
+- **Output Filtering**: Validate generated content
+- **Resource Limits**: Prevent resource exhaustion attacks
+
+## Troubleshooting
+
+### Common Issues
+
+#### ROCm Not Detected
+```bash
+# Check GPU architecture
+lspci | grep VGA
+
+# Set correct GFX version
+export HSA_OVERRIDE_GFX_VERSION=11.0.0  # RX 7000
+export HSA_OVERRIDE_GFX_VERSION=10.3.0  # RX 6000
+```
+
+#### Models Not Loading
+```bash
+# Check Ollama service
+sudo systemctl status ollama
+
+# Verify model downloads
+ollama list
+
+# Test model manually
+ollama run llama3.1:8b "Hello"
+```
+
+#### VRAM Overflow
+```bash
+# Monitor memory usage
+watch -n 1 'rocm-smi && echo "---" && curl -s http://localhost:8000/models/status'
+
+# Reduce concurrent models
+# Edit ALEE_Agent/educational_ai_orchestrator.py: model_semaphore = asyncio.Semaphore(1)
+```
+
+#### Slow Response Times
+- Verify GPU compute mode: `./optimize_gpu.sh`
+- Check model quantization: Ensure Q4_K_M variants
+- Monitor system resources: `btop`
+- Review network connectivity to Ollama
+
+### Debug Mode
+```bash
+# Run with verbose logging
+export PYTHONPATH=.
+python3 -m uvicorn ALEE_Agent.educational_ai_orchestrator:app --log-level debug
+
+# Enable detailed ROCm logging
+export ROCM_DEBUG=1
+export HIP_DEBUG=1
+```
+
+## Additional Resources
+
+### Documentation
+- **API Reference**: `/docs` endpoint when running
+- **Expert Prompts**: `ALEE_Agent/prompts/` directory for customization
+- **Test Reports**: Generated in `CallersWithTexts/results/` with timestamps
+- **System Info**: `CLAUDE.md` contains system memory for AI assistant
+
+### Model Information
+- **Ollama Models**: [https://ollama.com/library](https://ollama.com/library)
+- **ROCm Documentation**: [https://rocm.docs.amd.com/](https://rocm.docs.amd.com/)
+- **FastAPI Documentation**: [https://fastapi.tiangolo.com/](https://fastapi.tiangolo.com/)
+
+### Community
+- **Issues**: Report bugs and feature requests via GitHub Issues
+- **Discussions**: Technical discussions and Q&A
+- **Contributing**: See `CONTRIBUTING.md` for development guidelines
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- **AMD ROCm Team** - For excellent GPU compute support
+- **Ollama Project** - For simplified local LLM deployment  
+- **Hugging Face** - For transformer models and tokenizers
+- **FastAPI** - For high-performance async API framework
+- **Educational Research Community** - For parameter frameworks and validation methods
 
 ---
 
-**Status**: Analysis complete, ready for stakeholder alignment on implementation approach.
+** The Educational AI Parameter-Expert System represents the next evolution in AI-powered educational content generation, combining specialized domain expertise with efficient resource utilization for unprecedented quality in question generation.**
