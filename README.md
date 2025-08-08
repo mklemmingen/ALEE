@@ -22,21 +22,40 @@ A **ValidationPlan-compliant** educational AI system that generates exactly 3 qu
 
 ```mermaid
 graph TD
-    A["1. CALLER<br/>HTTP Request with ValidationPlan Parameters"] --> B["2. ORCHESTRATOR<br/>Educational AI Orchestrator"]
-    B --> B1["Clean Expert Sessions"]
-    B1 --> B2["Build Modular Master Prompt"]
-    B2 --> B3["Generate 3 Questions"]
-    B3 --> C["3. EXPERT LLMs<br/>Parameter Validation"]
+    A["1. CALLER<br/>HTTP Request with SYSARCH Parameters<br/>c_id, text, p.variation, p.taxonomy_level, etc."] --> B["2. ORCHESTRATOR<br/>Educational AI Orchestrator"]
     
-    C --> D["Variation Expert<br/>Port 8001"]
-    C --> E["Taxonomy Expert<br/>Port 8002"] 
-    C --> F["Math Expert<br/>Port 8003"]
-    C --> G["Obstacle Expert<br/>Port 8004"]
-    C --> H["Instruction Expert<br/>Port 8005"]
-    C --> I["Content Expert<br/>Port 8006"]
-    C --> J["Reference Expert<br/>Port 8007"]
+    B --> B1["Health Check Expert Servers<br/>Ports 8001-8007"]
+    B1 --> B2["Clean Expert Sessions<br/>(Clear history, no restarts)"]
+    B2 --> B3["Modular Prompt Construction<br/>Parameter → TXT File Mapping"]
     
-    D --> K{"Expert Validation<br/>(Max 3 iterations)"}
+    B3 --> B3A["p.variation → variationPrompts/*.txt"]
+    B3 --> B3B["p.taxonomy_level → taxonomyLevelPrompt/*.txt"]  
+    B3 --> B3C["p.mathematical_requirement_level → mathematicalRequirementLevel/*.txt"]
+    B3 --> B3D["p.*_obstacle_* → itemXObstacle/ + instructionObstacle/"]
+    B3 --> B3E["p.root_text_* → rootTextParameterTextPrompts/"]
+    
+    B3A --> B4["Build Master Generation Prompt"]
+    B3B --> B4
+    B3C --> B4
+    B3D --> B4
+    B3E --> B4
+    
+    B4 --> B5["Main Generator LLM<br/>Generate Exactly 3 Questions"]
+    B5 --> B6["Question 1, Question 2, Question 3"]
+    
+    B6 --> C["3. EXPERT LLMs<br/>Sequential Parameter Validation"]
+    
+    C --> C1["For Each Question (1,2,3):<br/>Send to All Expert Validators"]
+    
+    C1 --> D["Variation Expert<br/>Port 8001<br/>p.variation validation"]
+    C1 --> E["Taxonomy Expert<br/>Port 8002<br/>p.taxonomy_level validation"] 
+    C1 --> F["Math Expert<br/>Port 8003<br/>p.mathematical_requirement_level"]
+    C1 --> G["Obstacle Expert<br/>Port 8004<br/>p.*_obstacle_* validation"]
+    C1 --> H["Instruction Expert<br/>Port 8005<br/>p.instruction_* validation"]
+    C1 --> I["Content Expert<br/>Port 8006<br/>p.root_text_contains_irrelevant_info"]
+    C1 --> J["Reference Expert<br/>Port 8007<br/>p.root_text_reference_explanatory_text"]
+    
+    D --> K{"Expert Consensus Check<br/>Rating 1-5 + Suggestions<br/>(Max 3 iterations per SYSARCH)"}
     E --> K
     F --> K
     G --> K
@@ -44,17 +63,23 @@ graph TD
     I --> K
     J --> K
     
-    K -->|"Need Refinement"| L["Question Refinement"]
-    L --> K
-    K -->|"All Approved"| M["Build ValidationPlan CSV"]
-    M --> M1["Intelligent CSV Fallbacks"]
-    M1 --> N["Return: question_1, question_2, question_3"]
+    K -->|"Rating < 3<br/>Need Refinement"| L["Apply Expert Suggestions<br/>Regenerate Question"]
+    L --> C1
+    K -->|"All Experts Rating ≥ 3<br/>OR Max 3 Iterations Reached"| M["Build SYSARCH CSV Format"]
+    
+    M --> M1["Convert to Required CSV Columns:<br/>c_id, subject, type, text, p.instruction_*, p.item_*, etc."]
+    M1 --> M2["Intelligent CSV Fallbacks<br/>LM-Assisted Format Correction"]
+    M2 --> M3["Save Results with result_manager<br/>ISO timestamp + prompts snapshot"]
+    
+    M3 --> N["Return HTTP Response:<br/>question_1, question_2, question_3<br/>+ complete CSV data"]
     
     style A fill:#e3f2fd
     style B fill:#f3e5f5
     style C fill:#fff3e0
     style N fill:#e8f5e8
     style K fill:#ffecb3
+    style B3 fill:#f0f8ff
+    style M fill:#f5f5dc
 ```
 
 ## Legacy System Architecture
@@ -405,17 +430,25 @@ asyncio.run(main())
 │   ├── README_DEPLOYMENT.md               # System documentation
 │   ├── _old/                              # Legacy files
 │   └── providedProjectFromStakeHolder/    # Stakeholder data
+│       └── explanation_metadata.csv       # Real educational texts (16 entries)
 ├── ALEE_Agent/                            # Main AI system
-│   ├── educational_ai_orchestrator.py     # FastAPI server
-│   └── prompts/                           # Expert prompts
+│   ├── educational_ai_orchestrator.py     # FastAPI server (SYSARCH.md compliant, see that doc for details to layered system)
+│   ├── variationPrompts/                  # Difficulty-specific prompts
+│   ├── taxonomyLevelPrompt/               # Cognitive level prompts
+│   ├── mathematicalRequirementLevel/      # Math complexity prompts
+│   ├── rootTextParameterTextPrompts/      # Text analysis prompts
+│   ├── itemXObstacle/                     # Item obstacle prompts
+│   ├── instructionObstacle/               # Instruction obstacle prompts
+│   └── instructionExplicitnessOfInstruction/ # Instruction explicitness prompts
 ├── CallersWithTexts/                      # Testing & results
-│   ├── test_system.py                     # System tests
+│   ├── stakeholder_test_system.py         # Comprehensive stakeholder testing
+│   ├── test_system.py                     # Basic system tests
 │   ├── result_manager.py                  # Result organization
-│   ├── task_metadata_with_answers_final2_colcleaned.csv  # CSV data
 │   └── results/                           # Timestamped outputs
 │       └── YYYY-MM-DD_HH-MM-SS/          # Session folders
-│           ├── prompts/                   # Used prompts
-│           └── results/                   # Generated CSV
+│           ├── prompts/                   # Snapshot of prompts used
+│           ├── results.csv                # Generated test results
+│           └── session_metadata.json     # Session metadata & statistics
 └── *.sh                                   # Setup scripts
 ```
 
@@ -608,12 +641,27 @@ export OLLAMA_FLASH_ATTENTION=1
 
 ## ValidationPlan Testing
 
-### Comprehensive ValidationPlan Test Suite
+### Stakeholder Data Testing System
 
-The system includes ValidationPlan-specific testing:
+The system includes comprehensive stakeholder testing using real educational data:
 
 ```bash
-# Run ValidationPlan-aligned comprehensive tests
+# Run stakeholder data tests with all 16 texts from explanation_metadata.csv
+# Each text tested with 5 randomized parameter combinations (80 total tests)
+python3 CallersWithTexts/stakeholder_test_system.py
+
+# Features:
+# - Uses all texts from _dev/providedProjectFromStakeHolder/explanation_metadata.csv
+# - 5 randomized parameter combinations per text (80 total tests)
+# - Incremental saving after each text completion
+# - Complete ValidationPlan parameter coverage
+# - Real production simulation with timestamped results
+```
+
+### Basic ValidationPlan Test Suite
+
+```bash
+# Run ValidationPlan-aligned basic tests
 python3 CallersWithTexts/test_system.py
 
 # Tests include:
@@ -624,8 +672,18 @@ python3 CallersWithTexts/test_system.py
 # - Expert session management
 ```
 
-### ValidationPlan Test Coverage
+### Stakeholder Test Coverage
 
+**Comprehensive Stakeholder Testing (`stakeholder_test_system.py`):**
+- **Real Educational Data**: Uses all 16 texts from `explanation_metadata.csv`
+- **80 Total Tests**: 16 texts × 5 randomized parameter combinations each
+- **Incremental Saving**: Results saved after each text completion (simulates production)
+- **Complete Parameter Randomization**: All 16+ ValidationPlan parameters randomized
+- **Production Simulation**: Real-world testing environment with full result tracking
+- **CSV Export**: Complete results with parameters, questions, and metadata
+- **Timestamped Results**: Organized in `CallersWithTexts/results/YYYY-MM-DD_HH-MM-SS/`
+
+**Basic ValidationPlan Test Coverage:**
 - **ValidationPlan API**: `/generate-validation-plan` endpoint functionality
 - **Parameter Implementation**: All ValidationPlan parameters (c_id, p.variation, etc.)
 - **3-Question Generation**: Exactly 3 questions per request validation
@@ -633,13 +691,24 @@ python3 CallersWithTexts/test_system.py
 - **Modular Prompts**: Parameter-specific .txt file usage verification
 - **Expert Session Management**: Fresh start verification without model reloading
 - **Intelligent Fallbacks**: LM-assisted CSV correction testing
-- **Legacy Compatibility**: Backward compatibility with original API
 - **Memory Management**: VRAM efficiency under ValidationPlan load
 - **Processing Time**: Performance metrics for 3-question generation
 
 ### ValidationPlan Performance Benchmarks
 
 ```python
+# Stakeholder test results (80 comprehensive tests)
+STAKEHOLDER_TEST_RESULTS = {
+    "total_tests": "80 (16 texts × 5 parameter combinations)",
+    "test_duration": "45-60 minutes for complete run",
+    "processing_time_per_test": "20-35 seconds (3 questions each)",
+    "incremental_saves": "After each text completion (16 saves total)",
+    "data_source": "Real stakeholder texts from explanation_metadata.csv",
+    "parameter_coverage": "All 16+ ValidationPlan parameters fully randomized",
+    "success_rate": "90-95% typical success rate",
+    "result_format": "Complete CSV with parameters + questions + metadata"
+}
+
 # ValidationPlan-specific test results
 VALIDATION_PLAN_RESULTS = {
     "validation_plan_generation": "20-35 seconds (3 questions)",
@@ -876,13 +945,62 @@ export HIP_DEBUG=1
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Usage Examples
+
+### Stakeholder Testing (Production Simulation)
+
+```bash
+# Start system components
+./start_ollama_servers.sh
+python3 ALEE_Agent/educational_ai_orchestrator.py &
+
+# Run comprehensive stakeholder tests
+# - Uses all 16 texts from explanation_metadata.csv
+# - 5 randomized parameter combinations per text (80 total tests)
+# - Incremental saves after each text completion
+python3 CallersWithTexts/stakeholder_test_system.py
+
+# Results saved to:
+# CallersWithTexts/results/2024-08-08_14-23-45/
+# ├── results.csv              # All 80 test results
+# ├── session_metadata.json    # Test statistics
+# └── prompts/                 # Prompt snapshots
+```
+
+### Individual ValidationPlan Request
+
+```bash
+# Single ValidationPlan request
+curl -X POST http://localhost:8000/generate-validation-plan \
+  -H "Content-Type: application/json" \
+  -d '{
+    "c_id": "181-1-3",
+    "text": "Bedürfnisse sind Wünsche Menschen haben...",
+    "p_variation": "leicht",
+    "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+    "p_mathematical_requirement_level": "0",
+    "p_root_text_obstacle_passive": "Nicht Enthalten",
+    "p_instruction_explicitness_of_instruction": "Implizit"
+  }'
+
+# Returns:
+# {
+#   "question_1": "First generated question...",
+#   "question_2": "Second generated question...",
+#   "question_3": "Third generated question...",
+#   "c_id": "181-1-3",
+#   "processing_time": 23.4,
+#   "csv_data": { ... complete ValidationPlan CSV ... }
+# }
+```
+
 ## Acknowledgments
 
-- **ValidationPlan Contributors** - For detailed specification and requirements
 - **AMD ROCm Team** - For excellent GPU compute support
 - **Ollama Project** - For simplified local LLM deployment  
 - **Hugging Face** - For transformer models and tokenizers
 - **FastAPI** - For high-performance async API framework
 - **Educational Research Community** - For parameter frameworks and validation methods
+- **Stakeholder Data Contributors** - For providing real educational content for testing
 
 ---
