@@ -68,7 +68,7 @@ python3 test_system.py
 ### Model Configuration (20GB VRAM Optimized)
 ```python
 MODELS_CONFIG = {
-    "llama3.1:8b": {"memory_gb": 5.5, "use": "Main generator + variation expert"},
+    "llama3.1NutzenMathematischerDarstellungen:8b": {"memory_gb": 5.5, "use": "Main generator + variation expert"},
     "mistral:7b": {"memory_gb": 5.0, "use": "Taxonomy + instruction expert"}, 
     "qwen2.5:7b": {"memory_gb": 5.0, "use": "Math expert"},
     "llama3.2:3b": {"memory_gb": 2.5, "use": "Lightweight parameter experts"}

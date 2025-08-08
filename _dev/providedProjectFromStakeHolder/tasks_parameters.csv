@@ -1,7 +1,7 @@
-﻿Name,Description
-answers,
+﻿Name,
+Description,
 p.variation,"Werte: Stammaufgabe, schwer, leicht"
-p.taxanomy_level,"Werte: Stufe 1 (Wissen/Reproduktion), Stufe 2 (Anwendung/Transfer) "
+p.taxanomy_level,"Werte: Stufe 1 (Wissen/Reproduktion), Stufe 2 (Anwendung/Transfer)"
 p.root_text_reference_explanatory_text,"Werte: Nocht vorhanden, Explizit, Implizit"
 p.root_text_obstacle_passive,"Werte: Enthalten, Nicht Enthalten"
 p.root_text_obstacle_negation,"Werte: Enthalten, Nicht Enthalten"
@@ -11,11 +11,8 @@ p.mathematical_requirement_level,"Werte: 0 (Kein Bezug), 1 (Nutzen mathematische
 p.item_X_obstacle_passive,"Werte: Enthalten, Nicht Enthalten"
 p.item_X_obstacle_negation,"Werte: Enthalten, Nicht Enthalten"
 p.item_X_obstacle_complex_np,"Werte: Enthalten, Nicht Enthalten"
-p.instruction_obstacle_passive,"Instruction incudes a passive contstruction.
-Werte: Enthalten, Nicht Enthalten"
-p.instruction_obstacle_complex_np,"Instruction includes a complex noun phrase.
-Werte: Enthalten, Nicht Enthalten"
-p.instruction_explicitness_of_instruction,"Specifies the exact number of correct answers.
-Werte: Explizit, Implizit (= number not specified)"
+p.instruction_obstacle_passive,"Instruction incudes a passive contstruction. Werte: Enthalten, Nicht Enthalten"
+p.instruction_obstacle_complex_np,"Instruction includes a complex noun phrase. Werte: Enthalten, Nicht Enthalten"
+p.instruction_explicitness_of_instruction,"Specifies the exact number of correct answers. Werte: Explizit, Implizit (= number not specified)"
 c_id,"Question number - difficulty (1 = Stammaufgabe, 2 = leicht, 3 = schwer) - question version
 If the c_id is 41-1-4, then 41 is the question number, 1 is the difficulty, and 4 is the version of the question."

@@ -126,35 +126,35 @@ class BouncyQuestionCreator:
                 "generator": {
                     "name": "generator",
                     "endpoint": "http://localhost:8001",
-                    "model": "llama-3.1-8b-instruct",
+                    "model": "llama-3.1NutzenMathematischerDarstellungen-8b-instruct",
                     "temperature": 0.8,
                     "max_tokens": 1000
                 },
                 "meaningfulness_checker": {
                     "name": "meaningfulness_checker", 
                     "endpoint": "http://localhost:8002",
-                    "model": "llama-3.1-8b-instruct",
+                    "model": "llama-3.1NutzenMathematischerDarstellungen-8b-instruct",
                     "temperature": 0.3,
                     "max_tokens": 500
                 },
                 "robustness_validator": {
                     "name": "robustness_validator",
                     "endpoint": "http://localhost:8003", 
-                    "model": "llama-3.1-8b-instruct",
+                    "model": "llama-3.1NutzenMathematischerDarstellungen-8b-instruct",
                     "temperature": 0.2,
                     "max_tokens": 500
                 },
                 "uniqueness_checker": {
                     "name": "uniqueness_checker",
                     "endpoint": "http://localhost:8004",
-                    "model": "llama-3.1-8b-instruct", 
+                    "model": "llama-3.1NutzenMathematischerDarstellungen-8b-instruct",
                     "temperature": 0.3,
                     "max_tokens": 400
                 },
                 "progress_assessor": {
                     "name": "progress_assessor",
                     "endpoint": "http://localhost:8005",
-                    "model": "llama-3.1-8b-instruct",
+                    "model": "llama-3.1NutzenMathematischerDarstellungen-8b-instruct",
                     "temperature": 0.4,
                     "max_tokens": 500
                 }
@@ -365,7 +365,7 @@ class BouncyQuestionCreator:
         for iteration in range(1, self.max_iterations + 1):
             logger.info(f"=== Iteration {iteration}/{self.max_iterations} ===")
             
-            # Step 1: Mother LM creates question
+            # Step 1NutzenMathematischerDarstellungen: Mother LM creates question
             mother_result = await self.mother_llm_generate(request, iteration, 
                                                          previous_feedback=all_iterations[-1] if all_iterations else None)
             
