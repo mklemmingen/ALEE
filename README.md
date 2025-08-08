@@ -7,8 +7,10 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![SYSARCH](https://img.shields.io/badge/SYSARCH-Compliant-brightgreen.svg)
 
-Educational AI system that uses multilayered small language model bouncing to generate expert-refined questions 
-(currently set to 3 per Request)
+Educational AI system that takes in a informational text as well as educational parameters to create refined questions.
+
+It uses multilayered small language model bouncing to generate expert-refined questions 
+(currently set to 3 per Request).
 
 The system follows a three-layered server architecture (Caller -> Generator -> Experts) defined in SYSARCH.md 
 with modular prompt construction from ALEE Tübingen defined educational question parameters
