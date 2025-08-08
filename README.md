@@ -1,4 +1,4 @@
-# Multimodal Educational AI System for Parameter-Specific Question Generation through multiple Expertised data-backed LLM refinement iterations
+# Multimodal Educational LLM Aggregation System for Parameter-Specific Question Generation through multiple data-backed expertised small large model refinement iterations
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)
