@@ -53,7 +53,7 @@ Or when a number is specified in explicitness of instruction, the orchestrator u
 - One by one, consecutively, he calls the expert LMs with the questions and the configuration.
 - At each of them, he receives their judgment, and accordingly, he decides whether to change the question with the experts suggestion and rating. 
 - He does this, until all the questions have been checked as passing by all the experts, or until the maximum number of 3 expert iterations has been reached.
-- Finally, he returns the three questions to the caller in a http response of 1. "" 2. "" 3. ""
+- Finally, he returns the three questions to the caller in an http response of 1. "" 2. "" 3. ""
 
 3. The expert LMs:
 - Each has one master prompt that contains the instructions for the expert LM. He receives the question and the configuration parameters.

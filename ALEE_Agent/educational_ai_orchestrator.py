@@ -145,10 +145,7 @@ class ParameterStatus(Enum):
     REJECTED = "rejected"
     NEEDS_REFINEMENT = "needs_refinement"
 
-class QuestionDifficulty(Enum):
-    LEICHT = "leicht"
-    STAMMAUFGABE = "stammaufgabe"
-    SCHWER = "schwer"
+# Legacy enum removed - ValidationPlan uses string values directly
 
 # ValidationPlan Request Model
 class ValidationPlanRequest(BaseModel):
@@ -169,13 +166,7 @@ class ValidationPlanRequest(BaseModel):
     p_instruction_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
     p_instruction_explicitness_of_instruction: str = Field("Implizit", description="Explizit, Implizit")
 
-@dataclass
-class QuestionRequest:
-    topic: str
-    difficulty: QuestionDifficulty
-    age_group: str = "9. Klasse"
-    context: Optional[str] = None
-    target_parameters: Optional[Dict[str, str]] = None
+# Legacy classes removed - ValidationPlan-only system
 
 @dataclass
 class ParameterValidation:
@@ -186,14 +177,7 @@ class ParameterValidation:
     expert_used: str
     processing_time: float
 
-@dataclass
-class QuestionResult:
-    question_content: Dict[str, Any]
-    parameter_validations: List[ParameterValidation]
-    iterations: int
-    total_processing_time: float
-    final_status: str
-    csv_ready: Dict[str, str]
+# Legacy result class removed - ValidationPlan-only system
 
 # ValidationPlan Result Model
 class ValidationPlanResult(BaseModel):
@@ -403,51 +387,62 @@ class ValidationPlanPromptBuilder:
         try:
             full_path = self.base_path / file_path
             with open(full_path, 'r', encoding='utf-8') as f:
-                return f.read().strip()
+                content = f.read().strip()
+                return content if content else f"<{file_path.split('/')[-1]} parameter prompt content>"
         except FileNotFoundError:
             logger.warning(f"Prompt file not found: {file_path}")
-            return ""
+            return f"<{file_path.split('/')[-1]} parameter prompt content>"
         except Exception as e:
             logger.error(f"Error loading prompt {file_path}: {e}")
-            return ""
+            return f"<{file_path.split('/')[-1]} parameter prompt content>"
     
     def build_variation_prompt(self, variation: str) -> str:
-        """Build variation-specific prompt"""
+        """Build variation-specific prompt according to ValidationPlan mapping"""
+        # ValidationPlan: p.variation values are "Stammaufgabe", "schwer", "leicht"
         variation_map = {
-            "stammaufgabe": "variationPrompts/multiple-choice.txt",
-            "schwer": "variationPrompts/true-false.txt", 
-            "leicht": "variationPrompts/single-choice.txt"
+            "stammaufgabe": "variationPrompts/multiple-choice.txt",  # Default type for stammaufgabe
+            "schwer": "variationPrompts/true-false.txt",             # Complex questions often true-false
+            "leicht": "variationPrompts/single-choice.txt"            # Simple questions single choice
         }
         file_path = variation_map.get(variation.lower(), "variationPrompts/multiple-choice.txt")
-        return self.load_prompt_txt(file_path)
+        content = self.load_prompt_txt(file_path)
+        return f"p.variation ({variation}): {content}"
     
     def build_taxonomy_prompt(self, level: str) -> str:
-        """Build taxonomy-specific prompt"""
-        if "Stufe 1" in level or "1" in level:
-            return self.load_prompt_txt("taxonomyLevelPrompt/stufe1WissenReproduktion.txt")
-        elif "Stufe 2" in level or "2" in level:
-            return self.load_prompt_txt("taxonomyLevelPrompt/stufe2AnwendungTransfer.txt")
+        """Build taxonomy-specific prompt according to ValidationPlan"""
+        # ValidationPlan: "Stufe 1 (Wissen/Reproduktion)", "Stufe 2 (Anwendung/Transfer)"
+        if "Stufe 1" in level:
+            content = self.load_prompt_txt("taxonomyLevelPrompt/stufe1WissenReproduktion.txt")
+            return f"p.taxonomy_level (Stufe 1): {content}"
+        elif "Stufe 2" in level:
+            content = self.load_prompt_txt("taxonomyLevelPrompt/stufe2AnwendungTransfer.txt")
+            return f"p.taxonomy_level (Stufe 2): {content}"
         else:
-            return self.load_prompt_txt("taxonomyLevelPrompt/stufe1WissenReproduktion.txt")
+            content = self.load_prompt_txt("taxonomyLevelPrompt/stufe1WissenReproduktion.txt")
+            return f"p.taxonomy_level (Default Stufe 1): {content}"
     
     def build_mathematical_prompt(self, level: str) -> str:
-        """Build mathematical requirement prompt"""
+        """Build mathematical requirement prompt according to ValidationPlan"""
+        # ValidationPlan: "0 (Kein Bezug)", "1 (Nutzen mathematischer Darstellungen)", "2 (Mathematische Operation)"
+        level_clean = level.strip().split()[0]  # Extract just the number
         level_map = {
             "0": "mathematicalRequirementLevel/0KeinBezug",
             "1": "mathematicalRequirementLevel/1NutzenMathematischerDarstellungen", 
             "2": "mathematicalRequirementLevel/2MathematischeOperationen"
         }
-        file_path = level_map.get(level.strip(), "mathematicalRequirementLevel/0KeinBezug")
-        return self.load_prompt_txt(file_path)
+        file_path = level_map.get(level_clean, "mathematicalRequirementLevel/0KeinBezug")
+        content = self.load_prompt_txt(file_path)
+        return f"p.mathematical_requirement_level ({level}): {content}"
     
-    def build_obstacle_prompt(self, obstacle_type: str, value: str) -> str:
-        """Build obstacle-specific prompts"""
-        value_file = "enthalten.txt" if "Enthalten" in value and "Nicht" not in value else "nichtEnthalten.txt"
+    def build_obstacle_prompt(self, obstacle_type: str, value: str, parameter_name: str) -> str:
+        """Build obstacle-specific prompts according to ValidationPlan"""
+        # ValidationPlan: Values are "Enthalten", "Nicht Enthalten"
+        value_file = "enthalten.txt" if value == "Enthalten" else "nichtEnthalten.txt"
         
         obstacle_map = {
-            "passive": f"rootTextParameterTextPrompts/obstaclePassivePrompts/{value_file}",
-            "negation": f"rootTextParameterTextPrompts/obstacleNegationPrompts/{value_file}", 
-            "complex_np": f"rootTextParameterTextPrompts/obstacleComplexPrompts/{value_file}",
+            "root_passive": f"rootTextParameterTextPrompts/obstaclePassivePrompts/{value_file}",
+            "root_negation": f"rootTextParameterTextPrompts/obstacleNegationPrompts/{value_file}", 
+            "root_complex_np": f"rootTextParameterTextPrompts/obstacleComplexPrompts/{value_file}",
             "item_passive": f"itemXObstacle/passive/{value_file}",
             "item_negation": f"itemXObstacle/negation/{value_file}",
             "item_complex": f"itemXObstacle/complex/{value_file}",
@@ -456,98 +451,89 @@ class ValidationPlanPromptBuilder:
         }
         
         file_path = obstacle_map.get(obstacle_type, "")
-        return self.load_prompt_txt(file_path) if file_path else ""
+        if file_path:
+            content = self.load_prompt_txt(file_path)
+            return f"{parameter_name} ({value}): {content}"
+        return ""
     
     def build_irrelevant_info_prompt(self, value: str) -> str:
-        """Build irrelevant information prompt"""
-        value_file = "enthalten.txt" if "Enthalten" in value and "Nicht" not in value else "nichtEnthalten.txt"
-        return self.load_prompt_txt(f"rootTextParameterTextPrompts/containsIrrelevantInformationPrompt/{value_file}")
+        """Build irrelevant information prompt according to ValidationPlan"""
+        # ValidationPlan: "Enthalten", "Nicht Enthalten"
+        value_file = "enthalten.txt" if value == "Enthalten" else "nichtEnthalten.txt"
+        content = self.load_prompt_txt(f"rootTextParameterTextPrompts/containsIrrelevantInformationPrompt/{value_file}")
+        return f"p.root_text_contains_irrelevant_information ({value}): {content}"
     
     def build_explicitness_prompt(self, value: str) -> str:
-        """Build instruction explicitness prompt"""
+        """Build instruction explicitness prompt according to ValidationPlan"""
+        # ValidationPlan: "Explizit", "Implizit"
         if "Explizit" in value:
-            return self.load_prompt_txt("instructionExplicitnessOfInstruction/explizit")
+            content = self.load_prompt_txt("instructionExplicitnessOfInstruction/explizit")
+            return f"p.instruction_explicitness_of_instruction (Explizit): {content}"
         else:
-            return self.load_prompt_txt("instructionExplicitnessOfInstruction/implizit")
+            content = self.load_prompt_txt("instructionExplicitnessOfInstruction/implizit")
+            return f"p.instruction_explicitness_of_instruction (Implizit): {content}"
     
     def build_master_prompt(self, request: ValidationPlanRequest) -> str:
-        """Build the complete master prompt from modular components"""
+        """Build the complete master prompt from modular components according to ValidationPlan"""
         components = []
         
-        # Base instruction
-        components.append("Du bist ein Experte für die Erstellung von Bildungsaufgaben. Erstelle basierend auf dem gegebenen Text GENAU DREI deutsche Bildungsfragen mit den spezifizierten Parametern.")
+        # Base instruction with ValidationPlan specification
+        components.append("Du bist ein Experte für die Erstellung von Bildungsaufgaben. Erstelle basierend auf dem gegebenen Text GENAU DREI deutsche Bildungsfragen mit den spezifizierten ValidationPlan-Parametern.")
         components.append(f"\nReferenztext:\n{request.text}\n")
+        components.append(f"ValidationPlan c_id: {request.c_id}\n")
         
-        # Variation-specific component
+        # Always include variation (required)
         variation_prompt = self.build_variation_prompt(request.p_variation)
-        if variation_prompt:
-            components.append(f"Variationsanforderungen:\n{variation_prompt}")
+        components.append(variation_prompt)
         
-        # Taxonomy component
+        # Always include taxonomy (required)
         taxonomy_prompt = self.build_taxonomy_prompt(request.p_taxonomy_level)
-        if taxonomy_prompt:
-            components.append(f"Taxonomie-Level:\n{taxonomy_prompt}")
+        components.append(taxonomy_prompt)
         
-        # Mathematical requirements
+        # Always include mathematical level
         math_prompt = self.build_mathematical_prompt(request.p_mathematical_requirement_level)
-        if math_prompt:
-            components.append(f"Mathematische Anforderungen:\n{math_prompt}")
+        components.append(math_prompt)
         
-        # Obstacle requirements
-        if request.p_root_text_obstacle_passive != "Nicht Enthalten":
-            passive_prompt = self.build_obstacle_prompt("passive", request.p_root_text_obstacle_passive)
-            if passive_prompt:
-                components.append(f"Passive Konstruktionen (Referenztext):\n{passive_prompt}")
+        # Root text obstacles - only add if "Enthalten"
+        if request.p_root_text_obstacle_passive == "Enthalten":
+            components.append(self.build_obstacle_prompt("root_passive", request.p_root_text_obstacle_passive, "p.root_text_obstacle_passive"))
         
-        if request.p_root_text_obstacle_negation != "Nicht Enthalten":
-            negation_prompt = self.build_obstacle_prompt("negation", request.p_root_text_obstacle_negation)
-            if negation_prompt:
-                components.append(f"Negationen (Referenztext):\n{negation_prompt}")
+        if request.p_root_text_obstacle_negation == "Enthalten":
+            components.append(self.build_obstacle_prompt("root_negation", request.p_root_text_obstacle_negation, "p.root_text_obstacle_negation"))
         
-        if request.p_root_text_obstacle_complex_np != "Nicht Enthalten":
-            complex_prompt = self.build_obstacle_prompt("complex_np", request.p_root_text_obstacle_complex_np)
-            if complex_prompt:
-                components.append(f"Komplexe Nominalphrasen (Referenztext):\n{complex_prompt}")
+        if request.p_root_text_obstacle_complex_np == "Enthalten":
+            components.append(self.build_obstacle_prompt("root_complex_np", request.p_root_text_obstacle_complex_np, "p.root_text_obstacle_complex_np"))
         
-        # Irrelevant information
-        if request.p_root_text_contains_irrelevant_information != "Nicht Enthalten":
-            irrelevant_prompt = self.build_irrelevant_info_prompt(request.p_root_text_contains_irrelevant_information)
-            if irrelevant_prompt:
-                components.append(f"Irrelevante Informationen:\n{irrelevant_prompt}")
+        # Irrelevant information - only add if "Enthalten"
+        if request.p_root_text_contains_irrelevant_information == "Enthalten":
+            components.append(self.build_irrelevant_info_prompt(request.p_root_text_contains_irrelevant_information))
         
-        # Item-specific obstacles
-        if request.p_item_X_obstacle_passive != "Nicht Enthalten":
-            item_passive = self.build_obstacle_prompt("item_passive", request.p_item_X_obstacle_passive)
-            if item_passive:
-                components.append(f"Item-Passive:\n{item_passive}")
+        # Item-X obstacles - only add if "Enthalten"
+        if request.p_item_X_obstacle_passive == "Enthalten":
+            components.append(self.build_obstacle_prompt("item_passive", request.p_item_X_obstacle_passive, "p.item_X_obstacle_passive"))
         
-        if request.p_item_X_obstacle_negation != "Nicht Enthalten":
-            item_negation = self.build_obstacle_prompt("item_negation", request.p_item_X_obstacle_negation)
-            if item_negation:
-                components.append(f"Item-Negation:\n{item_negation}")
+        if request.p_item_X_obstacle_negation == "Enthalten":
+            components.append(self.build_obstacle_prompt("item_negation", request.p_item_X_obstacle_negation, "p.item_X_obstacle_negation"))
         
-        if request.p_item_X_obstacle_complex_np != "Nicht Enthalten":
-            item_complex = self.build_obstacle_prompt("item_complex", request.p_item_X_obstacle_complex_np)
-            if item_complex:
-                components.append(f"Item-Komplexe NP:\n{item_complex}")
+        if request.p_item_X_obstacle_complex_np == "Enthalten":
+            components.append(self.build_obstacle_prompt("item_complex", request.p_item_X_obstacle_complex_np, "p.item_X_obstacle_complex_np"))
         
-        # Instruction-specific obstacles  
-        if request.p_instruction_obstacle_passive != "Nicht Enthalten":
-            instr_passive = self.build_obstacle_prompt("instruction_passive", request.p_instruction_obstacle_passive)
-            if instr_passive:
-                components.append(f"Instruktion-Passive:\n{instr_passive}")
+        # Instruction obstacles - only add if "Enthalten"
+        if request.p_instruction_obstacle_passive == "Enthalten":
+            components.append(self.build_obstacle_prompt("instruction_passive", request.p_instruction_obstacle_passive, "p.instruction_obstacle_passive"))
         
-        if request.p_instruction_obstacle_complex_np != "Nicht Enthalten":
-            instr_complex = self.build_obstacle_prompt("instruction_complex_np", request.p_instruction_obstacle_complex_np)
-            if instr_complex:
-                components.append(f"Instruktion-Komplexe NP:\n{instr_complex}")
+        if request.p_instruction_obstacle_complex_np == "Enthalten":
+            components.append(self.build_obstacle_prompt("instruction_complex_np", request.p_instruction_obstacle_complex_np, "p.instruction_obstacle_complex_np"))
         
-        # Explicitness
+        # Always include explicitness
         explicit_prompt = self.build_explicitness_prompt(request.p_instruction_explicitness_of_instruction)
-        if explicit_prompt:
-            components.append(f"Instruktions-Explizitheit:\n{explicit_prompt}")
+        components.append(explicit_prompt)
         
-        components.append("\nWICHTIG: Antworte mit GENAU DREI Fragen im JSON-Format: {\"question_1\": \"...\", \"question_2\": \"...\", \"question_3\": \"...\", \"answers_1\": [...], \"answers_2\": [...], \"answers_3\": [...]}")
+        # Root text reference (always include)
+        if hasattr(request, 'p_root_text_reference_explanatory_text') and request.p_root_text_reference_explanatory_text != "Nicht vorhanden":
+            components.append(f"p.root_text_reference_explanatory_text ({request.p_root_text_reference_explanatory_text}): <reference text handling prompt content>")
+        
+        components.append("\nValidationPlan Output Format: Antworte mit GENAU DREI Fragen im JSON-Format: {\"question_1\": \"...\", \"question_2\": \"...\", \"question_3\": \"...\", \"answers_1\": [...], \"answers_2\": [...], \"answers_3\": [...]}")
         
         return "\n\n".join(components)
 
@@ -721,34 +707,34 @@ class EducationalAISystem:
         # Build expert prompt with parameter configuration
         expert_prompt = f"""Du bist ein Experte für {expert_config.expertise}.
 
-Analysiere diese Bildungsfrage bezüglich der spezifizierten Parameter:
-
-Frage: {question}
-
-Parameter-Konfiguration:
-- c_id: {request.c_id}
-- Variation: {request.p_variation}
-- Taxonomie-Level: {request.p_taxonomy_level}
-- Mathematisches Niveau: {request.p_mathematical_requirement_level}
-- Root-Text Passive: {request.p_root_text_obstacle_passive}
-- Root-Text Negation: {request.p_root_text_obstacle_negation}
-- Root-Text Komplexe NP: {request.p_root_text_obstacle_complex_np}
-- Item-X Passive: {request.p_item_X_obstacle_passive}
-- Item-X Negation: {request.p_item_X_obstacle_negation}
-- Item-X Komplexe NP: {request.p_item_X_obstacle_complex_np}
-- Instruktion Passive: {request.p_instruction_obstacle_passive}
-- Instruktion Komplexe NP: {request.p_instruction_obstacle_complex_np}
-- Instruktion Explizitheit: {request.p_instruction_explicitness_of_instruction}
-- Irrelevante Informationen: {request.p_root_text_contains_irrelevant_information}
-
-Bewerte die Frage auf einer Skala von 1-10 und gib spezifisches Feedback.
-
-Antworte im JSON-Format:
-{{
-  "overall_score": numeric_score,
-  "status": "approved" | "needs_refinement" | "rejected",
-  "feedback": "Detaillierte Bewertung und Verbesserungsvorschläge"
-}}"""
+        Analysiere diese Bildungsfrage bezüglich der spezifizierten Parameter:
+        
+        Frage: {question}
+        
+        Parameter-Konfiguration:
+        - c_id: {request.c_id}
+        - Variation: {request.p_variation}
+        - Taxonomie-Level: {request.p_taxonomy_level}
+        - Mathematisches Niveau: {request.p_mathematical_requirement_level}
+        - Root-Text Passive: {request.p_root_text_obstacle_passive}
+        - Root-Text Negation: {request.p_root_text_obstacle_negation}
+        - Root-Text Komplexe NP: {request.p_root_text_obstacle_complex_np}
+        - Item-X Passive: {request.p_item_X_obstacle_passive}
+        - Item-X Negation: {request.p_item_X_obstacle_negation}
+        - Item-X Komplexe NP: {request.p_item_X_obstacle_complex_np}
+        - Instruktion Passive: {request.p_instruction_obstacle_passive}
+        - Instruktion Komplexe NP: {request.p_instruction_obstacle_complex_np}
+        - Instruktion Explizitheit: {request.p_instruction_explicitness_of_instruction}
+        - Irrelevante Informationen: {request.p_root_text_contains_irrelevant_information}
+        
+        Bewerte die Frage auf einer Skala von 1-10 und gib spezifisches Feedback.
+        
+        Antworte im JSON-Format:
+        {{
+          "overall_score": numeric_score,
+          "status": "approved" | "needs_refinement" | "rejected",
+          "feedback": "Detaillierte Bewertung und Verbesserungsvorschläge"
+        }}"""
         
         response = await self._call_expert_llm(expert_config, expert_prompt)
         validation_data = parse_expert_response(response)
@@ -942,30 +928,30 @@ Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der
         
         correction_prompt = f"""Du bist ein Experte für CSV-Datenkonvertierung von Bildungsfragen.
 
-AUFGABE: Korrigiere die folgenden CSV-Konvertierungsprobleme:
-
-Fragen:
-1. {questions[0]}
-2. {questions[1]}  
-3. {questions[2]}
-
-Aktuelle CSV-Daten:
-{json.dumps(initial_csv, indent=2, ensure_ascii=False)}
-
-Erkannte Probleme:
-{chr(10).join(f"- {issue}" for issue in issues)}
-
-Parameter-Konfiguration:
-- c_id: {request.c_id}
-- Variation: {request.p_variation}
-- Typ: {initial_csv.get('type', 'unknown')}
-
-KORREKTUR-ANFORDERUNGEN:
-1. Wenn "Missing specific answer content": Extrahiere realistische Antworten aus den Fragen
-2. Wenn "Empty item fields": Schätze Satzlängen basierend auf den Fragen (kurz/mittel/lang)
-3. Wenn "Invalid variation": Korrigiere auf stammaufgabe/leicht/schwer
-
-Antworte mit korrigierter CSV als JSON im exakt gleichen Format."""
+        AUFGABE: Korrigiere die folgenden CSV-Konvertierungsprobleme:
+        
+        Fragen:
+        1. {questions[0]}
+        2. {questions[1]}  
+        3. {questions[2]}
+        
+        Aktuelle CSV-Daten:
+        {json.dumps(initial_csv, indent=2, ensure_ascii=False)}
+        
+        Erkannte Probleme:
+        {chr(10).join(f"- {issue}" for issue in issues)}
+        
+        Parameter-Konfiguration:
+        - c_id: {request.c_id}
+        - Variation: {request.p_variation}
+        - Typ: {initial_csv.get('type', 'unknown')}
+        
+        KORREKTUR-ANFORDERUNGEN:
+        1. Wenn "Missing specific answer content": Extrahiere realistische Antworten aus den Fragen
+        2. Wenn "Empty item fields": Schätze Satzlängen basierend auf den Fragen (kurz/mittel/lang)
+        3. Wenn "Invalid variation": Korrigiere auf stammaufgabe/leicht/schwer
+        
+        Antworte mit korrigierter CSV als JSON im exakt gleichen Format."""
 
         response = await self._call_expert_llm(helper_config, correction_prompt)
         correction_data = parse_expert_response(response)
@@ -1003,236 +989,15 @@ Antworte mit korrigierter CSV als JSON im exakt gleichen Format."""
         logger.info("Fallback defaults applied")
         return fallback_csv
     
-    async def generate_question(self, request: QuestionRequest) -> QuestionResult:
-        """Main pipeline: Generate question with parameter-specific expert validation"""
-        start_time = time.time()
-        iterations = 0
-        parameter_validations = []
-        
-        # Step 1NutzenMathematischerDarstellungen: Generate initial question
-        logger.info(f"Generating question for topic: {request.topic}")
-        question_content = await self._generate_initial_question(request)
-        
-        # Step 2: Sequential parameter validation with expert LLMs
-        for iteration in range(self.max_iterations):
-            iterations += 1
-            logger.info(f"Iteration {iteration + 1}/{self.max_iterations}")
-            
-            # Validate parameters sequentially (max 2 models at once via semaphore)
-            current_validations = await self._validate_all_parameters(
-                question_content, request
-            )
-            parameter_validations.extend(current_validations)
-            
-            # Check if all parameters are approved
-            rejected_params = [v for v in current_validations if v.status == ParameterStatus.REJECTED]
-            refinement_params = [v for v in current_validations if v.status == ParameterStatus.NEEDS_REFINEMENT]
-            
-            if not rejected_params and not refinement_params:
-                logger.info("All parameters approved! Question generation complete.")
-                break
-                
-            # Step 3: Refine question based on expert feedback
-            if rejected_params or refinement_params:
-                feedback = [v.feedback for v in rejected_params + refinement_params]
-                question_content = await self._refine_question(
-                    question_content, feedback, request
-                )
-        
-        # Step 4: Generate CSV-ready format
-        csv_ready = self._prepare_csv_output(question_content, parameter_validations)
-        
-        total_time = time.time() - start_time
-        final_status = "approved" if not rejected_params and not refinement_params else "needs_work"
-        
-        return QuestionResult(
-            question_content=question_content,
-            parameter_validations=parameter_validations,
-            iterations=iterations,
-            total_processing_time=total_time,
-            final_status=final_status,
-            csv_ready=csv_ready
-        )
+    # Legacy generate_question method removed - ValidationPlan-only system
     
-    async def _generate_initial_question(self, request: QuestionRequest) -> Dict[str, Any]:
-        """Generate initial question using main generator LLM"""
-        generator_config = PARAMETER_EXPERTS["variation_expert"]  # Use main model
-        
-        await model_manager.ensure_model_loaded(generator_config)
-        
-        prompt = f"""Du bist ein Experte für die Erstellung von Bildungsaufgaben. Erstelle eine deutsche Wirtschaftsaufgabe mit folgenden Spezifikationen:
-
-        Thema: {request.topic}
-        Schwierigkeitsgrad: {request.difficulty.value}
-        Zielgruppe: {request.age_group}
-        Kontext: {request.context or 'Wirtschaftliche Grundbegriffe'}
-        
-        Die Aufgabe soll alle notwendigen Parameter für eine vollständige Multiple-Choice-Frage enthalten:
-        - Aufgabenstellung (klar und präzise)
-        - 6-8 Antwortoptionen (eine korrekte, 5-7 Distraktoren)
-        - Bezug zum Referenztext wenn relevant
-        - Angemessene sprachliche Komplexität für das Niveau
-        
-        Antworte im JSON-Format mit allen Komponenten der Aufgabe."""
-
-        response = await self._call_expert_llm(generator_config, prompt)
-        
-        try:
-            question_data = json.loads(response)
-            logger.info("Initial question generated successfully")
-            return question_data
-        except json.JSONDecodeError:
-            # Fallback parsing
-            logger.warning("JSON parsing failed, using fallback structure")
-            return {
-                "aufgabenstellung": response[:500],
-                "antwortoptionen": ["Option A", "Option B", "Option C", "Option D"],
-                "korrekte_antwort": "Option A",
-                "parameter_settings": {
-                    "variation": request.difficulty.value,
-                    "taxonomy_level": "Stufe 1NutzenMathematischerDarstellungen",
-                    "mathematical_requirement_level": "0KeinBezug"
-                }
-            }
+    # Legacy _generate_initial_question method removed - ValidationPlan-only system
     
-    async def _validate_all_parameters(self, question: Dict[str, Any], request: QuestionRequest) -> List[ParameterValidation]:
-        """Validate all parameters using appropriate expert LLMs"""
-        validation_tasks = []
-        
-        # Create validation tasks for each parameter expert
-        for expert_name, expert_config in PARAMETER_EXPERTS.items():
-            if expert_name != "variation_expert":  # Skip main generator
-                validation_tasks.append(
-                    self._validate_with_expert(expert_config, question, request)
-                )
-        
-        # Execute validations (semaphore limits concurrent models)
-        validations = await asyncio.gather(*validation_tasks, return_exceptions=True)
-        
-        # Filter out exceptions and return valid results
-        valid_validations = [v for v in validations if isinstance(v, ParameterValidation)]
-        
-        logger.info(f"Completed {len(valid_validations)} parameter validations")
-        return valid_validations
+    # Legacy _validate_all_parameters method removed - ValidationPlan-only system
     
-    async def _validate_with_expert(self, expert_config: ParameterExpertConfig, 
-                                   question: Dict[str, Any], 
-                                   request: QuestionRequest) -> ParameterValidation:
-        """Validate specific parameters with expert LLM"""
-        start_time = time.time()
-        
-        # Health check before proceeding
-        if not await verify_model_health(expert_config):
-            logger.error(f"Model health check failed for {expert_config.name}")
-            return ParameterValidation(
-                parameter=", ".join(expert_config.parameters),
-                status=ParameterStatus.NEEDS_REFINEMENT,
-                score=5.0,
-                feedback="Model server unavailable",
-                expert_used=expert_config.name,
-                processing_time=time.time() - start_time
-            )
-        
-        await model_manager.ensure_model_loaded(expert_config)
-        
-        # Create specialized prompt for this expert
-        prompt = f"""Du bist ein Experte für {expert_config.expertise}.
-
-        Analysiere diese Bildungsaufgabe und bewerte die folgenden Parameter:
-        {', '.join(expert_config.parameters)}
-        
-        Aufgabe: {json.dumps(question, indent=2, ensure_ascii=False)}
-        Zielgruppe: {request.age_group}
-        Schwierigkeit: {request.difficulty.value}
-        
-        Bewerte jeden Parameter auf einer Skala von 1NutzenMathematischerDarstellungen-10 und gib spezifisches Feedback.
-        
-        WICHTIG: Antworte in diesem EXAKTEN JSON-Format:
-        {{
-          "parameter_scores": {{
-            "parameter_name": numeric_score
-          }},
-          "overall_score": numeric_score,
-          "status": "approved" | "needs_refinement" | "rejected",
-          "feedback": "Single string describing the assessment"
-        }}"""
-
-        response = await self._call_expert_llm(expert_config, prompt)
-        
-        # Use robust JSON parsing
-        validation_data = parse_expert_response(response)
-        
-        if validation_data is not None:
-            overall_score = validation_data.get("overall_score", 5.0)
-            status_text = validation_data.get("status", "needs_refinement")
-            
-            # Map status to enum
-            status_mapping = {
-                "approved": ParameterStatus.APPROVED,
-                "rejected": ParameterStatus.REJECTED,
-                "needs_refinement": ParameterStatus.NEEDS_REFINEMENT
-            }
-            status = status_mapping.get(status_text, ParameterStatus.NEEDS_REFINEMENT)
-            
-            processing_time = time.time() - start_time
-            
-            return ParameterValidation(
-                parameter=", ".join(expert_config.parameters),
-                status=status,
-                score=overall_score,
-                feedback=validation_data.get("feedback", "No specific feedback"),
-                expert_used=expert_config.name,
-                processing_time=processing_time
-            )
-        else:
-            # Fallback when parsing completely fails
-            logger.warning(f"Complete parsing failure from {expert_config.name}")
-            return ParameterValidation(
-                parameter=", ".join(expert_config.parameters),
-                status=ParameterStatus.NEEDS_REFINEMENT,
-                score=5.0,
-                feedback=f"Response parsing failed: {response[:200]}...",
-                expert_used=expert_config.name,
-                processing_time=time.time() - start_time
-            )
+    # Legacy _validate_with_expert method removed - ValidationPlan-only system
     
-    async def _refine_question(self, question: Dict[str, Any], 
-                              feedback: List[str], 
-                              request: QuestionRequest) -> Dict[str, Any]:
-        """Refine question based on expert feedback"""
-        generator_config = PARAMETER_EXPERTS["variation_expert"]
-        
-        await model_manager.ensure_model_loaded(generator_config)
-        
-        prompt = f"""Du bist ein Experte für Bildungsaufgaben. Verbessere diese Aufgabe basierend auf dem Expertenfeedback:
-
-        Aktuelle Aufgabe: {json.dumps(question, indent=2, ensure_ascii=False)}
-        
-        Expertenfeedback:
-        {chr(10).join(f"- {fb}" for fb in feedback)}
-        
-        Überarbeite die Aufgabe unter Berücksichtigung aller Verbesserungsvorschläge.
-        
-        WICHTIG: Antworte im JSON-Format mit der vollständigen verbesserten Aufgabe.
-        Behalte die gleiche Struktur wie die ursprüngliche Aufgabe bei."""
-
-        response = await self._call_expert_llm(generator_config, prompt)
-        
-        # Use robust JSON parsing for refinement too
-        refined_data = parse_expert_response(response)
-        
-        if refined_data is not None:
-            logger.info("Question refined based on expert feedback")
-            return refined_data
-        else:
-            # Try standard JSON parsing as fallback
-            try:
-                refined_question = json.loads(response)
-                logger.info("Question refined using fallback JSON parsing")
-                return refined_question
-            except json.JSONDecodeError:
-                logger.warning("Refinement parsing failed completely, keeping original")
-                return question
+    # Legacy _refine_question method removed - ValidationPlan-only system
     
     async def _call_expert_llm(self, expert_config: ParameterExpertConfig, prompt: str) -> str:
         """Call specific expert LLM via Ollama API"""
@@ -1269,38 +1034,7 @@ Antworte mit korrigierter CSV als JSON im exakt gleichen Format."""
             logger.error(f"[ERROR] Failed to call {expert_config.name}: {e}")
             raise HTTPException(status_code=500, detail=f"Expert LLM error: {e}")
     
-    def _prepare_csv_output(self, question: Dict[str, Any], 
-                           validations: List[ParameterValidation]) -> Dict[str, str]:
-        """Prepare question in CSV format matching stakeholder requirements"""
-        
-        # Extract basic information
-        csv_data = {
-            "c_id": f"ai-gen-{int(time.time())}",
-            "subject": "Wirtschaft",
-            "type": "multiple_choice",
-            "text": question.get("aufgabenstellung", ""),
-            "answers": json.dumps(question.get("antwortoptionen", [])),
-        }
-        
-        # Map parameter validations to CSV columns
-        param_settings = question.get("parameter_settings", {})
-        
-        # Fill in parameter columns based on validations and settings
-        csv_data.update({
-            "p.variation": param_settings.get("variation", "Stammaufgabe"),
-            "p.taxanomy_level": param_settings.get("taxonomy_level", "Stufe 1NutzenMathematischerDarstellungen"),
-            "p.mathematical_requirement_level": param_settings.get("mathematical_requirement_level", "0KeinBezug"),
-            "p.root_text_reference_explanatory_text": param_settings.get("root_text_reference", "Nicht vorhanden"),
-            "p.root_text_obstacle_passive": "Nicht Enthalten",
-            "p.root_text_obstacle_negation": "Nicht Enthalten", 
-            "p.root_text_obstacle_complex_np": "Nicht Enthalten",
-            "p.root_text_contains_irrelevant_information": "Nicht Enthalten",
-            "p.instruction_explicitness_of_instruction": "Explizit",
-            "p.instruction_obstacle_passive": "Nicht Enthalten",
-            "p.instruction_obstacle_complex_np": "Nicht Enthalten"
-        })
-        
-        return csv_data
+    # Legacy _prepare_csv_output method removed - ValidationPlan-only system
 
 # Initialize the AI system
 ai_system = EducationalAISystem()
@@ -1320,18 +1054,7 @@ async def generate_validation_plan_questions(request: ValidationPlanRequest):
         logger.error(f"ValidationPlan generation failed: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-@app.post("/generate-question", response_model=QuestionResult)
-async def generate_question(request: QuestionRequest):
-    """Generate educational question with parameter-specific expert validation (legacy endpoint)"""
-    try:
-        logger.info(f"Legacy question request: {request.topic} ({request.difficulty.value})")
-        result = await ai_system.generate_question(request)
-        logger.info(f"Question generated in {result.total_processing_time:.2f}s with {result.iterations} iterations")
-        return result
-        
-    except Exception as e:
-        logger.error(f"Question generation failed: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+# Legacy endpoint removed - ValidationPlan-only system
 
 @app.get("/health")
 async def health_check():
@@ -1358,27 +1081,7 @@ async def model_status():
         "available_vram_gb": model_manager.max_vram_gb - vram_usage
     }
 
-@app.post("/batch-generate")
-async def batch_generate_questions(requests: List[QuestionRequest]):
-    """Generate multiple questions in batch with proper memory management"""
-    try:
-        logger.info(f"Batch generation request: {len(requests)} questions")
-        
-        results = []
-        for i, request in enumerate(requests):
-            logger.info(f"Processing question {i+1}/{len(requests)}")
-            result = await ai_system.generate_question(request)
-            results.append(result)
-            
-            # Brief pause between questions for memory management
-            await asyncio.sleep(0.5)
-        
-        logger.info(f"Batch generation complete: {len(results)} questions")
-        return {"results": results, "total_questions": len(results)}
-        
-    except Exception as e:
-        logger.error(f"Batch generation failed: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+# Legacy batch endpoint removed - ValidationPlan-only system
 
 if __name__ == "__main__":
     import uvicorn
