@@ -21,10 +21,122 @@ from dataclasses import dataclass, asdict
 from enum import Enum
 import time
 from datetime import datetime
+from pathlib import Path
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+def parse_expert_response(response_text: str) -> dict:
+    """Robust JSON parsing for expert responses with error handling"""
+    try:
+        # Remove any leading/trailing whitespace
+        response_text = response_text.strip()
+        
+        # Extract JSON from markdown code blocks if present
+        if "```json" in response_text:
+            start = response_text.find("```json") + 7
+            end = response_text.find("```", start)
+            if end == -1:  # No closing ```
+                json_text = response_text[start:].strip()
+            else:
+                json_text = response_text[start:end].strip()
+        elif "```" in response_text and "{" in response_text:
+            # Handle cases with ``` but no json marker
+            start = response_text.find("{")
+            end = response_text.rfind("}")
+            if end > start:
+                json_text = response_text[start:end+1]
+            else:
+                json_text = response_text
+        else:
+            # Try to find JSON object boundaries
+            start = response_text.find("{")
+            end = response_text.rfind("}")
+            if start != -1 and end != -1 and end > start:
+                json_text = response_text[start:end+1]
+            else:
+                json_text = response_text
+        
+        # Parse JSON
+        parsed = json.loads(json_text)
+        
+        # Ensure feedback is string, not dict or list
+        if "feedback" in parsed:
+            if isinstance(parsed["feedback"], dict):
+                # Convert dict feedback to string
+                feedback_parts = []
+                for key, value in parsed["feedback"].items():
+                    feedback_parts.append(f"{key}: {value}")
+                parsed["feedback"] = "; ".join(feedback_parts)
+            elif isinstance(parsed["feedback"], list):
+                # Convert list feedback to string
+                if parsed["feedback"] and isinstance(parsed["feedback"][0], dict):
+                    feedback_parts = []
+                    for item in parsed["feedback"]:
+                        if isinstance(item, dict):
+                            feedback_parts.append(str(item))
+                        else:
+                            feedback_parts.append(item)
+                    parsed["feedback"] = "; ".join(feedback_parts)
+                else:
+                    parsed["feedback"] = "; ".join(map(str, parsed["feedback"]))
+        
+        # Ensure required fields exist with defaults
+        if "overall_score" not in parsed:
+            parsed["overall_score"] = 5.0
+        if "status" not in parsed:
+            parsed["status"] = "needs_refinement"
+        if "feedback" not in parsed:
+            parsed["feedback"] = "No feedback provided"
+            
+        return parsed
+        
+    except json.JSONDecodeError as e:
+        logger.warning(f"JSON parsing failed: {e}")
+        logger.debug(f"Response text: {response_text[:500]}")
+        return None
+    except Exception as e:
+        logger.warning(f"Response parsing failed: {e}")
+        return None
+
+# Data classes defined before functions that use them
+@dataclass
+class ParameterExpertConfig:
+    name: str
+    model: str
+    port: int
+    parameters: List[str]
+    expertise: str
+    temperature: float = 0.3
+    max_tokens: int = 500
+
+async def verify_model_health(expert_config: ParameterExpertConfig) -> bool:
+    """Check if model server is responsive before calling"""
+    try:
+        url = f"http://localhost:{expert_config.port}/api/tags"
+        async with aiohttp.ClientSession() as session:
+            async with session.get(url, timeout=aiohttp.ClientTimeout(total=5)) as response:
+                if response.status != 200:
+                    logger.warning(f"Model health check failed for {expert_config.name}: HTTP {response.status}")
+                    return False
+                
+                # Also check if the specific model is loaded
+                data = await response.json()
+                models = data.get("models", [])
+                model_names = [model.get("name", "") for model in models]
+                
+                if not any(expert_config.model in name for name in model_names):
+                    logger.warning(f"Model {expert_config.model} not found in {expert_config.name} server")
+                    return False
+                    
+                return True
+    except asyncio.TimeoutError:
+        logger.warning(f"Model health check timeout for {expert_config.name}")
+        return False
+    except Exception as e:
+        logger.warning(f"Model health check error for {expert_config.name}: {e}")
+        return False
 
 class ParameterStatus(Enum):
     PENDING = "pending"
@@ -38,15 +150,24 @@ class QuestionDifficulty(Enum):
     STAMMAUFGABE = "stammaufgabe"
     SCHWER = "schwer"
 
-@dataclass
-class ParameterExpertConfig:
-    name: str
-    model: str
-    port: int
-    parameters: List[str]
-    expertise: str
-    temperature: float = 0.3
-    max_tokens: int = 500
+# ValidationPlan Request Model
+class ValidationPlanRequest(BaseModel):
+    c_id: str = Field(..., description="Question ID in format: question_number-difficulty-version (e.g., 41-1-4)")
+    text: str = Field(..., description="The informational text about the system's pre-configured topic")
+    p_variation: str = Field(..., description="Stammaufgabe, schwer, leicht")
+    p_taxonomy_level: str = Field(..., description="Stufe 1 (Wissen/Reproduktion), Stufe 2 (Anwendung/Transfer)")
+    p_root_text_reference_explanatory_text: str = Field("Nicht vorhanden", description="Nicht vorhanden, Explizit, Implizit")
+    p_root_text_obstacle_passive: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_root_text_obstacle_negation: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_root_text_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_root_text_contains_irrelevant_information: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_mathematical_requirement_level: str = Field("0", description="0 (Kein Bezug), 1 (Nutzen mathematischer Darstellungen), 2 (Mathematische Operation)")
+    p_item_X_obstacle_passive: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_X_obstacle_negation: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_X_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_instruction_obstacle_passive: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_instruction_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_instruction_explicitness_of_instruction: str = Field("Implizit", description="Explizit, Implizit")
 
 @dataclass
 class QuestionRequest:
@@ -74,11 +195,20 @@ class QuestionResult:
     final_status: str
     csv_ready: Dict[str, str]
 
+# ValidationPlan Result Model
+class ValidationPlanResult(BaseModel):
+    question_1: str = Field(..., description="First generated question")
+    question_2: str = Field(..., description="Second generated question") 
+    question_3: str = Field(..., description="Third generated question")
+    c_id: str = Field(..., description="Original question ID")
+    processing_time: float = Field(..., description="Total processing time")
+    csv_data: Dict[str, Any] = Field(..., description="CSV-ready data with all parameters")
+
 # Parameter Expert Configurations
 PARAMETER_EXPERTS = {
     "variation_expert": ParameterExpertConfig(
         name="variation_expert",
-        model="llama3.1:8b",
+        model="llama3.1NutzenMathematischerDarstellungen:8b",
         port=8001,
         parameters=["p.variation"],
         expertise="Difficulty level assessment (leicht/Stammaufgabe/schwer)",
@@ -89,7 +219,7 @@ PARAMETER_EXPERTS = {
         model="mistral:7b",
         port=8002,
         parameters=["p.taxanomy_level"],
-        expertise="Bloom's taxonomy classification (Stufe 1: Wissen/Reproduktion, Stufe 2: Anwendung/Transfer)",
+        expertise="Bloom's taxonomy classification (Stufe 1NutzenMathematischerDarstellungen: Wissen/Reproduktion, Stufe 2: Anwendung/Transfer)",
         temperature=0.2
     ),
     "math_expert": ParameterExpertConfig(
@@ -97,7 +227,7 @@ PARAMETER_EXPERTS = {
         model="qwen2.5:7b", 
         port=8003,
         parameters=["p.mathematical_requirement_level"],
-        expertise="Mathematical requirement assessment (0-2 scale)",
+        expertise="Mathematical requirement assessment (0KeinBezug-2 scale)",
         temperature=0.2
     ),
     "text_reference_expert": ParameterExpertConfig(
@@ -135,7 +265,7 @@ PARAMETER_EXPERTS = {
     ),
     "content_expert": ParameterExpertConfig(
         name="content_expert",
-        model="llama3.1:8b", 
+        model="llama3.1NutzenMathematischerDarstellungen:8b",
         port=8007,
         parameters=["p.root_text_contains_irrelevant_information"],
         expertise="Content relevance and distractor analysis",
@@ -178,7 +308,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="Educational Question Generation AI",
     description="Parameter-specific expert LLM system for educational content",
-    version="1.0.0",
+    version="1NutzenMathematischerDarstellungen.0KeinBezug.0KeinBezug",
     lifespan=lifespan
 )
 
@@ -187,7 +317,7 @@ class ModelManager:
     
     def __init__(self):
         self.model_memory_usage = {
-            "llama3.1:8b": 5.5,    # GB
+            "llama3.1NutzenMathematischerDarstellungen:8b": 5.5,    # GB
             "mistral:7b": 5.0,
             "qwen2.5:7b": 5.0,
             "llama3.2:3b": 2.5
@@ -262,20 +392,512 @@ class ModelManager:
 
 model_manager = ModelManager()
 
-class EducationalAISystem:
-    """Main orchestrator for educational question generation"""
+class ValidationPlanPromptBuilder:
+    """Builds modular prompts based on parameter values using txt files"""
     
     def __init__(self):
-        self.max_iterations = 5
-        self.min_approval_score = 7.0
+        self.base_path = Path("/home/mklemmingen/PycharmProjects/PythonProject/ALEE_Agent")
         
+    def load_prompt_txt(self, file_path: str) -> str:
+        """Load prompt text from file with error handling"""
+        try:
+            full_path = self.base_path / file_path
+            with open(full_path, 'r', encoding='utf-8') as f:
+                return f.read().strip()
+        except FileNotFoundError:
+            logger.warning(f"Prompt file not found: {file_path}")
+            return ""
+        except Exception as e:
+            logger.error(f"Error loading prompt {file_path}: {e}")
+            return ""
+    
+    def build_variation_prompt(self, variation: str) -> str:
+        """Build variation-specific prompt"""
+        variation_map = {
+            "stammaufgabe": "variationPrompts/multiple-choice.txt",
+            "schwer": "variationPrompts/true-false.txt", 
+            "leicht": "variationPrompts/single-choice.txt"
+        }
+        file_path = variation_map.get(variation.lower(), "variationPrompts/multiple-choice.txt")
+        return self.load_prompt_txt(file_path)
+    
+    def build_taxonomy_prompt(self, level: str) -> str:
+        """Build taxonomy-specific prompt"""
+        if "Stufe 1" in level or "1" in level:
+            return self.load_prompt_txt("taxonomyLevelPrompt/stufe1WissenReproduktion.txt")
+        elif "Stufe 2" in level or "2" in level:
+            return self.load_prompt_txt("taxonomyLevelPrompt/stufe2AnwendungTransfer.txt")
+        else:
+            return self.load_prompt_txt("taxonomyLevelPrompt/stufe1WissenReproduktion.txt")
+    
+    def build_mathematical_prompt(self, level: str) -> str:
+        """Build mathematical requirement prompt"""
+        level_map = {
+            "0": "mathematicalRequirementLevel/0KeinBezug",
+            "1": "mathematicalRequirementLevel/1NutzenMathematischerDarstellungen", 
+            "2": "mathematicalRequirementLevel/2MathematischeOperationen"
+        }
+        file_path = level_map.get(level.strip(), "mathematicalRequirementLevel/0KeinBezug")
+        return self.load_prompt_txt(file_path)
+    
+    def build_obstacle_prompt(self, obstacle_type: str, value: str) -> str:
+        """Build obstacle-specific prompts"""
+        value_file = "enthalten.txt" if "Enthalten" in value and "Nicht" not in value else "nichtEnthalten.txt"
+        
+        obstacle_map = {
+            "passive": f"rootTextParameterTextPrompts/obstaclePassivePrompts/{value_file}",
+            "negation": f"rootTextParameterTextPrompts/obstacleNegationPrompts/{value_file}", 
+            "complex_np": f"rootTextParameterTextPrompts/obstacleComplexPrompts/{value_file}",
+            "item_passive": f"itemXObstacle/passive/{value_file}",
+            "item_negation": f"itemXObstacle/negation/{value_file}",
+            "item_complex": f"itemXObstacle/complex/{value_file}",
+            "instruction_passive": f"instructionObstacle/passive/{value_file}",
+            "instruction_complex_np": f"instructionObstacle/complex_np/{value_file}"
+        }
+        
+        file_path = obstacle_map.get(obstacle_type, "")
+        return self.load_prompt_txt(file_path) if file_path else ""
+    
+    def build_irrelevant_info_prompt(self, value: str) -> str:
+        """Build irrelevant information prompt"""
+        value_file = "enthalten.txt" if "Enthalten" in value and "Nicht" not in value else "nichtEnthalten.txt"
+        return self.load_prompt_txt(f"rootTextParameterTextPrompts/containsIrrelevantInformationPrompt/{value_file}")
+    
+    def build_explicitness_prompt(self, value: str) -> str:
+        """Build instruction explicitness prompt"""
+        if "Explizit" in value:
+            return self.load_prompt_txt("instructionExplicitnessOfInstruction/explizit")
+        else:
+            return self.load_prompt_txt("instructionExplicitnessOfInstruction/implizit")
+    
+    def build_master_prompt(self, request: ValidationPlanRequest) -> str:
+        """Build the complete master prompt from modular components"""
+        components = []
+        
+        # Base instruction
+        components.append("Du bist ein Experte für die Erstellung von Bildungsaufgaben. Erstelle basierend auf dem gegebenen Text GENAU DREI deutsche Bildungsfragen mit den spezifizierten Parametern.")
+        components.append(f"\nReferenztext:\n{request.text}\n")
+        
+        # Variation-specific component
+        variation_prompt = self.build_variation_prompt(request.p_variation)
+        if variation_prompt:
+            components.append(f"Variationsanforderungen:\n{variation_prompt}")
+        
+        # Taxonomy component
+        taxonomy_prompt = self.build_taxonomy_prompt(request.p_taxonomy_level)
+        if taxonomy_prompt:
+            components.append(f"Taxonomie-Level:\n{taxonomy_prompt}")
+        
+        # Mathematical requirements
+        math_prompt = self.build_mathematical_prompt(request.p_mathematical_requirement_level)
+        if math_prompt:
+            components.append(f"Mathematische Anforderungen:\n{math_prompt}")
+        
+        # Obstacle requirements
+        if request.p_root_text_obstacle_passive != "Nicht Enthalten":
+            passive_prompt = self.build_obstacle_prompt("passive", request.p_root_text_obstacle_passive)
+            if passive_prompt:
+                components.append(f"Passive Konstruktionen (Referenztext):\n{passive_prompt}")
+        
+        if request.p_root_text_obstacle_negation != "Nicht Enthalten":
+            negation_prompt = self.build_obstacle_prompt("negation", request.p_root_text_obstacle_negation)
+            if negation_prompt:
+                components.append(f"Negationen (Referenztext):\n{negation_prompt}")
+        
+        if request.p_root_text_obstacle_complex_np != "Nicht Enthalten":
+            complex_prompt = self.build_obstacle_prompt("complex_np", request.p_root_text_obstacle_complex_np)
+            if complex_prompt:
+                components.append(f"Komplexe Nominalphrasen (Referenztext):\n{complex_prompt}")
+        
+        # Irrelevant information
+        if request.p_root_text_contains_irrelevant_information != "Nicht Enthalten":
+            irrelevant_prompt = self.build_irrelevant_info_prompt(request.p_root_text_contains_irrelevant_information)
+            if irrelevant_prompt:
+                components.append(f"Irrelevante Informationen:\n{irrelevant_prompt}")
+        
+        # Item-specific obstacles
+        if request.p_item_X_obstacle_passive != "Nicht Enthalten":
+            item_passive = self.build_obstacle_prompt("item_passive", request.p_item_X_obstacle_passive)
+            if item_passive:
+                components.append(f"Item-Passive:\n{item_passive}")
+        
+        if request.p_item_X_obstacle_negation != "Nicht Enthalten":
+            item_negation = self.build_obstacle_prompt("item_negation", request.p_item_X_obstacle_negation)
+            if item_negation:
+                components.append(f"Item-Negation:\n{item_negation}")
+        
+        if request.p_item_X_obstacle_complex_np != "Nicht Enthalten":
+            item_complex = self.build_obstacle_prompt("item_complex", request.p_item_X_obstacle_complex_np)
+            if item_complex:
+                components.append(f"Item-Komplexe NP:\n{item_complex}")
+        
+        # Instruction-specific obstacles  
+        if request.p_instruction_obstacle_passive != "Nicht Enthalten":
+            instr_passive = self.build_obstacle_prompt("instruction_passive", request.p_instruction_obstacle_passive)
+            if instr_passive:
+                components.append(f"Instruktion-Passive:\n{instr_passive}")
+        
+        if request.p_instruction_obstacle_complex_np != "Nicht Enthalten":
+            instr_complex = self.build_obstacle_prompt("instruction_complex_np", request.p_instruction_obstacle_complex_np)
+            if instr_complex:
+                components.append(f"Instruktion-Komplexe NP:\n{instr_complex}")
+        
+        # Explicitness
+        explicit_prompt = self.build_explicitness_prompt(request.p_instruction_explicitness_of_instruction)
+        if explicit_prompt:
+            components.append(f"Instruktions-Explizitheit:\n{explicit_prompt}")
+        
+        components.append("\nWICHTIG: Antworte mit GENAU DREI Fragen im JSON-Format: {\"question_1\": \"...\", \"question_2\": \"...\", \"question_3\": \"...\", \"answers_1\": [...], \"answers_2\": [...], \"answers_3\": [...]}")
+        
+        return "\n\n".join(components)
+
+class EducationalAISystem:
+    """Main orchestrator for educational question generation - ValidationPlan aligned"""
+    
+    def __init__(self):
+        self.max_iterations = 3  # ValidationPlan specifies max 3 iterations
+        self.min_approval_score = 7.0
+        self.prompt_builder = ValidationPlanPromptBuilder()
+        
+    async def clean_expert_sessions(self):
+        """Clean all expert sessions for fresh start as specified in ValidationPlan"""
+        logger.info("Cleaning expert sessions for fresh start...")
+        
+        # Check health of all experts and clear any existing conversations
+        for expert_name, expert_config in PARAMETER_EXPERTS.items():
+            try:
+                # Make a simple call to reset the conversation context
+                reset_payload = {
+                    "model": expert_config.model,
+                    "prompt": "Reset conversation context. Reply with 'Ready'.",
+                    "stream": False,
+                    "options": {"temperature": 0.1, "num_predict": 10}
+                }
+                
+                async with session_pool.post(
+                    f"http://localhost:{expert_config.port}/api/generate",
+                    json=reset_payload,
+                    timeout=aiohttp.ClientTimeout(total=10)
+                ) as response:
+                    if response.status == 200:
+                        logger.info(f"Reset {expert_name} session")
+                    else:
+                        logger.warning(f"Failed to reset {expert_name}: HTTP {response.status}")
+                        
+            except Exception as e:
+                logger.warning(f"Error resetting {expert_name}: {e}")
+        
+        logger.info("Expert session cleanup complete")
+    
+    async def generate_validation_plan_questions(self, request: ValidationPlanRequest) -> ValidationPlanResult:
+        """Generate exactly 3 questions according to ValidationPlan specifications"""
+        start_time = time.time()
+        
+        # Step 1: Clean expert sessions for fresh start
+        await self.clean_expert_sessions()
+        
+        # Step 2: Build master prompt using modular components
+        master_prompt = self.prompt_builder.build_master_prompt(request)
+        logger.info("Built master prompt with modular components")
+        
+        # Step 3: Generate initial 3 questions using main generator
+        generator_config = PARAMETER_EXPERTS["variation_expert"]
+        await model_manager.ensure_model_loaded(generator_config)
+        
+        questions_response = await self._call_expert_llm(generator_config, master_prompt)
+        questions_data = parse_expert_response(questions_response)
+        
+        if not questions_data:
+            # Fallback parsing
+            try:
+                questions_data = json.loads(questions_response)
+            except:
+                logger.error("Failed to parse questions from generator")
+                questions_data = {
+                    "question_1": "Fallback question 1",
+                    "question_2": "Fallback question 2", 
+                    "question_3": "Fallback question 3",
+                    "answers_1": ["A", "B", "C"],
+                    "answers_2": ["A", "B", "C"],
+                    "answers_3": ["A", "B", "C"]
+                }
+        
+        # Step 4: Expert validation for each question (max 3 iterations)
+        validated_questions = []
+        
+        for i in range(3):
+            question_key = f"question_{i+1}"
+            answer_key = f"answers_{i+1}"
+            
+            question_text = questions_data.get(question_key, f"Question {i+1}")
+            question_answers = questions_data.get(answer_key, ["A", "B", "C"])
+            
+            # Validate this question through expert iterations
+            validated_question = await self._validate_question_with_experts(
+                question_text, question_answers, request, i+1
+            )
+            validated_questions.append(validated_question)
+        
+        # Step 5: Build CSV data according to ValidationPlan format
+        csv_data = self._build_validation_plan_csv(request, validated_questions)
+        
+        total_time = time.time() - start_time
+        
+        return ValidationPlanResult(
+            question_1=validated_questions[0],
+            question_2=validated_questions[1],
+            question_3=validated_questions[2],
+            c_id=request.c_id,
+            processing_time=total_time,
+            csv_data=csv_data
+        )
+    
+    async def _validate_question_with_experts(self, question: str, answers: List[str], 
+                                            request: ValidationPlanRequest, question_num: int) -> str:
+        """Validate single question through expert system (max 3 iterations)"""
+        current_question = question
+        
+        for iteration in range(self.max_iterations):
+            logger.info(f"Question {question_num}, Iteration {iteration + 1}/{self.max_iterations}")
+            
+            # Get expert validations
+            validations = await self._get_expert_validations(current_question, request)
+            
+            # Check if approved by all experts
+            failed_validations = [v for v in validations 
+                                if v.status in [ParameterStatus.REJECTED, ParameterStatus.NEEDS_REFINEMENT]]
+            
+            if not failed_validations:
+                logger.info(f"Question {question_num} approved by all experts")
+                break
+                
+            if iteration < self.max_iterations - 1:  # Not the last iteration
+                # Refine question based on feedback
+                feedback = [v.feedback for v in failed_validations]
+                current_question = await self._refine_single_question(current_question, feedback, request)
+        
+        return current_question
+        
+    async def _get_expert_validations(self, question: str, request: ValidationPlanRequest) -> List[ParameterValidation]:
+        """Get validations from all relevant experts for a single question"""
+        validation_tasks = []
+        
+        # Create validation tasks for each relevant expert
+        for expert_name, expert_config in PARAMETER_EXPERTS.items():
+            if expert_name != "variation_expert":  # Skip main generator
+                validation_tasks.append(
+                    self._validate_question_with_expert(expert_config, question, request)
+                )
+        
+        # Execute validations (semaphore limits concurrent models)
+        validations = await asyncio.gather(*validation_tasks, return_exceptions=True)
+        
+        # Filter out exceptions and return valid results
+        valid_validations = [v for v in validations if isinstance(v, ParameterValidation)]
+        
+        return valid_validations
+    
+    async def _validate_question_with_expert(self, expert_config: ParameterExpertConfig,
+                                           question: str, request: ValidationPlanRequest) -> ParameterValidation:
+        """Validate question with specific expert using parameter configuration"""
+        start_time = time.time()
+        
+        # Health check
+        if not await verify_model_health(expert_config):
+            return ParameterValidation(
+                parameter=",".join(expert_config.parameters),
+                status=ParameterStatus.NEEDS_REFINEMENT,
+                score=5.0,
+                feedback="Model server unavailable",
+                expert_used=expert_config.name,
+                processing_time=time.time() - start_time
+            )
+        
+        await model_manager.ensure_model_loaded(expert_config)
+        
+        # Build expert prompt with parameter configuration
+        expert_prompt = f"""Du bist ein Experte für {expert_config.expertise}.
+
+Analysiere diese Bildungsfrage bezüglich der spezifizierten Parameter:
+
+Frage: {question}
+
+Parameter-Konfiguration:
+- c_id: {request.c_id}
+- Variation: {request.p_variation}
+- Taxonomie-Level: {request.p_taxonomy_level}
+- Mathematisches Niveau: {request.p_mathematical_requirement_level}
+- Root-Text Passive: {request.p_root_text_obstacle_passive}
+- Root-Text Negation: {request.p_root_text_obstacle_negation}
+- Root-Text Komplexe NP: {request.p_root_text_obstacle_complex_np}
+- Item-X Passive: {request.p_item_X_obstacle_passive}
+- Item-X Negation: {request.p_item_X_obstacle_negation}
+- Item-X Komplexe NP: {request.p_item_X_obstacle_complex_np}
+- Instruktion Passive: {request.p_instruction_obstacle_passive}
+- Instruktion Komplexe NP: {request.p_instruction_obstacle_complex_np}
+- Instruktion Explizitheit: {request.p_instruction_explicitness_of_instruction}
+- Irrelevante Informationen: {request.p_root_text_contains_irrelevant_information}
+
+Bewerte die Frage auf einer Skala von 1-10 und gib spezifisches Feedback.
+
+Antworte im JSON-Format:
+{{
+  "overall_score": numeric_score,
+  "status": "approved" | "needs_refinement" | "rejected",
+  "feedback": "Detaillierte Bewertung und Verbesserungsvorschläge"
+}}"""
+        
+        response = await self._call_expert_llm(expert_config, expert_prompt)
+        validation_data = parse_expert_response(response)
+        
+        if validation_data:
+            status_mapping = {
+                "approved": ParameterStatus.APPROVED,
+                "rejected": ParameterStatus.REJECTED,
+                "needs_refinement": ParameterStatus.NEEDS_REFINEMENT
+            }
+            status = status_mapping.get(validation_data.get("status", "needs_refinement"), ParameterStatus.NEEDS_REFINEMENT)
+            
+            return ParameterValidation(
+                parameter=",".join(expert_config.parameters),
+                status=status,
+                score=validation_data.get("overall_score", 5.0),
+                feedback=validation_data.get("feedback", "No feedback"),
+                expert_used=expert_config.name,
+                processing_time=time.time() - start_time
+            )
+        else:
+            return ParameterValidation(
+                parameter=",".join(expert_config.parameters),
+                status=ParameterStatus.NEEDS_REFINEMENT,
+                score=5.0,
+                feedback="Response parsing failed",
+                expert_used=expert_config.name,
+                processing_time=time.time() - start_time
+            )
+    
+    async def _refine_single_question(self, question: str, feedback: List[str], 
+                                     request: ValidationPlanRequest) -> str:
+        """Refine a single question based on expert feedback"""
+        generator_config = PARAMETER_EXPERTS["variation_expert"]
+        await model_manager.ensure_model_loaded(generator_config)
+        
+        refinement_prompt = f"""Du bist ein Experte für Bildungsaufgaben. Verbessere diese Frage basierend auf dem Expertenfeedback:
+
+Aktuelle Frage: {question}
+
+Expertenfeedback:
+{chr(10).join(f"- {fb}" for fb in feedback)}
+
+Parameter-Vorgaben:
+- Variation: {request.p_variation}
+- Taxonomie: {request.p_taxonomy_level}
+- Alle anderen Parameter wie ursprünglich konfiguriert
+
+Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der verbesserten Frage."""
+        
+        response = await self._call_expert_llm(generator_config, refinement_prompt)
+        
+        # Extract refined question from response
+        refined_data = parse_expert_response(response)
+        if refined_data and "question" in refined_data:
+            return refined_data["question"]
+        else:
+            # Fallback: return response text directly
+            return response.strip()
+    
+    def _build_validation_plan_csv(self, request: ValidationPlanRequest, questions: List[str]) -> Dict[str, Any]:
+        """Build CSV data according to ValidationPlan specifications"""
+        
+        # Extract difficulty from c_id (format: question_number-difficulty-version)
+        c_id_parts = request.c_id.split("-")
+        difficulty_num = c_id_parts[1] if len(c_id_parts) > 1 else "1"
+        difficulty_map = {"1": "stammaufgabe", "2": "leicht", "3": "schwer"}
+        subject = difficulty_map.get(difficulty_num, "stammaufgabe")
+        
+        # Determine question type based on variation
+        type_map = {
+            "stammaufgabe": "multiple-choice",
+            "schwer": "true-false",
+            "leicht": "single-choice"
+        }
+        question_type = type_map.get(request.p_variation.lower(), "multiple-choice")
+        
+        # Build the main question text (combining all 3 questions)
+        combined_text = f"1. {questions[0]} 2. {questions[1]} 3. {questions[2]}"
+        
+        # Build CSV data with all required columns from ValidationPlan
+        csv_data = {
+            "c_id": request.c_id,
+            "subject": subject,
+            "type": question_type,
+            "text": combined_text,
+            "p.instruction_explicitness_of_instruction": request.p_instruction_explicitness_of_instruction,
+            "p.instruction_obstacle_complex_np": request.p_instruction_obstacle_complex_np,
+            "p.instruction_obstacle_negation": "Nicht enthalten",  # Default as per example
+            "p.instruction_obstacle_passive": request.p_instruction_obstacle_passive,
+            # Item parameters (8 items as per ValidationPlan CSV format)
+            "p.item_1_answer_verbatim_explanatory_text": "Nicht enthalten",
+            "p.item_1_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
+            "p.item_1_obstacle_negation": request.p_item_X_obstacle_negation,
+            "p.item_1_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_1_sentence_length": "",
+            "p.item_2_answer_verbatim_explanatory_text": "Nicht enthalten",
+            "p.item_2_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
+            "p.item_2_obstacle_negation": request.p_item_X_obstacle_negation,
+            "p.item_2_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_2_sentence_length": "",
+            "p.item_3_answer_verbatim_explanatory_text": "Nicht enthalten",
+            "p.item_3_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
+            "p.item_3_obstacle_negation": request.p_item_X_obstacle_negation,
+            "p.item_3_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_3_sentence_length": "",
+            "p.item_4_answer_verbatim_explanatory_text": "Nicht enthalten",
+            "p.item_4_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
+            "p.item_4_obstacle_negation": request.p_item_X_obstacle_negation,
+            "p.item_4_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_4_sentence_length": "",
+            "p.item_5_answer_verbatim_explanatory_text": "Nicht enthalten",
+            "p.item_5_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
+            "p.item_5_obstacle_negation": request.p_item_X_obstacle_negation,
+            "p.item_5_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_5_sentence_length": "",
+            "p.item_6_answer_verbatim_explanatory_text": "Nicht enthalten",
+            "p.item_6_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
+            "p.item_6_obstacle_negation": request.p_item_X_obstacle_negation,
+            "p.item_6_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_6_sentence_length": "",
+            "p.item_7_answer_verbatim_explanatory_text": "Nicht enthalten",
+            "p.item_7_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
+            "p.item_7_obstacle_negation": request.p_item_X_obstacle_negation,
+            "p.item_7_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_7_sentence_length": "",
+            "p.item_8_answer_verbatim_explanatory_text": "Nicht enthalten",
+            "p.item_8_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
+            "p.item_8_obstacle_negation": request.p_item_X_obstacle_negation,
+            "p.item_8_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_8_sentence_length": "",
+            "p.mathematical_requirement_level": f"{request.p_mathematical_requirement_level} (Kein Bezug)" if request.p_mathematical_requirement_level == "0" else request.p_mathematical_requirement_level,
+            "p.root_text_contains_irrelevant_information": request.p_root_text_contains_irrelevant_information,
+            "p.root_text_obstacle_complex_np": request.p_root_text_obstacle_complex_np,
+            "p.root_text_obstacle_negation": request.p_root_text_obstacle_negation,
+            "p.root_text_obstacle_passive": request.p_root_text_obstacle_passive,
+            "p.root_text_reference_explanatory_text": request.p_root_text_reference_explanatory_text,
+            "p.taxanomy_level": request.p_taxonomy_level,
+            "p.variation": request.p_variation,
+            "answers": "Question-specific answers",  # Will be filled by intelligent fallback system
+            "p.instruction_number_of_sentences": "1"  # Default value
+        }
+        
+        return csv_data
+    
     async def generate_question(self, request: QuestionRequest) -> QuestionResult:
         """Main pipeline: Generate question with parameter-specific expert validation"""
         start_time = time.time()
         iterations = 0
         parameter_validations = []
         
-        # Step 1: Generate initial question
+        # Step 1NutzenMathematischerDarstellungen: Generate initial question
         logger.info(f"Generating question for topic: {request.topic}")
         question_content = await self._generate_initial_question(request)
         
@@ -356,8 +978,8 @@ class EducationalAISystem:
                 "korrekte_antwort": "Option A",
                 "parameter_settings": {
                     "variation": request.difficulty.value,
-                    "taxonomy_level": "Stufe 1",
-                    "mathematical_requirement_level": "0"
+                    "taxonomy_level": "Stufe 1NutzenMathematischerDarstellungen",
+                    "mathematical_requirement_level": "0KeinBezug"
                 }
             }
     
@@ -387,6 +1009,18 @@ class EducationalAISystem:
         """Validate specific parameters with expert LLM"""
         start_time = time.time()
         
+        # Health check before proceeding
+        if not await verify_model_health(expert_config):
+            logger.error(f"Model health check failed for {expert_config.name}")
+            return ParameterValidation(
+                parameter=", ".join(expert_config.parameters),
+                status=ParameterStatus.NEEDS_REFINEMENT,
+                score=5.0,
+                feedback="Model server unavailable",
+                expert_used=expert_config.name,
+                processing_time=time.time() - start_time
+            )
+        
         await model_manager.ensure_model_loaded(expert_config)
         
         # Create specialized prompt for this expert
@@ -399,13 +1033,24 @@ class EducationalAISystem:
         Zielgruppe: {request.age_group}
         Schwierigkeit: {request.difficulty.value}
         
-        Bewerte jeden Parameter auf einer Skala von 1-10 und gib spezifisches Feedback.
-        Antworte im JSON-Format mit 'parameter_scores', 'overall_score', 'status' (approved/rejected/needs_refinement), 'feedback'."""
+        Bewerte jeden Parameter auf einer Skala von 1NutzenMathematischerDarstellungen-10 und gib spezifisches Feedback.
+        
+        WICHTIG: Antworte in diesem EXAKTEN JSON-Format:
+        {{
+          "parameter_scores": {{
+            "parameter_name": numeric_score
+          }},
+          "overall_score": numeric_score,
+          "status": "approved" | "needs_refinement" | "rejected",
+          "feedback": "Single string describing the assessment"
+        }}"""
 
         response = await self._call_expert_llm(expert_config, prompt)
         
-        try:
-            validation_data = json.loads(response)
+        # Use robust JSON parsing
+        validation_data = parse_expert_response(response)
+        
+        if validation_data is not None:
             overall_score = validation_data.get("overall_score", 5.0)
             status_text = validation_data.get("status", "needs_refinement")
             
@@ -427,14 +1072,14 @@ class EducationalAISystem:
                 expert_used=expert_config.name,
                 processing_time=processing_time
             )
-            
-        except json.JSONDecodeError:
-            logger.warning(f"Failed to parse validation from {expert_config.name}")
+        else:
+            # Fallback when parsing completely fails
+            logger.warning(f"Complete parsing failure from {expert_config.name}")
             return ParameterValidation(
                 parameter=", ".join(expert_config.parameters),
                 status=ParameterStatus.NEEDS_REFINEMENT,
                 score=5.0,
-                feedback=response[:200],
+                feedback=f"Response parsing failed: {response[:200]}...",
                 expert_used=expert_config.name,
                 processing_time=time.time() - start_time
             )
@@ -455,17 +1100,27 @@ class EducationalAISystem:
         {chr(10).join(f"- {fb}" for fb in feedback)}
         
         Überarbeite die Aufgabe unter Berücksichtigung aller Verbesserungsvorschläge.
-        Antworte im JSON-Format mit der verbesserten Aufgabe."""
+        
+        WICHTIG: Antworte im JSON-Format mit der vollständigen verbesserten Aufgabe.
+        Behalte die gleiche Struktur wie die ursprüngliche Aufgabe bei."""
 
         response = await self._call_expert_llm(generator_config, prompt)
         
-        try:
-            refined_question = json.loads(response)
+        # Use robust JSON parsing for refinement too
+        refined_data = parse_expert_response(response)
+        
+        if refined_data is not None:
             logger.info("Question refined based on expert feedback")
-            return refined_question
-        except json.JSONDecodeError:
-            logger.warning("Refinement parsing failed, keeping original")
-            return question
+            return refined_data
+        else:
+            # Try standard JSON parsing as fallback
+            try:
+                refined_question = json.loads(response)
+                logger.info("Question refined using fallback JSON parsing")
+                return refined_question
+            except json.JSONDecodeError:
+                logger.warning("Refinement parsing failed completely, keeping original")
+                return question
     
     async def _call_expert_llm(self, expert_config: ParameterExpertConfig, prompt: str) -> str:
         """Call specific expert LLM via Ollama API"""
@@ -521,8 +1176,8 @@ class EducationalAISystem:
         # Fill in parameter columns based on validations and settings
         csv_data.update({
             "p.variation": param_settings.get("variation", "Stammaufgabe"),
-            "p.taxanomy_level": param_settings.get("taxonomy_level", "Stufe 1"),
-            "p.mathematical_requirement_level": param_settings.get("mathematical_requirement_level", "0"),
+            "p.taxanomy_level": param_settings.get("taxonomy_level", "Stufe 1NutzenMathematischerDarstellungen"),
+            "p.mathematical_requirement_level": param_settings.get("mathematical_requirement_level", "0KeinBezug"),
             "p.root_text_reference_explanatory_text": param_settings.get("root_text_reference", "Nicht vorhanden"),
             "p.root_text_obstacle_passive": "Nicht Enthalten",
             "p.root_text_obstacle_negation": "Nicht Enthalten", 
@@ -539,11 +1194,25 @@ class EducationalAISystem:
 ai_system = EducationalAISystem()
 
 # API Endpoints
+
+@app.post("/generate-validation-plan", response_model=ValidationPlanResult)
+async def generate_validation_plan_questions(request: ValidationPlanRequest):
+    """Generate exactly 3 questions according to ValidationPlan specifications"""
+    try:
+        logger.info(f"ValidationPlan request: {request.c_id} - {request.p_variation}")
+        result = await ai_system.generate_validation_plan_questions(request)
+        logger.info(f"ValidationPlan questions generated in {result.processing_time:.2f}s")
+        return result
+        
+    except Exception as e:
+        logger.error(f"ValidationPlan generation failed: {e}")
+        raise HTTPException(status_code=500, detail=str(e))
+
 @app.post("/generate-question", response_model=QuestionResult)
 async def generate_question(request: QuestionRequest):
-    """Generate educational question with parameter-specific expert validation"""
+    """Generate educational question with parameter-specific expert validation (legacy endpoint)"""
     try:
-        logger.info(f"New question request: {request.topic} ({request.difficulty.value})")
+        logger.info(f"Legacy question request: {request.topic} ({request.difficulty.value})")
         result = await ai_system.generate_question(request)
         logger.info(f"Question generated in {result.total_processing_time:.2f}s with {result.iterations} iterations")
         return result
@@ -603,7 +1272,7 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
         "educational_ai_orchestrator:app",
-        host="0.0.0.0", 
+        host="0KeinBezug.0KeinBezug.0KeinBezug.0KeinBezug",
         port=8000,
         reload=False,
         log_level="info"

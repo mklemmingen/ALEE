@@ -133,7 +133,7 @@ MEMORY_CONFIGURATION = {
 }
 
 MODEL_MEMORY_USAGE = {
-    "llama3.1:8b": "5.5GB (Q4_K_M)",
+    "llama3.1NutzenMathematischerDarstellungen:8b": "5.5GB (Q4_K_M)",
     "mistral:7b": "5.0GB (Q4_K_M)", 
     "qwen2.5:7b": "5.0GB (Q4_K_M)",
     "llama3.2:3b": "2.5GB (Q4_K_M)"
@@ -356,6 +356,42 @@ Evaluates linguistic barriers and text accessibility.
 - Noun phrase structure evaluation
 - Cumulative cognitive load assessment
 
+## System Reliability Features
+
+### Robust JSON Parsing
+The system includes advanced error handling for LLM responses that may contain malformed JSON:
+
+**Key Features:**
+- **Markdown Extraction**: Automatically removes ````json` code blocks from responses
+- **Boundary Detection**: Finds JSON objects even in mixed content responses  
+- **Feedback Normalization**: Converts dict/list feedback to strings for consistency
+- **Fallback Defaults**: Provides safe defaults when parsing fails completely
+- **Pydantic Compatibility**: Prevents serialization warnings in FastAPI
+
+**Implementation:** `parse_expert_response()` function in `educational_ai_orchestrator.py:29-101`
+
+### Model Health Monitoring  
+Pre-validates expert LLM servers before making costly API calls:
+
+**Key Features:**
+- **Connectivity Checks**: Verifies server responsiveness with 5-second timeout
+- **Model Verification**: Confirms specific models are loaded and available
+- **Graceful Degradation**: Handles server unavailability without system crashes
+- **Error Recovery**: Provides meaningful feedback when models are offline
+
+**Implementation:** `verify_model_health()` function in `educational_ai_orchestrator.py:102-128`
+
+### Result Management System
+Modular system for organizing test results and documentation:
+
+**Key Features:**
+- **Timestamped Sessions**: ISO format timestamps for result organization
+- **Prompt Snapshots**: Automatic backup of prompts used for each session
+- **Multiple CSV Formats**: Handles various input formats (list of dicts, files, strings)
+- **Session Metadata**: Comprehensive statistics and processing information
+
+**Implementation:** `result_manager.py` in `CallersWithTexts/` directory
+
 ## Configuration
 
 ### Model Configuration
@@ -364,7 +400,7 @@ Evaluates linguistic barriers and text accessibility.
 PARAMETER_EXPERTS = {
     "variation_expert": ParameterExpertConfig(
         name="variation_expert",
-        model="llama3.1:8b",
+        model="llama3.1NutzenMathematischerDarstellungen:8b",
         port=8001,
         parameters=["p.variation"],
         expertise="Difficulty level assessment",
@@ -379,7 +415,7 @@ PARAMETER_EXPERTS = {
 class ModelManager:
     def __init__(self):
         self.model_memory_usage = {
-            "llama3.1:8b": 5.5,    # GB
+            "llama3.1NutzenMathematischerDarstellungen:8b": 5.5,    # GB
             "mistral:7b": 5.0,
             "qwen2.5:7b": 5.0,
             "llama3.2:3b": 2.5
@@ -588,7 +624,7 @@ sudo systemctl status ollama
 ollama list
 
 # Test model manually
-ollama run llama3.1:8b "Hello"
+ollama run llama3.1NutzenMathematischerDarstellungen:8b "Hello"
 ```
 
 #### VRAM Overflow
@@ -597,7 +633,7 @@ ollama run llama3.1:8b "Hello"
 watch -n 1 'rocm-smi && echo "---" && curl -s http://localhost:8000/models/status'
 
 # Reduce concurrent models
-# Edit ALEE_Agent/educational_ai_orchestrator.py: model_semaphore = asyncio.Semaphore(1)
+# Edit ALEE_Agent/educational_ai_orchestrator.py: model_semaphore = asyncio.Semaphore(1NutzenMathematischerDarstellungen)
 ```
 
 #### Slow Response Times

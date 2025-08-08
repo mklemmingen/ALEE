@@ -12,6 +12,7 @@ import csv
 from pathlib import Path
 import logging
 from typing import List, Dict, Any
+from result_manager import save_results, ResultManager
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -324,21 +325,53 @@ class SystemTester:
         success_rate = (summary["successful_tests"] / summary["total_tests"] * 100) if summary["total_tests"] > 0 else 0
         
         print(f"""
-📊 TEST SUMMARY:
-   - Total tests: {summary['total_tests']}
-   - Successful: {summary['successful_tests']}
-   - Failed: {summary['failed_tests']}
-   - Success rate: {success_rate:.1f}%
-   - Avg processing time: {summary['avg_processing_time']:.2f}s
-""")
+            TEST SUMMARY:
+           - Total tests: {summary['total_tests']}
+           - Successful: {summary['successful_tests']}
+           - Failed: {summary['failed_tests']}
+           - Success rate: {success_rate:.1f}%
+           - Avg processing time: {summary['avg_processing_time']:.2f}s
+        """)
         
         return report
+    
+    def save_test_results(self, report: Dict[str, Any]):
+        """Save test results using the result manager"""
+        logger.info("Saving test results with result manager...")
+        
+        try:
+            # Prepare CSV data from test results
+            csv_data = self.test_results if self.test_results else [{"message": "No test results available"}]
+            
+            # Create metadata
+            metadata = {
+                "test_type": "comprehensive_system_test",
+                "total_tests": report["test_summary"]["total_tests"],
+                "successful_tests": report["test_summary"]["successful_tests"],
+                "failed_tests": report["test_summary"]["failed_tests"],
+                "success_rate_percent": (report["test_summary"]["successful_tests"] / report["test_summary"]["total_tests"] * 100) if report["test_summary"]["total_tests"] > 0 else 0,
+                "avg_processing_time": report["test_summary"]["avg_processing_time"],
+                "test_timestamp": report["timestamp"],
+                "system_endpoint": self.base_url
+            }
+            
+            # Save results with timestamped folder
+            session_dir = save_results(csv_data, metadata)
+            
+            logger.info(f"Test results saved to: {session_dir}")
+            logger.info(f"   - CSV results: {session_dir}/results.csv")
+            logger.info(f"   - Prompts snapshot: {session_dir}/prompts/")
+            logger.info(f"   - Metadata: {session_dir}/session_metadata.json")
+            
+        except Exception as e:
+            logger.warning(f"Failed to save results with result_manager: {e}")
+            logger.info("Continuing with traditional file saving...")
     
     async def run_comprehensive_tests(self):
         """Run all test suites"""
         logger.info("Starting comprehensive test suite...")
         
-        # Test 1: Health checks
+        # Test 1NutzenMathematischerDarstellungen: Health checks
         if not await self.test_health_endpoint():
             logger.error("Health check failed - aborting tests")
             return False
@@ -372,6 +405,9 @@ class SystemTester:
         
         # Generate final report
         report = await self.generate_test_report()
+        
+        # Save results using result_manager
+        self.save_test_results(report)
         
         logger.info("Comprehensive testing complete!")
         return report["test_summary"]["successful_tests"] > 0
