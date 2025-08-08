@@ -1,24 +1,20 @@
-# Educational AI - ValidationPlan-Aligned Parameter-Expert LLM System
+# Multimodal Educational AI System for Parameter-Specific Question Generation through multiple Expertised data-backed LLM refinement iterations
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)
 ![ROCm](https://img.shields.io/badge/ROCm-6.2+-red.svg)
 ![Ollama](https://img.shields.io/badge/Ollama-Latest-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![ValidationPlan](https://img.shields.io/badge/ValidationPlan-Compliant-brightgreen.svg)
+![SYSARCH](https://img.shields.io/badge/SYSARCH-Compliant-brightgreen.svg)
 
-A **ValidationPlan-compliant** educational AI system that generates exactly 3 questions per request using parameter-specific expert LLMs. The system follows a three-layered architecture (Caller → Orchestrator → Experts) with modular prompt construction and intelligent CSV conversion fallbacks.
+Educational AI system that uses multilayered small language model bouncing to generate expert-refined questions 
+(currently set to 3 per Request)
 
-## ValidationPlan Compliance
-- **Three-Layer Architecture**: Caller → Orchestrator → Expert LLMs as specified
-- **Exact Parameter Implementation**: All ValidationPlan parameters (c_id, text, p.variation, etc.)
-- **Modular Prompt System**: Uses parameter-specific .txt files for prompt construction
-- **3-Question Generation**: Generates exactly 3 questions with expert validation
-- **Complete CSV Format**: Matches ValidationPlan example with all required columns
-- **Expert Session Management**: Fresh start for each request, no model reloading
-- **Intelligent Fallbacks**: LM-assisted CSV correction with error handling
+The system follows a three-layered server architecture (Caller -> Generator -> Experts) defined in SYSARCH.md 
+with modular prompt construction from ALEE Tübingen defined educational question parameters
+and intelligent CSV conversion fallbacks.
 
-## ValidationPlan Three-Layer Architecture
+## Three-Layer Architecture
 
 ```mermaid
 graph TD
@@ -82,38 +78,6 @@ graph TD
     style M fill:#f5f5dc
 ```
 
-## Legacy System Architecture
-
-```mermaid
-graph TD
-    A[Question Request] --> B[Main Generator LLM]
-    B --> C{Parameter Validation}
-    C --> D[Variation Expert]
-    C --> E[Taxonomy Expert] 
-    C --> F[Math Expert]
-    C --> G[Obstacle Expert]
-    C --> H[Instruction Expert]
-    C --> I[Content Expert]
-    C --> J[Reference Expert]
-    
-    D --> K{All Approved?}
-    E --> K
-    F --> K
-    G --> K
-    H --> K
-    I --> K
-    J --> K
-    
-    K -->|No| L[Refinement Feedback]
-    L --> B
-    K -->|Yes| M[CSV Export]
-    M --> N[Final Question]
-    
-    style A fill:#e1f5fe
-    style N fill:#c8e6c9
-    style K fill:#fff3e0
-```
-
 ### Expert LLM Specialists
 
 | Expert | Focus Parameters | Model | Expertise |
@@ -128,7 +92,7 @@ graph TD
 
 ## Quick Start
 
-### Prerequisites
+### Prerequisites (as tested on, similiar capable or better Hardware and Software configurations possible!)
 
 - **Hardware**: AMD GPU with 20GB VRAM (RX 6000/7000 series recommended)
 - **OS**: Manjaro Linux (Arch-based)
@@ -217,16 +181,16 @@ MODEL_MEMORY_USAGE = {
 | **VRAM Efficiency** | ~55% utilization | 11GB usage, 9GB for operations |
 | **Processing Speed** | 15-25 tokens/sec | Per active model |
 | **Parameter Validation** | 7+ experts | Specialized domain knowledge |
-| **Iteration Limit** | 3 cycles | ValidationPlan-specified limit |
-| **Question Output** | Exactly 3 | Per ValidationPlan requirements |
-| **CSV Compliance** | 100% | All ValidationPlan columns implemented |
-| **Parameter Coverage** | 16 parameters | Complete ValidationPlan implementation |
+| **Iteration Limit** | 3 cycles | SYSARCH-specified limit |
+| **Question Output** | Exactly 3 | Per SYSARCH requirements |
+| **CSV Compliance** | 100% | All SYSARCH columns implemented |
+| **Parameter Coverage** | 16 parameters | Complete SYSARCH implementation |
 
 ## API Reference
 
 ### Core Endpoints
 
-#### ValidationPlan Question Generation (PRIMARY)
+#### Question Generation (PRIMARY)
 ```http
 POST /generate-validation-plan
 Content-Type: application/json
@@ -250,7 +214,7 @@ Content-Type: application/json
 }
 ```
 
-**ValidationPlan Response:**
+**Response:**
 ```json
 {
   "question_1": "First generated question text...",
@@ -269,19 +233,6 @@ Content-Type: application/json
     "p.variation": "stammaufgabe",
     "answers": "Extracted from questions with LM assistance"
   }
-}
-```
-
-#### Legacy Question Generation
-```http
-POST /generate-question
-Content-Type: application/json
-
-{
-  "topic": "Bedürfnisse und Güter",
-  "difficulty": "leicht",
-  "age_group": "9. Klasse",
-  "context": "Wirtschaftliche Grundbegriffe"
 }
 ```
 
@@ -308,118 +259,10 @@ Content-Type: application/json
 }
 ```
 
-#### Batch Generation
-```http
-POST /batch-generate
-Content-Type: application/json
-
-[
-  {"topic": "Angebot und Nachfrage", "difficulty": "leicht"},
-  {"topic": "Marktformen", "difficulty": "stammaufgabe"},
-  {"topic": "Wirtschaftspolitik", "difficulty": "schwer"}
-]
-```
-
 #### System Monitoring
 ```http
 GET /health
 GET /models/status
-```
-
-### ValidationPlan Python SDK Example
-
-```python
-import asyncio
-import aiohttp
-
-class ValidationPlanClient:
-    def __init__(self, base_url="http://localhost:8000"):
-        self.base_url = base_url
-    
-    async def generate_validation_plan_questions(self, c_id, text, p_variation, 
-                                               p_taxonomy_level, **kwargs):
-        """Generate 3 questions according to ValidationPlan specifications"""
-        async with aiohttp.ClientSession() as session:
-            request = {
-                "c_id": c_id,
-                "text": text,
-                "p_variation": p_variation,
-                "p_taxonomy_level": p_taxonomy_level,
-                "p_mathematical_requirement_level": kwargs.get("p_mathematical_requirement_level", "0"),
-                "p_root_text_reference_explanatory_text": kwargs.get("p_root_text_reference_explanatory_text", "Nicht vorhanden"),
-                "p_root_text_obstacle_passive": kwargs.get("p_root_text_obstacle_passive", "Nicht Enthalten"),
-                "p_root_text_obstacle_negation": kwargs.get("p_root_text_obstacle_negation", "Nicht Enthalten"),
-                "p_root_text_obstacle_complex_np": kwargs.get("p_root_text_obstacle_complex_np", "Nicht Enthalten"),
-                "p_root_text_contains_irrelevant_information": kwargs.get("p_root_text_contains_irrelevant_information", "Nicht Enthalten"),
-                "p_item_X_obstacle_passive": kwargs.get("p_item_X_obstacle_passive", "Nicht Enthalten"),
-                "p_item_X_obstacle_negation": kwargs.get("p_item_X_obstacle_negation", "Nicht Enthalten"),
-                "p_item_X_obstacle_complex_np": kwargs.get("p_item_X_obstacle_complex_np", "Nicht Enthalten"),
-                "p_instruction_obstacle_passive": kwargs.get("p_instruction_obstacle_passive", "Nicht Enthalten"),
-                "p_instruction_obstacle_complex_np": kwargs.get("p_instruction_obstacle_complex_np", "Nicht Enthalten"),
-                "p_instruction_explicitness_of_instruction": kwargs.get("p_instruction_explicitness_of_instruction", "Implizit")
-            }
-            
-            async with session.post(
-                f"{self.base_url}/generate-validation-plan", 
-                json=request,
-                timeout=aiohttp.ClientTimeout(total=300)
-            ) as response:
-                return await response.json()
-    
-    async def convert_to_csv(self, result, save_path=None):
-        """Convert ValidationPlan result to CSV format"""
-        csv_data = result.get('csv_data', {})
-        
-        if save_path:
-            import csv
-            with open(save_path, 'w', newline='', encoding='utf-8') as f:
-                writer = csv.DictWriter(f, fieldnames=csv_data.keys())
-                writer.writeheader()
-                writer.writerow(csv_data)
-        
-        return csv_data
-    
-    async def get_system_status(self):
-        async with aiohttp.ClientSession() as session:
-            async with session.get(f"{self.base_url}/health") as response:
-                health = await response.json()
-            
-            async with session.get(f"{self.base_url}/models/status") as response:
-                models = await response.json()
-                
-            return {"health": health, "models": models}
-
-# ValidationPlan Usage Example
-async def main():
-    client = ValidationPlanClient()
-    
-    # Generate ValidationPlan-compliant questions
-    result = await client.generate_validation_plan_questions(
-        c_id="42-2-3",
-        text="Die Marktwirtschaft funktioniert über Angebot und Nachfrage. Preise entstehen durch das Zusammenspiel von Anbietern und Nachfragern auf dem Markt.",
-        p_variation="leicht",
-        p_taxonomy_level="Stufe 2 (Anwendung/Transfer)",
-        p_mathematical_requirement_level="1",
-        p_root_text_obstacle_passive="Enthalten"
-    )
-    
-    print(f"Generated {len([q for q in ['question_1', 'question_2', 'question_3'] if result.get(q)])} questions")
-    print(f"Processing time: {result['processing_time']:.2f}s")
-    print(f"C_ID: {result['c_id']}")
-    print(f"Question 1: {result['question_1'][:100]}...")
-    print(f"Question 2: {result['question_2'][:100]}...")
-    print(f"Question 3: {result['question_3'][:100]}...")
-    
-    # Convert to CSV and save
-    csv_data = await client.convert_to_csv(result, "questions_output.csv")
-    print(f"CSV columns: {len(csv_data)} - {list(csv_data.keys())[:5]}...")
-    
-    # Check system status
-    status = await client.get_system_status()
-    print(f"VRAM usage: {status['models']['vram_usage_gb']:.1f}GB")
-
-# Run
-asyncio.run(main())
 ```
 
 ## Project Structure
@@ -452,13 +295,112 @@ asyncio.run(main())
 └── *.sh                                   # Setup scripts
 ```
 
+### Python SDK Example
+
+```python
+import asyncio
+import aiohttp
+
+class ValidationPlanClient:
+    def __init__(self, base_url="http://localhost:8000"):
+        self.base_url = base_url
+    
+    async def generate_validation_plan_questions(self, c_id, text, p_variation, 
+                                               p_taxonomy_level, **kwargs):
+        """Generate 3 questions according to SYSARCH specifications"""
+        async with aiohttp.ClientSession() as session:
+            request = {
+                "c_id": c_id,
+                "text": text,
+                "p_variation": p_variation,
+                "p_taxonomy_level": p_taxonomy_level,
+                "p_mathematical_requirement_level": kwargs.get("p_mathematical_requirement_level", "0"),
+                "p_root_text_reference_explanatory_text": kwargs.get("p_root_text_reference_explanatory_text", "Nicht vorhanden"),
+                "p_root_text_obstacle_passive": kwargs.get("p_root_text_obstacle_passive", "Nicht Enthalten"),
+                "p_root_text_obstacle_negation": kwargs.get("p_root_text_obstacle_negation", "Nicht Enthalten"),
+                "p_root_text_obstacle_complex_np": kwargs.get("p_root_text_obstacle_complex_np", "Nicht Enthalten"),
+                "p_root_text_contains_irrelevant_information": kwargs.get("p_root_text_contains_irrelevant_information", "Nicht Enthalten"),
+                "p_item_X_obstacle_passive": kwargs.get("p_item_X_obstacle_passive", "Nicht Enthalten"),
+                "p_item_X_obstacle_negation": kwargs.get("p_item_X_obstacle_negation", "Nicht Enthalten"),
+                "p_item_X_obstacle_complex_np": kwargs.get("p_item_X_obstacle_complex_np", "Nicht Enthalten"),
+                "p_instruction_obstacle_passive": kwargs.get("p_instruction_obstacle_passive", "Nicht Enthalten"),
+                "p_instruction_obstacle_complex_np": kwargs.get("p_instruction_obstacle_complex_np", "Nicht Enthalten"),
+                "p_instruction_explicitness_of_instruction": kwargs.get("p_instruction_explicitness_of_instruction", "Implizit")
+            }
+            
+            async with session.post(
+                f"{self.base_url}/generate-validation-plan", 
+                json=request,
+                timeout=aiohttp.ClientTimeout(total=300)
+            ) as response:
+                return await response.json()
+    
+    async def convert_to_csv(self, result, save_path=None):
+        """Convert SYSARCH result to CSV format"""
+        csv_data = result.get('csv_data', {})
+        
+        if save_path:
+            import csv
+            with open(save_path, 'w', newline='', encoding='utf-8') as f:
+                writer = csv.DictWriter(f, fieldnames=csv_data.keys())
+                writer.writeheader()
+                writer.writerow(csv_data)
+        
+        return csv_data
+    
+    async def get_system_status(self):
+        async with aiohttp.ClientSession() as session:
+            async with session.get(f"{self.base_url}/health") as response:
+                health = await response.json()
+            
+            async with session.get(f"{self.base_url}/models/status") as response:
+                models = await response.json()
+                
+            return {"health": health, "models": models}
+
+# SYSARCH Usage Example
+async def main():
+    client = ValidationPlanClient()
+    
+    # Generate SYSARCH-compliant questions
+    result = await client.generate_validation_plan_questions(
+        c_id="42-2-3",
+        text="Die Marktwirtschaft funktioniert über Angebot und Nachfrage. Preise entstehen durch das Zusammenspiel von Anbietern und Nachfragern auf dem Markt.",
+        p_variation="leicht",
+        p_taxonomy_level="Stufe 2 (Anwendung/Transfer)",
+        p_mathematical_requirement_level="1",
+        p_root_text_obstacle_passive="Enthalten"
+    )
+    
+    print(f"Generated {len([q for q in ['question_1', 'question_2', 'question_3'] if result.get(q)])} questions")
+    print(f"Processing time: {result['processing_time']:.2f}s")
+    print(f"C_ID: {result['c_id']}")
+    print(f"Question 1: {result['question_1'][:100]}...")
+    print(f"Question 2: {result['question_2'][:100]}...")
+    print(f"Question 3: {result['question_3'][:100]}...")
+    
+    # Convert to CSV and save
+    csv_data = await client.convert_to_csv(result, "questions_output.csv")
+    print(f"CSV columns: {len(csv_data)} - {list(csv_data.keys())[:5]}...")
+    
+    # Check system status
+    status = await client.get_system_status()
+    print(f"VRAM usage: {status['models']['vram_usage_gb']:.1f}GB")
+
+# Run
+asyncio.run(main())
+```
+
 ## Parameter Validation System
 
-### ValidationPlan Parameter Implementation
+### Parameter Implementation
 
-The system implements **ALL** parameters from ValidationPlanForClaude.md with modular prompt construction:
+The system implements stakeholder (ALEE) defined parameters to perform modular at request prompt construction.
+The prompts are stored in ALEE_agent subfolders that mimic the parameter structure defined in SYSARCH.md.
+Each txt features an explanation as well as human-oversight tested data to refine LM pattern and expertise without overloading
+a token limit of smaller models.
 
-#### Request Parameters (As specified in ValidationPlan)
+#### Request Parameters
 - `c_id` - Question ID format: question_number-difficulty-version (e.g., "41-1-4")
 - `text` - Informational text about the system's pre-configured topic  
 - `p_variation` - Difficulty: "Stammaufgabe", "schwer", "leicht"
@@ -482,46 +424,15 @@ The system implements **ALL** parameters from ValidationPlanForClaude.md with mo
 - `p_instruction_obstacle_complex_np` - "Enthalten", "Nicht Enthalten"
 - `p_instruction_explicitness_of_instruction` - "Explizit", "Implizit"
 
-#### CSV Output Columns (ValidationPlan Compliant)
-The system generates CSV with **ALL** required columns from ValidationPlan example:
+#### CSV Output Columns
+The system generates a CSV as:
 - `c_id`, `subject`, `type`, `text`, `answers`
 - `p.instruction_explicitness_of_instruction` through `p.instruction_number_of_sentences`
 - `p.item_1_answer_verbatim_explanatory_text` through `p.item_8_sentence_length`
 - `p.mathematical_requirement_level`, `p.taxanomy_level`, `p.variation`
 - Plus all obstacle and reference parameters as specified
 
-### ValidationPlan Process (Three-Layer Implementation)
-
-**Layer 1 - Caller:**
-1. **HTTP Request**: Send ValidationPlan parameters (c_id, text, p.variation, etc.)
-2. **Receive Response**: Get exactly 3 questions + complete CSV data
-3. **CSV Conversion**: Use intelligent fallbacks with LM assistance for warnings/errors
-4. **Result Storage**: Save to CallersWithTexts/results/ using result_manager
-
-**Layer 2 - Orchestrator:**
-1. **Session Cleanup**: Clean expert sessions for fresh start (no model reloading)
-2. **Modular Prompt Construction**: Build master prompt from parameter-specific .txt files
-3. **3-Question Generation**: Generate exactly 3 questions using main generator
-4. **Expert Validation**: Route each question through parameter-specific experts
-5. **Iteration Control**: Maximum 3 expert validation iterations per ValidationPlan
-6. **CSV Assembly**: Build complete ValidationPlan CSV format with all required columns
-7. **Intelligent Fallbacks**: Apply LM-assisted CSV correction for detected issues
-
-**Layer 3 - Expert LLMs:**
-1. **Parameter Focus**: Each expert validates specific parameters with configuration
-2. **New Chat Sessions**: Create fresh conversation context (no model reloading)
-3. **Validation Rating**: Provide 1-5 scores and specific feedback
-4. **Approval Decision**: "approved", "needs_refinement", or "rejected"
-5. **Refinement Suggestions**: Detailed improvement recommendations
-
-**Key ValidationPlan Compliance Features:**
-- **Exact Parameter Mapping**: All ValidationPlan parameters implemented
-- **Modular Txt Prompts**: Uses existing folder structure (variationPrompts/, etc.)
-- **3-Iteration Limit**: Matches ValidationPlan specification exactly
-- **Fresh Expert Sessions**: Resets conversation context per request
-- **Complete CSV Format**: Matches ValidationPlan example line-by-line
-
-## Expert LLM Prompts
+## Expert LLM Prompts in detail
 
 ### Variation Expert
 Specializes in difficulty assessment using cognitive load theory and educational psychology principles.
@@ -572,17 +483,6 @@ The system includes advanced error handling for LLM responses that may contain m
 - **Pydantic Compatibility**: Prevents serialization warnings in FastAPI
 
 **Implementation:** `parse_expert_response()` function in `educational_ai_orchestrator.py:29-101`
-
-### Model Health Monitoring  
-Pre-validates expert LLM servers before making costly API calls:
-
-**Key Features:**
-- **Connectivity Checks**: Verifies server responsiveness with 5-second timeout
-- **Model Verification**: Confirms specific models are loaded and available
-- **Graceful Degradation**: Handles server unavailability without system crashes
-- **Error Recovery**: Provides meaningful feedback when models are offline
-
-**Implementation:** `verify_model_health()` function in `educational_ai_orchestrator.py:102-128`
 
 ### Result Management System
 Modular system for organizing test results and documentation:
@@ -639,7 +539,7 @@ export OLLAMA_MAX_LOADED_MODELS=2
 export OLLAMA_FLASH_ATTENTION=1
 ```
 
-## ValidationPlan Testing
+## Testing
 
 ### Stakeholder Data Testing System
 
@@ -654,22 +554,8 @@ python3 CallersWithTexts/stakeholder_test_system.py
 # - Uses all texts from _dev/providedProjectFromStakeHolder/explanation_metadata.csv
 # - 5 randomized parameter combinations per text (80 total tests)
 # - Incremental saving after each text completion
-# - Complete ValidationPlan parameter coverage
+# - Complete SYSARCH parameter coverage
 # - Real production simulation with timestamped results
-```
-
-### Basic ValidationPlan Test Suite
-
-```bash
-# Run ValidationPlan-aligned basic tests
-python3 CallersWithTexts/test_system.py
-
-# Tests include:
-# - ValidationPlan parameter coverage
-# - 3-question generation validation
-# - CSV format compliance
-# - Modular prompt system verification
-# - Expert session management
 ```
 
 ### Stakeholder Test Coverage
@@ -678,178 +564,10 @@ python3 CallersWithTexts/test_system.py
 - **Real Educational Data**: Uses all 16 texts from `explanation_metadata.csv`
 - **80 Total Tests**: 16 texts × 5 randomized parameter combinations each
 - **Incremental Saving**: Results saved after each text completion (simulates production)
-- **Complete Parameter Randomization**: All 16+ ValidationPlan parameters randomized
+- **Complete Parameter Randomization**: All 16+ SYSARCH parameters randomized
 - **Production Simulation**: Real-world testing environment with full result tracking
 - **CSV Export**: Complete results with parameters, questions, and metadata
 - **Timestamped Results**: Organized in `CallersWithTexts/results/YYYY-MM-DD_HH-MM-SS/`
-
-**Basic ValidationPlan Test Coverage:**
-- **ValidationPlan API**: `/generate-validation-plan` endpoint functionality
-- **Parameter Implementation**: All ValidationPlan parameters (c_id, p.variation, etc.)
-- **3-Question Generation**: Exactly 3 questions per request validation
-- **CSV Format Compliance**: Matches ValidationPlan example specification
-- **Modular Prompts**: Parameter-specific .txt file usage verification
-- **Expert Session Management**: Fresh start verification without model reloading
-- **Intelligent Fallbacks**: LM-assisted CSV correction testing
-- **Memory Management**: VRAM efficiency under ValidationPlan load
-- **Processing Time**: Performance metrics for 3-question generation
-
-### ValidationPlan Performance Benchmarks
-
-```python
-# Stakeholder test results (80 comprehensive tests)
-STAKEHOLDER_TEST_RESULTS = {
-    "total_tests": "80 (16 texts × 5 parameter combinations)",
-    "test_duration": "45-60 minutes for complete run",
-    "processing_time_per_test": "20-35 seconds (3 questions each)",
-    "incremental_saves": "After each text completion (16 saves total)",
-    "data_source": "Real stakeholder texts from explanation_metadata.csv",
-    "parameter_coverage": "All 16+ ValidationPlan parameters fully randomized",
-    "success_rate": "90-95% typical success rate",
-    "result_format": "Complete CSV with parameters + questions + metadata"
-}
-
-# ValidationPlan-specific test results
-VALIDATION_PLAN_RESULTS = {
-    "validation_plan_generation": "20-35 seconds (3 questions)",
-    "expert_validation_iterations": "max 3 iterations per specification",
-    "csv_format_compliance": "100% ValidationPlan column coverage",
-    "parameter_implementation": "All 16 ValidationPlan parameters",
-    "modular_prompt_construction": "Parameter-specific .txt files",
-    "memory_efficiency": "10-11GB VRAM (no model reloading)",
-    "intelligent_fallbacks": "LM-assisted CSV correction",
-    "api_response_format": "question_1, question_2, question_3 + csv_data"
-}
-```
-
-## Monitoring and Observability
-
-### System Monitoring
-```bash
-# GPU monitoring
-watch -n 1 rocm-smi
-
-# System resources
-btop
-
-# Application logs
-tail -f logs/educational_ai.log
-```
-
-### Performance Metrics
-- **VRAM Usage**: Real-time memory monitoring via `/models/status`
-- **Model Swapping**: Dynamic loading statistics
-- **Response Times**: Per-endpoint performance tracking
-- **Expert Utilization**: Parameter validation coverage
-- **Error Rates**: Failed validation tracking
-
-### Health Checks
-```python
-# Automated health monitoring
-async def health_check():
-    return {
-        "status": "healthy",
-        "active_models": len(active_models),
-        "vram_usage_gb": current_vram_usage(),
-        "available_experts": list(PARAMETER_EXPERTS.keys()),
-        "timestamp": datetime.now().isoformat()
-    }
-```
-
-## Production Deployment
-
-### Docker Deployment
-```dockerfile
-FROM rocm/pytorch:latest
-
-# Install dependencies
-RUN pip install fastapi uvicorn aiohttp pydantic ollama-python
-
-# Copy application
-WORKDIR /app
-COPY . .
-
-# Expose API port
-EXPOSE 8000
-
-# Start with ROCm support
-CMD ["uvicorn", "educational_ai_orchestrator:app", "--host", "0.0.0.0", "--port", "8000"]
-```
-
-```bash
-# Build and run
-docker build -t educational-ai .
-docker run --device=/dev/kfd --device=/dev/dri \
-  --group-add video -p 8000:8000 \
-  -v $(pwd)/models:/app/models \
-  educational-ai
-```
-
-### Systemd Service
-```ini
-# /etc/systemd/system/educational-ai.service
-[Unit]
-Description=Educational AI Parameter-Expert System
-After=network-online.target
-
-[Service]
-Type=simple
-User=ai-service
-Group=ai-service
-WorkingDirectory=/opt/educational-ai
-ExecStart=/usr/bin/python3 start_system.py
-Restart=always
-RestartSec=3
-Environment="ROCM_PATH=/opt/rocm"
-
-[Install]
-WantedBy=multi-user.target
-```
-
-### Load Balancing
-For high-throughput scenarios, deploy multiple instances:
-
-```yaml
-# docker-compose.yml
-version: '3.8'
-services:
-  educational-ai-1:
-    build: .
-    ports:
-      - "8001:8000"
-    devices:
-      - "/dev/kfd:/dev/kfd"
-      - "/dev/dri:/dev/dri"
-    
-  educational-ai-2:
-    build: .
-    ports:
-      - "8002:8000"
-    devices:
-      - "/dev/kfd:/dev/kfd" 
-      - "/dev/dri:/dev/dri"
-  
-  nginx:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf
-```
-
-## Security Considerations
-
-### API Security
-- **Rate Limiting**: Implement request throttling for production use
-- **Authentication**: Add JWT or API key authentication
-- **Input Validation**: Comprehensive request validation
-- **CORS Configuration**: Properly configure cross-origin requests
-
-### Model Security
-- **Model Isolation**: Each expert runs in controlled environment
-- **Input Sanitization**: Clean prompts before LLM processing
-- **Output Filtering**: Validate generated content
-- **Resource Limits**: Prevent resource exhaustion attacks
 
 ## Troubleshooting
 
@@ -903,43 +621,10 @@ export ROCM_DEBUG=1
 export HIP_DEBUG=1
 ```
 
-## ValidationPlan Resources
-
-### ValidationPlan Documentation
-- **ValidationPlan Specification**: `ValidationPlanForClaude.md` - Complete implementation guide
-- **Parameter-Specific Prompts**: 
-  - `ALEE_Agent/variationPrompts/` - Difficulty-specific prompts
-  - `ALEE_Agent/taxonomyLevelPrompt/` - Cognitive level prompts
-  - `ALEE_Agent/mathematicalRequirementLevel/` - Math complexity prompts
-  - `ALEE_Agent/rootTextParameterTextPrompts/` - Text analysis prompts
-  - `ALEE_Agent/itemXObstacle/` - Item obstacle prompts
-  - `ALEE_Agent/instructionObstacle/` - Instruction obstacle prompts
-- **Test Reports**: ValidationPlan-compliant results in `CallersWithTexts/results/`
-
-### ValidationPlan API Examples
-- **Complete Parameter Set**: All 16 parameters as specified
-- **CSV Format**: Exact match to ValidationPlan example
-- **3-Question Output**: "1. Question1 2. Question2 3. Question3" format
-
 ### Model Information
 - **Ollama Models**: [https://ollama.com/library](https://ollama.com/library)
 - **ROCm Documentation**: [https://rocm.docs.amd.com/](https://rocm.docs.amd.com/)
 - **FastAPI Documentation**: [https://fastapi.tiangolo.com/](https://fastapi.tiangolo.com/)
-
-### Community
-- **Issues**: Report bugs and feature requests via GitHub Issues
-- **Discussions**: Technical discussions and Q&A
-- **Contributing**: See `CONTRIBUTING.md` for development guidelines
-
-## ValidationPlan Implementation Status
-
-✅ **Layer 1 (Caller)**: HTTP requests with ValidationPlan parameters  
-✅ **Layer 2 (Orchestrator)**: Clean expert sessions + modular prompts + 3-question generation  
-✅ **Layer 3 (Expert LLMs)**: Parameter-specific validation with fresh chat sessions  
-✅ **CSV Format**: Complete ValidationPlan compliance with all required columns  
-✅ **Intelligent Fallbacks**: LM-assisted CSV conversion with error handling  
-✅ **Testing Suite**: ValidationPlan-specific test coverage  
-✅ **Documentation**: Updated README.md and CLAUDE.md alignment  
 
 ## License
 
@@ -967,10 +652,10 @@ python3 CallersWithTexts/stakeholder_test_system.py
 # └── prompts/                 # Prompt snapshots
 ```
 
-### Individual ValidationPlan Request
+### Individual Request
 
 ```bash
-# Single ValidationPlan request
+# Single SYSARCH request
 curl -X POST http://localhost:8000/generate-validation-plan \
   -H "Content-Type: application/json" \
   -d '{
@@ -990,7 +675,7 @@ curl -X POST http://localhost:8000/generate-validation-plan \
 #   "question_3": "Third generated question...",
 #   "c_id": "181-1-3",
 #   "processing_time": 23.4,
-#   "csv_data": { ... complete ValidationPlan CSV ... }
+#   "csv_data": { ... complete SYSARCH CSV ... }
 # }
 ```
 
