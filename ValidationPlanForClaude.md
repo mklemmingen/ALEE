@@ -41,7 +41,7 @@ The result_manager saves the csv file into an iso date folder with seconds, as w
 
 2. The orchestrator: 
 - He receives the http request,
-- he calls upon all of his known local servers to check their health, then cleans them for a fresh start (Since new user request!),
+- he calls upon all of his known local servers to check their health, then cleans them for a fresh start (Since new user request!) - they are ollama servers, so we need to carefully clean them without unnecessary restarts and complete reloads. just clear history. No resets or restarts if possible to minimise runtime. 
 - constructs the main generator prompt using modular strings dependend on each parameters value. 
 The constructor uses exclusively prompt txt he finds in the folders corresponding to the parameters, e.g. p.variation is variationPrompts, 
 and there the txt corresponding to what the user has given as value for p.variation.

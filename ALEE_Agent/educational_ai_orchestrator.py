@@ -639,7 +639,10 @@ class EducationalAISystem:
             validated_questions.append(validated_question)
         
         # Step 5: Build CSV data according to ValidationPlan format
-        csv_data = self._build_validation_plan_csv(request, validated_questions)
+        initial_csv_data = self._build_validation_plan_csv(request, validated_questions)
+        
+        # Step 6: Apply intelligent fallback system for CSV issues
+        csv_data = await self._intelligent_csv_fallback(validated_questions, request, initial_csv_data)
         
         total_time = time.time() - start_time
         
@@ -890,6 +893,115 @@ Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der
         }
         
         return csv_data
+    
+    async def _intelligent_csv_fallback(self, questions: List[str], request: ValidationPlanRequest, 
+                                       initial_csv: Dict[str, Any]) -> Dict[str, Any]:
+        """Intelligent fallback system with LM help for CSV conversion warnings/errors"""
+        logger.info("Applying intelligent CSV fallback system...")
+        
+        # Check for potential issues and warnings
+        issues = []
+        
+        # Check for missing answers
+        if not initial_csv.get("answers") or initial_csv["answers"] == "Question-specific answers":
+            issues.append("Missing specific answer content")
+        
+        # Check for empty item fields
+        empty_items = []
+        for i in range(1, 9):
+            if not initial_csv.get(f"p.item_{i}_sentence_length"):
+                empty_items.append(f"item_{i}_sentence_length")
+        
+        if empty_items:
+            issues.append(f"Empty item fields: {', '.join(empty_items[:3])}...")
+        
+        # Check for parameter consistency
+        if request.p_variation.lower() not in ["stammaufgabe", "leicht", "schwer"]:
+            issues.append(f"Invalid variation: {request.p_variation}")
+        
+        if issues:
+            logger.warning(f"CSV issues detected: {issues}")
+            
+            # Use LM to help fix issues
+            try:
+                corrected_csv = await self._llm_csv_correction(questions, request, initial_csv, issues)
+                return corrected_csv
+            except Exception as e:
+                logger.error(f"LM CSV correction failed: {e}")
+                return self._apply_fallback_defaults(initial_csv, issues)
+        
+        return initial_csv
+    
+    async def _llm_csv_correction(self, questions: List[str], request: ValidationPlanRequest,
+                                 initial_csv: Dict[str, Any], issues: List[str]) -> Dict[str, Any]:
+        """Use LM to help correct CSV conversion issues"""
+        
+        # Use a lightweight expert for CSV correction
+        helper_config = PARAMETER_EXPERTS["content_expert"]  # Reuse existing expert
+        await model_manager.ensure_model_loaded(helper_config)
+        
+        correction_prompt = f"""Du bist ein Experte für CSV-Datenkonvertierung von Bildungsfragen.
+
+AUFGABE: Korrigiere die folgenden CSV-Konvertierungsprobleme:
+
+Fragen:
+1. {questions[0]}
+2. {questions[1]}  
+3. {questions[2]}
+
+Aktuelle CSV-Daten:
+{json.dumps(initial_csv, indent=2, ensure_ascii=False)}
+
+Erkannte Probleme:
+{chr(10).join(f"- {issue}" for issue in issues)}
+
+Parameter-Konfiguration:
+- c_id: {request.c_id}
+- Variation: {request.p_variation}
+- Typ: {initial_csv.get('type', 'unknown')}
+
+KORREKTUR-ANFORDERUNGEN:
+1. Wenn "Missing specific answer content": Extrahiere realistische Antworten aus den Fragen
+2. Wenn "Empty item fields": Schätze Satzlängen basierend auf den Fragen (kurz/mittel/lang)
+3. Wenn "Invalid variation": Korrigiere auf stammaufgabe/leicht/schwer
+
+Antworte mit korrigierter CSV als JSON im exakt gleichen Format."""
+
+        response = await self._call_expert_llm(helper_config, correction_prompt)
+        correction_data = parse_expert_response(response)
+        
+        if correction_data and isinstance(correction_data, dict):
+            # Merge corrections with original data
+            corrected_csv = initial_csv.copy()
+            corrected_csv.update(correction_data)
+            
+            logger.info("LM CSV correction applied successfully")
+            return corrected_csv
+        else:
+            raise Exception("LM correction parsing failed")
+    
+    def _apply_fallback_defaults(self, initial_csv: Dict[str, Any], issues: List[str]) -> Dict[str, Any]:
+        """Apply intelligent fallback defaults when LM correction fails"""
+        logger.info("Applying fallback defaults for CSV issues...")
+        
+        fallback_csv = initial_csv.copy()
+        
+        # Fix missing answers
+        if "Missing specific answer content" in str(issues):
+            fallback_csv["answers"] = "Fallback: Multiple choice answers based on question content"
+        
+        # Fill empty sentence lengths with defaults
+        for i in range(1, 9):
+            if not fallback_csv.get(f"p.item_{i}_sentence_length"):
+                fallback_csv[f"p.item_{i}_sentence_length"] = "mittel"  # Default to medium length
+        
+        # Fix invalid variations
+        if any("Invalid variation" in issue for issue in issues):
+            fallback_csv["p.variation"] = "stammaufgabe"  # Safe default
+            fallback_csv["type"] = "multiple-choice"
+        
+        logger.info("Fallback defaults applied")
+        return fallback_csv
     
     async def generate_question(self, request: QuestionRequest) -> QuestionResult:
         """Main pipeline: Generate question with parameter-specific expert validation"""

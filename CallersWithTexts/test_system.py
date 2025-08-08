@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
-Educational AI System Testing Suite
-Comprehensive testing of parameter-expert LLM functionality
+Educational AI System Testing Suite - ValidationPlan Aligned
+Comprehensive testing of parameter-expert LLM functionality with ValidationPlan compliance
 """
 
 import asyncio
@@ -19,11 +19,12 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class SystemTester:
-    """Comprehensive testing suite for the Educational AI system"""
+    """Comprehensive testing suite for the Educational AI system - ValidationPlan aligned"""
     
     def __init__(self):
         self.base_url = "http://localhost:8000"
         self.test_results = []
+        self.validation_plan_results = []  # Track ValidationPlan specific results
         
     async def test_health_endpoint(self):
         """Test system health endpoint"""
@@ -61,6 +62,79 @@ class SystemTester:
                 logger.error(f"Model status error: {e}")
                 return False, {}
     
+    async def test_validation_plan_generation(self, request_data: Dict[str, Any]):
+        """Test ValidationPlan question generation with detailed analysis"""
+        logger.info(f"Testing ValidationPlan: {request_data['c_id']} ({request_data['p_variation']})")
+        
+        start_time = time.time()
+        
+        async with aiohttp.ClientSession() as session:
+            try:
+                async with session.post(
+                    f"{self.base_url}/generate-validation-plan",
+                    json=request_data,
+                    timeout=aiohttp.ClientTimeout(total=300)  # Longer timeout for 3 questions
+                ) as response:
+                    
+                    processing_time = time.time() - start_time
+                    
+                    if response.status == 200:
+                        result = await response.json()
+                        
+                        test_result = {
+                            "c_id": request_data["c_id"],
+                            "p_variation": request_data["p_variation"],
+                            "p_taxonomy_level": request_data["p_taxonomy_level"],
+                            "success": True,
+                            "processing_time": processing_time,
+                            "questions_generated": 3,
+                            "csv_data_complete": bool(result.get("csv_data")),
+                            "question_1_length": len(result.get("question_1", "")),
+                            "question_2_length": len(result.get("question_2", "")),
+                            "question_3_length": len(result.get("question_3", ""))
+                        }
+                        
+                        logger.info(f"ValidationPlan questions generated successfully!")
+                        logger.info(f"   - Processing time: {processing_time:.2f}s")
+                        logger.info(f"   - Question 1: {result.get('question_1', '')[:80]}...")
+                        logger.info(f"   - Question 2: {result.get('question_2', '')[:80]}...")
+                        logger.info(f"   - Question 3: {result.get('question_3', '')[:80]}...")
+                        logger.info(f"   - CSV data complete: {bool(result.get('csv_data'))}")
+                        
+                        self.validation_plan_results.append(test_result)
+                        return True, result
+                        
+                    else:
+                        error_text = await response.text()
+                        logger.error(f"ValidationPlan generation failed: HTTP {response.status}")
+                        logger.error(f"   Error: {error_text}")
+                        
+                        test_result = {
+                            "c_id": request_data["c_id"],
+                            "p_variation": request_data["p_variation"],
+                            "p_taxonomy_level": request_data["p_taxonomy_level"],
+                            "success": False,
+                            "processing_time": processing_time,
+                            "error": f"HTTP {response.status}: {error_text}"
+                        }
+                        self.validation_plan_results.append(test_result)
+                        return False, {}
+                        
+            except Exception as e:
+                processing_time = time.time() - start_time
+                logger.error(f"ValidationPlan generation exception: {e}")
+                
+                test_result = {
+                    "c_id": request_data["c_id"],
+                    "p_variation": request_data["p_variation"],
+                    "p_taxonomy_level": request_data["p_taxonomy_level"],
+                    "success": False,
+                    "processing_time": processing_time,
+                    "error": str(e)
+                }
+                self.validation_plan_results.append(test_result)
+                return False, {}
+
     async def test_single_question_generation(self, request_data: Dict[str, Any]):
         """Test single question generation with detailed analysis"""
         logger.info(f"Testing question: {request_data['topic']} ({request_data['difficulty']})")
