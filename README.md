@@ -686,6 +686,6 @@ curl -X POST http://localhost:8000/generate-validation-plan \
 - **Hugging Face** - For transformer models and tokenizers
 - **FastAPI** - For high-performance async API framework
 - **Educational Research Community** - For parameter frameworks and validation methods
-- **Stakeholder Data Contributors** - For providing real educational content for testing
+- **Stakeholder Data Contributors (ALEE and Kateryna Lauterbach)** - For providing real educational content for testing
 
 ---
