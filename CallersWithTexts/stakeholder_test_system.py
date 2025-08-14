@@ -26,7 +26,7 @@ class StakeholderTestSystem:
     
     def __init__(self):
         self.base_url = "http://localhost:8000"
-        self.stakeholder_csv_path = "/home/mklemmingen/PycharmProjects/PythonProject/_dev/providedProjectFromStakeHolder/explanation_metadata.csv"
+        self.stakeholder_csv_path = "../.dev/providedProjectFromStakeHolder/explanation_metadata.csv" # confidential path, please change if needed to a csv of your choice
         self.all_results = []
         
     async def test_health_endpoint(self):
@@ -161,19 +161,19 @@ class StakeholderTestSystem:
     async def run_comprehensive_stakeholder_test(self):
         """Run comprehensive test using all stakeholder texts with 5 randomized parameter sets each"""
         logger.info("=" * 80)
-        logger.info("   STARTING COMPREHENSIVE STAKEHOLDER TEST")
+        logger.info("   STARTING STAKEHOLDER TEST")
         logger.info("=" * 80)
         
         # Health check first
         if not await self.test_health_endpoint():
-            logger.error("❌ Health check failed - aborting tests")
+            logger.error("Health check failed - aborting tests")
             return False
         
         # Load stakeholder texts
         try:
             df = self.load_stakeholder_texts()
         except Exception as e:
-            logger.error(f"❌ Failed to load stakeholder data: {e}")
+            logger.error(f"Failed to load stakeholder data: {e}")
             return False
         
         # Initialize counters
@@ -246,7 +246,7 @@ class StakeholderTestSystem:
                         "question_3": "",
                         "csv_data": {},
                     })
-                    logger.info(f"     ❌ FAILED - {result.get('error', 'Unknown error')}")
+                    logger.info(f"     FAILED - {result.get('error', 'Unknown error')}")
                 
                 # Add to results
                 self.all_results.append(result_record)
@@ -257,7 +257,7 @@ class StakeholderTestSystem:
             
             # Log text completion
             text_success_count = sum(1 for r in text_results if r["success"])
-            logger.info(f"   📊 Text {original_c_id} completed: {text_success_count}/5 successful runs")
+            logger.info(f"   Text {original_c_id} completed: {text_success_count}/5 successful runs")
             
             # Save incremental results after each text (simulating real production runs)
             await self.save_incremental_results(idx + 1, len(df), total_runs, successful_runs)
@@ -270,7 +270,7 @@ class StakeholderTestSystem:
         success_rate = (successful_runs / total_runs * 100) if total_runs > 0 else 0
         
         logger.info("\n" + "=" * 80)
-        logger.info("📊 FINAL RESULTS SUMMARY")
+        logger.info("FINAL RESULTS SUMMARY")
         logger.info("=" * 80)
         logger.info(f"Total texts processed: {len(df)}")
         logger.info(f"Total runs executed: {total_runs}")
@@ -306,7 +306,7 @@ class StakeholderTestSystem:
             logger.info(f"      Prompts snapshot: {session_dir}/prompts/")
             logger.info(f"      Metadata: {session_dir}/session_metadata.json")
         except Exception as e:
-            logger.error(f"❌ Failed to save results: {e}")
+            logger.error(f"Failed to save results: {e}")
         
         logger.info("=" * 80)
         logger.info("   STAKEHOLDER TEST COMPLETE")

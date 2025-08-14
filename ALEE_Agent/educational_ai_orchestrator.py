@@ -159,10 +159,33 @@ class ValidationPlanRequest(BaseModel):
     p_root_text_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
     p_root_text_contains_irrelevant_information: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
     p_mathematical_requirement_level: str = Field("0", description="0 (Kein Bezug), 1 (Nutzen mathematischer Darstellungen), 2 (Mathematische Operation)")
-    p_item_X_obstacle_passive: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
-    p_item_X_obstacle_negation: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
-    p_item_X_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    # Individual item parameters as per SYSARCH.md
+    p_item_1_obstacle_passive: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_1_obstacle_negation: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_1_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_2_obstacle_passive: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_2_obstacle_negation: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_2_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_3_obstacle_passive: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_3_obstacle_negation: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_3_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_4_obstacle_passive: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_4_obstacle_negation: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_4_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_5_obstacle_passive: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_5_obstacle_negation: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_5_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_6_obstacle_passive: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_6_obstacle_negation: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_6_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_7_obstacle_passive: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_7_obstacle_negation: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_7_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_8_obstacle_passive: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_8_obstacle_negation: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_item_8_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
     p_instruction_obstacle_passive: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
+    p_instruction_obstacle_negation: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
     p_instruction_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
     p_instruction_explicitness_of_instruction: str = Field("Implizit", description="Explizit, Implizit")
 
@@ -192,7 +215,7 @@ class ValidationPlanResult(BaseModel):
 PARAMETER_EXPERTS = {
     "variation_expert": ParameterExpertConfig(
         name="variation_expert",
-        model="llama3.1NutzenMathematischerDarstellungen:8b",
+        model="llama3.1:8b",
         port=8001,
         parameters=["p.variation"],
         expertise="Difficulty level assessment (leicht/Stammaufgabe/schwer)",
@@ -203,7 +226,7 @@ PARAMETER_EXPERTS = {
         model="mistral:7b",
         port=8002,
         parameters=["p.taxanomy_level"],
-        expertise="Bloom's taxonomy classification (Stufe 1NutzenMathematischerDarstellungen: Wissen/Reproduktion, Stufe 2: Anwendung/Transfer)",
+        expertise="Bloom's taxonomy classification (Stufe 1: Wissen/Reproduktion, Stufe 2: Anwendung/Transfer)",
         temperature=0.2
     ),
     "math_expert": ParameterExpertConfig(
@@ -211,7 +234,7 @@ PARAMETER_EXPERTS = {
         model="qwen2.5:7b", 
         port=8003,
         parameters=["p.mathematical_requirement_level"],
-        expertise="Mathematical requirement assessment (0KeinBezug-2 scale)",
+        expertise="Mathematical requirement assessment (0-2 scale)",
         temperature=0.2
     ),
     "text_reference_expert": ParameterExpertConfig(
@@ -230,10 +253,16 @@ PARAMETER_EXPERTS = {
             "p.root_text_obstacle_passive",
             "p.root_text_obstacle_negation", 
             "p.root_text_obstacle_complex_np",
-            "p.item_X_obstacle_passive",
-            "p.item_X_obstacle_negation",
-            "p.item_X_obstacle_complex_np",
+            "p.item_1_obstacle_passive", "p.item_1_obstacle_negation", "p.item_1_obstacle_complex_np",
+            "p.item_2_obstacle_passive", "p.item_2_obstacle_negation", "p.item_2_obstacle_complex_np",
+            "p.item_3_obstacle_passive", "p.item_3_obstacle_negation", "p.item_3_obstacle_complex_np",
+            "p.item_4_obstacle_passive", "p.item_4_obstacle_negation", "p.item_4_obstacle_complex_np",
+            "p.item_5_obstacle_passive", "p.item_5_obstacle_negation", "p.item_5_obstacle_complex_np",
+            "p.item_6_obstacle_passive", "p.item_6_obstacle_negation", "p.item_6_obstacle_complex_np",
+            "p.item_7_obstacle_passive", "p.item_7_obstacle_negation", "p.item_7_obstacle_complex_np",
+            "p.item_8_obstacle_passive", "p.item_8_obstacle_negation", "p.item_8_obstacle_complex_np",
             "p.instruction_obstacle_passive",
+            "p.instruction_obstacle_negation",
             "p.instruction_obstacle_complex_np"
         ],
         expertise="Linguistic obstacle detection (passive voice, negation, complex noun phrases)",
@@ -249,7 +278,7 @@ PARAMETER_EXPERTS = {
     ),
     "content_expert": ParameterExpertConfig(
         name="content_expert",
-        model="llama3.1NutzenMathematischerDarstellungen:8b",
+        model="llama3.1:8b",
         port=8007,
         parameters=["p.root_text_contains_irrelevant_information"],
         expertise="Content relevance and distractor analysis",
@@ -292,7 +321,7 @@ async def lifespan(app: FastAPI):
 app = FastAPI(
     title="Educational Question Generation AI",
     description="Parameter-specific expert LLM system for educational content",
-    version="1NutzenMathematischerDarstellungen.0KeinBezug.0KeinBezug",
+    version="1.0.0",
     lifespan=lifespan
 )
 
@@ -301,7 +330,7 @@ class ModelManager:
     
     def __init__(self):
         self.model_memory_usage = {
-            "llama3.1NutzenMathematischerDarstellungen:8b": 5.5,    # GB
+            "llama3.1:8b": 5.5,    # GB
             "mistral:7b": 5.0,
             "qwen2.5:7b": 5.0,
             "llama3.2:3b": 2.5
@@ -426,11 +455,11 @@ class ValidationPlanPromptBuilder:
         # ValidationPlan: "0 (Kein Bezug)", "1 (Nutzen mathematischer Darstellungen)", "2 (Mathematische Operation)"
         level_clean = level.strip().split()[0]  # Extract just the number
         level_map = {
-            "0": "mathematicalRequirementLevel/0KeinBezug",
-            "1": "mathematicalRequirementLevel/1NutzenMathematischerDarstellungen", 
-            "2": "mathematicalRequirementLevel/2MathematischeOperationen"
+            "0": "mathematicalRequirementLevel/0KeinBezug.txt",
+            "1": "mathematicalRequirementLevel/1NutzenMathematischerDarstellungen.txt", 
+            "2": "mathematicalRequirementLevel/2MathematischeOperationen.txt"
         }
-        file_path = level_map.get(level_clean, "mathematicalRequirementLevel/0KeinBezug")
+        file_path = level_map.get(level_clean, "mathematicalRequirementLevel/0KeinBezug.txt")
         content = self.load_prompt_txt(file_path)
         return f"p.mathematical_requirement_level ({level}): {content}"
     
@@ -447,6 +476,7 @@ class ValidationPlanPromptBuilder:
             "item_negation": f"itemXObstacle/negation/{value_file}",
             "item_complex": f"itemXObstacle/complex/{value_file}",
             "instruction_passive": f"instructionObstacle/passive/{value_file}",
+            "instruction_negation": f"instructionObstacle/negation/{value_file}",
             "instruction_complex_np": f"instructionObstacle/complex_np/{value_file}"
         }
         
@@ -467,10 +497,10 @@ class ValidationPlanPromptBuilder:
         """Build instruction explicitness prompt according to ValidationPlan"""
         # ValidationPlan: "Explizit", "Implizit"
         if "Explizit" in value:
-            content = self.load_prompt_txt("instructionExplicitnessOfInstruction/explizit")
+            content = self.load_prompt_txt("instructionExplicitnessOfInstruction/explizit.txt")
             return f"p.instruction_explicitness_of_instruction (Explizit): {content}"
         else:
-            content = self.load_prompt_txt("instructionExplicitnessOfInstruction/implizit")
+            content = self.load_prompt_txt("instructionExplicitnessOfInstruction/implizit.txt")
             return f"p.instruction_explicitness_of_instruction (Implizit): {content}"
     
     def build_master_prompt(self, request: ValidationPlanRequest) -> str:
@@ -508,19 +538,27 @@ class ValidationPlanPromptBuilder:
         if request.p_root_text_contains_irrelevant_information == "Enthalten":
             components.append(self.build_irrelevant_info_prompt(request.p_root_text_contains_irrelevant_information))
         
-        # Item-X obstacles - only add if "Enthalten"
-        if request.p_item_X_obstacle_passive == "Enthalten":
-            components.append(self.build_obstacle_prompt("item_passive", request.p_item_X_obstacle_passive, "p.item_X_obstacle_passive"))
-        
-        if request.p_item_X_obstacle_negation == "Enthalten":
-            components.append(self.build_obstacle_prompt("item_negation", request.p_item_X_obstacle_negation, "p.item_X_obstacle_negation"))
-        
-        if request.p_item_X_obstacle_complex_np == "Enthalten":
-            components.append(self.build_obstacle_prompt("item_complex", request.p_item_X_obstacle_complex_np, "p.item_X_obstacle_complex_np"))
+        # Individual item obstacles - only add if "Enthalten" (per SYSARCH.md)
+        for i in range(1, 9):  # Items 1-8 as per SYSARCH.md
+            passive_attr = f"p_item_{i}_obstacle_passive"
+            negation_attr = f"p_item_{i}_obstacle_negation"
+            complex_attr = f"p_item_{i}_obstacle_complex_np"
+            
+            if getattr(request, passive_attr) == "Enthalten":
+                components.append(self.build_obstacle_prompt("item_passive", getattr(request, passive_attr), f"p.item_{i}_obstacle_passive"))
+            
+            if getattr(request, negation_attr) == "Enthalten":
+                components.append(self.build_obstacle_prompt("item_negation", getattr(request, negation_attr), f"p.item_{i}_obstacle_negation"))
+            
+            if getattr(request, complex_attr) == "Enthalten":
+                components.append(self.build_obstacle_prompt("item_complex", getattr(request, complex_attr), f"p.item_{i}_obstacle_complex_np"))
         
         # Instruction obstacles - only add if "Enthalten"
         if request.p_instruction_obstacle_passive == "Enthalten":
             components.append(self.build_obstacle_prompt("instruction_passive", request.p_instruction_obstacle_passive, "p.instruction_obstacle_passive"))
+        
+        if request.p_instruction_obstacle_negation == "Enthalten":
+            components.append(self.build_obstacle_prompt("instruction_negation", request.p_instruction_obstacle_negation, "p.instruction_obstacle_negation"))
         
         if request.p_instruction_obstacle_complex_np == "Enthalten":
             components.append(self.build_obstacle_prompt("instruction_complex_np", request.p_instruction_obstacle_complex_np, "p.instruction_obstacle_complex_np"))
@@ -704,37 +742,24 @@ class EducationalAISystem:
         
         await model_manager.ensure_model_loaded(expert_config)
         
-        # Build expert prompt with parameter configuration
+        # Build expert prompt with parameter configuration - simplified to plain text response
         expert_prompt = f"""Du bist ein Experte für {expert_config.expertise}.
 
-        Analysiere diese Bildungsfrage bezüglich der spezifizierten Parameter:
-        
-        Frage: {question}
-        
-        Parameter-Konfiguration:
-        - c_id: {request.c_id}
-        - Variation: {request.p_variation}
-        - Taxonomie-Level: {request.p_taxonomy_level}
-        - Mathematisches Niveau: {request.p_mathematical_requirement_level}
-        - Root-Text Passive: {request.p_root_text_obstacle_passive}
-        - Root-Text Negation: {request.p_root_text_obstacle_negation}
-        - Root-Text Komplexe NP: {request.p_root_text_obstacle_complex_np}
-        - Item-X Passive: {request.p_item_X_obstacle_passive}
-        - Item-X Negation: {request.p_item_X_obstacle_negation}
-        - Item-X Komplexe NP: {request.p_item_X_obstacle_complex_np}
-        - Instruktion Passive: {request.p_instruction_obstacle_passive}
-        - Instruktion Komplexe NP: {request.p_instruction_obstacle_complex_np}
-        - Instruktion Explizitheit: {request.p_instruction_explicitness_of_instruction}
-        - Irrelevante Informationen: {request.p_root_text_contains_irrelevant_information}
-        
-        Bewerte die Frage auf einer Skala von 1-10 und gib spezifisches Feedback.
-        
-        Antworte im JSON-Format:
-        {{
-          "overall_score": numeric_score,
-          "status": "approved" | "needs_refinement" | "rejected",
-          "feedback": "Detaillierte Bewertung und Verbesserungsvorschläge"
-        }}"""
+Analysiere diese Bildungsfrage bezüglich der spezifizierten Parameter:
+
+Frage: {question}
+
+Parameter-Konfiguration:
+- c_id: {request.c_id}
+- Variation: {request.p_variation}
+- Taxonomie-Level: {request.p_taxonomy_level}
+- Mathematisches Niveau: {request.p_mathematical_requirement_level}
+
+Bewerte die Frage und gib Verbesserungsvorschläge.
+
+Antworte in folgendem einfachen Format:
+BEWERTUNG: [Gut/Mittelmäßig/Schlecht]
+FEEDBACK: [Deine detaillierten Verbesserungsvorschläge oder "Frage ist gut so"]"""
         
         response = await self._call_expert_llm(expert_config, expert_prompt)
         validation_data = parse_expert_response(response)
@@ -823,48 +848,48 @@ Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der
             "text": combined_text,
             "p.instruction_explicitness_of_instruction": request.p_instruction_explicitness_of_instruction,
             "p.instruction_obstacle_complex_np": request.p_instruction_obstacle_complex_np,
-            "p.instruction_obstacle_negation": "Nicht enthalten",  # Default as per example
+            "p.instruction_obstacle_negation": request.p_instruction_obstacle_negation,
             "p.instruction_obstacle_passive": request.p_instruction_obstacle_passive,
-            # Item parameters (8 items as per ValidationPlan CSV format)
+            # Item parameters (8 items as per SYSARCH.md CSV format)
             "p.item_1_answer_verbatim_explanatory_text": "Nicht enthalten",
-            "p.item_1_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
-            "p.item_1_obstacle_negation": request.p_item_X_obstacle_negation,
-            "p.item_1_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_1_obstacle_complex_np": request.p_item_1_obstacle_complex_np,
+            "p.item_1_obstacle_negation": request.p_item_1_obstacle_negation,
+            "p.item_1_obstacle_passive": request.p_item_1_obstacle_passive,
             "p.item_1_sentence_length": "",
             "p.item_2_answer_verbatim_explanatory_text": "Nicht enthalten",
-            "p.item_2_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
-            "p.item_2_obstacle_negation": request.p_item_X_obstacle_negation,
-            "p.item_2_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_2_obstacle_complex_np": request.p_item_2_obstacle_complex_np,
+            "p.item_2_obstacle_negation": request.p_item_2_obstacle_negation,
+            "p.item_2_obstacle_passive": request.p_item_2_obstacle_passive,
             "p.item_2_sentence_length": "",
             "p.item_3_answer_verbatim_explanatory_text": "Nicht enthalten",
-            "p.item_3_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
-            "p.item_3_obstacle_negation": request.p_item_X_obstacle_negation,
-            "p.item_3_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_3_obstacle_complex_np": request.p_item_3_obstacle_complex_np,
+            "p.item_3_obstacle_negation": request.p_item_3_obstacle_negation,
+            "p.item_3_obstacle_passive": request.p_item_3_obstacle_passive,
             "p.item_3_sentence_length": "",
             "p.item_4_answer_verbatim_explanatory_text": "Nicht enthalten",
-            "p.item_4_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
-            "p.item_4_obstacle_negation": request.p_item_X_obstacle_negation,
-            "p.item_4_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_4_obstacle_complex_np": request.p_item_4_obstacle_complex_np,
+            "p.item_4_obstacle_negation": request.p_item_4_obstacle_negation,
+            "p.item_4_obstacle_passive": request.p_item_4_obstacle_passive,
             "p.item_4_sentence_length": "",
             "p.item_5_answer_verbatim_explanatory_text": "Nicht enthalten",
-            "p.item_5_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
-            "p.item_5_obstacle_negation": request.p_item_X_obstacle_negation,
-            "p.item_5_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_5_obstacle_complex_np": request.p_item_5_obstacle_complex_np,
+            "p.item_5_obstacle_negation": request.p_item_5_obstacle_negation,
+            "p.item_5_obstacle_passive": request.p_item_5_obstacle_passive,
             "p.item_5_sentence_length": "",
             "p.item_6_answer_verbatim_explanatory_text": "Nicht enthalten",
-            "p.item_6_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
-            "p.item_6_obstacle_negation": request.p_item_X_obstacle_negation,
-            "p.item_6_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_6_obstacle_complex_np": request.p_item_6_obstacle_complex_np,
+            "p.item_6_obstacle_negation": request.p_item_6_obstacle_negation,
+            "p.item_6_obstacle_passive": request.p_item_6_obstacle_passive,
             "p.item_6_sentence_length": "",
             "p.item_7_answer_verbatim_explanatory_text": "Nicht enthalten",
-            "p.item_7_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
-            "p.item_7_obstacle_negation": request.p_item_X_obstacle_negation,
-            "p.item_7_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_7_obstacle_complex_np": request.p_item_7_obstacle_complex_np,
+            "p.item_7_obstacle_negation": request.p_item_7_obstacle_negation,
+            "p.item_7_obstacle_passive": request.p_item_7_obstacle_passive,
             "p.item_7_sentence_length": "",
             "p.item_8_answer_verbatim_explanatory_text": "Nicht enthalten",
-            "p.item_8_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
-            "p.item_8_obstacle_negation": request.p_item_X_obstacle_negation,
-            "p.item_8_obstacle_passive": request.p_item_X_obstacle_passive,
+            "p.item_8_obstacle_complex_np": request.p_item_8_obstacle_complex_np,
+            "p.item_8_obstacle_negation": request.p_item_8_obstacle_negation,
+            "p.item_8_obstacle_passive": request.p_item_8_obstacle_passive,
             "p.item_8_sentence_length": "",
             "p.mathematical_requirement_level": f"{request.p_mathematical_requirement_level} (Kein Bezug)" if request.p_mathematical_requirement_level == "0" else request.p_mathematical_requirement_level,
             "p.root_text_contains_irrelevant_information": request.p_root_text_contains_irrelevant_information,
@@ -1018,7 +1043,7 @@ Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der
             async with session_pool.post(
                 f"http://localhost:{expert_config.port}/api/generate",
                 json=payload,
-                timeout=aiohttp.ClientTimeout(total=60)
+                timeout=aiohttp.ClientTimeout(total=120)
             ) as response:
                 if response.status != 200:
                     raise HTTPException(status_code=500, detail=f"LLM API error: {response.status}")
@@ -1087,7 +1112,7 @@ if __name__ == "__main__":
     import uvicorn
     uvicorn.run(
         "educational_ai_orchestrator:app",
-        host="0KeinBezug.0KeinBezug.0KeinBezug.0KeinBezug",
+        host="0.0.0.0",
         port=8000,
         reload=False,
         log_level="info"
