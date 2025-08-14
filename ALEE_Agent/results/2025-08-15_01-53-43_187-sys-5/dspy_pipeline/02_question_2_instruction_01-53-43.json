@@ -1,0 +1,30 @@
+{
+  "step_name": "02_question_2_instruction",
+  "timestamp": "2025-08-15T01:53:43.092304",
+  "step_data": {
+    "expert_name": "instruction",
+    "question_key": "question_2",
+    "question_evaluated": "Welche Art von Knappheit liegt vor, wenn ein Gut nur in einer geringeren Menge als gewünscht vorhanden ist?",
+    "answers_evaluated": [
+      "B: Absolute Knappheit liegt vor",
+      "wenn ein Gut nur in einer geringeren Menge als gewünscht vorhanden ist.\nA: Relative Knappheit liegt vor",
+      "wenn ein Gut zu einer bestimmten Zeit und an einem bestimmten Ort nicht oder nur in sehr begrenzter Menge vorhanden ist.\nC: Absolute Knappheit liegt vor",
+      "wenn ein Gut zu einer bestimmten Zeit und an einem bestimmten Ort nicht oder nur in sehr begrenzter Menge vorhanden ist."
+    ],
+    "target_value": "Explizit",
+    "expert_rating": 3,
+    "expert_feedback": "Die Anweisungsklarheit ist teilweise fehlerhaft. Die Frage bezieht sich auf absolute Knappheit, aber die Antworten A und C beschreiben relativ Knappheit. Es sollte eindeutig gemacht werden, dass Antwort B die richtige Antwort für absolute Knappheit ist.",
+    "expert_suggestions": [
+      "Es sollte eine klare Definition von absoluter und relativer Knappheit in der Frage enthalten sein, um Verwirrung zu vermeiden.",
+      "Die Antworten sollten geordnet werden, damit klar erkennbar ist, dass Antwort B die richtige Antwort für absolute Knappheit ist."
+    ],
+    "expert_reasoning": "Absolute Knappheit liegt vor, wenn ein Gut nur in einer geringeren Menge als gewünscht vorhanden ist. Dies ist eine Definition aus der Mikroökonomie und bezieht sich auf das Angebot eines Gutes.",
+    "expert_context": "=== EXPERTENROLLE ===\nDu bist ein Experte für Anweisungsklarheit und Explizitheit in deutschen Bildungsfragen.\n\nDEINE AUFGABE:\nBewerte, ob die Anweisungen in den gestellten Fragen dem gewünschten Grad der Explizitheit entsprechen und klar verständlich sind.\n\nBEWERTUNGSKRITERIEN:\n- Explizitheit: Anweisungen entsprechen dem Parameter (Explizit/Implizit)\n- Klarheit: Eindeutige und verständliche Formulierungen\n- Sprachliche Hindernisse: Korrekte Behandlung je nach Parameter-Anforderung\n- Anweisungsstruktur: Logischer Aufbau der Instruktionen\n\nEXPLIZITHEIT-STUFEN:\n- EXPLIZIT: Klare, detaillierte Anweisungen mit direkten Handlungsaufforderungen\n- IMPLIZIT: Subtilere Anweisungen, die Schlussfolgerungen erfordern\n\nSPRACHLICHE HINDERNISSE:\n- Passivkonstruktionen: Je nach Parameter-Anforderung\n- Komplexe Nominalphrasen: Bewertung der Angemessenheit\n\nAntworte in folgendem JSON-Format:\n{\n  \"bewertung\": [1-5],\n  \"feedback\": \"Spezifische Analyse der Anweisungsklarheit\",\n  \"vorschlaege\": \"Verbesserungsvorschläge bei Bewertung < 3\",\n  \"begruendung\": \"Detaillierte Begründung der Bewertung\"\n}\n\n=== ZU BEWERTENDE FRAGE ===\nFrage: Welche Art von Knappheit liegt vor, wenn ein Gut nur in einer geringeren Menge als gewünscht vorhanden ist?\nAntworten: B: Absolute Knappheit liegt vor, wenn ein Gut nur in einer geringeren Menge als gewünscht vorhanden ist.\nA: Relative Knappheit liegt vor, wenn ein Gut zu einer bestimmten Zeit und an einem bestimmten Ort nicht oder nur in sehr begrenzter Menge vorhanden ist.\nC: Absolute Knappheit liegt vor, wenn ein Gut zu einer bestimmten Zeit und an einem bestimmten Ort nicht oder nur in sehr begrenzter Menge vorhanden ist.\nZielwert: Explizit\n\n=== BEWERTUNGSANWEISUNG ===\n=== IHRE AUFGABE ===\nBewerten Sie diese 3 Fragen entsprechend Ihrer Expertise.\n\nAntworten Sie mit GENAU diesem JSON-Format:\n{\n    \"status\": \"gut\" oder \"schlecht\",\n    \"reasoning\": \"Ihre Erklärung warum diese Fragen gut/schlecht sind\",\n    \"suggestions\": [\"spezifischer Vorschlag 1\", \"spezifischer Vorschlag 2\", \"...\"]\n}\n\nWenn Status \"gut\" ist, können Vorschläge leer [] sein.\nWenn Status \"schlecht\" ist, geben Sie spezifische umsetzbare Vorschläge zur Verbesserung der Fragen."
+  },
+  "step_metadata": {
+    "step_description": "Expert evaluation by instruction for question_2",
+    "expert_specialization": "instruction",
+    "processing_time_ms": 4123.952388763428,
+    "expert_rating": 3
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "processing_time": 84.52920603752136,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was folgt, wenn du dich f\u00fcr eine Handlung entscheidest?",
+        "Welches Prinzip folgt einer Handlung, bei der du dein Taschengeld auf zwei Dinge gleichzeitig ausgebe?",
+        "Was ist gegeben oder das Ziel in einem Minimalprinzip?"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T01:55:09.649971",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

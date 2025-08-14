@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": false,
+  "processing_time": 89.38053703308105,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Wenn du auf einer einsamen Insel gestrandet bist, was ist das erste, wor\u00fcber du dich k\u00fcmmerst?",
+        "Was ist ein Beispiel f\u00fcr eine Handlung, die du unternehmen k\u00f6nntest, um dich vor wilden Tieren zu sch\u00fctzen?",
+        "Warum wird es wahrscheinlich einsam werden, wenn alle deine Grundbed\u00fcrfnisse erf\u00fcllt sind und du keine sozialen Bed\u00fcrfnisse mehr befriedigst?"
+      ],
+      "expert_consensus": [
+        false,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": false
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T01:49:36.552187",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

@@ -1,0 +1,19 @@
+{
+  "step_name": "03_question_1_consensus",
+  "timestamp": "2025-08-15T01:48:05.148003",
+  "step_data": {
+    "question_key": "question_1",
+    "approved": false,
+    "improvement_priority": "Keine expliziten Verbesserungsvorschläge, daher keine Priorisierung einer Vorschlag.",
+    "consensus_reasoning": "Der Konsens wird durch die Bewertungen der Experten bestimmt. Da alle Bewertungen 3 oder höher sind, kann sich der Konsens auf den Gesamteindruck stützen lassen. Die Feedback-Kommentare liefern zusätzliche Informationen, um den Konsens zu bestätigen.",
+    "synthesized_suggestions": "Die wichtigsten Aspekte der Frage werden von mehreren Experten bereits erkannt: Formulierung und Antwortoptionen sind klar, aber die richtige Antwort könnte präziser formuliert werden. Die sprachlichen Hindernisse in der Frage sollten jedoch nicht überbewertet werden.",
+    "average_rating": 3.4,
+    "expert_count": 5
+  },
+  "step_metadata": {
+    "step_description": "Expert consensus determination for question_1",
+    "consensus_algorithm": "single_pass_majority",
+    "processing_time_ms": 4130.915482838948,
+    "approved": false
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "step_name": "04_pipeline_timing",
+  "timestamp": "2025-08-15T01:50:56.661253",
+  "step_data": {
+    "generation_time_ms": 7757.388114929199,
+    "expert_evaluation_time_ms": 58126.24216079712,
+    "consensus_time_ms": 12197.828531265259,
+    "total_pipeline_time_ms": 78081.47072792053,
+    "pipeline_efficiency": {
+      "generation_percentage": 9.934992313298341,
+      "expert_percentage": 74.4430677584717,
+      "consensus_percentage": 15.621924660934358
+    }
+  },
+  "step_metadata": {
+    "step_description": "Complete DSPy pipeline timing analysis",
+    "total_time_ms": 78081.47072792053,
+    "experts_used": 5,
+    "questions_processed": 3
+  }
+}

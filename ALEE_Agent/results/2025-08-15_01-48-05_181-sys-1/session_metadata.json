@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": false,
+  "processing_time": 79.90676999092102,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was ist ein Bed\u00fcrfnis?\n\nA) Etwas, das man haben will\nB) Etwas, das man braucht, um gl\u00fccklich zu sein\nC) Etwas, das man nicht haben kann\nD) Etwas, das man sich w\u00fcnscht",
+        "Warum entstehen Bed\u00fcrfnisse?\n\nA) Wenn man etwas hat, was man nicht ben\u00f6tigt\nB) Wenn man etwas fehlt\nC) Wenn man gl\u00fccklich ist\nD) Wenn man arm ist",
+        "Wie verhalten sich Menschen nachdem ein Bed\u00fcrfnis erf\u00fcllt wurde?\n\nA) Sie widmen sich sofort einem anderen Bed\u00fcrfnis\nB) Sie bleiben bei dem gleichen Bed\u00fcrfnis\nC) Sie tun nichts\nD) Sie sind gl\u00fccklich"
+      ],
+      "expert_consensus": [
+        false,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": false
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T01:48:05.148247",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

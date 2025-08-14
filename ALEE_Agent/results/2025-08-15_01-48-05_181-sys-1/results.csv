@@ -1,0 +1,17 @@
+c_id,subject,type,text,p.instruction_explicitness_of_instruction,p.mathematical_requirement_level,p.taxanomy_level,question_type,p.variation,answers,p.root_text_reference_explanatory_text,p.root_text_obstacle_passive,p.root_text_obstacle_negation,p.root_text_obstacle_complex_np,p.root_text_contains_irrelevant_information,p.instruction_obstacle_passive,p.instruction_obstacle_complex_np,dspy_consensus_used,dspy_modular_prompts,dspy_expert_count,dspy_all_approved,p.item_1_obstacle_passive,p.item_1_obstacle_negation,p.item_1_obstacle_complex_np,p.item_2_obstacle_passive,p.item_2_obstacle_negation,p.item_2_obstacle_complex_np,p.item_3_obstacle_passive,p.item_3_obstacle_negation,p.item_3_obstacle_complex_np,p.item_4_obstacle_passive,p.item_4_obstacle_negation,p.item_4_obstacle_complex_np,p.item_5_obstacle_passive,p.item_5_obstacle_negation,p.item_5_obstacle_complex_np,p.item_6_obstacle_passive,p.item_6_obstacle_negation,p.item_6_obstacle_complex_np,p.item_7_obstacle_passive,p.item_7_obstacle_negation,p.item_7_obstacle_complex_np,p.item_8_obstacle_passive,p.item_8_obstacle_negation,p.item_8_obstacle_complex_np
+181-sys-1,stammaufgabe,multiple-choice,"1. Was ist ein Bedürfnis?
+
+A) Etwas, das man haben will
+B) Etwas, das man braucht, um glücklich zu sein
+C) Etwas, das man nicht haben kann
+D) Etwas, das man sich wünscht 2. Warum entstehen Bedürfnisse?
+
+A) Wenn man etwas hat, was man nicht benötigt
+B) Wenn man etwas fehlt
+C) Wenn man glücklich ist
+D) Wenn man arm ist 3. Wie verhalten sich Menschen nachdem ein Bedürfnis erfüllt wurde?
+
+A) Sie widmen sich sofort einem anderen Bedürfnis
+B) Sie bleiben bei dem gleichen Bedürfnis
+C) Sie tun nichts
+D) Sie sind glücklich",Explizit,0 (Kein Bezug),Stufe 1 (Wissen/Reproduktion),multiple-choice,stammaufgabe,"B) Etwas, das man braucht, um glücklich zu sein, B) Wenn man etwas fehlt, A) Sie widmen sich sofort einem anderen Bedürfnis",Nicht vorhanden,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Enthalten,Nicht Enthalten,Nicht Enthalten,True,True,6,False,Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Enthalten,Nicht Enthalten,Enthalten,Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Enthalten,Enthalten,Nicht Enthalten,Enthalten,Nicht Enthalten,Enthalten,Enthalten,Enthalten,Enthalten,Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten

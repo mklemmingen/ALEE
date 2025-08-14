@@ -1,0 +1,28 @@
+{
+  "step_name": "02_question_2_instruction",
+  "timestamp": "2025-08-15T01:50:56.660760",
+  "step_data": {
+    "expert_name": "instruction",
+    "question_key": "question_2",
+    "question_evaluated": "Kann man nur von Bedarf sprechen, wenn man Geld oder Zeit für etwas ausgibt?",
+    "answers_evaluated": [
+      "Ja",
+      "man kann auch dann von Bedarf sprechen",
+      "wenn man z.B. bei einem Friseur einen Haarschnitt in Anspruch nehmen will."
+    ],
+    "target_value": "Explizit",
+    "expert_rating": 3,
+    "expert_feedback": "Die Anweisung ist klar und verständlich. Die Antwortoptionen sind plausible und geben einen guten Überblick über den Begriff des Bedarfs.",
+    "expert_suggestions": [
+      "Keine Vorschläge für Verbesserungen der Anweisungsklarheit, da die Anweisung bereits gut formuliert ist."
+    ],
+    "expert_reasoning": "Die Antwort wird durch die explizite Formulierung und die präzisen Beispiele in den Optionen unterstützt. Die Frage ist auch gut formuliert und gibt dem Leser eine klare Vorstellung davon, was gefragt werden soll.",
+    "expert_context": "=== EXPERTENROLLE ===\nDu bist ein Experte für Anweisungsklarheit und Explizitheit in deutschen Bildungsfragen.\n\nDEINE AUFGABE:\nBewerte, ob die Anweisungen in den gestellten Fragen dem gewünschten Grad der Explizitheit entsprechen und klar verständlich sind.\n\nBEWERTUNGSKRITERIEN:\n- Explizitheit: Anweisungen entsprechen dem Parameter (Explizit/Implizit)\n- Klarheit: Eindeutige und verständliche Formulierungen\n- Sprachliche Hindernisse: Korrekte Behandlung je nach Parameter-Anforderung\n- Anweisungsstruktur: Logischer Aufbau der Instruktionen\n\nEXPLIZITHEIT-STUFEN:\n- EXPLIZIT: Klare, detaillierte Anweisungen mit direkten Handlungsaufforderungen\n- IMPLIZIT: Subtilere Anweisungen, die Schlussfolgerungen erfordern\n\nSPRACHLICHE HINDERNISSE:\n- Passivkonstruktionen: Je nach Parameter-Anforderung\n- Komplexe Nominalphrasen: Bewertung der Angemessenheit\n\nAntworte in folgendem JSON-Format:\n{\n  \"bewertung\": [1-5],\n  \"feedback\": \"Spezifische Analyse der Anweisungsklarheit\",\n  \"vorschlaege\": \"Verbesserungsvorschläge bei Bewertung < 3\",\n  \"begruendung\": \"Detaillierte Begründung der Bewertung\"\n}\n\n=== ZU BEWERTENDE FRAGE ===\nFrage: Kann man nur von Bedarf sprechen, wenn man Geld oder Zeit für etwas ausgibt?\nAntworten: Ja, man kann auch dann von Bedarf sprechen, wenn man z.B. bei einem Friseur einen Haarschnitt in Anspruch nehmen will.\nZielwert: Explizit\n\n=== BEWERTUNGSANWEISUNG ===\n=== IHRE AUFGABE ===\nBewerten Sie diese 3 Fragen entsprechend Ihrer Expertise.\n\nAntworten Sie mit GENAU diesem JSON-Format:\n{\n    \"status\": \"gut\" oder \"schlecht\",\n    \"reasoning\": \"Ihre Erklärung warum diese Fragen gut/schlecht sind\",\n    \"suggestions\": [\"spezifischer Vorschlag 1\", \"spezifischer Vorschlag 2\", \"...\"]\n}\n\nWenn Status \"gut\" ist, können Vorschläge leer [] sein.\nWenn Status \"schlecht\" ist, geben Sie spezifische umsetzbare Vorschläge zur Verbesserung der Fragen."
+  },
+  "step_metadata": {
+    "step_description": "Expert evaluation by instruction for question_2",
+    "expert_specialization": "instruction",
+    "processing_time_ms": 3265.7015323638916,
+    "expert_rating": 3
+  }
+}

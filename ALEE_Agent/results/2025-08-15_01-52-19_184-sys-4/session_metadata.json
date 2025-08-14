@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": false,
+  "processing_time": 80.60165691375732,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was ist das Hauptziel, wenn Tom sich einen Apfel kaufen m\u00f6chte?",
+        "Welche Art von Gut ist das Wasser, das du vielleicht gerade trinken wolltest?",
+        "Bezeichnen Sie die folgenden Beispiele als Sachg\u00fcter oder Dienstleistungen: ein Friseurbesuch oder eine Autoreparatur."
+      ],
+      "expert_consensus": [
+        true,
+        false,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": false
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T01:52:19.282682",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

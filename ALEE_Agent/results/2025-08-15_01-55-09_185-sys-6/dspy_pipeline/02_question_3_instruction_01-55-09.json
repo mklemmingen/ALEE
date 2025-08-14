@@ -1,0 +1,26 @@
+{
+  "step_name": "02_question_3_instruction",
+  "timestamp": "2025-08-15T01:55:09.649341",
+  "step_data": {
+    "expert_name": "instruction",
+    "question_key": "question_3",
+    "question_evaluated": "Was ist gegeben oder das Ziel in einem Minimalprinzip?",
+    "answers_evaluated": [
+      "a) Das Ziel oder die Mittel sind gegeben.\n\nb) Die Handlung ist immer schlecht.\n\nc) Du musst dich für eine Handlung entscheiden.\n\nd) Der Nutzen ist größer als die Kosten."
+    ],
+    "target_value": "Implizit",
+    "expert_rating": 3,
+    "expert_feedback": "Die Anweisungsklarheit könnte verbessert werden, indem das Ziel explizit genannt wird. Der Schüler sollte wissen, was er erreichen soll und was unter dem Minimalprinzip verstanden wird.",
+    "expert_suggestions": [
+      "Das Ziel sollte im Aufgabenbeschreibung explizit angegeben werden. Zusätzlich könnte eine kurze Erklärung des Konzepts des Minimalprinzips hinzugefügt werden, um sicherzustellen, dass der Schüler die Frage richtig versteht."
+    ],
+    "expert_reasoning": "Die Anweisungs-Bewertung von 3 ist für eine mangelnde Klarheit und explizite Darstellung von Ziel und gegebenem Rahmen gerechtfertigt. Es fehlt an einer klaren Erklärung des Minimalprinzips sowie der Definition, was in diesem Zusammenhang als \"gegeben\" oder \"Ziel\" gilt.",
+    "expert_context": "=== EXPERTENROLLE ===\nDu bist ein Experte für Anweisungsklarheit und Explizitheit in deutschen Bildungsfragen.\n\nDEINE AUFGABE:\nBewerte, ob die Anweisungen in den gestellten Fragen dem gewünschten Grad der Explizitheit entsprechen und klar verständlich sind.\n\nBEWERTUNGSKRITERIEN:\n- Explizitheit: Anweisungen entsprechen dem Parameter (Explizit/Implizit)\n- Klarheit: Eindeutige und verständliche Formulierungen\n- Sprachliche Hindernisse: Korrekte Behandlung je nach Parameter-Anforderung\n- Anweisungsstruktur: Logischer Aufbau der Instruktionen\n\nEXPLIZITHEIT-STUFEN:\n- EXPLIZIT: Klare, detaillierte Anweisungen mit direkten Handlungsaufforderungen\n- IMPLIZIT: Subtilere Anweisungen, die Schlussfolgerungen erfordern\n\nSPRACHLICHE HINDERNISSE:\n- Passivkonstruktionen: Je nach Parameter-Anforderung\n- Komplexe Nominalphrasen: Bewertung der Angemessenheit\n\nAntworte in folgendem JSON-Format:\n{\n  \"bewertung\": [1-5],\n  \"feedback\": \"Spezifische Analyse der Anweisungsklarheit\",\n  \"vorschlaege\": \"Verbesserungsvorschläge bei Bewertung < 3\",\n  \"begruendung\": \"Detaillierte Begründung der Bewertung\"\n}\n\n=== ZU BEWERTENDE FRAGE ===\nFrage: Was ist gegeben oder das Ziel in einem Minimalprinzip?\nAntworten: a) Das Ziel oder die Mittel sind gegeben.\n\nb) Die Handlung ist immer schlecht.\n\nc) Du musst dich für eine Handlung entscheiden.\n\nd) Der Nutzen ist größer als die Kosten.\nZielwert: Implizit\n\n=== BEWERTUNGSANWEISUNG ===\n=== IHRE AUFGABE ===\nBewerten Sie diese 3 Fragen entsprechend Ihrer Expertise.\n\nAntworten Sie mit GENAU diesem JSON-Format:\n{\n    \"status\": \"gut\" oder \"schlecht\",\n    \"reasoning\": \"Ihre Erklärung warum diese Fragen gut/schlecht sind\",\n    \"suggestions\": [\"spezifischer Vorschlag 1\", \"spezifischer Vorschlag 2\", \"...\"]\n}\n\nWenn Status \"gut\" ist, können Vorschläge leer [] sein.\nWenn Status \"schlecht\" ist, geben Sie spezifische umsetzbare Vorschläge zur Verbesserung der Fragen."
+  },
+  "step_metadata": {
+    "step_description": "Expert evaluation by instruction for question_3",
+    "expert_specialization": "instruction",
+    "processing_time_ms": 3890.015125274658,
+    "expert_rating": 3
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": false,
+  "processing_time": 78.24007105827332,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Welche Kosten entstehen, wenn man Freitagabend ins Kino geht?",
+        "Kann man sagen, dass die Opportunit\u00e4tskosten nur Geld beinhalten?",
+        "Entscheidet man sich daf\u00fcr, Freitagabend zu jobben, anstatt ins Kino zu gehen, verzichtet man auf welche Kosten?"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        false
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": false
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T01:56:29.915558",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

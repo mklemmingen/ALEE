@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": false,
+  "processing_time": 81.78747653961182,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was ist die Definition von freien G\u00fctern?",
+        "Welche Art von Knappheit liegt vor, wenn ein Gut nur in einer geringeren Menge als gew\u00fcnscht vorhanden ist?",
+        "Wie kann Relative Knappheit auch bei sehr viel von einem Gut vorliegen?"
+      ],
+      "expert_consensus": [
+        false,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": false
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T01:53:43.092931",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

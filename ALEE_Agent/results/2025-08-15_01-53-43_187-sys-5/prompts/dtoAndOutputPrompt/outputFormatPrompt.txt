@@ -1,0 +1,10 @@
+=== FINAL JSON FORMAT (For CSV Export Only) ===
+
+Wandele die fertige Frage in folgendes JSON-Format um:
+
+{"question": "[Die vollständige Frage mit allen Antwortoptionen]", "answers": ["Option A", "Option B", "Option C", "Option D"], "correct_answer": "Option X"}
+
+BEISPIEL:
+{"question": "Was sind Bedürfnisse? A) Materielle Güter B) Wünsche die entstehen wenn etwas fehlt C) Nur Luxusartikel D) Immer gleich", "answers": ["A) Materielle Güter", "B) Wünsche die entstehen wenn etwas fehlt", "C) Nur Luxusartikel", "D) Immer gleich"], "correct_answer": "B"}
+
+ACHTUNG: Beginne direkt mit { und ende mit } - keine anderen Zeichen!

@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": false,
+  "processing_time": 78.08911299705505,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was bedeutet Bedarf?",
+        "Kann man nur von Bedarf sprechen, wenn man Geld oder Zeit f\u00fcr etwas ausgibt?",
+        "Gilt der Begriff \"Bedarf\" auch bei Leistungen, die andere f\u00fcr einen erbringen, wie z.B. ein Haarschnitt beim Friseur?"
+      ],
+      "expert_consensus": [
+        true,
+        false,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": false
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T01:50:56.661360",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

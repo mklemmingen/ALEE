@@ -1,0 +1,19 @@
+{
+  "step_name": "03_question_1_consensus",
+  "timestamp": "2025-08-15T01:50:56.661140",
+  "step_data": {
+    "question_key": "question_1",
+    "approved": true,
+    "improvement_priority": "Keine Verbesserungsvorschläge wurden abgegeben, daher gibt es keine Prioritäten für Verbesserungen.",
+    "consensus_reasoning": "Der Konsens wurde aufgrund der positiven Bewertungen und dem überwiegend positiven Feedback erreicht. Es gibt keine Anzeichen dafür, dass die Frage oder die Antwort kritische Aspekte enthalten.",
+    "synthesized_suggestions": "Keine Verbesserungsvorschläge wurden abgegeben, daher kann keine Zusammenfassung erfolgen.",
+    "average_rating": 3.6,
+    "expert_count": 5
+  },
+  "step_metadata": {
+    "step_description": "Expert consensus determination for question_1",
+    "consensus_algorithm": "single_pass_majority",
+    "processing_time_ms": 4065.9428437550864,
+    "approved": true
+  }
+}
