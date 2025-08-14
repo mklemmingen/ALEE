@@ -1395,7 +1395,7 @@ class EducationalAISystem:
 
     async def _call_expert_llm(self, expert_config: ParameterExpertConfig, prompt: str) -> str:
         """Call specific expert LLM via Ollama API with expert-specific prompt prepended"""
-        # Load and prepend expert-specific prompt from ALEE_Agent/prompts/
+        # Load and prepend expert-specific prompt from ALEE_Agent/expertPrompts/
         expert_prompt = self._load_expert_prompt(expert_config.name)
         
         if expert_prompt:
