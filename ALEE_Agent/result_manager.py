@@ -18,7 +18,6 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Union, Optional
 
-
 class ResultManager:
     """Modular result manager for educational AI system results with incremental saving support"""
     
