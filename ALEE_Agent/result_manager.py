@@ -11,12 +11,11 @@ Usage:
     rm = ResultManager()
     session_dir = rm.save_results(csv_data)
 """
-import os
+import csv
+import json
 import shutil
 from datetime import datetime
 from pathlib import Path
-import csv
-import json
 from typing import List, Dict, Any, Union, Optional
 
 

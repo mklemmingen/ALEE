@@ -1,20 +1,17 @@
 #!/usr/bin/env python3
 """
-ValidationPlan Stakeholder Data Testing System
-Uses all rows from explanation_metadata.csv to test with randomized parameters
-Saves complete results and parameters to CallersWithTexts/results/
+ValidationPlan Stakeholder Testing System - Pure Caller Mode
+Uses all rows from explanation_metadata.csv to make HTTP requests with randomized parameters
+Orchestrator handles all result saving - caller only monitors process completion
 """
 
 import asyncio
-import aiohttp
-import json
-import time
-import csv
-import random
 import logging
-from pathlib import Path
-from typing import List, Dict, Any
-from result_manager import save_results, ResultManager
+import random
+import time
+from typing import Dict, Any
+
+import aiohttp
 import pandas as pd
 
 # Configure logging
@@ -22,12 +19,12 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class StakeholderTestSystem:
-    """Comprehensive ValidationPlan testing using stakeholder explanation_metadata.csv"""
+    """Pure caller for ValidationPlan testing using stakeholder explanation_metadata.csv"""
     
     def __init__(self):
         self.base_url = "http://localhost:8000"
-        self.stakeholder_csv_path = "/home/mklemmingen/PycharmProjects/PythonProject/_dev/providedProjectFromStakeHolder/explanation_metadata.csv"
-        self.all_results = []
+        self.stakeholder_csv_path = "../.dev/providedProjectFromStakeHolder/explanation_metadata.csv" # confidential path, please change if needed to a csv of your choice
+        # No result storage - orchestrator handles everything
         
     async def test_health_endpoint(self):
         """Test system health endpoint"""
@@ -91,40 +88,10 @@ class StakeholderTestSystem:
             "p_instruction_explicitness_of_instruction": random.choice(explicit_values)
         }
     
-    async def save_incremental_results(self, texts_completed: int, total_texts: int, total_runs: int, successful_runs: int):
-        """Save incremental results after each text completion (simulating real production environment)"""
-        
-        # Create incremental metadata
-        incremental_metadata = {
-            "test_type": "stakeholder_incremental_save",
-            "description": f"Incremental save after {texts_completed}/{total_texts} texts completed",
-            "source_file": "explanation_metadata.csv",
-            "texts_completed": texts_completed,
-            "total_texts": total_texts,
-            "runs_per_text": 5,
-            "total_runs_so_far": total_runs,
-            "successful_runs_so_far": successful_runs,
-            "failed_runs_so_far": total_runs - successful_runs,
-            "success_rate_percent": (successful_runs / total_runs * 100) if total_runs > 0 else 0,
-            "completion_percentage": (texts_completed / total_texts * 100),
-            "incremental_save_timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
-            "validation_plan_compliant": True,
-            "is_incremental_save": True
-        }
-        
-        try:
-            # Save current results
-            session_dir = save_results(self.all_results, incremental_metadata)
-            
-            logger.info(f"      Incremental save completed: {session_dir}")
-            logger.info(f"      Progress: {texts_completed}/{total_texts} texts ({incremental_metadata['completion_percentage']:.1f}%)")
-            logger.info(f"      Runs: {total_runs} total, {successful_runs} successful ({incremental_metadata['success_rate_percent']:.1f}%)")
-            
-        except Exception as e:
-            logger.warning(f"   Incremental save failed (continuing anyway): {e}")
+    # Result saving removed - orchestrator handles all result management
     
     async def test_validation_plan_generation(self, request_data: Dict[str, Any]):
-        """Test ValidationPlan question generation"""
+        """Test ValidationPlan question generation - pure caller mode"""
         start_time = time.time()
         
         async with aiohttp.ClientSession() as session:
@@ -138,42 +105,39 @@ class StakeholderTestSystem:
                     processing_time = time.time() - start_time
                     
                     if response.status == 200:
-                        result = await response.json()
+                        # Don't parse result data - orchestrator handles saving
+                        logger.info(f"   Request successful for {request_data['c_id']} in {processing_time:.2f}s")
+                        logger.info(f"   Results saved by orchestrator automatically")
                         
-                        logger.info(f"   Generated 3 questions for {request_data['c_id']} in {processing_time:.2f}s")
-                        logger.info(f"   Q1: {result.get('question_1', '')[:60]}...")
-                        logger.info(f"   Q2: {result.get('question_2', '')[:60]}...")
-                        logger.info(f"   Q3: {result.get('question_3', '')[:60]}...")
-                        
-                        return True, result
+                        return True
                         
                     else:
                         error_text = await response.text()
                         logger.error(f"❌ ValidationPlan generation failed: HTTP {response.status}")
                         logger.error(f"   Error: {error_text}")
-                        return False, {"error": f"HTTP {response.status}: {error_text}"}
+                        return False
                         
             except Exception as e:
                 processing_time = time.time() - start_time
                 logger.error(f"❌ ValidationPlan generation exception: {e}")
-                return False, {"error": str(e), "processing_time": processing_time}
+                return False
     
     async def run_comprehensive_stakeholder_test(self):
         """Run comprehensive test using all stakeholder texts with 5 randomized parameter sets each"""
         logger.info("=" * 80)
-        logger.info("   STARTING COMPREHENSIVE STAKEHOLDER TEST")
+        logger.info("   STARTING STAKEHOLDER TEST")
         logger.info("=" * 80)
         
         # Health check first
         if not await self.test_health_endpoint():
-            logger.error("❌ Health check failed - aborting tests")
+            logger.error("Health check failed - aborting tests")
             return False
         
         # Load stakeholder texts
         try:
             df = self.load_stakeholder_texts()
         except Exception as e:
-            logger.error(f"❌ Failed to load stakeholder data: {e}")
+            logger.error(f"Failed to load stakeholder data: {e}")
             return False
         
         # Initialize counters
@@ -192,8 +156,7 @@ class StakeholderTestSystem:
             logger.info(f"   Subject: {subject}")
             logger.info(f"   Text length: {len(text_content)} chars")
             
-            # Generate 5 randomized parameter runs for this text
-            text_results = []
+            text_successful = 0
             
             for run_num in range(1, 6):  # 1 to 5
                 total_runs += 1
@@ -207,60 +170,21 @@ class StakeholderTestSystem:
                 logger.info(f"     Taxonomy: {request_data['p_taxonomy_level']}")
                 logger.info(f"     Math Level: {request_data['p_mathematical_requirement_level']}")
                 
-                # Execute the test
-                success, result = await self.test_validation_plan_generation(request_data)
-                
-                # Prepare result record with ALL information
-                result_record = {
-                    # Original stakeholder data
-                    "original_c_id": original_c_id,
-                    "original_subject": subject,
-                    "text_row_index": idx + 1,
-                    "run_number": run_num,
-                    "total_run_number": total_runs,
-                    
-                    # All parameter values used
-                    "parameters_used": request_data,
-                    
-                    # Test results
-                    "success": success,
-                    "processing_time": result.get("processing_time", 0),
-                }
+                # Execute the test - orchestrator handles all result saving
+                success = await self.test_validation_plan_generation(request_data)
                 
                 if success:
                     successful_runs += 1
-                    result_record.update({
-                        "question_1": result.get("question_1", ""),
-                        "question_2": result.get("question_2", ""),
-                        "question_3": result.get("question_3", ""),
-                        "csv_data": result.get("csv_data", {}),
-                        "generation_c_id": result.get("c_id", ""),
-                    })
-                    logger.info(f"       SUCCESS - 3 questions generated")
+                    text_successful += 1
                 else:
                     failed_runs += 1
-                    result_record.update({
-                        "error": result.get("error", "Unknown error"),
-                        "question_1": "",
-                        "question_2": "",
-                        "question_3": "",
-                        "csv_data": {},
-                    })
-                    logger.info(f"     ❌ FAILED - {result.get('error', 'Unknown error')}")
-                
-                # Add to results
-                self.all_results.append(result_record)
-                text_results.append(result_record)
                 
                 # Brief pause between runs
                 await asyncio.sleep(1)
             
-            # Log text completion
-            text_success_count = sum(1 for r in text_results if r["success"])
-            logger.info(f"   📊 Text {original_c_id} completed: {text_success_count}/5 successful runs")
-            
-            # Save incremental results after each text (simulating real production runs)
-            await self.save_incremental_results(idx + 1, len(df), total_runs, successful_runs)
+            # Log text completion summary
+            logger.info(f"   📊 Text {original_c_id} completed: {text_successful}/5 successful runs")
+            logger.info(f"   📈 Overall progress: {idx + 1}/{len(df)} texts, {successful_runs}/{total_runs} successful calls")
             
             # Longer pause between texts
             await asyncio.sleep(2)
@@ -270,46 +194,25 @@ class StakeholderTestSystem:
         success_rate = (successful_runs / total_runs * 100) if total_runs > 0 else 0
         
         logger.info("\n" + "=" * 80)
-        logger.info("📊 FINAL RESULTS SUMMARY")
+        logger.info("FINAL CALLER SUMMARY")
         logger.info("=" * 80)
         logger.info(f"Total texts processed: {len(df)}")
-        logger.info(f"Total runs executed: {total_runs}")
-        logger.info(f"Successful runs: {successful_runs}")
-        logger.info(f"Failed runs: {failed_runs}")
+        logger.info(f"Total HTTP calls made: {total_runs}")
+        logger.info(f"Successful calls: {successful_runs}")
+        logger.info(f"Failed calls: {failed_runs}")
         logger.info(f"Success rate: {success_rate:.1f}%")
-        logger.info(f"Total processing time: {total_time:.2f}s")
-        logger.info(f"Average time per run: {total_time/total_runs:.2f}s")
-        
-        # Save results using result_manager
-        metadata = {
-            "test_type": "stakeholder_comprehensive_validation_plan_test",
-            "description": "Complete test using all explanation_metadata.csv texts with 5 randomized parameter sets each",
-            "source_file": "explanation_metadata.csv",
-            "total_texts": len(df),
-            "runs_per_text": 5,
-            "total_runs": total_runs,
-            "successful_runs": successful_runs,
-            "failed_runs": failed_runs,
-            "success_rate_percent": success_rate,
-            "total_processing_time_seconds": total_time,
-            "avg_time_per_run_seconds": total_time/total_runs if total_runs > 0 else 0,
-            "test_timestamp": time.strftime("%Y-%m-%d %H:%M:%S"),
-            "validation_plan_compliant": True,
-            "parameter_randomization": "All 16+ ValidationPlan parameters randomized per run",
-            "results_include": "Original text data, all parameters used, all generated questions, CSV data"
-        }
-        
-        try:
-            session_dir = save_results(self.all_results, metadata)
-            logger.info(f"\n    RESULTS SAVED TO: {session_dir}")
-            logger.info(f"      CSV results: {session_dir}/results.csv")
-            logger.info(f"      Prompts snapshot: {session_dir}/prompts/")
-            logger.info(f"      Metadata: {session_dir}/session_metadata.json")
-        except Exception as e:
-            logger.error(f"❌ Failed to save results: {e}")
+        logger.info(f"⏱Total caller time: {total_time:.2f}s")
+        logger.info(f"Average time per call: {total_time/total_runs:.2f}s")
+        logger.info("")
+        logger.info("All results automatically saved by orchestrator to:")
+        logger.info("   CallersWithTexts/results/YYYY-MM-DD_HH-MM-SS/")
+        logger.info("   • Complete CSV with all SYSARCH columns")
+        logger.info("   • System metadata and VRAM usage")
+        logger.info("   • All ALEE_Agent prompts snapshot")
+        logger.info("   • Expert validation logs")
         
         logger.info("=" * 80)
-        logger.info("   STAKEHOLDER TEST COMPLETE")
+        logger.info("STAKEHOLDER CALLING TEST COMPLETE")
         logger.info("=" * 80)
         
         return successful_runs > 0
