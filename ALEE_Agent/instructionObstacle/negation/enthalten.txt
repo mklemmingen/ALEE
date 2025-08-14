@@ -1,4 +1,4 @@
-### p.item_X_obstacle_negation (Verneinungen in Antwortoptionen):
+### p.instruction_obstacle_negation (Verneinungen in Antwortoptionen):
 **ENTHALTEN** - Beispiele:
 - "nicht", "kein", "keine", "niemand", "nichts"
 - "Es ist unwahrscheinlich, dass..."
