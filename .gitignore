@@ -1,3 +1,4 @@
 /download_models.sh
 /optimize_gpu.sh
 /validate_setup.sh
+/stakeholder_systematic_test.log

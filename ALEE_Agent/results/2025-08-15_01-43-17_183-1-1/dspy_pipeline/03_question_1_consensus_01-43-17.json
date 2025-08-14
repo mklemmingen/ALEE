@@ -1,0 +1,19 @@
+{
+  "step_name": "03_question_1_consensus",
+  "timestamp": "2025-08-15T01:43:17.787324",
+  "step_data": {
+    "question_key": "question_1",
+    "approved": true,
+    "improvement_priority": "Keine Verbesserungsvorschläge wurden gemacht, daher gibt es keine Priorität für eine Verbesserung.",
+    "consensus_reasoning": "Der Konsens ist basierend auf den Bewertungen und der Analyse positiv. Die Frage ist gut formuliert, die Antwortmöglichkeiten sind jedoch nicht eindeutig genug, um eine falsche Antwort auszuschließen. Der Schwierigkeitsgrad liegt bei 3, was für eine grundlegende Verständnis des Begriffs \"Bedarf\" erforderlich ist.",
+    "synthesized_suggestions": "Keine Verbesserungsvorschläge wurden gemacht.",
+    "average_rating": 3.0,
+    "expert_count": 5
+  },
+  "step_metadata": {
+    "step_description": "Expert consensus determination for question_1",
+    "consensus_algorithm": "single_pass_majority",
+    "processing_time_ms": 4490.459044774373,
+    "approved": true
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "step_name": "03_question_2_consensus",
+  "timestamp": "2025-08-15T01:38:52.552025",
+  "step_data": {
+    "question_key": "question_2",
+    "approved": false,
+    "improvement_priority": "Verbesserung der Frageformulierung und Hinzufügen einer kurzen Erklärung zur Pyramide von Maslow.\nDurch die Anpassung kann die Klarheit und Verständlichkeit der Frage erhöht werden.",
+    "consensus_reasoning": "Die Experten sind sich nicht einig, ob die Frage klar formuliert ist. Einige halten sie für vage, während andere sie als gut bezeichnen.\nDaher wurde entschieden, dass eine Anpassung der Frageformulierung erforderlich ist.",
+    "synthesized_suggestions": "Eine mögliche Anpassung könnte darin bestehen, eine Frage zu formulieren, die spezifischer auf die Taxonomiestufe \"Wissen/Reproduktion\" abzielt. Zum Beispiel: \"Welche Bedürfnisse sind nach der Theorie von Maslow in welcher Reihenfolge zu befriedigen?\" Dies würde den Lernenden helfen, die richtige Antwort zu ermitteln.",
+    "average_rating": 3.0,
+    "expert_count": 5
+  },
+  "step_metadata": {
+    "step_description": "Expert consensus determination for question_2",
+    "consensus_algorithm": "single_pass_majority",
+    "processing_time_ms": 5268.816232681274,
+    "approved": false
+  }
+}

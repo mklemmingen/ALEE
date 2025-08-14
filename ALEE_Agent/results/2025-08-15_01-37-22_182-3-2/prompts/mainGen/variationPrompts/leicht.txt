@@ -1,0 +1,28 @@
+DIFFICULTY LEVEL: LEICHT (Easy)
+
+Diese Aufgabe soll vereinfacht für schwächere Schüler oder Einführungsphasen sein.
+
+SCHWIERIGKEITSMERKMALE:
+- Grundlegende Reproduktion: Direktes Abrufen von Faktenwissen
+- Ein-Schritt-Denkprozess: Einfache, direkte Anwendung
+- Klare Signalwörter: Eindeutige Hinweise auf richtige Antwort
+- Bekannte Beispiele: Standardsituationen aus dem Unterricht
+- Wenige Distraktoren: 3-4 Antwortoptionen
+
+KOGNITIVE ANFORDERUNGEN:
+- Einfaches Wiedererkennen von Begriffen
+- Direkte Definitionen anwenden
+- Minimale Abstraktion erforderlich
+- Ein klarer Lösungsweg
+
+SPRACHLICHE GESTALTUNG:
+- Sehr klare, einfache Sprache
+- Kurze Sätze
+- Vertrautes Vokabular
+- Offensichtliche Strukturen
+
+BEISPIEL-KOMPLEXITÄT:
+Luisa wünscht sich ein neues Handy. Was ist dieser Wunsch?
+A) Ein Bedürfnis
+B) Kein Bedürfnis
+C) Nur für Erwachsene wichtig

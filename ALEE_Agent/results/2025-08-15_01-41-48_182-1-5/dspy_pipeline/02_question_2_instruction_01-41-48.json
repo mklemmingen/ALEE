@@ -1,0 +1,29 @@
+{
+  "step_name": "02_question_2_instruction",
+  "timestamp": "2025-08-15T01:41:48.021581",
+  "step_data": {
+    "expert_name": "instruction",
+    "question_key": "question_2",
+    "question_evaluated": "Warum baust du dir als Nächstes einen Speer, um dich vor wilden Tieren zu schützen?",
+    "answers_evaluated": [
+      "Um sich vor wilden Tieren zu schützen und seine Sicherheit zu gewährleisten.\nWeil man dann nicht mehr so allein ist und Kontakt mit anderen haben kann.\nIndem man beginnt",
+      "sich auf die Befriedigung höherer Bedürfnisse zu konzentrieren."
+    ],
+    "target_value": "Explizit",
+    "expert_rating": 3,
+    "expert_feedback": "Die Anweisungsklarheit ist teilweise gegeben, da die Aufgabe klar definiert ist, aber es könnte noch mehr Klarheit in Bezug auf das Ziel und die Vorgehensweise geben. Die Antwortmöglichkeiten sollten auch besser spezifiziert werden.",
+    "expert_suggestions": [
+      "- Eine klare Erklärung des Ziels der Aufgabe hinzufügen (z.B. \"Warum ist es wichtig, sich vor wilden Tieren zu schützen?\")",
+      "- Die Antwortmöglichkeiten spezifischer machen (z.B. \"Um sich gegen Bären zu wehren\" oder \"Damit man sich in der Natur besser sicher fühlt\")",
+      "- Ein Beispiel oder eine Illustration hinzufügen, um die Aufgabe besser verständlich zu machen"
+    ],
+    "expert_reasoning": "Die Anweisung wird mit 3 von 5 Punkten bewertet, da sie explizit ist und ein klares Ziel hat. Allerdings fehlt es an Klarheit in Bezug auf das Ziel und die Vorgehensweise.",
+    "expert_context": "=== EXPERTENROLLE ===\nDu bist ein Experte für Anweisungsklarheit und Explizitheit in deutschen Bildungsfragen.\n\nDEINE AUFGABE:\nBewerte, ob die Anweisungen in den gestellten Fragen dem gewünschten Grad der Explizitheit entsprechen und klar verständlich sind.\n\nBEWERTUNGSKRITERIEN:\n- Explizitheit: Anweisungen entsprechen dem Parameter (Explizit/Implizit)\n- Klarheit: Eindeutige und verständliche Formulierungen\n- Sprachliche Hindernisse: Korrekte Behandlung je nach Parameter-Anforderung\n- Anweisungsstruktur: Logischer Aufbau der Instruktionen\n\nEXPLIZITHEIT-STUFEN:\n- EXPLIZIT: Klare, detaillierte Anweisungen mit direkten Handlungsaufforderungen\n- IMPLIZIT: Subtilere Anweisungen, die Schlussfolgerungen erfordern\n\nSPRACHLICHE HINDERNISSE:\n- Passivkonstruktionen: Je nach Parameter-Anforderung\n- Komplexe Nominalphrasen: Bewertung der Angemessenheit\n\nAntworte in folgendem JSON-Format:\n{\n  \"bewertung\": [1-5],\n  \"feedback\": \"Spezifische Analyse der Anweisungsklarheit\",\n  \"vorschlaege\": \"Verbesserungsvorschläge bei Bewertung < 3\",\n  \"begruendung\": \"Detaillierte Begründung der Bewertung\"\n}\n\n=== ZU BEWERTENDE FRAGE ===\nFrage: Warum baust du dir als Nächstes einen Speer, um dich vor wilden Tieren zu schützen?\nAntworten: Um sich vor wilden Tieren zu schützen und seine Sicherheit zu gewährleisten.\nWeil man dann nicht mehr so allein ist und Kontakt mit anderen haben kann.\nIndem man beginnt, sich auf die Befriedigung höherer Bedürfnisse zu konzentrieren.\nZielwert: Explizit\n\n=== BEWERTUNGSANWEISUNG ===\n=== IHRE AUFGABE ===\nBewerten Sie diese 3 Fragen entsprechend Ihrer Expertise.\n\nAntworten Sie mit GENAU diesem JSON-Format:\n{\n    \"status\": \"gut\" oder \"schlecht\",\n    \"reasoning\": \"Ihre Erklärung warum diese Fragen gut/schlecht sind\",\n    \"suggestions\": [\"spezifischer Vorschlag 1\", \"spezifischer Vorschlag 2\", \"...\"]\n}\n\nWenn Status \"gut\" ist, können Vorschläge leer [] sein.\nWenn Status \"schlecht\" ist, geben Sie spezifische umsetzbare Vorschläge zur Verbesserung der Fragen."
+  },
+  "step_metadata": {
+    "step_description": "Expert evaluation by instruction for question_2",
+    "expert_specialization": "instruction",
+    "processing_time_ms": 4876.047372817993,
+    "expert_rating": 3
+  }
+}

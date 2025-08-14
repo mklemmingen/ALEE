@@ -1,0 +1,26 @@
+{
+  "step_name": "02_question_3_instruction",
+  "timestamp": "2025-08-15T01:41:48.021913",
+  "step_data": {
+    "expert_name": "instruction",
+    "question_key": "question_3",
+    "question_evaluated": "Was passiert, wenn alle physiologischen und Sicherheitsbedürfnisse befriedigt sind, aber man noch keine sozialen Bedürfnisse hat?",
+    "answers_evaluated": [
+      "Durch die Befriedigung der sozialen Bedürfnisse wie Kontakt mit Menschen\nDurch die Erfüllung von Sicherheitsbedürfnissen wie Schutz vor wilden Tieren\nIndem man neue Möglichkeiten für das Leben auf der Insel entdeckt"
+    ],
+    "target_value": "Explizit",
+    "expert_rating": 3,
+    "expert_feedback": "Die Anweisungsklarheit ist gut, da das Ziel klar definiert ist und die Optionen passend zur Frage ausgerichtet sind. Die Formulierung des Ziels als explizit deutet darauf hin, dass ein direktes und unmissverständliches Ziel verfolgt wird.",
+    "expert_suggestions": [
+      "Keine Vorschläge für Verbesserungen, da die Anweisungsklarheit gut ist."
+    ],
+    "expert_reasoning": "Die Befriedigung sozialer Bedürfnisse spielt eine entscheidende Rolle in der menschlichen Entwicklung. Die explizite Formulierung des Ziels und die passenden Optionen zur Antwort tragen dazu bei, dass das Ziel klar verfolgt werden kann.",
+    "expert_context": "=== EXPERTENROLLE ===\nDu bist ein Experte für Anweisungsklarheit und Explizitheit in deutschen Bildungsfragen.\n\nDEINE AUFGABE:\nBewerte, ob die Anweisungen in den gestellten Fragen dem gewünschten Grad der Explizitheit entsprechen und klar verständlich sind.\n\nBEWERTUNGSKRITERIEN:\n- Explizitheit: Anweisungen entsprechen dem Parameter (Explizit/Implizit)\n- Klarheit: Eindeutige und verständliche Formulierungen\n- Sprachliche Hindernisse: Korrekte Behandlung je nach Parameter-Anforderung\n- Anweisungsstruktur: Logischer Aufbau der Instruktionen\n\nEXPLIZITHEIT-STUFEN:\n- EXPLIZIT: Klare, detaillierte Anweisungen mit direkten Handlungsaufforderungen\n- IMPLIZIT: Subtilere Anweisungen, die Schlussfolgerungen erfordern\n\nSPRACHLICHE HINDERNISSE:\n- Passivkonstruktionen: Je nach Parameter-Anforderung\n- Komplexe Nominalphrasen: Bewertung der Angemessenheit\n\nAntworte in folgendem JSON-Format:\n{\n  \"bewertung\": [1-5],\n  \"feedback\": \"Spezifische Analyse der Anweisungsklarheit\",\n  \"vorschlaege\": \"Verbesserungsvorschläge bei Bewertung < 3\",\n  \"begruendung\": \"Detaillierte Begründung der Bewertung\"\n}\n\n=== ZU BEWERTENDE FRAGE ===\nFrage: Was passiert, wenn alle physiologischen und Sicherheitsbedürfnisse befriedigt sind, aber man noch keine sozialen Bedürfnisse hat?\nAntworten: Durch die Befriedigung der sozialen Bedürfnisse wie Kontakt mit Menschen\nDurch die Erfüllung von Sicherheitsbedürfnissen wie Schutz vor wilden Tieren\nIndem man neue Möglichkeiten für das Leben auf der Insel entdeckt\nZielwert: Explizit\n\n=== BEWERTUNGSANWEISUNG ===\n=== IHRE AUFGABE ===\nBewerten Sie diese 3 Fragen entsprechend Ihrer Expertise.\n\nAntworten Sie mit GENAU diesem JSON-Format:\n{\n    \"status\": \"gut\" oder \"schlecht\",\n    \"reasoning\": \"Ihre Erklärung warum diese Fragen gut/schlecht sind\",\n    \"suggestions\": [\"spezifischer Vorschlag 1\", \"spezifischer Vorschlag 2\", \"...\"]\n}\n\nWenn Status \"gut\" ist, können Vorschläge leer [] sein.\nWenn Status \"schlecht\" ist, geben Sie spezifische umsetzbare Vorschläge zur Verbesserung der Fragen."
+  },
+  "step_metadata": {
+    "step_description": "Expert evaluation by instruction for question_3",
+    "expert_specialization": "instruction",
+    "processing_time_ms": 4224.772691726685,
+    "expert_rating": 3
+  }
+}

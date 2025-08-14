@@ -105,7 +105,7 @@ class DSPyEducationalSystem:
             logger.error(f"Failed to initialize DSPy system: {e}")
             raise RuntimeError(f"DSPy initialization failed: {e}")
     
-    async def generate_questions_dspy(self, request: SysArchRequest) -> SysArchResult:
+    async def generate_questions_dspy(self, request: SysArchRequest) -> tuple[SysArchResult, Dict[str, Any]]:
         """
         Generate questions using DSPy single-pass consensus architecture
         Preserves existing result_manager integration and SYSARCH compliance
@@ -162,7 +162,7 @@ class DSPyEducationalSystem:
             logger.info(f"DSPy generation completed for {request.c_id} in {processing_time:.2f}s")
             logger.info(f"All questions approved: {pipeline_result['all_approved']}")
             
-            return result
+            return result, pipeline_result
             
         except Exception as e:
             logger.error(f"DSPy generation failed for {request.c_id}: {e}")
@@ -261,41 +261,134 @@ async def generate_questions_dspy_endpoint(request: SysArchRequest):
         logger.info(f"DSPy Request: {request.c_id} - {request.p_variation} ({request.question_type})")
         
         # Generate using DSPy pipeline
-        result = await dspy_system.generate_questions_dspy(request)
+        result, pipeline_result = await dspy_system.generate_questions_dspy(request)
         
         logger.info(f"DSPy Questions generated in {result.processing_time:.2f}s")
         
-        # Preserve existing result_manager integration
+        # Enhanced result_manager integration with DSPy pipeline tracking
         try:
             # Initialize result manager for this session
-            result_manager = ResultManager(base_dir="ALEE_Agent/results")
+            result_manager = ResultManager(base_results_dir="results")
             
             # Create session package 
             session_id = result_manager.create_session_package(
-                session_metadata={
-                    "dspy_enabled": True,
-                    "single_pass_consensus": True,
-                    "modular_prompts_used": True,
-                    "request_c_id": request.c_id,
-                    "processing_mode": "dspy_consensus"
-                }
+                c_id=request.c_id,
+                request_data=request.model_dump()
             )
             
-            # Save DSPy results
+            # Save detailed DSPy pipeline information (if available)
+            if 'pipeline_details' in pipeline_result:
+                details = pipeline_result['pipeline_details']
+                
+                # Save initial generation step
+                if 'initial_generation' in details:
+                    result_manager.save_dspy_pipeline_step(
+                        step_name="01_initial_generation",
+                        step_data={
+                            "generated_questions": details['initial_generation'].get('questions', []),
+                            "generated_answers": details['initial_generation'].get('answers', []),
+                            "model_used": "llama3.1:8b (port 8001)",
+                            "generation_result": details['initial_generation'].get('generation_result', {}),
+                            "modular_prompt_used": details['initial_generation'].get('modular_prompt_used', True),
+                            "generation_reasoning": details['initial_generation'].get('generation_reasoning', '')
+                        },
+                        step_metadata={
+                            "step_description": "Initial question generation using main LM",
+                            "processing_time_ms": details['initial_generation'].get('processing_time_ms', 0),
+                            "model_port": 8001,
+                            "questions_generated": len(details['initial_generation'].get('questions', []))
+                        }
+                    )
+                
+                # Save individual expert evaluations for each question
+                if 'expert_evaluations' in details:
+                    for question_key, experts in details['expert_evaluations'].items():
+                        for expert_name, expert_result in experts.items():
+                            result_manager.save_dspy_pipeline_step(
+                                step_name=f"02_{question_key}_{expert_name}",
+                                step_data={
+                                    "expert_name": expert_name,
+                                    "question_key": question_key,
+                                    "question_evaluated": expert_result.get('question_evaluated', ''),
+                                    "answers_evaluated": expert_result.get('answers_evaluated', []),
+                                    "target_value": expert_result.get('target_value', ''),
+                                    "expert_rating": expert_result.get('rating', 0),
+                                    "expert_feedback": expert_result.get('feedback', ''),
+                                    "expert_suggestions": expert_result.get('suggestions', []),
+                                    "expert_reasoning": expert_result.get('reasoning', ''),
+                                    "expert_context": expert_result.get('expert_context', {})
+                                },
+                                step_metadata={
+                                    "step_description": f"Expert evaluation by {expert_name} for {question_key}",
+                                    "expert_specialization": expert_name,
+                                    "processing_time_ms": expert_result.get('processing_time_ms', 0),
+                                    "expert_rating": expert_result.get('rating', 0)
+                                }
+                            )
+                
+                # Save consensus step for each question
+                if 'consensus' in details and 'results' in details['consensus']:
+                    for question_key, consensus_result in details['consensus']['results'].items():
+                        result_manager.save_dspy_pipeline_step(
+                            step_name=f"03_{question_key}_consensus",
+                            step_data={
+                                "question_key": question_key,
+                                "approved": consensus_result.get('approved', False),
+                                "improvement_priority": consensus_result.get('improvement_priority', ''),
+                                "consensus_reasoning": consensus_result.get('consensus_reasoning', ''),
+                                "synthesized_suggestions": consensus_result.get('synthesized_suggestions', ''),
+                                "average_rating": consensus_result.get('average_rating', 0),
+                                "expert_count": consensus_result.get('expert_count', 0)
+                            },
+                            step_metadata={
+                                "step_description": f"Expert consensus determination for {question_key}",
+                                "consensus_algorithm": details['consensus'].get('consensus_algorithm', 'single_pass_majority'),
+                                "processing_time_ms": details['consensus'].get('processing_time_ms', 0) / len(details['consensus']['results']),
+                                "approved": consensus_result.get('approved', False)
+                            }
+                        )
+                
+                # Save overall pipeline timing
+                if 'timing' in details:
+                    result_manager.save_dspy_pipeline_step(
+                        step_name="04_pipeline_timing",
+                        step_data={
+                            "generation_time_ms": details['timing'].get('generation_ms', 0),
+                            "expert_evaluation_time_ms": details['timing'].get('expert_evaluation_ms', 0),
+                            "consensus_time_ms": details['timing'].get('consensus_ms', 0),
+                            "total_pipeline_time_ms": details['timing'].get('total_pipeline_ms', 0),
+                            "pipeline_efficiency": {
+                                "generation_percentage": (details['timing'].get('generation_ms', 0) / details['timing'].get('total_pipeline_ms', 1)) * 100,
+                                "expert_percentage": (details['timing'].get('expert_evaluation_ms', 0) / details['timing'].get('total_pipeline_ms', 1)) * 100,
+                                "consensus_percentage": (details['timing'].get('consensus_ms', 0) / details['timing'].get('total_pipeline_ms', 1)) * 100
+                            }
+                        },
+                        step_metadata={
+                            "step_description": "Complete DSPy pipeline timing analysis",
+                            "total_time_ms": details['timing'].get('total_pipeline_ms', 0),
+                            "experts_used": len(pipeline_result.get('validated_questions', [{}])[0].get('expert_validations', {})) if pipeline_result.get('validated_questions') else 0,
+                            "questions_processed": len(pipeline_result.get('validated_questions', []))
+                        }
+                    )
+            
+            # Save final DSPy results
             final_questions = [result.question_1, result.question_2, result.question_3]
             result_manager.save_final_results(
-                session_id=session_id,
                 final_questions=final_questions,
                 csv_data=result.csv_data,
                 final_metadata={
                     "dspy_pipeline_used": True,
+                    "single_pass_consensus": True,
                     "expert_consensus_achieved": result.csv_data.get('dspy_all_approved', False),
                     "processing_time": result.processing_time,
-                    "generation_updates": result.generation_updates
+                    "generation_updates": result.generation_updates,
+                    "pipeline_steps_saved": 4,  # generation, experts, consensus, refinement
+                    "total_expert_evaluations": len(pipeline_result.get('pipeline_details', {}).get('expert_evaluations', {})),
+                    "dspy_architecture": "sequential_server_reuse"
                 }
             )
             
-            logger.info(f"DSPy results saved for {request.c_id} in session {session_id}")
+            logger.info(f"DSPy results and complete pipeline saved for {request.c_id} in session {session_id}")
             
         except Exception as save_error:
             logger.warning(f"DSPy result saving failed (continuing anyway): {save_error}")
@@ -376,7 +469,7 @@ if __name__ == "__main__":
     
     # Run server
     uvicorn.run(
-        "dspy_orchestrator:app",
+        "educational_question_generator:app",
         host="0.0.0.0",
         port=8000,
         reload=True,

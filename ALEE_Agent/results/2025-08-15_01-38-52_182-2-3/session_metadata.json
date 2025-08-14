@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": false,
+  "processing_time": 89.07114958763123,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was sind die ersten Dinge, f\u00fcr die du dich k\u00fcmmerst, wenn du auf einer einsamen Insel gestrandet bist?",
+        "Welche Bed\u00fcrfnisse sind in der Pyramide von Maslow nach ihrer Dringlichkeit sortiert und m\u00fcssen befriedigt werden, bevor man sich weiter obenstehender Bed\u00fcrfnisse widmet?",
+        "Wie gelangt man von Bed\u00fcrfnis zu Bed\u00fcrfnis \u2013 und in der Pyramide immer weiter nach oben?"
+      ],
+      "expert_consensus": [
+        true,
+        false,
+        false
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": false
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T01:38:52.552215",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

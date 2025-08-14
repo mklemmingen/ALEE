@@ -1,0 +1,8 @@
+Basierend auf den angegebenen Parametern, generiere genau 3 verschiedene Bildungsfragen.
+
+Gib sie in diesem exakten Format zurück:
+1. Erste Frage hier
+2. Zweite Frage hier  
+3. Dritte Frage hier
+
+Generiere die Fragen jetzt:

@@ -123,6 +123,46 @@ class ResultManager:
         
         return session_dir
 
+    def save_dspy_pipeline_step(self, step_name: str, step_data: Dict[str, Any], 
+                              step_metadata: Dict[str, Any] = None) -> bool:
+        """
+        Save any step of the DSPy pipeline (generation, expert evaluation, consensus, refinement)
+        
+        Args:
+            step_name: Name of the pipeline step (e.g., 'initial_generation', 'expert_evaluation', 'consensus', 'refinement')
+            step_data: Data from this step (questions, expert responses, etc.)
+            step_metadata: Optional metadata about this step (timing, model used, etc.)
+            
+        Returns:
+            True if saved successfully, False otherwise
+        """
+        if not self.current_session_dir:
+            print("Warning: No active session package. Call create_session_package() first.")
+            return False
+            
+        try:
+            # Create DSPy pipeline directory if it doesn't exist
+            pipeline_dir = self.current_session_dir / "dspy_pipeline"
+            pipeline_dir.mkdir(exist_ok=True)
+            
+            # Create timestamped step file
+            step_file = pipeline_dir / f"{step_name}_{datetime.now().strftime('%H-%M-%S')}.json"
+            
+            with open(step_file, 'w', encoding='utf-8') as f:
+                json.dump({
+                    "step_name": step_name,
+                    "timestamp": datetime.now().isoformat(),
+                    "step_data": step_data,
+                    "step_metadata": step_metadata or {}
+                }, f, indent=2, ensure_ascii=False)
+            
+            print(f"DSPy pipeline step '{step_name}' saved to: {step_file}")
+            return True
+            
+        except Exception as e:
+            print(f"Warning: Failed to save DSPy pipeline step '{step_name}': {e}")
+            return False
+
     def save_iteration_result(self, iteration_num: int, questions: List[str], 
                             prompts_used: Dict[str, str], expert_feedback: Dict[str, Any] = None,
                             processing_metadata: Dict[str, Any] = None) -> bool:

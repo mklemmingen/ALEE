@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": false,
+  "processing_time": 86.69715428352356,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Um welche Art von Bed\u00fcrfnisse muss man sich als Strandgast auf einer einsamen Insel zuerst k\u00fcmmern?",
+        "Kann man sich auf der Insel gleichzeitig um die Befriedigung seiner sozialen Bed\u00fcrfnisse und seiner physiologischen Grundbed\u00fcrfnisse k\u00fcmmern?",
+        "Befinden sich Sicherheits- und soziale Bed\u00fcrfnisse in derselben Stufe der Bed\u00fcrfnispyramide?"
+      ],
+      "expert_consensus": [
+        false,
+        false,
+        false
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": false
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T01:40:20.265516",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

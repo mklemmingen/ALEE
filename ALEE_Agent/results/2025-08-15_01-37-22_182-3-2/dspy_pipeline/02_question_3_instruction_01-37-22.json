@@ -1,0 +1,27 @@
+{
+  "step_name": "02_question_3_instruction",
+  "timestamp": "2025-08-15T01:37:22.463437",
+  "step_data": {
+    "expert_name": "instruction",
+    "question_key": "question_3",
+    "question_evaluated": "Welche Bedürfnisse sind in der Pyramide von Maslow wichtiger als soziale Bedürfnisse?",
+    "answers_evaluated": [
+      "A) Physiologische Grundbedürfnisse sind wichtiger als soziale Bedürfnisse.\nB) Sicherheitsbedürfnisse sind wichtiger als soziale Bedürfnisse.\nC) Soziale Bedürfnisse sind wichtiger als Sicherheitsbedürfnisse.\n\nD) Luxus ist wichtiger als alle anderen Bedürfnisse."
+    ],
+    "target_value": "Implizit",
+    "expert_rating": 4,
+    "expert_feedback": "Die Anweisung ist einigermaßen klar formuliert, aber es fehlt an Kontext. Eine mögliche Verbesserung könnte darin bestehen, mehr zum Thema zu erzählen oder eine kurze Erklärung für die Bedeutung von Maslows Pyramide bereitzustellen.",
+    "expert_suggestions": [
+      "- Fügen Sie einen kurzen Hinweis zur Bedeutung von Maslows Pyramide ein.",
+      "- Stellen Sie sicher, dass die Optionen nicht zu eng gefasst sind und alle möglichen Antworten abgedeckt werden."
+    ],
+    "expert_reasoning": "Die Anweisungs-Bewertung von 4 ergibt sich aus der Tatsache, dass die Frage relativ klar formuliert ist, aber an einigen Stellen den gewünschten Kontext fehlt. Die richtige Antwort ist gut identifizierbar und es gibt keine offensichtlichen Fehlinformationen.",
+    "expert_context": "=== EXPERTENROLLE ===\nDu bist ein Experte für Anweisungsklarheit und Explizitheit in deutschen Bildungsfragen.\n\nDEINE AUFGABE:\nBewerte, ob die Anweisungen in den gestellten Fragen dem gewünschten Grad der Explizitheit entsprechen und klar verständlich sind.\n\nBEWERTUNGSKRITERIEN:\n- Explizitheit: Anweisungen entsprechen dem Parameter (Explizit/Implizit)\n- Klarheit: Eindeutige und verständliche Formulierungen\n- Sprachliche Hindernisse: Korrekte Behandlung je nach Parameter-Anforderung\n- Anweisungsstruktur: Logischer Aufbau der Instruktionen\n\nEXPLIZITHEIT-STUFEN:\n- EXPLIZIT: Klare, detaillierte Anweisungen mit direkten Handlungsaufforderungen\n- IMPLIZIT: Subtilere Anweisungen, die Schlussfolgerungen erfordern\n\nSPRACHLICHE HINDERNISSE:\n- Passivkonstruktionen: Je nach Parameter-Anforderung\n- Komplexe Nominalphrasen: Bewertung der Angemessenheit\n\nAntworte in folgendem JSON-Format:\n{\n  \"bewertung\": [1-5],\n  \"feedback\": \"Spezifische Analyse der Anweisungsklarheit\",\n  \"vorschlaege\": \"Verbesserungsvorschläge bei Bewertung < 3\",\n  \"begruendung\": \"Detaillierte Begründung der Bewertung\"\n}\n\n=== ZU BEWERTENDE FRAGE ===\nFrage: Welche Bedürfnisse sind in der Pyramide von Maslow wichtiger als soziale Bedürfnisse?\nAntworten: A) Physiologische Grundbedürfnisse sind wichtiger als soziale Bedürfnisse.\nB) Sicherheitsbedürfnisse sind wichtiger als soziale Bedürfnisse.\nC) Soziale Bedürfnisse sind wichtiger als Sicherheitsbedürfnisse.\n\nD) Luxus ist wichtiger als alle anderen Bedürfnisse.\nZielwert: Implizit\n\n=== BEWERTUNGSANWEISUNG ===\n=== IHRE AUFGABE ===\nBewerten Sie diese 3 Fragen entsprechend Ihrer Expertise.\n\nAntworten Sie mit GENAU diesem JSON-Format:\n{\n    \"status\": \"gut\" oder \"schlecht\",\n    \"reasoning\": \"Ihre Erklärung warum diese Fragen gut/schlecht sind\",\n    \"suggestions\": [\"spezifischer Vorschlag 1\", \"spezifischer Vorschlag 2\", \"...\"]\n}\n\nWenn Status \"gut\" ist, können Vorschläge leer [] sein.\nWenn Status \"schlecht\" ist, geben Sie spezifische umsetzbare Vorschläge zur Verbesserung der Fragen."
+  },
+  "step_metadata": {
+    "step_description": "Expert evaluation by instruction for question_3",
+    "expert_specialization": "instruction",
+    "processing_time_ms": 5032.538414001465,
+    "expert_rating": 4
+  }
+}

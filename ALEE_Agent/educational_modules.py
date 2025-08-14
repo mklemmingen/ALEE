@@ -358,13 +358,13 @@ class GermanEducationalPipeline(dspy.Module):
         self.consensus = GermanExpertConsensus(self.prompt_builder)
         
         # Initialize experts with their specific LMs and prompt builder
+        # Note: Content validation is now handled by instruction expert
         self.experts = {
             'variation': VariationExpertGerman(self.prompt_builder),
             'taxonomy': TaxonomyExpertGerman(self.prompt_builder), 
             'math': MathExpertGerman(self.prompt_builder),
             'obstacle': ObstacleExpertGerman(self.prompt_builder),
-            'instruction': InstructionExpertGerman(self.prompt_builder),
-            'content': ContentExpertGerman(self.prompt_builder)
+            'instruction': InstructionExpertGerman(self.prompt_builder)
         }
         
         # Store LM configs for context switching
@@ -373,23 +373,31 @@ class GermanEducationalPipeline(dspy.Module):
     def forward(self, request_params: Dict[str, Any]):
         """Generate and validate German questions using modular prompts (single-pass)"""
         
+        import time
+        pipeline_start = time.time()
+        
         logger.info("Starting German educational pipeline with DSPy")
         
         # Step 1: Generate questions using modular .txt prompts
+        generation_start = time.time()
         generation_result = self.generator(request_params)
         questions = generation_result['questions']
         answers = generation_result['answers'] 
+        generation_time = time.time() - generation_start
         
-        logger.info(f"Generated {len(questions)} questions using modular prompts")
+        logger.info(f"Generated {len(questions)} questions using modular prompts in {generation_time:.2f}s")
         
         # Step 2: Parallel expert validation using modular prompts
+        expert_start = time.time()
         expert_validations = {}
+        all_expert_details = {}
         
         for i, (question, answer_list) in enumerate(zip(questions, answers)):
             question_validations = {}
             
             # Validate with each expert using their specific LM and .txt prompts
             for expert_name, expert_module in self.experts.items():
+                expert_eval_start = time.time()
                 target_value = self._get_target_value_for_expert(expert_name, request_params)
                 
                 # Switch to expert's LM context
@@ -399,14 +407,37 @@ class GermanEducationalPipeline(dspy.Module):
                 else:
                     validation = expert_module(question, answer_list, target_value, request_params)
                 
-                question_validations[expert_name] = validation
+                expert_eval_time = time.time() - expert_eval_start
+                
+                # Enhanced validation with processing metadata
+                enhanced_validation = {
+                    **validation,
+                    'processing_time_ms': expert_eval_time * 1000,
+                    'target_value': target_value,
+                    'question_evaluated': question,
+                    'answers_evaluated': answer_list
+                }
+                
+                question_validations[expert_name] = enhanced_validation
+                
+                # Store for detailed pipeline tracking
+                if f'question_{i+1}' not in all_expert_details:
+                    all_expert_details[f'question_{i+1}'] = {}
+                all_expert_details[f'question_{i+1}'][expert_name] = enhanced_validation
             
             expert_validations[f'question_{i+1}'] = question_validations
         
+        expert_total_time = time.time() - expert_start
+        logger.info(f"Expert validation completed in {expert_total_time:.2f}s")
+        
         # Step 3: Consensus determination using .txt prompts
+        consensus_start = time.time()
         final_validations = []
+        consensus_details = {}
+        
         for i in range(len(questions)):
             consensus_result = self.consensus(expert_validations[f'question_{i+1}'])
+            consensus_details[f'question_{i+1}'] = consensus_result
             
             final_validations.append({
                 'question': questions[i],
@@ -416,6 +447,37 @@ class GermanEducationalPipeline(dspy.Module):
                 'approved': consensus_result['approved']
             })
         
+        consensus_time = time.time() - consensus_start
+        total_pipeline_time = time.time() - pipeline_start
+        
+        logger.info(f"Consensus determination completed in {consensus_time:.2f}s")
+        logger.info(f"Total pipeline time: {total_pipeline_time:.2f}s")
+        
+        # Build detailed pipeline information for saving
+        pipeline_details = {
+            'initial_generation': {
+                'questions': questions,
+                'answers': answers,
+                'generation_result': generation_result,
+                'processing_time_ms': generation_time * 1000,
+                'modular_prompt_used': generation_result.get('modular_prompt_used', True),
+                'generation_reasoning': generation_result.get('reasoning', '')
+            },
+            'expert_evaluations': all_expert_details,
+            'consensus': {
+                'results': consensus_details,
+                'processing_time_ms': consensus_time * 1000,
+                'final_approvals': [v['approved'] for v in final_validations],
+                'consensus_algorithm': 'single_pass_majority'
+            },
+            'timing': {
+                'generation_ms': generation_time * 1000,
+                'expert_evaluation_ms': expert_total_time * 1000,
+                'consensus_ms': consensus_time * 1000,
+                'total_pipeline_ms': total_pipeline_time * 1000
+            }
+        }
+        
         return {
             'validated_questions': final_validations,
             'generation_metadata': {
@@ -423,7 +485,8 @@ class GermanEducationalPipeline(dspy.Module):
                 'generation_reasoning': generation_result['reasoning']
             },
             'parameters_used': request_params,
-            'all_approved': all(v['approved'] for v in final_validations)
+            'all_approved': all(v['approved'] for v in final_validations),
+            'pipeline_details': pipeline_details  # Added detailed pipeline information
         }
     
     def _get_target_value_for_expert(self, expert_name: str, params: Dict[str, Any]) -> str:
@@ -434,8 +497,8 @@ class GermanEducationalPipeline(dspy.Module):
             'taxonomy': params.get('p_taxonomy_level', 'Stufe 1'),
             'math': params.get('p_mathematical_requirement_level', '0'),
             'obstacle': self._format_obstacles_for_expert(params),
-            'instruction': params.get('p_instruction_explicitness_of_instruction', 'Implizit'),
-            'content': params.get('p_root_text_contains_irrelevant_information', 'Nicht Enthalten')
+            'instruction': params.get('p_instruction_explicitness_of_instruction', 'Implizit')
+            # Note: Content validation (irrelevant_information) now handled by instruction expert
         }
         
         return expert_param_map.get(expert_name, '')

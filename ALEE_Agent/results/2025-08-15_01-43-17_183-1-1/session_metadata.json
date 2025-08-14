@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "processing_time": 86.74045920372009,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was bedeutet es, wenn man sagt, dass jemand einen Bedarf nach etwas hat?",
+        "Wie unterscheidet sich der Begriff \"Bedarf\" von dem Begriff \"Bed\u00fcrfnis\"?",
+        "Welche Beispiele k\u00f6nnen verwendet werden, um den Unterschied zwischen Bed\u00fcrfnis und Bedarf zu illustrieren?"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T01:43:17.787561",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

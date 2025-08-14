@@ -1,0 +1,19 @@
+{
+  "step_name": "03_question_2_consensus",
+  "timestamp": "2025-08-15T01:40:20.265333",
+  "step_data": {
+    "question_key": "question_2",
+    "approved": false,
+    "improvement_priority": "instruction\nDie wichtigste Verbesserungsvorschläge betrifft die Anweisungsklarheit, wie von Experten 1 und 3 vorgeschlagen wurde. Die Formulierung der Frage sollte direkt auf das Konzept der Bedürfnispyramide abstellen.",
+    "consensus_reasoning": "Der Konsens basiert auf der gemeinsamen Bewertung aller Experten, dass die Frage zwar interessant ist, aber nicht präzise genug formuliert ist. Die Experten sind sich einig, dass eine Formulierung, die direkt auf das Konzept der Bedürfnispyramide abzielt, erforderlich ist.",
+    "synthesized_suggestions": "Eine mögliche Verbesserungsvorschläge zur Frage lautet: \"Wie kann man sich gleichzeitig um Sicherheits- und soziale Bedürfnisse auf einer Insel kümmern? Bitte beziehen Sie Ihre Antwort auf das Konzept der Bedürfnispyramide.\"",
+    "average_rating": 3.0,
+    "expert_count": 5
+  },
+  "step_metadata": {
+    "step_description": "Expert consensus determination for question_2",
+    "consensus_algorithm": "single_pass_majority",
+    "processing_time_ms": 5185.397942860921,
+    "approved": false
+  }
+}
