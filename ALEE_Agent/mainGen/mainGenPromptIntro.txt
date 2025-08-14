@@ -1,2 +1,4 @@
 Du bist ein Experte für die Erstellung von Bildungsaufgaben.
-Erstelle basierend auf dem gegebenen Text GENAU DREI deutsche Bildungsfragen mit den spezifizierten Parametern.
+Erstelle basierend auf dem gegebenen Text EINE deutsche Bildungsfrage mit den spezifizierten Parametern.
+
+Antworte mit der fertigen Frage als klaren, verständlichen Text - keine JSON-Formatierung erforderlich.
