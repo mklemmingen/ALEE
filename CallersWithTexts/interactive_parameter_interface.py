@@ -5,12 +5,12 @@ Guides users through all parameters with colorful validation and real-time feedb
 """
 
 import json
-import requests
+import sys
 import time
-from datetime import datetime
 from pathlib import Path
 from typing import Dict, Any, List, Optional
-import sys
+
+import requests
 
 try:
     from colorama import Fore, Back, Style, init
@@ -123,13 +123,23 @@ def validate_choice(value: str, valid_choices: List[str]) -> tuple[bool, str]:
 def get_parameter_choices() -> Dict[str, Dict[str, Any]]:
     """Define all parameter choices with descriptions"""
     return {
+        "question_type": {
+            "description": "Question format/type",
+            "choices": ["multiple-choice", "single-choice", "true-false", "mapping"],
+            "details": {
+                "multiple-choice": "Questions with multiple correct answers",
+                "single-choice": "Questions with exactly one correct answer", 
+                "true-false": "True/false statements to evaluate",
+                "mapping": "Match terms to definitions or concepts"
+            }
+        },
         "p_variation": {
-            "description": "Question difficulty and type",
+            "description": "Question difficulty level",
             "choices": ["stammaufgabe", "schwer", "leicht"],
             "details": {
-                "stammaufgabe": "Standard difficulty with multiple-choice questions",
-                "schwer": "Hard difficulty with true/false questions", 
-                "leicht": "Easy difficulty with single-choice questions"
+                "stammaufgabe": "Standard difficulty for average 9th grade students",
+                "schwer": "Hard difficulty for advanced students", 
+                "leicht": "Easy difficulty for struggling students"
             }
         },
         "p_taxonomy_level": {

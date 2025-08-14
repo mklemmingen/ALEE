@@ -18,7 +18,6 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Union, Optional
 
-
 class ResultManager:
     """Modular result manager for educational AI system results with incremental saving support"""
     
@@ -70,7 +69,7 @@ class ResultManager:
             "session_timestamp": timestamp,
             "created_at": datetime.now().isoformat(),
             "csv_file": csv_path.name if csv_path else None,
-            "prompts_saved": len(list((session_dir / "prompts").glob("*.txt"))) if (session_dir / "prompts").exists() else 0
+            "prompts_saved": len(list((session_dir / "prompts").rglob("*.txt"))) if (session_dir / "prompts").exists() else 0
         })
         self._save_metadata(session_dir, metadata)
         
@@ -103,6 +102,9 @@ class ResultManager:
         (session_dir / "iterations").mkdir(exist_ok=True)
         (session_dir / "prompts").mkdir(exist_ok=True)
         (session_dir / "parameters").mkdir(exist_ok=True)
+        
+        # Save prompts snapshot at session creation
+        self._save_prompts_snapshot(session_dir)
         
         # Save initial request parameters
         self._save_request_parameters(session_dir, request_data)
@@ -211,6 +213,10 @@ class ResultManager:
             return False
             
         try:
+            print(f"Saving final results to session: {self.current_session_dir}")
+            print(f"Final questions count: {len(final_questions)}")
+            print(f"CSV data keys: {list(csv_data.keys()) if csv_data else 'No CSV data'}")
+            
             # Save final questions
             final_questions_file = self.current_session_dir / "final_questions.json"
             with open(final_questions_file, 'w', encoding='utf-8') as f:
@@ -219,15 +225,18 @@ class ResultManager:
                     "question_count": len(final_questions),
                     "finalized_at": datetime.now().isoformat()
                 }, f, indent=2, ensure_ascii=False)
+            print(f"Successfully saved final questions to: {final_questions_file}")
             
             # Save CSV data
             csv_file = self.current_session_dir / "results.csv"
             if csv_data:
                 with open(csv_file, 'w', newline='', encoding='utf-8') as csvfile:
-                    if csv_data:
-                        writer = csv.DictWriter(csvfile, fieldnames=csv_data.keys())
-                        writer.writeheader()
-                        writer.writerow(csv_data)
+                    writer = csv.DictWriter(csvfile, fieldnames=csv_data.keys())
+                    writer.writeheader()
+                    writer.writerow(csv_data)
+                print(f"Successfully saved CSV data to: {csv_file}")
+            else:
+                print("Warning: No CSV data provided to save")
             
             # Update final metadata
             final_metadata.update({
@@ -237,11 +246,16 @@ class ResultManager:
             })
             
             self._save_metadata(self.current_session_dir, final_metadata)
+            print(f"Successfully updated session metadata with final_results_saved=True")
             
             return True
             
         except Exception as e:
-            print(f"Warning: Failed to save final results: {e}")
+            print(f"ERROR: Failed to save final results: {e}")
+            print(f"ERROR: Session dir: {self.current_session_dir}")
+            print(f"ERROR: Session dir exists: {self.current_session_dir.exists() if self.current_session_dir else 'N/A'}")
+            import traceback
+            print(f"ERROR: Full traceback: {traceback.format_exc()}")
             return False
 
     def _save_request_parameters(self, session_dir: Path, request_data: Dict[str, Any]):
@@ -322,25 +336,44 @@ class ResultManager:
             return None
             
     def _save_prompts_snapshot(self, session_dir: Path, prompts_source_dir: Optional[str] = None):
-        """Save snapshot of all ALEE_Agent prompts"""
+        """Save snapshot of all ALEE_Agent prompt directories (mainGen, expertEval, dtoAndOutputPrompt)"""
         if prompts_source_dir is None:
-            # Default: relative path to ALEE_Agent/prompts from CallersWithTexts
-            prompts_source_dir = Path(__file__).parent.parent / "ALEE_Agent" / "prompts"
+            # Default: ALEE_Agent directory (same directory as this result_manager.py file)
+            alee_agent_dir = Path(__file__).parent
         else:
-            prompts_source_dir = Path(prompts_source_dir)
+            alee_agent_dir = Path(prompts_source_dir)
             
         prompts_dest = session_dir / "prompts"
         prompts_dest.mkdir(exist_ok=True)
         
-        if prompts_source_dir.exists():
-            # Copy all prompt files
-            for prompt_file in prompts_source_dir.glob("*.txt"):
+        # Define the new organized prompt directories to copy
+        prompt_directories = [
+            "mainGen",      # Contains mainGenPromptIntro.txt and all parameter subdirectories
+            "expertEval",   # Contains expertPromptIntro.txt, refinementPromptIntro.txt, and expertPrompts/
+            "dtoAndOutputPrompt"  # Contains csvCorrectionPromptIntro.txt and outputFormatPrompt.txt
+        ]
+        
+        total_files_copied = 0
+        
+        for dir_name in prompt_directories:
+            source_dir = alee_agent_dir / dir_name
+            if source_dir.exists() and source_dir.is_dir():
+                dest_subdir = prompts_dest / dir_name
                 try:
-                    shutil.copy2(prompt_file, prompts_dest / prompt_file.name)
+                    # Copy entire directory structure
+                    shutil.copytree(source_dir, dest_subdir, dirs_exist_ok=True)
+                    
+                    # Count files copied for logging
+                    files_in_dir = len(list(dest_subdir.rglob("*.txt")))
+                    total_files_copied += files_in_dir
+                    print(f"Copied {files_in_dir} prompt files from {dir_name}/")
+                    
                 except Exception as e:
-                    print(f"Warning: Failed to copy {prompt_file.name}: {e}")
-        else:
-            print(f"Warning: Prompts directory not found: {prompts_source_dir}")
+                    print(f"Warning: Failed to copy directory {dir_name}: {e}")
+            else:
+                print(f"Warning: Prompt directory not found: {source_dir}")
+        
+        print(f"Prompts snapshot complete: {total_files_copied} total files copied to {prompts_dest}")
             
     def _save_metadata(self, session_dir: Path, metadata: Dict[str, Any]):
         """Save session metadata as JSON"""
