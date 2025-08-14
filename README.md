@@ -1,4 +1,4 @@
-# Multimodal Educational LLM Aggregation System for Parameter-Specific Question Generation through multiple data-backed expertised small large model refinement iterations
+# Educational Question Generation System: Three-Layer Architecture with Parameter-Specific Expert Validation
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)
@@ -7,14 +7,11 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![SYSARCH](https://img.shields.io/badge/SYSARCH-Compliant-brightgreen.svg)
 
-Educational AI system that takes in a informational text as well as educational parameters to create refined questions.
+A three-layer educational question generation system that processes informational text with educational parameters to produce validated questions.
 
-It uses multilayered small language model bouncing to generate expert-refined questions 
-(currently set to 3 per Request).
+The system implements a Caller → Orchestrator → Expert LLM architecture that generates exactly 3 questions per request through parameter-specific validation.
 
-The system follows a three-layered server architecture (Caller -> Generator -> Experts) defined in SYSARCH.md 
-with modular prompt construction from ALEE Tübingen defined educational question parameters
-and intelligent CSV conversion fallbacks.
+Architecture follows SYSARCH.md specifications with modular prompt construction based on ALEE Tübingen educational parameters and automated result management with CSV format compliance.
 
 ## Three-Layer Architecture
 
@@ -67,9 +64,10 @@ graph TD
     
     M --> M1["Convert to Required CSV Columns:<br/>c_id, subject, type, text, p.instruction_*, p.item_*, etc."]
     M1 --> M2["Intelligent CSV Fallbacks<br/>LM-Assisted Format Correction"]
-    M2 --> M3["Save Results with result_manager<br/>ISO timestamp + prompts snapshot"]
+    M2 --> M3["Orchestrator Saves Results Directly<br/>ISO timestamp + prompts snapshot + system metadata"]
     
-    M3 --> N["Return HTTP Response:<br/>question_1, question_2, question_3<br/>+ complete CSV data"]
+    M3 --> N["Return HTTP Confirmation:<br/>question_1, question_2, question_3<br/>(Results automatically saved)"]
+    M3 --> M4["Comprehensive Result Storage:<br/>CSV + VRAM usage + processing logs + expert feedback"]
     
     style A fill:#e3f2fd
     style B fill:#f3e5f5
@@ -285,19 +283,19 @@ GET /models/status
 │   ├── itemXObstacle/                     # Item obstacle prompts
 │   ├── instructionObstacle/               # Instruction obstacle prompts
 │   └── instructionExplicitnessOfInstruction/ # Instruction explicitness prompts
-├── CallersWithTexts/                      # Testing & results
-│   ├── stakeholder_test_system.py         # Comprehensive stakeholder testing
-│   ├── test_system.py                     # Basic system tests
-│   ├── result_manager.py                  # Result organization
-│   └── results/                           # Timestamped outputs
-│       └── YYYY-MM-DD_HH-MM-SS/          # Session folders
-│           ├── prompts/                   # Snapshot of prompts used
-│           ├── results.csv                # Generated test results
-│           └── session_metadata.json     # Session metadata & statistics
+├── CallersWithTexts/                      # Pure caller testing (orchestrator saves results)
+│   ├── stakeholder_test_system.py         # Pure HTTP caller (80 test calls)
+│   ├── test_system.py                     # Basic HTTP caller tests
+│   ├── result_manager.py                  # Used by orchestrator for result storage
+│   └── results/                           # Results saved automatically by orchestrator
+│       └── YYYY-MM-DD_HH-MM-SS/          # Session folders with ISO timestamps
+│           ├── prompts/                   # Snapshot of ALEE_Agent prompts
+│           ├── results.csv                # Complete SYSARCH CSV format
+│           └── session_metadata.json     # System metadata and processing logs
 └── *.sh                                   # Setup scripts
 ```
 
-### Python SDK Example
+### Python Client Example
 
 ```python
 import asyncio
@@ -309,7 +307,7 @@ class ValidationPlanClient:
     
     async def generate_validation_plan_questions(self, c_id, text, p_variation, 
                                                p_taxonomy_level, **kwargs):
-        """Generate 3 questions according to SYSARCH specifications"""
+        """Generate 3 questions with automatic orchestrator result saving"""
         async with aiohttp.ClientSession() as session:
             request = {
                 "c_id": c_id,
@@ -337,20 +335,8 @@ class ValidationPlanClient:
             ) as response:
                 return await response.json()
     
-    async def convert_to_csv(self, result, save_path=None):
-        """Convert SYSARCH result to CSV format"""
-        csv_data = result.get('csv_data', {})
-        
-        if save_path:
-            import csv
-            with open(save_path, 'w', newline='', encoding='utf-8') as f:
-                writer = csv.DictWriter(f, fieldnames=csv_data.keys())
-                writer.writeheader()
-                writer.writerow(csv_data)
-        
-        return csv_data
-    
     async def get_system_status(self):
+        """Retrieve system health and model status"""
         async with aiohttp.ClientSession() as session:
             async with session.get(f"{self.base_url}/health") as response:
                 health = await response.json()
@@ -364,7 +350,7 @@ class ValidationPlanClient:
 async def main():
     client = ValidationPlanClient()
     
-    # Generate SYSARCH-compliant questions
+    # Generate SYSARCH-compliant questions (orchestrator saves results automatically)
     result = await client.generate_validation_plan_questions(
         c_id="42-2-3",
         text="Die Marktwirtschaft funktioniert über Angebot und Nachfrage. Preise entstehen durch das Zusammenspiel von Anbietern und Nachfragern auf dem Markt.",
@@ -381,9 +367,9 @@ async def main():
     print(f"Question 2: {result['question_2'][:100]}...")
     print(f"Question 3: {result['question_3'][:100]}...")
     
-    # Convert to CSV and save
-    csv_data = await client.convert_to_csv(result, "questions_output.csv")
-    print(f"CSV columns: {len(csv_data)} - {list(csv_data.keys())[:5]}...")
+    # Results automatically saved by orchestrator to CallersWithTexts/results/YYYY-MM-DD_HH-MM-SS/
+    # CSV includes complete SYSARCH format with system metadata
+    print("Results automatically saved with comprehensive metadata")
     
     # Check system status
     status = await client.get_system_status()
