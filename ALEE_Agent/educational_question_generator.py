@@ -12,10 +12,10 @@ from fastapi import FastAPI, HTTPException
 # Define request/response models locally
 from pydantic import BaseModel, Field
 
-from .educational_modules import GermanEducationalPipeline, ModularPromptBuilder
-from .result_manager import ResultManager
+from educational_modules import GermanEducationalPipeline, ModularPromptBuilder
+from result_manager import ResultManager
 # Import existing components
-from .system_configuration import configure_dspy_with_ollama
+from system_configuration import configure_dspy_with_ollama
 
 
 class SysArchRequest(BaseModel):
