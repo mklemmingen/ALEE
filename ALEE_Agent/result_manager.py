@@ -211,6 +211,10 @@ class ResultManager:
             return False
             
         try:
+            print(f"Saving final results to session: {self.current_session_dir}")
+            print(f"Final questions count: {len(final_questions)}")
+            print(f"CSV data keys: {list(csv_data.keys()) if csv_data else 'No CSV data'}")
+            
             # Save final questions
             final_questions_file = self.current_session_dir / "final_questions.json"
             with open(final_questions_file, 'w', encoding='utf-8') as f:
@@ -219,15 +223,18 @@ class ResultManager:
                     "question_count": len(final_questions),
                     "finalized_at": datetime.now().isoformat()
                 }, f, indent=2, ensure_ascii=False)
+            print(f"Successfully saved final questions to: {final_questions_file}")
             
             # Save CSV data
             csv_file = self.current_session_dir / "results.csv"
             if csv_data:
                 with open(csv_file, 'w', newline='', encoding='utf-8') as csvfile:
-                    if csv_data:
-                        writer = csv.DictWriter(csvfile, fieldnames=csv_data.keys())
-                        writer.writeheader()
-                        writer.writerow(csv_data)
+                    writer = csv.DictWriter(csvfile, fieldnames=csv_data.keys())
+                    writer.writeheader()
+                    writer.writerow(csv_data)
+                print(f"Successfully saved CSV data to: {csv_file}")
+            else:
+                print("Warning: No CSV data provided to save")
             
             # Update final metadata
             final_metadata.update({
@@ -237,11 +244,16 @@ class ResultManager:
             })
             
             self._save_metadata(self.current_session_dir, final_metadata)
+            print(f"Successfully updated session metadata with final_results_saved=True")
             
             return True
             
         except Exception as e:
-            print(f"Warning: Failed to save final results: {e}")
+            print(f"ERROR: Failed to save final results: {e}")
+            print(f"ERROR: Session dir: {self.current_session_dir}")
+            print(f"ERROR: Session dir exists: {self.current_session_dir.exists() if self.current_session_dir else 'N/A'}")
+            import traceback
+            print(f"ERROR: Full traceback: {traceback.format_exc()}")
             return False
 
     def _save_request_parameters(self, session_dir: Path, request_data: Dict[str, Any]):

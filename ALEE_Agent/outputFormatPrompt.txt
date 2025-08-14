@@ -1,2 +1,0 @@
-Output Format: Antworte mit GENAU DREI Fragen im JSON-Format:
-{"question_1": "...", "question_2": "...", "question_3": "...", "answers_1": [...], "answers_2": [...], "answers_3": [...]}

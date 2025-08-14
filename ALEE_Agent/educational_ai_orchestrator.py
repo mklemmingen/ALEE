@@ -509,11 +509,11 @@ class SysArchPromptBuilder:
             
         # Map variation to difficulty level prompt files (stakeholder-aligned)
         variation_map = {
-            "stammaufgabe": "variationPrompts/stammaufgabe.txt",  # Standard difficulty
-            "schwer": "variationPrompts/schwer.txt",              # Hard difficulty  
-            "leicht": "variationPrompts/leicht.txt"               # Easy difficulty
+            "stammaufgabe": "mainGen/variationPrompts/stammaufgabe.txt",  # Standard difficulty
+            "schwer": "mainGen/variationPrompts/schwer.txt",              # Hard difficulty  
+            "leicht": "mainGen/variationPrompts/leicht.txt"               # Easy difficulty
         }
-        file_path = variation_map.get(variation.lower(), "variationPrompts/stammaufgabe.txt")
+        file_path = variation_map.get(variation.lower(), "mainGen/variationPrompts/stammaufgabe.txt")
         content = self.load_prompt_txt(file_path)
         return f"DIFFICULTY LEVEL ({variation}): {content}"
     
@@ -521,13 +521,13 @@ class SysArchPromptBuilder:
         """Build taxonomy-specific prompt"""
         # "Stufe 1 (Wissen/Reproduktion)", "Stufe 2 (Anwendung/Transfer)"
         if "Stufe 1" in level:
-            content = self.load_prompt_txt("taxonomyLevelPrompt/stufe1WissenReproduktion.txt")
+            content = self.load_prompt_txt("mainGen/taxonomyLevelPrompt/stufe1WissenReproduktion.txt")
             return f"p.taxonomy_level (Stufe 1): {content}"
         elif "Stufe 2" in level:
-            content = self.load_prompt_txt("taxonomyLevelPrompt/stufe2AnwendungTransfer.txt")
+            content = self.load_prompt_txt("mainGen/taxonomyLevelPrompt/stufe2AnwendungTransfer.txt")
             return f"p.taxonomy_level (Stufe 2): {content}"
         else:
-            content = self.load_prompt_txt("taxonomyLevelPrompt/stufe1WissenReproduktion.txt")
+            content = self.load_prompt_txt("mainGen/taxonomyLevelPrompt/stufe1WissenReproduktion.txt")
             return f"p.taxonomy_level (Default Stufe 1): {content}"
     
     def build_mathematical_prompt(self, level: str) -> str:
@@ -535,11 +535,11 @@ class SysArchPromptBuilder:
         # "0 (Kein Bezug)", "1 (Nutzen mathematischer Darstellungen)", "2 (Mathematische Operation)"
         level_clean = level.strip().split()[0]  # Extract just the number
         level_map = {
-            "0": "mathematicalRequirementLevel/0KeinBezug.txt",
-            "1": "mathematicalRequirementLevel/1NutzenMathematischerDarstellungen.txt", 
-            "2": "mathematicalRequirementLevel/2MathematischeOperationen.txt"
+            "0": "mainGen/mathematicalRequirementLevel/0KeinBezug.txt",
+            "1": "mainGen/mathematicalRequirementLevel/1NutzenMathematischerDarstellungen.txt", 
+            "2": "mainGen/mathematicalRequirementLevel/2MathematischeOperationen.txt"
         }
-        file_path = level_map.get(level_clean, "mathematicalRequirementLevel/0KeinBezug.txt")
+        file_path = level_map.get(level_clean, "mainGen/mathematicalRequirementLevel/0KeinBezug.txt")
         content = self.load_prompt_txt(file_path)
         return f"p.mathematical_requirement_level ({level}): {content}"
     
@@ -549,15 +549,15 @@ class SysArchPromptBuilder:
         value_file = "enthalten.txt" if value == "Enthalten" else "nichtEnthalten.txt"
         
         obstacle_map = {
-            "root_passive": f"rootTextParameterTextPrompts/obstaclePassivePrompts/{value_file}",
-            "root_negation": f"rootTextParameterTextPrompts/obstacleNegationPrompts/{value_file}", 
-            "root_complex_np": f"rootTextParameterTextPrompts/obstacleComplexPrompts/{value_file}",
-            "item_passive": f"itemXObstacle/passive/{value_file}",
-            "item_negation": f"itemXObstacle/negation/{value_file}",
-            "item_complex": f"itemXObstacle/complex/{value_file}",
-            "instruction_passive": f"instructionObstacle/passive/{value_file}",
-            "instruction_negation": f"instructionObstacle/negation/{value_file}",
-            "instruction_complex_np": f"instructionObstacle/complex_np/{value_file}"
+            "root_passive": f"mainGen/rootTextParameterTextPrompts/obstaclePassivePrompts/{value_file}",
+            "root_negation": f"mainGen/rootTextParameterTextPrompts/obstacleNegationPrompts/{value_file}", 
+            "root_complex_np": f"mainGen/rootTextParameterTextPrompts/obstacleComplexPrompts/{value_file}",
+            "item_passive": f"mainGen/itemXObstacle/passive/{value_file}",
+            "item_negation": f"mainGen/itemXObstacle/negation/{value_file}",
+            "item_complex": f"mainGen/itemXObstacle/complex/{value_file}",
+            "instruction_passive": f"mainGen/instructionObstacle/passive/{value_file}",
+            "instruction_negation": f"mainGen/instructionObstacle/negation/{value_file}",
+            "instruction_complex_np": f"mainGen/instructionObstacle/complex_np/{value_file}"
         }
         
         file_path = obstacle_map.get(obstacle_type, "")
@@ -570,17 +570,17 @@ class SysArchPromptBuilder:
         """Build irrelevant information prompt"""
         # "Enthalten", "Nicht Enthalten"
         value_file = "enthalten.txt" if value == "Enthalten" else "nichtEnthalten.txt"
-        content = self.load_prompt_txt(f"rootTextParameterTextPrompts/containsIrrelevantInformationPrompt/{value_file}")
+        content = self.load_prompt_txt(f"mainGen/rootTextParameterTextPrompts/containsIrrelevantInformationPrompt/{value_file}")
         return f"p.root_text_contains_irrelevant_information ({value}): {content}"
     
     def build_explicitness_prompt(self, value: str) -> str:
         """Build instruction explicitness prompt"""
         # "Explizit", "Implizit"
         if "Explizit" in value:
-            content = self.load_prompt_txt("instructionExplicitnessOfInstruction/explizit.txt")
+            content = self.load_prompt_txt("mainGen/instructionExplicitnessOfInstruction/explizit.txt")
             return f"p.instruction_explicitness_of_instruction (Explizit): {content}"
         else:
-            content = self.load_prompt_txt("instructionExplicitnessOfInstruction/implizit.txt")
+            content = self.load_prompt_txt("mainGen/instructionExplicitnessOfInstruction/implizit.txt")
             return f"p.instruction_explicitness_of_instruction (Implizit): {content}"
     
     def build_question_type_prompt(self, question_type: str) -> str:
@@ -602,10 +602,10 @@ class SysArchPromptBuilder:
         
         # Map to existing prompt files
         type_map = {
-            "multiple-choice": "variationPrompts/multiple-choice.txt",
-            "single-choice": "variationPrompts/single-choice.txt",
-            "true-false": "variationPrompts/true-false.txt",
-            "mapping": "variationPrompts/mapping.txt"
+            "multiple-choice": "mainGen/variationPrompts/multiple-choice.txt",
+            "single-choice": "mainGen/variationPrompts/single-choice.txt",
+            "true-false": "mainGen/variationPrompts/true-false.txt",
+            "mapping": "mainGen/variationPrompts/mapping.txt"
         }
         
         file_path = type_map.get(question_type.lower())
@@ -617,7 +617,7 @@ class SysArchPromptBuilder:
         components = []
         
         # Base instruction from external txt file
-        main_intro = self.load_prompt_txt("mainGenPromptIntro.txt")
+        main_intro = self.load_prompt_txt("mainGen/mainGenPromptIntro.txt")
         components.append(main_intro)
         components.append(f"\nReferenztext:\n{request.text}\n")
         components.append(f"c_id: {request.c_id}\n")
@@ -686,7 +686,7 @@ class SysArchPromptBuilder:
             components.append(f"p.root_text_reference_explanatory_text ({request.p_root_text_reference_explanatory_text}): <reference text handling prompt content>")
         
         # Output format instruction from external txt file
-        output_format = self.load_prompt_txt("outputFormatPrompt.txt")
+        output_format = self.load_prompt_txt("dtoAndOutputPrompt/outputFormatPrompt.txt")
         components.append(f"\n{output_format}")
         
         return "\n\n".join(components)
@@ -698,6 +698,10 @@ class EducationalAISystem:
         self.max_iterations = 3  # Max 3 iterations
         self.min_approval_score = 7.0
         self.prompt_builder = SysArchPromptBuilder()
+    
+    def load_prompt_txt(self, file_path: str) -> str:
+        """Load prompt text from file - same as SysArchPromptBuilder method"""
+        return self.prompt_builder.load_prompt_txt(file_path)
         
     async def clean_expert_sessions(self):
         """Clean all expert sessions for fresh start"""
@@ -849,12 +853,17 @@ class EducationalAISystem:
                 "expert_iterations_completed": True
             }
             
-            result_manager.save_final_results(
+            success = result_manager.save_final_results(
                 final_questions=validated_questions,
                 csv_data=csv_data,
                 final_metadata=final_metadata
             )
-            logger.info(f"Final results saved to session: {result_manager.current_session_dir}")
+            
+            if success:
+                logger.info(f"Final results saved successfully to session: {result_manager.current_session_dir}")
+            else:
+                logger.error(f"Failed to save final results - final_results_saved will remain false in session: {result_manager.current_session_dir}")
+                logger.error(f"Questions were: {validated_questions[:100]}...")  # Log first 100 chars for debugging
         
         return SysArchResult(
             question_1=validated_questions[0],
@@ -897,6 +906,7 @@ class EducationalAISystem:
                                                         result_manager, generation_updates: List[Dict[str, Any]]) -> str:
         """Validate single question through expert system with incremental saving (max 3 iterations)"""
         current_question = question
+        global_iteration_counter = len(generation_updates) + 1  # Continue from last saved iteration
         
         for iteration in range(self.max_iterations):
             iteration_start_time = time.time()
@@ -932,12 +942,13 @@ class EducationalAISystem:
                 }
                 
                 result_manager.save_iteration_result(
-                    iteration_num=(question_num * 10) + iteration + 2,  # Unique iteration number
+                    iteration_num=global_iteration_counter + 1,  # Simple sequential numbering
                     questions=[current_question],
                     prompts_used=expert_prompts_used,
                     expert_feedback=expert_feedback,
                     processing_metadata=iteration_metadata
                 )
+                global_iteration_counter += 1
             
             # Check if approved by all experts
             failed_validations = [v for v in validations 
@@ -957,12 +968,13 @@ class EducationalAISystem:
                     }
                     
                     result_manager.save_iteration_result(
-                        iteration_num=(question_num * 10) + iteration + 20,  # Approval marker
+                        iteration_num=global_iteration_counter + 1,  # Simple sequential numbering
                         questions=[current_question],
                         prompts_used={"final_approved_question": current_question},
                         expert_feedback={"approval_status": "APPROVED_BY_ALL_EXPERTS"},
                         processing_metadata=approval_metadata
                     )
+                    global_iteration_counter += 1
                 
                 break
                 
@@ -996,12 +1008,13 @@ class EducationalAISystem:
                     }
                     
                     result_manager.save_iteration_result(
-                        iteration_num=(question_num * 10) + iteration + 30,  # Refinement marker
+                        iteration_num=global_iteration_counter + 1,  # Simple sequential numbering
                         questions=[refined_question],
                         prompts_used={"refinement_feedback": "; ".join(feedback)},
                         expert_feedback={"refinement_applied": True},
                         processing_metadata=refinement_metadata
                     )
+                    global_iteration_counter += 1
                 
                 current_question = refined_question
         
@@ -1082,7 +1095,7 @@ class EducationalAISystem:
         
         # Build expert prompt with complete parameter configuration
         # Load expert intro prompt from external txt file
-        expert_intro = self.load_prompt_txt("expertPromptIntro.txt")
+        expert_intro = self.load_prompt_txt("expertEval/expertPromptIntro.txt")
         expert_prompt = f"""{expert_intro} {expert_config.expertise}.
 
         Analysiere diese Bildungsfrage bezüglich ALLER spezifizierten Parameter:
@@ -1153,7 +1166,7 @@ class EducationalAISystem:
         await model_manager.ensure_model_loaded(generator_config)
         
         # Load refinement intro prompt from external txt file
-        refinement_intro = self.load_prompt_txt("refinementPromptIntro.txt")
+        refinement_intro = self.load_prompt_txt("expertEval/refinementPromptIntro.txt")
         refinement_prompt = f"""{refinement_intro}
 
         Aktuelle Frage: {question}
@@ -1170,13 +1183,98 @@ class EducationalAISystem:
         
         response = await self._call_expert_llm(generator_config, refinement_prompt)
         
-        # Extract refined question from response
-        refined_data = parse_expert_response(response)
-        if refined_data and "question" in refined_data:
-            return refined_data["question"]
-        else:
-            # Fallback: return response text directly
-            return response.strip()
+        # Extract refined question from response with robust parsing
+        refined_question = self._extract_refined_question(response)
+        return refined_question
+    
+    def _extract_refined_question(self, response: str) -> str:
+        """Extract the actual refined question from LLM response, handling various formats"""
+        response = response.strip()
+        
+        # Try JSON parsing first
+        try:
+            refined_data = parse_expert_response(response)
+            if refined_data and "question" in refined_data:
+                return refined_data["question"].strip()
+        except:
+            pass
+        
+        # Look for specific markers that indicate the start of the actual question
+        question_markers = [
+            "**Verbesserte Frage:**",
+            "Verbesserte Frage:",
+            "**Frage:**",
+            "Frage:",
+            "**Question:**",
+            "Question:"
+        ]
+        
+        # Check if response contains a question marker
+        for marker in question_markers:
+            if marker in response:
+                parts = response.split(marker, 1)
+                if len(parts) > 1:
+                    # Extract everything after the marker until next major section
+                    question_part = parts[1].strip()
+                    # Stop at common section markers
+                    for stop_marker in ["**Parameter", "**Anweisungen", "**Bewertung", "\n\n**", "\n\n#"]:
+                        if stop_marker in question_part:
+                            question_part = question_part.split(stop_marker)[0].strip()
+                            break
+                    
+                    # Clean up the extracted question
+                    lines = question_part.split('\n')
+                    clean_lines = []
+                    for line in lines:
+                        line = line.strip()
+                        if line and not line.startswith('*') and not line.startswith('#'):
+                            clean_lines.append(line)
+                        elif line.startswith('*') and ':' not in line:  # Keep bullet points that are part of questions
+                            clean_lines.append(line)
+                    
+                    if clean_lines:
+                        return '\n'.join(clean_lines).strip()
+        
+        # If no marker found, try to extract question by removing obvious non-question content
+        lines = response.split('\n')
+        question_lines = []
+        skip_next = False
+        
+        for line in lines:
+            line = line.strip()
+            if skip_next or not line:
+                skip_next = False
+                continue
+                
+            # Skip obvious metadata/feedback lines
+            if any(phrase in line.lower() for phrase in [
+                "parameter-score", "overall-score", "empfehlung", "feedback:", 
+                "bewertung:", "cognitive_demand", "complexity_level", "distractor_quality"
+            ]):
+                skip_next = True
+                continue
+                
+            # Skip section headers
+            if line.startswith('**') and line.endswith('**') and ':' not in line:
+                continue
+                
+            # Keep lines that look like question content
+            if any(char in line for char in ['?', ':', 'Ordne', 'Welche', 'Was']):
+                question_lines.append(line)
+            elif question_lines and line and not line.startswith('*'):  # Continue question content
+                question_lines.append(line)
+        
+        if question_lines:
+            return '\n'.join(question_lines).strip()
+        
+        # Ultimate fallback: return first meaningful line
+        for line in lines:
+            line = line.strip()
+            if line and len(line) > 10 and not line.startswith('**'):
+                return line
+                
+        # Last resort: return cleaned response
+        return response[:200] + "..." if len(response) > 200 else response
     
     def _build_csv_data(self, request: SysArchRequest, questions: List[str]) -> Dict[str, Any]:
         """Build CSV data"""
@@ -1302,7 +1400,7 @@ class EducationalAISystem:
         await model_manager.ensure_model_loaded(helper_config)
         
         # Load CSV correction intro prompt from external txt file
-        csv_intro = self.load_prompt_txt("csvCorrectionPromptIntro.txt")
+        csv_intro = self.load_prompt_txt("dtoAndOutputPrompt/csvCorrectionPromptIntro.txt")
         correction_prompt = f"""{csv_intro}
 
         AUFGABE: Korrigiere die folgenden CSV-Konvertierungsprobleme:
@@ -1384,7 +1482,7 @@ class EducationalAISystem:
             return ""
             
         try:
-            prompt_path = Path(__file__).parent / "expertPrompts" / prompt_file
+            prompt_path = Path(__file__).parent / "expertEval" / "expertPrompts" / prompt_file
             with open(prompt_path, 'r', encoding='utf-8') as f:
                 expert_prompt = f.read().strip()
                 logger.info(f"Loaded expert prompt for {expert_name} ({len(expert_prompt)} chars)")
@@ -1655,14 +1753,13 @@ async def save_comprehensive_results(request: SysArchRequest, result: SysArchRes
             },
             "orchestrator_save_timestamp": datetime.now().isoformat(),
             "saved_by": "orchestrator_direct_save",
-            "prompts_snapshot": "All ALEE_Agent prompts saved to prompts/ folder"
+            "prompts_snapshot": "All ALEE_Agent prompts saved to expertPrompts/ and other prompt folders"
         }
         
         # Use result_manager to save everything
         session_dir = save_results(
             csv_data=csv_data,
-            metadata=metadata,
-            prompts_source_dir=str(Path(__file__).parent)  # Save all ALEE_Agent prompts
+            metadata=metadata
         )
         
         logger.info(f"Comprehensive results saved to: {session_dir}")
