@@ -6,8 +6,8 @@ NO hardcoded prompt strings - uses ModularPromptBuilder for all prompts
 import logging
 from typing import Dict, Any, Optional
 
-from .educational_signatures import *
-from .prompt_builder import ModularPromptBuilder
+from educational_signatures import *
+from prompt_builder import ModularPromptBuilder
 
 logger = logging.getLogger(__name__)
 
@@ -120,7 +120,7 @@ class GermanExpertValidator(dspy.Module):
         self.expert_prompt = self.prompt_builder.load_prompt_txt(f"expertEval/expertPrompts/{expert_name}.txt")
         self.evaluation_instruction = self.prompt_builder.load_prompt_txt("expertEval/expertEvaluationInstruction.txt")
     
-    def get_expert_context(self, question: str, answers: List[str], target_value: str, params: Dict[str, Any]) -> str:
+    def get_expert_context(self, question: str, answers: list[str], target_value: str, params: Dict[str, Any]) -> str:
         """Build expert context using modular prompts"""
         
         context_sections = [
@@ -145,7 +145,7 @@ class VariationExpertGerman(GermanExpertValidator):
     def __init__(self, prompt_builder: Optional[ModularPromptBuilder] = None):
         super().__init__(ValidateVariationGerman, "variation_expert", prompt_builder)
     
-    def forward(self, question: str, answers: List[str], target_variation: str, params: Dict[str, Any]):
+    def forward(self, question: str, answers: list[str], target_variation: str, params: Dict[str, Any]):
         """Validate German difficulty using modular prompts"""
         
         # Build expert context from .txt files
@@ -173,7 +173,7 @@ class TaxonomyExpertGerman(GermanExpertValidator):
     def __init__(self, prompt_builder: Optional[ModularPromptBuilder] = None):
         super().__init__(ValidateTaxonomyGerman, "taxonomy_expert", prompt_builder)
     
-    def forward(self, question: str, answers: List[str], target_taxonomy: str, params: Dict[str, Any]):
+    def forward(self, question: str, answers: list[str], target_taxonomy: str, params: Dict[str, Any]):
         """Validate taxonomy using modular prompts"""
         
         expert_context = self.get_expert_context(question, answers, target_taxonomy, params)
@@ -200,7 +200,7 @@ class MathExpertGerman(GermanExpertValidator):
     def __init__(self, prompt_builder: Optional[ModularPromptBuilder] = None):
         super().__init__(ValidateMathematicalGerman, "math_expert", prompt_builder)
     
-    def forward(self, question: str, answers: List[str], target_math_level: str, params: Dict[str, Any]):
+    def forward(self, question: str, answers: list[str], target_math_level: str, params: Dict[str, Any]):
         """Validate mathematical complexity using modular prompts"""
         
         expert_context = self.get_expert_context(question, answers, target_math_level, params)
@@ -227,7 +227,7 @@ class ObstacleExpertGerman(GermanExpertValidator):
     def __init__(self, prompt_builder: Optional[ModularPromptBuilder] = None):
         super().__init__(ValidateObstacleGerman, "obstacle_expert", prompt_builder)
     
-    def forward(self, question: str, answers: List[str], target_obstacles: str, params: Dict[str, Any]):
+    def forward(self, question: str, answers: list[str], target_obstacles: str, params: Dict[str, Any]):
         """Validate linguistic obstacles using modular prompts"""
         
         expert_context = self.get_expert_context(question, answers, target_obstacles, params)
@@ -254,7 +254,7 @@ class InstructionExpertGerman(GermanExpertValidator):
     def __init__(self, prompt_builder: Optional[ModularPromptBuilder] = None):
         super().__init__(ValidateInstructionGerman, "instruction_expert", prompt_builder)
     
-    def forward(self, question: str, answers: List[str], target_explicitness: str, params: Dict[str, Any]):
+    def forward(self, question: str, answers: list[str], target_explicitness: str, params: Dict[str, Any]):
         """Validate instruction clarity using modular prompts"""
         
         expert_context = self.get_expert_context(question, answers, target_explicitness, params)
@@ -281,7 +281,7 @@ class ContentExpertGerman(GermanExpertValidator):
     def __init__(self, prompt_builder: Optional[ModularPromptBuilder] = None):
         super().__init__(ValidateContentGerman, "content_expert", prompt_builder)
     
-    def forward(self, question: str, answers: List[str], target_relevance: str, params: Dict[str, Any]):
+    def forward(self, question: str, answers: list[str], target_relevance: str, params: Dict[str, Any]):
         """Validate content relevance using modular prompts"""
         
         expert_context = self.get_expert_context(question, answers, target_relevance, params)
