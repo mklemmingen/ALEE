@@ -1,7 +1,0 @@
-### p.instruction_obstacle_passive (Passivkonstruktionen in der Aufgabenstellung):
-**ENTHALTEN** - Beispiele:
-- "Der Preis wird durch Angebot und Nachfrage bestimmt"
-- "Es wurde entschieden, dass..."
-- "Die Maßnahme wird von der Regierung ergriffen"
-
-Erstelle Aufgabenanweisungen mit Passivkonstruktionen, die das Verstehen der Aufgabe erschweren können.

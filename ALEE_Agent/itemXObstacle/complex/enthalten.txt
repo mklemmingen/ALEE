@@ -1,8 +1,0 @@
-### p.item_X_obstacle_complex_np (Komplexe Nominalphrasen in Antwortoptionen):
-**ENTHALTEN** - Beispiele:
-- "Die durch steigende Rohstoffpreise verursachte Inflation"
-- "Das von der Europäischen Zentralbank beschlossene Zinsniveau"
-- "Die in verschiedenen Branchen unterschiedlich ausgeprägte Nachfrage"
-- Genitive Ketten: "die Auswirkungen der Erhöhung der Mehrwertsteuer"
-
-Erstelle Antwortoptionen mit komplexen Nominalphrasen, die mehrere Attribute oder Verschachtelungen enthalten.

@@ -1,7 +1,0 @@
-### p.instruction_obstacle_passive (Passivkonstruktionen in der Aufgabenstellung):
-**NICHT ENTHALTEN** - Beispiele:
-- "Angebot und Nachfrage bestimmen den Preis"
-- "Die Regierung ergreift die Maßnahme"
-- "Unternehmen produzieren Güter"
-
-Erstelle Aufgabenanweisungen ohne Passivkonstruktionen, verwende aktive Formulierungen.

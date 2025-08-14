@@ -1,6 +1,0 @@
-### p.item_X_obstacle_negation (Verneinungen in Antwortoptionen):
-**NICHT ENTHALTEN**:
-- Ausschließlich positive Formulierungen
-- Keine negativen Partikel oder Prefixe
-
-Erstelle Antwortoptionen ohne Verneinungen, verwende nur positive Formulierungen.
