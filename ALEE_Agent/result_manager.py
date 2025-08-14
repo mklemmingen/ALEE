@@ -20,7 +20,7 @@ from typing import List, Dict, Any, Union, Optional
 
 
 class ResultManager:
-    """Modular result manager for educational AI system results"""
+    """Modular result manager for educational AI system results with incremental saving support"""
     
     def __init__(self, base_results_dir: str = None):
         if base_results_dir is None:
@@ -29,6 +29,7 @@ class ResultManager:
         else:
             self.base_results_dir = Path(base_results_dir)
         self.base_results_dir.mkdir(exist_ok=True)
+        self.current_session_dir = None  # Track current active session
         
     def save_results(self, 
                     csv_data: Union[List[Dict[str, Any]], str, Path], 
@@ -74,6 +75,210 @@ class ResultManager:
         self._save_metadata(session_dir, metadata)
         
         return session_dir
+
+    def create_session_package(self, c_id: str, request_data: Dict[str, Any], 
+                             custom_timestamp: Optional[str] = None) -> Path:
+        """
+        Create a new session package for incremental result saving during question generation
+        
+        Args:
+            c_id: Question ID for this session
+            request_data: Initial request parameters
+            custom_timestamp: Optional custom timestamp
+            
+        Returns:
+            Path to created session directory
+        """
+        # Create timestamped session folder
+        if custom_timestamp:
+            timestamp = custom_timestamp
+        else:
+            timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        
+        session_dir = self.base_results_dir / f"{timestamp}_{c_id}"
+        session_dir.mkdir(exist_ok=True)
+        self.current_session_dir = session_dir
+        
+        # Create subdirectories for incremental saving
+        (session_dir / "iterations").mkdir(exist_ok=True)
+        (session_dir / "prompts").mkdir(exist_ok=True)
+        (session_dir / "parameters").mkdir(exist_ok=True)
+        
+        # Save initial request parameters
+        self._save_request_parameters(session_dir, request_data)
+        
+        # Save initial metadata
+        initial_metadata = {
+            "c_id": c_id,
+            "session_timestamp": timestamp,
+            "session_started_at": datetime.now().isoformat(),
+            "request_parameters": request_data,
+            "session_type": "incremental_question_generation",
+            "iterations_saved": 0,
+            "final_results_saved": False
+        }
+        self._save_metadata(session_dir, initial_metadata)
+        
+        return session_dir
+
+    def save_iteration_result(self, iteration_num: int, questions: List[str], 
+                            prompts_used: Dict[str, str], expert_feedback: Dict[str, Any] = None,
+                            processing_metadata: Dict[str, Any] = None) -> bool:
+        """
+        Save results from a specific iteration of question generation
+        
+        Args:
+            iteration_num: Current iteration number (1, 2, 3, etc.)
+            questions: List of questions generated in this iteration
+            prompts_used: Dictionary of prompts used {prompt_type: prompt_content}
+            expert_feedback: Optional expert feedback received
+            processing_metadata: Optional processing information (timing, models used, etc.)
+            
+        Returns:
+            True if saved successfully, False otherwise
+        """
+        if not self.current_session_dir:
+            print("Warning: No active session package. Call create_session_package() first.")
+            return False
+            
+        try:
+            iteration_dir = self.current_session_dir / "iterations" / f"iteration_{iteration_num:02d}"
+            iteration_dir.mkdir(exist_ok=True)
+            
+            # Save questions for this iteration
+            questions_file = iteration_dir / "questions.json"
+            with open(questions_file, 'w', encoding='utf-8') as f:
+                json.dump({
+                    "iteration": iteration_num,
+                    "timestamp": datetime.now().isoformat(),
+                    "questions": questions,
+                    "question_count": len(questions)
+                }, f, indent=2, ensure_ascii=False)
+            
+            # Save prompts used in this iteration
+            prompts_file = iteration_dir / "prompts_used.json"
+            with open(prompts_file, 'w', encoding='utf-8') as f:
+                json.dump({
+                    "iteration": iteration_num,
+                    "timestamp": datetime.now().isoformat(),
+                    "prompts": prompts_used
+                }, f, indent=2, ensure_ascii=False)
+            
+            # Save expert feedback if provided
+            if expert_feedback:
+                feedback_file = iteration_dir / "expert_feedback.json"
+                with open(feedback_file, 'w', encoding='utf-8') as f:
+                    json.dump({
+                        "iteration": iteration_num,
+                        "timestamp": datetime.now().isoformat(),
+                        "expert_feedback": expert_feedback
+                    }, f, indent=2, ensure_ascii=False)
+            
+            # Save processing metadata if provided
+            if processing_metadata:
+                metadata_file = iteration_dir / "processing_metadata.json"
+                with open(metadata_file, 'w', encoding='utf-8') as f:
+                    json.dump({
+                        "iteration": iteration_num,
+                        "timestamp": datetime.now().isoformat(),
+                        "processing_metadata": processing_metadata
+                    }, f, indent=2, ensure_ascii=False)
+            
+            # Update session metadata with iteration count
+            self._update_session_metadata({"iterations_saved": iteration_num})
+            
+            return True
+            
+        except Exception as e:
+            print(f"Warning: Failed to save iteration {iteration_num} results: {e}")
+            return False
+
+    def save_final_results(self, final_questions: List[str], csv_data: Dict[str, Any], 
+                         final_metadata: Dict[str, Any]) -> bool:
+        """
+        Save the final results of the question generation process
+        
+        Args:
+            final_questions: Final approved questions
+            csv_data: Complete CSV data for SYSARCH compliance
+            final_metadata: Final session metadata
+            
+        Returns:
+            True if saved successfully, False otherwise
+        """
+        if not self.current_session_dir:
+            print("Warning: No active session package. Call create_session_package() first.")
+            return False
+            
+        try:
+            # Save final questions
+            final_questions_file = self.current_session_dir / "final_questions.json"
+            with open(final_questions_file, 'w', encoding='utf-8') as f:
+                json.dump({
+                    "final_questions": final_questions,
+                    "question_count": len(final_questions),
+                    "finalized_at": datetime.now().isoformat()
+                }, f, indent=2, ensure_ascii=False)
+            
+            # Save CSV data
+            csv_file = self.current_session_dir / "results.csv"
+            if csv_data:
+                with open(csv_file, 'w', newline='', encoding='utf-8') as csvfile:
+                    if csv_data:
+                        writer = csv.DictWriter(csvfile, fieldnames=csv_data.keys())
+                        writer.writeheader()
+                        writer.writerow(csv_data)
+            
+            # Update final metadata
+            final_metadata.update({
+                "session_completed_at": datetime.now().isoformat(),
+                "final_results_saved": True,
+                "total_processing_time": (datetime.now() - datetime.fromisoformat(final_metadata.get("session_started_at", datetime.now().isoformat()))).total_seconds()
+            })
+            
+            self._save_metadata(self.current_session_dir, final_metadata)
+            
+            return True
+            
+        except Exception as e:
+            print(f"Warning: Failed to save final results: {e}")
+            return False
+
+    def _save_request_parameters(self, session_dir: Path, request_data: Dict[str, Any]):
+        """Save the original request parameters"""
+        params_file = session_dir / "parameters" / "request_parameters.json"
+        try:
+            with open(params_file, 'w', encoding='utf-8') as f:
+                json.dump({
+                    "request_parameters": request_data,
+                    "saved_at": datetime.now().isoformat()
+                }, f, indent=2, ensure_ascii=False)
+        except Exception as e:
+            print(f"Warning: Failed to save request parameters: {e}")
+
+    def _update_session_metadata(self, updates: Dict[str, Any]):
+        """Update session metadata with new information"""
+        if not self.current_session_dir:
+            return
+            
+        metadata_file = self.current_session_dir / "session_metadata.json"
+        try:
+            # Read existing metadata
+            existing_metadata = {}
+            if metadata_file.exists():
+                with open(metadata_file, 'r', encoding='utf-8') as f:
+                    existing_metadata = json.load(f)
+            
+            # Update with new information
+            existing_metadata.update(updates)
+            existing_metadata["last_updated"] = datetime.now().isoformat()
+            
+            # Save updated metadata
+            with open(metadata_file, 'w', encoding='utf-8') as f:
+                json.dump(existing_metadata, f, indent=2, default=str)
+                
+        except Exception as e:
+            print(f"Warning: Failed to update session metadata: {e}")
         
     def _save_csv_data(self, session_dir: Path, csv_data: Union[List[Dict[str, Any]], str, Path]) -> Optional[Path]:
         """Save CSV data in various formats"""

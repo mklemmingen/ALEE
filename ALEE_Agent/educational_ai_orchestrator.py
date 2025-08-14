@@ -12,33 +12,74 @@ Architecture:
 import asyncio
 import json
 import logging
-import os
-import sys
 import time
 from contextlib import asynccontextmanager
 from dataclasses import dataclass
 from datetime import datetime
 from enum import Enum
 from pathlib import Path
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
 
 import aiohttp
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
-# Add CallersWithTexts to path for result_manager import
-sys.path.append(os.path.join(os.path.dirname(os.path.dirname(__file__)), 'CallersWithTexts'))
+
+# Custom Exception Classes for meaningful error handling
+class QuestionGenerationError(Exception):
+    """Base exception for question generation errors"""
+    def __init__(self, message: str, error_code: str, details: Dict[str, Any] = None):
+        self.message = message
+        self.error_code = error_code
+        self.details = details or {}
+        super().__init__(self.message)
+
+
+class ExpertValidationError(QuestionGenerationError):
+    """Expert validation system errors"""
+    def __init__(self, message: str, expert_name: str, model: str, port: int, details: Dict[str, Any] = None):
+        super().__init__(message, "EXPERT_VALIDATION_ERROR", details)
+        self.expert_name = expert_name
+        self.model = model
+        self.port = port
+
+
+class ModelLoadingError(QuestionGenerationError):
+    """Model loading and VRAM management errors"""
+    def __init__(self, message: str, model_name: str, port: int, vram_info: Dict[str, Any] = None):
+        super().__init__(message, "MODEL_LOADING_ERROR", vram_info or {})
+        self.model_name = model_name
+        self.port = port
+
+
+class PromptBuildingError(QuestionGenerationError):
+    """Prompt construction and parameter validation errors"""
+    def __init__(self, message: str, parameter_name: str = None, parameter_value: str = None):
+        super().__init__(message, "PROMPT_BUILDING_ERROR")
+        self.parameter_name = parameter_name
+        self.parameter_value = parameter_value
+
+
+class CSVGenerationError(QuestionGenerationError):
+    """CSV data generation and formatting errors"""
+    def __init__(self, message: str, csv_issues: List[str] = None):
+        super().__init__(message, "CSV_GENERATION_ERROR")
+        self.csv_issues = csv_issues or []
+
 # Configure logging first
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+# Import result manager from same directory (ALEE_Agent)
 try:
-    from result_manager import save_results
+    from result_manager import ResultManager, save_results
     RESULT_MANAGER_AVAILABLE = True
-    logger.info("Result manager imported successfully - orchestrator can save results")
+    logger.info("Result manager imported successfully - orchestrator can save incremental results")
 except ImportError as e:
     logger.warning(f"Result manager not available - results will only be returned to caller: {e}")
     RESULT_MANAGER_AVAILABLE = False
+    ResultManager = None
+    save_results = None
 
 def parse_expert_response(response_text: str) -> dict:
     """Robust JSON parsing for expert responses with error handling"""
@@ -158,10 +199,8 @@ class ParameterStatus(Enum):
     REJECTED = "rejected"
     NEEDS_REFINEMENT = "needs_refinement"
 
-# Legacy enum removed - ValidationPlan uses string values directly
-
-# ValidationPlan Request Model
-class ValidationPlanRequest(BaseModel):
+# SysArch Request Model
+class SysArchRequest(BaseModel):
     c_id: str = Field(..., description="Question ID in format: question_number-difficulty-version (e.g., 41-1-4)")
     text: str = Field(..., description="The informational text about the system's pre-configured topic")
     p_variation: str = Field(..., description="Stammaufgabe, schwer, leicht")
@@ -202,8 +241,6 @@ class ValidationPlanRequest(BaseModel):
     p_instruction_obstacle_complex_np: str = Field("Nicht Enthalten", description="Enthalten, Nicht Enthalten")
     p_instruction_explicitness_of_instruction: str = Field("Implizit", description="Explizit, Implizit")
 
-# Legacy classes removed - ValidationPlan-only system
-
 @dataclass
 class ParameterValidation:
     parameter: str
@@ -213,16 +250,15 @@ class ParameterValidation:
     expert_used: str
     processing_time: float
 
-# Legacy result class removed - ValidationPlan-only system
-
-# ValidationPlan Result Model
-class ValidationPlanResult(BaseModel):
+# SysArch Result Model
+class SysArchResult(BaseModel):
     question_1: str = Field(..., description="First generated question")
     question_2: str = Field(..., description="Second generated question") 
     question_3: str = Field(..., description="Third generated question")
     c_id: str = Field(..., description="Original question ID")
     processing_time: float = Field(..., description="Total processing time")
     csv_data: Dict[str, Any] = Field(..., description="CSV-ready data with all parameters")
+    generation_updates: List[Dict[str, Any]] = Field(default_factory=list, description="Intermediate generation updates")
 
 # Parameter Expert Configurations
 PARAMETER_EXPERTS = {
@@ -302,7 +338,7 @@ PARAMETER_EXPERTS = {
 # Global resources
 model_semaphore = None
 active_models = {}
-session_pool = None
+session_pool: Optional[aiohttp.ClientSession] = None
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -406,8 +442,22 @@ class ModelManager:
                     logger.warning(f"Model loading may have issues: {response.status}")
                     
         except Exception as e:
-            logger.error(f"[ERROR] Failed to load model {expert_config.model}: {e}")
-            raise
+            current_vram = sum(
+                self.model_memory_usage.get(active_models[p], 0) 
+                for p in active_models
+            )
+            vram_info = {
+                "current_vram_usage_gb": current_vram,
+                "max_vram_gb": self.max_vram_gb,
+                "available_vram_gb": self.max_vram_gb - current_vram,
+                "active_models": dict(active_models)
+            }
+            raise ModelLoadingError(
+                f"Failed to load model {expert_config.model} on port {expert_config.port}: {str(e)}",
+                expert_config.model,
+                expert_config.port,
+                vram_info
+            )
     
     async def unload_model(self, port: int):
         """Unload model to free VRAM"""
@@ -418,7 +468,7 @@ class ModelManager:
 
 model_manager = ModelManager()
 
-class ValidationPlanPromptBuilder:
+class SysArchPromptBuilder:
     """Builds modular prompts based on parameter values using txt files"""
     
     def __init__(self):
@@ -439,20 +489,35 @@ class ValidationPlanPromptBuilder:
             return f"<{file_path.split('/')[-1]} parameter prompt content>"
     
     def build_variation_prompt(self, variation: str) -> str:
-        """Build variation-specific prompt according to ValidationPlan mapping"""
-        # ValidationPlan: p.variation values are "Stammaufgabe", "schwer", "leicht"
+        """Build variation-specific prompt"""
+        # p.variation values are "Stammaufgabe", "schwer", "leicht"
+        if not variation or variation.strip() == "":
+            raise PromptBuildingError(
+                "Variation parameter cannot be empty",
+                "p_variation", 
+                variation
+            )
+            
+        valid_variations = ["stammaufgabe", "schwer", "leicht"]
+        if variation.lower() not in valid_variations:
+            raise PromptBuildingError(
+                f"Invalid variation '{variation}'. Must be one of: {', '.join(valid_variations)}",
+                "p_variation",
+                variation
+            )
+            
         variation_map = {
             "stammaufgabe": "variationPrompts/multiple-choice.txt",  # Default type for stammaufgabe
             "schwer": "variationPrompts/true-false.txt",             # Complex questions often true-false
-            "leicht": "variationPrompts/single-choice.txt"            # Simple questions single choice
+            "leicht": "variationPrompts/single-choice.txt"           # Simple questions single choice
         }
         file_path = variation_map.get(variation.lower(), "variationPrompts/multiple-choice.txt")
         content = self.load_prompt_txt(file_path)
         return f"p.variation ({variation}): {content}"
     
     def build_taxonomy_prompt(self, level: str) -> str:
-        """Build taxonomy-specific prompt according to ValidationPlan"""
-        # ValidationPlan: "Stufe 1 (Wissen/Reproduktion)", "Stufe 2 (Anwendung/Transfer)"
+        """Build taxonomy-specific prompt"""
+        # "Stufe 1 (Wissen/Reproduktion)", "Stufe 2 (Anwendung/Transfer)"
         if "Stufe 1" in level:
             content = self.load_prompt_txt("taxonomyLevelPrompt/stufe1WissenReproduktion.txt")
             return f"p.taxonomy_level (Stufe 1): {content}"
@@ -464,8 +529,8 @@ class ValidationPlanPromptBuilder:
             return f"p.taxonomy_level (Default Stufe 1): {content}"
     
     def build_mathematical_prompt(self, level: str) -> str:
-        """Build mathematical requirement prompt according to ValidationPlan"""
-        # ValidationPlan: "0 (Kein Bezug)", "1 (Nutzen mathematischer Darstellungen)", "2 (Mathematische Operation)"
+        """Build mathematical requirement prompt"""
+        # "0 (Kein Bezug)", "1 (Nutzen mathematischer Darstellungen)", "2 (Mathematische Operation)"
         level_clean = level.strip().split()[0]  # Extract just the number
         level_map = {
             "0": "mathematicalRequirementLevel/0KeinBezug.txt",
@@ -477,8 +542,8 @@ class ValidationPlanPromptBuilder:
         return f"p.mathematical_requirement_level ({level}): {content}"
     
     def build_obstacle_prompt(self, obstacle_type: str, value: str, parameter_name: str) -> str:
-        """Build obstacle-specific prompts according to ValidationPlan"""
-        # ValidationPlan: Values are "Enthalten", "Nicht Enthalten"
+        """Build obstacle-specific prompts"""
+        # Values are "Enthalten", "Nicht Enthalten"
         value_file = "enthalten.txt" if value == "Enthalten" else "nichtEnthalten.txt"
         
         obstacle_map = {
@@ -500,15 +565,15 @@ class ValidationPlanPromptBuilder:
         return ""
     
     def build_irrelevant_info_prompt(self, value: str) -> str:
-        """Build irrelevant information prompt according to ValidationPlan"""
-        # ValidationPlan: "Enthalten", "Nicht Enthalten"
+        """Build irrelevant information prompt"""
+        # "Enthalten", "Nicht Enthalten"
         value_file = "enthalten.txt" if value == "Enthalten" else "nichtEnthalten.txt"
         content = self.load_prompt_txt(f"rootTextParameterTextPrompts/containsIrrelevantInformationPrompt/{value_file}")
         return f"p.root_text_contains_irrelevant_information ({value}): {content}"
     
     def build_explicitness_prompt(self, value: str) -> str:
-        """Build instruction explicitness prompt according to ValidationPlan"""
-        # ValidationPlan: "Explizit", "Implizit"
+        """Build instruction explicitness prompt"""
+        # "Explizit", "Implizit"
         if "Explizit" in value:
             content = self.load_prompt_txt("instructionExplicitnessOfInstruction/explizit.txt")
             return f"p.instruction_explicitness_of_instruction (Explizit): {content}"
@@ -516,14 +581,14 @@ class ValidationPlanPromptBuilder:
             content = self.load_prompt_txt("instructionExplicitnessOfInstruction/implizit.txt")
             return f"p.instruction_explicitness_of_instruction (Implizit): {content}"
     
-    def build_master_prompt(self, request: ValidationPlanRequest) -> str:
-        """Build the complete master prompt from modular components according to ValidationPlan"""
+    def build_master_prompt(self, request: SysArchRequest) -> str:
+        """Build the complete master prompt from modular components"""
         components = []
         
-        # Base instruction with ValidationPlan specification
-        components.append("Du bist ein Experte für die Erstellung von Bildungsaufgaben. Erstelle basierend auf dem gegebenen Text GENAU DREI deutsche Bildungsfragen mit den spezifizierten ValidationPlan-Parametern.")
+        # Base instruction
+        components.append("Du bist ein Experte für die Erstellung von Bildungsaufgaben. Erstelle basierend auf dem gegebenen Text GENAU DREI deutsche Bildungsfragen mit den spezifizierten Parametern.")
         components.append(f"\nReferenztext:\n{request.text}\n")
-        components.append(f"ValidationPlan c_id: {request.c_id}\n")
+        components.append(f"c_id: {request.c_id}\n")
         
         # Always include variation (required)
         variation_prompt = self.build_variation_prompt(request.p_variation)
@@ -584,20 +649,20 @@ class ValidationPlanPromptBuilder:
         if hasattr(request, 'p_root_text_reference_explanatory_text') and request.p_root_text_reference_explanatory_text != "Nicht vorhanden":
             components.append(f"p.root_text_reference_explanatory_text ({request.p_root_text_reference_explanatory_text}): <reference text handling prompt content>")
         
-        components.append("\nValidationPlan Output Format: Antworte mit GENAU DREI Fragen im JSON-Format: {\"question_1\": \"...\", \"question_2\": \"...\", \"question_3\": \"...\", \"answers_1\": [...], \"answers_2\": [...], \"answers_3\": [...]}")
+        components.append("\nOutput Format: Antworte mit GENAU DREI Fragen im JSON-Format: {\"question_1\": \"...\", \"question_2\": \"...\", \"question_3\": \"...\", \"answers_1\": [...], \"answers_2\": [...], \"answers_3\": [...]}")
         
         return "\n\n".join(components)
 
 class EducationalAISystem:
-    """Main orchestrator for educational question generation - ValidationPlan aligned"""
+    """Main orchestrator for educational question generation"""
     
     def __init__(self):
-        self.max_iterations = 3  # ValidationPlan specifies max 3 iterations
+        self.max_iterations = 3  # Max 3 iterations
         self.min_approval_score = 7.0
-        self.prompt_builder = ValidationPlanPromptBuilder()
+        self.prompt_builder = SysArchPromptBuilder()
         
     async def clean_expert_sessions(self):
-        """Clean all expert sessions for fresh start as specified in ValidationPlan"""
+        """Clean all expert sessions for fresh start"""
         logger.info("Cleaning expert sessions for fresh start...")
         
         # Check health of all experts and clear any existing conversations
@@ -626,9 +691,17 @@ class EducationalAISystem:
         
         logger.info("Expert session cleanup complete")
     
-    async def generate_validation_plan_questions(self, request: ValidationPlanRequest) -> ValidationPlanResult:
-        """Generate exactly 3 questions according to ValidationPlan specifications"""
+    async def generate_questions(self, request: SysArchRequest) -> SysArchResult:
+        """Generate exactly 3 questions with incremental saving"""
         start_time = time.time()
+        generation_updates = []  # Track all question changes
+        
+        # Initialize result manager for incremental saving
+        result_manager = None
+        if RESULT_MANAGER_AVAILABLE:
+            result_manager = ResultManager()
+            session_dir = result_manager.create_session_package(request.c_id, request.model_dump())
+            logger.info(f"Created incremental result session: {session_dir}")
         
         # Step 1: Clean expert sessions for fresh start
         await self.clean_expert_sessions()
@@ -636,6 +709,19 @@ class EducationalAISystem:
         # Step 2: Build master prompt using modular components
         master_prompt = self.prompt_builder.build_master_prompt(request)
         logger.info("Built master prompt with modular components")
+        
+        # Save initial prompt used
+        if result_manager:
+            result_manager.save_iteration_result(
+                iteration_num=0,
+                questions=["Initial generation starting..."],
+                prompts_used={"master_prompt": master_prompt},
+                processing_metadata={
+                    "step": "initial_prompt_construction",
+                    "timestamp": datetime.now().isoformat(),
+                    "parameters_used": request.model_dump()
+                }
+            )
         
         # Step 3: Generate initial 3 questions using main generator
         generator_config = PARAMETER_EXPERTS["variation_expert"]
@@ -659,7 +745,37 @@ class EducationalAISystem:
                     "answers_3": ["A", "B", "C"]
                 }
         
-        # Step 4: Expert validation for each question (max 3 iterations)
+        # Save initial questions generated
+        initial_questions = [
+            questions_data.get("question_1", "Question 1"),
+            questions_data.get("question_2", "Question 2"), 
+            questions_data.get("question_3", "Question 3")
+        ]
+        
+        # Track initial generation
+        generation_updates.append({
+            "timestamp": datetime.now().isoformat(),
+            "step": "initial_generation",
+            "questions": initial_questions.copy(),
+            "source": "main_generator",
+            "model": generator_config.model
+        })
+        
+        if result_manager:
+            result_manager.save_iteration_result(
+                iteration_num=1,
+                questions=initial_questions,
+                prompts_used={"generator_prompt": master_prompt, "generator_model": generator_config.model},
+                processing_metadata={
+                    "step": "initial_question_generation",
+                    "generator_model": generator_config.model,
+                    "generator_port": generator_config.port,
+                    "raw_response": questions_response[:500],  # First 500 chars
+                    "timestamp": datetime.now().isoformat()
+                }
+            )
+        
+        # Step 4: Expert validation for each question (max 3 iterations) with incremental saving
         validated_questions = []
         
         for i in range(3):
@@ -669,31 +785,51 @@ class EducationalAISystem:
             question_text = questions_data.get(question_key, f"Question {i+1}")
             question_answers = questions_data.get(answer_key, ["A", "B", "C"])
             
-            # Validate this question through expert iterations
-            validated_question = await self._validate_question_with_experts(
-                question_text, question_answers, request, i+1
+            # Validate this question through expert iterations with incremental saving
+            validated_question = await self._validate_question_with_experts_incremental(
+                question_text, question_answers, request, i+1, result_manager, generation_updates
             )
             validated_questions.append(validated_question)
         
-        # Step 5: Build CSV data according to ValidationPlan format
-        initial_csv_data = self._build_validation_plan_csv(request, validated_questions)
+        # Step 5: Build CSV data
+        initial_csv_data = self._build_csv_data(request, validated_questions)
         
         # Step 6: Apply intelligent fallback system for CSV issues
         csv_data = await self._intelligent_csv_fallback(validated_questions, request, initial_csv_data)
         
         total_time = time.time() - start_time
         
-        return ValidationPlanResult(
+        # Save final results
+        if result_manager:
+            final_metadata = {
+                "c_id": request.c_id,
+                "session_started_at": datetime.fromtimestamp(start_time).isoformat(),
+                "total_processing_time": total_time,
+                "final_questions_count": len(validated_questions),
+                "csv_columns_count": len(csv_data.keys()) if csv_data else 0,
+                "system_compliant": True,
+                "expert_iterations_completed": True
+            }
+            
+            result_manager.save_final_results(
+                final_questions=validated_questions,
+                csv_data=csv_data,
+                final_metadata=final_metadata
+            )
+            logger.info(f"Final results saved to session: {result_manager.current_session_dir}")
+        
+        return SysArchResult(
             question_1=validated_questions[0],
             question_2=validated_questions[1],
             question_3=validated_questions[2],
             c_id=request.c_id,
             processing_time=total_time,
-            csv_data=csv_data
+            csv_data=csv_data,
+            generation_updates=generation_updates
         )
     
     async def _validate_question_with_experts(self, question: str, answers: List[str], 
-                                            request: ValidationPlanRequest, question_num: int) -> str:
+                                            request: SysArchRequest, question_num: int) -> str:
         """Validate single question through expert system (max 3 iterations)"""
         current_question = question
         
@@ -717,8 +853,156 @@ class EducationalAISystem:
                 current_question = await self._refine_single_question(current_question, feedback, request)
         
         return current_question
+
+    async def _validate_question_with_experts_incremental(self, question: str, answers: List[str], 
+                                                        request: SysArchRequest, question_num: int, 
+                                                        result_manager, generation_updates: List[Dict[str, Any]]) -> str:
+        """Validate single question through expert system with incremental saving (max 3 iterations)"""
+        current_question = question
         
-    async def _get_expert_validations(self, question: str, request: ValidationPlanRequest) -> List[ParameterValidation]:
+        for iteration in range(self.max_iterations):
+            iteration_start_time = time.time()
+            logger.info(f"Question {question_num}, Iteration {iteration + 1}/{self.max_iterations}")
+            
+            # Get expert validations
+            validations = await self._get_expert_validations(current_question, request)
+            
+            # Collect expert feedback for saving
+            expert_feedback = {}
+            expert_prompts_used = {
+                "complete_parameter_summary": self._build_complete_parameter_summary(request),
+                "expert_prompt_sources": "All experts received complete parameter context"
+            }
+            
+            for validation in validations:
+                expert_feedback[validation.parameter] = {
+                    "status": validation.status.value if hasattr(validation.status, 'value') else str(validation.status),
+                    "score": validation.score,
+                    "feedback": validation.feedback,
+                    "expert_used": getattr(validation, 'expert_used', 'unknown')
+                }
+            
+            # Save iteration results if result manager is available
+            if result_manager:
+                iteration_metadata = {
+                    "question_number": question_num,
+                    "expert_iteration": iteration + 1,
+                    "iteration_processing_time": time.time() - iteration_start_time,
+                    "experts_consulted": len(validations),
+                    "expert_validations": expert_feedback,
+                    "timestamp": datetime.now().isoformat()
+                }
+                
+                result_manager.save_iteration_result(
+                    iteration_num=(question_num * 10) + iteration + 2,  # Unique iteration number
+                    questions=[current_question],
+                    prompts_used=expert_prompts_used,
+                    expert_feedback=expert_feedback,
+                    processing_metadata=iteration_metadata
+                )
+            
+            # Check if approved by all experts
+            failed_validations = [v for v in validations 
+                                if v.status in [ParameterStatus.REJECTED, ParameterStatus.NEEDS_REFINEMENT]]
+            
+            if not failed_validations:
+                logger.info(f"Question {question_num} approved by all experts")
+                
+                # Save final approval if result manager is available
+                if result_manager:
+                    approval_metadata = {
+                        "question_number": question_num,
+                        "final_approval_iteration": iteration + 1,
+                        "approved_by_all_experts": True,
+                        "total_expert_iterations": iteration + 1,
+                        "timestamp": datetime.now().isoformat()
+                    }
+                    
+                    result_manager.save_iteration_result(
+                        iteration_num=(question_num * 10) + iteration + 20,  # Approval marker
+                        questions=[current_question],
+                        prompts_used={"final_approved_question": current_question},
+                        expert_feedback={"approval_status": "APPROVED_BY_ALL_EXPERTS"},
+                        processing_metadata=approval_metadata
+                    )
+                
+                break
+                
+            if iteration < self.max_iterations - 1:  # Not the last iteration
+                # Refine question based on feedback
+                feedback = [v.feedback for v in failed_validations]
+                refined_question = await self._refine_single_question(current_question, feedback, request)
+                
+                # Track question change for ongoing feedback
+                if refined_question != current_question:
+                    generation_updates.append({
+                        "timestamp": datetime.now().isoformat(),
+                        "step": f"expert_refinement_q{question_num}_iter{iteration + 1}",
+                        "question_num": question_num,
+                        "iteration": iteration + 1,
+                        "original_question": current_question,
+                        "refined_question": refined_question,
+                        "expert_feedback": feedback,
+                        "source": "expert_validation"
+                    })
+                
+                # Save refinement results
+                if result_manager and refined_question != current_question:
+                    refinement_metadata = {
+                        "question_number": question_num,
+                        "refinement_iteration": iteration + 1,
+                        "original_question": current_question,
+                        "refined_question": refined_question,
+                        "feedback_applied": feedback,
+                        "timestamp": datetime.now().isoformat()
+                    }
+                    
+                    result_manager.save_iteration_result(
+                        iteration_num=(question_num * 10) + iteration + 30,  # Refinement marker
+                        questions=[refined_question],
+                        prompts_used={"refinement_feedback": "; ".join(feedback)},
+                        expert_feedback={"refinement_applied": True},
+                        processing_metadata=refinement_metadata
+                    )
+                
+                current_question = refined_question
+        
+        return current_question
+    
+    def _build_complete_parameter_summary(self, request: SysArchRequest) -> str:
+        """Build comprehensive parameter summary for expert analysis"""
+        summary_lines = [
+            f"• c_id: {request.c_id}",
+            f"• Variation: {request.p_variation}",
+            f"• Taxonomie-Level: {request.p_taxonomy_level}",
+            f"• Mathematisches Niveau: {request.p_mathematical_requirement_level}",
+            f"• Root-Text Referenz: {request.p_root_text_reference_explanatory_text}",
+            "",
+            "ROOT-TEXT HINDERNISSE:",
+            f"• Passiv-Strukturen: {request.p_root_text_obstacle_passive}",
+            f"• Verneinungen: {request.p_root_text_obstacle_negation}",
+            f"• Komplexe Nominalphrasen: {request.p_root_text_obstacle_complex_np}",
+            f"• Irrelevante Informationen: {request.p_root_text_contains_irrelevant_information}",
+            "",
+            "ITEM-SPEZIFISCHE HINDERNISSE (Items 1-8):"
+        ]
+        
+        # Add all individual item parameters
+        for i in range(1, 9):
+            summary_lines.append(f"Item {i}: Passiv={getattr(request, f'p_item_{i}_obstacle_passive')}, Negation={getattr(request, f'p_item_{i}_obstacle_negation')}, Komplex-NP={getattr(request, f'p_item_{i}_obstacle_complex_np')}")
+        
+        summary_lines.extend([
+            "",
+            "INSTRUKTIONS-HINDERNISSE:",
+            f"• Passiv-Strukturen: {request.p_instruction_obstacle_passive}",
+            f"• Verneinungen: {request.p_instruction_obstacle_negation}", 
+            f"• Komplexe Nominalphrasen: {request.p_instruction_obstacle_complex_np}",
+            f"• Explizitheit der Anweisung: {request.p_instruction_explicitness_of_instruction}"
+        ])
+        
+        return "\n".join(summary_lines)
+        
+    async def _get_expert_validations(self, question: str, request: SysArchRequest) -> List[ParameterValidation]:
         """Get validations from all relevant experts for a single question"""
         validation_tasks = []
         
@@ -738,7 +1022,7 @@ class EducationalAISystem:
         return valid_validations
     
     async def _validate_question_with_expert(self, expert_config: ParameterExpertConfig,
-                                           question: str, request: ValidationPlanRequest) -> ParameterValidation:
+                                           question: str, request: SysArchRequest) -> ParameterValidation:
         """Validate question with specific expert using parameter configuration"""
         start_time = time.time()
         
@@ -755,24 +1039,26 @@ class EducationalAISystem:
         
         await model_manager.ensure_model_loaded(expert_config)
         
-        # Build expert prompt with parameter configuration - simplified to plain text response
+        # Build comprehensive parameter summary for expert analysis
+        parameter_summary = self._build_complete_parameter_summary(request)
+        
+        # Build expert prompt with complete parameter configuration
         expert_prompt = f"""Du bist ein Experte für {expert_config.expertise}.
 
-Analysiere diese Bildungsfrage bezüglich der spezifizierten Parameter:
-
-Frage: {question}
-
-Parameter-Konfiguration:
-- c_id: {request.c_id}
-- Variation: {request.p_variation}
-- Taxonomie-Level: {request.p_taxonomy_level}
-- Mathematisches Niveau: {request.p_mathematical_requirement_level}
-
-Bewerte die Frage und gib Verbesserungsvorschläge.
-
-Antworte in folgendem einfachen Format:
-BEWERTUNG: [Gut/Mittelmäßig/Schlecht]
-FEEDBACK: [Deine detaillierten Verbesserungsvorschläge oder "Frage ist gut so"]"""
+        Analysiere diese Bildungsfrage bezüglich ALLER spezifizierten Parameter:
+        
+        Frage: {question}
+        
+        VOLLSTÄNDIGE PARAMETER-KONFIGURATION:
+{parameter_summary}
+        
+        Fokussiere dich auf deine Expertise ({', '.join(expert_config.parameters)}) aber berücksichtige alle Parameter für eine ganzheitliche Bewertung.
+        
+        Bewerte die Frage und gib Verbesserungsvorschläge.
+        
+        Antworte in folgendem einfachen Format:
+        BEWERTUNG: [Gut/Mittelmäßig/Schlecht]
+        FEEDBACK: [Deine detaillierten Verbesserungsvorschläge oder "Frage ist gut so"]"""
         
         response = await self._call_expert_llm(expert_config, expert_prompt)
         
@@ -821,24 +1107,24 @@ FEEDBACK: [Deine detaillierten Verbesserungsvorschläge oder "Frage ist gut so"]
             )
     
     async def _refine_single_question(self, question: str, feedback: List[str], 
-                                     request: ValidationPlanRequest) -> str:
+                                     request: SysArchRequest) -> str:
         """Refine a single question based on expert feedback"""
         generator_config = PARAMETER_EXPERTS["variation_expert"]
         await model_manager.ensure_model_loaded(generator_config)
         
         refinement_prompt = f"""Du bist ein Experte für Bildungsaufgaben. Verbessere diese Frage basierend auf dem Expertenfeedback:
 
-Aktuelle Frage: {question}
-
-Expertenfeedback:
-{chr(10).join(f"- {fb}" for fb in feedback)}
-
-Parameter-Vorgaben:
-- Variation: {request.p_variation}
-- Taxonomie: {request.p_taxonomy_level}
-- Alle anderen Parameter wie ursprünglich konfiguriert
-
-Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der verbesserten Frage."""
+        Aktuelle Frage: {question}
+        
+        Expertenfeedback:
+        {chr(10).join(f"- {fb}" for fb in feedback)}
+        
+        Parameter-Vorgaben:
+        - Variation: {request.p_variation}
+        - Taxonomie: {request.p_taxonomy_level}
+        - Alle anderen Parameter wie ursprünglich konfiguriert
+        
+        Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der verbesserten Frage."""
         
         response = await self._call_expert_llm(generator_config, refinement_prompt)
         
@@ -850,31 +1136,28 @@ Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der
             # Fallback: return response text directly
             return response.strip()
     
-    def _build_validation_plan_csv(self, request: ValidationPlanRequest, questions: List[str]) -> Dict[str, Any]:
-        """Build CSV data according to ValidationPlan specifications"""
+    def _build_csv_data(self, request: SysArchRequest, questions: List[str]) -> Dict[str, Any]:
+        """Build CSV data"""
         
-        # Extract difficulty from c_id (format: question_number-difficulty-version)
-        c_id_parts = request.c_id.split("-")
-        difficulty_num = c_id_parts[1] if len(c_id_parts) > 1 else "1"
-        difficulty_map = {"1": "stammaufgabe", "2": "leicht", "3": "schwer"}
-        subject = difficulty_map.get(difficulty_num, "stammaufgabe")
+        # Use the actual p_variation parameter for both subject and type (SYSARCH-compliant)
+        subject = request.p_variation  # Use actual variation parameter
         
-        # Determine question type based on variation
+        # Determine question type based on variation parameter mapping
         type_map = {
-            "stammaufgabe": "multiple-choice",
-            "schwer": "true-false",
-            "leicht": "single-choice"
+            "stammaufgabe": "multiple-choice",  # Standard -> multiple choice
+            "schwer": "true-false",            # Hard -> true/false 
+            "leicht": "single-choice"           # Easy -> single choice
         }
         question_type = type_map.get(request.p_variation.lower(), "multiple-choice")
         
         # Build the main question text (combining all 3 questions)
         combined_text = f"1. {questions[0]} 2. {questions[1]} 3. {questions[2]}"
         
-        # Build CSV data with all required columns from ValidationPlan
+        # Build CSV data with all required columns
         csv_data = {
             "c_id": request.c_id,
-            "subject": subject,
-            "type": question_type,
+            "subject": subject,  # Now correctly uses p_variation parameter
+            "type": question_type,  # Correctly mapped from p_variation
             "text": combined_text,
             "p.instruction_explicitness_of_instruction": request.p_instruction_explicitness_of_instruction,
             "p.instruction_obstacle_complex_np": request.p_instruction_obstacle_complex_np,
@@ -927,7 +1210,7 @@ Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der
             "p.root_text_obstacle_negation": request.p_root_text_obstacle_negation,
             "p.root_text_obstacle_passive": request.p_root_text_obstacle_passive,
             "p.root_text_reference_explanatory_text": request.p_root_text_reference_explanatory_text,
-            "p.taxanomy_level": request.p_taxonomy_level,
+            "p.taxonomy_level": request.p_taxonomy_level,  # Fixed typo: was 'taxanomy'
             "p.variation": request.p_variation,
             "answers": "Question-specific answers",  # Will be filled by intelligent fallback system
             "p.instruction_number_of_sentences": "1"  # Default value
@@ -935,7 +1218,7 @@ Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der
         
         return csv_data
     
-    async def _intelligent_csv_fallback(self, questions: List[str], request: ValidationPlanRequest, 
+    async def _intelligent_csv_fallback(self, questions: List[str], request: SysArchRequest, 
                                        initial_csv: Dict[str, Any]) -> Dict[str, Any]:
         """Intelligent fallback system with LM help for CSV conversion warnings/errors"""
         logger.info("Applying intelligent CSV fallback system...")
@@ -973,7 +1256,7 @@ Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der
         
         return initial_csv
     
-    async def _llm_csv_correction(self, questions: List[str], request: ValidationPlanRequest,
+    async def _llm_csv_correction(self, questions: List[str], request: SysArchRequest,
                                  initial_csv: Dict[str, Any], issues: List[str]) -> Dict[str, Any]:
         """Use LM to help correct CSV conversion issues"""
         
@@ -1019,7 +1302,10 @@ Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der
             logger.info("LM CSV correction applied successfully")
             return corrected_csv
         else:
-            raise Exception("LM correction parsing failed")
+            raise CSVGenerationError(
+                "LM-assisted CSV correction failed - could not parse corrected data",
+                issues
+            )
     
     def _apply_fallback_defaults(self, initial_csv: Dict[str, Any], issues: List[str]) -> Dict[str, Any]:
         """Apply intelligent fallback defaults when LM correction fails"""
@@ -1044,24 +1330,49 @@ Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der
         logger.info("Fallback defaults applied")
         return fallback_csv
     
-    # Legacy generate_question method removed - ValidationPlan-only system
-    
-    # Legacy _generate_initial_question method removed - ValidationPlan-only system
-    
-    # Legacy _validate_all_parameters method removed - ValidationPlan-only system
-    
-    # Legacy _validate_with_expert method removed - ValidationPlan-only system
-    
-    # Legacy _refine_question method removed - ValidationPlan-only system
-    
+    def _load_expert_prompt(self, expert_name: str) -> str:
+        """Load expert-specific prompt from ALEE_Agent/prompts/ directory"""
+        expert_prompt_map = {
+            "math_expert": "math_expert.txt",
+            "taxonomy_expert": "taxonomy_expert.txt", 
+            "variation_expert": "variation_expert.txt",
+            "obstacle_expert": "obstacle_expert.txt"
+        }
+        
+        prompt_file = expert_prompt_map.get(expert_name, "")
+        if not prompt_file:
+            logger.warning(f"No expert prompt file found for {expert_name}")
+            return ""
+            
+        try:
+            prompt_path = Path(__file__).parent / "prompts" / prompt_file
+            with open(prompt_path, 'r', encoding='utf-8') as f:
+                expert_prompt = f.read().strip()
+                logger.info(f"Loaded expert prompt for {expert_name} ({len(expert_prompt)} chars)")
+                return expert_prompt
+        except Exception as e:
+            logger.warning(f"Failed to load expert prompt for {expert_name}: {e}")
+            return ""
+
     async def _call_expert_llm(self, expert_config: ParameterExpertConfig, prompt: str) -> str:
-        """Call specific expert LLM via Ollama API"""
-        logger.info(f"[EXPERT_CALL] Calling {expert_config.name} ({expert_config.model}) on port {expert_config.port}")
-        logger.info(f"[PROMPT] TO {expert_config.name}:\n{'-'*50}\n{prompt[:300]}{'...' if len(prompt) > 300 else ''}\n{'-'*50}")
+        """Call specific expert LLM via Ollama API with expert-specific prompt prepended"""
+        # Load and prepend expert-specific prompt from ALEE_Agent/prompts/
+        expert_prompt = self._load_expert_prompt(expert_config.name)
+        
+        if expert_prompt:
+            # Combine expert prompt with evaluation prompt
+            full_prompt = f"{expert_prompt}\n\n## Aktuelle Bewertungsaufgabe:\n{prompt}"
+            logger.info(f"[EXPERT_CALL] Calling {expert_config.name} with specialized prompt ({len(expert_prompt)} chars expert + {len(prompt)} chars evaluation)")
+        else:
+            # Fallback to original prompt if expert prompt not available
+            full_prompt = prompt
+            logger.info(f"[EXPERT_CALL] Calling {expert_config.name} ({expert_config.model}) on port {expert_config.port} (no specialized prompt)")
+        
+        logger.info(f"[PROMPT] TO {expert_config.name}:\n{'-'*50}\n{full_prompt[:300]}{'...' if len(full_prompt) > 300 else ''}\n{'-'*50}")
         
         payload = {
             "model": expert_config.model,
-            "prompt": prompt,
+            "prompt": full_prompt,
             "stream": False,
             "options": {
                 "temperature": expert_config.temperature,
@@ -1085,26 +1396,46 @@ Verbessere die Frage unter Berücksichtigung des Feedbacks. Antworte nur mit der
                 
                 return response_text
                 
+        except asyncio.TimeoutError as e:
+            raise ExpertValidationError(
+                f"Expert {expert_config.name} call timed out after 120 seconds",
+                expert_config.name,
+                expert_config.model,
+                expert_config.port,
+                {"timeout_seconds": 120, "error": str(e)}
+            )
+        except aiohttp.ClientConnectorError as e:
+            raise ExpertValidationError(
+                f"Cannot connect to expert {expert_config.name} server on port {expert_config.port}",
+                expert_config.name,
+                expert_config.model,
+                expert_config.port,
+                {"connection_error": str(e)}
+            )
         except Exception as e:
-            logger.error(f"[ERROR] Failed to call {expert_config.name}: {e}")
-            raise HTTPException(status_code=500, detail=f"Expert LLM error: {e}")
-    
-    # Legacy _prepare_csv_output method removed - ValidationPlan-only system
+            raise ExpertValidationError(
+                f"Expert {expert_config.name} validation failed: {str(e)}",
+                expert_config.name,
+                expert_config.model,
+                expert_config.port,
+                {"raw_error": str(e)}
+            )
+
 
 # Initialize the AI system
 ai_system = EducationalAISystem()
 
 # API Endpoints
 
-@app.post("/generate-validation-plan", response_model=ValidationPlanResult)
-async def generate_validation_plan_questions(request: ValidationPlanRequest):
-    """Generate exactly 3 questions according to ValidationPlan specifications"""
+@app.post("/generate-questions", response_model=SysArchResult)
+async def generate_questions_endpoint(request: SysArchRequest):
+    """Generate exactly 3 questions"""
     start_time = time.time()
     
     try:
-        logger.info(f"ValidationPlan request: {request.c_id} - {request.p_variation}")
-        result = await ai_system.generate_validation_plan_questions(request)
-        logger.info(f"ValidationPlan questions generated in {result.processing_time:.2f}s")
+        logger.info(f"Request: {request.c_id} - {request.p_variation}")
+        result = await ai_system.generate_questions(request)
+        logger.info(f"Questions generated in {result.processing_time:.2f}s")
         
         # Save comprehensive results via result_manager (orchestrator-side saving)
         if RESULT_MANAGER_AVAILABLE:
@@ -1116,19 +1447,102 @@ async def generate_validation_plan_questions(request: ValidationPlanRequest):
         
         return result
         
-    except Exception as e:
-        logger.error(f"ValidationPlan generation failed: {e}")
-        
-        # Save error results if possible
+    except ModelLoadingError as e:
+        logger.error(f"Model loading failed: {e.message}")
+        error_detail = {
+            "error_type": "MODEL_LOADING_ERROR",
+            "message": e.message,
+            "model_name": e.model_name,
+            "port": e.port,
+            "vram_info": e.details,
+            "c_id": request.c_id
+        }
         if RESULT_MANAGER_AVAILABLE:
             try:
-                await save_error_results(request, str(e), time.time() - start_time)
+                await save_error_results(request, f"ModelLoadingError: {e.message}", time.time() - start_time)
             except Exception:
-                pass  # Don't fail twice
-                
-        raise HTTPException(status_code=500, detail=str(e))
+                pass
+        raise HTTPException(status_code=503, detail=error_detail)
+        
+    except ExpertValidationError as e:
+        logger.error(f"Expert validation failed: {e.message}")
+        error_detail = {
+            "error_type": "EXPERT_VALIDATION_ERROR", 
+            "message": e.message,
+            "expert_name": e.expert_name,
+            "model": e.model,
+            "port": e.port,
+            "details": e.details,
+            "c_id": request.c_id
+        }
+        if RESULT_MANAGER_AVAILABLE:
+            try:
+                await save_error_results(request, f"ExpertValidationError: {e.message}", time.time() - start_time)
+            except Exception:
+                pass
+        raise HTTPException(status_code=502, detail=error_detail)
+        
+    except CSVGenerationError as e:
+        logger.error(f"CSV generation failed: {e.message}")
+        error_detail = {
+            "error_type": "CSV_GENERATION_ERROR",
+            "message": e.message,
+            "csv_issues": e.csv_issues,
+            "c_id": request.c_id
+        }
+        if RESULT_MANAGER_AVAILABLE:
+            try:
+                await save_error_results(request, f"CSVGenerationError: {e.message}", time.time() - start_time)
+            except Exception:
+                pass
+        raise HTTPException(status_code=422, detail=error_detail)
+        
+    except PromptBuildingError as e:
+        logger.error(f"Prompt building failed: {e.message}")
+        error_detail = {
+            "error_type": "PROMPT_BUILDING_ERROR",
+            "message": e.message,
+            "parameter_name": e.parameter_name,
+            "parameter_value": e.parameter_value,
+            "c_id": request.c_id
+        }
+        if RESULT_MANAGER_AVAILABLE:
+            try:
+                await save_error_results(request, f"PromptBuildingError: {e.message}", time.time() - start_time)
+            except Exception:
+                pass
+        raise HTTPException(status_code=400, detail=error_detail)
+        
+    except QuestionGenerationError as e:
+        logger.error(f"Question generation failed: {e.message}")
+        error_detail = {
+            "error_type": e.error_code,
+            "message": e.message,
+            "details": e.details,
+            "c_id": request.c_id
+        }
+        if RESULT_MANAGER_AVAILABLE:
+            try:
+                await save_error_results(request, f"QuestionGenerationError: {e.message}", time.time() - start_time)
+            except Exception:
+                pass
+        raise HTTPException(status_code=500, detail=error_detail)
+        
+    except Exception as e:
+        logger.error(f"Unexpected error during question generation: {e}")
+        error_detail = {
+            "error_type": "UNEXPECTED_ERROR",
+            "message": f"An unexpected error occurred: {str(e)}",
+            "c_id": request.c_id
+        }
+        if RESULT_MANAGER_AVAILABLE:
+            try:
+                await save_error_results(request, f"UnexpectedError: {str(e)}", time.time() - start_time)
+            except Exception:
+                pass
+        raise HTTPException(status_code=500, detail=error_detail)
 
-async def save_comprehensive_results(request: ValidationPlanRequest, result: ValidationPlanResult, start_time: float):
+async def save_comprehensive_results(request: SysArchRequest, result: SysArchResult, start_time: float):
     """Save comprehensive results including prompts, logs, system metadata, and CSV"""
     try:
         # Prepare CSV data from result
@@ -1142,7 +1556,7 @@ async def save_comprehensive_results(request: ValidationPlanRequest, result: Val
             "p.instruction_obstacle_negation": result.csv_data.get("p.instruction_obstacle_negation", ""),
             "p.instruction_obstacle_passive": result.csv_data.get("p.instruction_obstacle_passive", ""),
             "p.mathematical_requirement_level": result.csv_data.get("p.mathematical_requirement_level", ""),
-            "p.taxanomy_level": result.csv_data.get("p.taxanomy_level", ""),
+            "p.taxonomy_level": result.csv_data.get("p.taxonomy_level", ""),  # Fixed typo
             "p.variation": result.csv_data.get("p.variation", ""),
             "answers": result.csv_data.get("answers", ""),
             "processing_time_seconds": result.processing_time,
@@ -1158,8 +1572,8 @@ async def save_comprehensive_results(request: ValidationPlanRequest, result: Val
         
         # Comprehensive metadata
         metadata = {
-            "test_type": "orchestrator_generated_validation_plan",
-            "description": f"ValidationPlan questions generated by orchestrator for {request.c_id}",
+            "test_type": "orchestrator_generated_questions",
+            "description": f"Questions generated by orchestrator for {request.c_id}",
             "request_parameters": {
                 "c_id": request.c_id,
                 "text_length": len(request.text),
@@ -1173,9 +1587,7 @@ async def save_comprehensive_results(request: ValidationPlanRequest, result: Val
                 "p_root_text_obstacle_negation": request.p_root_text_obstacle_negation,
                 "p_root_text_obstacle_complex_np": request.p_root_text_obstacle_complex_np,
                 "p_root_text_contains_irrelevant_information": request.p_root_text_contains_irrelevant_information,
-                "p_item_X_obstacle_passive": request.p_item_X_obstacle_passive,
-                "p_item_X_obstacle_negation": request.p_item_X_obstacle_negation,
-                "p_item_X_obstacle_complex_np": request.p_item_X_obstacle_complex_np,
+                # Individual item parameters included in SysArchRequest model
                 "p_instruction_obstacle_passive": request.p_instruction_obstacle_passive,
                 "p_instruction_obstacle_complex_np": request.p_instruction_obstacle_complex_np
             },
@@ -1191,7 +1603,7 @@ async def save_comprehensive_results(request: ValidationPlanRequest, result: Val
                 "questions_generated": 3,
                 "processing_time_seconds": result.processing_time,
                 "csv_format_compliant": True,
-                "validation_plan_compliant": True,
+                "system_compliant": True,
                 "question_1_length": len(result.question_1),
                 "question_2_length": len(result.question_2),
                 "question_3_length": len(result.question_3)
@@ -1221,7 +1633,7 @@ async def save_comprehensive_results(request: ValidationPlanRequest, result: Val
         logger.error(f"Failed to save comprehensive results: {e}")
         raise
 
-async def save_error_results(request: ValidationPlanRequest, error_message: str, processing_time: float):
+async def save_error_results(request: SysArchRequest, error_message: str, processing_time: float):
     """Save error results for debugging"""
     try:
         error_data = [{
@@ -1236,10 +1648,10 @@ async def save_error_results(request: ValidationPlanRequest, error_message: str,
         
         error_metadata = {
             "test_type": "orchestrator_error_capture",
-            "description": f"Error occurred during ValidationPlan generation for {request.c_id}",
+            "description": f"Error occurred during question generation for {request.c_id}",
             "error_message": error_message,
             "processing_time_seconds": processing_time,
-            "request_parameters": request.dict(),
+            "request_parameters": request.model_dump(),
             "system_status_at_error": {
                 "active_models": dict(active_models),
                 "available_experts": list(PARAMETER_EXPERTS.keys())
@@ -1252,8 +1664,6 @@ async def save_error_results(request: ValidationPlanRequest, error_message: str,
         
     except Exception as save_error:
         logger.error(f"Failed to save error results: {save_error}")
-
-# Legacy endpoint removed - ValidationPlan-only system
 
 @app.get("/health")
 async def health_check():
@@ -1279,8 +1689,6 @@ async def model_status():
         "max_vram_gb": model_manager.max_vram_gb,
         "available_vram_gb": model_manager.max_vram_gb - vram_usage
     }
-
-# Legacy batch endpoint removed - ValidationPlan-only system
 
 if __name__ == "__main__":
     import uvicorn
