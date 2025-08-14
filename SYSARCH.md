@@ -6,12 +6,23 @@ The http request contains the following parameters:
 - c_id,"Question number - difficulty (1 = Stammaufgabe, 2 = leicht, 3 = schwer) - question version" | GIVEN DIRECTLY BY USER!
 Explanation: If the c_id is 41-1-4, then 41 is the question number, 1 is the difficulty, and 4 is the version of the question."
 - text, "The text from which the question should be generated. It is a string that contains a Informational text about the systems pre-configured topic." | GIVEN DIRECTLY BY USER!
+- question_type,"Werte: multiple-choice, single-choice, true-false, mapping" | GIVEN BY USER AND MODULAR CONFIGURED BY ORCHESTRATOR INTO CORRECT TXT PROMPT TO ADD FOR MASTER PROMPT!
+Explanation: User request for a specific question format/type.
 - p.variation,"Werte: Stammaufgabe, schwer, leicht" | GIVEN BY USER AND MODULAR CONFIGURED BY ORCHESTRATOR INTO CORRECT TXT PROMPT TO ADD FOR MASTER PROMPT!
-Explanation: User request for a specific variation of questions in difficulty.
+Explanation: User request for a specific difficulty level of questions.
 - p.taxanomy_level,"Werte: Stufe 1 (Wissen/Reproduktion), Stufe 2 (Anwendung/Transfer)" | GIVEN BY USER AND MODULAR CONFIGURED BY ORCHESTRATOR INTO CORRECT TXT PROMPT TO ADD FOR MASTER PROMPT!
 Exlanation: The taxonomy level of the question the user is requesting.
 
 Explanation of the following parameters: They are used to request a specific variation of the question. The main generator uses different modular parts in his main generation prompt depending on the values of these parameters.
+
+IMPORTANT ARCHITECTURE RULE: The orchestrator contains NO hardcoded prompt strings. All prompt text must be loaded from external .txt files:
+- mainGenPromptIntro.txt: Main generator introduction
+- expertPromptIntro.txt: Expert validation introduction  
+- refinementPromptIntro.txt: Question refinement introduction
+- csvCorrectionPromptIntro.txt: CSV correction introduction
+- outputFormatPrompt.txt: Output format instructions
+- expertPrompts/: Expert-specific prompts
+- All parameter-specific prompts in respective folders (variationPrompts/, taxonomyLevelPrompt/, etc.)
 
 - p.root_text_reference_explanatory_text,"Werte: Nocht vorhanden, Explizit, Implizit" | GIVEN BY USER AND MODULAR CONFIGURED BY ORCHESTRATOR INTO CORRECT TXT PROMPT TO ADD FOR MASTER PROMPT!
 - p.root_text_obstacle_passive,"Werte: Enthalten, Nicht Enthalten" | GIVEN BY USER AND MODULAR CONFIGURED BY ORCHESTRATOR INTO CORRECT TXT PROMPT TO ADD FOR MASTER PROMPT!
