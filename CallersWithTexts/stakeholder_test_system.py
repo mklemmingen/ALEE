@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-ValidationPlan Stakeholder Testing System - Pure Caller Mode
+Stakeholder Testing System - Pure Caller Mode
 Uses all rows from explanation_metadata.csv to make HTTP requests with randomized parameters
 Orchestrator handles all result saving - caller only monitors process completion
 """
@@ -19,7 +19,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class StakeholderTestSystem:
-    """Pure caller for ValidationPlan testing using stakeholder explanation_metadata.csv"""
+    """Pure caller for question generation testing using stakeholder explanation_metadata.csv"""
     
     def __init__(self):
         self.base_url = "http://localhost:8000"
@@ -57,13 +57,14 @@ class StakeholderTestSystem:
     
     @staticmethod
     def generate_randomized_parameters(base_c_id: str, text_content: str, run_num: int) -> Dict[str, Any]:
-        """Generate randomized ValidationPlan parameters for testing"""
+        """Generate randomized SysArch parameters for testing"""
         
         # Create new c_id with run number
         c_id = f"{base_c_id.split('-')[0]}-{random.choice(['1', '2', '3'])}-{run_num}"
         
-        # Randomize all parameters according to ValidationPlan specifications
-        variations = ["stammaufgabe", "schwer", "leicht"]
+        # Randomize all parameters according to SYSARCH specifications
+        question_types = ["multiple-choice", "single-choice", "true-false", "mapping"]  # Question formats
+        variations = ["stammaufgabe", "schwer", "leicht"]  # Difficulty levels
         taxonomy_levels = ["Stufe 1 (Wissen/Reproduktion)", "Stufe 2 (Anwendung/Transfer)"]
         math_levels = ["0", "1", "2"]
         binary_values = ["Enthalten", "Nicht Enthalten"]
@@ -74,7 +75,8 @@ class StakeholderTestSystem:
         parameters = {
             "c_id": c_id,
             "text": text_content,
-            "p_variation": random.choice(variations),
+            "question_type": random.choice(question_types),  # NEW: Question format parameter
+            "p_variation": random.choice(variations),        # Difficulty level parameter
             "p_taxonomy_level": random.choice(taxonomy_levels),
             "p_mathematical_requirement_level": random.choice(math_levels),
             "p_root_text_reference_explanatory_text": random.choice(reference_values),
@@ -118,14 +120,14 @@ class StakeholderTestSystem:
     
     # Result saving removed - orchestrator handles all result management
     
-    async def test_validation_plan_generation(self, request_data: Dict[str, Any]):
-        """Test ValidationPlan question generation - pure caller mode"""
+    async def test_question_generation(self, request_data: Dict[str, Any]):
+        """Test question generation - pure caller mode"""
         start_time = time.time()
         
         async with aiohttp.ClientSession() as session:
             try:
                 async with session.post(
-                    f"{self.base_url}/generate-validation-plan",
+                    f"{self.base_url}/generate-questions",
                     json=request_data,
                     timeout=aiohttp.ClientTimeout(total=300)
                 ) as response:
@@ -141,12 +143,12 @@ class StakeholderTestSystem:
                         
                     else:
                         error_text = await response.text()
-                        logger.error(f"❌ ValidationPlan generation failed: HTTP {response.status}")
+                        logger.error(f"Question generation failed: HTTP {response.status}")
                         logger.error(f"   Error: {error_text}")
                         return False
                         
             except Exception as e:
-                logger.error(f"❌ ValidationPlan generation exception: {e}")
+                logger.error(f"Question generation exception: {e}")
                 return False
     
     @staticmethod
@@ -164,7 +166,7 @@ class StakeholderTestSystem:
         
         # Verify parameter completeness
         param_count = self.count_parameters_in_request()
-        logger.info(f"Using {param_count} ValidationPlan parameters per request (includes all individual item parameters 1-8)")
+        logger.info(f"Using {param_count} parameters per request (includes all individual item parameters 1-8)")
         logger.info("All SYSARCH-defined parameters implemented: Core, Root-text, Mathematical, Items 1-8, Instructions")
         
         # Health check first
@@ -207,7 +209,8 @@ class StakeholderTestSystem:
                 
                 logger.info(f"\n   Run {run_num}/5 for {original_c_id}")
                 logger.info(f"     c_id: {request_data['c_id']}")
-                logger.info(f"     Variation: {request_data['p_variation']}")
+                logger.info(f"     Question Type: {request_data['question_type']}")  # NEW: Show question format
+                logger.info(f"     Difficulty: {request_data['p_variation']}")       # FIXED: Now correctly labeled as difficulty
                 logger.info(f"     Taxonomy: {request_data['p_taxonomy_level']}")
                 logger.info(f"     Math Level: {request_data['p_mathematical_requirement_level']}")
                 
@@ -217,7 +220,7 @@ class StakeholderTestSystem:
                 logger.info(f"     Total Parameters Sent: {len(request_data)} (SYSARCH-compliant with all individual item parameters)")
                 
                 # Execute the test - orchestrator handles all result saving
-                success = await self.test_validation_plan_generation(request_data)
+                success = await self.test_question_generation(request_data)
                 
                 if success:
                     successful_runs += 1

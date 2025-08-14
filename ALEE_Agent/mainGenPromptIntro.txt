@@ -1,0 +1,2 @@
+Du bist ein Experte für die Erstellung von Bildungsaufgaben.
+Erstelle basierend auf dem gegebenen Text GENAU DREI deutsche Bildungsfragen mit den spezifizierten Parametern.

@@ -17,19 +17,21 @@ Architecture follows SYSARCH.md specifications with modular prompt construction 
 
 ```mermaid
 graph TD
-    A["1. CALLER<br/>HTTP Request with SYSARCH Parameters<br/>c_id, text, p.variation, p.taxonomy_level, etc."] --> B["2. ORCHESTRATOR<br/>Educational AI Orchestrator"]
+    A["1. CALLER<br/>HTTP Request with SYSARCH Parameters<br/>c_id, text, question_type, p.variation, p.taxonomy_level, etc."] --> B["2. ORCHESTRATOR<br/>Educational AI Orchestrator"]
     
     B --> B1["Health Check Expert Servers<br/>Ports 8001-8007"]
     B1 --> B2["Clean Expert Sessions<br/>(Clear history, no restarts)"]
     B2 --> B3["Modular Prompt Construction<br/>Parameter → TXT File Mapping"]
     
-    B3 --> B3A["p.variation → variationPrompts/*.txt"]
+    B3 --> B3A["question_type → variationPrompts/multiple-choice.txt, etc."]
+    B3 --> B3AA["p.variation → variationPrompts/stammaufgabe.txt, etc."]
     B3 --> B3B["p.taxonomy_level → taxonomyLevelPrompt/*.txt"]  
     B3 --> B3C["p.mathematical_requirement_level → mathematicalRequirementLevel/*.txt"]
     B3 --> B3D["p.*_obstacle_* → itemXObstacle/ + instructionObstacle/"]
     B3 --> B3E["p.root_text_* → rootTextParameterTextPrompts/"]
     
     B3A --> B4["Build Master Generation Prompt"]
+    B3AA --> B4
     B3B --> B4
     B3C --> B4
     B3D --> B4
@@ -192,12 +194,13 @@ MODEL_MEMORY_USAGE = {
 
 #### Question Generation (PRIMARY)
 ```http
-POST /generate-validation-plan
+POST /generate-questions
 Content-Type: application/json
 
 {
   "c_id": "41-1-4",
   "text": "Die Inflation beschreibt einen allgemeinen Anstieg des Preisniveaus...",
+  "question_type": "multiple-choice",
   "p_variation": "stammaufgabe",
   "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
   "p_mathematical_requirement_level": "0",
@@ -390,8 +393,9 @@ a token limit of smaller models.
 
 #### Request Parameters
 - `c_id` - Question ID format: question_number-difficulty-version (e.g., "41-1-4")
-- `text` - Informational text about the system's pre-configured topic  
-- `p_variation` - Difficulty: "Stammaufgabe", "schwer", "leicht"
+- `text` - Informational text about the system's pre-configured topic
+- `question_type` - Question format: "multiple-choice", "single-choice", "true-false", "mapping"
+- `p_variation` - Difficulty level: "Stammaufgabe", "schwer", "leicht"
 - `p_taxonomy_level` - "Stufe 1 (Wissen/Reproduktion)", "Stufe 2 (Anwendung/Transfer)"
 - `p_mathematical_requirement_level` - "0", "1", "2" with descriptions
 
@@ -644,11 +648,12 @@ python3 CallersWithTexts/stakeholder_test_system.py
 
 ```bash
 # Single SYSARCH request
-curl -X POST http://localhost:8000/generate-validation-plan \
+curl -X POST http://localhost:8000/generate-questions \
   -H "Content-Type: application/json" \
   -d '{
     "c_id": "181-1-3",
     "text": "Bedürfnisse sind Wünsche Menschen haben...",
+    "question_type": "single-choice",
     "p_variation": "leicht",
     "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
     "p_mathematical_requirement_level": "0",

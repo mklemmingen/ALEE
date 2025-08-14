@@ -203,6 +203,7 @@ class ParameterStatus(Enum):
 class SysArchRequest(BaseModel):
     c_id: str = Field(..., description="Question ID in format: question_number-difficulty-version (e.g., 41-1-4)")
     text: str = Field(..., description="The informational text about the system's pre-configured topic")
+    question_type: str = Field(..., description="multiple-choice, single-choice, true-false, mapping")
     p_variation: str = Field(..., description="Stammaufgabe, schwer, leicht")
     p_taxonomy_level: str = Field(..., description="Stufe 1 (Wissen/Reproduktion), Stufe 2 (Anwendung/Transfer)")
     p_root_text_reference_explanatory_text: str = Field("Nicht vorhanden", description="Nicht vorhanden, Explizit, Implizit")
@@ -506,14 +507,15 @@ class SysArchPromptBuilder:
                 variation
             )
             
+        # Map variation to difficulty level prompt files (stakeholder-aligned)
         variation_map = {
-            "stammaufgabe": "variationPrompts/multiple-choice.txt",  # Default type for stammaufgabe
-            "schwer": "variationPrompts/true-false.txt",             # Complex questions often true-false
-            "leicht": "variationPrompts/single-choice.txt"           # Simple questions single choice
+            "stammaufgabe": "variationPrompts/stammaufgabe.txt",  # Standard difficulty
+            "schwer": "variationPrompts/schwer.txt",              # Hard difficulty  
+            "leicht": "variationPrompts/leicht.txt"               # Easy difficulty
         }
-        file_path = variation_map.get(variation.lower(), "variationPrompts/multiple-choice.txt")
+        file_path = variation_map.get(variation.lower(), "variationPrompts/stammaufgabe.txt")
         content = self.load_prompt_txt(file_path)
-        return f"p.variation ({variation}): {content}"
+        return f"DIFFICULTY LEVEL ({variation}): {content}"
     
     def build_taxonomy_prompt(self, level: str) -> str:
         """Build taxonomy-specific prompt"""
@@ -581,16 +583,50 @@ class SysArchPromptBuilder:
             content = self.load_prompt_txt("instructionExplicitnessOfInstruction/implizit.txt")
             return f"p.instruction_explicitness_of_instruction (Implizit): {content}"
     
+    def build_question_type_prompt(self, question_type: str) -> str:
+        """Build question type specific prompt"""
+        if not question_type or question_type.strip() == "":
+            raise PromptBuildingError(
+                "Question type parameter cannot be empty",
+                "question_type",
+                question_type
+            )
+            
+        valid_types = ["multiple-choice", "single-choice", "true-false", "mapping"]
+        if question_type.lower() not in valid_types:
+            raise PromptBuildingError(
+                f"Invalid question type '{question_type}'. Must be one of: {', '.join(valid_types)}",
+                "question_type",
+                question_type
+            )
+        
+        # Map to existing prompt files
+        type_map = {
+            "multiple-choice": "variationPrompts/multiple-choice.txt",
+            "single-choice": "variationPrompts/single-choice.txt",
+            "true-false": "variationPrompts/true-false.txt",
+            "mapping": "variationPrompts/mapping.txt"
+        }
+        
+        file_path = type_map.get(question_type.lower())
+        content = self.load_prompt_txt(file_path)
+        return f"QUESTION TYPE ({question_type}): {content}"
+    
     def build_master_prompt(self, request: SysArchRequest) -> str:
         """Build the complete master prompt from modular components"""
         components = []
         
-        # Base instruction
-        components.append("Du bist ein Experte für die Erstellung von Bildungsaufgaben. Erstelle basierend auf dem gegebenen Text GENAU DREI deutsche Bildungsfragen mit den spezifizierten Parametern.")
+        # Base instruction from external txt file
+        main_intro = self.load_prompt_txt("mainGenPromptIntro.txt")
+        components.append(main_intro)
         components.append(f"\nReferenztext:\n{request.text}\n")
         components.append(f"c_id: {request.c_id}\n")
         
-        # Always include variation (required)
+        # Include question type (required - newly added)
+        question_type_prompt = self.build_question_type_prompt(request.question_type)
+        components.append(question_type_prompt)
+        
+        # Always include variation (required - difficulty level)
         variation_prompt = self.build_variation_prompt(request.p_variation)
         components.append(variation_prompt)
         
@@ -649,7 +685,9 @@ class SysArchPromptBuilder:
         if hasattr(request, 'p_root_text_reference_explanatory_text') and request.p_root_text_reference_explanatory_text != "Nicht vorhanden":
             components.append(f"p.root_text_reference_explanatory_text ({request.p_root_text_reference_explanatory_text}): <reference text handling prompt content>")
         
-        components.append("\nOutput Format: Antworte mit GENAU DREI Fragen im JSON-Format: {\"question_1\": \"...\", \"question_2\": \"...\", \"question_3\": \"...\", \"answers_1\": [...], \"answers_2\": [...], \"answers_3\": [...]}")
+        # Output format instruction from external txt file
+        output_format = self.load_prompt_txt("outputFormatPrompt.txt")
+        components.append(f"\n{output_format}")
         
         return "\n\n".join(components)
 
@@ -1043,7 +1081,9 @@ class EducationalAISystem:
         parameter_summary = self._build_complete_parameter_summary(request)
         
         # Build expert prompt with complete parameter configuration
-        expert_prompt = f"""Du bist ein Experte für {expert_config.expertise}.
+        # Load expert intro prompt from external txt file
+        expert_intro = self.load_prompt_txt("expertPromptIntro.txt")
+        expert_prompt = f"""{expert_intro} {expert_config.expertise}.
 
         Analysiere diese Bildungsfrage bezüglich ALLER spezifizierten Parameter:
         
@@ -1112,7 +1152,9 @@ class EducationalAISystem:
         generator_config = PARAMETER_EXPERTS["variation_expert"]
         await model_manager.ensure_model_loaded(generator_config)
         
-        refinement_prompt = f"""Du bist ein Experte für Bildungsaufgaben. Verbessere diese Frage basierend auf dem Expertenfeedback:
+        # Load refinement intro prompt from external txt file
+        refinement_intro = self.load_prompt_txt("refinementPromptIntro.txt")
+        refinement_prompt = f"""{refinement_intro}
 
         Aktuelle Frage: {question}
         
@@ -1139,16 +1181,11 @@ class EducationalAISystem:
     def _build_csv_data(self, request: SysArchRequest, questions: List[str]) -> Dict[str, Any]:
         """Build CSV data"""
         
-        # Use the actual p_variation parameter for both subject and type (SYSARCH-compliant)
-        subject = request.p_variation  # Use actual variation parameter
+        # Use the p_variation parameter as subject (difficulty level)
+        subject = request.p_variation  # Difficulty level (stammaufgabe, schwer, leicht)
         
-        # Determine question type based on variation parameter mapping
-        type_map = {
-            "stammaufgabe": "multiple-choice",  # Standard -> multiple choice
-            "schwer": "true-false",            # Hard -> true/false 
-            "leicht": "single-choice"           # Easy -> single choice
-        }
-        question_type = type_map.get(request.p_variation.lower(), "multiple-choice")
+        # Use the question_type parameter directly (architectural fix)
+        question_type = request.question_type  # Question format (multiple-choice, single-choice, true-false, mapping)
         
         # Build the main question text (combining all 3 questions)
         combined_text = f"1. {questions[0]} 2. {questions[1]} 3. {questions[2]}"
@@ -1264,7 +1301,9 @@ class EducationalAISystem:
         helper_config = PARAMETER_EXPERTS["content_expert"]  # Reuse existing expert
         await model_manager.ensure_model_loaded(helper_config)
         
-        correction_prompt = f"""Du bist ein Experte für CSV-Datenkonvertierung von Bildungsfragen.
+        # Load CSV correction intro prompt from external txt file
+        csv_intro = self.load_prompt_txt("csvCorrectionPromptIntro.txt")
+        correction_prompt = f"""{csv_intro}
 
         AUFGABE: Korrigiere die folgenden CSV-Konvertierungsprobleme:
         
@@ -1331,7 +1370,7 @@ class EducationalAISystem:
         return fallback_csv
     
     def _load_expert_prompt(self, expert_name: str) -> str:
-        """Load expert-specific prompt from ALEE_Agent/prompts/ directory"""
+        """Load expert-specific prompt from ALEE_Agent/expertPrompts/ directory"""
         expert_prompt_map = {
             "math_expert": "math_expert.txt",
             "taxonomy_expert": "taxonomy_expert.txt", 
@@ -1345,7 +1384,7 @@ class EducationalAISystem:
             return ""
             
         try:
-            prompt_path = Path(__file__).parent / "prompts" / prompt_file
+            prompt_path = Path(__file__).parent / "expertPrompts" / prompt_file
             with open(prompt_path, 'r', encoding='utf-8') as f:
                 expert_prompt = f.read().strip()
                 logger.info(f"Loaded expert prompt for {expert_name} ({len(expert_prompt)} chars)")
