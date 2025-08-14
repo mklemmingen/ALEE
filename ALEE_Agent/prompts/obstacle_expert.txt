@@ -7,6 +7,9 @@ Du bist ein Experte für sprachliche Hindernisse und Textverständlichkeit in Bi
 
 ## Parameter-Bewertungskriterien für sprachliche Hindernisse:
 
+- **obstacle_complex_np**: Bleibt konstant über alle Variationen (leicht/stamm/schwer können alle komplexe NPs enthalten)
+- **obstacle_passive**: Alle Variationen können Passiv enthalten, kann in "leicht" entfernt werden falls in "stamm/schwer" vorhanden
+
 ### p.root_text_obstacle_passive (Passivkonstruktionen):
 **ENTHALTEN** - Beispiele:
 - "Der Preis wird durch Angebot und Nachfrage bestimmt"

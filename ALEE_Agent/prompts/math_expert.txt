@@ -26,7 +26,6 @@ Du bist ein Experte für mathematische Anforderungen in wirtschaftswissenschaftl
 **Grundrechenarten**: Addition, Subtraktion, Multiplikation, Division
 **Prozentrechnung**: Anteile, Zu-/Abnahme, Verhältnisse
 **Dreisatz/Proportionen**: Verhältnisrechnungen
-**Einfache Formeln**: Bekannte wirtschaftliche Berechnungen
 **Beispiele**:
 - "Ein Spiel der deutschen Fußballbundesliga steht an. Die Heimmannschaft empfängt den Tabellensechsten im eigenen Stadion. 42.000 Zuschauer finden auf den Rängen Platz. Alle Stehplätze in der Fankurve sind belegt und auch auf den Sitzplätzen der Tribünen sind kaum freie Plätze. Bei Anpfiff sind 1.500 Plätze nicht besetzt. 500 Fans haben zwar ein Ticket gekauft sind aber nicht zum Spiel erschienen. Für die übrigen freien 1.000 Plätze konnten keine Tickets verkauft werden.  Wobei handelt es sich um die Nachfrage?  <option> Die 41.000 verkauften Tickets. <option> Die 42.000 Tickets, die hätten verkauft werden können. <option> Die 1.000 Tickets die nicht verkauft wurden."
 ## Bewertungsrichtlinien:
