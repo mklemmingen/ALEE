@@ -769,69 +769,58 @@ class EducationalAISystem:
         generator_config = PARAMETER_EXPERTS["variation_expert"]
         await model_manager.ensure_model_loaded(generator_config)
         
-        questions_response = await self._call_expert_llm(generator_config, master_prompt)
-        questions_data = parse_expert_response(questions_response)
+        # Generate 3 questions individually using plain text responses
+        logger.info("Generating 3 questions individually using plain text approach...")
         
-        if not questions_data:
-            # Fallback parsing
-            try:
-                questions_data = json.loads(questions_response)
-            except:
-                logger.error("Failed to parse questions from generator")
-                questions_data = {
-                    "question_1": "Fallback question 1",
-                    "question_2": "Fallback question 2", 
-                    "question_3": "Fallback question 3",
-                    "answers_1": ["A", "B", "C"],
-                    "answers_2": ["A", "B", "C"],
-                    "answers_3": ["A", "B", "C"]
-                }
-        
-        # Save initial questions generated
-        initial_questions = [
-            questions_data.get("question_1", "Question 1"),
-            questions_data.get("question_2", "Question 2"), 
-            questions_data.get("question_3", "Question 3")
-        ]
-        
-        # Track initial generation
-        generation_updates.append({
-            "timestamp": datetime.now().isoformat(),
-            "step": "initial_generation",
-            "questions": initial_questions.copy(),
-            "source": "main_generator",
-            "model": generator_config.model
-        })
-        
-        if result_manager:
-            result_manager.save_iteration_result(
-                iteration_num=1,
-                questions=initial_questions,
-                prompts_used={"generator_prompt": master_prompt, "generator_model": generator_config.model},
-                processing_metadata={
-                    "step": "initial_question_generation",
-                    "generator_model": generator_config.model,
-                    "generator_port": generator_config.port,
-                    "raw_response": questions_response[:500],  # First 500 chars
-                    "timestamp": datetime.now().isoformat()
-                }
-            )
-        
-        # Step 4: Expert validation for each question (max 3 iterations) with incremental saving
         validated_questions = []
+        global_iteration_counter = 1  # Start from iteration 1
         
-        for i in range(3):
-            question_key = f"question_{i+1}"
-            answer_key = f"answers_{i+1}"
+        for question_num in range(1, 4):  # Generate questions 1, 2, 3
+            logger.info(f"=== Generating Question {question_num}/3 ===")
             
-            question_text = questions_data.get(question_key, f"Question {i+1}")
-            question_answers = questions_data.get(answer_key, ["A", "B", "C"])
+            # Generate single question with plain text response
+            question_response = await self._call_expert_llm(generator_config, master_prompt)
+            
+            # Log the raw response for debugging
+            logger.info(f"Question {question_num} raw response (first 300 chars): {question_response[:300]}")
+            
+            # Use the response directly as plain text (no JSON parsing needed)
+            initial_question = question_response.strip()
+            
+            # Track initial generation
+            generation_updates.append({
+                "timestamp": datetime.now().isoformat(),
+                "step": f"initial_generation_question_{question_num}",
+                "questions": [initial_question],
+                "source": "main_generator",
+                "model": generator_config.model
+            })
+            
+            # Save initial generation if result manager is available
+            if result_manager:
+                result_manager.save_iteration_result(
+                    iteration_num=global_iteration_counter,
+                    questions=[initial_question],
+                    prompts_used={"generator_prompt": master_prompt, "generator_model": generator_config.model},
+                    processing_metadata={
+                        "step": f"initial_generation_question_{question_num}",
+                        "generator_used": generator_config.model,
+                        "question_number": question_num,
+                        "raw_response": question_response[:500],  # First 500 chars
+                        "timestamp": datetime.now().isoformat(),
+                        "processing_time": time.time() - start_time
+                    }
+                )
+                global_iteration_counter += 1
             
             # Validate this question through expert iterations with incremental saving
             validated_question = await self._validate_question_with_experts_incremental(
-                question_text, question_answers, request, i+1, result_manager, generation_updates
+                initial_question, [], request, question_num, result_manager, generation_updates, global_iteration_counter
             )
             validated_questions.append(validated_question)
+            
+            # Update global counter for next question's expert validation
+            global_iteration_counter += 10  # Reserve space for expert validation iterations
         
         # Step 5: Build CSV data
         initial_csv_data = self._build_csv_data(request, validated_questions)
@@ -879,19 +868,29 @@ class EducationalAISystem:
                                             request: SysArchRequest, question_num: int) -> str:
         """Validate single question through expert system (max 3 iterations)"""
         current_question = question
+        approved_experts = {}  # Track which experts have approved the question
         
         for iteration in range(self.max_iterations):
             logger.info(f"Question {question_num}, Iteration {iteration + 1}/{self.max_iterations}")
             
-            # Get expert validations
-            validations = await self._get_expert_validations(current_question, request)
+            # Get expert validations (skip experts who have already approved)
+            validations = await self._get_expert_validations(current_question, request, approved_experts)
             
-            # Check if approved by all experts
+            # Update approved experts tracking
+            for validation in validations:
+                if validation.status == ParameterStatus.APPROVED:
+                    approved_experts[validation.parameter] = True
+                    logger.info(f"Expert {validation.parameter} approved question {question_num} - will skip in future iterations")
+            
+            # Check if approved by all required experts (including previously approved ones)
+            all_required_experts = [name for name in PARAMETER_EXPERTS.keys() if name != "variation_expert"]
+            total_approved = len(approved_experts)
             failed_validations = [v for v in validations 
                                 if v.status in [ParameterStatus.REJECTED, ParameterStatus.NEEDS_REFINEMENT]]
             
-            if not failed_validations:
-                logger.info(f"Question {question_num} approved by all experts")
+            # Question is approved if all required experts have approved (either now or previously)
+            if total_approved >= len(all_required_experts) and not failed_validations:
+                logger.info(f"Question {question_num} approved by all experts ({total_approved}/{len(all_required_experts)})")
                 break
                 
             if iteration < self.max_iterations - 1:  # Not the last iteration
@@ -906,14 +905,22 @@ class EducationalAISystem:
                                                         result_manager, generation_updates: List[Dict[str, Any]]) -> str:
         """Validate single question through expert system with incremental saving (max 3 iterations)"""
         current_question = question
-        global_iteration_counter = len(generation_updates) + 1  # Continue from last saved iteration
+        # Use the provided start iteration counter for expert validation
+        global_iteration_counter = start_iteration_counter
+        approved_experts = {}  # Track which experts have approved the question
         
         for iteration in range(self.max_iterations):
             iteration_start_time = time.time()
             logger.info(f"Question {question_num}, Iteration {iteration + 1}/{self.max_iterations}")
             
-            # Get expert validations
-            validations = await self._get_expert_validations(current_question, request)
+            # Get expert validations (skip experts who have already approved)
+            validations = await self._get_expert_validations(current_question, request, approved_experts)
+            
+            # Update approved experts tracking
+            for validation in validations:
+                if validation.status == ParameterStatus.APPROVED:
+                    approved_experts[validation.parameter] = True
+                    logger.info(f"Expert {validation.parameter} approved question {question_num} - will skip in future iterations")
             
             # Collect expert feedback for saving
             expert_feedback = {}
@@ -950,12 +957,15 @@ class EducationalAISystem:
                 )
                 global_iteration_counter += 1
             
-            # Check if approved by all experts
+            # Check if approved by all required experts (including previously approved ones)
+            all_required_experts = [name for name in PARAMETER_EXPERTS.keys() if name != "variation_expert"]
+            total_approved = len(approved_experts)
             failed_validations = [v for v in validations 
                                 if v.status in [ParameterStatus.REJECTED, ParameterStatus.NEEDS_REFINEMENT]]
             
-            if not failed_validations:
-                logger.info(f"Question {question_num} approved by all experts")
+            # Question is approved if all required experts have approved (either now or previously)
+            if total_approved >= len(all_required_experts) and not failed_validations:
+                logger.info(f"Question {question_num} approved by all experts ({total_approved}/{len(all_required_experts)})")
                 
                 # Save final approval if result manager is available
                 if result_manager:
@@ -964,6 +974,8 @@ class EducationalAISystem:
                         "final_approval_iteration": iteration + 1,
                         "approved_by_all_experts": True,
                         "total_expert_iterations": iteration + 1,
+                        "experts_approved": list(approved_experts.keys()),
+                        "total_experts_approved": total_approved,
                         "timestamp": datetime.now().isoformat()
                     }
                     
@@ -1053,24 +1065,124 @@ class EducationalAISystem:
         
         return "\n".join(summary_lines)
         
-    async def _get_expert_validations(self, question: str, request: SysArchRequest) -> List[ParameterValidation]:
-        """Get validations from all relevant experts for a single question"""
-        validation_tasks = []
+    async def _get_expert_validations(self, question: str, request: SysArchRequest, 
+                                    approved_experts: Dict[str, bool] = None) -> List[ParameterValidation]:
+        """Get validations from relevant experts SEQUENTIALLY, skipping those who already approved"""
+        approved_experts = approved_experts or {}
+        experts_skipped = 0
+        valid_validations = []
         
-        # Create validation tasks for each relevant expert
+        # Get list of experts to consult (in sequential order)
+        experts_to_consult = []
         for expert_name, expert_config in PARAMETER_EXPERTS.items():
             if expert_name != "variation_expert":  # Skip main generator
-                validation_tasks.append(
-                    self._validate_question_with_expert(expert_config, question, request)
-                )
+                # Skip experts who already approved this question in previous iterations
+                if approved_experts.get(expert_name, False):
+                    logger.info(f"Skipping {expert_name} - already approved in previous iteration")
+                    experts_skipped += 1
+                    continue
+                experts_to_consult.append((expert_name, expert_config))
         
-        # Execute validations (semaphore limits concurrent models)
-        validations = await asyncio.gather(*validation_tasks, return_exceptions=True)
+        if experts_skipped > 0:
+            logger.info(f"Optimization: Skipped {experts_skipped} experts who already approved the question")
         
-        # Filter out exceptions and return valid results
-        valid_validations = [v for v in validations if isinstance(v, ParameterValidation)]
+        # Execute validations SEQUENTIALLY (one expert at a time)
+        if experts_to_consult:
+            logger.info(f"Consulting {len(experts_to_consult)} experts sequentially...")
+            
+            for i, (expert_name, expert_config) in enumerate(experts_to_consult, 1):
+                logger.info(f"[{i}/{len(experts_to_consult)}] Consulting {expert_name}...")
+                
+                try:
+                    validation = await self._validate_question_with_expert(expert_config, question, request)
+                    valid_validations.append(validation)
+                    
+                    # Log individual expert result for better tracking
+                    status = validation.status.value if hasattr(validation.status, 'value') else str(validation.status)
+                    logger.info(f"  → {expert_name}: {status} (score: {validation.score})")
+                    if validation.feedback:
+                        logger.info(f"  → Feedback: {validation.feedback[:100]}...")
+                        
+                except Exception as e:
+                    logger.error(f"  → {expert_name} failed: {str(e)}")
+                    continue
+        else:
+            # All experts already approved - no new validations needed
+            logger.info("All experts have already approved this question in previous iterations")
         
+        logger.info(f"Sequential expert consultation complete. {len(valid_validations)} validations obtained.")
         return valid_validations
+    
+    async def _get_expert_validations_with_refinement(self, question: str, request: SysArchRequest, 
+                                                    approved_experts: Dict[str, bool], question_num: int, 
+                                                    iteration: int, result_manager, global_iteration_counter: int) -> tuple:
+        """Get expert validations sequentially, refining question after each expert if needed"""
+        approved_experts = approved_experts or {}
+        valid_validations = []
+        current_question = question
+        
+        # Get list of experts to consult (in sequential order)
+        experts_to_consult = []
+        for expert_name, expert_config in PARAMETER_EXPERTS.items():
+            if expert_name != "variation_expert":  # Skip main generator
+                if approved_experts.get(expert_name, False):
+                    logger.info(f"Skipping {expert_name} - already approved in previous iteration")
+                    continue
+                experts_to_consult.append((expert_name, expert_config))
+        
+        logger.info(f"Sequential expert-guided refinement: {len(experts_to_consult)} experts to consult")
+        
+        # Consult each expert sequentially and refine question immediately if needed
+        for i, (expert_name, expert_config) in enumerate(experts_to_consult, 1):
+            logger.info(f"[{i}/{len(experts_to_consult)}] Consulting {expert_name} on current question...")
+            logger.info(f"Current question: {current_question[:200]}...")
+            
+            try:
+                # Get validation from this expert
+                validation = await self._validate_question_with_expert(expert_config, current_question, request)
+                valid_validations.append(validation)
+                
+                status = validation.status.value if hasattr(validation.status, 'value') else str(validation.status)
+                logger.info(f"  → {expert_name}: {status} (score: {validation.score})")
+                
+                # If expert suggests refinement, apply it immediately before consulting next expert
+                if validation.status in [ParameterStatus.REJECTED, ParameterStatus.NEEDS_REFINEMENT] and validation.feedback:
+                    logger.info(f"  → Feedback: {validation.feedback[:150]}...")
+                    logger.info(f"  → Applying immediate refinement based on {expert_name} feedback...")
+                    
+                    # Refine question based on this expert's feedback
+                    refined_question = await self._refine_single_question(current_question, [validation.feedback], request)
+                    
+                    if refined_question != current_question:
+                        logger.info(f"  → Question refined: {refined_question[:150]}...")
+                        current_question = refined_question
+                        
+                        # Save the refinement step
+                        if result_manager:
+                            result_manager.save_iteration_result(
+                                iteration_num=global_iteration_counter + i,
+                                questions=[current_question],
+                                prompts_used={f"{expert_name}_refinement": validation.feedback},
+                                expert_feedback={"refined_by": expert_name, "immediate_refinement": True},
+                                processing_metadata={
+                                    "step": f"immediate_refinement_by_{expert_name}",
+                                    "question_number": question_num,
+                                    "expert_iteration": iteration + 1,
+                                    "expert_sequence": i,
+                                    "timestamp": datetime.now().isoformat()
+                                }
+                            )
+                    else:
+                        logger.info(f"  → No refinement needed or refinement failed")
+                elif validation.status == ParameterStatus.APPROVED:
+                    logger.info(f"  → {expert_name} approved the current question")
+                    
+            except Exception as e:
+                logger.error(f"  → {expert_name} consultation failed: {str(e)}")
+                continue
+        
+        logger.info(f"Sequential expert-guided consultation complete. Final question: {current_question[:150]}...")
+        return current_question, valid_validations
     
     async def _validate_question_with_expert(self, expert_config: ParameterExpertConfig,
                                            question: str, request: SysArchRequest) -> ParameterValidation:
@@ -1183,8 +1295,14 @@ class EducationalAISystem:
         
         response = await self._call_expert_llm(generator_config, refinement_prompt)
         
+        # Add detailed logging of refinement response for debugging
+        logger.info(f"Raw refinement response (first 300 chars): {response[:300]}")
+        if len(response) > 300:
+            logger.info(f"Raw refinement response (last 100 chars): ...{response[-100:]}")
+        
         # Extract refined question from response with robust parsing
         refined_question = self._extract_refined_question(response)
+        logger.info(f"Extracted refined question: {refined_question[:200]}")
         return refined_question
     
     def _extract_refined_question(self, response: str) -> str:
