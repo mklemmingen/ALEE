@@ -76,7 +76,7 @@ class MultipleChoiceModel(BaseQuestionModel):
     @classmethod
     def validate_option_markup(cls, v: str) -> str:
         """Ensure proper <option> markup and sufficient options"""
-        option_pattern = r'<option>(.*?)</option>'
+        option_pattern = r'<option>(.*?)(?=<option>|$)'
         options = re.findall(option_pattern, v, re.DOTALL)
         
         if len(options) < 6:
@@ -105,7 +105,7 @@ class MultipleChoiceModel(BaseQuestionModel):
     
     def extract_options(self) -> List[str]:
         """Extract option text from markup"""
-        option_pattern = r'<option>(.*?)</option>'
+        option_pattern = r'<option>(.*?)(?=<option>|$)'
         return re.findall(option_pattern, self.question_text, re.DOTALL)
     
     def validate_format_compliance(self) -> bool:
@@ -128,7 +128,7 @@ class SingleChoiceModel(BaseQuestionModel):
     @classmethod
     def validate_option_markup(cls, v: str) -> str:
         """Ensure proper <option> markup with exactly 4 options"""
-        option_pattern = r'<option>(.*?)</option>'
+        option_pattern = r'<option>(.*?)(?=<option>|$)'
         options = re.findall(option_pattern, v, re.DOTALL)
         
         if len(options) != 4:
@@ -153,7 +153,7 @@ class SingleChoiceModel(BaseQuestionModel):
     
     def extract_options(self) -> List[str]:
         """Extract option text from markup"""
-        option_pattern = r'<option>(.*?)</option>'
+        option_pattern = r'<option>(.*?)(?=<option>|$)'
         return re.findall(option_pattern, self.question_text, re.DOTALL)
     
     def validate_format_compliance(self) -> bool:
@@ -176,7 +176,7 @@ class TrueFalseModel(BaseQuestionModel):
     @classmethod
     def validate_true_false_markup(cls, v: str) -> str:
         """Ensure proper <true-false> markup"""
-        tf_pattern = r'<true-false>(.*?)</true-false>'
+        tf_pattern = r'<true-false>(.*?)(?=<true-false>|$)'
         statements = re.findall(tf_pattern, v, re.DOTALL)
         
         if len(statements) != 2:
@@ -202,7 +202,7 @@ class TrueFalseModel(BaseQuestionModel):
     
     def extract_statements(self) -> List[str]:
         """Extract true-false statements from markup"""
-        tf_pattern = r'<true-false>(.*?)</true-false>'
+        tf_pattern = r'<true-false>(.*?)(?=<true-false>|$)'
         return re.findall(tf_pattern, self.question_text, re.DOTALL)
     
     def validate_format_compliance(self) -> bool:

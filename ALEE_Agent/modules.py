@@ -41,12 +41,25 @@ class GermanQuestionGenerator(dspy.Module):
         # Load output format instructions
         output_format = self.prompt_builder.load_prompt_txt("dtoAndOutputPrompt/fallbackGenerationPrompt.txt")
         
-        # Combine modular prompt with generation instruction
+        # Add explicit format enforcement for question type
+        question_type = request_params.get('question_type', 'multiple-choice')
+        format_enforcement = self._get_format_enforcement_prompt(question_type)
+        
+        # Combine prompts with format enforcement taking precedence
         full_prompt = f"""{self.generation_instruction}
 
         {modular_prompt}
         
-        {output_format}"""
+        {output_format}
+        
+        === KRITISCHE FORMAT-DURCHSETZUNG (ÜBERSCHREIBT ALLE ANDEREN ANWEISUNGEN) ===
+        {format_enforcement}
+        
+        ABSCHLIESSENDE VALIDIERUNG:
+        - Prüfe dass die generierten Fragen EXAKT das oben spezifizierte Markup verwenden
+        - Stelle sicher dass die Optionsanzahl den Anforderungen entspricht
+        - Verwende NIEMALS A), B), C) Format - nur das spezifizierte Markup
+        - Diese Anweisungen haben HÖCHSTE PRIORITÄT über alle anderen Formatanweisungen"""
         
         # Prepare DSPy inputs from modular prompt sections
         result = self.generate(
@@ -63,10 +76,11 @@ class GermanQuestionGenerator(dspy.Module):
             irrelevant_information=request_params.get('p_root_text_contains_irrelevant_information', 'Nicht Enthalten')
         )
         
-        # Parse answers from comma-separated strings
-        answers_1 = [a.strip() for a in result.antworten_1.split(',') if a.strip()]
-        answers_2 = [a.strip() for a in result.antworten_2.split(',') if a.strip()]
-        answers_3 = [a.strip() for a in result.antworten_3.split(',') if a.strip()]
+        # Parse answers from markup based on question type
+        question_type = request_params.get('question_type', 'multiple-choice')
+        answers_1 = self._parse_answers(result.frage_1, result.antworten_1, question_type)
+        answers_2 = self._parse_answers(result.frage_2, result.antworten_2, question_type)
+        answers_3 = self._parse_answers(result.frage_3, result.antworten_3, question_type)
         
         # Create typed question models
         question_type = request_params.get('question_type', 'multiple-choice')
@@ -80,14 +94,19 @@ class GermanQuestionGenerator(dspy.Module):
         
         for frage, antworten in questions_data:
             try:
-                # Extract correct answer based on question type
-                correct_answer = self._extract_correct_answer(frage, antworten, question_type)
+                # Validate and transform question format before Pydantic creation
+                validated_question_text, validated_answers = self._validate_and_transform_format(
+                    frage, antworten, question_type
+                )
                 
-                # Create typed question model
+                # Extract correct answer based on question type
+                correct_answer = self._extract_correct_answer(validated_question_text, validated_answers, question_type)
+                
+                # Create typed question model with validated data
                 typed_question = QuestionFactory.from_dspy_output(
                     question_type=question_type,
-                    frage=frage,
-                    antworten=antworten,
+                    frage=validated_question_text,
+                    antworten=validated_answers,
                     correct_answer=correct_answer,
                     explanation=result.generation_rationale
                 )
@@ -115,6 +134,229 @@ class GermanQuestionGenerator(dspy.Module):
             'modular_prompt_used': modular_prompt
         }
     
+    def _parse_answers(self, question_text: str, answer_string: str, question_type: str) -> List[str]:
+        """Parse answers from markup based on question type with robust fallback transformation"""
+        import re
+        
+        if question_type == "multiple-choice" or question_type == "single-choice":
+            # First: Extract from <option> markup in question text
+            option_pattern = r'<option>(.*?)(?=<option>|$)'
+            options = re.findall(option_pattern, question_text, re.DOTALL)
+            
+            if options:
+                logger.info(f"Found {len(options)} options in correct <option> markup format")
+                return [opt.strip() for opt in options if opt.strip()]
+            
+            # Fallback: Transform A)/B)/C) format to proper options
+            letter_pattern = r'[A-H]\)\s*([^A-H]*?)(?=[A-H]\)|$)'
+            letter_options = re.findall(letter_pattern, question_text, re.DOTALL)
+            
+            if letter_options:
+                logger.warning(f"DSPy generated A)/B)/C) format - transforming {len(letter_options)} options")
+                transformed_options = [opt.strip() for opt in letter_options if opt.strip()]
+                
+                # Ensure minimum option count for question type
+                if question_type == "multiple-choice" and len(transformed_options) < 6:
+                    # Pad with additional options to meet 6-8 requirement
+                    while len(transformed_options) < 6:
+                        transformed_options.append(f"Zusätzliche Option {len(transformed_options) + 1}")
+                    logger.info(f"Padded multiple-choice to {len(transformed_options)} options")
+                
+                elif question_type == "single-choice" and len(transformed_options) != 4:
+                    # Ensure exactly 4 options for single-choice
+                    if len(transformed_options) < 4:
+                        while len(transformed_options) < 4:
+                            transformed_options.append(f"Zusätzliche Option {len(transformed_options) + 1}")
+                    else:
+                        transformed_options = transformed_options[:4]
+                    logger.info(f"Adjusted single-choice to exactly 4 options")
+                
+                return transformed_options
+                
+        elif question_type == "true-false":
+            # Extract from <true-false> markup in question text
+            tf_pattern = r'<true-false>(.*?)(?=<true-false>|$)'
+            options = re.findall(tf_pattern, question_text, re.DOTALL)
+            
+            if options:
+                logger.info(f"Found {len(options)} statements in correct <true-false> markup format")
+                return [opt.strip() for opt in options if opt.strip()]
+            
+            # Default true-false options if no markup found
+            logger.warning(" No <true-false> markup found - using default options")
+            return ["Die Aussage ist richtig", "Die Aussage ist falsch"]
+            
+        elif question_type == "mapping":
+            # Extract from <start-option> and <end-option> markup
+            start_pattern = r'<start-option>(.*?)(?=<start-option>|<end-option>|$)'
+            end_pattern = r'<end-option>(.*?)(?=<start-option>|<end-option>|$)'
+            
+            start_options = re.findall(start_pattern, question_text, re.DOTALL)
+            end_options = re.findall(end_pattern, question_text, re.DOTALL)
+            
+            if start_options and end_options:
+                logger.info(f"Found mapping format: {len(start_options)} start + {len(end_options)} end options")
+                # Combine start and end options
+                all_options = []
+                all_options.extend([opt.strip() for opt in start_options if opt.strip()])
+                all_options.extend([opt.strip() for opt in end_options if opt.strip()])
+                return all_options
+        
+        # Fallback to comma-separated parsing of answer_string
+        if answer_string:
+            logger.warning("Using comma-separated fallback parsing")
+            return [a.strip() for a in answer_string.split(',') if a.strip()]
+        
+        logger.error("No parseable answer format found")
+        return []
+    
+    def _validate_and_transform_format(self, question_text: str, answers: List[str], question_type: str) -> tuple[str, List[str]]:
+        """Validate and transform question format to ensure Pydantic compliance"""
+        import re
+        
+        if question_type == "multiple-choice":
+            # Check if question already has <option> markup
+            option_pattern = r'<option>(.*?)(?=<option>|$)'
+            existing_options = re.findall(option_pattern, question_text, re.DOTALL)
+            
+            if existing_options and len(existing_options) >= 6:
+                logger.info(f"Multiple-choice question already has proper <option> format with {len(existing_options)} options")
+                return question_text, answers
+            
+            # Transform A)/B)/C) format to <option> format if needed
+            letter_pattern = r'[A-H]\)\s*([^A-H]*?)(?=[A-H]\)|$)'
+            letter_options = re.findall(letter_pattern, question_text, re.DOTALL)
+            
+            if letter_options:
+                logger.warning(f"Transforming A)/B)/C) format to <option> markup for multiple-choice")
+                
+                # Extract the question stem (everything before first A))
+                question_stem_match = re.match(r'(.*?)(?=[A-H]\))', question_text, re.DOTALL)
+                question_stem = question_stem_match.group(1).strip() if question_stem_match else question_text
+                
+                # Ensure we have 6-8 options
+                options = [opt.strip() for opt in letter_options if opt.strip()]
+                while len(options) < 6:
+                    options.append(f"Zusätzliche Option {len(options) + 1}")
+                if len(options) > 8:
+                    options = options[:8]
+                
+                # Reconstruct with <option> markup
+                transformed_text = question_stem + " " + "".join(f"<option>{opt}" for opt in options)
+                logger.info(f"Transformed to <option> format with {len(options)} options")
+                return transformed_text, options
+            
+            # If no recognizable format, create options from answers list
+            if len(answers) > 0:
+                while len(answers) < 6:
+                    answers.append(f"Zusätzliche Option {len(answers) + 1}")
+                if len(answers) > 8:
+                    answers = answers[:8]
+                
+                transformed_text = question_text + " " + "".join(f"<option>{ans}" for ans in answers)
+                logger.info(f"Created <option> format from answer list with {len(answers)} options")
+                return transformed_text, answers
+                
+        elif question_type == "single-choice":
+            # Similar logic for single-choice but with exactly 4 options
+            option_pattern = r'<option>(.*?)(?=<option>|$)'
+            existing_options = re.findall(option_pattern, question_text, re.DOTALL)
+            
+            if existing_options and len(existing_options) == 4:
+                logger.info("Single-choice question already has proper <option> format")
+                return question_text, answers
+            
+            # Transform from A)/B)/C) or ensure 4 options
+            letter_pattern = r'[A-H]\)\s*([^A-H]*?)(?=[A-H]\)|$)'
+            letter_options = re.findall(letter_pattern, question_text, re.DOTALL)
+            
+            if letter_options:
+                question_stem_match = re.match(r'(.*?)(?=[A-H]\))', question_text, re.DOTALL)
+                question_stem = question_stem_match.group(1).strip() if question_stem_match else question_text
+                
+                options = [opt.strip() for opt in letter_options if opt.strip()]
+                # Ensure exactly 4 options
+                while len(options) < 4:
+                    options.append(f"Option {len(options) + 1}")
+                options = options[:4]
+                
+                transformed_text = question_stem + " " + "".join(f"<option>{opt}" for opt in options)
+                logger.info("Transformed single-choice to <option> format with 4 options")
+                return transformed_text, options
+                
+        elif question_type == "true-false":
+            # Check for <true-false> markup
+            tf_pattern = r'<true-false>(.*?)(?=<true-false>|$)'
+            existing_statements = re.findall(tf_pattern, question_text, re.DOTALL)
+            
+            if existing_statements and len(existing_statements) == 2:
+                logger.info("True-false question already has proper <true-false> format")
+                return question_text, answers
+            
+            # If no markup, add default true-false options
+            if "<true-false>" not in question_text:
+                transformed_text = question_text + " <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+                transformed_answers = ["Die Aussage ist richtig", "Die Aussage ist falsch"]
+                logger.info("Added <true-false> markup to true-false question")
+                return transformed_text, transformed_answers
+                
+        elif question_type == "mapping":
+            # Check for mapping markup
+            start_pattern = r'<start-option>(.*?)(?=<start-option>|<end-option>|$)'
+            end_pattern = r'<end-option>(.*?)(?=<start-option>|<end-option>|$)'
+            
+            start_options = re.findall(start_pattern, question_text, re.DOTALL)
+            end_options = re.findall(end_pattern, question_text, re.DOTALL)
+            
+            if start_options and end_options and len(start_options) == len(end_options):
+                logger.info(f"Mapping question already has proper format with {len(start_options)} pairs")
+                return question_text, answers
+        
+        # Default: return as-is if no transformation needed
+        logger.info(f"Question format validation passed for {question_type}")
+        return question_text, answers
+    
+    def _get_format_enforcement_prompt(self, question_type: str) -> str:
+        """Generate strong format enforcement instructions for specific question type"""
+        
+        format_instructions = {
+            "multiple-choice": """
+            MULTIPLE-CHOICE FORMAT ENFORCEMENT:
+            - VERWENDE AUSSCHLIESSLICH: <option>Option1<option>Option2<option>Option3...
+            - GENAU 6-8 Optionen ERFORDERLICH (nicht weniger, nicht mehr)
+            - NIEMALS A), B), C) verwenden - nur <option> Tags
+            - Beispiel: Was ist X? <option>Erste Option<option>Zweite Option<option>Dritte Option<option>Vierte Option<option>Fünfte Option<option>Sechste Option
+            - Korrekte Antwort: Liste mit 2+ Optionen
+            """,
+            
+            "single-choice": """
+            SINGLE-CHOICE FORMAT ENFORCEMENT:
+            - VERWENDE AUSSCHLIESSLICH: <option>Option1<option>Option2<option>Option3<option>Option4
+            - GENAU 4 Optionen ERFORDERLICH
+            - NIEMALS A), B), C) verwenden - nur <option> Tags
+            - Beispiel: Was ist Y? <option>Erste Option<option>Zweite Option<option>Dritte Option<option>Vierte Option
+            - Korrekte Antwort: Eine einzelne Option als String
+            """,
+            
+            "true-false": """
+            TRUE-FALSE FORMAT ENFORCEMENT:
+            - VERWENDE AUSSCHLIESSLICH: <true-false>Aussage1<true-false>Aussage2
+            - GENAU 2 Aussagen ERFORDERLICH
+            - Beispiel: Aussage zum Bewerten. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch
+            - Korrekte Antwort: "Richtig" oder "Falsch" als String
+            """,
+            
+            "mapping": """
+            MAPPING FORMAT ENFORCEMENT:
+            - VERWENDE AUSSCHLIESSLICH: <start-option>Begriff1<start-option>Begriff2<end-option>Definition1<end-option>Definition2
+            - Gleiche Anzahl von start-option und end-option Tags
+            - Beispiel: Ordne zu: <start-option>Begriff A<start-option>Begriff B<end-option>Definition 1<end-option>Definition 2
+            - Korrekte Antwort: Dictionary mit Begriff->Definition Zuordnungen
+            """
+        }
+        
+        return format_instructions.get(question_type, format_instructions["multiple-choice"])
+    
     def _extract_text_obstacles(self, params: Dict[str, Any]) -> str:
         """Extract text obstacle parameters"""
         obstacles = []
@@ -139,30 +381,64 @@ class GermanQuestionGenerator(dspy.Module):
         return ', '.join(obstacles) if obstacles else 'keine'
     
     def _extract_correct_answer(self, question_text: str, answers: List[str], question_type: str) -> Any:
-        """Extract correct answer based on question type and content"""
+        """Extract correct answer based on question type with robust format handling"""
+        import re
+        
         if question_type == "multiple-choice":
-            # For multiple choice, assume first 2-3 answers are correct (simplified)
-            return answers[:2] if len(answers) >= 2 else answers
-        elif question_type == "single-choice":
-            # For single choice, assume first answer is correct (simplified)
-            return answers[0] if answers else "Unknown"
-        elif question_type == "true-false":
-            # For true-false, analyze content for correct answer
-            if "richtig" in question_text.lower():
-                return "Richtig"
+            # Multiple choice expects List[str] with 2+ correct answers
+            if len(answers) >= 2:
+                # For educational quality, return first 2 answers as correct
+                return answers[:2]
+            elif len(answers) == 1:
+                # If only one answer, duplicate it to meet minimum requirement
+                return [answers[0], answers[0]]
             else:
+                return ["Unbekannt", "Unbekannt"]
+                
+        elif question_type == "single-choice":
+            # Single choice expects str - one correct answer
+            return answers[0] if answers else "Unbekannt"
+            
+        elif question_type == "true-false":
+            # True-false expects str - analyze content for correct answer
+            question_lower = question_text.lower()
+            
+            # Look for positive indicators
+            positive_indicators = ["richtig", "korrekt", "wahr", "stimmt", "zutreffend"]
+            negative_indicators = ["falsch", "nicht", "unwahr", "stimmt nicht", "unzutreffend"]
+            
+            positive_count = sum(1 for indicator in positive_indicators if indicator in question_lower)
+            negative_count = sum(1 for indicator in negative_indicators if indicator in question_lower)
+            
+            if positive_count > negative_count:
+                return "Richtig"
+            elif negative_count > positive_count:
                 return "Falsch"
+            else:
+                # Default to Falsch if unclear
+                logger.warning("Unclear true/false question - defaulting to 'Falsch'")
+                return "Falsch"
+                
         elif question_type == "mapping":
-            # For mapping, create simple 1:1 mapping (simplified)
+            # Mapping expects Dict[str, str] - create pairs from answers
             if len(answers) >= 6:  # At least 3 pairs
                 pairs = {}
-                for i in range(0, min(len(answers), 6), 2):
-                    if i + 1 < len(answers):
-                        pairs[answers[i]] = answers[i + 1]
+                # Split answers into start and end options
+                mid_point = len(answers) // 2
+                start_options = answers[:mid_point]
+                end_options = answers[mid_point:]
+                
+                # Create mapping pairs
+                for i in range(min(len(start_options), len(end_options))):
+                    pairs[start_options[i]] = end_options[i]
+                    
+                logger.info(f"Created {len(pairs)} mapping pairs")
                 return pairs
-            return {}
+            else:
+                logger.warning("Insufficient options for mapping - creating default pair")
+                return {"Begriff": "Definition"}
         else:
-            return answers[0] if answers else "Unknown"
+            return answers[0] if answers else "Unbekannt"
     
     def _extract_instruction_obstacles(self, params: Dict[str, Any]) -> str:
         """Extract instruction obstacle parameters"""

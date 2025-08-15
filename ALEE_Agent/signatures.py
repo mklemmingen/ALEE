@@ -32,14 +32,14 @@ class GenerateGermanEducationalQuestions(dspy.Signature):
     # Content parameters  
     irrelevant_information: str = dspy.InputField(desc="Irrelevante Informationen enthalten")
     
-    # Output fields - exactly 3 questions with answers
-    frage_1: str = dspy.OutputField(desc="Erste deutsche Bildungsfrage")
-    frage_2: str = dspy.OutputField(desc="Zweite deutsche Bildungsfrage")
-    frage_3: str = dspy.OutputField(desc="Dritte deutsche Bildungsfrage")
+    # Output fields - exactly 3 questions with answers in <option> format
+    frage_1: str = dspy.OutputField(desc="Erste deutsche Bildungsfrage mit <option> Markup für Optionen (6-8 Optionen)")
+    frage_2: str = dspy.OutputField(desc="Zweite deutsche Bildungsfrage mit <option> Markup für Optionen (6-8 Optionen)")
+    frage_3: str = dspy.OutputField(desc="Dritte deutsche Bildungsfrage mit <option> Markup für Optionen (6-8 Optionen)")
     
-    antworten_1: str = dspy.OutputField(desc="Antwortoptionen für Frage 1 (kommagetrennt)")
-    antworten_2: str = dspy.OutputField(desc="Antwortoptionen für Frage 2 (kommagetrennt)")
-    antworten_3: str = dspy.OutputField(desc="Antwortoptionen für Frage 3 (kommagetrennt)")
+    antworten_1: str = dspy.OutputField(desc="Antwortoptionen für Frage 1 als Liste (6-8 Optionen)")
+    antworten_2: str = dspy.OutputField(desc="Antwortoptionen für Frage 2 als Liste (6-8 Optionen)")
+    antworten_3: str = dspy.OutputField(desc="Antwortoptionen für Frage 3 als Liste (6-8 Optionen)")
     
     # Metadata
     generation_rationale: str = dspy.OutputField(desc="Begründung der Fragengenerierung")
@@ -50,8 +50,8 @@ class ValidateVariationGerman(dspy.Signature):
     """Validiere, ob die Frage dem deutschen Schwierigkeitsgrad entspricht."""
     
     # Input
-    frage: str = dspy.InputField(desc="Zu validierende deutsche Frage")
-    antworten: str = dspy.InputField(desc="Antwortoptionen")
+    frage: str = dspy.InputField(desc="Zu validierende deutsche Frage mit <option> Markup")
+    antworten: str = dspy.InputField(desc="Antwortoptionen (aus <option> Markup extrahiert)")
     ziel_variation: str = dspy.InputField(desc="Ziel-Schwierigkeit: leicht/stammaufgabe/schwer")
     
     # Output - German compliance
@@ -65,8 +65,8 @@ class ValidateTaxonomyGerman(dspy.Signature):
     """Validiere Bloom'sche Taxonomiestufe für deutsche Bildungsfragen."""
     
     # Input
-    frage: str = dspy.InputField(desc="Deutsche Bildungsfrage")
-    antworten: str = dspy.InputField(desc="Antwortoptionen")
+    frage: str = dspy.InputField(desc="Deutsche Bildungsfrage mit <option> Markup")
+    antworten: str = dspy.InputField(desc="Antwortoptionen (aus <option> Markup extrahiert)")
     ziel_taxonomie: str = dspy.InputField(desc="Ziel-Taxonomiestufe")
     
     # Output
@@ -80,8 +80,8 @@ class ValidateMathematicalGerman(dspy.Signature):
     """Validiere mathematische Komplexität für deutsche Bildungskontext."""
     
     # Input
-    frage: str = dspy.InputField(desc="Deutsche Bildungsfrage")
-    antworten: str = dspy.InputField(desc="Antwortoptionen")
+    frage: str = dspy.InputField(desc="Deutsche Bildungsfrage mit <option> Markup")
+    antworten: str = dspy.InputField(desc="Antwortoptionen (aus <option> Markup extrahiert)")
     ziel_math_stufe: str = dspy.InputField(desc="Ziel-Mathematikstufe 0-2")
     
     # Output
@@ -95,8 +95,8 @@ class ValidateObstacleGerman(dspy.Signature):
     """Validiere sprachliche Hindernisse in deutschen Bildungsfragen."""
     
     # Input
-    frage: str = dspy.InputField(desc="Deutsche Bildungsfrage")
-    antworten: str = dspy.InputField(desc="Antwortoptionen")
+    frage: str = dspy.InputField(desc="Deutsche Bildungsfrage mit <option> Markup")
+    antworten: str = dspy.InputField(desc="Antwortoptionen (aus <option> Markup extrahiert)")
     ziel_hindernisse: str = dspy.InputField(desc="Erwartete sprachliche Hindernisse")
     
     # Output
@@ -110,8 +110,8 @@ class ValidateInstructionGerman(dspy.Signature):
     """Validiere Anweisungsklarheit und Explizitheit für deutsche Bildung."""
     
     # Input
-    frage: str = dspy.InputField(desc="Deutsche Bildungsfrage")
-    antworten: str = dspy.InputField(desc="Antwortoptionen")
+    frage: str = dspy.InputField(desc="Deutsche Bildungsfrage mit <option> Markup")
+    antworten: str = dspy.InputField(desc="Antwortoptionen (aus <option> Markup extrahiert)")
     ziel_explizitheit: str = dspy.InputField(desc="Ziel-Explizitheit: Explizit/Implizit")
     
     # Output
@@ -125,8 +125,8 @@ class ValidateContentGerman(dspy.Signature):
     """Validiere Inhaltsrelevanz und irrelevante Informationen."""
     
     # Input
-    frage: str = dspy.InputField(desc="Deutsche Bildungsfrage")
-    antworten: str = dspy.InputField(desc="Antwortoptionen")
+    frage: str = dspy.InputField(desc="Deutsche Bildungsfrage mit <option> Markup")
+    antworten: str = dspy.InputField(desc="Antwortoptionen (aus <option> Markup extrahiert)")
     ziel_relevanz: str = dspy.InputField(desc="Ziel-Inhaltsrelevanz")
     
     # Output
@@ -141,7 +141,7 @@ class ExpertConsensusGerman(dspy.Signature):
     """Aggregiere Expertenfeedback und verfeinere deutsche Bildungsfragen mit Parameterschutz."""
     
     # Input - original questions and expert data
-    original_frage: str = dspy.InputField(desc="Ursprüngliche Frage")
+    original_frage: str = dspy.InputField(desc="Ursprüngliche Frage mit <option> Markup")
     original_antworten: str = dspy.InputField(desc="Ursprüngliche Antwortoptionen")
     experten_bewertungen: str = dspy.InputField(desc="Liste aller Expertenbewertungen")
     experten_feedback: str = dspy.InputField(desc="Kombiniertes Expertenfeedback")
@@ -149,8 +149,8 @@ class ExpertConsensusGerman(dspy.Signature):
     parameter_kontext: str = dspy.InputField(desc="SYSARCH-Parameter und Formatbewahrungsregeln")
     
     # Output - refined questions with reasoning
-    verfeinerte_frage: str = dspy.OutputField(desc="Verbesserte Frage basierend auf Expertenfeedback")
-    verfeinerte_antworten: str = dspy.OutputField(desc="Verbesserte Antwortoptionen")
+    verfeinerte_frage: str = dspy.OutputField(desc="Verbesserte Frage mit <option> Markup basierend auf Expertenfeedback")
+    verfeinerte_antworten: str = dspy.OutputField(desc="Verbesserte Antwortoptionen (6-8 Optionen)")
     konsens_begründung: str = dspy.OutputField(desc="Begründung der Verbesserungen")
     format_bewahrt: str = dspy.OutputField(desc="'ja' wenn Frageformat korrekt bewahrt wurde")
     parameter_eingehalten: str = dspy.OutputField(desc="'ja' wenn alle SYSARCH-Parameter eingehalten wurden")
@@ -160,8 +160,8 @@ class QuestionImprovementGerman(dspy.Signature):
     """Verbessere deutsche Bildungsfragen basierend auf Expertenvorschlägen."""
     
     # Input
-    original_frage: str = dspy.InputField(desc="Ursprüngliche deutsche Frage")
-    original_antworten: str = dspy.InputField(desc="Ursprüngliche Antwortoptionen")
+    original_frage: str = dspy.InputField(desc="Ursprüngliche deutsche Frage mit <option> Markup")
+    original_antworten: str = dspy.InputField(desc="Ursprüngliche Antwortoptionen (aus <option> Markup extrahiert)")
     verbesserungsvorschlaege: str = dspy.InputField(desc="Expertvorschläge zur Verbesserung")
     priorität: str = dspy.InputField(desc="Hauptverbesserungspriorität")
     
