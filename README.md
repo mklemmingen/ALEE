@@ -68,8 +68,7 @@ graph TB
     A --> B
     B --> B1
     B1 --> B2
-    B2 --> B3
-    B3 --> C
+    B2 --> C
     C --> C1
     C1 --> C2
     C2 --> C3
