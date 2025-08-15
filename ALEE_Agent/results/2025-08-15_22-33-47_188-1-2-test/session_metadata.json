@@ -1,0 +1,34 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "processing_time": 138.99300074577332,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was ist das Hauptziel des Konsums?",
+        "Was genau ist ein Bed\u00fcrfnis? A) Eine gew\u00fcnschte Dienstleistung B) Ein wirtschaftlicher Faktor C) Ein pers\u00f6nliches Anliegen D) Ein Handelsvolumen",
+        "Welche Aussage ist falsch in Bezug auf Bed\u00fcrfnisse?"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T22:33:47.532212",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}
