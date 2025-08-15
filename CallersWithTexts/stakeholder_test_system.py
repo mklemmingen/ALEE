@@ -7,7 +7,6 @@ Orchestrator handles all result saving - caller only monitors process completion
 
 import asyncio
 import logging
-import random
 import time
 from typing import Dict, Any
 
@@ -150,7 +149,7 @@ class StakeholderTestSystem:
         async with aiohttp.ClientSession() as session:
             try:
                 async with session.post(
-                    f"{self.base_url}/generate-questions-dspy",
+                    f"{self.base_url}/generate-educational-questions",
                     json=request_data,
                     timeout=aiohttp.ClientTimeout(total=600)  # Increased timeout for DSPy processing
                 ) as response:

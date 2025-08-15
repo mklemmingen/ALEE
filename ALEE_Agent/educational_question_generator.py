@@ -12,11 +12,11 @@ from fastapi import FastAPI, HTTPException
 # Define request/response models locally
 from pydantic import BaseModel, Field
 
-from educational_modules import GermanEducationalPipeline, ModularPromptBuilder
-from prompt_builder import ExpertPromptEnhancer
-from result_manager import ResultManager
+from .educational_modules import GermanEducationalPipeline, ModularPromptBuilder
+from .prompt_builder import ExpertPromptEnhancer
+from .result_manager import ResultManager
 # Import existing components
-from system_configuration import configure_dspy_with_ollama
+from .system_configuration import configure_dspy_with_ollama
 
 
 class SysArchRequest(BaseModel):
@@ -243,7 +243,7 @@ class DSPyEducationalSystem:
             # DSPy-specific metadata
             "dspy_consensus_used": True,
             "dspy_modular_prompts": True,
-            "dspy_expert_count": 6,
+            "dspy_expert_count": 5,
             "dspy_all_approved": all(q['approved'] for q in validated_questions)
         }
         
@@ -272,23 +272,23 @@ async def startup_event():
         logger.error(f"DSPy orchestrator startup failed: {e}")
         raise
 
-@app.post("/generate-questions-dspy", response_model=SysArchResult)
-async def generate_questions_dspy_endpoint(request: SysArchRequest):
+@app.post("/generate-educational-questions", response_model=SysArchResult)
+async def generate_educational_questions_endpoint(request: SysArchRequest):
     """
-    Generate questions using DSPy single-pass consensus architecture
-    Uses modular .txt prompts, preserves all existing functionality
+    Generate pedagogically validated questions using AI-powered single-pass consensus architecture
+    Uses modular educational templates, preserves all SYSARCH functionality
     """
     start_time = time.time()
     
     try:
-        logger.info(f"DSPy Request: {request.c_id} - {request.p_variation} ({request.question_type})")
+        logger.info(f"Educational Request: {request.c_id} - {request.p_variation} ({request.question_type})")
         
-        # Generate using DSPy pipeline
+        # Generate using educational AI pipeline
         result, pipeline_result = await dspy_system.generate_questions_dspy(request)
         
-        logger.info(f"DSPy Questions generated in {result.processing_time:.2f}s")
+        logger.info(f"Educational questions generated in {result.processing_time:.2f}s")
         
-        # Enhanced result_manager integration with DSPy pipeline tracking
+        # Enhanced result_manager integration with educational AI pipeline tracking
         try:
             # Initialize result manager for this session
             result_manager = ResultManager(base_results_dir="results")
@@ -432,9 +432,9 @@ async def generate_questions_dspy_endpoint(request: SysArchRequest):
             }
         )
 
-@app.get("/health-dspy")
-async def health_check_dspy():
-    """Health check for DSPy system"""
+@app.get("/system-health")
+async def health_check_educational_system():
+    """Health check for educational AI system"""
     try:
         if not dspy_system.initialized:
             return {"status": "initializing", "dspy_ready": False}
@@ -449,9 +449,9 @@ async def health_check_dspy():
     except Exception as e:
         return {"status": "error", "error": str(e), "dspy_ready": False}
 
-@app.get("/dspy-info")
-async def dspy_system_info():
-    """Get DSPy system information and configuration"""
+@app.get("/system-capabilities")
+async def educational_system_info():
+    """Get educational AI system information and capabilities"""
     if not dspy_system.initialized:
         return {"error": "DSPy system not initialized"}
     
@@ -472,7 +472,6 @@ async def dspy_system_info():
             "MathExpertGerman",
             "ObstacleExpertGerman",
             "InstructionExpertGerman",
-            "ContentExpertGerman",
             "GermanExpertConsensus"
         ],
         "sysarch_compliance": True,

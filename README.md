@@ -1,22 +1,22 @@
-# DSPy-Enhanced Educational Question Generation System
+# Research Educational Question Generation System for 9th-Grade Economics using multi-layer small LM expert validation
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
-![DSPy](https://img.shields.io/badge/DSPy-3.0.1-blue.svg)
+![AI Framework](https://img.shields.io/badge/AI-Framework-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.116+-green.svg)
 ![ROCm](https://img.shields.io/badge/ROCm-6.2+-red.svg)
 ![Ollama](https://img.shields.io/badge/Ollama-Latest-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![SYSARCH](https://img.shields.io/badge/SYSARCH-Compliant-brightgreen.svg)
 
-educational question generation system predefined for 9th-grade economy classes (data-backed for research purposes) that produces questions per request through an expert consensus validation. 
+educational question generation system designed for 9th-grade economics classes that produces pedagogically validated questions through expert consensus methodology. 
 
-The system implements a three-layered architecture with single-pass processing: Caller → DSPy Orchestrator → Parallel Expert LLMs.
+The system implements a three-layered educational architecture with single-pass processing: Request Handler → AI Orchestrator → Parallel Expert Validators.
 
-It utilizes DSPy (Declarative Self-improving Python) framework to replace iterative consensus logic with single-pass expert validation.
+The architecture utilizes advanced language model coordination to replace iterative validation cycles with intelligent single-pass expert consensus.
 
-The architecture implements declarative modules with external prompt construction, type safety through Pydantic validation, and pipeline tracking (result_manager).
+Implementation features include declarative processing modules with external prompt construction (prompt_builder.py), type safety through validation schemas (PYdantic), and comprehensive educational pipeline tracking (Result_Manager.py).
 
-## Three-Layer Architecture
+## Educational Processing Architecture
 
 ```mermaid
 graph TB
@@ -24,45 +24,45 @@ graph TB
         A[HTTP POST Request<br/>39 SYSARCH Parameters<br/>c_id, text, question_type, p_variation, etc.]
     end
     
-    subgraph "Layer 2: DSPy Orchestrator"
-        B[FastAPI Educational Question Generator<br/>educational_question_generator.py]
-        B1[DSPy System Initialization<br/>OLLAMA Multi-Server Setup]
-        B2[GermanEducationalPipeline<br/>Single-Pass Processing]
+    subgraph "Layer 2: AI Orchestrator"
+        B[Educational Question Processing Engine<br/>educational_question_generator.py]
+        B1[AI System Initialization<br/>Multi-Server Language Model Setup]
+        B2[German Educational Pipeline<br/>Single-Pass Processing]
     end
     
-    subgraph "DSPy Generation Phase"
-        C[GermanQuestionGenerator<br/>OLLAMA Server Port 8001]
-        C1[Modular Prompt Construction<br/>From Parameter-Specific .txt Files]
-        C2[GenerateGermanEducationalQuestions<br/>DSPy Signature with ChainOfThought]
-        C3[Generate Exactly 3 Questions<br/>With Structured Outputs]
+    subgraph "Question Generation Phase"
+        C[Educational Question Generator<br/>Language Model Server Port 8001]
+        C1[Modular Prompt Construction<br/>From Parameter-Specific Educational Templates]
+        C2[German Educational Question Generation<br/>AI Reasoning with Educational Context]
+        C3[Generate Exactly 3 Questions<br/>With Structured Educational Outputs]
     end
     
-    subgraph "Layer 3: DSPy Expert Validation"
-        D[Parallel Expert Processing<br/>5 Specialized DSPy Modules<br/>Enhanced Parameter Knowledge Distribution]
+    subgraph "Layer 3: Expert Educational Validation"
+        D[Parallel Expert Processing<br/>5 Specialized Educational Validators<br/>Enhanced Parameter Knowledge Distribution]
         
-        subgraph "Expert Validators with Parameter Enhancement"
-            E[VariationExpertGerman<br/>OLLAMA Server Port 8002<br/>Enhanced with difficulty, taxonomy, question type prompts]
-            F[TaxonomyExpertGerman<br/>OLLAMA Server Port 8003<br/>Enhanced with taxonomy, question type prompts]
-            G[MathExpertGerman<br/>OLLAMA Server Port 8004<br/>Enhanced with mathematical requirement prompts]
-            H[ObstacleExpertGerman<br/>OLLAMA Server Port 8005<br/>Enhanced with comprehensive obstacle prompts]
-            I[InstructionExpertGerman<br/>OLLAMA Server Port 8006<br/>Enhanced with explicitness, question type prompts]
+        subgraph "Educational Expert Validators with Parameter Enhancement"
+            E[Difficulty Assessment Expert<br/>Language Model Server Port 8002<br/>Enhanced with difficulty, taxonomy, question type knowledge]
+            F[Cognitive Taxonomy Expert<br/>Language Model Server Port 8003<br/>Enhanced with taxonomy, question type knowledge]
+            G[Mathematical Complexity Expert<br/>Language Model Server Port 8004<br/>Enhanced with mathematical requirement knowledge]
+            H[Linguistic Barrier Expert<br/>Language Model Server Port 8006<br/>Enhanced with comprehensive linguistic obstacle knowledge]
+            I[Instruction Clarity Expert<br/>Language Model Server Port 8007<br/>Enhanced with explicitness, question type knowledge]
         end
         
-        subgraph "Expert Prompt Enhancement"
-            EP[ExpertPromptEnhancer<br/>Parameter Knowledge Distribution<br/>Format Preservation Protocol]
+        subgraph "Expert Knowledge Enhancement"
+            EP[Educational Parameter Enhancer<br/>Parameter Knowledge Distribution<br/>Format Preservation Protocol]
         end
     end
     
-    subgraph "DSPy Expert Consensus & Refinement Phase"
-        J[GermanExpertConsensus<br/>Expert Feedback Aggregation + Question Refinement]
+    subgraph "Expert Consensus & Educational Refinement Phase"
+        J[Educational Expert Consensus<br/>Expert Feedback Aggregation + Question Refinement]
         J1[Expert Rating & Suggestion Aggregation<br/>Parameter Knowledge Integration]
-        J2[Question Refinement with Guardrails<br/>Format Preservation]
-        J3[Refined Question Output<br/>No Iteration Required]
+        J2[Question Refinement with Educational Guardrails<br/>Format Preservation + SYSARCH Compliance]
+        J3[Refined Educational Question Output<br/>No Iteration Required]
     end
     
     subgraph "Result Management"
         K[Comprehensive Result Storage<br/>ResultManager Integration]
-        K1[DSPy Pipeline Step Tracking<br/>Generation → Experts → Consensus+Refinement]
+        K1[Educational Pipeline Step Tracking<br/>Generation → Experts → Consensus+Refinement]
         K2[SYSARCH CSV Generation<br/>All 39 Parameters + Metadata]
         K3[Session-Based Storage<br/>results/YYYY-MM-DD_HH-MM-SS_c_id/]
     end
@@ -109,14 +109,13 @@ graph TB
     style M fill:#e8f5e8
 ```
 
-### Small-LM Validators
+### Educational Expert Validators
 
-| Module | DSPy Signature | OLLAMA Port | Model | Target Parameters | Expertise |
+| Educational Expert Module | AI Reasoning Signature | Language Model Port | Model | Target Parameters | Educational Expertise |
 |---------------|----------------|-------------|-------|-------------------|-----------|
 | **VariationExpertGerman** | `ValidateVariationGerman` | 8002 | mistral:7b | `p_variation` | Difficulty assessment (leicht/stammaufgabe/schwer) |
 | **TaxonomyExpertGerman** | `ValidateTaxonomyGerman` | 8003 | qwen2.5:7b | `p_taxonomy_level` | Bloom's taxonomy (Stufe 1/2) |
 | **MathExpertGerman** | `ValidateMathematicalGerman` | 8004 | llama3.2:3b | `p_mathematical_requirement_level` | Mathematical complexity (0-2) |
-| **TextReferenceExpertGerman** | `ValidateTextReferenceGerman` | 8005 | llama3.2:3b | `p_root_text_reference_explanatory_text` | Text reference and explanatory content validation |
 | **ObstacleExpertGerman** | `ValidateObstacleGerman` | 8006 | mistral:7b | `p_*_obstacle_*` | Linguistic barriers (passive, negation, complex NP) |
 | **InstructionExpertGerman** | `ValidateInstructionGerman` | 8007 | llama3.1:8b | `p_instruction_*` | Instruction clarity and explicitness |
 
@@ -186,11 +185,11 @@ graph TB
    python3 ALEE_Agent/educational_question_generator.py
    ```
 
-4. **Verify DSPy Health**
+4. **Verify Educational AI System Health**
    ```bash
-   # Test DSPy endpoints
-   curl http://localhost:8000/health-dspy
-   curl http://localhost:8000/dspy-info
+   # Test educational AI endpoints
+   curl http://localhost:8000/system-health
+   curl http://localhost:8000/system-capabilities
    
    # Run systematic test
    python3 CallersWithTexts/stakeholder_test_system.py
@@ -201,7 +200,7 @@ graph TB
 ### Primary Endpoint: Question Generation
 
 ```http
-POST /generate-questions-dspy
+POST /generate-educational-questions
 Content-Type: application/json
 
 {
@@ -289,8 +288,8 @@ Content-Type: application/json
 ### System Endpoints
 
 ```http
-GET /health-dspy         # DSPy system health check
-GET /dspy-info           # DSPy configuration and module info
+GET /system-health          # Educational AI system health check
+GET /system-capabilities    # Educational AI system configuration and module info
 ```
 
 ## Project Structure
@@ -363,7 +362,7 @@ The system saves comprehensive pipeline information for research and debugging:
    - Processing time
 
 2. **Expert Evaluations** (`02_question_*_expert_*.json`)
-   - Individual expert assessments (6 experts × 3 questions = 18 files)
+   - Individual expert assessments (5 experts × 3 questions = 15 files)
    - Expert ratings, feedback, and suggestions
    - Processing time per expert
    - Expert context with parameter knowledge distribution
@@ -389,7 +388,6 @@ OLLAMA_SERVERS = {
     "variation": "http://localhost:8002",   # Difficulty expert
     "taxonomy": "http://localhost:8003",    # Cognitive level expert
     "math": "http://localhost:8004",        # Mathematical expert
-    "text_reference": "http://localhost:8005", # Text reference expert
     "obstacle": "http://localhost:8006",    # Linguistic expert
     "instruction": "http://localhost:8007", # Instruction expert
 }

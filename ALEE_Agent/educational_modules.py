@@ -278,123 +278,7 @@ class InstructionExpertGerman(GermanExpertValidator):
         }
 
 
-class ContentExpertGerman(GermanExpertValidator):
-    """German content relevance expert using .txt prompts"""
-    
-    def __init__(self, prompt_builder: Optional[ModularPromptBuilder] = None):
-        super().__init__(ValidateContentGerman, "content_expert", prompt_builder)
-    
-    def forward(self, question: str, answers: list[str], target_relevance: str, params: Dict[str, Any]):
-        """Validate content relevance using modular prompts"""
-        
-        expert_context = self.get_expert_context(question, answers, target_relevance, params)
-        
-        result = self.validate(
-            frage=question,
-            antworten=", ".join(answers),
-            ziel_relevanz=target_relevance
-        )
-        
-        return {
-            'expert': self.expert_name,
-            'rating': result.bewertung,
-            'feedback': result.feedback,
-            'suggestions': result.vorschlaege.split('\n') if result.vorschlaege else [],
-            'reasoning': result.begruendung,
-            'expert_context': expert_context
-        }
 
-
-class QuestionRefinementGerman(dspy.Module):
-    """Enhanced question refinement using parameter knowledge for format preservation"""
-    
-    def __init__(self, prompt_builder: Optional[ModularPromptBuilder] = None):
-        super().__init__()
-        self.refine = dspy.ChainOfThought(RefineQuestionGerman)
-        self.prompt_builder = prompt_builder or ModularPromptBuilder()
-        self.expert_enhancer = ExpertPromptEnhancer()
-        
-        # Load refinement instruction from .txt file
-        self.refinement_instruction = self.prompt_builder.load_prompt_txt("expertEval/questionImprovementInstruction.txt")
-    
-    def forward(self, question: str, answers: list[str], expert_feedback: str, expert_suggestions: list[str], params: Dict[str, Any]) -> Dict[str, Any]:
-        """Refine question using enhanced parameter knowledge while preserving format"""
-        
-        # Build comprehensive refinement prompt with parameter knowledge
-        refinement_prompt = self._build_comprehensive_refinement_prompt(question, answers, expert_feedback, expert_suggestions, params)
-        
-        result = self.refine(
-            original_frage=question,
-            original_antworten=", ".join(answers),
-            experten_feedback=expert_feedback,
-            verbesserungsvorschlaege="; ".join(expert_suggestions),
-            parameter_kontext=refinement_prompt
-        )
-        
-        # Parse refined answers
-        refined_answers = [a.strip() for a in result.verfeinerte_antworten.split(',') if a.strip()]
-        
-        return {
-            'refined_question': result.verfeinerte_frage,
-            'refined_answers': refined_answers,
-            'refinement_reasoning': result.verfeinerungs_begründung,
-            'format_preserved': self._verify_format_preservation(question, result.verfeinerte_frage, params.get('question_type', 'multiple-choice')),
-            'parameter_context_used': refinement_prompt
-        }
-    
-    def _build_comprehensive_refinement_prompt(self, question: str, answers: list[str], expert_feedback: str, expert_suggestions: list[str], params: Dict[str, Any]) -> str:
-        """Build comprehensive refinement prompt with all relevant parameter knowledge"""
-        
-        # Get all relevant parameter knowledge (content_expert has access to all parameters)
-        parameter_knowledge = self.expert_enhancer._get_relevant_parameter_knowledge("content_expert", params)
-        
-        # Get question type preservation instructions  
-        question_type_preservation = self.expert_enhancer._get_question_type_preservation_instructions(params.get('question_type', 'multiple-choice'))
-        
-        refinement_prompt = f"""=== UMFASSENDE PARAMETER-WISSENSBASIS FÜR VERFEINERUNG ===
-        {parameter_knowledge}
-        
-        === FRAGEFORMAT-BEWAHRUNG (ABSOLUT KRITISCH) ===
-        {question_type_preservation}
-        
-        === VERFEINERUNGS-KONTEXT ===
-        Ursprüngliche Frage: {question}
-        Ursprüngliche Antworten: {', '.join(answers)}
-        Experten-Feedback: {expert_feedback}
-        Verbesserungsvorschläge: {'; '.join(expert_suggestions)}
-        
-        === VERFEINERUNGS-GUARD RAILS ===
-        - NIEMALS den Fragetyp ändern: {params.get('question_type', 'multiple-choice')}
-        - NIEMALS Tags ändern (z.B. <option>, <true-false>)
-        - Nur inhaltliche Verbesserungen bei struktureller Bewahrung
-        - Alle Parameter-Anforderungen müssen weiterhin erfüllt werden
-        - Fokus auf Klarheit, Genauigkeit und pädagogische Wirksamkeit
-        - Behalte die kognitive Schwierigkeit bei: {params.get('p_variation', 'stammaufgabe')}
-        - Respektiere mathematisches Niveau: {params.get('p_mathematical_requirement_level', '0')}
-        - Beachte sprachliche Hindernisse entsprechend den Parametern
-        
-        === ANWEISUNG ===
-        {self.refinement_instruction}"""
-        
-        return refinement_prompt
-    
-    def _verify_format_preservation(self, original_question: str, refined_question: str, question_type: str) -> bool:
-        """Verify that question format has been preserved during refinement"""
-        format_checks = {
-            'multiple-choice': lambda q: '<option>' in q,
-            'single-choice': lambda q: '<option>' in q,
-            'true-false': lambda q: '<true-false>' in q,
-            'mapping': lambda q: any(indicator in q.lower() for indicator in ['ordne', 'zuordnung', 'verbinde'])
-        }
-        
-        checker = format_checks.get(question_type.lower())
-        if not checker:
-            return True  # Unknown format, assume preserved
-        
-        original_has_format = checker(original_question)
-        refined_has_format = checker(refined_question)
-        
-        return original_has_format == refined_has_format
 
 
 class GermanExpertConsensus(dspy.Module):
@@ -464,22 +348,22 @@ class GermanExpertConsensus(dspy.Module):
         question_type_preservation = self.expert_enhancer._get_question_type_preservation_instructions(params.get('question_type', 'multiple-choice'))
         
         context = f"""=== SYSARCH-PARAMETER KONTEXT ===
-{parameter_knowledge}
-
-=== FRAGEFORMAT-BEWAHRUNG (ABSOLUT KRITISCH) ===
-{question_type_preservation}
-
-=== PARAMETER-GUARD RAILS ===
-- NIEMALS den Fragetyp ändern: {params.get('question_type', 'multiple-choice')}
-- NIEMALS Tags ändern (z.B. <option>, <true-false>)
-- Schwierigkeitsgrad beibehalten: {params.get('p_variation', 'stammaufgabe')}
-- Taxonomie-Stufe respektieren: {params.get('p_taxonomy_level', 'Stufe 1')}
-- Mathematisches Niveau einhalten: {params.get('p_mathematical_requirement_level', '0')}
-- Sprachliche Hindernisse gemäß Parametern berücksichtigen
-- Nur inhaltliche Verbesserungen bei struktureller Bewahrung
-
-=== VERFEINERUNGS-ANWEISUNG ===
-{self.refinement_instruction}"""
+        {parameter_knowledge}
+        
+        === FRAGEFORMAT-BEWAHRUNG (ABSOLUT KRITISCH) ===
+        {question_type_preservation}
+        
+        === PARAMETER-GUARD RAILS ===
+        - NIEMALS den Fragetyp ändern: {params.get('question_type', 'multiple-choice')}
+        - NIEMALS Tags ändern (z.B. <option>, <true-false>)
+        - Schwierigkeitsgrad beibehalten: {params.get('p_variation', 'stammaufgabe')}
+        - Taxonomie-Stufe respektieren: {params.get('p_taxonomy_level', 'Stufe 1')}
+        - Mathematisches Niveau einhalten: {params.get('p_mathematical_requirement_level', '0')}
+        - Sprachliche Hindernisse gemäß Parametern berücksichtigen
+        - Nur inhaltliche Verbesserungen bei struktureller Bewahrung
+        
+        === VERFEINERUNGS-ANWEISUNG ===
+        {self.refinement_instruction}"""
         
         return context
 

@@ -34,7 +34,7 @@ class SingleRequestTest:
         
         async with aiohttp.ClientSession() as session:
             try:
-                async with session.get(f"{self.base_url}/health-dspy") as response:
+                async with session.get(f"{self.base_url}/system-health") as response:
                     if response.status == 200:
                         data = await response.json()
                         logger.info(f"DSPy health check: {data}")
@@ -106,7 +106,7 @@ class SingleRequestTest:
         async with aiohttp.ClientSession() as session:
             try:
                 async with session.post(
-                    f"{self.base_url}/generate-questions-dspy",
+                    f"{self.base_url}/generate-educational-questions",
                     json=request_data,
                     timeout=aiohttp.ClientTimeout(total=self.timeout_seconds)
                 ) as response:

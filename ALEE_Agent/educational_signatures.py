@@ -172,20 +172,6 @@ class QuestionImprovementGerman(dspy.Signature):
     verbesserungs_begründung: str = dspy.OutputField(desc="Begründung der Verbesserungen")
 
 
-class RefineQuestionGerman(dspy.Signature):
-    """Verfeinere deutsche Bildungsfragen mit umfassender Parameter-Wissensbasis bei Format-Bewahrung."""
-    
-    # Input
-    original_frage: str = dspy.InputField(desc="Ursprüngliche deutsche Bildungsfrage")
-    original_antworten: str = dspy.InputField(desc="Ursprüngliche Antwortoptionen")
-    experten_feedback: str = dspy.InputField(desc="Aggregiertes Experten-Feedback")
-    verbesserungsvorschlaege: str = dspy.InputField(desc="Spezifische Verbesserungsvorschläge")
-    parameter_kontext: str = dspy.InputField(desc="Umfassende Parameter-Wissensbasis für Verfeinerung")
-    
-    # Output
-    verfeinerte_frage: str = dspy.OutputField(desc="Verfeinerte deutsche Bildungsfrage mit bewahrtem Format")
-    verfeinerte_antworten: str = dspy.OutputField(desc="Verfeinerte Antwortoptionen (kommagetrennt)")
-    verfeinerungs_begründung: str = dspy.OutputField(desc="Detaillierte Begründung der Verfeinerungen mit Formatbewahrung")
 
 
 # CSV Export Signature
