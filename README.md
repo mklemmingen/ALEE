@@ -131,6 +131,12 @@ graph TB
 - **No Hardcoded Strings**: All prompts externalized to files
 - **Comprehensive Testing**: 80-request validation suite with real educational content
 
+### Question Evolution Tracking (NEW)
+- **Dual Question Capture**: CSV output includes both initial and expert-refined versions
+- **Research Insights**: Compare how expert validation improves question quality
+- **Paired Columns**: Easy side-by-side comparison (question_1 vs initial_question_1)
+- **Backward Compatible**: No API changes - enhanced data automatically provided
+
 ## Quick Start
 
 ### Prerequisites
@@ -302,7 +308,7 @@ GET /dspy-info           # DSPy configuration and module info
 │   ├── results/                           # DSPy-managed result storage
 │   │   └── YYYY-MM-DD_HH-MM-SS_c_id/     # Session folders with ISO timestamps
 │   │       ├── prompts/                   # Snapshot of modular prompts
-│   │       ├── results.csv                # Complete SYSARCH CSV format
+│   │       ├── results.csv                # Complete SYSARCH CSV format with question evolution
 │   │       ├── session_metadata.json     # DSPy processing metadata
 │   │       └── dspy_pipeline/             # Step-by-step DSPy processing
 │   │           ├── 01_initial_generation_*.json     # Generation step

@@ -130,8 +130,13 @@ class DSPyEducationalSystem:
             if len(validated_questions) != 3:
                 raise ValueError(f"Expected 3 questions, got {len(validated_questions)}")
             
-            # Build SYSARCH-compliant CSV data
-            csv_data = self._build_sysarch_csv(validated_questions, request_params)
+            # Extract initial questions from pipeline result
+            initial_questions = []
+            if 'pipeline_details' in pipeline_result and 'initial_generation' in pipeline_result['pipeline_details']:
+                initial_questions = pipeline_result['pipeline_details']['initial_generation'].get('questions', [])
+            
+            # Build SYSARCH-compliant CSV data with initial questions
+            csv_data = self._build_sysarch_csv(validated_questions, request_params, initial_questions)
             
             # Create generation updates for compatibility
             generation_updates = [
@@ -176,7 +181,7 @@ class DSPyEducationalSystem:
                 }
             )
     
-    def _build_sysarch_csv(self, validated_questions: List[Dict], request_params: Dict[str, Any]) -> Dict[str, Any]:
+    def _build_sysarch_csv(self, validated_questions: List[Dict], request_params: Dict[str, Any], initial_questions: List[str] = None) -> Dict[str, Any]:
         """Build SYSARCH-compliant CSV data from DSPy results"""
         
         # Extract questions and answers
@@ -191,12 +196,24 @@ class DSPyEducationalSystem:
         combined_questions = " ".join(questions_text)
         combined_answers = ", ".join(all_answers) if all_answers else "Multiple choice options generated"
         
-        # Build complete SYSARCH CSV structure
+        # Ensure we have initial questions or use empty strings
+        if not initial_questions:
+            initial_questions = ["", "", ""]
+        
+        # Build complete SYSARCH CSV structure with paired question columns
         csv_data = {
             "c_id": request_params['c_id'],
             "subject": request_params.get('p_variation', 'stammaufgabe'),
             "type": request_params.get('question_type', 'multiple-choice'),
             "text": combined_questions,
+            
+            # Paired question columns for easy comparison
+            "question_1": validated_questions[0]['question'] if len(validated_questions) > 0 else "",
+            "initial_question_1": initial_questions[0] if len(initial_questions) > 0 else "",
+            "question_2": validated_questions[1]['question'] if len(validated_questions) > 1 else "",
+            "initial_question_2": initial_questions[1] if len(initial_questions) > 1 else "",
+            "question_3": validated_questions[2]['question'] if len(validated_questions) > 2 else "",
+            "initial_question_3": initial_questions[2] if len(initial_questions) > 2 else "",
             
             # All SYSARCH parameters mapped correctly
             "p.instruction_explicitness_of_instruction": request_params.get('p_instruction_explicitness_of_instruction', 'Implizit'),

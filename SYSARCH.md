@@ -109,15 +109,28 @@ Each item has three obstacle parameters systematically tested:
 
 ## SYSARCH CSV Output Format
 
-The system generates complete SYSARCH-compliant CSV with all required columns:
+The system generates complete SYSARCH-compliant CSV with all required columns plus initial questions for comparison:
+
+### Column Structure
+The CSV includes paired question columns for easy comparison between initial generation and expert-refined versions:
 
 ```csv
-c_id,subject,type,text,p.instruction_explicitness_of_instruction,p.mathematical_requirement_level,p.taxanomy_level,question_type,p.variation,answers,p.instruction_obstacle_passive,p.instruction_obstacle_negation,p.instruction_obstacle_complex_np,p.root_text_reference_explanatory_text,p.root_text_obstacle_passive,p.root_text_obstacle_negation,p.root_text_obstacle_complex_np,p.root_text_contains_irrelevant_information,[p.item_1-8_obstacle_*],dspy_consensus_used,dspy_modular_prompts,dspy_expert_count,dspy_all_approved
+c_id,subject,type,text,question_1,initial_question_1,question_2,initial_question_2,question_3,initial_question_3,p.instruction_explicitness_of_instruction,p.mathematical_requirement_level,p.taxanomy_level,question_type,p.variation,answers,p.instruction_obstacle_passive,p.instruction_obstacle_negation,p.instruction_obstacle_complex_np,p.root_text_reference_explanatory_text,p.root_text_obstacle_passive,p.root_text_obstacle_negation,p.root_text_obstacle_complex_np,p.root_text_contains_irrelevant_information,[p.item_1-8_obstacle_*],dspy_consensus_used,dspy_modular_prompts,dspy_expert_count,dspy_all_approved
 ```
+
+### Key Column Enhancements
+- **question_1**: Final expert-refined version of question 1
+- **initial_question_1**: Initial generation before expert validation
+- **question_2**: Final expert-refined version of question 2  
+- **initial_question_2**: Initial generation before expert validation
+- **question_3**: Final expert-refined version of question 3
+- **initial_question_3**: Initial generation before expert validation
+
+This paired ordering enables direct comparison of how each question evolved through the expert validation process.
 
 ### Example Output:
 ```csv
-181-sys-1,stammaufgabe,multiple-choice,"1. Question1 2. Question2 3. Question3",Explizit,0 (Kein Bezug),Stufe 1 (Wissen/Reproduktion),multiple-choice,stammaufgabe,"Answer1; Answer2; Answer3",Nicht Enthalten,Enthalten,Nicht Enthalten,Nicht vorhanden,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,true,true,5,true
+181-sys-1,stammaufgabe,multiple-choice,"1. Was sind Bedürfnisse? 2. Welche Bedürfnisarten gibt es? 3. Wie entstehen Bedürfnisse?","Was sind Bedürfnisse im wirtschaftlichen Sinne?","Was versteht man unter Bedürfnissen?","Welche Arten von Bedürfnissen unterscheidet man?","Welche Bedürfnisarten gibt es?","Wie entstehen Bedürfnisse beim Menschen?","Wodurch entstehen Bedürfnisse?",Explizit,0 (Kein Bezug),Stufe 1 (Wissen/Reproduktion),multiple-choice,stammaufgabe,"Answer1; Answer2; Answer3",Nicht Enthalten,Enthalten,Nicht Enthalten,Nicht vorhanden,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,true,true,5,true
 ```
 
 ## DSPy API Endpoints
