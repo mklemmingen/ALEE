@@ -1,0 +1,26 @@
+{
+  "step_name": "02_question_1_instruction",
+  "timestamp": "2025-08-15T02:00:45.304861",
+  "step_data": {
+    "expert_name": "instruction",
+    "question_key": "question_1",
+    "question_evaluated": "Was ist das Ziel der Anbieter auf Märkten?",
+    "answers_evaluated": [
+      "A) Ein höherer Preis zu erzielen\nB) Die Güter zu möglichst niedrigen Preisen einzukaufen\nC) Eine Konzertkarte zu kaufen\nD) Der Konzertveranstalter ist der Anbieter"
+    ],
+    "target_value": "Implizit",
+    "expert_rating": 3,
+    "expert_feedback": "Die Frage ist zwar explizit formuliert, aber die Antwortmöglichkeiten könnten etwas klarer auf den Marktkonzepten abgestimmt sein. So könnte Option C beispielsweise durch \"Eine Konzertkarte zu kaufen\" ersetzt werden durch \"Ein Musikproduzent gibt eine Konzertkarte an einen Käufer weiter\", um die Marktrolle besser zu beschreiben.",
+    "expert_suggestions": [
+      "Die Frage sollte noch klarer auf den Marktkonzepten abgestimmt sein. So könnte Option D beispielsweise durch \"Der Konzertveranstalter ist der Anbieter, aber das ist nicht die richtige Antwort\" ersetzt werden, um die Marktrolle besser zu beschreiben."
+    ],
+    "expert_reasoning": "Die Frage wird als implizit betrachtet, da sie ein bestimmtes Verständnis des Marktkonzepts voraussetzt. Die richtige Antwort ist jedoch nicht sofort klar, was zeigt, dass die Frage nicht explizit genug formuliert ist.",
+    "expert_context": "=== EXPERTENROLLE ===\nDu bist ein Experte für Anweisungsklarheit und Explizitheit in deutschen Bildungsfragen.\n\nDEINE AUFGABE:\nBewerte, ob die Anweisungen in den gestellten Fragen dem gewünschten Grad der Explizitheit entsprechen und klar verständlich sind.\n\nBEWERTUNGSKRITERIEN:\n- Explizitheit: Anweisungen entsprechen dem Parameter (Explizit/Implizit)\n- Klarheit: Eindeutige und verständliche Formulierungen\n- Sprachliche Hindernisse: Korrekte Behandlung je nach Parameter-Anforderung\n- Anweisungsstruktur: Logischer Aufbau der Instruktionen\n\nEXPLIZITHEIT-STUFEN:\n- EXPLIZIT: Klare, detaillierte Anweisungen mit direkten Handlungsaufforderungen\n- IMPLIZIT: Subtilere Anweisungen, die Schlussfolgerungen erfordern\n\nSPRACHLICHE HINDERNISSE:\n- Passivkonstruktionen: Je nach Parameter-Anforderung\n- Komplexe Nominalphrasen: Bewertung der Angemessenheit\n\nAntworte in folgendem JSON-Format:\n{\n  \"bewertung\": [1-5],\n  \"feedback\": \"Spezifische Analyse der Anweisungsklarheit\",\n  \"vorschlaege\": \"Verbesserungsvorschläge bei Bewertung < 3\",\n  \"begruendung\": \"Detaillierte Begründung der Bewertung\"\n}\n\n=== ZU BEWERTENDE FRAGE ===\nFrage: Was ist das Ziel der Anbieter auf Märkten?\nAntworten: A) Ein höherer Preis zu erzielen\nB) Die Güter zu möglichst niedrigen Preisen einzukaufen\nC) Eine Konzertkarte zu kaufen\nD) Der Konzertveranstalter ist der Anbieter\nZielwert: Implizit\n\n=== BEWERTUNGSANWEISUNG ===\n=== IHRE AUFGABE ===\nBewerten Sie diese 3 Fragen entsprechend Ihrer Expertise.\n\nAntworten Sie mit GENAU diesem JSON-Format:\n{\n    \"status\": \"gut\" oder \"schlecht\",\n    \"reasoning\": \"Ihre Erklärung warum diese Fragen gut/schlecht sind\",\n    \"suggestions\": [\"spezifischer Vorschlag 1\", \"spezifischer Vorschlag 2\", \"...\"]\n}\n\nWenn Status \"gut\" ist, können Vorschläge leer [] sein.\nWenn Status \"schlecht\" ist, geben Sie spezifische umsetzbare Vorschläge zur Verbesserung der Fragen."
+  },
+  "step_metadata": {
+    "step_description": "Expert evaluation by instruction for question_1",
+    "expert_specialization": "instruction",
+    "processing_time_ms": 5145.469427108765,
+    "expert_rating": 3
+  }
+}

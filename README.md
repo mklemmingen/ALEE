@@ -25,8 +25,7 @@ graph TB
     subgraph "Layer 2: DSPy Orchestrator"
         B[FastAPI Educational Question Generator<br/>educational_question_generator.py]
         B1[DSPy System Initialization<br/>OLLAMA Multi-Server Setup]
-        B2[ModularPromptBuilder<br/>Parameter → .txt File Mapping]
-        B3[GermanEducationalPipeline<br/>Single-Pass Processing]
+        B2[GermanEducationalPipeline<br/>Single-Pass Processing]
     end
     
     subgraph "DSPy Generation Phase"

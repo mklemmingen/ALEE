@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": false,
+  "processing_time": 77.54449367523193,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Ein Markt muss an einen Ort gebunden sein.",
+        "M\u00e4rkte k\u00f6nnen nur in physischen Lokalen stattfinden.",
+        "Es gibt keine M\u00e4rkte, die im Internet existieren."
+      ],
+      "expert_consensus": [
+        false,
+        false,
+        false
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": false
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T02:02:04.871699",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

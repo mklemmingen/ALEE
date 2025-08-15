@@ -1,0 +1,26 @@
+{
+  "step_name": "02_question_3_instruction",
+  "timestamp": "2025-08-15T02:02:04.871411",
+  "step_data": {
+    "expert_name": "instruction",
+    "question_key": "question_3",
+    "question_evaluated": "Es gibt keine Märkte, die im Internet existieren.",
+    "answers_evaluated": [
+      "Ja / Nein"
+    ],
+    "target_value": "Explizit",
+    "expert_rating": 4,
+    "expert_feedback": "Die Anweisungsklarheit ist gut, da sie eine klare Frage stellt und die Antworten auf Ja oder Nein beschränkt. Es gibt jedoch keine Erklärung für die Rechtfertigung der Antwortoptionen.",
+    "expert_suggestions": [
+      "Es könnte hilfreich sein, eine kurze Erklärung für die Rechtfertigung der Antwortoptionen hinzuzufügen, um den Teilnehmer zu unterstützen."
+    ],
+    "expert_reasoning": "Die Anweisungs-Bewertung ist 4, da die Frage klar und präzise formuliert ist. Die Antworten sind auch explizit genug, um eine klare Antwort zu erhalten. Es gibt jedoch keine Erklärung für die Rechtfertigung der Antwortoptionen.",
+    "expert_context": "=== EXPERTENROLLE ===\nDu bist ein Experte für Anweisungsklarheit und Explizitheit in deutschen Bildungsfragen.\n\nDEINE AUFGABE:\nBewerte, ob die Anweisungen in den gestellten Fragen dem gewünschten Grad der Explizitheit entsprechen und klar verständlich sind.\n\nBEWERTUNGSKRITERIEN:\n- Explizitheit: Anweisungen entsprechen dem Parameter (Explizit/Implizit)\n- Klarheit: Eindeutige und verständliche Formulierungen\n- Sprachliche Hindernisse: Korrekte Behandlung je nach Parameter-Anforderung\n- Anweisungsstruktur: Logischer Aufbau der Instruktionen\n\nEXPLIZITHEIT-STUFEN:\n- EXPLIZIT: Klare, detaillierte Anweisungen mit direkten Handlungsaufforderungen\n- IMPLIZIT: Subtilere Anweisungen, die Schlussfolgerungen erfordern\n\nSPRACHLICHE HINDERNISSE:\n- Passivkonstruktionen: Je nach Parameter-Anforderung\n- Komplexe Nominalphrasen: Bewertung der Angemessenheit\n\nAntworte in folgendem JSON-Format:\n{\n  \"bewertung\": [1-5],\n  \"feedback\": \"Spezifische Analyse der Anweisungsklarheit\",\n  \"vorschlaege\": \"Verbesserungsvorschläge bei Bewertung < 3\",\n  \"begruendung\": \"Detaillierte Begründung der Bewertung\"\n}\n\n=== ZU BEWERTENDE FRAGE ===\nFrage: Es gibt keine Märkte, die im Internet existieren.\nAntworten: Ja / Nein\nZielwert: Explizit\n\n=== BEWERTUNGSANWEISUNG ===\n=== IHRE AUFGABE ===\nBewerten Sie diese 3 Fragen entsprechend Ihrer Expertise.\n\nAntworten Sie mit GENAU diesem JSON-Format:\n{\n    \"status\": \"gut\" oder \"schlecht\",\n    \"reasoning\": \"Ihre Erklärung warum diese Fragen gut/schlecht sind\",\n    \"suggestions\": [\"spezifischer Vorschlag 1\", \"spezifischer Vorschlag 2\", \"...\"]\n}\n\nWenn Status \"gut\" ist, können Vorschläge leer [] sein.\nWenn Status \"schlecht\" ist, geben Sie spezifische umsetzbare Vorschläge zur Verbesserung der Fragen."
+  },
+  "step_metadata": {
+    "step_description": "Expert evaluation by instruction for question_3",
+    "expert_specialization": "instruction",
+    "processing_time_ms": 3507.9236030578613,
+    "expert_rating": 4
+  }
+}

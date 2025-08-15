@@ -1,0 +1,26 @@
+{
+  "step_name": "02_question_2_instruction",
+  "timestamp": "2025-08-15T02:02:04.871092",
+  "step_data": {
+    "expert_name": "instruction",
+    "question_key": "question_2",
+    "question_evaluated": "Märkte können nur in physischen Lokalen stattfinden.",
+    "answers_evaluated": [
+      "Ja / Nein"
+    ],
+    "target_value": "Explizit",
+    "expert_rating": 4,
+    "expert_feedback": "Die Anweisungsklarheit ist in diesem Fall gut, da der Teilnehmer direkt wissen kann, was er sagen soll (Ja oder Nein). Allerdings könnte die Frage noch mehr Kontext oder Erklärung vertragen, um sicherzustellen, dass sich der Teilnehmer klar versteht.",
+    "expert_suggestions": [
+      "Es wäre hilfreich, einen kurzen Hinweis auf den Kontext oder die Bedeutung von Märkten hinzuzufügen, um sicherzustellen, dass sich der Teilnehmer vollständig versteht."
+    ],
+    "expert_reasoning": "Die Anweisungs-Bewertung ist 4, weil die Aussage über Märkte explizit und klar ist. Es fehlt jedoch etwas an Kontext oder Erklärung, um sicherzustellen, dass sich der Teilnehmer vollständig versteht.",
+    "expert_context": "=== EXPERTENROLLE ===\nDu bist ein Experte für Anweisungsklarheit und Explizitheit in deutschen Bildungsfragen.\n\nDEINE AUFGABE:\nBewerte, ob die Anweisungen in den gestellten Fragen dem gewünschten Grad der Explizitheit entsprechen und klar verständlich sind.\n\nBEWERTUNGSKRITERIEN:\n- Explizitheit: Anweisungen entsprechen dem Parameter (Explizit/Implizit)\n- Klarheit: Eindeutige und verständliche Formulierungen\n- Sprachliche Hindernisse: Korrekte Behandlung je nach Parameter-Anforderung\n- Anweisungsstruktur: Logischer Aufbau der Instruktionen\n\nEXPLIZITHEIT-STUFEN:\n- EXPLIZIT: Klare, detaillierte Anweisungen mit direkten Handlungsaufforderungen\n- IMPLIZIT: Subtilere Anweisungen, die Schlussfolgerungen erfordern\n\nSPRACHLICHE HINDERNISSE:\n- Passivkonstruktionen: Je nach Parameter-Anforderung\n- Komplexe Nominalphrasen: Bewertung der Angemessenheit\n\nAntworte in folgendem JSON-Format:\n{\n  \"bewertung\": [1-5],\n  \"feedback\": \"Spezifische Analyse der Anweisungsklarheit\",\n  \"vorschlaege\": \"Verbesserungsvorschläge bei Bewertung < 3\",\n  \"begruendung\": \"Detaillierte Begründung der Bewertung\"\n}\n\n=== ZU BEWERTENDE FRAGE ===\nFrage: Märkte können nur in physischen Lokalen stattfinden.\nAntworten: Ja / Nein\nZielwert: Explizit\n\n=== BEWERTUNGSANWEISUNG ===\n=== IHRE AUFGABE ===\nBewerten Sie diese 3 Fragen entsprechend Ihrer Expertise.\n\nAntworten Sie mit GENAU diesem JSON-Format:\n{\n    \"status\": \"gut\" oder \"schlecht\",\n    \"reasoning\": \"Ihre Erklärung warum diese Fragen gut/schlecht sind\",\n    \"suggestions\": [\"spezifischer Vorschlag 1\", \"spezifischer Vorschlag 2\", \"...\"]\n}\n\nWenn Status \"gut\" ist, können Vorschläge leer [] sein.\nWenn Status \"schlecht\" ist, geben Sie spezifische umsetzbare Vorschläge zur Verbesserung der Fragen."
+  },
+  "step_metadata": {
+    "step_description": "Expert evaluation by instruction for question_2",
+    "expert_specialization": "instruction",
+    "processing_time_ms": 3819.535970687866,
+    "expert_rating": 4
+  }
+}

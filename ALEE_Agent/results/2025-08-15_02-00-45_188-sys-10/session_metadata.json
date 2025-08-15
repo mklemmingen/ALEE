@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": false,
+  "processing_time": 90.39479327201843,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was ist das Ziel der Anbieter auf M\u00e4rkten?",
+        "Was ist das Angebot in einem Markt?",
+        "Welche Menge an G\u00fctern ist bei einer Nachfrage gemeint?"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        false
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": false
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T02:00:45.305825",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}
