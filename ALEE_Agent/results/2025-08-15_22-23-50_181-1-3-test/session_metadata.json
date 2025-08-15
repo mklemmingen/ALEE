@@ -1,0 +1,34 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "processing_time": 0.14949440956115723,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "1. Frage:\nWas ist der Hauptunterschied zwischen einem Bed\u00fcrfnis und einer W\u00fcnsche?\nA) Ein Bed\u00fcrfnis ist ein notwendiges Gut, w\u00e4hrend eine Wunsch ein Luxusartikel ist.\nB) Ein Bed\u00fcrfnis ist ein subjektives Gef\u00fchl, w\u00e4hrend eine Wunsch ein objektiv bestimmbares Konzept ist.\nC) Ein Bed\u00fcrfnis ist ein langfristiger Wunsch, w\u00e4hrend eine Wunsch ein kurzfristiger Wunsch ist.\nD) Ein Bed\u00fcrfnis ist ein Grundbed\u00fcrfnis, w\u00e4hrend eine Wunsch ein \u00dcberflussartikel ist.\n\nBegr\u00fcndung: Die Frage soll den Unterschied zwischen einem Bed\u00fcrfnis und einer W\u00fcnsche verdeutlichen. Ein Bed\u00fcrfnis ist ein notwendiges Gut, das zum Leben notwendig ist, w\u00e4hrend eine Wunsch ein Luxusartikel ist. Die richtige Antwort ist A) Ein Bed\u00fcrfnis ist ein notwendiges Gut, w\u00e4hrend eine Wunsch ein Luxusartikel ist.\n\n2. Frage:\nWelches sind die Hauptmerkmale eines Bed\u00fcrfnisses?\nA) Subjektivit\u00e4t, Ver\u00e4nderlichkeit und Priorisierbarkeit\nB) Objektivit\u00e4t, Konstanz und Unpriorisierbarkeit\nC) Realismus, Empathie und Flexibilit\u00e4t\nD) Idealismus, Skepsis und Unflexibilit\u00e4t\n\nBegr\u00fcndung: Die Frage soll die Hauptmerkmale eines Bed\u00fcrfnisses verdeutlichen. Ein Bed\u00fcrfnis ist subjektiv, ver\u00e4nderlich und priorisierbar. Die richtige Antwort ist A) Subjektivit\u00e4t, Ver\u00e4nderlichkeit und Priorisierbarkeit.\n\n3. Frage:\nWelche Rolle spielen Bed\u00fcrfnisse in der Wirtschaft?\nA) Bed\u00fcrfnisse bestimmen die Nachfrage nach G\u00fctern und Dienstleistungen.\nB) Bed\u00fcrfnisse definieren die Angebotspreise von G\u00fctern und Dienstleistungen.\nC) Bed\u00fcrfnisse bestimmen den Handel zwischen verschiedenen L\u00e4ndern.\nD) Bed\u00fcrfnisse haben keinen Einfluss auf die Wirtschaft.\n\nBegr\u00fcndung: Die Frage soll die Rolle der Bed\u00fcrfnisse in der Wirtschaft verdeutlichen. Bed\u00fcrfnisse bestimmen die Nachfrage nach G\u00fctern und Dienstleistungen, was wiederum den Marktanteil und die Preise beeinflusst. Die richtige Antwort ist A) Bed\u00fcrfnisse bestimmen die Nachfrage nach G\u00fctern und Dienstleistungen.",
+        "1. Was sind Bed\u00fcrfnisse in wirtschaftlicher Sicht? W\u00e4hlen Sie alle zutreffenden Aussagen aus:\na) Bed\u00fcrfnisse sind eine Art von Wunsch.\nb) Bed\u00fcrfnisse sind ein wichtiger Faktor f\u00fcr die Entscheidungsfindung bei der Kaufentscheidung.\nc) Bed\u00fcrfnisse k\u00f6nnen als grundlegende Antriebskraft f\u00fcr den Konsum verstanden werden.\n\n2. Was ist das wichtigste Merkmal von Bed\u00fcrfnissen in wirtschaftlicher Sicht?\na) Sie sind immer positiv und erf\u00fcllend.\nb) Sie sind ein wichtiger Faktor f\u00fcr die Entscheidungsfindung bei der Kaufentscheidung.\nc) Sie k\u00f6nnen als grundlegende Antriebskraft f\u00fcr den Konsum verstanden werden.\n\n3. Was ist der Hauptunterschied zwischen Bed\u00fcrfnissen und W\u00fcnschen in wirtschaftlicher Sicht?\na) Bed\u00fcrfnisse sind immer positiv und erf\u00fcllend, w\u00e4hrend W\u00fcnsche negativ sind.\nb) Bed\u00fcrfnisse sind ein wichtiger Faktor f\u00fcr die Entscheidungsfindung bei der Kaufentscheidung, w\u00e4hrend W\u00fcnsche dies nicht sind.\nc) Bed\u00fcrfnisse k\u00f6nnen als grundlegende Antriebskraft f\u00fcr den Konsum verstanden werden, w\u00e4hrend W\u00fcnsche dies nicht tun.",
+        "1. **Bed\u00fcrfnisse**: Was sind die wichtigsten Bed\u00fcrfnisse einer Firma?\n   A) Profitmaximierung\n   B) Kundenorientierung\n   C) Innovationsorientierung\n   D) Nachhaltigkeit\n\n2. **Bed\u00fcrfnisse**: Welche Bed\u00fcrfnisse haben die verschiedenen Stakeholder an einer Firma?\n\n   * Kunden: Produktqualit\u00e4t, Preiswesenheit, Verf\u00fcgbarkeit, Kundenservice\n   * Mitarbeiter: Arbeitsplatzsicherheit, faire Bezahlung, Fortbildungschancen, Karriereperspektiven\n   * Investoren: Ertragsmaximierung, Risikominderung, Liquidit\u00e4tsmanagement\n\n3. **Bed\u00fcrfnisse**: Zuordnen Sie die Begriffe zu den Definitionen:\n\n   | Begriff         | Beschreibung                                            |\n   | --------------- | -------------------------------------------------------- |\n   | Bed\u00fcrfnis       | Ein notwendiges oder w\u00fcnschbares Anliegen eines Individuums |\n   | Wunsch          | Ein nicht notwendiges Anliegen des Individuums            |\n   | Nachfrage       | Die Summe aller Bed\u00fcrfnisse und W\u00fcnsche einer Gruppe      |"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T22:23:50.913958",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

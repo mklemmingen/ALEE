@@ -172,7 +172,7 @@ GET /dspy-info        # DSPy configuration details
 ./start_ollama_servers.sh
 
 # Start DSPy orchestrator
-python3 ALEE_Agent/educational_question_generator.py
+python3 ALEE_Agent/_server_question_generator.py
 
 # Run systematic tests
 python3 CallersWithTexts/stakeholder_test_system.py

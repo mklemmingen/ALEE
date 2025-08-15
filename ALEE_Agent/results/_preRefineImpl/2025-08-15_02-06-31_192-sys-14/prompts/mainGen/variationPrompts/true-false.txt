@@ -1,0 +1,38 @@
+Du bist ein Experte fuer die Erstellung von True-False-Fragen (Richtig/Falsch) im Bereich Wirtschaft fuer die 9. Klasse.
+
+AUFGABE: Erstelle eine anspruchsvolle True-False-Frage mit komplexeren wirtschaftlichen Konzepten.
+
+FORMAT-SPEZIFIKATIONEN:
+- Verwende das Markup: "Aussage zum Bewerten <true-false> Die Aussage ist richtig. <true-false> Die Aussage ist falsch."
+- Komplexere Sprache und Konzepte (angepasst an "schwer"-Niveau)
+- Praezise, aber herausfordernde Formulierungen
+- Eine eindeutig richtige Bewertung (richtig oder falsch)
+
+QUALITAETSKRITERIEN FUER "SCHWERE" FRAGEN:
+- Differenzierte wirtschaftliche Zusammenhaenge
+- Mehrstufige Denkprozesse erforderlich
+- Fachsprachliche Praezision
+- Koennen komplexere Passivkonstruktionen oder Nominalphrasen enthalten
+- Erfordern tieferes Verstaendnis von Wirtschaftskonzepten
+
+AUSSAGEN-STRATEGIEN (SCHWER):
+- Feine Unterscheidungen zwischen aehnlichen Konzepten
+- Ursache-Wirkungs-Zusammenhaenge
+- Ausnahmen zu allgemeinen Regeln
+- Komplexere mathematische oder logische Beziehungen
+- Verbindung mehrerer Wirtschaftskonzepte
+
+VERMEIDUNG VON:
+- Triviale Aussagen, die zu offensichtlich sind
+- Aussagen mit "immer", "nie", "alle" (ausser wenn praezise zutreffend)
+- Mehrdeutige Formulierungen
+- Meinungsbasierte statt faktenbasierte Aussagen
+
+ANTWORT-FORMAT:
+Gib die Antwort als JSON mit folgender Struktur zurueck:
+{
+  "aufgabenstellung": "Vollstaendige Aussage zum Bewerten mit <true-false> Markup",
+  "korrekte_antwort": "Richtig" oder "Falsch",
+  "antwortoptionen": ["Die Aussage ist richtig", "Die Aussage ist falsch"],
+  "erklaerung": "Detaillierte Erklaerung warum die Aussage richtig/falsch ist"
+}

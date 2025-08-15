@@ -1,0 +1,82 @@
+c_id,subject,type,text,question_1,initial_question_1,question_2,initial_question_2,question_3,initial_question_3,p.instruction_explicitness_of_instruction,p.mathematical_requirement_level,p.taxanomy_level,question_type,p.variation,answers,p.root_text_reference_explanatory_text,p.root_text_obstacle_passive,p.root_text_obstacle_negation,p.root_text_obstacle_complex_np,p.root_text_contains_irrelevant_information,p.instruction_obstacle_passive,p.instruction_obstacle_complex_np,dspy_consensus_used,dspy_modular_prompts,dspy_expert_count,dspy_all_approved,p.item_1_obstacle_passive,p.item_1_obstacle_negation,p.item_1_obstacle_complex_np,p.item_2_obstacle_passive,p.item_2_obstacle_negation,p.item_2_obstacle_complex_np,p.item_3_obstacle_passive,p.item_3_obstacle_negation,p.item_3_obstacle_complex_np,p.item_4_obstacle_passive,p.item_4_obstacle_negation,p.item_4_obstacle_complex_np,p.item_5_obstacle_passive,p.item_5_obstacle_negation,p.item_5_obstacle_complex_np,p.item_6_obstacle_passive,p.item_6_obstacle_negation,p.item_6_obstacle_complex_np,p.item_7_obstacle_passive,p.item_7_obstacle_negation,p.item_7_obstacle_complex_np,p.item_8_obstacle_passive,p.item_8_obstacle_negation,p.item_8_obstacle_complex_np
+181-1-3-test,stammaufgabe,multiple-choice,"Bedürfnisse sind Wünsche Menschen haben Wünsche. Sie entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. In der Wirtschaft bezeichnet man solche Wünsche allgemein auch als Bedürfnisse. Wenn es kalt ist, hat man das Bedürfnis sich zu wärmen. Wenn du dich einsam fühlst, hast du vielleicht ein Bedürfnis nach Zuneigung oder Freundschaft. Wenn dir langweilig ist, hast du zumeist das Bedürfnis, etwas zu unternehmen. <image>Du siehst: Bedürfnisse können ganz vielfältig sein! Und sie unterscheiden sich individuell je nach Person. Kinder haben z. B. häufig andere Bedürfnisse als Erwachsene. Sie wollen z. B. häufiger spielen. Erwachsene hingegen haben vielleicht eher den Wunsch, finanziell abgesichert zu sein. Aber auch die Bedürfnisse von Kindern untereinander unterscheiden sich. Manche Kinder spielen lieber draußen und andere verbringen die Zeit lieber drinnen zum Beispiel beim Lesen. In der Wirtschaft gehen wir davon aus, dass Bedürfnisse unbegrenzt sind. Jeder Mensch hat gleichzeitig sehr viele unterschiedliche Bedürfnisse. Wenn ein Bedürfnis erfüllt (man sagt: befriedigt) ist, widmet man sich direkt einem anderen. Beispiel: Stell dir vor, du kommst nach dem Sport nach Hause. Du willst duschen (du hast das Bedürfnis nach Sauberkeit), hast Hunger (Bedürfnis etwas zu essen), willst dich ausruhen (Bedürfnis nach Erholung). Später am Abend ist dir dann vielleicht langweilig und du möchtest dir einen Film anschauen (Bedürfnis nach Unterhaltung) … Du siehst: Man hat nicht nur sehr viele Bedürfnisse gleichzeitig, meist kommen auch immer wieder neue dazu! ","1. Frage:
+Was ist der Hauptunterschied zwischen einem Bedürfnis und einer Wünsche?
+A) Ein Bedürfnis ist ein notwendiges Gut, während eine Wunsch ein Luxusartikel ist.
+B) Ein Bedürfnis ist ein subjektives Gefühl, während eine Wunsch ein objektiv bestimmbares Konzept ist.
+C) Ein Bedürfnis ist ein langfristiger Wunsch, während eine Wunsch ein kurzfristiger Wunsch ist.
+D) Ein Bedürfnis ist ein Grundbedürfnis, während eine Wunsch ein Überflussartikel ist.
+
+Begründung: Die Frage soll den Unterschied zwischen einem Bedürfnis und einer Wünsche verdeutlichen. Ein Bedürfnis ist ein notwendiges Gut, das zum Leben notwendig ist, während eine Wunsch ein Luxusartikel ist. Die richtige Antwort ist A) Ein Bedürfnis ist ein notwendiges Gut, während eine Wunsch ein Luxusartikel ist.
+
+2. Frage:
+Welches sind die Hauptmerkmale eines Bedürfnisses?
+A) Subjektivität, Veränderlichkeit und Priorisierbarkeit
+B) Objektivität, Konstanz und Unpriorisierbarkeit
+C) Realismus, Empathie und Flexibilität
+D) Idealismus, Skepsis und Unflexibilität
+
+Begründung: Die Frage soll die Hauptmerkmale eines Bedürfnisses verdeutlichen. Ein Bedürfnis ist subjektiv, veränderlich und priorisierbar. Die richtige Antwort ist A) Subjektivität, Veränderlichkeit und Priorisierbarkeit.
+
+3. Frage:
+Welche Rolle spielen Bedürfnisse in der Wirtschaft?
+A) Bedürfnisse bestimmen die Nachfrage nach Gütern und Dienstleistungen.
+B) Bedürfnisse definieren die Angebotspreise von Gütern und Dienstleistungen.
+C) Bedürfnisse bestimmen den Handel zwischen verschiedenen Ländern.
+D) Bedürfnisse haben keinen Einfluss auf die Wirtschaft.
+
+Begründung: Die Frage soll die Rolle der Bedürfnisse in der Wirtschaft verdeutlichen. Bedürfnisse bestimmen die Nachfrage nach Gütern und Dienstleistungen, was wiederum den Marktanteil und die Preise beeinflusst. Die richtige Antwort ist A) Bedürfnisse bestimmen die Nachfrage nach Gütern und Dienstleistungen.","Was sind Bedürfnisse?
+
+A) Wünsche, die Menschen haben
+B) Dinge, die Menschen benötigen
+C) Gefühle, die Menschen haben
+D) Dinge, die Menschen sich wünschen","1. Was sind Bedürfnisse in wirtschaftlicher Sicht? Wählen Sie alle zutreffenden Aussagen aus:
+a) Bedürfnisse sind eine Art von Wunsch.
+b) Bedürfnisse sind ein wichtiger Faktor für die Entscheidungsfindung bei der Kaufentscheidung.
+c) Bedürfnisse können als grundlegende Antriebskraft für den Konsum verstanden werden.
+
+2. Was ist das wichtigste Merkmal von Bedürfnissen in wirtschaftlicher Sicht?
+a) Sie sind immer positiv und erfüllend.
+b) Sie sind ein wichtiger Faktor für die Entscheidungsfindung bei der Kaufentscheidung.
+c) Sie können als grundlegende Antriebskraft für den Konsum verstanden werden.
+
+3. Was ist der Hauptunterschied zwischen Bedürfnissen und Wünschen in wirtschaftlicher Sicht?
+a) Bedürfnisse sind immer positiv und erfüllend, während Wünsche negativ sind.
+b) Bedürfnisse sind ein wichtiger Faktor für die Entscheidungsfindung bei der Kaufentscheidung, während Wünsche dies nicht sind.
+c) Bedürfnisse können als grundlegende Antriebskraft für den Konsum verstanden werden, während Wünsche dies nicht tun.","Warum unterscheiden sich die Bedürfnisse von Kindern und Erwachsenen?
+
+A) Weil Kinder mehr Geld haben als Erwachsene
+B) Weil Kinder andere Interessen haben als Erwachsene
+C) Weil Kinder keine Bedürfnisse haben
+D) Weil Kinder weniger Hunger haben als Erwachsene","1. **Bedürfnisse**: Was sind die wichtigsten Bedürfnisse einer Firma?
+   A) Profitmaximierung
+   B) Kundenorientierung
+   C) Innovationsorientierung
+   D) Nachhaltigkeit
+
+2. **Bedürfnisse**: Welche Bedürfnisse haben die verschiedenen Stakeholder an einer Firma?
+
+   * Kunden: Produktqualität, Preiswesenheit, Verfügbarkeit, Kundenservice
+   * Mitarbeiter: Arbeitsplatzsicherheit, faire Bezahlung, Fortbildungschancen, Karriereperspektiven
+   * Investoren: Ertragsmaximierung, Risikominderung, Liquiditätsmanagement
+
+3. **Bedürfnisse**: Zuordnen Sie die Begriffe zu den Definitionen:
+
+   | Begriff         | Beschreibung                                            |
+   | --------------- | -------------------------------------------------------- |
+   | Bedürfnis       | Ein notwendiges oder wünschbares Anliegen eines Individuums |
+   | Wunsch          | Ein nicht notwendiges Anliegen des Individuums            |
+   | Nachfrage       | Die Summe aller Bedürfnisse und Wünsche einer Gruppe      |","Was passiert, wenn ein Bedürfnis erfüllt ist?
+
+A) Man widmet sich dem nächsten Bedürfnis
+B) Man hat kein Bedürfnis mehr
+C) Man ist glücklich
+D) Man ist hungrig",Explizit,0 (Kein Bezug),Stufe 1 (Wissen/Reproduktion),multiple-choice,stammaufgabe,"1. B) Ein Bedürfnis ist ein subjektives Gefühl, während eine Wunsch ein objektiv bestimmbares Konzept ist.
+2. A) Subjektivität, Veränderlichkeit und Priorisierbarkeit
+3. A) Bedürfnisse bestimmen die Nachfrage nach Gütern und Dienstleistungen., 1. Die korrekten Antworten sind b und c.
+2. Die korrekte Antwort ist b.
+3. Die korrekte Antwort ist b., 1. B (Kundenorientierung)
+2. A, C, D
+3.
+- Bedürfnis: Ein notwendiges oder wünschbares Anliegen eines Individuums oder einer Gruppe.
+- Wunsch: Ein nicht notwendiges Anliegen des Individuums.
+- Nachfrage: Die Summe aller Bedürfnisse und Wünsche einer Gruppe.",Nicht vorhanden,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,True,True,5,True,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten

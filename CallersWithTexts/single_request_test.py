@@ -5,9 +5,9 @@ Based on stakeholder_test_system.py but runs only one request for quick validati
 """
 
 import asyncio
+import json
 import logging
 import time
-import json
 from typing import Dict, Any, Optional
 
 import aiohttp
@@ -25,7 +25,7 @@ class SingleRequestTest:
     
     def __init__(self):
         self.base_url = "http://localhost:8000"
-        self.stakeholder_csv_path = ".dev/providedProjectFromStakeHolder/explanation_metadata.csv"
+        self.stakeholder_csv_path = "../.dev/providedProjectFromStakeHolder/explanation_metadata.csv"
         self.timeout_seconds = 180  # Timeout for single request (increased for DSPy processing)
         
     async def test_health_endpoint(self) -> bool:
@@ -263,7 +263,7 @@ async def main():
         # First start the DSPy server
         logger.info("Starting DSPy server...")
         logger.info("Please ensure the DSPy orchestrator is running on port 8000")
-        logger.info("Run: python ALEE_Agent/educational_question_generator.py")
+        logger.info("Run: python3 ALEE_Agent/_server_question_generator.py")
         
         # Give user time to start server if needed
         await asyncio.sleep(2)

@@ -1,0 +1,34 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "processing_time": 132.71147990226746,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "1. Welche der folgenden Aussagen ist richtig? a) Alle Menschen haben Bed\u00fcrfnisse. b) Es gibt verschiedene Arten von Bed\u00fcrfnissen. c) Bed\u00fcrfnisse k\u00f6nnen erf\u00fcllt werden, indem man neue Produkte kauft.",
+        "1.\n```\nW\u00e4hle alle zutreffenden Aussagen aus:\nOption A: Bed\u00fcrfnisse sind immer gleichbedeutend mit W\u00fcnschen.\nOption B: Bed\u00fcrfnisse k\u00f6nnen erf\u00fcllt werden, indem man die richtige Strategie w\u00e4hlt.\nOption C: Bed\u00fcrfnisse \u00e4ndern sich im Laufe der Zeit.\n\nKorrekte Antwort: B\n```\n\n2.\n```\nW\u00e4hle die korrekte Definition:\nBed\u00fcrfnis: Ein Wunsch nach etwas, das notwendig ist.\n Option A: Ein Wunsch, der durch Erfahrung oder Erziehung entstanden ist.\n Option B: Ein Bedarf, der durch eine bestimmte Situation entstand.\n Option C: Ein Wunsch, der immer existiert.\n\nKorrekte Antwort: A\n```\n\n3.\n```\nZuordne die folgenden Begriffe zu den Beschreibungen:\nBegriff 1: Bed\u00fcrfnisse\nBegriff 2: Strategien\nBegriff 3: Situation\n\nBeschreibung A: Ein Wunsch nach etwas, das notwendig ist.\nBeschreibung B: Eine bestimmte Vorgehensweise, um ein Ziel zu erreichen.\nBeschreibung C: Eine bestimmte Umgebung oder Situation.\n\nKorrekte Antwort: \nBegriff 1 -> Beschreibung A\nBegriff 2 -> Beschreibung B\nBegriff 3 -> Beschreibung C\n```",
+        "[Verbesserte erste Frage]"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T22:29:05.195573",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

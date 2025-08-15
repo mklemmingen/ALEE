@@ -1,0 +1,9 @@
+=== GENERIERUNGSANWEISUNG ===
+Generiere genau 3 verschiedene Fragen basierend auf den obigen Anforderungen.
+Gib NUR die 3 Fragen zurück, eine pro Zeile, nummeriert 1., 2., 3.
+Keine Erklärungen, kein JSON, keine zusätzliche Formatierung - nur sauberer Fragetext.
+
+Format:
+1. [Erster Fragetext]
+2. [Zweiter Fragetext] 
+3. [Dritter Fragetext]

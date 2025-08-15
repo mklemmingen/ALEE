@@ -1,0 +1,34 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "processing_time": 57.257362604141235,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Welche Faktoren beeinflussen die Nachfrage nach einem Produkt?",
+        "1. Was ist das Hauptziel von Unternehmen bei der Ermittlung ihrer Bed\u00fcrfnisse?\n\nA) Um Gewinne zu maximieren\nB) Um Kundenbed\u00fcrfnisse zu erf\u00fcllen\nC) Um sich von der Konkurrenz abzuheben\nD) Um die Umwelt zu sch\u00fctzen\nE) Um die Aktion\u00e4re zu zufriedstellen\nF) Um das Unternehmen zu expandieren\n\nKorrekte Antwort: B)\nBegr\u00fcndung: Unternehmen zielen darauf ab, Kundenbed\u00fcrfnisse zu erf\u00fcllen, um langfristige Erfolge zu erzielen und ein positives Image aufrechtzuerhalten.",
+        "1. Was sind die Hauptmerkmale von Bed\u00fcrfnissen in der Wirtschaft?\n\nA) Sie sind immer gut definiert und leicht zu messen.\nB) Sie k\u00f6nnen durch Preisgestaltung beeinflusst werden.\nC) Sie sind oft unvorhersehbar und komplex.\nD) Sie k\u00f6nnen durch Marketingkampagnen manipuliert werden."
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T22:16:19.761085",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

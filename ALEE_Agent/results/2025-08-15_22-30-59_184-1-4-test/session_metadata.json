@@ -1,0 +1,34 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "processing_time": 103.69418239593506,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Die erste Frage sollte wie folgt angepasst werden: 'Was ist ein Hauptmerkmal von Bed\u00fcrfnissen?'",
+        "1. **Verfeinerte erste Frage:**\nBegriffe zuordnen\nA. Bed\u00fcrfnis\nB. Wunsch\nC. Neigung\nD. Interesse\n\n<start-option> A <start-option> B <start-option> C \n<end-option> Ein Bed\u00fcrfnis ist eine notwendige Grundlage f\u00fcr menschliches Verhalten und Entscheidungsfindung. \n<end-option> Ein Wunsch ist ein subjektives Verlangen nach etwas.\n<end-option> Eine Neigung ist eine Vorliebe oder ein Verhaltensmuster, das sich wiederholt.\n\n2. **Verfeinerte zweite Frage:**\nBegriffe zuordnen\nA. Bed\u00fcrfnis\nB. Wunsch\nC. Neigung\nD. Interesse\n\n<start-option> A <start-option> B \n<end-option> Ein Bed\u00fcrfnis ist eine notwendige Grundlage f\u00fcr menschliches Verhalten und Entscheidungsfindung.\n<end-option> Ein Wunsch ist ein subjektives Verlangen nach etwas.\n\n3. **Verfeinerte dritte Frage:**\nBegriffe zuordnen\nA. Bed\u00fcrfnis\nB. Wunsch\nC. Neigung\nD. Interesse\n\n<start-option> A <start-option> C \n<end-option> Ein Bed\u00fcrfnis ist eine notwendige Grundlage f\u00fcr menschliches Verhalten und Entscheidungsfindung.\n<end-option> Eine Neigung ist eine Vorliebe oder ein Verhaltensmuster, das sich wiederholt.",
+        "1. Was sind die Hauptunterschiede zwischen Bed\u00fcrfnissen und W\u00fcnschen?\na) Bed\u00fcrfnisse sind immer unerf\u00fcllbar, w\u00e4hrend W\u00fcnsche erf\u00fcllbar sein k\u00f6nnen.\nb) Bed\u00fcrfnisse sind immer sehr wichtig, w\u00e4hrend W\u00fcnsche weniger wichtig sein k\u00f6nnen.\nc) Bed\u00fcrfnisse sind immer mit einer Gefahr verbunden, w\u00e4hrend W\u00fcnsche keine Gefahr bedeuten.\nd) Bed\u00fcrfnisse sind immer etwas Positives, w\u00e4hrend W\u00fcnsche etwas Negatives bedeuten.\n\n2. Welche der folgenden Aussagen ist wahr?\na) Bed\u00fcrfnisse sind immer sehr wichtig.\nb) Bed\u00fcrfnisse k\u00f6nnen immer erf\u00fcllt werden.\nc) Bed\u00fcrfnisse sind immer mit einer Gefahr verbunden.\nd) Bed\u00fcrfnisse sind etwas Positives.\n\n3. Was bedeutet es, wenn man sagt, dass jemand ein bestimmtes Bed\u00fcrfnis hat?\na) Dass dieser Mensch dieses Bed\u00fcrfnis sehr wichtig findet.\nb) Dass dieser Mensch dieses Bed\u00fcrfnis immer erf\u00fcllen kann.\nc) Dass dieser Mensch dieses Bed\u00fcrfnis mit einer Gefahr verbunden ist.\nd) Dass dieser Mensch dieses Bed\u00fcrfnis etwas Positives darstellt."
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T22:30:59.206806",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

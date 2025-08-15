@@ -346,7 +346,7 @@ def display_request_summary(request_data: Dict[str, Any]):
 
 def send_request_to_orchestrator(request_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
     """Send request to orchestrator with progress feedback"""
-    orchestrator_url = "http://localhost:8000/generate-questions"
+    orchestrator_url = "http://localhost:8000/generate-educational-questions"
     
     print_header("SENDING REQUEST TO ORCHESTRATOR")
     print_info(f"Endpoint: {orchestrator_url}")
@@ -380,7 +380,7 @@ def send_request_to_orchestrator(request_data: Dict[str, Any]) -> Optional[Dict[
     except requests.exceptions.ConnectionError:
         print_error("Cannot connect to orchestrator!")
         print_warning("Make sure the orchestrator is running on http://localhost:8000")
-        print_info("Start it with: python3 ALEE_Agent/educational_ai_orchestrator.py")
+        print_info("Start it with: python3 ALEE_Agent/_server_question_generator.py")
         return None
         
     except requests.exceptions.Timeout:
@@ -472,7 +472,7 @@ def display_final_results(result_data: Dict[str, Any], request_data: Dict[str, A
 
 def find_result_files(c_id: str) -> List[Path]:
     """Find result files for the given c_id"""
-    results_dir = Path(__file__).parent / "results"
+    results_dir = Path(__file__).parent.parent / "ALEE_Agent" / "results"
     if not results_dir.exists():
         return []
     

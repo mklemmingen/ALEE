@@ -182,7 +182,7 @@ graph TB
    ./start_ollama_servers.sh
    
    # Start DSPy orchestrator (port 8000)
-   python3 ALEE_Agent/educational_question_generator.py
+   python3 ALEE_Agent/_server_question_generator.py
    ```
 
 4. **Verify Educational AI System Health**
@@ -459,7 +459,7 @@ tail -f ALEE_Agent/server.log | grep "DSPy pipeline step"
 watch -n 1 'rocm-smi && echo "---" && curl -s http://localhost:8000/health-dspy'
 
 # Reduce concurrent processing if needed
-# Edit educational_modules.py: Use fewer parallel experts
+# Edit modules.py: Use fewer parallel experts
 ```
 
 ## License
@@ -473,7 +473,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ```bash
 # Start DSPy system
 ./start_ollama_servers.sh
-python3 ALEE_Agent/educational_question_generator.py &
+python3 ALEE_Agent/_server_question_generator.py &
 
 # Run systematic stakeholder tests
 # - 16 texts with systematic parameter coverage

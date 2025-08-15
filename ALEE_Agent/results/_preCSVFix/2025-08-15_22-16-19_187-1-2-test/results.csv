@@ -1,0 +1,32 @@
+c_id,subject,type,text,question_1,initial_question_1,question_2,initial_question_2,question_3,initial_question_3,p.instruction_explicitness_of_instruction,p.mathematical_requirement_level,p.taxanomy_level,question_type,p.variation,answers,p.root_text_reference_explanatory_text,p.root_text_obstacle_passive,p.root_text_obstacle_negation,p.root_text_obstacle_complex_np,p.root_text_contains_irrelevant_information,p.instruction_obstacle_passive,p.instruction_obstacle_complex_np,dspy_consensus_used,dspy_modular_prompts,dspy_expert_count,dspy_all_approved,p.item_1_obstacle_passive,p.item_1_obstacle_negation,p.item_1_obstacle_complex_np,p.item_2_obstacle_passive,p.item_2_obstacle_negation,p.item_2_obstacle_complex_np,p.item_3_obstacle_passive,p.item_3_obstacle_negation,p.item_3_obstacle_complex_np,p.item_4_obstacle_passive,p.item_4_obstacle_negation,p.item_4_obstacle_complex_np,p.item_5_obstacle_passive,p.item_5_obstacle_negation,p.item_5_obstacle_complex_np,p.item_6_obstacle_passive,p.item_6_obstacle_negation,p.item_6_obstacle_complex_np,p.item_7_obstacle_passive,p.item_7_obstacle_negation,p.item_7_obstacle_complex_np,p.item_8_obstacle_passive,p.item_8_obstacle_negation,p.item_8_obstacle_complex_np
+187-1-2-test,stammaufgabe,multiple-choice,"1. Welche Faktoren beeinflussen die Nachfrage nach einem Produkt? 2. 1. Was ist das Hauptziel von Unternehmen bei der Ermittlung ihrer Bedürfnisse?
+
+A) Um Gewinne zu maximieren
+B) Um Kundenbedürfnisse zu erfüllen
+C) Um sich von der Konkurrenz abzuheben
+D) Um die Umwelt zu schützen
+E) Um die Aktionäre zu zufriedstellen
+F) Um das Unternehmen zu expandieren
+
+Korrekte Antwort: B)
+Begründung: Unternehmen zielen darauf ab, Kundenbedürfnisse zu erfüllen, um langfristige Erfolge zu erzielen und ein positives Image aufrechtzuerhalten. 3. 1. Was sind die Hauptmerkmale von Bedürfnissen in der Wirtschaft?
+
+A) Sie sind immer gut definiert und leicht zu messen.
+B) Sie können durch Preisgestaltung beeinflusst werden.
+C) Sie sind oft unvorhersehbar und komplex.
+D) Sie können durch Marketingkampagnen manipuliert werden.",Welche Faktoren beeinflussen die Nachfrage nach einem Produkt?,Was sind freie Güter?,"1. Was ist das Hauptziel von Unternehmen bei der Ermittlung ihrer Bedürfnisse?
+
+A) Um Gewinne zu maximieren
+B) Um Kundenbedürfnisse zu erfüllen
+C) Um sich von der Konkurrenz abzuheben
+D) Um die Umwelt zu schützen
+E) Um die Aktionäre zu zufriedstellen
+F) Um das Unternehmen zu expandieren
+
+Korrekte Antwort: B)
+Begründung: Unternehmen zielen darauf ab, Kundenbedürfnisse zu erfüllen, um langfristige Erfolge zu erzielen und ein positives Image aufrechtzuerhalten.","Welche Art von Knappheit liegt vor, wenn ein Gut nur in einer geringeren Menge als gewünscht vorhanden ist?","1. Was sind die Hauptmerkmale von Bedürfnissen in der Wirtschaft?
+
+A) Sie sind immer gut definiert und leicht zu messen.
+B) Sie können durch Preisgestaltung beeinflusst werden.
+C) Sie sind oft unvorhersehbar und komplex.
+D) Sie können durch Marketingkampagnen manipuliert werden.",Was ist der Hauptunterschied zwischen absoluter und relativer Knappheit?,Explizit,0 (Kein Bezug),Stufe 1 (Wissen/Reproduktion),multiple-choice,stammaufgabe,"Die Faktoren, die die Nachfrage nach einem Produkt beeinflussen, sind: 1. Preis des Produkts, 2. Qualität des Produkts, 3. Marketing und Werbung für das Produkt., Die richtige Antwort ist B) Um Kundenbedürfnisse zu erfüllen. Unternehmen zielen darauf ab, Kundenbedürfnisse zu erfüllen, um langfristige Erfolge zu erzielen und ein positives Image aufrechtzuerhalten. Die anderen Optionen sind falsch, da Gewinnmaximierung (A) das Hauptziel sein kann, aber nicht die primäre Antriebskraft für Unternehmen ist. Sich von der Konkurrenz abzuheben (C) ist keine direkte Folge aus der Ermittlung von Bedürfnissen. Umweltschutz (D) ist ein wichtiger Aspekt in Geschäftsstrategien, aber nicht das Hauptziel. Aktionäre zu zufriedstellen (E) ist eine Folge aus dem Erfüllen von Kundenbedürfnissen, aber nicht das primäre Ziel. Das Unternehmen expandieren (F) kann ein Ergebnis langfristigen Erfolgs sein, aber es ist nicht der direkte Antriebsfaktor., Die richtige Antwort ist C. Bedürfnisse in der Wirtschaft sind oft unvorhersehbar und komplex, da sie von vielen Faktoren wie dem Konsumverhalten, den Vorlieben und dem Einkommen der Kunden abhängen.",Nicht vorhanden,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,True,True,5,True,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten

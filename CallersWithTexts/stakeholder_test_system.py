@@ -22,7 +22,7 @@ class StakeholderTestSystem:
     
     def __init__(self):
         self.base_url = "http://localhost:8000"
-        self.stakeholder_csv_path = ".dev/providedProjectFromStakeHolder/explanation_metadata.csv" # confidential path, please change if needed to a csv of your choice
+        self.stakeholder_csv_path = "../.dev/providedProjectFromStakeHolder/explanation_metadata.csv" # confidential path, please change if needed to a csv of your choice
         # No result storage - orchestrator handles everything
         
     async def test_health_endpoint(self):
@@ -31,7 +31,7 @@ class StakeholderTestSystem:
         
         async with aiohttp.ClientSession() as session:
             try:
-                async with session.get(f"{self.base_url}/health-dspy") as response:
+                async with session.get(f"{self.base_url}/system-health") as response:
                     if response.status == 200:
                         data = await response.json()
                         logger.info(f"DSPy health check passed: {data.get('status', 'unknown')}, DSPy ready: {data.get('dspy_ready', False)}")
