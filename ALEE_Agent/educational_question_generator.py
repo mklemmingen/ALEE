@@ -13,6 +13,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
 from educational_modules import GermanEducationalPipeline, ModularPromptBuilder
+from prompt_builder import ExpertPromptEnhancer
 from result_manager import ResultManager
 # Import existing components
 from system_configuration import configure_dspy_with_ollama
@@ -86,20 +87,23 @@ class DSPyEducationalSystem:
         if self.initialized:
             return
         
-        logger.info("Initializing DSPy educational system")
+        logger.info("Initializing DSPy educational system with enhanced expert prompts")
         
         try:
             # Configure DSPy with existing OLLAMA servers
             self.main_lm, self.expert_lms = configure_dspy_with_ollama()
             
-            # Create German educational pipeline using modular prompts
+            # Initialize enhanced expert prompt system
+            self.expert_enhancer = ExpertPromptEnhancer()
+            
+            # Create German educational pipeline using enhanced modular prompts
             self.pipeline = GermanEducationalPipeline(
                 expert_lms=self.expert_lms,
                 prompt_builder=self.prompt_builder
             )
             
             self.initialized = True
-            logger.info("DSPy system initialized successfully")
+            logger.info("DSPy system with enhanced expert prompts initialized successfully")
             
         except Exception as e:
             logger.error(f"Failed to initialize DSPy system: {e}")
@@ -146,6 +150,8 @@ class DSPyEducationalSystem:
                     "expert_consensus": [q['consensus']['approved'] for q in validated_questions],
                     "dspy_metadata": {
                         "modular_prompts_used": True,
+                        "enhanced_expert_prompts": True,
+                        "parameter_knowledge_sharing": True,
                         "single_pass_consensus": True,
                         "all_approved": pipeline_result['all_approved']
                     }

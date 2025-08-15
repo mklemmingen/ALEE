@@ -6,8 +6,8 @@ NO hardcoded prompt strings - uses ModularPromptBuilder for all prompts
 import logging
 from typing import Dict, Any, Optional
 
-from educational_signatures import *
-from prompt_builder import ModularPromptBuilder
+from .educational_signatures import *
+from .prompt_builder import ModularPromptBuilder, ExpertPromptEnhancer
 
 logger = logging.getLogger(__name__)
 
@@ -108,24 +108,27 @@ class GermanQuestionGenerator(dspy.Module):
 
 
 class GermanExpertValidator(dspy.Module):
-    """Base class for German expert validation using .txt prompts"""
+    """Base class for German expert validation using enhanced .txt prompts"""
     
     def __init__(self, signature_class, expert_name: str, prompt_builder: Optional[ModularPromptBuilder] = None):
         super().__init__()
         self.expert_name = expert_name
         self.validate = dspy.ChainOfThought(signature_class)
         self.prompt_builder = prompt_builder or ModularPromptBuilder()
+        self.expert_enhancer = ExpertPromptEnhancer()
         
-        # Load expert-specific prompt from .txt file
-        self.expert_prompt = self.prompt_builder.load_prompt_txt(f"expertEval/expertPrompts/{expert_name}.txt")
+        # Load expert-specific evaluation instruction from .txt file
         self.evaluation_instruction = self.prompt_builder.load_prompt_txt("expertEval/expertEvaluationInstruction.txt")
     
     def get_expert_context(self, question: str, answers: list[str], target_value: str, params: Dict[str, Any]) -> str:
-        """Build expert context using modular prompts"""
+        """Build enhanced expert context using modular prompts with parameter knowledge"""
+        
+        # Get enhanced expert prompt with parameter knowledge appended
+        enhanced_expert_prompt = self.expert_enhancer.build_enhanced_expert_prompt(self.expert_name, params)
         
         context_sections = [
-            f"=== EXPERTENROLLE ===",
-            self.expert_prompt,
+            f"=== EXPERTENROLLE MIT PARAMETER-WISSENSBASIS ===",
+            enhanced_expert_prompt,
             "",
             f"=== ZU BEWERTENDE FRAGE ===",
             f"Frage: {question}",
@@ -302,19 +305,112 @@ class ContentExpertGerman(GermanExpertValidator):
         }
 
 
+class QuestionRefinementGerman(dspy.Module):
+    """Enhanced question refinement using parameter knowledge for format preservation"""
+    
+    def __init__(self, prompt_builder: Optional[ModularPromptBuilder] = None):
+        super().__init__()
+        self.refine = dspy.ChainOfThought(RefineQuestionGerman)
+        self.prompt_builder = prompt_builder or ModularPromptBuilder()
+        self.expert_enhancer = ExpertPromptEnhancer()
+        
+        # Load refinement instruction from .txt file
+        self.refinement_instruction = self.prompt_builder.load_prompt_txt("expertEval/questionImprovementInstruction.txt")
+    
+    def forward(self, question: str, answers: list[str], expert_feedback: str, expert_suggestions: list[str], params: Dict[str, Any]) -> Dict[str, Any]:
+        """Refine question using enhanced parameter knowledge while preserving format"""
+        
+        # Build comprehensive refinement prompt with parameter knowledge
+        refinement_prompt = self._build_comprehensive_refinement_prompt(question, answers, expert_feedback, expert_suggestions, params)
+        
+        result = self.refine(
+            original_frage=question,
+            original_antworten=", ".join(answers),
+            experten_feedback=expert_feedback,
+            verbesserungsvorschlaege="; ".join(expert_suggestions),
+            parameter_kontext=refinement_prompt
+        )
+        
+        # Parse refined answers
+        refined_answers = [a.strip() for a in result.verfeinerte_antworten.split(',') if a.strip()]
+        
+        return {
+            'refined_question': result.verfeinerte_frage,
+            'refined_answers': refined_answers,
+            'refinement_reasoning': result.verfeinerungs_begründung,
+            'format_preserved': self._verify_format_preservation(question, result.verfeinerte_frage, params.get('question_type', 'multiple-choice')),
+            'parameter_context_used': refinement_prompt
+        }
+    
+    def _build_comprehensive_refinement_prompt(self, question: str, answers: list[str], expert_feedback: str, expert_suggestions: list[str], params: Dict[str, Any]) -> str:
+        """Build comprehensive refinement prompt with all relevant parameter knowledge"""
+        
+        # Get all relevant parameter knowledge (content_expert has access to all parameters)
+        parameter_knowledge = self.expert_enhancer._get_relevant_parameter_knowledge("content_expert", params)
+        
+        # Get question type preservation instructions  
+        question_type_preservation = self.expert_enhancer._get_question_type_preservation_instructions(params.get('question_type', 'multiple-choice'))
+        
+        refinement_prompt = f"""=== UMFASSENDE PARAMETER-WISSENSBASIS FÜR VERFEINERUNG ===
+        {parameter_knowledge}
+        
+        === FRAGEFORMAT-BEWAHRUNG (ABSOLUT KRITISCH) ===
+        {question_type_preservation}
+        
+        === VERFEINERUNGS-KONTEXT ===
+        Ursprüngliche Frage: {question}
+        Ursprüngliche Antworten: {', '.join(answers)}
+        Experten-Feedback: {expert_feedback}
+        Verbesserungsvorschläge: {'; '.join(expert_suggestions)}
+        
+        === VERFEINERUNGS-GUARD RAILS ===
+        - NIEMALS den Fragetyp ändern: {params.get('question_type', 'multiple-choice')}
+        - NIEMALS Tags ändern (z.B. <option>, <true-false>)
+        - Nur inhaltliche Verbesserungen bei struktureller Bewahrung
+        - Alle Parameter-Anforderungen müssen weiterhin erfüllt werden
+        - Fokus auf Klarheit, Genauigkeit und pädagogische Wirksamkeit
+        - Behalte die kognitive Schwierigkeit bei: {params.get('p_variation', 'stammaufgabe')}
+        - Respektiere mathematisches Niveau: {params.get('p_mathematical_requirement_level', '0')}
+        - Beachte sprachliche Hindernisse entsprechend den Parametern
+        
+        === ANWEISUNG ===
+        {self.refinement_instruction}"""
+        
+        return refinement_prompt
+    
+    def _verify_format_preservation(self, original_question: str, refined_question: str, question_type: str) -> bool:
+        """Verify that question format has been preserved during refinement"""
+        format_checks = {
+            'multiple-choice': lambda q: '<option>' in q,
+            'single-choice': lambda q: '<option>' in q,
+            'true-false': lambda q: '<true-false>' in q,
+            'mapping': lambda q: any(indicator in q.lower() for indicator in ['ordne', 'zuordnung', 'verbinde'])
+        }
+        
+        checker = format_checks.get(question_type.lower())
+        if not checker:
+            return True  # Unknown format, assume preserved
+        
+        original_has_format = checker(original_question)
+        refined_has_format = checker(refined_question)
+        
+        return original_has_format == refined_has_format
+
+
 class GermanExpertConsensus(dspy.Module):
-    """Consensus module for German expert validation using .txt prompts"""
+    """Expert consensus with question refinement using .txt prompts and parameter guardrails"""
     
     def __init__(self, prompt_builder: Optional[ModularPromptBuilder] = None):
         super().__init__()
         self.consensus = dspy.ChainOfThought(ExpertConsensusGerman)
         self.prompt_builder = prompt_builder or ModularPromptBuilder()
+        self.expert_enhancer = ExpertPromptEnhancer()
         
-        # Load consensus instructions from .txt file
-        self.consensus_instruction = self.prompt_builder.load_prompt_txt("expertEval/questionImprovementInstruction.txt")
+        # Load refinement instructions from .txt file
+        self.refinement_instruction = self.prompt_builder.load_prompt_txt("expertEval/questionImprovementInstruction.txt")
     
-    def forward(self, expert_validations: Dict[str, Dict[str, Any]]):
-        """Determine consensus from all German expert validations"""
+    def forward(self, question: str, answers: list[str], expert_validations: Dict[str, Dict[str, Any]], params: Dict[str, Any]):
+        """Aggregate expert feedback and refine question with parameter guardrails"""
         
         # Aggregate expert data
         ratings = [v['rating'] for v in expert_validations.values()]
@@ -322,29 +418,70 @@ class GermanExpertConsensus(dspy.Module):
         suggestion_parts = []
         
         for name, validation in expert_validations.items():
-            if validation['suggestions'] and validation['rating'] < 3:
+            if validation['suggestions']:
                 suggestion_parts.append(f"{name}: {'; '.join(validation['suggestions'])}")
         
-        # Format data for consensus module
+        # Format data for consensus-refinement module
         ratings_str = f"Bewertungen: {ratings} (Durchschnitt: {sum(ratings)/len(ratings):.1f})"
         feedback_str = "\n".join(feedback_parts)
-        suggestions_str = "\n".join(suggestion_parts) if suggestion_parts else "Keine Verbesserungsvorschläge"
+        suggestions_str = "\n".join(suggestion_parts) if suggestion_parts else "Keine spezifischen Verbesserungsvorschläge"
         
+        # Build comprehensive parameter context with guardrails
+        parameter_context = self._build_parameter_context_with_guardrails(params)
+        
+        # Run consensus-refinement
         result = self.consensus(
+            original_frage=question,
+            original_antworten=", ".join(answers),
             experten_bewertungen=ratings_str,
             experten_feedback=feedback_str,
-            experten_vorschlaege=suggestions_str
+            experten_vorschlaege=suggestions_str,
+            parameter_kontext=parameter_context
         )
         
+        # Parse refined answers
+        refined_answers = [a.strip() for a in result.verfeinerte_antworten.split(',') if a.strip()]
+        
         return {
-            'approved': result.genehmigt.lower() == 'ja',
-            'improvement_priority': result.verbesserungspriorität,
+            'refined_question': result.verfeinerte_frage,
+            'refined_answers': refined_answers,
             'consensus_reasoning': result.konsens_begründung,
-            'synthesized_suggestions': result.zusammengefasste_vorschlaege,
+            'format_preserved': result.format_bewahrt.lower() == 'ja',
+            'parameters_maintained': result.parameter_eingehalten.lower() == 'ja',
             'average_rating': sum(ratings) / len(ratings),
             'expert_count': len(expert_validations),
-            'consensus_instruction_used': self.consensus_instruction
+            'original_question': question,
+            'original_answers': answers
         }
+    
+    def _build_parameter_context_with_guardrails(self, params: Dict[str, Any]) -> str:
+        """Build comprehensive parameter context with strict guardrails"""
+        
+        # Get all relevant parameter knowledge (using content_expert mapping for comprehensive access)
+        parameter_knowledge = self.expert_enhancer._get_relevant_parameter_knowledge("content_expert", params)
+        
+        # Get question type preservation instructions  
+        question_type_preservation = self.expert_enhancer._get_question_type_preservation_instructions(params.get('question_type', 'multiple-choice'))
+        
+        context = f"""=== SYSARCH-PARAMETER KONTEXT ===
+{parameter_knowledge}
+
+=== FRAGEFORMAT-BEWAHRUNG (ABSOLUT KRITISCH) ===
+{question_type_preservation}
+
+=== PARAMETER-GUARD RAILS ===
+- NIEMALS den Fragetyp ändern: {params.get('question_type', 'multiple-choice')}
+- NIEMALS Tags ändern (z.B. <option>, <true-false>)
+- Schwierigkeitsgrad beibehalten: {params.get('p_variation', 'stammaufgabe')}
+- Taxonomie-Stufe respektieren: {params.get('p_taxonomy_level', 'Stufe 1')}
+- Mathematisches Niveau einhalten: {params.get('p_mathematical_requirement_level', '0')}
+- Sprachliche Hindernisse gemäß Parametern berücksichtigen
+- Nur inhaltliche Verbesserungen bei struktureller Bewahrung
+
+=== VERFEINERUNGS-ANWEISUNG ===
+{self.refinement_instruction}"""
+        
+        return context
 
 
 class GermanEducationalPipeline(dspy.Module):
@@ -430,27 +567,34 @@ class GermanEducationalPipeline(dspy.Module):
         expert_total_time = time.time() - expert_start
         logger.info(f"Expert validation completed in {expert_total_time:.2f}s")
         
-        # Step 3: Consensus determination using .txt prompts
+        # Step 3: Expert consensus with question refinement using .txt prompts
         consensus_start = time.time()
         final_validations = []
         consensus_details = {}
         
         for i in range(len(questions)):
-            consensus_result = self.consensus(expert_validations[f'question_{i+1}'])
+            consensus_result = self.consensus(
+                question=questions[i],
+                answers=answers[i], 
+                expert_validations=expert_validations[f'question_{i+1}'],
+                params=request_params
+            )
             consensus_details[f'question_{i+1}'] = consensus_result
             
             final_validations.append({
-                'question': questions[i],
-                'answers': answers[i],
+                'question': consensus_result['refined_question'],  # Use refined question
+                'answers': consensus_result['refined_answers'],   # Use refined answers
+                'original_question': consensus_result['original_question'],
+                'original_answers': consensus_result['original_answers'],
                 'expert_validations': expert_validations[f'question_{i+1}'],
                 'consensus': consensus_result,
-                'approved': consensus_result['approved']
+                'approved': True  # Always approved since consensus refines questions
             })
         
         consensus_time = time.time() - consensus_start
         total_pipeline_time = time.time() - pipeline_start
         
-        logger.info(f"Consensus determination completed in {consensus_time:.2f}s")
+        logger.info(f"Expert consensus with refinement completed in {consensus_time:.2f}s")
         logger.info(f"Total pipeline time: {total_pipeline_time:.2f}s")
         
         # Build detailed pipeline information for saving
@@ -464,16 +608,19 @@ class GermanEducationalPipeline(dspy.Module):
                 'generation_reasoning': generation_result.get('reasoning', '')
             },
             'expert_evaluations': all_expert_details,
-            'consensus': {
+            'consensus_refinement': {
                 'results': consensus_details,
                 'processing_time_ms': consensus_time * 1000,
                 'final_approvals': [v['approved'] for v in final_validations],
-                'consensus_algorithm': 'single_pass_majority'
+                'refinement_algorithm': 'expert_consensus_with_parameter_guardrails',
+                'questions_refined': len(final_validations),
+                'format_preservation_success': [v['consensus'].get('format_preserved', True) for v in final_validations],
+                'parameter_compliance': [v['consensus'].get('parameters_maintained', True) for v in final_validations]
             },
             'timing': {
                 'generation_ms': generation_time * 1000,
                 'expert_evaluation_ms': expert_total_time * 1000,
-                'consensus_ms': consensus_time * 1000,
+                'consensus_refinement_ms': consensus_time * 1000,
                 'total_pipeline_ms': total_pipeline_time * 1000
             }
         }

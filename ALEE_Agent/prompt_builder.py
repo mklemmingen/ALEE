@@ -9,6 +9,167 @@ from typing import Any
 
 logger = logging.getLogger(__name__)
 
+class ExpertPromptEnhancer:
+    """Enhances expert prompts by appending relevant parameter txt files"""
+    
+    def __init__(self, base_path: str = "/home/mklemmingen/PycharmProjects/PythonProject/ALEE_Agent"):
+        self.base_path = Path(base_path)
+        self.prompt_builder = ModularPromptBuilder(base_path)
+        
+        # Expert-to-parameter mapping for relevant txt files
+        self.expert_parameter_mappings = {
+            "variation_expert": {
+                "difficulty_prompts": ["mainGen/variationPrompts/stammaufgabe.txt", 
+                                     "mainGen/variationPrompts/schwer.txt", 
+                                     "mainGen/variationPrompts/leicht.txt"],
+                "taxonomy_prompts": ["mainGen/taxonomyLevelPrompt/stufe1WissenReproduktion.txt",
+                                   "mainGen/taxonomyLevelPrompt/stufe2AnwendungTransfer.txt"],
+                "question_type_prompts": ["mainGen/variationPrompts/multiple-choice.txt",
+                                        "mainGen/variationPrompts/single-choice.txt",
+                                        "mainGen/variationPrompts/true-false.txt",
+                                        "mainGen/variationPrompts/mapping.txt"]
+            },
+            "math_expert": {
+                "math_level_prompts": ["mainGen/mathematicalRequirementLevel/0KeinBezug.txt",
+                                     "mainGen/mathematicalRequirementLevel/1NutzenMathematischerDarstellungen.txt",
+                                     "mainGen/mathematicalRequirementLevel/2MathematischeOperationen.txt"]
+            },
+            "obstacle_expert": {
+                "root_obstacle_prompts": ["mainGen/rootTextParameterTextPrompts/obstaclePassivePrompts/enthalten.txt",
+                                        "mainGen/rootTextParameterTextPrompts/obstaclePassivePrompts/nichtEnthalten.txt",
+                                        "mainGen/rootTextParameterTextPrompts/obstacleNegationPrompts/enthalten.txt",
+                                        "mainGen/rootTextParameterTextPrompts/obstacleNegationPrompts/nichtEnthalten.txt",
+                                        "mainGen/rootTextParameterTextPrompts/obstacleComplexPrompts/enthalten.txt",
+                                        "mainGen/rootTextParameterTextPrompts/obstacleComplexPrompts/nichtEnthalten.txt"],
+                "item_obstacle_prompts": ["mainGen/itemXObstacle/passive/enthalten.txt",
+                                        "mainGen/itemXObstacle/passive/nichtEnthalten.txt",
+                                        "mainGen/itemXObstacle/negation/enthalten.txt", 
+                                        "mainGen/itemXObstacle/negation/nichtEnthalten.txt",
+                                        "mainGen/itemXObstacle/complex/enthalten.txt",
+                                        "mainGen/itemXObstacle/complex/nichtEnthalten.txt"],
+                "instruction_obstacle_prompts": ["mainGen/instructionObstacle/passive/enthalten.txt",
+                                               "mainGen/instructionObstacle/passive/nichtEnthalten.txt",
+                                               "mainGen/instructionObstacle/negation/enthalten.txt",
+                                               "mainGen/instructionObstacle/negation/nichtEnthalten.txt",
+                                               "mainGen/instructionObstacle/complex_np/enthalten.txt",
+                                               "mainGen/instructionObstacle/complex_np/nichtEnthalten.txt"]
+            },
+            "taxonomy_expert": {
+                "taxonomy_prompts": ["mainGen/taxonomyLevelPrompt/stufe1WissenReproduktion.txt",
+                                   "mainGen/taxonomyLevelPrompt/stufe2AnwendungTransfer.txt"],
+                "question_type_prompts": ["mainGen/variationPrompts/multiple-choice.txt",
+                                        "mainGen/variationPrompts/single-choice.txt", 
+                                        "mainGen/variationPrompts/true-false.txt",
+                                        "mainGen/variationPrompts/mapping.txt"]
+            },
+            "instruction_expert": {
+                "explicitness_prompts": ["mainGen/instructionExplicitnessOfInstruction/explizit.txt",
+                                       "mainGen/instructionExplicitnessOfInstruction/implizit.txt"],
+                "question_type_prompts": ["mainGen/variationPrompts/multiple-choice.txt",
+                                        "mainGen/variationPrompts/single-choice.txt",
+                                        "mainGen/variationPrompts/true-false.txt", 
+                                        "mainGen/variationPrompts/mapping.txt"]
+            },
+            "content_expert": {
+                "all_difficulty_prompts": ["mainGen/variationPrompts/stammaufgabe.txt",
+                                         "mainGen/variationPrompts/schwer.txt",
+                                         "mainGen/variationPrompts/leicht.txt"],
+                "all_taxonomy_prompts": ["mainGen/taxonomyLevelPrompt/stufe1WissenReproduktion.txt",
+                                       "mainGen/taxonomyLevelPrompt/stufe2AnwendungTransfer.txt"],
+                "question_type_prompts": ["mainGen/variationPrompts/multiple-choice.txt",
+                                        "mainGen/variationPrompts/single-choice.txt",
+                                        "mainGen/variationPrompts/true-false.txt",
+                                        "mainGen/variationPrompts/mapping.txt"],
+                "irrelevant_info_prompts": ["mainGen/rootTextParameterTextPrompts/containsIrrelevantInformationPrompt/enthalten.txt",
+                                          "mainGen/rootTextParameterTextPrompts/containsIrrelevantInformationPrompt/nichtEnthalten.txt"]
+            }
+        }
+    
+    def build_enhanced_expert_prompt(self, expert_name: str, request_params: dict) -> str:
+        """Build enhanced expert prompt with relevant parameter knowledge appended"""
+        # Load base expert prompt
+        base_expert_prompt = self.prompt_builder.load_prompt_txt(f"expertEval/expertPrompts/{expert_name}.txt")
+        
+        # Get relevant parameter knowledge for this expert
+        parameter_knowledge = self._get_relevant_parameter_knowledge(expert_name, request_params)
+        
+        # Add question type preservation instructions
+        question_type_preservation = self._get_question_type_preservation_instructions(request_params.get('question_type', 'multiple-choice'))
+        
+        # Build enhanced prompt
+        enhanced_prompt = f"""{base_expert_prompt}
+
+        === RELEVANTE PARAMETER-WISSENSBASIS ===
+        {parameter_knowledge}
+        
+        === FRAGEFORMAT-BEWAHRUNG (KRITISCH) ===
+        {question_type_preservation}
+        
+        === ZUSÄTZLICHE GUARD RAILS ===
+        - NIEMALS den Fragetyp ändern ({request_params.get('question_type', 'multiple-choice')})
+        - Nur Verbesserungen innerhalb des bestehenden Formats
+        - Behalte die strukturelle Integrität der Frage bei
+        - Verbessere nur Inhalt, Klarheit und Genauigkeit
+        - Achte auf die spezifischen Parameter-Anforderungen dieses Experten-Bereichs"""
+
+        return enhanced_prompt
+    
+    def _get_relevant_parameter_knowledge(self, expert_name: str, request_params: dict) -> str:
+        """Extract and combine relevant parameter txt file contents for expert"""
+        if expert_name not in self.expert_parameter_mappings:
+            return f"<Keine spezifischen Parameter für {expert_name}>"
+        
+        knowledge_sections = []
+        mappings = self.expert_parameter_mappings[expert_name]
+        
+        for category, file_paths in mappings.items():
+            category_knowledge = []
+            for file_path in file_paths:
+                content = self.prompt_builder.load_prompt_txt(file_path)
+                if content and not content.startswith('<'):  # Skip missing files
+                    file_name = file_path.split('/')[-1].replace('.txt', '')
+                    category_knowledge.append(f"**{file_name.upper()}**: {content}")
+            
+            if category_knowledge:
+                knowledge_sections.append(f"### {category.upper().replace('_', ' ')}\n" + "\n\n".join(category_knowledge))
+        
+        return "\n\n".join(knowledge_sections) if knowledge_sections else f"<Keine verfügbaren Parameter für {expert_name}>"
+    
+    def _get_question_type_preservation_instructions(self, question_type: str) -> str:
+        """Get specific instructions for preserving question type format"""
+        type_instructions = {
+            "multiple-choice": """
+            MULTIPLE-CHOICE FORMAT BEWAHREN:
+            - Behalte die <option> Tags für alle Antwortmöglichkeiten bei
+            - Stelle sicher, dass MEHRERE richtige Antworten möglich sind
+            - Verwende Formulierungen wie "Wähle alle zutreffenden Aussagen aus"
+            - Mindestens 2, maximal 4 richtige Antworten aus den Optionen""",
+
+                        "single-choice": """
+            SINGLE-CHOICE FORMAT BEWAHREN:
+            - Behalte die <option> Tags für alle Antwortmöglichkeiten bei
+            - GENAU EINE richtige Antwort unter allen Optionen
+            - Verwende Formulierungen wie "Wähle die richtige Antwort aus"
+            - Alle anderen Optionen müssen eindeutig falsch sein""",
+
+                        "true-false": """
+            TRUE-FALSE FORMAT BEWAHREN:
+            - Behalte die <true-false> Tags für alle Aussagen bei
+            - Jede Aussage einzeln bewertbar als richtig oder falsch
+            - Verwende "Entscheide, ob die Aussagen richtig oder falsch sind"
+            - Keine Option-Tags verwenden""",
+
+                        "mapping": """
+            MAPPING FORMAT BEWAHREN:
+            - Behalte die Zuordnungsstruktur bei
+            - Links stehen Begriffe/Konzepte, rechts stehen Definitionen/Erklärungen
+            - Verwende "Ordne zu" oder ähnliche Formulierungen
+            - Eindeutige 1:1 Zuordnungen"""
+                    }
+        
+        return type_instructions.get(question_type.lower(), 
+                                   f"UNBEKANNTER FRAGETYP ({question_type}) - Behalte das bestehende Format exakt bei")
+
 class ModularPromptBuilder:
     """Builds modular prompts based on parameter values using external txt files"""
     

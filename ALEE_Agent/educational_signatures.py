@@ -139,18 +139,22 @@ class ValidateContentGerman(dspy.Signature):
 
 # Consensus and Decision Signatures
 class ExpertConsensusGerman(dspy.Signature):
-    """Bestimme Konsens aus allen deutschen Expertenbewertungen."""
+    """Aggregiere Expertenfeedback und verfeinere deutsche Bildungsfragen mit Parameterschutz."""
     
-    # Input - aggregated expert data
+    # Input - original questions and expert data
+    original_frage: str = dspy.InputField(desc="Ursprüngliche Frage")
+    original_antworten: str = dspy.InputField(desc="Ursprüngliche Antwortoptionen")
     experten_bewertungen: str = dspy.InputField(desc="Liste aller Expertenbewertungen")
     experten_feedback: str = dspy.InputField(desc="Kombiniertes Expertenfeedback")
     experten_vorschlaege: str = dspy.InputField(desc="Alle Verbesserungsvorschläge")
+    parameter_kontext: str = dspy.InputField(desc="SYSARCH-Parameter und Formatbewahrungsregeln")
     
-    # Output - intelligent consensus  
-    genehmigt: str = dspy.OutputField(desc="'ja' wenn alle Bewertungen >= 3, sonst 'nein'")
-    verbesserungspriorität: str = dspy.OutputField(desc="Wichtigste benötigte Verbesserung")
-    konsens_begründung: str = dspy.OutputField(desc="Begründung der Konsens-Entscheidung")
-    zusammengefasste_vorschlaege: str = dspy.OutputField(desc="Intelligente Synthese aller Expertvorschläge")
+    # Output - refined questions with reasoning
+    verfeinerte_frage: str = dspy.OutputField(desc="Verbesserte Frage basierend auf Expertenfeedback")
+    verfeinerte_antworten: str = dspy.OutputField(desc="Verbesserte Antwortoptionen")
+    konsens_begründung: str = dspy.OutputField(desc="Begründung der Verbesserungen")
+    format_bewahrt: str = dspy.OutputField(desc="'ja' wenn Frageformat korrekt bewahrt wurde")
+    parameter_eingehalten: str = dspy.OutputField(desc="'ja' wenn alle SYSARCH-Parameter eingehalten wurden")
 
 
 class QuestionImprovementGerman(dspy.Signature):
@@ -166,6 +170,22 @@ class QuestionImprovementGerman(dspy.Signature):
     verbesserte_frage: str = dspy.OutputField(desc="Verbesserte deutsche Bildungsfrage")
     verbesserte_antworten: str = dspy.OutputField(desc="Verbesserte Antwortoptionen")
     verbesserungs_begründung: str = dspy.OutputField(desc="Begründung der Verbesserungen")
+
+
+class RefineQuestionGerman(dspy.Signature):
+    """Verfeinere deutsche Bildungsfragen mit umfassender Parameter-Wissensbasis bei Format-Bewahrung."""
+    
+    # Input
+    original_frage: str = dspy.InputField(desc="Ursprüngliche deutsche Bildungsfrage")
+    original_antworten: str = dspy.InputField(desc="Ursprüngliche Antwortoptionen")
+    experten_feedback: str = dspy.InputField(desc="Aggregiertes Experten-Feedback")
+    verbesserungsvorschlaege: str = dspy.InputField(desc="Spezifische Verbesserungsvorschläge")
+    parameter_kontext: str = dspy.InputField(desc="Umfassende Parameter-Wissensbasis für Verfeinerung")
+    
+    # Output
+    verfeinerte_frage: str = dspy.OutputField(desc="Verfeinerte deutsche Bildungsfrage mit bewahrtem Format")
+    verfeinerte_antworten: str = dspy.OutputField(desc="Verfeinerte Antwortoptionen (kommagetrennt)")
+    verfeinerungs_begründung: str = dspy.OutputField(desc="Detaillierte Begründung der Verfeinerungen mit Formatbewahrung")
 
 
 # CSV Export Signature

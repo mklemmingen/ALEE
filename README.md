@@ -8,13 +8,15 @@
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![SYSARCH](https://img.shields.io/badge/SYSARCH-Compliant-brightgreen.svg)
 
-A **DSPy-powered** educational question generation system that produces exactly 3 questions per request through intelligent expert consensus validation. The system implements a three-layered architecture with **single-pass processing**: Caller → DSPy Orchestrator → Parallel Expert LLMs.
+educational question generation system predefined for 9th-grade economy classes (data-backed for research purposes) that produces questions per request through an expert consensus validation. 
 
-**Key Innovation**: DSPy (Declarative Self-improving Python) framework replaces complex iteration logic with intelligent consensus, delivering 40-50% performance improvements (45-60s → 25-35s per request) while maintaining full SYSARCH compliance.
+The system implements a three-layered architecture with single-pass processing: Caller → DSPy Orchestrator → Parallel Expert LLMs.
 
-**Architecture Benefits**: 500+ lines iteration logic → 200 lines declarative modules, automatic prompt optimization, type safety with Pydantic validation, and comprehensive pipeline tracking.
+It utilizes DSPy (Declarative Self-improving Python) framework to replace iterative consensus logic with single-pass expert validation.
 
-## DSPy Three-Layer Architecture
+The architecture implements declarative modules with external prompt construction, type safety through Pydantic validation, and pipeline tracking (result_manager).
+
+## Three-Layer Architecture
 
 ```mermaid
 graph TB
@@ -29,33 +31,38 @@ graph TB
     end
     
     subgraph "DSPy Generation Phase"
-        C[GermanQuestionGenerator<br/>Port 8001: llama3.1:8b]
+        C[GermanQuestionGenerator<br/>OLLAMA Server Port 8001]
         C1[Modular Prompt Construction<br/>From Parameter-Specific .txt Files]
         C2[GenerateGermanEducationalQuestions<br/>DSPy Signature with ChainOfThought]
         C3[Generate Exactly 3 Questions<br/>With Structured Outputs]
     end
     
     subgraph "Layer 3: DSPy Expert Validation"
-        D[Parallel Expert Processing<br/>5 Specialized DSPy Modules]
+        D[Parallel Expert Processing<br/>5 Specialized DSPy Modules<br/>Enhanced Parameter Knowledge Distribution]
         
-        subgraph "Expert Validators"
-            E[VariationExpertGerman<br/>Port 8002: Difficulty Validation<br/>p_variation Assessment]
-            F[TaxonomyExpertGerman<br/>Port 8003: Cognitive Level<br/>p_taxonomy_level Validation]
-            G[MathExpertGerman<br/>Port 8004: Mathematical Complexity<br/>p_mathematical_requirement_level]
-            H[ObstacleExpertGerman<br/>Port 8005: Linguistic Barriers<br/>p_*_obstacle_* Analysis]
-            I[InstructionExpertGerman<br/>Port 8006: Clarity Assessment<br/>p_instruction_* Validation]
+        subgraph "Expert Validators with Parameter Enhancement"
+            E[VariationExpertGerman<br/>OLLAMA Server Port 8002<br/>Enhanced with difficulty, taxonomy, question type prompts]
+            F[TaxonomyExpertGerman<br/>OLLAMA Server Port 8003<br/>Enhanced with taxonomy, question type prompts]
+            G[MathExpertGerman<br/>OLLAMA Server Port 8004<br/>Enhanced with mathematical requirement prompts]
+            H[ObstacleExpertGerman<br/>OLLAMA Server Port 8005<br/>Enhanced with comprehensive obstacle prompts]
+            I[InstructionExpertGerman<br/>OLLAMA Server Port 8006<br/>Enhanced with explicitness, question type prompts]
+        end
+        
+        subgraph "Expert Prompt Enhancement"
+            EP[ExpertPromptEnhancer<br/>Parameter Knowledge Distribution<br/>Format Preservation Protocol]
         end
     end
     
-    subgraph "DSPy Consensus Phase"
-        J[GermanExpertConsensus<br/>Single-Pass Consensus Determination]
-        J1[Expert Rating Aggregation<br/>1-5 Scale + Feedback Synthesis]
-        J2[Approval Decision<br/>No Iteration Required]
+    subgraph "DSPy Expert Consensus & Refinement Phase"
+        J[GermanExpertConsensus<br/>Expert Feedback Aggregation + Question Refinement]
+        J1[Expert Rating & Suggestion Aggregation<br/>Parameter Knowledge Integration]
+        J2[Question Refinement with Guardrails<br/>Format Preservation]
+        J3[Refined Question Output<br/>No Iteration Required]
     end
     
     subgraph "Result Management"
         K[Comprehensive Result Storage<br/>ResultManager Integration]
-        K1[DSPy Pipeline Step Tracking<br/>Generation → Experts → Consensus]
+        K1[DSPy Pipeline Step Tracking<br/>Generation → Experts → Consensus+Refinement]
         K2[SYSARCH CSV Generation<br/>All 39 Parameters + Metadata]
         K3[Session-Based Storage<br/>results/YYYY-MM-DD_HH-MM-SS_c_id/]
     end
@@ -85,7 +92,8 @@ graph TB
     I --> J
     J --> J1
     J1 --> J2
-    J2 --> K
+    J2 --> J3
+    J3 --> K
     K --> K1
     K1 --> K2
     K2 --> K3
@@ -101,50 +109,48 @@ graph TB
     style M fill:#e8f5e8
 ```
 
-### DSPy Expert Validators
+### Small-LM Validators
 
-| Expert Module | DSPy Signature | OLLAMA Port | Target Parameters | Expertise |
-|---------------|----------------|-------------|-------------------|-----------|
-| **VariationExpertGerman** | `ValidateVariationGerman` | 8002 | `p_variation` | Difficulty assessment (leicht/stammaufgabe/schwer) |
-| **TaxonomyExpertGerman** | `ValidateTaxonomyGerman` | 8003 | `p_taxonomy_level` | Bloom's taxonomy (Stufe 1/2) |
-| **MathExpertGerman** | `ValidateMathematicalGerman` | 8004 | `p_mathematical_requirement_level` | Mathematical complexity (0-2) |
-| **ObstacleExpertGerman** | `ValidateObstacleGerman` | 8005 | `p_*_obstacle_*` | Linguistic barriers (passive, negation, complex NP) |
-| **InstructionExpertGerman** | `ValidateInstructionGerman` | 8006 | `p_instruction_*` | Instruction clarity and explicitness |
+| Module | DSPy Signature | OLLAMA Port | Model | Target Parameters | Expertise |
+|---------------|----------------|-------------|-------|-------------------|-----------|
+| **VariationExpertGerman** | `ValidateVariationGerman` | 8002 | mistral:7b | `p_variation` | Difficulty assessment (leicht/stammaufgabe/schwer) |
+| **TaxonomyExpertGerman** | `ValidateTaxonomyGerman` | 8003 | qwen2.5:7b | `p_taxonomy_level` | Bloom's taxonomy (Stufe 1/2) |
+| **MathExpertGerman** | `ValidateMathematicalGerman` | 8004 | llama3.2:3b | `p_mathematical_requirement_level` | Mathematical complexity (0-2) |
+| **TextReferenceExpertGerman** | `ValidateTextReferenceGerman` | 8005 | llama3.2:3b | `p_root_text_reference_explanatory_text` | Text reference and explanatory content validation |
+| **ObstacleExpertGerman** | `ValidateObstacleGerman` | 8006 | mistral:7b | `p_*_obstacle_*` | Linguistic barriers (passive, negation, complex NP) |
+| **InstructionExpertGerman** | `ValidateInstructionGerman` | 8007 | llama3.1:8b | `p_instruction_*` | Instruction clarity and explicitness |
 
-## DSPy Architecture Benefits
+### Processing Implementation
+- Single-pass processing: Caller → Orchestrator (prompt_builder → Generator → Experts in Parallel → Expert Consensus + Refinement)
+- Expert consensus aggregates feedback and refines questions with parameter guardrails in single step
+- VRAM utilization through context switching across multiple OLLAMA servers
+- Declarative module structure with DSPy framework integration
 
-### Performance Improvements
-- **40-50% Faster Processing**: 45-60s → 25-35s per request
-- **Reduced Code Complexity**: 500+ lines iteration logic → 200 lines declarative modules
-- **Memory Efficiency**: 10-11GB VRAM utilization with context switching
-- **Single-Pass Architecture**: No iteration loops required
+### Type Safety Implementation
+- Pydantic model validation for all input and output structures
+- Structured JSON outputs with schema validation
+- Type-safe processing pipeline eliminating runtime parsing errors
+- Complete processing visibility through step-by-step tracking
 
-### Type Safety & Reliability
-- **Structured Outputs**: Pydantic model validation for all inputs/outputs
-- **Automatic Prompt Optimization**: DSPy learns better prompts through usage
-- **Error Prevention**: Type-safe processing eliminates parsing errors
-- **Pipeline Tracking**: Complete step-by-step processing visibility
+### Maintainability Implementation  
+- Declarative module architecture with functional separation
+- Parameter-driven prompt construction from external .txt files (created in prompt_builder.py - parameter txt given to LMs they are concerned with, includes experts as well as dedicated generator aswell as the refiner)
+- External prompt storage without hardcoded string literals
 
-### Maintainability
-- **Declarative Modules**: Clear separation of concerns
-- **Modular Prompts**: Parameter-driven .txt file construction
-- **No Hardcoded Strings**: All prompts externalized to files
-- **Comprehensive Testing**: 80-request validation suite with real educational content
-
-### Question Evolution Tracking (NEW)
-- **Dual Question Capture**: CSV output includes both initial and expert-refined versions
-- **Research Insights**: Compare how expert validation improves question quality
-- **Paired Columns**: Easy side-by-side comparison (question_1 vs initial_question_1)
-- **Backward Compatible**: No API changes - enhanced data automatically provided
+### Question Processing Implementation
+- CSV output generation with initial and expert-refined question versions
+- Comparative analysis capability between pre and post-expert validation
+- Paired column structure for research analysis purposes
 
 ## Quick Start
 
 ### Prerequisites
 
-- **Hardware**: AMD GPU with 20GB VRAM (RX 6000/7000 series recommended)
-- **OS**: Manjaro Linux (Arch-based) or compatible
-- **Python**: 3.8+
-- **ROCm**: 6.2+ compatible
+- **Hardware**: AMD GPU with 20GB VRAM minimum
+- **Operating System**: Manjaro Linux (Arch-based distribution) or compatible Linux distribution
+- **Python**: Version 3.8 or higher
+- **ROCm**: Version 6.2 or higher for GPU compute support
+- Check requirements.txt
 
 ### Installation
 
@@ -171,7 +177,7 @@ graph TB
    ./download_models.sh
    ```
 
-3. **Start DSPy System**
+3. **Start OLAMA SERVER then the orchestrator System to be callable**
    ```bash
    # Start OLLAMA servers (ports 8001-8007)
    ./start_ollama_servers.sh
@@ -190,9 +196,9 @@ graph TB
    python3 CallersWithTexts/stakeholder_test_system.py
    ```
 
-## DSPy API Reference
+## API Reference
 
-### Primary Endpoint: DSPy Question Generation
+### Primary Endpoint: Question Generation
 
 ```http
 POST /generate-questions-dspy
@@ -241,7 +247,7 @@ Content-Type: application/json
 }
 ```
 
-**DSPy Response:**
+** Response:**
 ```json
 {
   "question_1": "First generated question text...",
@@ -280,14 +286,14 @@ Content-Type: application/json
 }
 ```
 
-### DSPy System Endpoints
+### System Endpoints
 
 ```http
-GET /health-dspy          # DSPy system health check
+GET /health-dspy         # DSPy system health check
 GET /dspy-info           # DSPy configuration and module info
 ```
 
-## DSPy Project Structure
+## Project Structure
 
 ```
 /
@@ -303,7 +309,7 @@ GET /dspy-info           # DSPy configuration and module info
 │   ├── educational_modules.py             # German educational DSPy modules
 │   ├── educational_signatures.py          # DSPy signatures for German education
 │   ├── dspy_config.py                     # DSPy configuration with OLLAMA setup
-│   ├── prompt_builder.py                  # Modular prompt construction from .txt files
+│   ├── prompt_builder.py                  # Modular prompt construction with ExpertPromptEnhancer
 │   ├── result_manager.py                  # Comprehensive result storage system
 │   ├── results/                           # DSPy-managed result storage
 │   │   └── YYYY-MM-DD_HH-MM-SS_c_id/     # Session folders with ISO timestamps
@@ -344,11 +350,12 @@ GET /dspy-info           # DSPy configuration and module info
 └── requirements.txt                       # DSPy & system dependencies
 ```
 
-## DSPy Pipeline Tracking
+## Pipeline Tracking
 
-The enhanced system saves comprehensive pipeline information for research and debugging:
+The system saves comprehensive pipeline information for research and debugging:
 
 ### Pipeline Steps Saved
+
 1. **Initial Generation** (`01_initial_generation_*.json`)
    - Generated questions and answers
    - Modular prompt used
@@ -356,72 +363,25 @@ The enhanced system saves comprehensive pipeline information for research and de
    - Processing time
 
 2. **Expert Evaluations** (`02_question_*_expert_*.json`)
-   - Individual expert assessments (5 experts × 3 questions = 15 files)
+   - Individual expert assessments (6 experts × 3 questions = 18 files)
    - Expert ratings, feedback, and suggestions
    - Processing time per expert
-   - Expert-specific context
+   - Expert context with parameter knowledge distribution
 
-3. **Consensus Results** (`03_question_*_consensus_*.json`)
-   - Final approval decisions per question
-   - Synthesized expert feedback
-   - Consensus reasoning
-   - Average ratings
+3. **Expert Consensus + Refinement** (`03_question_*_consensus_refinement_*.json`)
+   - Aggregated expert feedback and refined questions
+   - Format preservation verification results
+   - Parameter compliance verification
+   - Before/after refinement comparison
+   - Consensus reasoning with guardrail enforcement
 
 4. **Pipeline Timing** (`04_pipeline_timing_*.json`)
-   - Complete timing breakdown
-   - Performance analysis
-   - Resource utilization
-
-## Testing System
-
-### Systematic Stakeholder Testing
-
-The system includes comprehensive systematic testing using real educational data:
-
-```bash
-# Run systematic stakeholder test (16 texts, 1 systematic test each)
-python3 CallersWithTexts/stakeholder_test_system.py
-
-# Features:
-# - Uses all texts from .dev/providedProjectFromStakeHolder/explanation_metadata.csv
-# - Systematic parameter selection ensuring comprehensive coverage
-# - All 4 question types tested systematically
-# - All difficulty levels and taxonomy levels covered
-# - Obstacle combinations tested through bit patterns
-# - Results automatically saved with complete DSPy pipeline tracking
-```
-
-### Systematic Test Coverage
-
-**Comprehensive Parameter Coverage:**
-- **Question Types**: All 4 types tested (multiple-choice, single-choice, true-false, mapping)
-- **Difficulty Levels**: Systematic cycling through all 3 levels (stammaufgabe, schwer, leicht)
-- **Taxonomy Levels**: Both cognitive levels tested (Stufe 1/2)
-- **Mathematical Levels**: All 3 complexity levels (0, 1, 2)
-- **Obstacle Patterns**: Systematic bit patterns ensure diverse linguistic barrier testing
-- **Item Parameters**: All 8 items tested with unique systematic patterns
-
-**Result Organization:**
-- 16 HTTP calls total (1 per text)
-- Complete DSPy pipeline saved per call
-- Systematic parameter coverage verification
-- Performance and coverage analysis
-
-## DSPy Performance Metrics
-
-**DSPy Performance Metrics:**
-
-- **Processing Time**: 25-35s (Previous: 45-60s) - 40-50% faster
-- **Code Complexity**: ~200 lines (Previous: 500+ lines) - 60% reduction  
-- **Error Rate**: <5% (Previous: 15-20%) - 75% improvement
-- **Memory Efficiency**: 10-11GB (Previous: 12-14GB) - 15% better
-- **Prompt Optimization**: Automatic (Previous: Manual) - Continuous learning
-- **Type Safety**: 100% (Previous: ~80%) - Pydantic validation
-- **Pipeline Visibility**: Complete (Previous: Limited) - Full step tracking
+   - Complete timing breakdown for all phases
+   - Performance analysis across generation, experts, and consensus-refinement
+   - Resource utilization metrics
 
 ## Configuration
 
-### DSPy Configuration
 ```python
 # ALEE_Agent/dspy_config.py
 OLLAMA_SERVERS = {
@@ -429,8 +389,9 @@ OLLAMA_SERVERS = {
     "variation": "http://localhost:8002",   # Difficulty expert
     "taxonomy": "http://localhost:8003",    # Cognitive level expert
     "math": "http://localhost:8004",        # Mathematical expert
-    "obstacle": "http://localhost:8005",    # Linguistic expert
-    "instruction": "http://localhost:8006", # Instruction expert
+    "text_reference": "http://localhost:8005", # Text reference expert
+    "obstacle": "http://localhost:8006",    # Linguistic expert
+    "instruction": "http://localhost:8007", # Instruction expert
 }
 
 DSPy_CONFIG = {
@@ -439,6 +400,8 @@ DSPy_CONFIG = {
     "timeout": 300,
     "retries": 3
 }
+
+# Expert Consensus uses default LM for aggregation and refinement
 ```
 
 ### Memory Management
@@ -549,18 +512,18 @@ curl -X POST http://localhost:8000/generate-questions-dspy \
 
 # Returns:
 # - 3 validated questions
-# - Complete DSPy processing metadata
+# - Complete DSPy processing metadata with expert prompt enhancement
 # - SYSARCH-compliant CSV data
-# - Pipeline steps automatically saved
+# - Pipeline steps automatically saved with parameter knowledge distribution tracking
 ```
 
 ## Acknowledgments
 
 - **DSPy Team** - For the declarative self-improving Python framework
-- **AMD ROCm Team** - For excellent GPU compute support
-- **Ollama Project** - For simplified local LLM deployment
-- **FastAPI** - For high-performance async API framework
-- **Educational Research Community** - For parameter frameworks and validation methods
-- **Stakeholder Data Contributors (ALEE and Kateryna Lauterbach)** - For providing real educational content
+- **AMD ROCm Team** - For GPU compute platform support
+- **Ollama Project** - For local LLM deployment infrastructure
+- **FastAPI** - For asynchronous API framework
+- **Educational Research Community** - For parameter frameworks and validation methodologies
+- **Stakeholder Data Contributors (ALEE and Kateryna Lauterbach)** - For educational content provision
 
 ---
