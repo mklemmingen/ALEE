@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "processing_time": 77.206778049469,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Wie funktioniert der Tausch bei M\u00e4rkten?",
+        "Warum wird Geld oft als einheitliches Tauschmittel verwendet?",
+        "Welche G\u00fcter werden in der Regel \u00fcber M\u00e4rkte verteilt?"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T01:59:12.890603",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

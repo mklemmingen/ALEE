@@ -1,0 +1,11 @@
+c_id,subject,type,text,p.instruction_explicitness_of_instruction,p.mathematical_requirement_level,p.taxanomy_level,question_type,p.variation,answers,p.root_text_reference_explanatory_text,p.root_text_obstacle_passive,p.root_text_obstacle_negation,p.root_text_obstacle_complex_np,p.root_text_contains_irrelevant_information,p.instruction_obstacle_passive,p.instruction_obstacle_complex_np,dspy_consensus_used,dspy_modular_prompts,dspy_expert_count,dspy_all_approved,p.item_1_obstacle_passive,p.item_1_obstacle_negation,p.item_1_obstacle_complex_np,p.item_2_obstacle_passive,p.item_2_obstacle_negation,p.item_2_obstacle_complex_np,p.item_3_obstacle_passive,p.item_3_obstacle_negation,p.item_3_obstacle_complex_np,p.item_4_obstacle_passive,p.item_4_obstacle_negation,p.item_4_obstacle_complex_np,p.item_5_obstacle_passive,p.item_5_obstacle_negation,p.item_5_obstacle_complex_np,p.item_6_obstacle_passive,p.item_6_obstacle_negation,p.item_6_obstacle_complex_np,p.item_7_obstacle_passive,p.item_7_obstacle_negation,p.item_7_obstacle_complex_np,p.item_8_obstacle_passive,p.item_8_obstacle_negation,p.item_8_obstacle_complex_np
+195-sys-9,leicht,multiple-choice,1. Wie funktioniert der Tausch bei Märkten? 2. Warum wird Geld oft als einheitliches Tauschmittel verwendet? 3. Welche Güter werden in der Regel über Märkte verteilt?,Explizit,2 (Mit Bezug),Stufe 1 (Wissen/Reproduktion),multiple-choice,leicht,"A) Die Güter, die am dringendsten benötigt werden
+B) Die Güter, die am teuersten sind
+C) Die Güter, die am schnellsten verkauft werden können
+D) Alle oben genannten Güter, A) Weil es einen einheitlichen Wert gibt
+B) Weil es leicht zu handeln ist
+C) Weil es die Preise vereinfacht
+D) Weil es den Handel erleichtert, A) Knappe Güter
+B) Teure Güter
+C) Seltene Güter
+D) Alle oben genannten Güter",Implizit,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Enthalten,Nicht Enthalten,Nicht Enthalten,True,True,6,True,Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Enthalten,Nicht Enthalten,Enthalten,Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Enthalten,Enthalten,Nicht Enthalten,Enthalten,Nicht Enthalten,Enthalten,Enthalten,Enthalten,Enthalten,Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten

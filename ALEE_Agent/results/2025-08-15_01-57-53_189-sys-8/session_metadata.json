@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": false,
+  "processing_time": 81.7204442024231,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Wie wird das Windhund-Verfahren definiert?",
+        "Welche Verteilungsmechanismen sind erw\u00e4hnt, um die Konzertkarten zu verteilen?",
+        "Was ist der Hauptunterschied zwischen dem Windhund-Verfahren und der Verlosung?"
+      ],
+      "expert_consensus": [
+        false,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": false
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T01:57:53.657353",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

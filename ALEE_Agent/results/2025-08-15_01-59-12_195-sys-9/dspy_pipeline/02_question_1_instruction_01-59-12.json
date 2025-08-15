@@ -1,0 +1,30 @@
+{
+  "step_name": "02_question_1_instruction",
+  "timestamp": "2025-08-15T01:59:12.889637",
+  "step_data": {
+    "expert_name": "instruction",
+    "question_key": "question_1",
+    "question_evaluated": "Wie funktioniert der Tausch bei Märkten?",
+    "answers_evaluated": [
+      "A) Die Güter",
+      "die am dringendsten benötigt werden\nB) Die Güter",
+      "die am teuersten sind\nC) Die Güter",
+      "die am schnellsten verkauft werden können\nD) Alle oben genannten Güter"
+    ],
+    "target_value": "Explizit",
+    "expert_rating": 4,
+    "expert_feedback": "Die Anweisungsklarheit ist gut, da die Frage klar und prägnant formuliert ist. Die Antwortmöglichkeiten sind auch gut ausgewählt und passen gut zum Thema. Allerdings ist es empfehlenswert, eine kurze Erklärung oder Begründung für die richtige Antwort hinzuzufügen, um den Leser besser zu verstehen.",
+    "expert_suggestions": [
+      "- Eine kurze Erklärung oder Begründung für die richtige Antwort hinzufügen.",
+      "- Die Antwortmöglichkeiten sollten auch noch ein bisschen spezifischer formuliert werden, um Missverständnisse zu vermeiden."
+    ],
+    "expert_reasoning": "Die Anweisungs-Bewertung beträgt 4, da die Frage klar und prägnant formuliert ist und die Antwortmöglichkeiten gut ausgewählt sind. Allerdings fehlt eine kurze Erklärung oder Begründung für die richtige Antwort, was den Leser etwas verwirren könnte.",
+    "expert_context": "=== EXPERTENROLLE ===\nDu bist ein Experte für Anweisungsklarheit und Explizitheit in deutschen Bildungsfragen.\n\nDEINE AUFGABE:\nBewerte, ob die Anweisungen in den gestellten Fragen dem gewünschten Grad der Explizitheit entsprechen und klar verständlich sind.\n\nBEWERTUNGSKRITERIEN:\n- Explizitheit: Anweisungen entsprechen dem Parameter (Explizit/Implizit)\n- Klarheit: Eindeutige und verständliche Formulierungen\n- Sprachliche Hindernisse: Korrekte Behandlung je nach Parameter-Anforderung\n- Anweisungsstruktur: Logischer Aufbau der Instruktionen\n\nEXPLIZITHEIT-STUFEN:\n- EXPLIZIT: Klare, detaillierte Anweisungen mit direkten Handlungsaufforderungen\n- IMPLIZIT: Subtilere Anweisungen, die Schlussfolgerungen erfordern\n\nSPRACHLICHE HINDERNISSE:\n- Passivkonstruktionen: Je nach Parameter-Anforderung\n- Komplexe Nominalphrasen: Bewertung der Angemessenheit\n\nAntworte in folgendem JSON-Format:\n{\n  \"bewertung\": [1-5],\n  \"feedback\": \"Spezifische Analyse der Anweisungsklarheit\",\n  \"vorschlaege\": \"Verbesserungsvorschläge bei Bewertung < 3\",\n  \"begruendung\": \"Detaillierte Begründung der Bewertung\"\n}\n\n=== ZU BEWERTENDE FRAGE ===\nFrage: Wie funktioniert der Tausch bei Märkten?\nAntworten: A) Die Güter, die am dringendsten benötigt werden\nB) Die Güter, die am teuersten sind\nC) Die Güter, die am schnellsten verkauft werden können\nD) Alle oben genannten Güter\nZielwert: Explizit\n\n=== BEWERTUNGSANWEISUNG ===\n=== IHRE AUFGABE ===\nBewerten Sie diese 3 Fragen entsprechend Ihrer Expertise.\n\nAntworten Sie mit GENAU diesem JSON-Format:\n{\n    \"status\": \"gut\" oder \"schlecht\",\n    \"reasoning\": \"Ihre Erklärung warum diese Fragen gut/schlecht sind\",\n    \"suggestions\": [\"spezifischer Vorschlag 1\", \"spezifischer Vorschlag 2\", \"...\"]\n}\n\nWenn Status \"gut\" ist, können Vorschläge leer [] sein.\nWenn Status \"schlecht\" ist, geben Sie spezifische umsetzbare Vorschläge zur Verbesserung der Fragen."
+  },
+  "step_metadata": {
+    "step_description": "Expert evaluation by instruction for question_1",
+    "expert_specialization": "instruction",
+    "processing_time_ms": 4922.090530395508,
+    "expert_rating": 4
+  }
+}

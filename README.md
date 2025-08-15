@@ -105,13 +105,13 @@ graph TB
 
 ### DSPy Expert Validators
 
-**DSPy Expert Validators:**
-
-- **VariationExpertGerman** - DSPy Signature: `ValidateVariationGerman` - OLLAMA Port: 8002 - Target: `p_variation` - Expertise: Difficulty assessment (leicht/stammaufgabe/schwer)
-- **TaxonomyExpertGerman** - DSPy Signature: `ValidateTaxonomyGerman` - OLLAMA Port: 8003 - Target: `p_taxonomy_level` - Expertise: Bloom's taxonomy (Stufe 1/2)
-- **MathExpertGerman** - DSPy Signature: `ValidateMathematicalGerman` - OLLAMA Port: 8004 - Target: `p_mathematical_requirement_level` - Expertise: Mathematical complexity (0-2)
-- **ObstacleExpertGerman** - DSPy Signature: `ValidateObstacleGerman` - OLLAMA Port: 8005 - Target: `p_*_obstacle_*` - Expertise: Linguistic barriers (passive, negation, complex NP)
-- **InstructionExpertGerman** - DSPy Signature: `ValidateInstructionGerman` - OLLAMA Port: 8006 - Target: `p_instruction_*` - Expertise: Instruction clarity and explicitness
+| Expert Module | DSPy Signature | OLLAMA Port | Target Parameters | Expertise |
+|---------------|----------------|-------------|-------------------|-----------|
+| **VariationExpertGerman** | `ValidateVariationGerman` | 8002 | `p_variation` | Difficulty assessment (leicht/stammaufgabe/schwer) |
+| **TaxonomyExpertGerman** | `ValidateTaxonomyGerman` | 8003 | `p_taxonomy_level` | Bloom's taxonomy (Stufe 1/2) |
+| **MathExpertGerman** | `ValidateMathematicalGerman` | 8004 | `p_mathematical_requirement_level` | Mathematical complexity (0-2) |
+| **ObstacleExpertGerman** | `ValidateObstacleGerman` | 8005 | `p_*_obstacle_*` | Linguistic barriers (passive, negation, complex NP) |
+| **InstructionExpertGerman** | `ValidateInstructionGerman` | 8006 | `p_instruction_*` | Instruction clarity and explicitness |
 
 ## DSPy Architecture Benefits
 
@@ -560,7 +560,3 @@ curl -X POST http://localhost:8000/generate-questions-dspy \
 - **Stakeholder Data Contributors (ALEE and Kateryna Lauterbach)** - For providing real educational content
 
 ---
-
-**DSPy Architecture**: Single-pass consensus with intelligent expert validation
-**Performance**: 40-50% faster processing with comprehensive pipeline tracking
-**Reliability**: Type-safe processing with automatic prompt optimization
