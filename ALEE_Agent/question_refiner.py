@@ -8,7 +8,7 @@ import logging
 import re
 from typing import List, Dict, Any, Optional, Tuple
 
-from .models import BaseQuestionModel, ExpertSuggestion
+from models import BaseQuestionModel, ExpertSuggestion
 
 logger = logging.getLogger(__name__)
 

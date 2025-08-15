@@ -5,10 +5,10 @@ NO hardcoded prompt strings - uses ModularPromptBuilder for all prompts
 
 import logging
 from typing import Dict, Any, Optional, List
-from .models import BaseQuestionModel, QuestionFactory, ExpertSuggestion
-from .signatures import *
-from .prompt_builder import ModularPromptBuilder, ExpertPromptEnhancer
-from .question_refiner import BatchQuestionRefiner
+from models import BaseQuestionModel, QuestionFactory, ExpertSuggestion
+from signatures import *
+from prompt_builder import ModularPromptBuilder, ExpertPromptEnhancer
+from question_refiner import BatchQuestionRefiner
 
 logger = logging.getLogger(__name__)
 
