@@ -1,0 +1,27 @@
+{
+  "step_name": "02_question_2_instruction",
+  "timestamp": "2025-08-15T02:03:35.147168",
+  "step_data": {
+    "expert_name": "instruction",
+    "question_key": "question_2",
+    "question_evaluated": "Welche Art von Modell kann verwendet werden, um komplexe Zusammenhänge in der Wirtschaft besser zu verstehen?",
+    "answers_evaluated": [
+      "Ein Preisbildungsmodell"
+    ],
+    "target_value": "Implizit",
+    "expert_rating": 2,
+    "expert_feedback": "Die Anweisungsklarheit ist teilweise gegeben. Die Frage bezieht sich zwar auf eine bestimmte Art von Modell, aber die explizite Formulierung des Ziels (Bessere Verständnis komplexer Zusammenhänge) fehlt.",
+    "expert_suggestions": [
+      "- Eine klare Beschreibung des Modells und seiner Anwendungsbereiche.",
+      "- Eine explizite Formulierung des Ziels der Anwendung des Modells (z.B. \"um komplexe Zusammenhänge in der Wirtschaft besser zu verstehen\")."
+    ],
+    "expert_reasoning": "Die Anweisungs-Bewertung ist 2, da die Frage zwar eine bestimmte Art von Modell bezeichnet, aber nicht explizit genug ist und somit nicht genau genug zum Verständnis komplexer Zusammenhänge dient.",
+    "expert_context": "=== EXPERTENROLLE ===\nDu bist ein Experte für Anweisungsklarheit und Explizitheit in deutschen Bildungsfragen.\n\nDEINE AUFGABE:\nBewerte, ob die Anweisungen in den gestellten Fragen dem gewünschten Grad der Explizitheit entsprechen und klar verständlich sind.\n\nBEWERTUNGSKRITERIEN:\n- Explizitheit: Anweisungen entsprechen dem Parameter (Explizit/Implizit)\n- Klarheit: Eindeutige und verständliche Formulierungen\n- Sprachliche Hindernisse: Korrekte Behandlung je nach Parameter-Anforderung\n- Anweisungsstruktur: Logischer Aufbau der Instruktionen\n\nEXPLIZITHEIT-STUFEN:\n- EXPLIZIT: Klare, detaillierte Anweisungen mit direkten Handlungsaufforderungen\n- IMPLIZIT: Subtilere Anweisungen, die Schlussfolgerungen erfordern\n\nSPRACHLICHE HINDERNISSE:\n- Passivkonstruktionen: Je nach Parameter-Anforderung\n- Komplexe Nominalphrasen: Bewertung der Angemessenheit\n\nAntworte in folgendem JSON-Format:\n{\n  \"bewertung\": [1-5],\n  \"feedback\": \"Spezifische Analyse der Anweisungsklarheit\",\n  \"vorschlaege\": \"Verbesserungsvorschläge bei Bewertung < 3\",\n  \"begruendung\": \"Detaillierte Begründung der Bewertung\"\n}\n\n=== ZU BEWERTENDE FRAGE ===\nFrage: Welche Art von Modell kann verwendet werden, um komplexe Zusammenhänge in der Wirtschaft besser zu verstehen?\nAntworten: Ein Preisbildungsmodell\nZielwert: Implizit\n\n=== BEWERTUNGSANWEISUNG ===\n=== IHRE AUFGABE ===\nBewerten Sie diese 3 Fragen entsprechend Ihrer Expertise.\n\nAntworten Sie mit GENAU diesem JSON-Format:\n{\n    \"status\": \"gut\" oder \"schlecht\",\n    \"reasoning\": \"Ihre Erklärung warum diese Fragen gut/schlecht sind\",\n    \"suggestions\": [\"spezifischer Vorschlag 1\", \"spezifischer Vorschlag 2\", \"...\"]\n}\n\nWenn Status \"gut\" ist, können Vorschläge leer [] sein.\nWenn Status \"schlecht\" ist, geben Sie spezifische umsetzbare Vorschläge zur Verbesserung der Fragen."
+  },
+  "step_metadata": {
+    "step_description": "Expert evaluation by instruction for question_2",
+    "expert_specialization": "instruction",
+    "processing_time_ms": 4220.3075885772705,
+    "expert_rating": 2
+  }
+}

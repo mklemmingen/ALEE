@@ -1,0 +1,26 @@
+{
+  "step_name": "02_question_3_instruction",
+  "timestamp": "2025-08-15T02:03:35.147491",
+  "step_data": {
+    "expert_name": "instruction",
+    "question_key": "question_3",
+    "question_evaluated": "Was ist ein Beispiel für eine Straßenkarte als vereinfachte Anschauungsversion des richtigen Straßennetzes?",
+    "answers_evaluated": [
+      "Eine Straßenkarte"
+    ],
+    "target_value": "Implizit",
+    "expert_rating": 2,
+    "expert_feedback": "Die Anweisungsklarheit ist nicht ausreichend, da die Frage nach einer spezifischen Art von Karte fragt, aber die Antwort zu allgemein ist. Es fehlt eine explizite Erklärung der vereinfachten Version.",
+    "expert_suggestions": [
+      "Eine mögliche Verbesserung wäre, die Frage noch genauer zu formulieren und in der Antwort explizit auf \"eine vereinfachte Straßenkarte\" hinzuweisen. Beispielsweise: \"Was ist ein Beispiel für eine vereinfachte Straßenkarte als Anschauungsversion des richtigen Straßennetzes?\""
+    ],
+    "expert_reasoning": "Die Begründung für die Bewertung von 2 (mangelnde Klarheit) ist, dass die Frage und Antwort nicht genau genug sind, um eine klare und explizite Erklärung der vereinfachten Version zu liefern.",
+    "expert_context": "=== EXPERTENROLLE ===\nDu bist ein Experte für Anweisungsklarheit und Explizitheit in deutschen Bildungsfragen.\n\nDEINE AUFGABE:\nBewerte, ob die Anweisungen in den gestellten Fragen dem gewünschten Grad der Explizitheit entsprechen und klar verständlich sind.\n\nBEWERTUNGSKRITERIEN:\n- Explizitheit: Anweisungen entsprechen dem Parameter (Explizit/Implizit)\n- Klarheit: Eindeutige und verständliche Formulierungen\n- Sprachliche Hindernisse: Korrekte Behandlung je nach Parameter-Anforderung\n- Anweisungsstruktur: Logischer Aufbau der Instruktionen\n\nEXPLIZITHEIT-STUFEN:\n- EXPLIZIT: Klare, detaillierte Anweisungen mit direkten Handlungsaufforderungen\n- IMPLIZIT: Subtilere Anweisungen, die Schlussfolgerungen erfordern\n\nSPRACHLICHE HINDERNISSE:\n- Passivkonstruktionen: Je nach Parameter-Anforderung\n- Komplexe Nominalphrasen: Bewertung der Angemessenheit\n\nAntworte in folgendem JSON-Format:\n{\n  \"bewertung\": [1-5],\n  \"feedback\": \"Spezifische Analyse der Anweisungsklarheit\",\n  \"vorschlaege\": \"Verbesserungsvorschläge bei Bewertung < 3\",\n  \"begruendung\": \"Detaillierte Begründung der Bewertung\"\n}\n\n=== ZU BEWERTENDE FRAGE ===\nFrage: Was ist ein Beispiel für eine Straßenkarte als vereinfachte Anschauungsversion des richtigen Straßennetzes?\nAntworten: Eine Straßenkarte\nZielwert: Implizit\n\n=== BEWERTUNGSANWEISUNG ===\n=== IHRE AUFGABE ===\nBewerten Sie diese 3 Fragen entsprechend Ihrer Expertise.\n\nAntworten Sie mit GENAU diesem JSON-Format:\n{\n    \"status\": \"gut\" oder \"schlecht\",\n    \"reasoning\": \"Ihre Erklärung warum diese Fragen gut/schlecht sind\",\n    \"suggestions\": [\"spezifischer Vorschlag 1\", \"spezifischer Vorschlag 2\", \"...\"]\n}\n\nWenn Status \"gut\" ist, können Vorschläge leer [] sein.\nWenn Status \"schlecht\" ist, geben Sie spezifische umsetzbare Vorschläge zur Verbesserung der Fragen."
+  },
+  "step_metadata": {
+    "step_description": "Expert evaluation by instruction for question_3",
+    "expert_specialization": "instruction",
+    "processing_time_ms": 4276.843547821045,
+    "expert_rating": 2
+  }
+}

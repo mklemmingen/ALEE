@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": false,
+  "processing_time": 88.25127816200256,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Wie k\u00f6nnen Modelle helfen, die Wirklichkeit zu verstehen?",
+        "Welche Art von Modell kann verwendet werden, um komplexe Zusammenh\u00e4nge in der Wirtschaft besser zu verstehen?",
+        "Was ist ein Beispiel f\u00fcr eine Stra\u00dfenkarte als vereinfachte Anschauungsversion des richtigen Stra\u00dfennetzes?"
+      ],
+      "expert_consensus": [
+        true,
+        false,
+        false
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": false
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T02:03:35.147779",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}
