@@ -1,0 +1,32 @@
+{
+  "dspy_pipeline_used": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": false,
+  "processing_time": 86.78665232658386,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Wie entsteht der Preis eines Gutes auf einem Markt?",
+        "Was passiert, wenn der Preis oberhalb des Gleichgewichtspreises liegt?",
+        "Warum ist es wichtig, dass Angebot und Nachfrage im Gleichgewicht sind?"
+      ],
+      "expert_consensus": [
+        false,
+        false,
+        false
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "single_pass_consensus": true,
+        "all_approved": false
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 3,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T02:06:31.477496",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}
