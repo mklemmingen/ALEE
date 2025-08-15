@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 70.68435883522034,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was genau ist das Ziel der Nachfragerinnen und Nachfrager auf M\u00e4rkten?\nA) Das h\u00f6chste Preis zu erzielen\nB) Die G\u00fcter, die sie zur Befriedigung ihrer Bed\u00fcrfnisse ben\u00f6tigen, zu m\u00f6glichst niedrigen Preisen einzukaufen\nC) Die Konzertkarten zum g\u00fcnstigsten Preis zu kaufen\nD) Die Tickets der Konzertveranstalter zu kaufen <option>[B] Das Ziel der Nachfragerinnen und Nachfrager ist es<option>die G\u00fcter<option>die sie zur Befriedigung ihrer Bed\u00fcrfnisse ben\u00f6tigen<option>zu m\u00f6glichst niedrigen Preisen einzukaufen.\nC) Die Konzertkarten zum g\u00fcnstigsten Preis zu kaufen\nD) Die Tickets der Konzertveranstalter zu kaufen<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Was genau ist das Angebot auf einem Markt?\nA) Die Menge an G\u00fctern, die K\u00e4uferinnen und K\u00e4ufer erwerben wollen\nB) Die Summe aller angebotenen G\u00fcter auf einem Markt\nC) Das h\u00f6chste Preis zu erzielen\nD) Die Konzertkarten zum g\u00fcnstigsten Preis zu kaufen <option>[B] Die Summe aller angebotenen G\u00fcter auf einem Markt<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Wer ist der Anbieter im Konzertkarten-Beispiel?\nA) Die Fans, die eine der Konzertkarten kaufen wollen\nB) Der Konzertveranstalter\nC) Die Tickets, die zum Verkauf stehen\nD) Die K\u00e4uferinnen und K\u00e4ufer auf dem Markt <option>B) Der Konzertveranstalter<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-15T23:51:52.618372",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

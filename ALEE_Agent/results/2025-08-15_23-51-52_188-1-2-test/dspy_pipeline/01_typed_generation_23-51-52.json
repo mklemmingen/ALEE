@@ -1,0 +1,273 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-15T23:51:52.617903",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was genau ist das Ziel der Nachfragerinnen und Nachfrager auf Märkten?\nA) Das höchste Preis zu erzielen\nB) Die Güter, die sie zur Befriedigung ihrer Bedürfnisse benötigen, zu möglichst niedrigen Preisen einzukaufen\nC) Die Konzertkarten zum günstigsten Preis zu kaufen\nD) Die Tickets der Konzertveranstalter zu kaufen <option>[B] Das Ziel der Nachfragerinnen und Nachfrager ist es<option>die Güter<option>die sie zur Befriedigung ihrer Bedürfnisse benötigen<option>zu möglichst niedrigen Preisen einzukaufen.\nC) Die Konzertkarten zum günstigsten Preis zu kaufen\nD) Die Tickets der Konzertveranstalter zu kaufen<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "[B] Das Ziel der Nachfragerinnen und Nachfrager ist es",
+          "die Güter",
+          "die sie zur Befriedigung ihrer Bedürfnisse benötigen",
+          "zu möglichst niedrigen Preisen einzukaufen.\nC) Die Konzertkarten zum günstigsten Preis zu kaufen\nD) Die Tickets der Konzertveranstalter zu kaufen",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "[B] Das Ziel der Nachfragerinnen und Nachfrager ist es",
+          "die Güter"
+        ],
+        "explanation": "Die Fragen wurden so gestellt, dass sie das Verständnis der Begriffe \"Nachfrage\" und \"Angebot\" auf Märkten testen. Die Antworten sollen die Definitionen von Nachfrage (Menge an Gütern, die Käuferinnen und Käufer erwerben wollen) und Angebot (Summe aller angebotenen Güter auf einem Markt) bestätigen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert ein grundlegendes Verständnis der Nachfrage. Die Formulierung ist jedoch nicht perfekt, da sie auf eine bestimmte Situation bezogen wird (Konzertkarten), die möglicherweise nicht direkt mit dem Konzept der Nachfrage zusammenhängt.",
+            "suggestions": [
+              "- Die Frage könnte umformuliert werden, um ein bisschen allgemeiner zu sein und nicht auf eine bestimmte Situation bezogen.",
+              "- Es wäre hilfreich, mehr Kontext oder Beispiele zur Verdeutlichung des Konzepts der Nachfrage hinzuzufügen."
+            ],
+            "reasoning": "Die Frage stimmt im Wesentlichen mit den Zielen überein, die in der Wirtschaftstheorie als das Hauptziel von Nachfragern definiert sind. Die richtige Antwort (B) ist eindeutig und klar formuliert. Jedoch könnte die Frage für Schüler oder Personen ohne vorheriges Wissen über Mikroökonomie schwieriger zu verstehen sein, da sie an bestimmte Kenntnisse anknüpft.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist gut formuliert und die Antwortoptionen sind klar und verständlich. Die richtige Antwort ist jedoch nur für Studenten mit grundlegendem Wissen über Märkte relevant, da sie sich auf das Verständnis von Angebot und Nachfrage konzentriert.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Bewertung basiert auf der Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie, da die Frage nach einem grundlegenden Verständnis von Märkten fragt. Die richtige Antwort zeigt ein Verständnis des Marktteils und wie sich Angebot und Nachfrage beeinflussen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": true
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert eine gute Verständnis der Grundlagen der Nachfrage und Angebotslehre, einschließlich des Ziels der Nachfragerinnen und Nachfrager. Die Antwort zeigt ein grundlegendes Verständnis des Konzepts.",
+            "suggestions": [
+              "Mögliche Anpassungen für die Frage umfassen:",
+              "- Eine klarere Definition des Themas anhand der Optionen.",
+              "- Die Entfernung von unangemessenen oder irrelevanten Optionen.",
+              "- Die Hinzufügung von Fragen, die das Verständnis des Konzepts auf eine tiefergehende Ebene bringen."
+            ],
+            "reasoning": "Die Bewerterin hat die Frage und Antworten als relevant für die Grundlagen der Nachfrage und Angebotslehre angesehen. Der Hauptfokus lag darauf, den zentralen Zweck der Nachfragerinnen und Nachfrager zu identifizieren. Die Bewertung basiert auf dem Verständnis des Konzepts in seinem grundlegendsten Ausdruck.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfordert ein tiefes Verständnis der Markttheorie und die Fähigkeit, das Hauptziel der Nachfragerinnen und Nachfrager genau zu benennen. Die Antwort ist präzise und lautet „[B] Das Ziel der Nachfragerinnen und Nachfrager ist es, die Güter, die sie zur Befriedigung ihrer Bedürfnisse benötigen, zu möglichst niedrigen Preisen einzukaufen“, was ein wichtiger Aspekt des Marktes darstellt. Es gibt keine sprachlichen Hindernisse oder Fehlinterpretationen in der Frage.",
+            "suggestions": [
+              "Zu diesem Zeitpunkt gibt es keinen Anlass für Vorschläge zur Änderung der Frage, da sie gut formuliert und verständlich ist."
+            ],
+            "reasoning": "Die Frage wird mit einer klaren und präzisen Formulierung gestellt. Die Antwortmöglichkeiten sind ebenfalls klar und erfordern ein fundiertes Verständnis des Marktes. Daher gibt es keine Anhaltspunkte für eine Änderung oder Modifikation.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert und die richtige Antwort ist klar. Die Frage könnte jedoch noch präziser sein, indem sie auf den allgemeinen Begriff \"Nachfrager\" eingeht anstatt speziell auf Märkte.",
+            "suggestions": [
+              "- Die Frage könnte noch präziser formuliert werden, um eindeutig zu klären, dass es sich um den allgemeinen Begriff \"Nachfrager\" handelt.",
+              "- Es könnte empfehlenswert sein, mehrere Beispiele oder Situationen zu nennen, in denen der Nachfrager auf Märkten aktiv ist."
+            ],
+            "reasoning": "Die Frage wird gut formuliert und die richtige Antwort ist klar. Die Frage wird explizit und präzise gestellt, sodass die richtige Antwort ohne Schwierigkeiten erkannt werden kann.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 2,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Average rating 2.8 below threshold, 2 experts suggest improvements",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was genau ist das Ziel der Nachfragerinnen und Nachfrager auf Märkten?\nA) Das höchste Preis zu erzielen\nB) Die Güter, die sie zur Befriedigung ihrer Bedürfnisse benötigen, zu möglichst niedrigen Preisen einzukaufen\nC) Die Konzertkarten zum günstigsten Preis zu kaufen\nD) Die Tickets der Konzertveranstalter zu kaufen <option>[B] Das Ziel der Nachfragerinnen und Nachfrager ist es<option>die Güter<option>die sie zur Befriedigung ihrer Bedürfnisse benötigen<option>zu möglichst niedrigen Preisen einzukaufen.\nC) Die Konzertkarten zum günstigsten Preis zu kaufen\nD) Die Tickets der Konzertveranstalter zu kaufen<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Was genau ist das Angebot auf einem Markt?\nA) Die Menge an Gütern, die Käuferinnen und Käufer erwerben wollen\nB) Die Summe aller angebotenen Güter auf einem Markt\nC) Das höchste Preis zu erzielen\nD) Die Konzertkarten zum günstigsten Preis zu kaufen <option>[B] Die Summe aller angebotenen Güter auf einem Markt<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "[B] Die Summe aller angebotenen Güter auf einem Markt",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "[B] Die Summe aller angebotenen Güter auf einem Markt",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen wurden so gestellt, dass sie das Verständnis der Begriffe \"Nachfrage\" und \"Angebot\" auf Märkten testen. Die Antworten sollen die Definitionen von Nachfrage (Menge an Gütern, die Käuferinnen und Käufer erwerben wollen) und Angebot (Summe aller angebotenen Güter auf einem Markt) bestätigen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist genau und präzise formuliert, was sie für eine Stammaufgabe geeignet macht. Sie erfordert ein grundlegendes Verständnis des Marktkonzepts.",
+            "suggestions": [],
+            "reasoning": "Die Antwortoptionen sind klar und leicht verständlich, und die Frage ist gut formuliert. Es gibt jedoch keine spezifischen Verbesserungsvorschläge, da das Frage-Objekt bereits sehr gut definiert ist.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist zwar reproduktiver Natur, aber die Antwortmöglichkeiten sind unvollständig. Es fehlt der richtige Begriff \"Angebot\" und nur eine falsche Option ist ausgewählt, was die Bewertung schwieriger macht.",
+            "suggestions": [
+              "Zur Verbesserung: Die Frage sollte so gestellt werden, dass die Antwortmöglichkeiten vollständig sind und der richtige Begriff \"Angebot\" hervorgehoben wird. Zum Beispiel: \"Was genau ist das Angebot auf einem Markt? A) Die Menge an Gütern, die Käuferinnen und Käufer erwerben wollen, B) Die Summe aller angebotenen Güter auf einem Markt...\""
+            ],
+            "reasoning": "Die Frage wird als reproduktiver Typ bewertet, da sie nach der Definition eines Begriffs fragt. Allerdings fehlt die richtige Antwortmöglichkeit und es gibt falsche Optionen, was die Bewertung erschwert.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage bezieht sich auf das Verständnis des Konzepts des Angebots und seiner Beziehung zur Nachfrage. Die richtige Antwort zeigt ein gut verstandenes Konzept, aber die falschen Optionen zeugen von mangelndem Verständnis für die Begriffe.",
+            "suggestions": [
+              "Um die Komplexität zu erhöhen, könnten weitere Fragen hinzugefügt werden, die spezifischere Aspekte des Angebots und der Nachfrage beinhalten, wie z.B. das Konzept der Grenznutzenkurve oder die Auswirkungen von Marktdynamiken auf Angebot und Nachfrage."
+            ],
+            "reasoning": "Die Bewertung basiert auf dem Verständnis des Angebotskonzepts und seiner Beziehung zur Nachfrage. Die richtige Antwort zeigt ein gut verstandenes Konzept, aber die falschen Optionen zeugen von mangelndem Verständnis für die Begriffe.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage bezieht sich korrekt auf das Konzept der Angebotsmenge. Der Hauptteil der Frage ist klar und prägnant formuliert. Die Optionen sind angemessen und helfen den Schülern, die Frage zu verstehen.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung erforderlich."
+            ],
+            "reasoning": "Die Frage bezieht sich korrekt auf das Konzept der Angebotsmenge. Die richtige Antwort ist klar definiert und die Frage ist prägnant formuliert. Es gibt keine sprachlichen Hindernisse oder Fehler in der Frage.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist sehr klar und genau formuliert. Alle Optionen sind explizit angegeben und es besteht kein Zweifel an der richtigen Antwort.",
+            "suggestions": [
+              "Keine Verbesserungen erforderlich, da die Anweisung bereits sehr gut formuliert ist."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 4 ist, dass die Anweisung zwar sehr klar und genau formuliert ist, aber nicht alle Optionen benötig sind. Die richtige Antwort ist jedoch gut definiert.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was genau ist das Angebot auf einem Markt?\nA) Die Menge an Gütern, die Käuferinnen und Käufer erwerben wollen\nB) Die Summe aller angebotenen Güter auf einem Markt\nC) Das höchste Preis zu erzielen\nD) Die Konzertkarten zum günstigsten Preis zu kaufen <option>[B] Die Summe aller angebotenen Güter auf einem Markt<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Wer ist der Anbieter im Konzertkarten-Beispiel?\nA) Die Fans, die eine der Konzertkarten kaufen wollen\nB) Der Konzertveranstalter\nC) Die Tickets, die zum Verkauf stehen\nD) Die Käuferinnen und Käufer auf dem Markt <option>B) Der Konzertveranstalter<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "B) Der Konzertveranstalter",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "B) Der Konzertveranstalter",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen wurden so gestellt, dass sie das Verständnis der Begriffe \"Nachfrage\" und \"Angebot\" auf Märkten testen. Die Antworten sollen die Definitionen von Nachfrage (Menge an Gütern, die Käuferinnen und Käufer erwerben wollen) und Angebot (Summe aller angebotenen Güter auf einem Markt) bestätigen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage entspricht dem Schwierigkeitsgrad einer stammaufgabe, da sie ein grundlegendes Verständnis des Themas erfordert und keine speziellen Vorkenntnisse oder komplexen Konzepte beinhaltet.",
+            "suggestions": [],
+            "reasoning": "Die Frage ist gut formuliert und die Antwortmöglichkeiten sind plausibel. Es gibt jedoch einige Überbleibsel von zusätzlichen Optionen, die entfernt werden sollten, um die Frage noch sauberer zu machen.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert eine einfache Identifikation des Anbieters im Kontext eines Konzerts. Die Antwortmöglichkeiten sind weitgehend eindeutig, und die richtige Antwort ist gut verständlich. Es besteht jedoch das Risiko, dass Lernende aufgrund der Unsicherheit über den korrekten Anbieter (etwa wenn sie nicht mit dem Begriff \"Veranstalter\" vertraut sind) eine falsche Antwort wählen.",
+            "suggestions": [
+              "Es könnte hilfreich sein, für diese Art von Fragen mehr Kontext oder spezifischere Hinweise auf die richtige Antwort zu geben. Außerdem könnte man Lernende dazu ermutigen, den Begriff \"Veranstalter\" zu recherchieren und zu verstehen, wer in diesem Zusammenhang der Anbieter ist."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf dem Umstand, dass die Frage eine einfache Identifikation des Anbieters erfordert, aber auch Rückschlüsse darauf zulässt, dass Lernende an einer einfachen und direkten Antwort interessiert sind. Die Fragenstellung ist eindeutig und die richtige Antwort ist gut verständlich.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität in diesem Beispiel ist relativ einfach, da es sich um ein Marktbeispiel handelt und die Begriffe Anbieter und Nachfrager klar definiert sind. Es gibt keine komplexen mathematischen Konzepte wie Mengenoperationen oder Wahrscheinlichkeiten.",
+            "suggestions": [
+              "Keine Vorschläge, da die mathematische Komplexität in diesem Beispiel bereits angemessen ist."
+            ],
+            "reasoning": "Die Mathematik-Bewertung basiert auf der Einfachheit des Beispiels und der Klarheit der Begriffe. Es gibt keine komplexen mathematischen Konzepte, die bewertet werden müssen.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die sprachlichen Hindernisse sind nicht vorhanden, die Frage ist klar formuliert und leicht zu verstehen. Es gibt jedoch eine Überfülle an Optionen, was möglicherweise zu Verwirrung führen kann.",
+            "suggestions": [
+              "Um die Verständlichkeit der Frage zu verbessern, sollten einige der Optionen entfernt werden, um nur noch die wichtigsten und relevantesten Optionen zu haben. Dies würde helfen, die Aufmerksamkeit des Lesers auf die richtige Antwort zu lenken."
+            ],
+            "reasoning": "Die Bewertung von 3 ist gerechtfertigt, da die Frage ein gutes Verständnis der Begriffe Angebot und Nachfrage zeigt, aber auch einige Schwierigkeiten hat, wie z.B. die Überfülle an Optionen. Die Feedback- und Vorschlagskommentare helfen, diese Schwächen zu identifizieren und anzugehen.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist sehr gut, da die Frage genau ist und die Optionen klare und logische Antworten liefern. Die Explizitheit ist ebenfalls hoch, da die richtige Antwort schnell erkannt werden kann.",
+            "suggestions": [
+              "Keine Vorschläge für Verbesserungen der Anweisungsklarheit, da die Frage sehr gut formuliert ist."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 4 (sehr gut) liegt darin, dass die Frage genau und klar formuliert ist, die Optionen logisch sind und die richtige Antwort schnell erkannt werden kann. Die Explizitheit ist ebenfalls hoch, da es keine Zweifelsfälle gibt.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wer ist der Anbieter im Konzertkarten-Beispiel?\nA) Die Fans, die eine der Konzertkarten kaufen wollen\nB) Der Konzertveranstalter\nC) Die Tickets, die zum Verkauf stehen\nD) Die Käuferinnen und Käufer auf dem Markt <option>B) Der Konzertveranstalter<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        
