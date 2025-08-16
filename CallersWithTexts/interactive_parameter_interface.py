@@ -10,7 +10,10 @@ import time
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 
-import requests
+# Import new modular components
+from sharedTools.caller import OrchestorCaller
+from sharedTools.logger import CallerLogger
+from sharedTools.config import CallerConfig
 
 try:
     from colorama import Fore, Back, Style, init
@@ -312,7 +315,7 @@ def collect_obstacle_parameters() -> Dict[str, Any]:
         choice = get_user_input(
             f"Instructions - {description} [Enthalten/Nicht Enthalten]",
             "Nicht Enthalten",
-            lambda x: validate_choice(x, ["Enthalten", "Nicht Enthalten"])
+            lambda x: validate_choice(x, CallerConfig.VALID_BINARY_VALUES)
         )
         params[param_name] = choice
     

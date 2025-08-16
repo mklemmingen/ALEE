@@ -1,58 +1,65 @@
 #!/usr/bin/env python3
 """
-Stakeholder Testing System - Pure Caller Mode
-Uses all rows from explanation_metadata.csv to make HTTP requests with randomized parameters
-Orchestrator handles all result saving - caller only monitors process completion
+Stakeholder Testing System - Enhanced with Modular Components
+Uses all rows from explanation_metadata.csv to make HTTP requests with systematic parameters
+Orchestrator handles all result saving - enhanced with structured logging and caller module
 """
 
 import asyncio
-import logging
 import time
 from typing import Dict, Any
 
-import aiohttp
-import pandas as pd
+# Import new modular components
+from sharedTools.caller import OrchestorCaller
+from sharedTools.logger import CallerLogger
+from sharedTools.config import CallerConfig, TestConfig
 
-# Configure logging
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(__name__)
 
 class StakeholderTestSystem:
-    """Pure caller for question generation testing using stakeholder explanation_metadata.csv"""
+    """Enhanced stakeholder testing system with modular components"""
     
     def __init__(self):
-        self.base_url = "http://localhost:8000"
-        self.stakeholder_csv_path = "../.dev/providedProjectFromStakeHolder/explanation_metadata.csv" # confidential path, please change if needed to a csv of your choice
-        # No result storage - orchestrator handles everything
+        # Initialize modular components
+        self.caller = OrchestorCaller(
+            base_url=CallerConfig.get_base_url(),
+            timeout_seconds=CallerConfig.get_timeout()
+        )
+        self.logger = CallerLogger("stakeholder_test_system")
+        self.stakeholder_csv_path = CallerConfig.get_stakeholder_csv_path()
         
-    async def test_health_endpoint(self):
-        """Test DSPy system health endpoint"""
-        logger.info("Testing DSPy health endpoint...")
+        # Log initialization
+        self.logger.info("Initialized StakeholderTestSystem", 
+                        base_url=self.caller.base_url,
+                        timeout=self.caller.timeout_seconds,
+                        csv_path=self.stakeholder_csv_path)
         
-        async with aiohttp.ClientSession() as session:
-            try:
-                async with session.get(f"{self.base_url}/system-health") as response:
-                    if response.status == 200:
-                        data = await response.json()
-                        logger.info(f"DSPy health check passed: {data.get('status', 'unknown')}, DSPy ready: {data.get('dspy_ready', False)}")
-                        return data.get('dspy_ready', False)
-                    else:
-                        logger.error(f"Health check failed: {response.status}")
-                        return False
-            except Exception as e:
-                logger.error(f"Health check error: {e}")
-                return False
+    async def test_health_endpoint(self) -> bool:
+        """Test DSPy system health endpoint using modular caller"""
+        correlation_id = self.caller._get_correlation_id()
+        self.logger.log_request_start(correlation_id, "health_check")
+        
+        start_time = time.time()
+        is_healthy, health_data = await self.caller.test_health_endpoint(correlation_id)
+        elapsed_time = time.time() - start_time
+        
+        self.logger.log_system_health(correlation_id, is_healthy, health_data, elapsed_time)
+        self.logger.log_request_end(correlation_id, "health_check", is_healthy, elapsed_time)
+        
+        return is_healthy
     
-    def load_stakeholder_texts(self) -> pd.DataFrame:
-        """Load all texts from explanation_metadata.csv"""
-        try:
-            df = pd.read_csv(self.stakeholder_csv_path)
-            logger.info(f"Loaded {len(df)} texts from explanation_metadata.csv")
-            logger.info(f"Columns: {list(df.columns)}")
-            return df
-        except Exception as e:
-            logger.error(f"Failed to load stakeholder CSV: {e}")
-            raise
+    def load_stakeholder_texts(self):
+        """Load all texts from explanation_metadata.csv using modular caller"""
+        self.logger.info("Loading stakeholder texts", csv_path=self.stakeholder_csv_path)
+        
+        df = self.caller.load_stakeholder_texts(self.stakeholder_csv_path)
+        if df is None:
+            self.logger.error("Failed to load stakeholder texts")
+            raise Exception(f"Could not load CSV from {self.stakeholder_csv_path}")
+        
+        self.logger.info("Successfully loaded stakeholder texts", 
+                        text_count=len(df), 
+                        columns=list(df.columns))
+        return df
     
     @staticmethod
     def generate_systematic_parameters(base_c_id: str, text_content: str, text_index: int) -> Dict[str, Any]:
@@ -142,70 +149,65 @@ class StakeholderTestSystem:
     
     # Result saving removed - orchestrator handles all result management
     
-    async def test_question_generation(self, request_data: Dict[str, Any]):
-        """Test DSPy question generation - pure caller mode"""
-        start_time = time.time()
+    async def test_question_generation(self, request_data: Dict[str, Any]) -> bool:
+        """Test DSPy question generation using modular caller"""
+        correlation_id = self.caller._get_correlation_id()
+        c_id = request_data.get('c_id', 'unknown')
+        question_type = request_data.get('question_type', 'unknown')
         
-        async with aiohttp.ClientSession() as session:
-            try:
-                async with session.post(
-                    f"{self.base_url}/generate-educational-questions",
-                    json=request_data,
-                    timeout=aiohttp.ClientTimeout(total=600)  # Increased timeout for DSPy processing
-                ) as response:
-                    
-                    processing_time = time.time() - start_time
-                    
-                    if response.status == 200:
-                        # Don't parse result data - DSPy orchestrator handles saving
-                        logger.info(f"   DSPy request successful for {request_data['c_id']} in {processing_time:.2f}s")
-                        logger.info(f"   Results saved by DSPy orchestrator automatically")
-                        
-                        return True
-                        
-                    else:
-                        error_text = await response.text()
-                        logger.error(f"Question generation failed: HTTP {response.status}")
-                        logger.error(f"   Error: {error_text}")
-                        return False
-                        
-            except Exception as e:
-                logger.error(f"Question generation exception: {e}")
-                return False
+        self.logger.log_request_start(correlation_id, "question_generation", 
+                                     c_id=c_id, question_type=question_type)
+        
+        start_time = time.time()
+        success, result_data = await self.caller.generate_questions(request_data, correlation_id)
+        elapsed_time = time.time() - start_time
+        
+        self.logger.log_question_generation(correlation_id, c_id, question_type, 
+                                           success, result_data, elapsed_time)
+        self.logger.log_request_end(correlation_id, "question_generation", success, elapsed_time,
+                                   c_id=c_id)
+        
+        return success
     
     @staticmethod
     def count_parameters_in_request() -> int:
         """Count total number of parameters being sent to verify SYSARCH compliance"""
-        # This method helps verify we're sending all required parameters
+        # Use CallerConfig to get required parameters count
+        required_params = CallerConfig.get_required_parameters()
         sample_params = StakeholderTestSystem.generate_systematic_parameters("test-1-1", "sample text", 0)
         return len(sample_params)
     
-    async def run_comprehensive_stakeholder_test(self):
-        """Run systematic test using all stakeholder texts with one systematic parameter set each"""
-        logger.info("=" * 80)
-        logger.info("   STARTING SYSTEMATIC DSPy STAKEHOLDER TEST - COMPREHENSIVE PARAMETER COVERAGE")
-        logger.info("=" * 80)
+    async def run_comprehensive_stakeholder_test(self) -> bool:
+        """Run systematic test using all stakeholder texts with enhanced logging"""
+        self.logger.info("Starting comprehensive stakeholder test", 
+                        event_type="test_session_start")
         
-        # Verify parameter completeness
+        self.logger.info("SYSTEMATIC DSPy STAKEHOLDER TEST - COMPREHENSIVE PARAMETER COVERAGE")
+        
+        # Verify parameter completeness using config
         param_count = self.count_parameters_in_request()
-        logger.info(f"Using {param_count} parameters per request (includes all individual item parameters 1-8)")
-        logger.info("Systematic parameter selection ensures comprehensive coverage of all SYSARCH parameters:")
-        logger.info("• All 4 question types systematically tested")
-        logger.info("• All difficulty levels and taxonomy levels covered")
-        logger.info("• All mathematical levels tested systematically")
-        logger.info("• Obstacle combinations tested through bit patterns")
-        logger.info("• Each text gets unique, systematic parameter combination")
+        required_params = CallerConfig.get_required_parameters()
+        
+        self.logger.info("Parameter coverage analysis", 
+                        total_params=param_count,
+                        required_params=len(required_params),
+                        question_types=CallerConfig.VALID_QUESTION_TYPES,
+                        variations=CallerConfig.VALID_VARIATIONS,
+                        taxonomy_levels=CallerConfig.VALID_TAXONOMY_LEVELS)
+        
+        self.logger.info(f"Using {param_count} parameters per request (SYSARCH compliant)")
+        self.logger.info("Systematic parameter coverage: question types, difficulty levels, taxonomy, obstacles")
         
         # Health check first
         if not await self.test_health_endpoint():
-            logger.error("Health check failed - aborting tests")
+            self.logger.error("Health check failed - aborting tests", event_type="test_abort")
             return False
         
         # Load stakeholder texts
         try:
             df = self.load_stakeholder_texts()
         except Exception as e:
-            logger.error(f"Failed to load stakeholder data: {e}")
+            self.logger.error("Failed to load stakeholder data", error=str(e), event_type="test_abort")
             return False
         
         # Initialize counters
@@ -230,9 +232,11 @@ class StakeholderTestSystem:
             idx_int = int(idx)
             total_runs += 1
             
-            logger.info(f"\n Processing text {idx_int+1}/{len(df)}: {original_c_id}")
-            logger.info(f"   Subject: {subject}")
-            logger.info(f"   Text length: {len(text_content)} chars")
+            self.logger.info(f"Processing text {idx_int+1}/{len(df)}", 
+                           text_id=original_c_id,
+                           subject=subject, 
+                           text_length=len(text_content),
+                           progress=f"{idx_int+1}/{len(df)}")
             
             # Generate systematic parameters (one set per text)
             request_data = self.generate_systematic_parameters(original_c_id, text_content, idx_int)
@@ -243,19 +247,33 @@ class StakeholderTestSystem:
             taxonomies_used.add(request_data['p_taxonomy_level'])
             math_levels_used.add(request_data['p_mathematical_requirement_level'])
             
-            logger.info(f"   Systematic Test for {original_c_id}")
-            logger.info(f"     c_id: {request_data['c_id']}")
-            logger.info(f"     Question Type: {request_data['question_type']}")
-            logger.info(f"     Difficulty: {request_data['p_variation']}")
-            logger.info(f"     Taxonomy: {request_data['p_taxonomy_level']}")
-            logger.info(f"     Math Level: {request_data['p_mathematical_requirement_level']}")
-            logger.info(f"     Reference: {request_data['p_root_text_reference_explanatory_text']}")
+            self.logger.info("Systematic test parameters",
+                           original_c_id=original_c_id,
+                           test_c_id=request_data['c_id'],
+                           question_type=request_data['question_type'],
+                           difficulty=request_data['p_variation'],
+                           taxonomy=request_data['p_taxonomy_level'],
+                           math_level=request_data['p_mathematical_requirement_level'],
+                           reference=request_data['p_root_text_reference_explanatory_text'])
             
-            # Log sample of systematic obstacle patterns
-            logger.info(f"     Root Obstacles: Passive={request_data['p_root_text_obstacle_passive']}, Negation={request_data['p_root_text_obstacle_negation']}, Complex={request_data['p_root_text_obstacle_complex_np']}")
-            logger.info(f"     Item 1 Sample: Passive={request_data['p_item_1_obstacle_passive']}, Negation={request_data['p_item_1_obstacle_negation']}, Complex={request_data['p_item_1_obstacle_complex_np']}")
-            logger.info(f"     Instruction: Passive={request_data['p_instruction_obstacle_passive']}, Negation={request_data['p_instruction_obstacle_negation']}, Explicitness={request_data['p_instruction_explicitness_of_instruction']}")
-            logger.info(f"     Total Parameters: {len(request_data)} (SYSTEMATIC SYSARCH-compliant coverage)")
+            # Log systematic obstacle patterns
+            self.logger.info("Obstacle pattern analysis",
+                           root_obstacles={
+                               "passive": request_data['p_root_text_obstacle_passive'],
+                               "negation": request_data['p_root_text_obstacle_negation'],
+                               "complex": request_data['p_root_text_obstacle_complex_np']
+                           },
+                           item_1_sample={
+                               "passive": request_data['p_item_1_obstacle_passive'],
+                               "negation": request_data['p_item_1_obstacle_negation'], 
+                               "complex": request_data['p_item_1_obstacle_complex_np']
+                           },
+                           instruction_params={
+                               "passive": request_data['p_instruction_obstacle_passive'],
+                               "negation": request_data['p_instruction_obstacle_negation'],
+                               "explicitness": request_data['p_instruction_explicitness_of_instruction']
+                           },
+                           total_parameters=len(request_data))
             
             # Execute the test - orchestrator handles all result saving
             success = await self.test_question_generation(request_data)
@@ -266,8 +284,11 @@ class StakeholderTestSystem:
                 failed_runs += 1
             
             # Log progress
-            logger.info(f"   Text {original_c_id} {'✓ COMPLETED' if success else '✗ FAILED'}")
-            logger.info(f"   Overall progress: {idx_int + 1}/{len(df)} texts, {successful_runs}/{total_runs} successful calls")
+            status = "✓ COMPLETED" if success else "✗ FAILED"
+            self.logger.info(f"Text {original_c_id} {status}", 
+                           success=success,
+                           overall_progress=f"{idx_int + 1}/{len(df)}",
+                           success_rate=f"{successful_runs}/{total_runs}")
             
             # Brief pause between texts
             await asyncio.sleep(2)
@@ -276,56 +297,102 @@ class StakeholderTestSystem:
         total_time = time.time() - start_time
         success_rate = (successful_runs / total_runs * 100) if total_runs > 0 else 0
         
-        logger.info("\n" + "=" * 80)
-        logger.info("SYSTEMATIC TEST SUMMARY - PARAMETER COVERAGE ANALYSIS")
-        logger.info("=" * 80)
-        logger.info(f"Total texts processed: {len(df)}")
-        logger.info(f"Total HTTP calls made: {total_runs} (1 per text)")
-        logger.info(f"Successful calls: {successful_runs}")
-        logger.info(f"Failed calls: {failed_runs}")
-        logger.info(f"Success rate: {success_rate:.1f}%")
-        logger.info(f"⏱Total processing time: {total_time:.2f}s")
-        logger.info(f"Average time per call: {total_time/total_runs:.2f}s")
-        logger.info("")
-        logger.info("SYSTEMATIC PARAMETER COVERAGE ACHIEVED:")
-        logger.info(f"• Question Types tested: {len(question_types_used)}/4 → {sorted(question_types_used)}")
-        logger.info(f"• Difficulty levels tested: {len(variations_used)}/3 → {sorted(variations_used)}")
-        logger.info(f"• Taxonomy levels tested: {len(taxonomies_used)}/2 → {sorted(taxonomies_used)}")
-        logger.info(f"• Math levels tested: {len(math_levels_used)}/3 → {sorted(math_levels_used)}")
-        logger.info("• Obstacle combinations: Systematic bit patterns ensuring diverse coverage")
-        logger.info("• Item parameters 1-8: All systematically tested with unique patterns")
-        logger.info("")
-        logger.info("All results automatically saved by DSPy orchestrator to:")
-        logger.info("   results/YYYY-MM-DD_HH-MM-SS_c_id/")
-        logger.info("   • Complete CSV with all SYSARCH columns")
-        logger.info("   • DSPy pipeline steps (generation → experts → consensus)")
-        logger.info("   • Individual expert evaluations (5 experts × 3 questions each)")
-        logger.info("   • System metadata and processing times")
-        logger.info("   • All ALEE_Agent prompts snapshot")
-        logger.info("   • Expert validation logs and detailed feedback")
+        # Generate comprehensive test summary
+        test_summary = {
+            "total_texts": len(df),
+            "total_requests": total_runs,
+            "successful_requests": successful_runs,
+            "failed_requests": failed_runs,
+            "success_rate": success_rate,
+            "total_time": total_time,
+            "average_time_per_call": total_time/total_runs if total_runs > 0 else 0,
+            "question_types_tested": len(question_types_used),
+            "variations_tested": len(variations_used),
+            "taxonomies_tested": len(taxonomies_used),
+            "math_levels_tested": len(math_levels_used)
+        }
         
-        logger.info("=" * 80)
-        logger.info("SYSTEMATIC DSPy STAKEHOLDER TEST COMPLETE")
-        logger.info("=" * 80)
+        self.logger.info("SYSTEMATIC TEST SUMMARY - PARAMETER COVERAGE ANALYSIS")
+        self.logger.info("Test execution completed", 
+                        event_type="test_session_end",
+                        summary=test_summary)
+        # Log parameter coverage analysis
+        coverage_analysis = {
+            "question_types": {
+                "tested": len(question_types_used),
+                "total": len(CallerConfig.VALID_QUESTION_TYPES),
+                "coverage": sorted(question_types_used)
+            },
+            "difficulty_levels": {
+                "tested": len(variations_used),
+                "total": len(CallerConfig.VALID_VARIATIONS), 
+                "coverage": sorted(variations_used)
+            },
+            "taxonomy_levels": {
+                "tested": len(taxonomies_used),
+                "total": len(CallerConfig.VALID_TAXONOMY_LEVELS),
+                "coverage": sorted(taxonomies_used)
+            },
+            "math_levels": {
+                "tested": len(math_levels_used),
+                "total": len(CallerConfig.VALID_MATH_LEVELS),
+                "coverage": sorted(math_levels_used)
+            }
+        }
+        
+        self.logger.info("SYSTEMATIC PARAMETER COVERAGE ACHIEVED", 
+                        coverage_analysis=coverage_analysis)
+        # Log completion with session statistics
+        session_stats = self.caller.get_session_statistics()
+        
+        self.logger.info("All results automatically saved by DSPy orchestrator")
+        self.logger.info("Result storage: results/YYYY-MM-DD_HH-MM-SS_c_id/ with complete pipeline tracking")
+        
+        self.logger.info("SYSTEMATIC DSPy STAKEHOLDER TEST COMPLETE", 
+                        event_type="test_session_complete",
+                        session_statistics=session_stats)
+        
+        # End the logging session with summary
+        final_summary = {**test_summary, **session_stats, **coverage_analysis}
+        self.logger.log_session_end(final_summary)
         
         return successful_runs > 0
 
 async def main():
-    """Main function to run stakeholder testing"""
-    tester = StakeholderTestSystem()
+    """Main function to run stakeholder testing with enhanced error handling"""
+    tester = None
     
     try:
+        tester = StakeholderTestSystem()
         success = await tester.run_comprehensive_stakeholder_test()
         return 0 if success else 1
         
     except KeyboardInterrupt:
-        logger.info("Testing interrupted by user")
+        if tester:
+            tester.logger.warning("Testing interrupted by user", event_type="user_interrupt")
         return 1
     except Exception as e:
-        logger.error(f"Testing failed with exception: {e}")
+        if tester:
+            tester.logger.error("Testing failed with exception", error=str(e), event_type="system_error")
+        else:
+            print(f"Failed to initialize system: {e}")
         return 1
+    finally:
+        if tester:
+            # Ensure session is properly closed
+            session_summary = tester.logger.get_session_summary()
+            print(f"\nSession completed. Log file: {session_summary.get('log_file')}")
+            print(f"Total log entries: {session_summary.get('total_log_entries', 0)}")
 
 if __name__ == "__main__":
     import sys
+    
+    print("=" * 80)
+    print("STAKEHOLDER TESTING SYSTEM - Enhanced with Modular Components")
+    print("=" * 80)
+    print("Features: Structured logging, parameter validation, performance tracking")
+    print("Log files saved to CallersWithTexts/_logs/ with ISO8601 timestamps")
+    print("=" * 80)
+    
     exit_code = asyncio.run(main())
     sys.exit(exit_code)

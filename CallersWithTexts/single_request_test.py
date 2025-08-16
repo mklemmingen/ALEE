@@ -1,147 +1,147 @@
 #!/usr/bin/env python3
 """
-Single Request Test - Tests DSPy system with one random text and fixed realistic parameters
-Based on stakeholder_test_system.py but runs only one request for quick validation
+Single Request Test - Enhanced with Modular Components
+Tests DSPy system with one random text and fixed realistic parameters
+Includes structured logging, parameter validation, and performance analysis
 """
 
 import asyncio
 import json
-import logging
 import time
 from typing import Dict, Any, Optional
 
-import aiohttp
-import pandas as pd
-
-# Configure logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
-)
-logger = logging.getLogger(__name__)
+# Import modular components
+from sharedTools.caller import OrchestorCaller
+from sharedTools.logger import CallerLogger
+from sharedTools.config import CallerConfig, TestConfig
 
 class SingleRequestTest:
-    """Single request test for DSPy educational question generator"""
+    """Enhanced single request test with modular components"""
     
     def __init__(self):
-        self.base_url = "http://localhost:8000"
-        self.stakeholder_csv_path = "../.dev/providedProjectFromStakeHolder/explanation_metadata.csv"
-        self.timeout_seconds = 180  # Timeout for single request (increased for DSPy processing)
+        # Initialize modular components
+        self.caller = OrchestorCaller(
+            base_url=CallerConfig.get_base_url(),
+            timeout_seconds=CallerConfig.get_timeout()
+        )
+        self.logger = CallerLogger("single_request_test")
+        self.stakeholder_csv_path = CallerConfig.get_stakeholder_csv_path()
+        
+        # Log initialization
+        self.logger.info("Initialized SingleRequestTest",
+                        base_url=self.caller.base_url,
+                        timeout=self.caller.timeout_seconds,
+                        csv_path=self.stakeholder_csv_path)
         
     async def test_health_endpoint(self) -> bool:
-        """Test DSPy health endpoint"""
-        logger.info("Testing DSPy health endpoint...")
+        """Test DSPy health endpoint using modular caller"""
+        correlation_id = self.caller._get_correlation_id()
+        self.logger.log_request_start(correlation_id, "health_check")
         
-        async with aiohttp.ClientSession() as session:
-            try:
-                async with session.get(f"{self.base_url}/system-health") as response:
-                    if response.status == 200:
-                        data = await response.json()
-                        logger.info(f"DSPy health check: {data}")
-                        return data.get('dspy_ready', False)
-                    else:
-                        logger.error(f"Health check failed: HTTP {response.status}")
-                        return False
-            except Exception as e:
-                logger.error(f"Health check error: {e}")
-                return False
+        start_time = time.time()
+        is_healthy, health_data = await self.caller.test_health_endpoint(correlation_id)
+        elapsed_time = time.time() - start_time
+        
+        self.logger.log_system_health(correlation_id, is_healthy, health_data, elapsed_time)
+        self.logger.log_request_end(correlation_id, "health_check", is_healthy, elapsed_time)
+        
+        return is_healthy
     
     def load_random_text(self) -> Optional[Dict[str, str]]:
-        """Load a random text from explanation_metadata.csv"""
-        try:
-            df = pd.read_csv(self.stakeholder_csv_path)
-            logger.info(f"Loaded {len(df)} texts from CSV")
-            
-            # Select random row
-            random_row = df.sample(n=1).iloc[0]
-            
-            return {
-                'c_id': random_row['c_id'],
-                'subject': random_row['subject'],
-                'text': random_row['text']
-            }
-        except Exception as e:
-            logger.error(f"Failed to load stakeholder CSV: {e}")
-            return None
-    
-    def create_fixed_realistic_parameters(self, text_data: Dict[str, str]) -> Dict[str, Any]:
-        """Create fixed realistic parameters for testing"""
+        """Load a random text using modular caller"""
+        self.logger.info("Loading random text from stakeholder CSV")
         
-        # Fixed realistic parameters for a standard multiple-choice question
-        parameters = {
-            "c_id": f"{text_data['c_id']}-test",
-            "text": text_data['text'],
-            "question_type": "multiple-choice",  # Fixed question format
-            "p_variation": "stammaufgabe",       # Standard difficulty
-            "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",  # Knowledge level
-            "p_mathematical_requirement_level": "0",  # No math requirement
-            "p_root_text_reference_explanatory_text": "Nicht vorhanden",
-            "p_root_text_obstacle_passive": "Nicht Enthalten",
-            "p_root_text_obstacle_negation": "Nicht Enthalten",
-            "p_root_text_obstacle_complex_np": "Nicht Enthalten",
-            "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+        df = self.caller.load_stakeholder_texts(self.stakeholder_csv_path)
+        if df is None:
+            self.logger.error("Failed to load stakeholder texts")
+            return None
+        
+        # Select random row
+        random_row = df.sample(n=1).iloc[0]
+        
+        text_data = {
+            'c_id': random_row['c_id'],
+            'subject': random_row['subject'],
+            'text': random_row['text']
         }
         
-        # Add all 8 item parameters (all set to "Nicht Enthalten" for simplicity)
-        for i in range(1, 9):
-            parameters[f"p_item_{i}_obstacle_passive"] = "Nicht Enthalten"
-            parameters[f"p_item_{i}_obstacle_negation"] = "Nicht Enthalten"
-            parameters[f"p_item_{i}_obstacle_complex_np"] = "Nicht Enthalten"
+        self.logger.info("Selected random text",
+                        c_id=text_data['c_id'],
+                        subject=text_data['subject'],
+                        text_length=len(text_data['text']))
         
-        # Instruction parameters
-        parameters["p_instruction_obstacle_passive"] = "Nicht Enthalten"
-        parameters["p_instruction_obstacle_negation"] = "Nicht Enthalten"
-        parameters["p_instruction_obstacle_complex_np"] = "Nicht Enthalten"
-        parameters["p_instruction_explicitness_of_instruction"] = "Explizit"  # Explicit instructions
+        return text_data
+    
+    def create_fixed_realistic_parameters(self, text_data: Dict[str, str]) -> Dict[str, Any]:
+        """Create fixed realistic parameters using CallerConfig defaults"""
+        
+        # Start with default parameters from config
+        parameters = CallerConfig.get_default_parameters().copy()
+        
+        # Override with test-specific values
+        parameters.update({
+            "c_id": f"{text_data['c_id']}-test",
+            "text": text_data['text']
+        })
+        
+        self.logger.info("Created test parameters",
+                        total_params=len(parameters),
+                        c_id=parameters['c_id'],
+                        question_type=parameters['question_type'],
+                        difficulty=parameters['p_variation'])
         
         return parameters
     
     async def execute_single_request(self, request_data: Dict[str, Any]) -> Optional[Dict[str, Any]]:
-        """Execute single request to DSPy endpoint"""
+        """Execute single request using modular caller"""
+        correlation_id = self.caller._get_correlation_id()
+        c_id = request_data.get('c_id', 'unknown')
+        question_type = request_data.get('question_type', 'unknown')
+        
+        self.logger.info("Sending request to DSPy endpoint",
+                        c_id=c_id,
+                        question_type=question_type,
+                        total_params=len(request_data))
+        
+        self.logger.log_request_start(correlation_id, "single_test_generation",
+                                     c_id=c_id, question_type=question_type)
+        
         start_time = time.time()
+        success, result = await self.caller.generate_questions(request_data, correlation_id)
+        elapsed_time = time.time() - start_time
         
-        logger.info(f"Sending request to DSPy endpoint...")
-        logger.info(f"Request parameters: {json.dumps(request_data, indent=2, ensure_ascii=False)}")
+        self.logger.log_question_generation(correlation_id, c_id, question_type,
+                                           success, result, elapsed_time)
+        self.logger.log_request_end(correlation_id, "single_test_generation", 
+                                   success, elapsed_time, c_id=c_id)
         
-        async with aiohttp.ClientSession() as session:
-            try:
-                async with session.post(
-                    f"{self.base_url}/generate-educational-questions",
-                    json=request_data,
-                    timeout=aiohttp.ClientTimeout(total=self.timeout_seconds)
-                ) as response:
-                    
-                    processing_time = time.time() - start_time
-                    
-                    if response.status == 200:
-                        result = await response.json()
-                        logger.info(f"✅ Request successful in {processing_time:.2f}s")
-                        return result
-                    else:
-                        error_text = await response.text()
-                        logger.error(f"❌ Request failed: HTTP {response.status}")
-                        logger.error(f"Error: {error_text}")
-                        return None
-                        
-            except asyncio.TimeoutError:
-                logger.error(f"❌ Request timeout after {self.timeout_seconds}s")
-                return None
-            except Exception as e:
-                logger.error(f"❌ Request exception: {e}")
-                return None
+        if success:
+            self.logger.success(f"Request successful in {elapsed_time:.2f}s")
+            return result
+        else:
+            error_details = result.get('error', 'Unknown error')
+            self.logger.error(f"Request failed: {error_details}")
+            return None
     
     def validate_result(self, result: Dict[str, Any]) -> bool:
-        """Validate the result structure and content"""
-        logger.info("\n" + "="*60)
-        logger.info("VALIDATING RESULT")
-        logger.info("="*60)
+        """Validate the result structure and content with enhanced logging"""
+        correlation_id = self.caller._get_correlation_id()
+        
+        self.logger.info("Starting result validation", 
+                        event_type="validation_start",
+                        correlation_id=correlation_id)
         
         validations = []
+        validation_results = {}
         
-        # Check required fields
-        required_fields = ['question_1', 'question_2', 'question_3', 'c_id', 'processing_time', 'csv_data']
+        # Check required fields using config
+        endpoint_config = CallerConfig.get_endpoint_config()['generate']
+        required_fields = endpoint_config['expected_fields'] + ['csv_data']
+        
         for field in required_fields:
-            if field in result:
+            is_present = field in result
+            validation_results[f"field_{field}"] = is_present
+            if is_present:
                 validations.append(f"✅ Field '{field}' present")
             else:
                 validations.append(f"❌ Field '{field}' missing")
@@ -177,56 +177,81 @@ class SingleRequestTest:
         
         # Log all validations
         for validation in validations:
-            logger.info(validation)
+            if "✅" in validation:
+                self.logger.info(validation)
+            else:
+                self.logger.error(validation)
             
         # Calculate success
         success_count = sum(1 for v in validations if v.startswith("✅"))
         total_count = len(validations)
         success_rate = (success_count / total_count * 100) if total_count > 0 else 0
         
-        logger.info(f"\nValidation Summary: {success_count}/{total_count} passed ({success_rate:.1f}%)")
+        # Log validation summary
+        validation_summary = {
+            "passed_validations": success_count,
+            "total_validations": total_count,
+            "success_rate": success_rate,
+            "validation_details": validation_results
+        }
+        
+        self.logger.info(f"Validation Summary: {success_count}/{total_count} passed ({success_rate:.1f}%)",
+                        event_type="validation_summary",
+                        correlation_id=correlation_id,
+                        validation_summary=validation_summary)
         
         # Log generated questions
         if all(f'question_{i}' in result for i in range(1, 4)):
-            logger.info("\n" + "="*60)
-            logger.info("GENERATED QUESTIONS")
-            logger.info("="*60)
+            questions_data = {}
             for i in range(1, 4):
-                logger.info(f"\nQuestion {i}:")
-                logger.info(result[f'question_{i}'])
+                question_text = result[f'question_{i}']
+                questions_data[f"question_{i}"] = {
+                    "text": question_text,
+                    "length": len(question_text),
+                    "has_content": bool(question_text and len(question_text) > 10)
+                }
+                self.logger.info(f"Question {i}: {question_text[:100]}...")
+            
+            self.logger.info("Generated questions logged",
+                           event_type="questions_generated",
+                           correlation_id=correlation_id,
+                           questions_summary=questions_data)
                 
         # Log processing metadata
         if 'generation_updates' in result and result['generation_updates']:
             update = result['generation_updates'][0]
-            logger.info("\n" + "="*60)
-            logger.info("DSPY PROCESSING METADATA")
-            logger.info("="*60)
-            logger.info(f"Single-pass consensus: {update.get('dspy_metadata', {}).get('single_pass_consensus', False)}")
-            logger.info(f"Modular prompts used: {update.get('dspy_metadata', {}).get('modular_prompts_used', False)}")
-            logger.info(f"All approved: {update.get('dspy_metadata', {}).get('all_approved', False)}")
-            logger.info(f"Expert consensus: {update.get('expert_consensus', [])}")
+            dspy_metadata = update.get('dspy_metadata', {})
+            
+            processing_metadata = {
+                "single_pass_consensus": dspy_metadata.get('single_pass_consensus', False),
+                "modular_prompts_used": dspy_metadata.get('modular_prompts_used', False),
+                "all_approved": dspy_metadata.get('all_approved', False),
+                "expert_consensus": update.get('expert_consensus', [])
+            }
+            
+            self.logger.info("DSPy processing metadata",
+                           event_type="dspy_metadata",
+                           correlation_id=correlation_id,
+                           processing_metadata=processing_metadata)
         
         return success_count == total_count
     
     async def run_single_test(self) -> bool:
-        """Run single request test with random text and fixed parameters"""
-        logger.info("="*60)
-        logger.info("SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR")
-        logger.info("="*60)
+        """Run single request test with enhanced logging and validation"""
+        self.logger.info("Starting single request test",
+                        event_type="test_start")
         
         # Check health first
         if not await self.test_health_endpoint():
-            logger.error("DSPy health check failed - aborting test")
+            self.logger.error("DSPy health check failed - aborting test",
+                            event_type="test_abort")
             return False
             
         # Load random text
         text_data = self.load_random_text()
         if not text_data:
-            logger.error("Failed to load text data")
+            self.logger.error("Failed to load text data", event_type="test_abort")
             return False
-            
-        logger.info(f"\nSelected text: {text_data['c_id']} - {text_data['subject']}")
-        logger.info(f"Text preview: {text_data['text'][:200]}...")
         
         # Create request parameters
         request_data = self.create_fixed_realistic_parameters(text_data)
@@ -235,38 +260,43 @@ class SingleRequestTest:
         result = await self.execute_single_request(request_data)
         
         if not result:
-            logger.error("Request failed - no result received")
+            self.logger.error("Request failed - no result received",
+                            event_type="request_failed")
             return False
             
         # Validate result
         validation_passed = self.validate_result(result)
         
         # Final summary
-        logger.info("\n" + "="*60)
-        logger.info("TEST SUMMARY")
-        logger.info("="*60)
-        logger.info(f"Test Status: {'✅ PASSED' if validation_passed else '❌ FAILED'}")
-        logger.info(f"Processing Time: {result.get('processing_time', 0):.2f}s")
-        logger.info(f"C_ID: {result.get('c_id', 'N/A')}")
+        test_summary = {
+            "test_passed": validation_passed,
+            "processing_time": result.get('processing_time', 0),
+            "c_id": result.get('c_id', 'N/A'),
+            "text_c_id": text_data['c_id'],
+            "subject": text_data['subject']
+        }
         
         if 'csv_data' in result:
-            logger.info(f"Expert Count: {result['csv_data'].get('dspy_expert_count', 0)}")
-            logger.info(f"All Approved: {result['csv_data'].get('dspy_all_approved', False)}")
+            csv_data = result['csv_data']
+            test_summary.update({
+                "expert_count": csv_data.get('dspy_expert_count', 0),
+                "all_approved": csv_data.get('dspy_all_approved', False),
+                "consensus_used": csv_data.get('dspy_consensus_used', False)
+            })
+        
+        status = "✅ PASSED" if validation_passed else "❌ FAILED"
+        self.logger.info(f"Test Status: {status}",
+                        event_type="test_complete",
+                        test_summary=test_summary)
             
         return validation_passed
 
 async def main():
-    """Main test function"""
-    tester = SingleRequestTest()
+    """Main test function with enhanced error handling"""
+    tester = None
     
     try:
-        # First start the DSPy server
-        logger.info("Starting DSPy server...")
-        logger.info("Please ensure the DSPy orchestrator is running on port 8000")
-        logger.info("Run: python3 ALEE_Agent/_server_question_generator.py")
-        
-        # Give user time to start server if needed
-        await asyncio.sleep(2)
+        tester = SingleRequestTest()
         
         # Run the test
         success = await tester.run_single_test()
@@ -274,15 +304,34 @@ async def main():
         return 0 if success else 1
         
     except KeyboardInterrupt:
-        logger.info("\nTest interrupted by user")
+        if tester:
+            tester.logger.warning("Test interrupted by user", event_type="user_interrupt")
         return 1
     except Exception as e:
-        logger.error(f"Test failed with exception: {e}")
+        if tester:
+            tester.logger.error("Test failed with exception", error=str(e), event_type="system_error")
+        else:
+            print(f"Failed to initialize test system: {e}")
         import traceback
         traceback.print_exc()
         return 1
+    finally:
+        if tester:
+            # Ensure session is properly closed
+            session_summary = tester.logger.get_session_summary()
+            tester.logger.log_session_end(session_summary)
+            print(f"\nSession completed. Log file: {session_summary.get('log_file')}")
+            print(f"Total log entries: {session_summary.get('total_log_entries', 0)}")
 
 if __name__ == "__main__":
     import sys
+    
+    print("=" * 80)
+    print("SINGLE REQUEST TEST - Enhanced with Modular Components")
+    print("=" * 80)
+    print("Features: Parameter validation, structured logging, comprehensive result analysis")
+    print("Log files saved to CallersWithTexts/_logs/ with ISO8601 timestamps")
+    print("=" * 80)
+    
     exit_code = asyncio.run(main())
     sys.exit(exit_code)
