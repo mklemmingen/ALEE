@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 73.21865606307983,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was ist der Hauptunterschied zwischen einem Wunsch und einem Bed\u00fcrfnis?\n\nA) Ein Wunsch erf\u00fcllt sich sofort, ein Bed\u00fcrfnis erst sp\u00e4ter\nB) Ein Wunsch ist etwas, das man gerne hat, ein Bed\u00fcrfnis etwas, das notwendig ist\nC) Ein Wunsch ist immer positiv, ein Bed\u00fcrfnis oft negativ\nD) Ein Wunsch ist unbegrenzt, ein Bed\u00fcrfnis begrenzt <option>A) Ein Wunsch ist etwas<option>das man gerne hat<option>ein Bed\u00fcrfnis etwas<option>das notwendig ist\nB) Ein Wunsch erf\u00fcllt sich sofort<option>ein Bed\u00fcrfnis erst sp\u00e4ter\nC) Ein Wunsch ist immer positiv<option>ein Bed\u00fcrfnis oft negativ\nD) Ein Wunsch ist unbegrenzt<option>ein Bed\u00fcrfnis begrenzt",
+        "Warum unterscheiden sich die Bed\u00fcrfnisse von Kindern stark? <option>Weil Kinder nicht wissen, was sie wollen<option>Weil Kinder keine Verantwortung \u00fcbernehmen m\u00fcssen<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Wie reagiert ein Mensch normalerweise, wenn ein Bed\u00fcrfnis erf\u00fcllt ist?\n\nA) Er widmet sich sofort einem anderen Bed\u00fcrfnis\nB) Er wird traurig und braucht Zeit zum Nachdenken\nC) Er bleibt bei dem bereits erf\u00fcllten Bed\u00fcrfnis\nD) Er ignoriert das gerade erf\u00fcllte Bed\u00fcrfnis <option>A) Er widmet sich sofort einem anderen Bed\u00fcrfnis\nC) Er bleibt bei dem bereits erf\u00fcllten Bed\u00fcrfnis\nB) Er wird traurig und braucht Zeit zum Nachdenken\nD) Er ignoriert das gerade erf\u00fcllte Bed\u00fcrfnis<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T15:26:35.149848",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

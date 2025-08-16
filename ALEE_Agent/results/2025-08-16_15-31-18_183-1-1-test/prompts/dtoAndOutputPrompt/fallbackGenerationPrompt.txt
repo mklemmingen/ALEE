@@ -1,0 +1,16 @@
+Basierend auf den angegebenen Parametern, generiere genau 3 verschiedene Bildungsfragen mit korrektem Markup.
+
+BEISPIEL MULTIPLE-CHOICE FORMAT (6-8 Optionen):
+Was sind Bedürfnisse? <option>Materielle Güter<option>Wünsche die entstehen wenn etwas fehlt<option>Nur Luxusartikel<option>Immer gleich<option>Physische Objekte<option>Psychische Bedürfnisse
+
+BEISPIEL SINGLE-CHOICE FORMAT (4 Optionen):
+Was ist ein Markt? <option>Ein Ort zum Einkaufen<option>Ein Treffpunkt von Angebot und Nachfrage<option>Ein Gebäude<option>Eine Organisation
+
+BEISPIEL TRUE-FALSE FORMAT:
+Bedürfnisse sind unbegrenzt. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch
+
+BEISPIEL MAPPING FORMAT:
+Ordne zu: <start-option>Grundbedürfnisse<start-option>Luxusbedürfnisse<end-option>Essen und Trinken<end-option>Schmuck und teure Autos
+
+KRITISCH: Verwende das korrekte Markup für den angegebenen Fragetyp!
+Generiere die Fragen jetzt mit korrektem Format:

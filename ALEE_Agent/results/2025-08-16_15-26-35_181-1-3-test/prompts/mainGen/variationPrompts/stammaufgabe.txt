@@ -1,0 +1,29 @@
+DIFFICULTY LEVEL: STAMMAUFGABE (Standard)
+
+Diese Aufgabe soll die Standard-Schwierigkeit für durchschnittliche 9. Klasse-Schüler haben.
+
+SCHWIERIGKEITSMERKMALE:
+- Verständnisanwendung: Konzepte in ähnlichen Kontexten anwenden
+- Zwei-Schritt-Denken: Verknüpfung von 2-3 Wisenselementen
+- Moderate Abstraktion: Leicht veränderte Situationen
+- Mittlere Distraktorzahl: 4-6 Antwortoptionen
+- Plausible Falschantworten: Erfordern echtes Verständnis zur Unterscheidung
+
+KOGNITIVE ANFORDERUNGEN:
+- Grundlegendes Verstehen wirtschaftlicher Begriffe
+- Anwendung in bekannten Kontexten
+- Moderate sprachliche Komplexität
+- Ausgewogene Informationsdichte
+
+SPRACHLICHE GESTALTUNG:
+- Klare, altersgerechte Sprache
+- Standardvokabular für 9. Klasse
+- Mittlere Satzlänge
+- Eindeutige aber nicht zu offensichtliche Formulierungen
+
+BEISPIEL-KOMPLEXITÄT:
+Luisa ist 17 Jahre alt und wohnt bei ihren Eltern. Sie ist mit ihrem Leben zufrieden, fragt sich aber, was sie nach dem Abitur machen soll. Sie möchte einen erfüllenden Beruf. Welche Aussage trifft zu?
+A) Luisa hat keine Bedürfnisse, da sie zufrieden ist
+B) Selbst wenn Luisa zufrieden ist, hat sie trotzdem Bedürfnisse. Der Wunsch nach einem erfüllenden Beruf ist ein Bedürfnis
+C) Bedürfnisse haben nur Erwachsene
+D) Luisas Berufswunsch ist Bedarf, nicht Bedürfnis

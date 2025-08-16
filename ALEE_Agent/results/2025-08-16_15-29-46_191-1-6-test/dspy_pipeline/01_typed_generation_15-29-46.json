@@ -1,0 +1,275 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T15:29:46.921491",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was ist ein Markt?\n\nA) Ein Ort für den Kauf von Waren\nB) Eine Plattform für den Tausch von Gegenständen\nC) Ein Online-Shop für die Bestellung von Produkten\nD) Ein Gebäude, in dem Händler ihre Waren ausstellen\nE) Eine Veranstaltung, auf der Produkte verkauft werden\nF) Ein Netzwerk von Käufern und Verkäufern <option>A<option>B<option>C<option>D<option>F<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "F",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A",
+          "B"
+        ],
+        "explanation": "Die Fragen wurden so formuliert, dass sie das Verständnis des Markt-Begriffs und seine verschiedenen Formen testen. Die Antwortmöglichkeiten umfassen eine Vielzahl von Aspekten, die mit dem Markt in Zusammenhang stehen. Durch diese Fragen soll der Lernende in der Lage sein, den Markt als flexible und vielfältige Konstruktion zu verstehen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist allgemein formuliert und die Optionen sind nicht spezifisch genug, um eine klare Antwort zu liefern. Die Frage sollte spezifischer sein und die Optionen sollten sich auf ein bestimmtes Aspekt des Marktkonzepts beziehen.",
+            "suggestions": [
+              "Die Frage könnte an die Spezifikität angepasst werden, indem sie auf ein bestimmtes Merkmal oder Aspekt eines Marktes eingeht (z.B. \"Was ist der Hauptvorteil eines Marktes?\", \"Wie funktioniert der Handel auf einem Markt?\"). Die Optionen sollten sich dann auf dieses spezifische Aspekt beziehen."
+            ],
+            "reasoning": "Die Frage \"Was ist ein Markt?\" ist zu allgemein formuliert und die Optionen sind nicht spezifisch genug, um eine klare Antwort zu liefern. Die Frage sollte spezifischer sein und die Optionen sollten sich auf ein bestimmtes Aspekt des Marktkonzepts beziehen.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfordert eine Analyse des Konzepts \"Markt\" und die Fähigkeit, es in verschiedenen Kontexten zu beschreiben. Die Antworten zeugen von einem grundlegenden Verständnis des Konzepts, aber auch von einer gewissen Ambiguität im Ausdruck.",
+            "suggestions": [
+              "Es wäre hilfreich, eine detailliertere Definition des Marktkonzepts zu erfordern und die Begründung für jede Antwortoption zu erläutern. Zudem sollte die Frage möglicherweise spezifischer formuliert werden, um das Verständnis der Antworten zu erleichtern."
+            ],
+            "reasoning": "Die Bewertung ist auf 2 gestellt, da einige Antworten zwar nicht genau sind, aber dennoch ein gewisses Maß an Verständnis für das Konzept \"Markt\" zeigen. Die Begründung für diese Bewertung basiert auf der Annahme, dass die Frage sich auf ein grundlegendes Verständnis des Marktkonzepts bezieht.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität der Frage ist durchschnittlich und erfordert ein gewisses Maß an analytischem Denken. Die Begründung für die richtige Antwort ist jedoch nicht klar definiert, da mehrere Optionen plausibel sind.",
+            "suggestions": [
+              "Die Frage sollte präziser gestellt werden, um die richtige Antwort zu erleichtern. Zudem sollten die Optionen sorgfältig ausgewählt werden, um sicherzustellen, dass sie für das Thema angemessen sind."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 3 ist, dass die Frage mehrere Fähigkeiten erfordert, wie zum Beispiel Analyse und logisches Denken. Die richtige Antwort ist jedoch nicht eindeutig definiert, was die Bewertung beeinträchtigt.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage hat zwar einige sprachliche Hindernisse, aber die Antworten sind für das Thema \"Markt\" nicht besonders relevant. Die Option F ist falsch und sollte aus der Liste entfernt werden. Zusätzliche Option 6 ist ebenfalls falsch.",
+            "suggestions": [
+              "- Entfernen Sie die falschen Optionen (F und Zusätzliche Option 6) von der Antwortliste.",
+              "- Überprüfen Sie, ob die Frage sich auf ein bestimmtes Thema bezieht und ob die Antworten diesem Thema entsprechen."
+            ],
+            "reasoning": "Die Frage ist zwar nicht schlecht formuliert, aber die Antworten sind für das Thema \"Markt\" nicht besonders relevant. Die Option F ist falsch und sollte aus der Liste entfernt werden.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist in den meisten Teilen klar formuliert und ermöglicht es dem Lernenden, seine Kenntnisse zu testen. Die Unklarheit tritt jedoch auf, wenn die richtigen Antworten nicht explizit definiert sind.",
+            "suggestions": [
+              "- Fügen Sie eine klare Definition der richtigen Antworten ein.",
+              "- Erwähnen Sie die möglichen Vor- und Nachteile einer Marktwirtschaft."
+            ],
+            "reasoning": "Die Anweisung wird mit 4 Punkten bewertet, da sie zwar explizit ist, jedoch keine klaren Definitionen der richtigen Antworten enthält. Dies kann zu Unklarheiten führen und die Aufgabenlösbarkeit beeinträchtigen.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 2,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist ein Markt?\n\nA) Ein Ort für den Kauf von Waren\nB) Eine Plattform für den Tausch von Gegenständen\nC) Ein Online-Shop für die Bestellung von Produkten\nD) Ein Gebäude, in dem Händler ihre Waren ausstellen\nE) Eine Veranstaltung, auf der Produkte verkauft werden\nF) Ein Netzwerk von Käufern und Verkäufern <option>A<option>B<option>C<option>D<option>F<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Welche Form des Marktes ist auch online möglich? <option>Wochenmarkt<option>Online-Shop<option>Tauschbörse<option>Verkaufsausstellung<option>Marktgebäude<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Wochenmarkt",
+          "Online-Shop",
+          "Tauschbörse",
+          "Verkaufsausstellung",
+          "Marktgebäude",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Wochenmarkt",
+          "Online-Shop"
+        ],
+        "explanation": "Die Fragen wurden so formuliert, dass sie das Verständnis des Markt-Begriffs und seine verschiedenen Formen testen. Die Antwortmöglichkeiten umfassen eine Vielzahl von Aspekten, die mit dem Markt in Zusammenhang stehen. Durch diese Fragen soll der Lernende in der Lage sein, den Markt als flexible und vielfältige Konstruktion zu verstehen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Schwierigkeit ist angemessen, da die Frage nicht zu einfach oder zu komplex ist. Sie bezieht sich auf unterschiedliche Formen von Märkten und erfordert einige allgemeine Kenntnisse über den Begriff des Marktes.",
+            "suggestions": [
+              "Ein möglicher Verbesserungsvorschlag wäre, die Frage etwas präziser zu formulieren, um sicherzustellen, dass die Antwortmöglichkeiten klar und eindeutig sind. Zum Beispiel könnte die Frage \"Welche Formen von Märkten gibt es?\" statt \"Welche Form des Marktes ist auch online möglich?\" sein."
+            ],
+            "reasoning": "Die Frage entspricht im Wesentlichen der Schwierigkeit einer Stammaufgabe, da sie eine allgemeine Kenntnis über den Begriff des Marktes und verschiedene Marktformen verlangt. Die Antwortmöglichkeiten sind nicht zu einfach oder zu komplex und die Frage ist daher für eine Stammaufgabe geeignet.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert, aber es fehlen einige wichtige Aspekte der Marktformen. Der Schüler sollte wissen, dass auch zusätzliche Option 6 online möglich ist.",
+            "suggestions": [
+              "Eine mögliche Anpassung könnte sein, die Frage um weitere Informationen zu ergänzen (z.B. \"Welche Form des Marktes kann in den letzten Jahren auch online möglich werden?\")."
+            ],
+            "reasoning": "Die Antwort 3 als Taxonomie-Bewertung basiert auf der Tatsache, dass die Frage eine Erwartung an das Wissen des Schülers setzt, verschiedene Marktformen zu nennen. Die Bewertung von 3 entspricht einer \"Anwendung\"-Fähigkeit (Bloom'sche Taxonomie).",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": true
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage ist moderat, da sie eine Kombination von logischen Denkfähigkeiten (Erkennen der richtigen Marktformen) und Wissen über die Eigenschaften verschiedener Marktelemente erfordert.",
+            "suggestions": [
+              "Es könnten weitere Fragen bereitgestellt werden, um die mathematische Komplexität zu erhöhen, wie z.B. ein Fragebogen mit Fragen zur Online-Präsenz von Geschäftsideen und -modellen."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Fähigkeit des Schülers, verschiedene Marktformen online zu gestalten, was eine Kombination aus logischem Denken und Wissen über Marktelemente erfordert. Die richtigen Antworten (Online-Shop und Tauschbörse) zeigen, dass der Schüler in der Lage ist, die Eigenschaften verschiedener Marktelemente zu analysieren.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die sprachlichen Hindernisse sind nicht vorhanden, da alle Optionen korrekt und eindeutig beschrieben werden. Die einzige mögliche Verbesserung wäre eine genauere Definition von \"Zusätzliche Option 6\", um die Verwirrung zu vermeiden.",
+            "suggestions": [
+              "Eine genauere Beschreibung von \"Zusätzliche Option 6\" könnte hilfreich sein, um die Klartextigkeit der Frage zu erhöhen. Alternativ könnten weitere Details oder Beispiele für jede Marktform hinzugefügt werden, um ein tieferes Verständnis zu ermöglichen."
+            ],
+            "reasoning": "Die Bewertung als 3 basiert auf der Tatsache, dass die Frage und die Antwortoptionen in der Regel klar und verständlich sind. Jedoch könnte die allgemeine Sprachstil der Frage verbessert werden, um ein größeres Publikum ansprechen zu können.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist gut strukturiert und leicht verständlich. Die Verwendung von Optionen erleichtert es den Antworten, sich auf die wichtigsten Punkte zu konzentrieren. Nur die zusätzliche Option 6 könnte etwas mehr Kontext geboten haben.",
+            "suggestions": [
+              "- Eine knappe Erklärung der möglichen Marktformen direkt nach der Frage einfügen.",
+              "- Die Antwortmöglichkeiten noch sorgfältiger auswählen, um unklare oder überflüssige Optionen zu vermeiden."
+            ],
+            "reasoning": "Die Anweisung wird mit einer expliziten Zielsetzung versehen. Sie ist gut strukturiert und leicht verständlich. Die Antwortmöglichkeiten sind sorgfältig ausgewählt, was die Prüflinge bei der Beantwortung unterstützt.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Form des Marktes ist auch online möglich? <option>Wochenmarkt<option>Online-Shop<option>Tauschbörse<option>Verkaufsausstellung<option>Marktgebäude<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Wodurch ist ein Markt von einem Ort losgelöst?\n\nA) Durch die Verfügbarkeit von Internet\nB) Durch den Einsatz von Social-Media-Plattformen\nC) Durch den Wechsel von realen zu virtuellen Märkten\nD) Durch die Möglichkeit des Tauschs im Freundeskreis\nE) Durch die Einbindung von Online-Zahlungssystemen\nF) Durch die Einführung neuer Verkaufsstrategien <option>A<option>C<option>D<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A",
+          "C",
+          "D",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A",
+          "C"
+        ],
+        "explanation": "Die Fragen wurden so formuliert, dass sie das Verständnis des Markt-Begriffs und seine verschiedenen Formen testen. Die Antwortmöglichkeiten umfassen eine Vielzahl von Aspekten, die mit dem Markt in Zusammenhang stehen. Durch diese Fragen soll der Lernende in der Lage sein, den Markt als flexible und vielfältige Konstruktion zu verstehen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist komplex und erfordert ein differenziertes Verständnis des Marktes. Die richtigen Antworten liegen nicht nur auf der technischen Ebene, sondern auch auf der sozialen Ebene.",
+            "suggestions": [
+              "Es könnten weitere Fragen entwickelt werden, die sich speziell mit den Auswirkungen von Social-Media-Plattformen und Online-Zahlungssystemen auf den Markt befassen. Darüber hinaus könnte ein Teil der Frage spezifischer sein und nur an bestimmte Optionen gehen."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 3 ist, dass sich die Frage komplex genug anfühlt, um ein differenziertes Verständnis des Marktes zu erfordern. Die richtigen Antworten liegen jedoch nicht nur auf der technischen Ebene, sondern auch auf der sozialen Ebene, was den Testkandidaten dazu auffordert, die Beziehungen zwischen verschiedenen Faktoren zu analysieren.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfordert eine genauere Analyse der möglichen Antworten. Die Optionen A und C sind zwar richtig, aber die anderen Optionen (D, Zusätzliche Option 4, Zusätzliche Option 5 und Zusätzliche Option 6) sind falsch und stören den Kontext.",
+            "suggestions": [
+              "Eine Überarbeitung der Frage könnte darin bestehen, die Optionen zu präzisieren oder sie in zwei separate Fragen aufzuteilen. So würde sichergestellt, dass der Testkandidat nicht von falschen Informationen abgelenkt wird."
+            ],
+            "reasoning": "Die Begründung für die Bewertung basiert auf der Fähigkeit des Testkandidaten, die richtigen Antworten zu benennen und dabei die möglichen Auswirkungen der Verfügbarkeit von Internet und des Wechsels von realen zu virtuellen Märkten zu verstehen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": true
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Frage konzentriert sich eher auf die Wirtschafts- und Sozialaspekte der Veränderungen in den Märkten als auf mathematische Komplexitätsanalysen. Daher ist die Bewertung in Bezug auf Mathematikkomplexität gering.",
+            "suggestions": [
+              "Um die Frage auf das Thema der Mathematikkomplexität zu beziehen, könnte man die Frage umformulieren, um Aspekte wie die Komplexität von Algorithmen oder Modellen zu berücksichtigen, die bei der Analyse und dem Handeln in virtuellen Märkten relevant sind. Dies würde die mathematische Komplexität in den Fokus stellen."
+            ],
+            "reasoning": "Die Bewertung von 2 für Mathematikkomplexität basiert auf der Annahme, dass sich die Frage nicht direkt mit mathematischen Konzepten beschäftigt und eher sozial-ökonomische Aspekte behandelt. Eine umformulierte Version der Frage würde jedoch erlauben, tiefer in mathematische Komplexitätsanalysen einzudringen.",
+            "target_value": "0",
+            "applied": true
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage bezieht sich auf die Auswirkungen der digitalen Revolution auf den Markt. Die Optionen A, C und D beschreiben die Loslösung eines Marktes von einem Ort durch technologische Innovationen oder neue Formen des Tauschs. Die Zusätzlichen Optionen 4, 5 und 6 scheinen jedoch nicht direkt mit der Frage zusammenzuhängen.",
+            "suggestions": [
+              "Die Fragensteller sollten sich überlegen, ob die Zusätzlichen Optionen 4, 5 und 6 tatsächlich relevant für die Frage sind oder ob sie durch andere, relevantere Optionen ersetzt werden können."
+            ],
+            "reasoning": "Die Bewertung der Hindernisse wurde aufgrund des Fehlens von sprachlichen Hindernissen als 3 bewertet. Die zusätzlichen Optionen scheinen jedoch nicht direkt mit der Frage zusammenzuhängen, was zu einer mangelnden Klarheit in der Frage führt.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist bedingt durch die Vielzahl an Optionen beeinträchtigt. Eine explizitere Formulierung der Frage würde die Klarheit erhöhen.",
+            "suggestions": [
+              "Eine mögliche Erweiterung der Frage könnte wie folgt aussehen: \"Wodurch ist ein Markt von einem Ort losgelöst? Bitte wählen Sie alle relevanten Faktoren.\" Dies würde die Anwesenden dazu anregen, kritisch über die verschiedenen Optionen nachzudenken."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Tatsache, dass die Frage nicht explizit genug formuliert ist. Die Auswahlmöglichkeiten sind zwar klar aufgeführt, aber eine explizitere Formulierung der Frage würde die Anwesenden dazu anregen, kritisch über die verschiedenen Optionen nachzudenken.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 2,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Average rating 2.6 below threshold, 2 experts suggest improvements",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wodurch ist ein Markt von einem Ort losgelöst?\n\nA) Durch die Verfügbarkeit von Internet\nB) Durch den Einsatz von Social-Media-Plattformen\nC) Durch den Wechsel von realen zu virtuellen Märkten\nD) Durch die Möglichkeit des Tauschs im Freundeskreis\nE) Durch die Einbindung von Online-Zahlungssystemen\nF) Durch die Einführung neuer Verkaufsstrategien <option>A<option>C<option>D<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

@@ -1,0 +1,21 @@
+=== GENERIERUNGSANWEISUNG ===
+Generiere genau 3 verschiedene Fragen basierend auf den obigen Anforderungen.
+
+KRITISCHE FORMAT-ANFORDERUNGEN:
+- Verwende für Multiple-Choice und Single-Choice: <option>Option1<option>Option2<option>Option3...
+- Verwende für True-False: <true-false>Aussage1<true-false>Aussage2
+- Verwende für Mapping: <start-option>Begriff1<start-option>Begriff2<end-option>Definition1<end-option>Definition2
+- Multiple-Choice: 6-8 Optionen erforderlich
+- Single-Choice: Genau 4 Optionen erforderlich
+- True-False: Genau 2 Aussagen erforderlich
+
+STRUKTURIERTE AUSGABE ERFORDERLICH:
+- Verwende die vorgegebenen DSPy-Ausgabefelder
+- Generiere strukturierte Antworten für frage_1, frage_2, frage_3
+- Füge entsprechende antworten_1, antworten_2, antworten_3 hinzu
+- Begründe die Fragengenerierung in generation_rationale
+
+QUALITÄTSSICHERUNG:
+- Alle Fragen müssen die Parameter-Anforderungen erfüllen
+- Markup-Format strikt einhalten
+- Educationally meaningful content bereitstellen

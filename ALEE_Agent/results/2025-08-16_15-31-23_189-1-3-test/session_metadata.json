@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 0.10127449035644531,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Welcher Verteilungsmechanismus ist am ehesten mit dem Motto \"Wer zuerst kommt \u2013 mahlt zuerst\" verbunden? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Losverfahren<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Ein Verteilungsmechanismus, bei dem die Konzertkarten an die \u00e4ltesten Interessenten verteilt werden, geh\u00f6rt zu welchem der folgenden Typen? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Bei welchen Verteilungsmechanismus entscheidet der Zufall, wer die Konzertkarten erh\u00e4lt? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Losverfahren<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T15:31:23.108940",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 77.36276078224182,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Welcher Punkt im Diagramm zeigt den Gleichgewichtspreis?\nA) Der Schnittpunkt der Angebots- und Nachfragegeraden\nB) Der h\u00f6chste Punkt der Angebotsgeraden\nC) Der niedrigste Punkt der Nachfragegeraden\nD) Der Punkt, an dem die Angebots- und Nachfragegeraden sich nicht schneiden <option>A) Der Schnittpunkt der Angebots- und Nachfragegeraden.<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Was passiert, wenn der Preis oberhalb des Gleichgewichtspreises liegt?\nA) Es gibt einen Angebots\u00fcberschuss.\nB) Es gibt einen Nachfrage\u00fcberschuss.\nC) Die Angebot- und Nachfragediagramme sichern sich gegenseitig ab.\nD) Der Gleichgewichtspreis sinkt. <option>A) Es gibt einen Angebots\u00fcberschuss.<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Was ist der Hauptzweck des Preismengendiagramms?\nA) Die Darstellung von Angebot und Nachfrage in einem Diagramm\nB) Die Berechnung des Gleichgewichtspreises\nC) Die Analyse von Faktoren, die den Preis beeinflussen\nD) Die Vorhersage der zuk\u00fcnftigen Preisentwicklung <option>A) Die Darstellung von Angebot und Nachfrage in einem Diagramm.<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T15:32:45.326568",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

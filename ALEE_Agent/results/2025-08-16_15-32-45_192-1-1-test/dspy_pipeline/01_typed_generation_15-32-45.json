@@ -1,0 +1,285 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T15:32:45.325703",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Welcher Punkt im Diagramm zeigt den Gleichgewichtspreis?\nA) Der Schnittpunkt der Angebots- und Nachfragegeraden\nB) Der höchste Punkt der Angebotsgeraden\nC) Der niedrigste Punkt der Nachfragegeraden\nD) Der Punkt, an dem die Angebots- und Nachfragegeraden sich nicht schneiden <option>A) Der Schnittpunkt der Angebots- und Nachfragegeraden.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Der Schnittpunkt der Angebots- und Nachfragegeraden.",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Der Schnittpunkt der Angebots- und Nachfragegeraden.",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen wurden auf der Grundlage des bereitgestellten Textes generiert, um das Verständnis des Preisbildungsmodells im Preismengendiagramm zu testen. Jede Frage soll ein bestimmtes Konzept oder eine bestimmte Fähigkeit beurteilen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert, da sie ein grundlegendes Konzept abfragt, das in der Mikroökonomie erlernt wird. Der Schwierigkeitsgrad, als Stammaufgabe gekennzeichnet, kann jedoch für manche Studierende zu einfach sein.",
+            "suggestions": [
+              "Es könnte hilfreich sein, ähnliche Fragen mit schwierigeren oder komplexeren Konzepten zu verwenden, um die Studenten auf höhere Herausforderungen vorzubereiten. Dies würde es den Studenten ermöglichen, kritisch über das Thema nachzudenken und ihre Verständnisfähigkeit in der Mikroökonomie unter Beweis zu stellen."
+            ],
+            "reasoning": "Die Frage ist im Hinblick auf die Zielsetzung als Stammaufgabe (stammaufgabe) gut geeignet, da sie ein grundlegendes Konzept der Mikroökonomie abfragt. Die Antwortmöglichkeiten sind jedoch sehr einfach gehalten und könnten für Studierende mit geringerem Wissen über das Thema zu leicht sein. Um die Frage als Stammaufgabe zu halten, sollte sie komplexere oder spezifischere Fragen stellen.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert eine Analyse des Diagramms und ein Verständnis der Grundlagen der Mikroökonomie. Die richtige Antwort ist jedoch nicht direkt mit den Optionen \"Zusätzliche Option 2\", \"Zusätzliche Option 3\", \"Zusätzliche Option 4\", \"Zusätzliche Option 5\" oder \"Zusätzliche Option 6\" verbunden, was darauf schließen lässt, dass diese Optionen möglicherweise nicht relevant sind. Ein Vorschlag könnte sein, die Frage neu zu formulieren und die Optionen an die Thematik anzupassen.",
+            "suggestions": [
+              "Neuformulierung der Frage: \"Welcher Punkt im Diagramm zeigt den Gleichgewichtspreis?\"",
+              "Optionen: A) Der Schnittpunkt der Angebots- und Nachfragegeraden, B) Die Kreuzungspunkte von Angebot und Nachfrage"
+            ],
+            "reasoning": "Die richtige Antwort ist A) Der Schnittpunkt der Angebots- und Nachfragegeraden, da dieser Punkt den Preis darstellt, an dem die Menge angeboten und nachgefragt wird. Die Frage erfordert ein Verständnis der Grundlagen der Mikroökonomie und die Fähigkeit, ein Diagramm zu analysieren.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität des Problems wird auf 3 bewertet, da es die Fähigkeit erfordert, Angebot und Nachfrage in einem Diagramm zu analysieren und den Schnittpunkt zu bestimmen. Dies ist ein grundlegendes Konzept der Mikroökonomie, aber nicht sehr anspruchsvoll.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung erforderlich, da die Frage bereits auf einem grundlegenden Niveau steht."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Analyse von Angebot und Nachfrage in einem Diagramm. Die richtige Antwort ist A) Der Schnittpunkt der Angebots- und Nachfragegeraden, was ein grundlegendes Konzept der Mikroökonomie darstellt.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und die Antwortmöglichkeiten sind klar definiert. Es gibt jedoch eine unerwartete Anzahl von Zusätzlichen Optionen, was den Lesenden möglicherweise verwirren könnte. Ein Vorschlag wäre, diese Optionen entfernen oder eine klare Begründung für ihre Präsenz in der Frage zu geben.",
+            "suggestions": [
+              "- Entferne die zusätzlichen Optionen aus der Frage.",
+              "- Füge eine klare Begründung zur Rechtfertigung ihrer Präsenz hinzu, wenn diese erforderlich ist."
+            ],
+            "reasoning": "Die Frage bezieht sich auf ein grundlegendes Konzept in der Mikroökonomie. Die Antwortmöglichkeiten sind klar definiert und die Frage ist gut formuliert. Die zusätzlichen Optionen könnten jedoch als sprachliches Hindernis angesehen werden, da sie den Lesenden möglicherweise verwirren.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist sehr klar und präzise, sodass der Schüler genau weiß, was er tun soll. Es gibt auch genügend Optionen zur Auswahl, die alle plausibel sind.",
+            "suggestions": [
+              "Keine Vorschläge für Verbesserungen, da die Anweisung bereits gut formuliert ist."
+            ],
+            "reasoning": "Die Anweisung wird durch den expliziten Hinweis auf den Gleichgewichtspreis und die klaren Optionen unterstützt. Der Schüler kann sich somit leicht an der Aufgabe orientieren und weiß genau, was er tun soll.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welcher Punkt im Diagramm zeigt den Gleichgewichtspreis?\nA) Der Schnittpunkt der Angebots- und Nachfragegeraden\nB) Der höchste Punkt der Angebotsgeraden\nC) Der niedrigste Punkt der Nachfragegeraden\nD) Der Punkt, an dem die Angebots- und Nachfragegeraden sich nicht schneiden <option>A) Der Schnittpunkt der Angebots- und Nachfragegeraden.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Was passiert, wenn der Preis oberhalb des Gleichgewichtspreises liegt?\nA) Es gibt einen Angebotsüberschuss.\nB) Es gibt einen Nachfrageüberschuss.\nC) Die Angebot- und Nachfragediagramme sichern sich gegenseitig ab.\nD) Der Gleichgewichtspreis sinkt. <option>A) Es gibt einen Angebotsüberschuss.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Es gibt einen Angebotsüberschuss.",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Es gibt einen Angebotsüberschuss.",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen wurden auf der Grundlage des bereitgestellten Textes generiert, um das Verständnis des Preisbildungsmodells im Preismengendiagramm zu testen. Jede Frage soll ein bestimmtes Konzept oder eine bestimmte Fähigkeit beurteilen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage bezieht sich auf ein wichtiges Konzept der Volkswirtschaftslehre. Die Antwortmöglichkeiten sind zwar nicht ideal formuliert, aber die richtige Antwort ist korrekt.",
+            "suggestions": [
+              "Die Frage könnte umformuliert werden, um den Gegenstand besser zu verstehen: \"Was passiert, wenn der Preis des Waren über dem Gleichgewichtspreis liegt?\" Zusätzliche Optionen sind entbehrlich und sollten entfernt werden."
+            ],
+            "reasoning": "Die Frage erfordert ein Verständnis des Konzepts des Gleichgewichtspreises und seiner Auswirkungen auf das Angebot und die Nachfrage. Die richtige Antwort ist durch logisches Denken über die Beziehungen zwischen Angebot, Nachfrage und Preis erreichbar.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und deckt ein wichtiges Konzept in der Mikroökonomie ab. Die Antwortmöglichkeiten sind jedoch nicht ideal, da einige davon (Zusätzliche Option 2-6) nicht relevant für das Problem sind.",
+            "suggestions": [
+              "Es wäre hilfreich, wenn die Frage mehr optionale Antworten hätte, die direkt auf das Problem zugeschnitten wären. Dies würde es den Studierenden ermöglichen, ihr Wissen besser anzuwenden und zu demonstrieren."
+            ],
+            "reasoning": "Die Bewertung erfolgt gemäß Bloom's Taxonomie als Stufe 1 (Wissen/Reproduktion), da die Frage lediglich nach einer Kenntnis oder einem Wissen fragt. Die richtige Antwort muss einfach reproduziert werden, ohne dass es um ein Verständnis oder eine Analyse des Problems geht.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage bezieht sich auf die Analyse von Angebot und Nachfrage. Die richtige Antwort ist A) Es gibt einen Angebotsüberschuss, da bei einem Preis oberhalb des Gleichgewichtspreises das Angebot höher ist als die Nachfrage.",
+            "suggestions": [
+              "Die Frage könnte eine Erklärung über den Marktgleichgewicht und dessen Auswirkungen auf die Preise umfassen. Dies würde den Lernenden ein tieferes Verständnis der Märkte und ihrer Funktionsweise vermitteln."
+            ],
+            "reasoning": "Die Bewertung von 3 wurde gewählt, da die Frage einen einfachen mathematischen Kontext beinhaltet, aber eine gewisse Analysefähigkeit in Bezug auf Angebot und Nachfrage erfordert. Die richtige Antwort ist nicht einfach durch einfache Addition oder Subtraktion zu erhalten.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfordert ein grundlegendes Verständnis von Angebot und Nachfrage. Die Antwortoptionen sind klar formuliert, aber einige Optionen könnten für nicht-wissenschaftlich geschulte Personen verwirrend sein. Einige Wörter wie \"Gleichgewichtspreis\" oder \"Angebotsüberschuss\" erfordern ein bestimmtes Fachwissen.",
+            "suggestions": [
+              "Um die Frage verständlicher zu machen, könnten folgende Vorschläge gemacht werden: ",
+              "- Die Frage könnte mit einer kurzen Erklärung des Gleichgewichtspreises und der Bedeutung von Angebot und Nachfrage eingeleitet werden.",
+              "- Die Antwortoptionen könnten eindeutiger formuliert werden, um Verwirrung zu vermeiden."
+            ],
+            "reasoning": "Die Frage wird mit 2 Punkten bewertet, da sie ein grundlegendes Verständnis von Angebot und Nachfrage voraussetzt. Die sprachlichen Hindernisse sind gering, da die Frage klar formuliert ist und keine ungewöhnlichen Fachbegriffe verwendet.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut, aber es wäre hilfreich, wenn zusätzliche Erklärungen oder Beispiele hinzugefügt würden, um sicherzustellen, dass der Schüler das Konzept wirklich versteht. Die Antwortmöglichkeiten sind jedoch sehr ausführlich und helfen dabei.",
+            "suggestions": [
+              "- Hinzufügen von Beispielgrafiken oder -tabellen, um die Beziehungen zwischen Angebot, Nachfrage und Gleichgewichtspreis besser zu illustrieren.",
+              "- Eine Zusammenfassung der wichtigsten Punkte am Ende der Anweisung, um sicherzustellen, dass der Schüler alles verstanden hat."
+            ],
+            "reasoning": "Die Anweisung wird mit 4 von 5 bewertet, da sie klar und explizit ist. Der einzige Punkt, an dem Verbesserungen möglich wären, wäre die Hinzufügung zusätzlicher Erklärungen oder Beispiele, um sicherzustellen, dass der Schüler das Konzept wirklich versteht.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 2,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was passiert, wenn der Preis oberhalb des Gleichgewichtspreises liegt?\nA) Es gibt einen Angebotsüberschuss.\nB) Es gibt einen Nachfrageüberschuss.\nC) Die Angebot- und Nachfragediagramme sichern sich gegenseitig ab.\nD) Der Gleichgewichtspreis sinkt. <option>A) Es gibt einen Angebotsüberschuss.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Was ist der Hauptzweck des Preismengendiagramms?\nA) Die Darstellung von Angebot und Nachfrage in einem Diagramm\nB) Die Berechnung des Gleichgewichtspreises\nC) Die Analyse von Faktoren, die den Preis beeinflussen\nD) Die Vorhersage der zukünftigen Preisentwicklung <option>A) Die Darstellung von Angebot und Nachfrage in einem Diagramm.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Die Darstellung von Angebot und Nachfrage in einem Diagramm.",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Die Darstellung von Angebot und Nachfrage in einem Diagramm.",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen wurden auf der Grundlage des bereitgestellten Textes generiert, um das Verständnis des Preisbildungsmodells im Preismengendiagramm zu testen. Jede Frage soll ein bestimmtes Konzept oder eine bestimmte Fähigkeit beurteilen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält zwar eine Auswahlmöglichkeit, diese scheint jedoch nicht speziell auf die Schwierigkeitsgrade angepasst zu sein. Die Antworttypen sollten spezifischer und weniger überladen sein.",
+            "suggestions": [
+              "- Eine genauere Definition des Ziels der Frage.",
+              "- Vereinfachte Antwortoptionen, um die Aufgaben Schwierigkeit anzupassen."
+            ],
+            "reasoning": "Die Bewertung ist aufgrund der fehlenden Klarheit des Ziels und der Überlastung der Antworttypen mit 3 bewertet. Die Frage könnte durch eine genauere Definition des Ziels und vereinfachte Antworten verbessert werden, um der Schwierigkeitsstufe \"stammaufgabe\" gerecht zu werden.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und die Antwortmöglichkeiten sind plausibel. Der Schüler muss lediglich den Hauptzweck des Diagramms identifizieren. Die richtige Antwort ist jedoch ein bisschen allzu offensichtlich, sodass der Schüler nicht unbedingt kritisch über die Frage nachdenken muss.",
+            "suggestions": [
+              "Um die Komplexität der Frage zu erhöhen, könnten weitere Optionen mit spezifischeren und plausiblen Antworten hinzugefügt werden. Zum Beispiel:",
+              "",
+              "* Die Berechnung des Gleichgewichtspreises unter Berücksichtigung von Angebot und Nachfrage.",
+              "* Die Analyse von Faktoren, die den Preis beeinflussen, wie z.B. Steuern oder Transportkosten.",
+              "",
+              "Dies würde den Schüler dazu bringen, kritischer über die Frage nachzudenken und die Optionen sorgfältig zu prüfen."
+            ],
+            "reasoning": "Die Bewertung der Frage ist 3 (Analyse), da der Schüler lediglich den Hauptzweck des Diagramms identifizieren muss. Es handelt sich nicht um eine Erklärung oder Anwendung von Wissen, sondern eher um eine Identifikation einer allgemeinen Tatsache.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage bezieht sich auf grundlegende mathematische Konzepte, insbesondere Graphen und Statistik in einem wirtschaftlichen Kontext. Die richtige Antwort sollte diese Konzepte umfassend abdecken.",
+            "suggestions": [
+              "- Beim Erstellen der Fragen sollten die Mathematikerstufen angemessen ausgewählt werden.",
+              "- Die Frage sollte sich speziell auf die mathematische Komplexität in einem wirtschaftlichen Kontext konzentrieren."
+            ],
+            "reasoning": "Die Bewertung basiert auf dem Grad an Umfassung grundlegender mathematischer Konzepte, insbesondere Graphen und Statistik im wirtschaftlichen Kontext. Die richtige Antwort sollte diese Konzepte genau abdecken, was die Wahl der richtigen Mathematikerstufe rechtfertigt.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Keine sprachlichen Hindernisse, die die Verständlichkeit der Frage beeinträchtigen. Die Antwortmöglichkeiten sind eindeutig und genau definiert.",
+            "suggestions": [
+              "Keine Vorschläge zur Änderung des Inhalts der Frage oder der Antwortmöglichkeiten."
+            ],
+            "reasoning": "Die Bewertung von 4 ergibt sich aus der Tatsache, dass die Frage klar und präzise formuliert ist und die Antwortmöglichkeiten eindeutig und genau definiert sind. Es gibt keine sprachlichen Hindernisse, die die Verständlichkeit der Frage beeinträchtigen.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Der Hauptzweck des Preismengendiagramms ist gut beschrieben, aber es fehlen einige Details. Die Antwort könnte noch klarer und präziser formuliert werden.",
+            "suggestions": [
+              "- Eine genauere Beschreibung der Faktoren, die den Preis beeinflussen.",
+              "- Eine klare Erklärung der Bedeutung des Gleichgewichtspreises."
+            ],
+            "reasoning": "Die Frage ist gut gestaltet und es gibt eine klare Antwort. Die Hauptzweck des Preismengendiagramms wird als Darstellung von Angebot und Nachfrage in einem Diagramm dargestellt. Dies entspricht der expliziten Zielsetzung, die im Fragebereich angegeben wurde.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist der Hauptzweck des Preismengendiagramms?\nA) Die Darstellung von Angebot und Nachfrage in einem Diagramm\nB) Die Berechnung des Gleichgewichtspreises\nC) Die Analyse von Faktoren, die den Preis beeinflussen\nD) Die Vorhersage der zukünftigen Preisentwicklung <option>A) Die Darstellung von Angebot und Nachfrage in einem Diagramm.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

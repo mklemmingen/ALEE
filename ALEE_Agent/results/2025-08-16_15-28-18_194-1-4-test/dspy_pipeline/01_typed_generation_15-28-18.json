@@ -1,0 +1,278 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T15:28:18.044165",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Welche Auswirkung hat eine Erhöhung der Nachfrage auf den Gleichgewichtspreis?\nA) Der Gleichgewichtspreis sinkt.\nB) Der Gleichgewichtspreis bleibt gleich.\nC) Der Gleichgewichtspreis steigt.\nD) Es kann nicht bestimmt werden, was mit dem Gleichgewichtspreis passiert. <option>A) Der Gleichgewichtspreis sinkt.\nB) Der Gleichgewichtspreis bleibt gleich.\nC) Der Gleichgewichtspreis steigt.\nD) Es kann nicht bestimmt werden<option>was mit dem Gleichgewichtspreis passiert.<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Der Gleichgewichtspreis sinkt.\nB) Der Gleichgewichtspreis bleibt gleich.\nC) Der Gleichgewichtspreis steigt.\nD) Es kann nicht bestimmt werden",
+          "was mit dem Gleichgewichtspreis passiert.",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Der Gleichgewichtspreis sinkt.\nB) Der Gleichgewichtspreis bleibt gleich.\nC) Der Gleichgewichtspreis steigt.\nD) Es kann nicht bestimmt werden",
+          "was mit dem Gleichgewichtspreis passiert."
+        ],
+        "explanation": "Die Fragengenerierung basiert auf dem Text und den Parametern. Wir haben eine stammaufgaben-Charakter mit der Taxonomiestufe Stufe 1 (Wissen/Reproduktion). Die Fragen sollen daher auf Basis des gegebenen Textes gestellt werden, um das Verständnis der Konzepte \"Verschiebung der Nachfragegeraden\" und \"Angebotsanstieg\" zu überprüfen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist zwar verständlich, aber die Antwortmöglichkeiten und das beabsichtigte Konzept sind möglicherweise nicht klar. Die Addition von \"Zusätzlichen Optionen\" wirft Fragen zu ihrer Relevanz auf.",
+            "suggestions": [
+              "- Überprüfen Sie die Fragestellung und den Kontext, um sicherzustellen, dass sie logisch und konsistent ist.",
+              "- Vereinfachen Sie die Antwortmöglichkeiten, indem Sie sich auf die relevantesten und am besten unterstützten Optionen konzentrieren.",
+              "- Berücksichtigen Sie die Hinzufügen von \"Zusätzlichen Optionen\" als mögliche Quelle der Verwirrung."
+            ],
+            "reasoning": "Die Frage zielt auf ein grundlegendes Konzept der Marktwirtschaft ab, nämlich das Verhältnis zwischen Angebot und Nachfrage. Die richtige Antwort sollte basierend auf diesem Verständnis ermittelt werden. In diesem Fall scheint es jedoch eine Unklarheit oder Ungenauigkeit in der Frage selbst zu geben, da die Reaktion des Gleichgewichtspreises bei einer erhöhten Nachfrage nicht so einfach zu erklären ist wie das Gegenteil.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert ein hohes Maß an Wissen über mikroökonomische Prinzipien. Die richtige Antwort zeigt ein Verständnis der Beziehung zwischen Nachfrage und Gleichgewichtspreis. Es gibt jedoch keine Anhaltspunkte dafür, dass die Frage nach kritischer Denkfähigkeit oder dem Anwendung von Fähigkeiten fragt.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung der Taxonomiestufe."
+            ],
+            "reasoning": "Die Frage wird der Stufe 1 der Bloom'schen Taxonomie zugeordnet, da sie ein Verständnis wirtschaftlicher Konzepte erfordert und keine kritische Analyse oder kreativen Denkprozesse beinhaltet. Die richtige Antwort zeigt ein Verständnis des Marktwerts und des Gleichgewichtspreises.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage ist mittelmäßig. Die Konzepte der Nachfrage und Angebot werden angenommen, aber die Auswirkungen auf den Gleichgewichtspreis werden nicht ausreichend erklärt.",
+            "suggestions": [
+              "Um die mathematische Komplexität zu erhöhen, könnten weitere Fragen zum Thema Marktgleichgewicht gestellt werden. Außerdem könnte das Konzept des Gleichgewichtspreises in Bezug auf andere Variablen (z.B. Angebot) erklärt werden."
+            ],
+            "reasoning": "Die Bewertung von 3 wird aufgrund der Annahme der Nachfrage- und Angebotskonzepte sowie der Erwartung, dass die Auswirkungen auf den Gleichgewichtspreis erklärt werden, vorgenommen. Die Frage ist jedoch nicht komplex genug, um ein höheres Bewertungsniveau zu rechtfertigen.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Keine sprachlichen Hindernisse festgestellt. Die Frage ist klar formuliert und die Antwortmöglichkeiten sind genau definiert.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung, da keine sprachlichen Hindernisse festgestellt wurden."
+            ],
+            "reasoning": "Die Frage ist klar formuliert und die Antwortmöglichkeiten sind genau definiert. Es gibt keine sprachlichen Hindernisse, die eine Anpassung erforderlich machen würden.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisung ist klar und genau. Die Optionen sind gut definiert und erleichtern es dem Schüler, die Frage richtig zu beantworten. Es gibt jedoch einen Anschein von Überfrachtung mit Optionen, was möglicherweise Verwirrung stiften könnte.",
+            "suggestions": [
+              "Um die Anweisungsklarheit zu verbessern, kann eine kurze Erklärung zum Konzept des Gleichgewichtspreises hinzugefügt werden. Darüber hinaus sollte die Reihenfolge der Optionen so angepasst werden, dass die wahrscheinlichste Antwort (C) am Ende steht."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 3 ist, dass die Frage genau und klar formuliert ist. Die Optionen sind gut definiert und erleichtern es dem Schüler, die Frage richtig zu beantworten. Der einzige Kritikpunkt ist die Überfrachtung mit Optionen.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Auswirkung hat eine Erhöhung der Nachfrage auf den Gleichgewichtspreis?\nA) Der Gleichgewichtspreis sinkt.\nB) Der Gleichgewichtspreis bleibt gleich.\nC) Der Gleichgewichtspreis steigt.\nD) Es kann nicht bestimmt werden, was mit dem Gleichgewichtspreis passiert. <option>A) Der Gleichgewichtspreis sinkt.\nB) Der Gleichgewichtspreis bleibt gleich.\nC) Der Gleichgewichtspreis steigt.\nD) Es kann nicht bestimmt werden<option>was mit dem Gleichgewichtspreis passiert.<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Was tritt ein, wenn die Produktionskosten für Milch-Landwirt*innen in Ökonomia sinken?\nA) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.\nB) Die Verschiebung der Nachfragegeraden führt zu einem Anstieg des Gleichgewichtspreises.\nC) Das Angebot erhöht sich, was zu einem Sinken des Gleichgewichtspreises führt.\nD) Der Gleichgewichtspreis bleibt gleich. <option>A) Das Angebot erhöht sich<option>was zu einem Sinken des Gleichgewichtspreises führt.\nB) Die Verschiebung der Nachfragegeraden führt zu einem Anstieg des Gleichgewichtspreises.\nC) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.\nD) Der Gleichgewichtspreis bleibt gleich.<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Das Angebot erhöht sich",
+          "was zu einem Sinken des Gleichgewichtspreises führt.\nB) Die Verschiebung der Nachfragegeraden führt zu einem Anstieg des Gleichgewichtspreises.\nC) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.\nD) Der Gleichgewichtspreis bleibt gleich.",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Das Angebot erhöht sich",
+          "was zu einem Sinken des Gleichgewichtspreises führt.\nB) Die Verschiebung der Nachfragegeraden führt zu einem Anstieg des Gleichgewichtspreises.\nC) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.\nD) Der Gleichgewichtspreis bleibt gleich."
+        ],
+        "explanation": "Die Fragengenerierung basiert auf dem Text und den Parametern. Wir haben eine stammaufgaben-Charakter mit der Taxonomiestufe Stufe 1 (Wissen/Reproduktion). Die Fragen sollen daher auf Basis des gegebenen Textes gestellt werden, um das Verständnis der Konzepte \"Verschiebung der Nachfragegeraden\" und \"Angebotsanstieg\" zu überprüfen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage entspricht gut der Schwierigkeitsstufe \"stammaufgabe\", da sie ein Verständnis des Marktmechanismus und seine Auswirkungen auf Preise verlangt. Die Antwortmöglichkeiten sind klare und präzise formuliert.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge erforderlich, da die Frage gut konzipiert ist."
+            ],
+            "reasoning": "Die Frage hat eine klare und prägnante Formulierung, was es den Studierenden ermöglicht, das Problem direkt zu verstehen. Die Antwortmöglichkeiten sind ausreichend, um ein differenziertes Verständnis des Themas abzubilden.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert ein gutes Verständnis des Konzepts von Angebot und Gleichgewichtspreis. Die Prüfung könnte jedoch verbessert werden, indem die Optionen klarer und präziser formuliert werden.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Begründung für die Bewertung ist, dass der Prüfling ein Verständnis des Konzepts von Angebot und Gleichgewichtspreis zeigt. Der Prüfling kann jedoch besser werden, indem er seine Fähigkeit, komplexe Situationen zu analysieren und die Folgen abzuschätzen, unter Beweis stellt.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage ist relativ einfach, da sie sich auf die Grundlagen von Angebot und Nachfrage bezieht. Die richtige Antwort erfordert ein Verständnis der Beziehung zwischen Angebotsanstieg und Gleichgewichtspreis.",
+            "suggestions": [
+              "Für eine korrekte Komplexität sollte die Frage möglicherweise komplexere Konzepte wie Einkommenselasticitäten oder Substitutionseffekte beinhalten. Außerdem könnte die Frage mehr mathematische Formeln enthalten, um das Verständnis der Schüler zu überprüfen."
+            ],
+            "reasoning": "Die Bewerung von 3 ergibt sich aus dem Verständnis des Angebotsanstiegs und seiner Auswirkungen auf den Gleichgewichtspreis. Die richtige Antwort zeigt ein grundlegendes Verständnis der Beziehung zwischen Angebot und Nachfrage.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält keine sprachlichen Hindernisse. Der Text ist klar und unkompliziert, und die Optionen sind leicht verständlich.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung erforderlich."
+            ],
+            "reasoning": "Die Frage wird durch ein klares Verständnis der Grundlagen von Angebot und Nachfrage bestimmt. Die richtige Antwort ist schnell erreichbar, da sie logisch auf der Basis des Themas folgt.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut, aber es wäre hilfreich, wenn die Frage explizit erwähnen würde, welcher Gleichgewichtspreis gemeint ist (Marktpreis oder Grenzkostenpreis). Die Antwortmöglichkeiten sind jedoch korrekt und logisch strukturiert.",
+            "suggestions": [
+              "- Die Frage könnte explizit erwähnen, welcher Gleichgewichtspreis gemeint ist.",
+              "- Die Antwortmöglichkeiten könnten mit kurzen Erklärungen versehen werden, um sicherzustellen, dass der Student versteht, warum jede Option falsch oder richtig ist."
+            ],
+            "reasoning": "Die Anweisungsklarheit beträgt 4, da die Frage genau und präzise formuliert ist. Der Begriff \"Produktionskosten\" wird explizit erwähnt, was für den Studenten eine klare Bedeutung liefern sollte.",
+            "target_value": "Explizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was tritt ein, wenn die Produktionskosten für Milch-Landwirt*innen in Ökonomia sinken?\nA) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.\nB) Die Verschiebung der Nachfragegeraden führt zu einem Anstieg des Gleichgewichtspreises.\nC) Das Angebot erhöht sich, was zu einem Sinken des Gleichgewichtspreises führt.\nD) Der Gleichgewichtspreis bleibt gleich. <option>A) Das Angebot erhöht sich<option>was zu einem Sinken des Gleichgewichtspreises führt.\nB) Die Verschiebung der Nachfragegeraden führt zu einem Anstieg des Gleichgewichtspreises.\nC) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.\nD) Der Gleichgewichtspreis bleibt gleich.<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Was tritt ein, wenn die Nachfrage nach Milch in Ökonomia steigt?\nA) Die Verschiebung der Nachfragegeraden führt zu einem Sinken des Gleichgewichtspreises.\nB) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.\nC) Die Nachfrage nach Milch führt zu einem Anstieg des Gleichgewichtspreises.\nD) Der Gleichgewichtspreis bleibt gleich. <option>A) Die Nachfrage nach Milch führt zu einem Anstieg des Gleichgewichtspreises.\nB) Die Verschiebung der Nachfragegeraden führt zu einem Sinken des Gleichgewichtspreises.\nC) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.\nD) Der Gleichgewichtspreis bleibt gleich.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Die Nachfrage nach Milch führt zu einem Anstieg des Gleichgewichtspreises.\nB) Die Verschiebung der Nachfragegeraden führt zu einem Sinken des Gleichgewichtspreises.\nC) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.\nD) Der Gleichgewichtspreis bleibt gleich.",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Die Nachfrage nach Milch führt zu einem Anstieg des Gleichgewichtspreises.\nB) Die Verschiebung der Nachfragegeraden führt zu einem Sinken des Gleichgewichtspreises.\nC) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.\nD) Der Gleichgewichtspreis bleibt gleich.",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragengenerierung basiert auf dem Text und den Parametern. Wir haben eine stammaufgaben-Charakter mit der Taxonomiestufe Stufe 1 (Wissen/Reproduktion). Die Fragen sollen daher auf Basis des gegebenen Textes gestellt werden, um das Verständnis der Konzepte \"Verschiebung der Nachfragegeraden\" und \"Angebotsanstieg\" zu überprüfen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage entspricht dem gewünschten Schwierigkeitsgrad \"stammaufgabe\" im Bereich Mikroökonomie. Der Schüler sollte die Grundlagen verinnerlicht haben, um das Thema zu verstehen und richtig beantworten zu können.",
+            "suggestions": [
+              "- Stellen Sie sicher, dass der Student die Konzepte von Angebot und Nachfrage, sowie den Einfluss von Preissenkung auf diese Marktdynamiken, gut versteht.",
+              "- Überprüfen Sie, ob die Optionen klar und prägnant formuliert sind, um Missverständnisse zu vermeiden."
+            ],
+            "reasoning": "Die Frage stimmt inhaltlich mit den Anforderungen einer Stammaufgabe überein. Der Schüler muss nicht nur das richtige Konzept kennen, sondern auch die Fähigkeit besitzen, es anhand der gegebenen Situation zu anwenden und zu erklären.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und erfordert tatsächlich ein Verständnis des Gleichgewichtspreises. Die Antwortoptionen sind klar und logisch. Der Schüler muss jedoch den Zusammenhang zwischen Nachfrage und Preis verstehen, was für die Stufe 1 (Wissen/Reproduktion) eine Herausforderung darstellen kann.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Frage erfordert, dass der Schüler seine Kenntnisse über den Gleichgewichtspreis anwendet. Die richtige Antwort zeigt ein Verständnis des Konzepts und die Fähigkeit, es auf ein bestimmtes Szenario anzuwenden.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität ist gering, da es sich um ein einfaches Konzept aus dem Bereich Mikroökonomie handelt. Die richtige Antwort zeigt ein grundlegendes Verständnis des Gleichgewichtspreises und seiner Reaktion auf die Nachfrage.",
+            "suggestions": [
+              "Die Frage könnte komplexer gestellt werden, indem man das Thema auf ein Spezialfall wie z.B. Monopole oder Oligopole erweitert. Dies würde den Studenten ermöglichen, tiefer in die mathematische Modellierung des Marktes einzutauchen."
+            ],
+            "reasoning": "Die Bewertung ist 3, da die Frage grundlegendes Verständnis der Gleichgewichtspreisbildung beinhaltet, was für die Mathematikstufe 0 relevant ist. Die richtige Antwort zeigt ein Verständnis des Konzepts und seiner Anwendung auf das gegebene Szenario.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Keine sprachlichen Hindernisse wurden erkannt. Die Frage ist klar formuliert und die Antwortmöglichkeiten sind präzise definiert.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich."
+            ],
+            "reasoning": "Die Frage bezieht sich auf mikroökonomische Prinzipien, und die richtige Antwort ist logisch abgeleitet. Die sprachliche Formulierung der Frage ist klar und präzise, und es gibt keine erkennbaren Hindernisse.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut, aber eine logischere Aufzählung der Zusätzlichen Optionen würde sie noch besser machen. Außerdem sollte die Frage und die Antwortmöglichkeiten leichter verständlich sein, damit auch Nicht-Wirtschaftsstudenten die Frage beantworten können.",
+            "suggestions": [
+              "- Die Zusätzlichen Optionen sollten in einer logischen Reihenfolge aufgeführt werden.",
+              "- Die Frage und die Antwortmöglichkeiten sollten leichter verständlich sein.",
+              "- Es könnte hilfreich sein, wenn die Frage eine kurze Erklärung enthält, warum die Nachfrage nach Milch zu einem Anstieg des Gleichgewichtspreises führt."
+            ],
+            "reasoning": "Die Anweisung ist gut, aber es gibt einige Punkte, die verbessert werden könnten. Die Klarheit der Frage und Antwortmöglichkeiten ist sehr wichtig, damit auch Nicht-Experten die Frage beantworten können. Außerdem sollten die Zusätzlichen Optionen logisch aufgeführt werden.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.4 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was tritt ein, wenn die Nachfrage nach Milch in Ökonomia steigt?\nA) Die Verschiebung der Nachfragegeraden führt zu einem Sinken des Gleichgewichtspreises.\nB) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.\nC) Die Nachfrage nach Milch führt zu einem Anstieg des Gleichgewichtspreises.\nD) Der Gleichgewichtspreis bleibt gleich. <option>A) Die Nachfrage nach Milch führt zu einem Anstieg des Gleichgewichtspreises.\nB) Die Verschiebung der Nachfragegeraden führt zu einem Sinken des Gleichgewichtspreises.\nC) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.\nD) Der Gleichgewichtspreis bleibt gleich.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

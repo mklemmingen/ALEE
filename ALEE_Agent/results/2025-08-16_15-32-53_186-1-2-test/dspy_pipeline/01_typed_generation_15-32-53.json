@@ -1,0 +1,282 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T15:32:53.099459",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was sind Opportunitätskosten? <option>Zeit, die man nicht benötigt hat<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Zeit, die man nicht benötigt hat",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Zeit, die man nicht benötigt hat",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen sind so konzipiert, dass sie ein Verständnis für das Konzept der Opportunitätskosten und die Abwägung von Kosten und Nutzen bei Entscheidungen vermitteln. Die Antwortoptionen sind so ausgewählt, dass sie ein differenziertes Verständnis des Themas ermöglichen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 2,
+            "feedback": "Die Frage könnte komplexer gestaltet sein, indem spezifische Beispiele oder ein reales Szenario verwendet wird, um die Begrifflichkeit zu illustrieren. So wäre es leichter für den Prüfling, das Konzept der Opportunitätskosten zu verstehen.",
+            "suggestions": [
+              "* Hinzufügen eines Beispiels oder Szenarios, in dem Opportunitätskosten relevant sind",
+              "* Klare und spezifische Definitionen in den Antwortmöglichkeiten"
+            ],
+            "reasoning": "Die Frage ist nicht schlecht formuliert, aber um eine stammaufgabe zu erreichen, müsste sie komplexer gestaltet sein. Die Antwortmöglichkeiten sind nicht optimal für die Bestimmung der Opportunitätskosten geeignet.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage entspricht der Stufe 1 der Bloom'schen Taxonomie (Wissen/Reproduktion), da sie das Verständnis und die Reproduktion eines Begriffs erfordert. Die Antwortmöglichkeiten sind jedoch nicht optimal für eine solche Frage, da einige davon zu weit entfernt von der richtigen Antwort liegen.",
+            "suggestions": [
+              "Es könnte hilfreich sein, die Antwortmöglichkeiten so zu gestalten, dass sie sich nahe an der richtigen Antwort befinden und den Schülern helfen, zwischen ihnen zu unterscheiden. Beispielsweise könnten Option 1 und Option 2 beide plausible Definitionen von Opportunitätskosten enthalten."
+            ],
+            "reasoning": "Die Frage entspricht der Stufe 1 der Bloom'schen Taxonomie (Wissen/Reproduktion), da sie das Verständnis und die Reproduktion eines Begriffs erfordert. Die Antwortmöglichkeiten sind jedoch nicht optimal für eine solche Frage.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität der Frage liegt in der Kenntnis der Investitionsrechnung und der Kostenarten. Die Antwort zeigt, dass die Schülerin eine einfache, aber richtige Lösung hat. Allerdings fehlt die Erklärung für den Begriff \"Opportunitätskosten\".",
+            "suggestions": [
+              "- Eine Erklärung des Begriffs \"Opportunitätskosten\" in Bezug auf Investitionsrechnung und Kostenarten.",
+              "- Eine Aufforderung, die Schülerin, ihre Gedanken zur richtigen Antwort zu schreiben."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der richtigen Antwort, aber auch auf der fehlenden Erklärung zum Begriff \"Opportunitätskosten\". Eine höhere Bewertung wäre möglich, wenn die Schülerin die Frage besser begründen und erklären kann.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 5,
+            "feedback": "Die Frage enthält möglicherweise keine klaren Definitionen oder Beispiele für Opportunitätskosten. Die Antwortmöglichkeiten sind nicht eindeutig definiert, was zu Verwirrung bei den Testteilnehmern führen könnte.",
+            "suggestions": [
+              "- Eine genauere Beschreibung der Opportunitätskosten sollte in die Frage aufgenommen werden.",
+              "- Die Antwortmöglichkeiten sollten klar und eindeutig definiert sein, um Verwirrung zu vermeiden."
+            ],
+            "reasoning": "Die Frage enthält keine klaren Definitionen oder Beispiele für Opportunitätskosten, was dazu führen könnte, dass die Testteilnehmer Schwierigkeiten haben, die richtige Antwort zu finden. Die Antwortmöglichkeiten sind nicht eindeutig definiert, was zu Verwirrung bei den Testteilnehmern führen könnte.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem die Optionen 2-6 besser erklärt werden. Es sollte auch klar sein, warum diese Optionen als Opportunitätskosten bezeichnet werden.",
+            "suggestions": [
+              "* Die Optionen 2-6 sollten mit einem kurzen Hinweis erläutert werden, warum sie als Opportunitätskosten betrachtet werden.",
+              "* Eine klare Erklärung der Begrifflichkeit \"Opportunitätskosten\" könnte hilfreich sein."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 4, da die Frage und die Antwortoptionen explizit sind. Die Klarheit könnte verbessert werden, indem die Optionen 2-6 besser erklärt werden.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 2,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 5,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was sind Opportunitätskosten? <option>Zeit, die man nicht benötigt hat<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Warum beziehen sich Kosten und Nutzen nicht allein auf Geld? <option>Weil man Zeit auch als Wert betrachten kann<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Weil man Zeit auch als Wert betrachten kann",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Weil man Zeit auch als Wert betrachten kann",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen sind so konzipiert, dass sie ein Verständnis für das Konzept der Opportunitätskosten und die Abwägung von Kosten und Nutzen bei Entscheidungen vermitteln. Die Antwortoptionen sind so ausgewählt, dass sie ein differenziertes Verständnis des Themas ermöglichen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist für den Schwierigkeitsgrad \"stammaufgabe\" angemessen, da sie ein grundlegendes Verständnis eines Konzepts verlangt. Die Antwortmöglichkeiten sind jedoch nicht sehr komplex oder anspruchsvoll.",
+            "suggestions": [
+              "Um die Frage zu verbessern, könnten weitere Optionen hinzugefügt werden, die das Thema genauer bearbeiten. Zum Beispiel: \"Weil man auch die Gesundheit als Wert betrachten kann\" oder \"Weil man auch den Umweltschutz als Wert betrachten kann\". Dies würde die Frage anspruchsvoller und komplexer machen."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus der Tatsache, dass die Frage ein grundlegendes Verständnis eines Konzepts verlangt, aber nicht sehr komplex oder anspruchsvoll ist. Die Antwortmöglichkeiten sind klar und direkt mit der Frage zusammenhängend.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist gut formuliert und anspruchsvoll genug, um die Bloom'sche Taxonomiestufe Stufe 1 (Wissen/Reproduktion) zu erreichen. Die Antwortmöglichkeiten sind klar und direkt auf den Inhalt der Frage bezogen.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung erforderlich."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Annahme, dass die Frage ein Verständnis des Themas beurteilen soll, das über bloßes Wissen hinausgeht. Die richtige Antwort zeigt eine Fähigkeit, kritisch über die Bedeutung von Kosten und Nutzen nachzudenken.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage bewertet die mathematische Komplexität der Schüler als mittelgradig. Die richtige Antwort zeigt ein Verständnis für den Wert von Zeit und ihre Berücksichtigung in der Bewertung von Kosten und Nutzen.",
+            "suggestions": [
+              "Es wäre hilfreich, wenn die Schüler im Rahmen ihrer mathematischen Bildung auch über die Bewertung von Kosten und Nutzen mit anderen Werten als Geld nachdenken würden. Dazu könnten sie in Aufgabenstellungen oder Diskussionen gefragt werden, wie sie sich Zeit und andere Ressourcen in ihren Entscheidungsprozessen berücksichtigen würden."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus der richtigen Antwort der Schüler. Die Frage erfordert ein Verständnis für die mathematische Komplexität und die Fähigkeit, Kosten und Nutzen in einem breiteren Kontext zu bewerten. Da die Schüler diese Fähigkeit zeigen konnten, erhalten sie eine Bewertung von 3.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist klar formuliert und enthält keine sprachlichen Hindernisse. Der Begriff \"Kosten-Nutzen-Analyse\" wird korrekt verwendet.",
+            "suggestions": [
+              "Keine Vorschläge zur Hindernisanpassung, da es keine Hindernisse gibt."
+            ],
+            "reasoning": "Die Frage ist formuliert, um ein Verständnis der Kosten-Nutzen-Analyse zu erfordern. Die Antwortmöglichkeiten sind plausibel und entsprechen den Inhalte des Bildungsprogramms.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist klar und verständlich formuliert, aber es wäre hilfreich, wenn die Frage noch ein bisschen präziser wäre. Die Antwortoptionen sind gut ausgewählt, aber einige davon könnten noch besser erklärt werden.",
+            "suggestions": [
+              "- Eine präzisere Formulierung der Frage könnte helfen, um mehr genaue Antworten zu erhalten.",
+              "- Einige der Antwortmöglichkeiten könnten noch besser erklärt werden, um sicherzustellen, dass die Schüler verstehen, warum sie richtig oder falsch sind."
+            ],
+            "reasoning": "Die Anweisungsklarheit ist gut, da die Frage explizit formuliert ist und die Antwortoptionen klar definiert sind. Die Antwortmöglichkeiten sind auch plausibel und decken das Thema ab. Der Hauptgrund für die gute Klarheit ist die explizite Formulierung der Frage.",
+            "target_value": "Explizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Warum beziehen sich Kosten und Nutzen nicht allein auf Geld? <option>Weil man Zeit auch als Wert betrachten kann<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Was sind Beispiele für die Kosten einer Handlung? <option>Keine dieser Optionen<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Keine dieser Optionen",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Keine dieser Optionen",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen sind so konzipiert, dass sie ein Verständnis für das Konzept der Opportunitätskosten und die Abwägung von Kosten und Nutzen bei Entscheidungen vermitteln. Die Antwortoptionen sind so ausgewählt, dass sie ein differenziertes Verständnis des Themas ermöglichen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 2,
+            "feedback": "Die Frage könnte durch die Hinzufügen von Beispielen oder eindeutigen Merkmalen für Kosten erleichtert werden. So können Schüler besser verstehen, wie man Kosten identifiziert und wie diese beispielsweise in der Buchhaltung berücksichtigt werden.",
+            "suggestions": [
+              "- Fügen Sie Beispiele für Kosten ein (z.B. Löhne, Materialkosten).",
+              "- Formulieren Sie die Frage so, dass sie klar erkennen lässt, was unter \"Kosten\" verstanden wird.",
+              "- Geben Sie Hinweise darauf, wie Schüler Kosten in ihren täglichen Kontexten erkennen und erfassen können."
+            ],
+            "reasoning": "Die Frage ist stammaufgabe-artig formuliert, aber die Antwortmöglichkeiten sind zu vage. Die Identifikation von Kosten erfordert eine gewisse Tiefe des Verständnisses in Bezug auf Buchhaltung oder Finanzwesen. Durch das Hinzufügen von Beispielen und spezifischen Merkmalen für Kosten kann die Frage ansprechender und besser auf die Schwierigkeit \"stammaufgabe\" zugeschnitten werden.",
+            "target_value": "stammaufgabe",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist zwar auf Stufe 1 (Wissen/Reproduktion) ausgerichtet, aber die Antwortmöglichkeiten sollten besser definiert sein. Der Schüler sollte nicht dazu gezwungen werden, generelle Beispiele zu nennen.",
+            "suggestions": [
+              "* Die Antwortmöglichkeiten sollten spezifischer und prägnanter formuliert werden.",
+              "* Der Schüler sollte ein Beispiel für die Kosten einer Handlung in einem bestimmten Kontext (z.B. wirtschaftlicher, sozialer oder ökologischer) nennen."
+            ],
+            "reasoning": "Die Frage erfordert, dass der Schüler Beispiele für die Kosten einer Handlung nennt, aber die Antwortmöglichkeiten sind nicht spezifisch genug. Die Bewertung auf Stufe 2 (Analyse/Anwendung) wäre angemessener, da der Schüler dann tatsächlich anhand von Beispielen analysieren müsste.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": true
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfordert ein besseres Verständnis der mathematischen Konzepte, insbesondere im Zusammenhang mit den Kosten einer Handlung. Die Antwortmöglichkeiten sollten sich auf direkte Beispiele für die Kosten einer Handlung konzentrieren.",
+            "suggestions": [
+              "- Die Frage könnte dahingehend geändert werden, dass der Schüler direkt nach Beispielen für die Kosten einer Handlung gefragt wird.",
+              "- Die Antwortmöglichkeiten sollten an die Konzepte angepasst werden, die im Bildungskontext relevant sind."
+            ],
+            "reasoning": "Die Begründung für die Bewertung 2 liegt darin, dass der Schüler weder ein klares Verständnis der Kosten einer Handlung zeigt noch Beispiele dafür nennt. Die Frage und die Antwortmöglichkeiten sollten an die Bedürfnisse des Bildungskontexts angepasst werden.",
+            "target_value": "0",
+            "applied": true
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Es gibt keine sprachlichen Hindernisse, die die Verständlichkeit der Frage beeinträchtigen könnten. Die Frage ist klar und präzise formuliert und die Antworten sind eindeutig definiert.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung erforderlich"
+            ],
+            "reasoning": "Die Bewertung als 3 basiert darauf, dass es keine sprachlichen Hindernisse gibt, aber auch keine überaus einfachen oder intuitiven Fragen. Die Frage ist gut formuliert und die Antworten sind klar definiert.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisung ist klar und explizit, aber die Antwortmöglichkeiten sollten präziser formuliert werden. Es wäre hilfreich, wenn die Optionen besser beschrieben wären, um Missverständnisse zu vermeiden.",
+            "suggestions": [
+              "- Die Antwortmöglichkeiten sollten prägnanter formuliert werden.",
+              "- Es sollte ein Beispiel für eine Handlung angegeben werden, auf das sich die Kosten beziehen."
+            ],
+            "reasoning": "Die Anweisung ist explizit, aber die Antwortmöglichkeiten sind nicht sehr prägnant. Durch prägnantere Formulierung der Optionen und Hinzufügen eines Beispiels für eine Handlung kann die Klarheit verbessert werden.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 2,
+          "taxonomy_expert": 2,
+          "math_expert": 2,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Average rating 2.4 below threshold, 3 experts suggest improvements",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was sind Beispiele für die Kosten einer Handlung? <option>Keine dieser Optionen<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

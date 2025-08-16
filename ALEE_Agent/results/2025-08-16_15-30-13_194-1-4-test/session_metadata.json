@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 0.08984804153442383,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Welche Auswirkung hat eine Erh\u00f6hung der Nachfrage auf den Gleichgewichtspreis?\nA) Der Gleichgewichtspreis sinkt.\nB) Der Gleichgewichtspreis bleibt gleich.\nC) Der Gleichgewichtspreis steigt.\nD) Es kann nicht bestimmt werden, was mit dem Gleichgewichtspreis passiert. <option>A) Der Gleichgewichtspreis sinkt.\nB) Der Gleichgewichtspreis bleibt gleich.\nC) Der Gleichgewichtspreis steigt.\nD) Es kann nicht bestimmt werden<option>was mit dem Gleichgewichtspreis passiert.<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Was tritt ein, wenn die Produktionskosten f\u00fcr Milch-Landwirt*innen in \u00d6konomia sinken?\nA) Der Angebotsanstieg f\u00fchrt zu einer Verringerung des Gleichgewichtspreises.\nB) Die Verschiebung der Nachfragegeraden f\u00fchrt zu einem Anstieg des Gleichgewichtspreises.\nC) Das Angebot erh\u00f6ht sich, was zu einem Sinken des Gleichgewichtspreises f\u00fchrt.\nD) Der Gleichgewichtspreis bleibt gleich. <option>A) Das Angebot erh\u00f6ht sich<option>was zu einem Sinken des Gleichgewichtspreises f\u00fchrt.\nB) Die Verschiebung der Nachfragegeraden f\u00fchrt zu einem Anstieg des Gleichgewichtspreises.\nC) Der Angebotsanstieg f\u00fchrt zu einer Verringerung des Gleichgewichtspreises.\nD) Der Gleichgewichtspreis bleibt gleich.<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Was tritt ein, wenn die Nachfrage nach Milch in \u00d6konomia steigt?\nA) Die Verschiebung der Nachfragegeraden f\u00fchrt zu einem Sinken des Gleichgewichtspreises.\nB) Der Angebotsanstieg f\u00fchrt zu einer Verringerung des Gleichgewichtspreises.\nC) Die Nachfrage nach Milch f\u00fchrt zu einem Anstieg des Gleichgewichtspreises.\nD) Der Gleichgewichtspreis bleibt gleich. <option>A) Die Nachfrage nach Milch f\u00fchrt zu einem Anstieg des Gleichgewichtspreises.\nB) Die Verschiebung der Nachfragegeraden f\u00fchrt zu einem Sinken des Gleichgewichtspreises.\nC) Der Angebotsanstieg f\u00fchrt zu einer Verringerung des Gleichgewichtspreises.\nD) Der Gleichgewichtspreis bleibt gleich.<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T15:30:13.957472",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

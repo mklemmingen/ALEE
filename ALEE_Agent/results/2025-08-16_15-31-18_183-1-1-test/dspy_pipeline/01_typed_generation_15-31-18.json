@@ -1,0 +1,282 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T15:31:18.805529",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was bedeutet der Begriff \"Bedarf\" in der Wirtschaft?\nA) Die Bereitschaft, Mittel für bestimmte Dinge oder Leistungen einzusetzen\nB) Das Gefühl von Hunger oder Langeweile\nC) Der konkrete Bedarf nach einem bestimmten Gegenstand\nD) Die Wunsch nach Unterhaltung <option>A) Die Bereitschaft<option>Mittel für bestimmte Dinge oder Leistungen einzusetzen<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Die Bereitschaft",
+          "Mittel für bestimmte Dinge oder Leistungen einzusetzen",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Die Bereitschaft",
+          "Mittel für bestimmte Dinge oder Leistungen einzusetzen"
+        ],
+        "explanation": "Die Fragen wurden generiert, um das Verständnis des Unterschieds zwischen Bedürfnis und Bedarf in der Wirtschaft zu testen. Die Beispiele sollen den Übergang vom Bedürfnis zur Befriedigung verdeutlichen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und die richtige Antwort ist klar definiert. Allerdings sollten die falschen Antworten sinnvoll sein, um eine bessere Schwierigkeitsbewertung zu erreichen.",
+            "suggestions": [
+              "- Falsche Optionen sollten sinnvoller sein (z.B. Definitionen von verwandten Begriffen)",
+              "- Die Frage könnte noch genauer auf den wirtschaftlichen Kontext bezogen werden"
+            ],
+            "reasoning": "Die Frage bewertet mit 3, da die richtige Antwort klar definiert ist, aber die falschen Antworten nicht sinnvoll sind. Durch ein besseres Design der Frage und der falschen Optionen könnte die Schwierigkeitsbewertung verbessert werden.",
+            "target_value": "stammaufgabe",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage und die Antworten sind gut formuliert. Die richtige Antwort ist jedoch leicht zu erraten, da sie als erste Option steht. Um eine höhere Stufe der Taxonomie zu erreichen, sollte die Frage komplexer gestellt werden oder die Fragen sollten in einer Reihenfolge von einfach zu komplex aufgebaut sein.",
+            "suggestions": [
+              "- Die Fragen sollten in einer Reihenfolge von einfach zu komplex aufgebaut sein.",
+              "- Die Antworten sollten nicht so leicht zu erraten sein, indem die richtige Antwort nicht immer als erste Option steht."
+            ],
+            "reasoning": "Die Frage ist eine einfache Wissensfrage, bei der der Schüler den Begriff \"Bedarf\" in der Wirtschaft definieren soll. Die richtige Antwort zeigt ein Verständnis des Konzepts von Bedarf in wirtschaftlicher Sicht. Um jedoch zu einer höheren Stufe der Taxonomie zu gelangen, muss die Frage komplexer gestellt werden oder die Fragen sollten in einer Reihenfolge von einfach zu komplex aufgebaut sein.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die mathematische Komplexität dieser Frage ist relativ gering, da es sich um ein einfaches Verständnis eines wirtschaftlichen Begriffs handelt. Es gibt jedoch eine zusätzliche Option (Zusätzliche Option 3), die nicht direkt zum Hauptfrageinhalt gehört und die Aufmerksamkeit des Testkandidaten ablenken könnte.",
+            "suggestions": [
+              "Um die mathematische Komplexität dieser Frage zu erhöhen, könnten weitere Fragen hinzugefügt werden, die das Berechnen von Nachfragesätzen oder die Analyse von Nachfrage- und Angebotsgleichungen beinhalten. Dies würde den Testkandidaten auffordern, komplexe mathematische Konzepte anzuwenden."
+            ],
+            "reasoning": "Die Bewertung dieser Frage basiert auf der Fähigkeit des Testkandidaten, den Begriff \"Bedarf\" in der Wirtschaft zu definieren. Die richtige Antwort zeigt ein grundlegendes Verständnis wirtschaftlicher Konzepte, während die falschen Antworten (Zusätzliche Option 3-6) auf eine mangelnde Achtung oder ein Missverständnis des Begriffs hindeuten.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Es gibt keine sprachlichen Hindernisse in der Frage. Die Frage ist klar und präzise formuliert, und die Antwortmöglichkeiten sind eindeutig. Es gibt jedoch einen Hinweis darauf, dass es sich um eine wirtschaftliche Frage handelt.",
+            "suggestions": [
+              "Es gibt keine Vorschläge zur Hindernisanpassung, da keine sprachlichen Hindernisse vorhanden sind."
+            ],
+            "reasoning": "Die Frage ist klar und präzise formuliert, und die Antwortmöglichkeiten sind eindeutig. Der Begriff \"Bedarf\" wird in der Wirtschaft verwendet, um die Bereitschaft zu beschreiben, Mittel für bestimmte Dinge oder Leistungen einzusetzen.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte noch verbessert werden, indem die Optionen geordnet oder weitere Erläuterungen für die Zusätzlichen Optionen bereitgestellt würden. Der Begriff \"Bedarf\" ist jedoch klar definiert und seine Bedeutung im Kontext der Wirtschaft wird genau erklärt.",
+            "suggestions": [
+              "- Die Optionen könnten geordnet werden, um eine bessere Übersicht zu bieten.",
+              "- Weitere Erläuterungen für die Zusätzlichen Optionen könnten bereitgestellt werden."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung beträgt 3, da die Anweisungsklarheit als Explizit eingestuft wird. Die Definition des Begriffs \"Bedarf\" ist genau und seine Bedeutung im Kontext der Wirtschaft wird erklärt. Einige Vorschläge zur Verbesserung der Anweisungsklarheit wurden aufgeführt.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was bedeutet der Begriff \"Bedarf\" in der Wirtschaft?\nA) Die Bereitschaft, Mittel für bestimmte Dinge oder Leistungen einzusetzen\nB) Das Gefühl von Hunger oder Langeweile\nC) Der konkrete Bedarf nach einem bestimmten Gegenstand\nD) Die Wunsch nach Unterhaltung <option>A) Die Bereitschaft<option>Mittel für bestimmte Dinge oder Leistungen einzusetzen<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Ein Beispiel für den Übergang vom Bedürfnis zur Befriedigung ist: <option>Wenn man langweilig ist, willst du ein neues Videospiel haben.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Wenn man langweilig ist, willst du ein neues Videospiel haben.",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Wenn man langweilig ist, willst du ein neues Videospiel haben.",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen wurden generiert, um das Verständnis des Unterschieds zwischen Bedürfnis und Bedarf in der Wirtschaft zu testen. Die Beispiele sollen den Übergang vom Bedürfnis zur Befriedigung verdeutlichen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage entspricht gut der Schwierigkeitsstufe stammaufgabe. Die Antwortoptionen sind plausibel und die Frage ist klar formuliert.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage gut geeignet ist."
+            ],
+            "reasoning": "Die Bewertung von 4 basiert auf der Tatsache, dass die Frage ein Beispiel für den Übergang vom Bedürfnis zur Befriedigung enthält und die Antwortoptionen plausibel sind. Die Formulierung ist klar und leicht verständlich.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Feedback: Die Frage ist zwar inhaltlich korrekt, aber die Optionen sind nicht klar definiert. Die Antworten sollten deutlicher auf den Wunsch oder die Bedürfnisbefriedigung hinweisen.",
+            "suggestions": [
+              "Vorschläge: ",
+              "- Optionen sollten besser definiert werden, z.B. \"Ein neues Videospiel kaufen\", um das Thema der Bedürfnisbefriedigung zu verdeutlichen.",
+              "- Die Frage könnte auch ein Bild oder eine Grafik enthalten, um die Situation visuell darzustellen."
+            ],
+            "reasoning": "Begründung: Die Frage ist korrekt in Bezug auf die Bloom'sche Taxonomie. Sie stellt jedoch noch einige Anforderungen an die Antwortoptionen und könnte durch visuelle Elemente unterstützt werden, um den Komplexitätsgrad zu erhöhen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Frage bezieht sich zwar auf ein allgemeines Thema, zeigt aber keine spezifische mathematische Komplexität. Es fehlt an Elementen, die mit Mathematik in Verbindung gebracht werden könnten.",
+            "suggestions": [
+              "- Eine Frage könnte nach dem mathematischen Modell der Bedürfnisbefriedigung fragen (beispielsweise die Anwendung von Mengentheorien).",
+              "- Ein weiteres Beispiel könnte den mathematischen Ausdruck eines Wunsches in Bezug auf eine bestimmte Anzahl benötigter Ressourcen beinhalten."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Annahme, dass die Frage nicht direkt mit Mathematik zusammenhängt. Die bereitgestellten Antwortmöglichkeiten ergeben keinen eindeutigen Bezug zu mathematischen Konzepten.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert und enthält keine sprachlichen Barrieren. Die Optionen sind leicht zu verstehen und es gibt keine unklaren oder verwirrenden Wörter oder Ausdrücke.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage bereits klar und verständlich ist."
+            ],
+            "reasoning": "Die Frage enthält keine sprachlichen Hindernisse, da sie einfach und direkt formuliert ist. Die Optionen sind leicht zu verstehen und es gibt keine unklaren oder verwirrenden Wörter oder Ausdrücke.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist gut strukturiert und die Optionen sind eindeutig benannt. Es könnte jedoch hilfreich sein, eine klare Beschreibung des Ziels der Übergangsphase hinzuzufügen, um sicherzustellen, dass die Person versteht, was sie erreichen soll.",
+            "suggestions": [
+              "- Eine zusätzliche Beschreibung des Ziels der Übergangsphase",
+              "- Die Optionen könnten noch eindeutiger benannt werden, um Verwirrung zu vermeiden"
+            ],
+            "reasoning": "Die Anweisung wird mit 4 bewertet, da sie klar und explizit ist. Es gibt jedoch Raum für Verbesserungen in Bezug auf die Beschreibung des Ziels der Übergangsphase.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 2,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Ein Beispiel für den Übergang vom Bedürfnis zur Befriedigung ist: <option>Wenn man langweilig ist, willst du ein neues Videospiel haben.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Was spricht man nicht nur bei dem Einsatz von Mitteln für den Kauf von Gegenständen von Bedarf?\nA) Der Verzehr von Nahrung\nB) Das Tragen von Kleidung\nC) Der Einsatz von Dienstleistungen wie Haarschnitten oder Bankberatungen\nD) Alle der oben genannten Beispiele <option>C) Der Einsatz von Dienstleistungen wie Haarschnitten oder Bankberatungen<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "C) Der Einsatz von Dienstleistungen wie Haarschnitten oder Bankberatungen",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "C) Der Einsatz von Dienstleistungen wie Haarschnitten oder Bankberatungen",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen wurden generiert, um das Verständnis des Unterschieds zwischen Bedürfnis und Bedarf in der Wirtschaft zu testen. Die Beispiele sollen den Übergang vom Bedürfnis zur Befriedigung verdeutlichen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 2,
+            "feedback": "Die Frage könnte präziser formuliert werden, um die richtige Antwort zu verdeutlichen. Es fehlt eine klare Einführung der Begriffe \"Verbrauchsgüter\" und \"Dienstleistungen\".",
+            "suggestions": [
+              "- Eine genauere Formulierung der Frage.",
+              "- Hinzufügen eines Beispiels für Verbrauchsgüter, um die Unterscheidung zu verdeutlichen."
+            ],
+            "reasoning": "Die richtige Antwort C) Der Einsatz von Dienstleistungen wie Haarschnitten oder Bankberatungen ist zwar nicht falsch, aber sie erfasst nur einen Teil der Frage. Die Frage scheint sich auf die grundlegende Unterscheidung zwischen Verbrauchsgütern und Dienstleistungen zu beziehen. Um eine korrekte Beurteilung zu ermöglichen, sollten diese Begriffe genau definiert werden.",
+            "target_value": "stammaufgabe",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist zwar auf die richtige Taxonomiestufe ausgerichtet, sie könnte jedoch durch weitere Anpassungen noch präziser gestaltet werden, um sicherzustellen, dass die Frage tatsächlich nur nach der Fähigkeit fragt, bestimmte Informationen zu reproduzieren.",
+            "suggestions": [
+              "- Die Frage könnte mehr spezifische Beispiele enthalten, um den Schwerpunkt auf die Reproduktion von Informationen zu legen.",
+              "- Es könnte auch eine klare Abgrenzung zwischen Dienstleistungen und zusätzlichen Optionen erfolgen."
+            ],
+            "reasoning": "Die Bewertung wurde aufgrund der Tatsache vorgenommen, dass die Frage tatsächlich nach der Fähigkeit fragt, bestimmte Informationen zu reproduzieren oder wiederzugeben. Dies entspricht der Definition der Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Mathematische Komplexitätsanalyse zeigt, dass die Frage eine einfache Logik- und Entscheidungsproblematik beinhaltet. Die richtige Antwort erfordert keine komplexen mathematischen Operationen oder Konzepte.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich"
+            ],
+            "reasoning": "Die Bewertung basiert auf der Fähigkeit, zwischen verschiedenen Arten von Bedarf zu unterscheiden und die richtige Antwort zu wählen. Die Frage erfordert keine spezifischen mathematischen Kenntnisse oder Konzepte.",
+            "target_value": "0",
+            "applied": true
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage bezieht sich auf den Begriff \"Bedarf\" und die verschiedenen Arten von Gütern, die zum Bedarf gehören können. Die richtige Antwort C) Der Einsatz von Dienstleistungen wie Haarschnitten oder Bankberatungen ist korrekt, da dies tatsächlich ein Beispiel für einen Bedarf darstellt. Es gibt jedoch einige sprachliche Unklarheiten in der Frage, die dazu führen könnten, dass Lerner verunsichert sind.",
+            "suggestions": [
+              "Um den sprachlichen Unklarheiten zu entgehen, sollte die Frage so rephrasiert werden, dass sie klar und präzise ist. Zum Beispiel: \"Was ist ein Beispiel für einen Bedarf, der nicht nur bei dem Kauf von Gegenständen liegt?\""
+            ],
+            "reasoning": "Die Bewertung wurde auf 4 gesetzt, da die Frage zwar einige sprachliche Unklarheiten enthält, aber dennoch klar und verständlich ist. Die richtige Antwort C) Der Einsatz von Dienstleistungen wie Haarschnitten oder Bankberatungen ist korrekt und der Lerner sollte in der Lage sein, sie zu identifizieren.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist nicht optimal, da die Frage möglicherweise zu vage formuliert ist. Die Antwortoptionen sollten klar und präzise sein, um Missverständnisse zu vermeiden.",
+            "suggestions": [
+              "- Klarer Formulierung der Frage: Was spricht man bei dem Einsatz von Mitteln nicht nur für den Kauf von Gegenständen des Bedarfs an?",
+              "- Präzisere Antwortoptionen, die explizit auf Bedarf abzielen und keine Dienstleistungen beinhalten."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 3 (ausreichend), da die Frage zwar eindeutig ist, aber möglicherweise nicht präzise formuliert ist. Die Antwortoptionen sind jedoch nicht optimal, was zu Missverständnissen führen kann.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 2,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Average rating 2.8 below threshold, 2 experts suggest improvements",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was spricht man nicht nur bei dem Einsatz von Mitteln für den Kauf von Gegenständen von Bedarf?\nA) Der Verzehr von Nahrung\nB) Das Tragen von Kleidung\nC) Der Einsatz von Dienstleistungen wie Haarschnitten oder Bankberatungen\nD) Alle der oben genannten Beispiele <option>C) Der Einsatz von Dienstleistungen wie Haarschnitten oder Bankberatungen<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

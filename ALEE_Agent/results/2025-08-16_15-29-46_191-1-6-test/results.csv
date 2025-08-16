@@ -1,0 +1,37 @@
+c_id,subject,type,text,question_1,initial_question_1,question_2,initial_question_2,question_3,initial_question_3,p.instruction_explicitness_of_instruction,p.mathematical_requirement_level,p.taxanomy_level,question_type,p.variation,answers,typed_pipeline_used,refinement_applied,format_preserved,expert_average_ratings,p.root_text_reference_explanatory_text,p.root_text_obstacle_passive,p.root_text_obstacle_negation,p.root_text_obstacle_complex_np,p.root_text_contains_irrelevant_information,p.instruction_obstacle_passive,p.instruction_obstacle_complex_np,dspy_consensus_used,dspy_modular_prompts,dspy_expert_count,dspy_all_approved,p.item_1_obstacle_passive,p.item_1_obstacle_negation,p.item_1_obstacle_complex_np,p.item_2_obstacle_passive,p.item_2_obstacle_negation,p.item_2_obstacle_complex_np,p.item_3_obstacle_passive,p.item_3_obstacle_negation,p.item_3_obstacle_complex_np,p.item_4_obstacle_passive,p.item_4_obstacle_negation,p.item_4_obstacle_complex_np,p.item_5_obstacle_passive,p.item_5_obstacle_negation,p.item_5_obstacle_complex_np,p.item_6_obstacle_passive,p.item_6_obstacle_negation,p.item_6_obstacle_complex_np,p.item_7_obstacle_passive,p.item_7_obstacle_negation,p.item_7_obstacle_complex_np,p.item_8_obstacle_passive,p.item_8_obstacle_negation,p.item_8_obstacle_complex_np
+191-1-6-test,stammaufgabe,multiple-choice,"Märkte sind nicht an einen Ort gebunden. <image><image><image>Denken wir an einen Markt, fällt uns direkt der Wochenmarkt auf dem Marktplatz, oder auch der sonntägige Flohmarkt auf dem Parkplatz eines großen Einkaufszentrums ein. Doch muss ein Markt nicht an ein Gebäude oder einen Platz gebunden sein. Viele Dinge können zum Beispiel auch im Internet gekauft werden oder wir tauschen im Freundeskreis. Auch hierbei handelt es sich um einen Markt.  ","Was ist ein Markt?
+
+A) Ein Ort für den Kauf von Waren
+B) Eine Plattform für den Tausch von Gegenständen
+C) Ein Online-Shop für die Bestellung von Produkten
+D) Ein Gebäude, in dem Händler ihre Waren ausstellen
+E) Eine Veranstaltung, auf der Produkte verkauft werden
+F) Ein Netzwerk von Käufern und Verkäufern <option>A<option>B<option>C<option>D<option>F<option>Zusätzliche Option 6","Was ist ein Markt?
+
+A) Ein Ort für den Kauf von Waren
+B) Eine Plattform für den Tausch von Gegenständen
+C) Ein Online-Shop für die Bestellung von Produkten
+D) Ein Gebäude, in dem Händler ihre Waren ausstellen
+E) Eine Veranstaltung, auf der Produkte verkauft werden
+F) Ein Netzwerk von Käufern und Verkäufern",Welche Form des Marktes ist auch online möglich? <option>Wochenmarkt<option>Online-Shop<option>Tauschbörse<option>Verkaufsausstellung<option>Marktgebäude<option>Zusätzliche Option 6,"Welche Form des Marktes ist auch online möglich?
+
+A) Wochenmarkt
+B) Flohmarkt
+C) Online-Shop
+D) Tauschbörse
+E) Verkaufsausstellung
+F) Marktgebäude","Wodurch ist ein Markt von einem Ort losgelöst?
+
+A) Durch die Verfügbarkeit von Internet
+B) Durch den Einsatz von Social-Media-Plattformen
+C) Durch den Wechsel von realen zu virtuellen Märkten
+D) Durch die Möglichkeit des Tauschs im Freundeskreis
+E) Durch die Einbindung von Online-Zahlungssystemen
+F) Durch die Einführung neuer Verkaufsstrategien <option>A<option>C<option>D<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6","Wodurch ist ein Markt von einem Ort losgelöst?
+
+A) Durch die Verfügbarkeit von Internet
+B) Durch den Einsatz von Social-Media-Plattformen
+C) Durch den Wechsel von realen zu virtuellen Märkten
+D) Durch die Möglichkeit des Tauschs im Freundeskreis
+E) Durch die Einbindung von Online-Zahlungssystemen
+F) Durch die Einführung neuer Verkaufsstrategien",Explizit,0 (Kein Bezug),Stufe 1 (Wissen/Reproduktion),multiple-choice,stammaufgabe,"A, B, C, D, F, Zusätzliche Option 6, Wochenmarkt, Online-Shop, Tauschbörse, Verkaufsausstellung, Marktgebäude, Zusätzliche Option 6, A, C, D, Zusätzliche Option 4, Zusätzliche Option 5, Zusätzliche Option 6",True,"[True, True, True]","[True, True, True]","[3.0, 3.2, 2.6]",Nicht vorhanden,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,True,True,5,True,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten

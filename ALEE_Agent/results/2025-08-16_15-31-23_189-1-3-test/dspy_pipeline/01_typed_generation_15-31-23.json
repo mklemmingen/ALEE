@@ -1,0 +1,274 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T15:31:23.108496",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Welcher Verteilungsmechanismus ist am ehesten mit dem Motto \"Wer zuerst kommt – mahlt zuerst\" verbunden? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Losverfahren<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Zuteilung",
+          "Windhund-Verfahren",
+          "Verlosung",
+          "Losverfahren",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Zuteilung",
+          "Windhund-Verfahren"
+        ],
+        "explanation": "Die Fragen sind auf der Grundlage des Textes und der Parametern (stammaufgabe, multiple-choice, Stufe 1, Wissen/Reproduktion, 0, keine Sprachlichen Hindernisse, explizite Anweisungen) generiert worden. Die Antworten sollen das Verständnis der verschiedenen Verteilungsmechanismen testen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist schwierig zu verstehen und könnte besser formuliert werden, um mehr Klarheit zu schaffen.",
+            "suggestions": [
+              "Bereinigen Sie die Formulierung der Frage, damit sie leichter verständlich wird. Stellen Sie sicher, dass das Motto klar identifiziert ist und der Schüler weiß, was er erforschen soll."
+            ],
+            "reasoning": "Die Bewertung beträgt 3, da die Frage zwar ein bestimmtes Motto erwähnt, aber nicht genau klärt, welcher Verteilungsmechanismus damit zusammenhängt. Die Frage könnte mehr Kontext oder Hintergrundinformationen enthalten, um es dem Schüler leichter zu machen, die richtige Antwort zu finden.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut in der Bloom'schen Taxonomie gestaltet, da sie ein hohes Maß an Wissen über den Gegenstand erfordert. Allerdings könnte die Frage um mehr Nuancen und Komplexität erweitert werden, um höhere Stufen der Taxonomie abzubilden.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage bereits gut in der Bloom'schen Taxonomie gestaltet ist. Es könnte jedoch empfohlen werden, weitere Fragen zu entwickeln, die ein tieferes Verständnis des Themas fördern und die Fähigkeit zur Analyse, Bewertung oder Anwendung des Wissens stärken."
+            ],
+            "reasoning": "Die Frage erfüllt die Anforderungen der Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie, da sie das Reproduzieren von bereits bekanntem Wissen über Verteilungsmechanismen und deren Beziehung zu bestimmten Mustern beinhaltet. Die Frage ist jedoch nicht auf die Analyse oder Bewertung des Themas fokussiert, sondern eher auf die einfachste Stufe der Taxonomie.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Der Windhund-Verfahren wird in diesem Kontext als faire Verteilungsmechanismus angesehen, da er sicherstellt, dass diejenigen, die schneller sind, auch Zugriff auf die Ressourcen erhalten. Dies ist insbesondere im Bildungskontext relevant, um sicherzustellen, dass alle Schüler gleichberechtigt Zugriff auf Ressourcen haben.",
+            "suggestions": [
+              "Keine Vorschläge erforderlich, da der Windhund-Verfahren bereits als faire Verteilungsmechanismus angesehen wird."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Analyse des Fragekontexts und der mathematischen Komplexität. Der Windhund-Verfahren stellt eine effektive Lösung dar, um sicherzustellen, dass alle Schüler gleichberechtigt Zugriff auf Ressourcen haben.",
+            "target_value": "0",
+            "applied": true
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 2,
+            "feedback": "Die Frage enthält keine offensichtlichen sprachlichen Hindernisse, aber das \"Windhund-Verfahren\" klingt nach einem Fachbegriff und könnte für Laien schwierig zu verstehen sein. Es ist nicht klar, was dieser Begriff genau bedeutet.",
+            "suggestions": [
+              "Der Lehrer sollte den Schülern erklären, was das \"Windhund-Verfahren\" genau bedeutet und warum es ein geeigneter Verteilungsmechanismus ist."
+            ],
+            "reasoning": "Die Frage ist einfach gehalten, aber einige der Optionen mögen als Hindernis empfunden werden. Die Bewertung basiert auf dem potenziellen Sprachhindernis durch den Begriff \"Windhund-Verfahren\".",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem die Optionen besser geordnet und beschrieben würden. Es wäre hilfreich, wenn die Optionen mit einem kurzen Beschreibung versehen wären, um den Prüfling besser zu unterstützen.",
+            "suggestions": [
+              "- Die Optionen sollten in einer klaren und übersichtlichen Weise geordnet werden.",
+              "- Jede Option sollte mit einer kurzen Beschreibung versehen sein, um den Prüfling besser zu unterstützen."
+            ],
+            "reasoning": "Die Frage ist explizit, da der Prüfling direkt gefragt wird, welcher Verteilungsmechanismus mit dem Motto \"Wer zuerst kommt – mahlt zuerst\" verbunden ist. Die richtige Antwort ist jedoch nicht sofort ersichtlich, was die Anweisungsklarheit verbessern könnte.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 2,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Average rating 2.8 below threshold, 2 experts suggest improvements",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welcher Verteilungsmechanismus ist am ehesten mit dem Motto \"Wer zuerst kommt – mahlt zuerst\" verbunden? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Losverfahren<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Ein Verteilungsmechanismus, bei dem die Konzertkarten an die ältesten Interessenten verteilt werden, gehört zu welchem der folgenden Typen? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Zuteilung",
+          "Windhund-Verfahren",
+          "Verlosung",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Zuteilung",
+          "Windhund-Verfahren"
+        ],
+        "explanation": "Die Fragen sind auf der Grundlage des Textes und der Parametern (stammaufgabe, multiple-choice, Stufe 1, Wissen/Reproduktion, 0, keine Sprachlichen Hindernisse, explizite Anweisungen) generiert worden. Die Antworten sollen das Verständnis der verschiedenen Verteilungsmechanismen testen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist schwierig, aber dennoch nicht perfekt der Schwierigkeit \"stammaufgabe\" entsprechend. Die Antwortmöglichkeiten sind zwar plausibel, aber die Frage erfordert ein gutes Verständnis des Themas und die Fähigkeit, das richtige Verfahren zu identifizieren.",
+            "suggestions": [
+              "Keine spezifischen Verbesserungsvorschläge erforderlich, da die Frage insgesamt gut strukturiert ist. Sollte jedoch eine genauere Definition des Themas oder ein Beispiel zur Verdeutlichung geliefert werden."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus folgendem: Die Frage erfordert ein gutes Verständnis des Themas, um das richtige Zuteilungsverfahren zu identifizieren. Dies ist eine Herausforderung, aber nicht unmöglich für Personen mit entsprechender Fachkenntnis. Es gibt jedoch auch einige schwierige Punkte wie die Bezeichnung \"Zusätzliche Optionen\" anstelle von Antwortmöglichkeiten, was dem Schwierigkeitsgrad abträglich wirkt.",
+            "target_value": "stammaufgabe",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist im Wesentlichen eine Wissensfrage, da sie ein bestimmtes Konzept bezieht. Die Antwortmöglichkeiten sind jedoch etwas unkonventionell formuliert und könnten zu Verwirrung führen.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich"
+            ],
+            "reasoning": "Die Frage ist für die Stufe 1 (Wissen/Reproduktion) geeignet, da sie ein bestimmtes Konzept beurteilen lässt. Die Antwortmöglichkeiten sind jedoch nicht ideal, da sie teilweise unkonventionell formuliert sind und zu Verwirrung führen könnten.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert eine Analyse der mathematischen Komplexität des Verteilungsmechanismus. Die richtige Antwort, \"Zuteilung\", zeigt ein Verständnis für die Grundprinzipien von Verteilungsmechanismen und ihre Anwendung in realen Szenarien.",
+            "suggestions": [
+              "Um die mathematische Komplexität zu erhöhen, könnten weitere Frageoptionen bereitgestellt werden, die sich auf komplexe mathematische Konzepte beziehen. Beispielsweise könnten Fragen zur Wahrscheinlichkeitstheorie oder zur Optimierungstechnik hinzugefügt werden."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Analyse, dass die Frage ein Verständnis für Verteilungsmechanismen und ihre mathematische Komplexität erfordert. Die richtige Antwort zeigt ein gutes Verständnis dieser Konzepte.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und die Antwortoptionen sind klar definiert. Die einzigen sprachlichen Hindernisse, die ich feststellen kann, sind keine richtigen Hindernisse für Nicht-Muttersprachler.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung erforderlich."
+            ],
+            "reasoning": "Die Frage ist einfach und klar formuliert und es gibt keine sprachlichen Hindernisse, die eine Bewertung erfordern würden. Die Antwortoptionen sind auch klar definiert und passen gut zum Thema.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut, da die Frage klar und präzise formuliert ist. Die Antwortmöglichkeiten sind jedoch nicht optimal, da einige davon (Zusätzliche Option 4-6) keine relevante Beziehung zur Frage haben.",
+            "suggestions": [
+              "Es wäre besser, die zusätzlichen Optionen zu entfernen und stattdessen eine weitere Option hinzuzufügen, die den Verteilungsmechanismus genau beschreibt (z.B. \"Prioritätenverwaltung\")."
+            ],
+            "reasoning": "Die Anweisungsbewertung ist 4, da die Frage klar formuliert ist und die Antwortmöglichkeiten gut sind, aber nicht optimal.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Ein Verteilungsmechanismus, bei dem die Konzertkarten an die ältesten Interessenten verteilt werden, gehört zu welchem der folgenden Typen? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Bei welchen Verteilungsmechanismus entscheidet der Zufall, wer die Konzertkarten erhält? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Losverfahren<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Zuteilung",
+          "Windhund-Verfahren",
+          "Verlosung",
+          "Losverfahren",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Zuteilung",
+          "Windhund-Verfahren"
+        ],
+        "explanation": "Die Fragen sind auf der Grundlage des Textes und der Parametern (stammaufgabe, multiple-choice, Stufe 1, Wissen/Reproduktion, 0, keine Sprachlichen Hindernisse, explizite Anweisungen) generiert worden. Die Antworten sollen das Verständnis der verschiedenen Verteilungsmechanismen testen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert, aber es fehlt ein Beispiel oder eine Erklärung, warum der Zufall entscheidet. Ein bisschen mehr Kontext wäre hilfreich.",
+            "suggestions": [
+              "- Fügen Sie ein Beispiel hinzu, um die Komplexität zu erhöhen.",
+              "- Hinterlegen Sie einen Kurztext über den Verteilungsmechanismus, um das Verständnis zu erleichtern."
+            ],
+            "reasoning": "Die Frage ist eine Multiple-Choice-Frage mit korrekten Antwortmöglichkeiten. Der Schwierigkeitsgrad entspricht der Stammaufgabe. Die Formulierung ist gut, aber es fehlt ein Beispiel oder eine Erklärung, warum der Zufall entscheidet. Dies könnte durch ein Beispiel oder einen Kurztext verbessert werden.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage verlangt nach einer Kenntnis des Themas (Wissen/Reproduktion), aber die richtigen Antworten sind nicht direkt in der Frage angegeben, und es fehlt eine direkte Verbindung zwischen dem Thema und den gegebenen Optionen.",
+            "suggestions": [
+              "Eine mögliche Anpassung wäre die Einführung einer weiteren Option, die den Zufallsprinzip beinhaltet (z.B. 'Zufall' oder 'Losziehung'), um die Richtigkeit der richtigen Antwort zu erhöhen."
+            ],
+            "reasoning": "Die Frage basiert auf dem Wissen/Reproduktionsniveau, aber eine direkte Anbindung an das Thema ist fehlend. Die gegebenen Optionen sind unvollständig und enthalten keine direkte Verbindung zum Zufallsprinzip.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Komplexität der Frage ist relativ einfach, da es sich um ein bekanntes Thema aus Wahrscheinlichkeitsrechnung handelt. Die richtigen Antworten sind leicht erkennbar, wenn man die Begriffe versteht.",
+            "suggestions": [
+              "Keine speziellen Vorschläge für Anpassungen, da die Frage bereits auf einem einfachen Niveau angelegt ist."
+            ],
+            "reasoning": "Die Frage wurde mit einer Mathematikstufe 0 bewertet, da sie ein einfaches Konzept aus Wahrscheinlichkeitsrechnung abfragt. Die richtigen Antworten sind leicht erkennbar und die Komplexität der Frage ist relativ einfach.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Es gibt keine sprachlichen Hindernisse in der Frage oder den Antworten, alles ist klar und präzise definiert.",
+            "suggestions": [
+              "Keine Vorschläge erforderlich, da die Frage und Antworten problemlos verstanden werden können."
+            ],
+            "reasoning": "Die Bewertung von 4 erfolgte, weil es keine Hindernisse gibt. Die Frage ist klar formuliert und alle Antwortmöglichkeiten sind korrekt definiert.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist sehr gut, da die Optionen klar bezeichnet sind und es keine Mehrdeutigkeit gibt.",
+            "suggestions": [
+              "Keine Vorschläge zur Verbesserung der Klarheit, da die Anweisung bereits sehr klar ist."
+            ],
+            "reasoning": "Die Bewertung von 4 erfolgte wegen der klaren und direkten Bezeichnung der richtigen Antwort.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Bei welchen Verteilungsmechanismus entscheidet der Zufall, wer die Konzertkarten erhält? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Losverfahren<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

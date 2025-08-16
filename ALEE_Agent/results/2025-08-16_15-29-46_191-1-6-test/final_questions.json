@@ -1,0 +1,9 @@
+{
+  "final_questions": [
+    "Was ist ein Markt?\n\nA) Ein Ort für den Kauf von Waren\nB) Eine Plattform für den Tausch von Gegenständen\nC) Ein Online-Shop für die Bestellung von Produkten\nD) Ein Gebäude, in dem Händler ihre Waren ausstellen\nE) Eine Veranstaltung, auf der Produkte verkauft werden\nF) Ein Netzwerk von Käufern und Verkäufern <option>A<option>B<option>C<option>D<option>F<option>Zusätzliche Option 6",
+    "Welche Form des Marktes ist auch online möglich? <option>Wochenmarkt<option>Online-Shop<option>Tauschbörse<option>Verkaufsausstellung<option>Marktgebäude<option>Zusätzliche Option 6",
+    "Wodurch ist ein Markt von einem Ort losgelöst?\n\nA) Durch die Verfügbarkeit von Internet\nB) Durch den Einsatz von Social-Media-Plattformen\nC) Durch den Wechsel von realen zu virtuellen Märkten\nD) Durch die Möglichkeit des Tauschs im Freundeskreis\nE) Durch die Einbindung von Online-Zahlungssystemen\nF) Durch die Einführung neuer Verkaufsstrategien <option>A<option>C<option>D<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+  ],
+  "question_count": 3,
+  "finalized_at": "2025-08-16T15:29:46.921861"
+}
