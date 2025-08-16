@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 69.17199993133545,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was genau bezeichnet man unter Opportunit\u00e4tskosten?\n\nA) Die Kosten f\u00fcr das Kinoticket\nB) Das Gehalt, das man h\u00e4tte verdienen k\u00f6nnen, wenn man jobben gegangen w\u00e4re\nC) Beide A und B\nD) Keine der oben genannten Optionen <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "Was genau ist ein Vorteil einer Handlung?\n\nA) Nur Geld\nB) Nur Zeit\nC) Nur Spa\u00df oder Erholung\nD) Alle der oben genannten Optionen <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "Was genau bezeichnet man unter Kosten einer Handlung?\n\nA) Nur die Zeit, die ben\u00f6tigt wird, um die Handlung durchzuf\u00fchren\nB) Nur G\u00fcter, die f\u00fcr die Durchf\u00fchrung der Handlung ben\u00f6tigt werden\nC) Beide A und B\nD) Keine der oben genannten Optionen <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T18:00:45.533578",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

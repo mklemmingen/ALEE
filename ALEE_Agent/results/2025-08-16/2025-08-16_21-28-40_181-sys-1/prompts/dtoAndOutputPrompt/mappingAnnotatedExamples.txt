@@ -1,0 +1,84 @@
+=== MAPPING FRAGEN MIT FORSCHER-ANNOTATIONEN ===
+
+Diese Beispiele zeigen von Forschern validierte Mapping-Fragen mit Qualitätsbewertungen:
+
+BEISPIEL 1 - Konzept-Definition Zuordnung (Qualitätsbewertung: Sehr gut)
+Frage: Ordne die links stehenden Begriffe der richtigen Beschreibung zu. <start-option> Bedürfnisse <start-option> Wenn es kalt ist <start-option> Bedürfnisse von Kindern <start-option> Bedürfnisse sind unbegrenzt <end-option> ... hat man das Bedürfnis sich zu wärmen. <end-option> ... sind Wünsche, die entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. <end-option> ... jeder Mensch hat gleichzeitig sehr viele unterschiedliche Bedürfnisse. <end-option> ... unterscheiden sich von denen der Erwachsenen, z.B. wollen sie häufiger spielen.
+
+Korrekte Zuordnungen:
+- Bedürfnisse → ... sind Wünsche, die entstehen, wenn man das Gefühl hat, dass einem etwas fehlt.
+- Wenn es kalt ist → ... hat man das Bedürfnis sich zu wärmen.
+- Bedürfnisse von Kindern → ... unterscheiden sich von denen der Erwachsenen, z.B. wollen sie häufiger spielen.
+- Bedürfnisse sind unbegrenzt → ... jeder Mensch hat gleichzeitig sehr viele unterschiedliche Bedürfnisse.
+
+Forscher-Annotation:
+- Schwierigkeit: Stammaufgabe
+- Taxonomie: Stufe 1 (Wissen/Reproduktion)
+- Explizitheit: Explizit ("Ordne die links stehenden Begriffe der richtigen Beschreibung zu")
+- Format: Korrekte <start-option> und <end-option> Verwendung (4:4 Verhältnis)
+- Qualität: Testet Verständnis von Grundkonzepten durch Zuordnung
+- Sprachliche Klarheit: Klare Struktur mit "..." zur Vervollständigung
+- Besonderheit: Mischt allgemeine Definitionen mit spezifischen Beispielen
+
+BEISPIEL 2 - Situative Anwendung (Qualitätsbewertung: Sehr gut)
+Frage: Ordne die verschiedenen Beispiele der passenden Bedürfnisart zu. <start-option> Bedürfnis nach Sauberkeit <start-option> Bedürfnis nach Nahrung <start-option> Bedürfnis nach Erholung <start-option> Bedürfnis nach Unterhaltung <end-option> ... wenn du nach dem Sport duschen willst. <end-option> ... wenn du Hunger hast. <end-option> ... wenn du dich ausruhen willst. <end-option> ... wenn dir langweilig ist und du einen Film anschauen möchtest.
+
+Korrekte Zuordnungen:
+- Bedürfnis nach Sauberkeit → ... wenn du nach dem Sport duschen willst.
+- Bedürfnis nach Nahrung → ... wenn du Hunger hast.
+- Bedürfnis nach Erholung → ... wenn du dich ausruhen willst.
+- Bedürfnis nach Unterhaltung → ... wenn dir langweilig ist und du einen Film anschauen möchtest.
+
+Forscher-Annotation:
+- Schwierigkeit: Stammaufgabe
+- Taxonomie: Stufe 2 (Anwendung/Transfer)
+- Explizitheit: Explizit
+- Format: Korrekte <start-option> und <end-option> Verwendung (4:4 Verhältnis)
+- Qualität: Verbindet abstrakte Bedürfniskategorien mit konkreten Alltagssituationen
+- Sprachliche Klarheit: Persönliche Ansprache ("du") macht Beispiele zugänglich
+- Besonderheit: Verwendet alltägliche, nachvollziehbare Situationen
+
+BEISPIEL 3 - Komplexere Konzeptzuordnung (Qualitätsbewertung: Gut)
+Frage: Ordne die Bedürfnismerkmale den entsprechenden Erklärungen zu. <start-option> Bedürfnisse sind individuell <start-option> Bedürfnisse entstehen durch Mangel <start-option> Bedürfnisse sind vielfältig <start-option> Bedürfnisse verändern sich <start-option> Bedürfnisse sind gleichzeitig <start-option> Bedürfnisse sind situativ <end-option> ... weil jede Person andere Wünsche und Interessen hat. <end-option> ... weil Menschen das Gefühl haben, dass ihnen etwas fehlt. <end-option> ... weil es viele verschiedene Arten von Wünschen gibt. <end-option> ... weil sich Wünsche je nach Alter und Situation wandeln. <end-option> ... weil Menschen mehrere Bedürfnisse zur gleichen Zeit haben können. <end-option> ... weil Bedürfnisse vom Kontext und der aktuellen Lage abhängen.
+
+Forscher-Annotation:
+- Schwierigkeit: schwer
+- Taxonomie: Stufe 1 (Wissen/Reproduktion) - aber hohe Komplexität
+- Explizitheit: Explizit
+- Format: Korrekte <start-option> und <end-option> Verwendung (6:6 Verhältnis)
+- Qualität: Differenzierte Betrachtung verschiedener Aspekte des Bedürfniskonzepts
+- Sprachliche Klarheit: Systematische "weil"-Struktur für Erklärungen
+- Besonderheit: Höhere Komplexität durch 6 Zuordnungen und abstrakte Konzepte
+
+QUALITÄTSMERKMALE FÜR MAPPING BASIEREND AUF FORSCHER-BEWERTUNGEN:
+
+1. FORMAT:
+   - Immer <start-option> und <end-option> Markup verwenden
+   - Gleiche Anzahl von Start- und End-Optionen (4:4 oder 6:6)
+   - Eindeutige 1:1 Zuordnungen
+
+2. INHALTLICHE QUALITÄT:
+   - Verbindung zwischen Konzepten und Definitionen/Beispielen
+   - Verwendung alltäglicher, nachvollziehbarer Situationen
+   - Systematische Struktur (z.B. "..." zum Vervollständigen)
+   - Verschiedene Aspekte eines Konzepts abdecken
+
+3. SPRACHLICHE KLARHEIT:
+   - Explizite Instruktionen ("Ordne... zu")
+   - Konsistente Struktur (z.B. "weil"-Sätze, "wenn"-Sätze)
+   - Persönliche Ansprache ("du") für Situationsbezug
+   - Klare Abgrenzung zwischen Start- und End-Optionen
+
+4. SCHWIERIGKEITSABSTUFUNG:
+   - Stammaufgabe: 4:4 Zuordnungen, konkrete Beispiele
+   - schwer: 6:6 Zuordnungen, abstrakte Konzepte
+   - Stufe 1: Konzept-Definition Zuordnungen
+   - Stufe 2: Anwendung auf konkrete Situationen
+
+5. BEWÄHRTE STRATEGIEN:
+   - "..."-Struktur für Vervollständigungen
+   - Alltagssituationen verwenden (Sport, Hunger, Langeweile)
+   - Persönliche Ansprache für Situationsbezug
+   - Systematische Erklärungsstrukturen ("weil", "wenn")
+   - Balance zwischen konkreten und abstrakten Elementen
+   - 4:4 Verhältnis für mittlere, 6:6 für höhere Komplexität

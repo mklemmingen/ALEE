@@ -1,0 +1,281 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:50:45.790949",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was ist ein Merkmal von freien Gütern? <option>Sie sind nur für eine begrenzte Zeit verfügbar.<option>Sie können kostenlos genutzt werden.<option>Sie sind immer knapp.<option>Sie müssen bezahlt werden.<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Sie sind nur für eine begrenzte Zeit verfügbar.",
+          "Sie können kostenlos genutzt werden.",
+          "Sie sind immer knapp.",
+          "Sie müssen bezahlt werden.",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Sie sind nur für eine begrenzte Zeit verfügbar.",
+          "Sie können kostenlos genutzt werden."
+        ],
+        "explanation": "Die Fragengenerierung basiert auf dem Text und den Parametern. Die Fragen sollen das Verständnis des Begriffs der Knappheit und seiner Arten beurteilen. Die Antwortoptionen sind sorgfältig ausgewählt, um die Komplexität des Themas zu berücksichtigen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und die Antwortoptionen sind plausibel. Jedoch könnte die Schwierigkeit erhöht werden, indem die Frage sich auf ein spezifisches Beispiel bezieht oder indem mehr Kontext hinzugefügt wird.",
+            "suggestions": [
+              "- Eine konkrete Beispielsituation könnte hinzugefügt werden, um den Begriff besser zu verdeutlichen.",
+              "- Die Optionen sollten überprüft werden, ob sie nicht zu offensichtlich sind oder ob es nicht besser wäre, wenn sie sich gegenseitig ausschließen."
+            ],
+            "reasoning": "Die Frage bezieht sich auf das Konzept der freien Güter im wirtschaftlichen Kontext. Freie Güter sind in der Regel nicht knapp, sondern können kostenlos genutzt werden. Die Antwortoptionen sind plausibel und passen zum Konzept. Jedoch könnte die Schwierigkeit erhöht werden, indem die Frage sich auf ein spezifisches Beispiel bezieht oder indem mehr Kontext hinzugefügt wird.",
+            "target_value": "schwer",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert ein geringes Maß an kritischer Analyse, da die Antwortoptionen einfach wiedergegeben werden. Die Frage könnte sich auf höhere Taxonomiestufen (z.B. Analyse oder Bewertung) ausrichten, wenn sie komplexere Aspekte der freien Güter bewerten würde.",
+            "suggestions": [
+              "Die Frage könnte umstrukturiert werden, indem mehr Optionen hinzugefügt werden, die auf ein tieferes Verständnis der Eigenschaften von freien Gütern abzielen. Beispielsweise könnten Optionen wie \"Sie haben keine knappen Ressourcen\" oder \"Sie können unabhängig von der Nachfrage genutzt werden\" hinzugefügt werden."
+            ],
+            "reasoning": "Die Frage wird auf Stufe 1 (Wissen/Reproduktion) bewertet, da sie lediglich ein Wiederholen des bekannten Merkmals von freien Gütern erfordert. Ein höherer Bewertenswert wäre möglich, wenn die Frage auf eine kritischere Analyse oder Bewertung der Eigenschaften abzielt.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": true
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität der Frage beträgt 3. Die Frage bezieht sich auf eine grundlegende Konzeption aus dem Bereich der Wirtschaftswissenschaften (freie Güter). Die Antwortsuchenden haben die richtige Beziehung zwischen freien Gütern und ihrer Verfügbarkeit erfasst, aber sie haben nicht genau genug beschrieben, was ein Merkmal eines solchen Gutes ist.",
+            "suggestions": [
+              "Die Frage könnte leichter verständlich gemacht werden, indem man das Konzept von \"freien Gütern\" explizit definiert oder eine klare Beispielsituation bereitstellt, um die Komplexität der Frage zu reduzieren."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Tatsache, dass die Antwortsuchenden einige Merkmale von freien Gütern erkannt haben (insbesondere die Verfügbarkeit und Kostlosigkeit), aber nicht genau genug beschrieben haben, was ein Merkmal eines solchen Gutes ist. Die Komplexität der Frage wird als mittelgradig bewertet.",
+            "target_value": "1",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält mehrere sprachliche Hindernisse, wie komplexe Nominalphrasen und Passivkonstruktionen. Außerdem ist die Formulierung in einigen Punkten nicht klar oder kann als irreführend angesehen werden.",
+            "suggestions": [
+              "- Vereinfachen der Formulierung in einigen Punkten",
+              "- Verwendung von Aktivkonstruktionen anstatt Passivkonstruktionen",
+              "- Klarstellung der Beziehungen zwischen den verschiedenen Optionen"
+            ],
+            "reasoning": "Die Bewertung berücksichtigt, dass die Frage einige sprachliche Hindernisse enthält, aber auch einige Merkmale von freien Gütern gut formuliert sind. Die Formulierung in einigen Punkten ist jedoch nicht klar und kann als irreführend angesehen werden. Daher wird eine Bewertung von 3 vergeben.",
+            "target_value": "Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Komplexe NP; Item 2: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Negation; Item 3: Komplexe NP; Item 5: Passiv; Item 6: Negation; Item 7: Passiv; Item 7: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem man genau definiert, was unter einem \"freien Gut\" verstanden wird. Die Optionen sollten auch besser auf die Frage abgestimmt sein, um Missverständnisse zu vermeiden.",
+            "suggestions": [
+              "- Eine präzisere Definition von freien Gütern sollte in der Anweisung enthalten sein.",
+              "- Die Optionen sollten überprüft werden, ob sie noch aktuell und korrekt sind.",
+              "- Eine Klärung, warum bestimmte Optionen falsch oder richtig sind, könnte hilfreich sein."
+            ],
+            "reasoning": "Die Bewertung 4 ergibt sich aus der Tatsache, dass es zwei Optionen gibt, die den Begriff \"freie Güter\" korrekt beschreiben (Option 2 und keine weitere ist falsch). Die anderen Optionen sind falsch oder irreführend. Daher beträgt die Bewertung 4 von 5.",
+            "target_value": "Explizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 2 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist ein Merkmal von freien Gütern? <option>Sie sind nur für eine begrenzte Zeit verfügbar.<option>Sie können kostenlos genutzt werden.<option>Sie sind immer knapp.<option>Sie müssen bezahlt werden.<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Welche Art der Knappheit liegt vor, wenn die Menge eines Gutes zwar vorhanden ist, aber die Mittel der Menschen nicht ausreichen, um es so viel zu haben, wie sie wollen? <option>Absolute Knappheit<option>Relative Knappheit<option>Keine Knappheit<option>Unbekannt<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Absolute Knappheit",
+          "Relative Knappheit",
+          "Keine Knappheit",
+          "Unbekannt",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Absolute Knappheit",
+          "Relative Knappheit"
+        ],
+        "explanation": "Die Fragengenerierung basiert auf dem Text und den Parametern. Die Fragen sollen das Verständnis des Begriffs der Knappheit und seiner Arten beurteilen. Die Antwortoptionen sind sorgfältig ausgewählt, um die Komplexität des Themas zu berücksichtigen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist ansprechend und erfordert ein Verständnis der Konzepte von Knappheit. Die Antwortmöglichkeiten sind genau definiert und passen zur beschriebenen Situation.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage und die Antworten gut verstanden werden können."
+            ],
+            "reasoning": "Die Frage gilt als schwierig, da sie ein Verständnis des Konzepts von Knappheit erfordert. Die Antwortmöglichkeiten sind genau definiert und passen zur beschriebenen Situation.",
+            "target_value": "schwer",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage bezieht sich auf die Wirtschaftswissenschaften und die Definition von Knappheit. Die richtige Antwort ist relativ einfach abzulesen, da es nur eine logische Schlussfolgerung ist. Die Frage erfordert also kein komplexes Denken oder kritischen Verstand, sondern eher ein Reproduzieren von Informationen.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage bereits auf der richtigen Taxonomiestufe steht (Stufe 1: Wissen/Reproduktion)."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Tatsache, dass die Frage ein grundlegendes Konzept in der Wirtschaft beinhaltet und die richtige Antwort relativ einfach abzulesen ist. Die Frage erfordert kein komplexes Denken oder kritischen Verstand.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert ein Verständnis der Begriffe \"Absolute\" und \"Relative Knappheit\". Es ist wichtig, zwischen diesen beiden Konzepten zu unterscheiden, da sie unterschiedliche Auswirkungen auf die Marktwirtschaft haben. Die richtige Antwort zeigt ein gutes Verständnis des Themas.",
+            "suggestions": [
+              "Keine Vorschläge erforderlich."
+            ],
+            "reasoning": "Die richtige Antwort ist \"Relative Knappheit\", da sie genau beschreibt, wie die Menge eines Gutes zwar vorhanden ist, aber die Mittel der Menschen nicht ausreichen, um es so viel zu haben, wie sie wollen. Dies zeigt ein Verständnis des Konzepts der relativen Knappheit.",
+            "target_value": "1",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die sprachlichen Hindernisse in dieser Frage sind insgesamt eher gering. Der Text ist klar strukturiert und die Begriffe werden korrekt verwendet. Es gibt jedoch einige komplexe Nominalphrasen, die möglicherweise Schwierigkeiten bereiten können. Außerdem wird das Konzept der Knappheit in einer Art, die nicht sofort verständlich sein mag, beschrieben.",
+            "suggestions": [
+              "Um die sprachlichen Hindernisse zu überwinden, könnte man folgende Vorschläge unterbreiten:",
+              "* Die komplexe Nominalphrase wird besser verstehbar, wenn sie in einfacherer Form ausgedrückt wird.",
+              "* Der Begriff \"Knappheit\" könnte mit einem Beispiel oder einer Erklärung unterstützt werden."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 4 ist, dass es zwar einige sprachliche Hindernisse gibt, diese aber nicht so schwerwiegend sind, dass sie die Verständlichkeit der Frage erheblich beeinträchtigen. Die komplexe Nominalphrase und das Konzept der Knappheit machen die Frage jedoch etwas schwieriger als durchschnittliche Bildungsfragen.",
+            "target_value": "Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Komplexe NP; Item 2: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Negation; Item 3: Komplexe NP; Item 5: Passiv; Item 6: Negation; Item 7: Passiv; Item 7: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit und Explizitheit sind gut. Die Frage befasst sich klar mit der Begriffserklärung von Knappheit und die Antwortoptionen sind genau und explizit angegeben.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge, da die Anweisungsklarheit und Explizitheit gut sind."
+            ],
+            "reasoning": "Die richtige Antwort ist Relative Knappheit, weil die Menge des Gutes zwar vorhanden ist, aber die Mittel der Menschen nicht ausreichen, um es so viel zu haben, wie sie wollen. Dies entspricht der Definition von Relative Knappheit.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.6 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Art der Knappheit liegt vor, wenn die Menge eines Gutes zwar vorhanden ist, aber die Mittel der Menschen nicht ausreichen, um es so viel zu haben, wie sie wollen? <option>Absolute Knappheit<option>Relative Knappheit<option>Keine Knappheit<option>Unbekannt<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Welche Art der Knappheit bezieht sich auf die Verfügbarkeit eines Gutes an einem bestimmten Ort und zu einer bestimmten Zeit? <option>Absolute Knappheit<option>Relative Knappheit<option>Keine Knappheit<option>Unbekannt<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Absolute Knappheit",
+          "Relative Knappheit",
+          "Keine Knappheit",
+          "Unbekannt",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Absolute Knappheit",
+          "Relative Knappheit"
+        ],
+        "explanation": "Die Fragengenerierung basiert auf dem Text und den Parametern. Die Fragen sollen das Verständnis des Begriffs der Knappheit und seiner Arten beurteilen. Die Antwortoptionen sind sorgfältig ausgewählt, um die Komplexität des Themas zu berücksichtigen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist schwierig (schwer), da die Begrifflichkeit \"Relative Knappheit\" nicht sofort verständlich ist. Die Antwortmöglichkeiten sind jedoch korrekt.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge notwendig, da die Frage und Antwortmöglichkeiten korrekt sind."
+            ],
+            "reasoning": "Die Bewertung von 4 ist gerechtfertigt, da die Frage schwierig ist, aber die Antwortmöglichkeiten korrekt sind. Die Frage bezieht sich auf die spezifische Definition von \"Relative Knappheit\" und erfordert ein bisschen Überlegung.",
+            "target_value": "schwer",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist gut strukturiert und die Antwortmöglichkeiten sind klar definiert. Allerdings wäre es hilfreich, wenn die Frage einen zusätzlichen Hinweis auf die richtige Antwort enthält, um sicherzustellen, dass der Schüler das Konzept richtig versteht.",
+            "suggestions": [
+              "- Eine Option für eine praxisbezogene Beispielfrage, um das Konzept in einem realen Kontext zu verdeutlichen",
+              "- Eine kurze Erläuterung über die Bedeutung der Differenz zwischen absoluter und relativer Knappheit"
+            ],
+            "reasoning": "Die Frage wird aufgrund ihrer einfachen Natur und ihres Fokus auf die Reproduktion von Wissen als Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie bewertet. Die richtige Antwort ist jedoch nicht unbedingt sicher, da mehrere Optionen gleichberechtigt sind.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist komplex und erfordert ein tiefes Verständnis des Begriffs der Knappheit in der Mikroökonomie. Die Antwort Relative Knappheit ist korrekt, aber die anderen Optionen sind nicht direkt relevant.",
+            "suggestions": [
+              "Für diese Frage könnten weitere Beispiele und Erklärungen zu den verschiedenen Arten der Knappheit helfen, um das Verständnis der Schüler zu verbessern. Es könnte auch hilfreich sein, eine kurze Erklärung zu den Optionen \"Keine Knappheit\" und \"Unbekannt\", da diese Begriffe oft verwirrend sind."
+            ],
+            "reasoning": "Die Bewertung basiert auf dem Verständnis der Frage und der richtigen Antwort. Die Mathematik-Bewertung ist 4, da die Frage eine moderate bis schwierige Frage in Bezug auf mathematische Komplexität darstellt. Die richtige Antwort erfordert ein tiefes Verständnis des Begriffs der Knappheit und seine Anwendung in der Mikroökonomie.",
+            "target_value": "1",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die sprachlichen Hindernisse in dieser Frage beziehen sich auf komplexe Nominalphrasen, Passiv und Negation. Die Komplexität der Sprache kann dazu führen, dass Schüler Schwierigkeiten haben, die Frage zu verstehen.",
+            "suggestions": [
+              "- Eine Vereinfachung der Sprache in der Frage, um sie für Schüler leichter verständlich zu machen.",
+              "- Eine Anpassung der Antwortoptionen, um sicherzustellen, dass alle Optionen relevant für die Frage sind."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf den sprachlichen Hindernissen in der Frage. Die komplexen Nominalphrasen und das Passiv können für Schüler schwierig zu verstehen sein. Die Negation ist jedoch ein grundlegendes Konzept, das nicht unbedingt als Hindernis angesehen werden sollte.",
+            "target_value": "Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Komplexe NP; Item 2: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Negation; Item 3: Komplexe NP; Item 5: Passiv; Item 6: Negation; Item 7: Passiv; Item 7: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifischere Beispiele angegeben werden oder die Situation besser beschrieben wird. Die Frage ist jedoch explizit und klar formuliert.",
+            "suggestions": [
+              "Zusätzliche Beispiele für Arten von Knappheit könnten angegeben werden, um die Klarheit der Frage zu verbessern. Außerdem könnte die Anweisung an alle Schüler gerichtet werden, um eine breitere Diskussion zu ermöglichen."
+            ],
+            "reasoning": "Die Begründung für die Bewertung basiert auf der Tatsache, dass die Frage explizit und klar formuliert ist. Die Antwortmöglichkeiten beziehen sich jedoch nicht direkt auf das Thema der Frage. Daher beträgt die Bewertung 3 von 5.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 2,
+          "math_expert": 4,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Art der Knappheit bezieht sich auf die Verfügbarkeit eines Gutes an einem bestimmten Ort und zu einer bestimmten Zeit? <option>Absolute Knappheit<option>Relative Knappheit<option>Keine Knappheit<option>Unbekannt<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

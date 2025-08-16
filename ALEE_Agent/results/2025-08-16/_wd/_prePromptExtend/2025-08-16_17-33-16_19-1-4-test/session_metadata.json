@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 0.09174990653991699,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Welche Auswirkung hat es auf den Preis einer Sammelkarte, wenn sich viele Personen f\u00fcr sie interessieren?\nA) Der Preis steigt\nB) Der Preis sinkt\nC) Der Preis bleibt gleich\nD) Es ist nicht m\u00f6glich zu sagen <option>A) Der Preis steigt<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Was passiert mit dem Angebot von Sammelkarten, wenn der Preis sehr hoch ist?\nA) Das Angebot erh\u00f6ht sich\nB) Das Angebot verringert sich\nC) Es wird kein Angebot gegeben\nD) Es ist nicht m\u00f6glich zu sagen <option>B) Das Angebot verringert sich<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Wie wirkt sich ein hoher Preis auf die Nachfrage nach einer Sammelkarte aus?\nA) Die Nachfrage erh\u00f6ht sich\nB) Die Nachfrage verringert sich\nC) Die Nachfrage bleibt gleich\nD) Es ist nicht m\u00f6glich zu sagen <option>B) Die Nachfrage verringert sich<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T17:33:16.400549",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

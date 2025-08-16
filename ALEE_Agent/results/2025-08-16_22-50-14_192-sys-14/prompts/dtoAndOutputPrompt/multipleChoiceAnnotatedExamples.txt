@@ -1,0 +1,59 @@
+=== MULTIPLE-CHOICE FRAGEN MIT FORSCHER-ANNOTATIONEN ===
+
+Diese Beispiele zeigen von Forschern validierte Multiple-Choice-Fragen mit Qualitätsbewertungen:
+
+BEISPIEL 1 - Grundlegende Definition (Qualitätsbewertung: Gut)
+Frage: Was sind Bedürfnisse in der Wirtschaft? <option> Bedürfnisse sind Wünsche, die entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. <option> Bedürfnisse sind nur lebensnotwendige Dinge wie Essen und Trinken. <option> Bedürfnisse sind Produkte, die man im Laden kaufen kann. <option> Bedürfnisse sind Geldbeträge, die man zum Leben braucht.
+
+Forscher-Annotation:
+- Schwierigkeit: Stammaufgabe
+- Taxonomie: Stufe 1 (Wissen/Reproduktion)
+- Komplexität: 4/5
+- Format: Korrekte <option> Verwendung
+- Qualität: Gute Distraktoren, die häufige Missverständnisse abbilden
+- Sprachliche Klarheit: Explizite Instruktion, keine sprachlichen Hindernisse
+
+BEISPIEL 2 - Anwendung von Konzepten (Qualitätsbewertung: Gut)
+Frage: Warum sagt man in der Wirtschaft, dass Bedürfnisse unbegrenzt sind? <option> Weil Menschen immer mehr Geld haben wollen. <option> Weil jeder Mensch gleichzeitig sehr viele unterschiedliche Bedürfnisse hat und immer wieder neue dazukommen. <option> Weil es unendlich viele Produkte gibt. <option> Weil Menschen nie zufrieden sind.
+
+Forscher-Annotation:
+- Schwierigkeit: Stammaufgabe
+- Taxonomie: Stufe 2 (Anwendung/Transfer)
+- Komplexität: 4/5
+- Format: Korrekte <option> Verwendung
+- Qualität: Erfordert Verständnis des Konzepts, nicht nur Auswendiglernen
+- Sprachliche Klarheit: Explizite Instruktion, keine sprachlichen Hindernisse
+
+BEISPIEL 3 - Situative Anwendung (Qualitätsbewertung: Sehr gut)
+Frage: Ein Schüler kommt nach dem Sport nach Hause. Er will duschen, hat Hunger, will sich ausruhen. Später ist ihm langweilig und er möchte einen Film schauen. Welche Aussage beschreibt diese Situation am besten? <option> Der Schüler hat nur ein einziges Bedürfnis. <option> Der Schüler hat gleichzeitig mehrere Bedürfnisse, und wenn eines befriedigt ist, widmet er sich einem anderen. <option> Der Schüler hat keine echten Bedürfnisse, nur Wünsche. <option> Der Schüler sollte sich nur um sein wichtigstes Bedürfnis kümmern. <option> Die Bedürfnisse des Schülers sind alle gleich wichtig und müssen gleichzeitig erfüllt werden.
+
+Forscher-Annotation:
+- Schwierigkeit: schwer
+- Taxonomie: Stufe 1 (Wissen/Reproduktion)
+- Komplexität: 5/5
+- Format: Korrekte <option> Verwendung mit 5 Optionen
+- Qualität: Realitätsbezogenes Szenario, das Konzeptverständnis testet
+- Sprachliche Klarheit: Explizite Instruktion, narrative Struktur
+- Besonderheit: Verwendet konkrete Alltagssituation zur Konzeptveranschaulichung
+
+QUALITÄTSMERKMALE FÜR MULTIPLE-CHOICE BASIEREND AUF FORSCHER-BEWERTUNGEN:
+
+1. FORMAT:
+   - Immer <option> Markup verwenden (NIEMALS A), B), C))
+   - 4-6 Optionen für optimale Schwierigkeit
+   - Eine eindeutig beste Antwort
+
+2. INHALTLICHE QUALITÄT:
+   - Distraktoren basieren auf echten Missverständnissen
+   - Realitätsbezogene Szenarien verwenden wenn möglich
+   - Korrekte Antwort erfordert Konzeptverständnis, nicht nur Auswendiglernen
+
+3. SPRACHLICHE KLARHEIT:
+   - Explizite Instruktionen ("Welche Aussage...", "Was beschreibt...")
+   - Vermeidung komplexer Nominalphrasen
+   - Vermeidung von Passiv und Negationen in Instruktionen
+
+4. SCHWIERIGKEITSABSTUFUNG:
+   - Stammaufgabe: Grundlegende Definitionen und einfache Anwendungen
+   - schwer: Situative Anwendung und Transfer auf neue Kontexte
+   - Komplexität 4-5: Angemessen für Bildungskontext

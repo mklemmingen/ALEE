@@ -4,10 +4,13 @@ Type-specific Pydantic models for educational questions
 Provides format validation and expert suggestion integration
 """
 
+import logging
 import re
 from typing import List, Optional, Union, Literal, Dict, Any
 
 from pydantic import BaseModel, field_validator, Field
+
+logger = logging.getLogger(__name__)
 
 
 class ExpertSuggestion(BaseModel):
@@ -76,14 +79,19 @@ class MultipleChoiceModel(BaseQuestionModel):
     @field_validator('question_text')
     @classmethod
     def validate_option_markup(cls, v: str) -> str:
-        """Ensure proper <option> markup and sufficient options"""
+        """Ensure proper <option> markup and sufficient options with flexible validation"""
         option_pattern = r'<option>(.*?)(?=<option>|$)'
         options = re.findall(option_pattern, v, re.DOTALL)
         
-        if len(options) < 6:
-            raise ValueError(f"Multiple choice needs at least 6 options, found {len(options)}")
+        # Relaxed validation: allow 3+ options instead of 6+
+        if len(options) < 3:
+            raise ValueError(f"Multiple choice needs at least 3 options, found {len(options)}")
         if len(options) > 8:
             raise ValueError(f"Multiple choice should have max 8 options, found {len(options)}")
+        
+        # Log warning if less than recommended 6 options
+        if len(options) < 6:
+            logger.warning(f"Multiple-choice question has only {len(options)} options (recommended: 6-8)")
         
         # Check for meaningful content in options
         for i, option in enumerate(options):
@@ -95,13 +103,20 @@ class MultipleChoiceModel(BaseQuestionModel):
     @field_validator('correct_answer')
     @classmethod
     def validate_multiple_correct(cls, v: Union[str, List[str]]) -> List[str]:
-        """Ensure multiple correct answers for multiple choice"""
+        """Flexible validation for correct answers with warnings"""
         if isinstance(v, str):
             v = [v]
-        if len(v) < 2:
-            raise ValueError("Multiple choice must have at least 2 correct answers")
+        
+        # Relaxed validation: allow 1+ correct answers instead of 2+
+        if len(v) < 1:
+            raise ValueError("Multiple choice must have at least 1 correct answer")
         if len(v) > 4:
             raise ValueError("Multiple choice should have max 4 correct answers")
+        
+        # Log warning if only 1 correct answer (traditional multiple-choice)
+        if len(v) == 1:
+            logger.warning(f"Multiple-choice question has only 1 correct answer (traditional format, recommended: 2+ for multi-select)")
+        
         return v
     
     def extract_options(self) -> List[str]:
@@ -110,11 +125,11 @@ class MultipleChoiceModel(BaseQuestionModel):
         return re.findall(option_pattern, self.question_text, re.DOTALL)
     
     def validate_format_compliance(self) -> bool:
-        """Check if question maintains proper multiple choice format"""
+        """Check if question maintains proper multiple choice format with relaxed rules"""
         try:
             options = self.extract_options()
-            return (6 <= len(options) <= 8 and 
-                   len(self.correct_answer) >= 2 and 
+            return (3 <= len(options) <= 8 and 
+                   len(self.correct_answer) >= 1 and 
                    all(opt.strip() for opt in options))
         except:
             return False

@@ -1,0 +1,68 @@
+=== SINGLE-CHOICE FRAGEN MIT FORSCHER-ANNOTATIONEN ===
+
+Diese Beispiele zeigen von Forschern validierte Single-Choice-Fragen mit Qualitätsbewertungen:
+
+BEISPIEL 1 - Grundlegende Definition (Qualitätsbewertung: Sehr gut)
+Frage: Was sind Bedürfnisse in der Wirtschaft? <option> Bedürfnisse sind Wünsche, die entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. <option> Bedürfnisse sind nur materielle Güter, die man kaufen kann. <option> Bedürfnisse sind ausschließlich lebensnotwendige Dinge wie Nahrung und Wasser.
+
+Forscher-Annotation:
+- Schwierigkeit: Stammaufgabe
+- Taxonomie: Stufe 1 (Wissen/Reproduktion)
+- Explizitheit: Explizit
+- Format: Korrekte <option> Verwendung mit genau 3 Optionen
+- Qualität: Klare Abgrenzung zwischen korrekter Definition und häufigen Fehlvorstellungen
+- Sprachliche Klarheit: Keine komplexen Nominalphrasen, Negationen oder Passiv
+
+BEISPIEL 2 - Situative Anwendung (Qualitätsbewertung: Sehr gut)
+Frage: Nach dem Sport kommst du nach Hause und möchtest duschen, essen und dich ausruhen. Was zeigt dieses Beispiel über Bedürfnisse? <option> Menschen haben immer nur ein Bedürfnis zur gleichen Zeit. <option> Menschen haben gleichzeitig sehr viele unterschiedliche Bedürfnisse. <option> Bedürfnisse entstehen nur nach körperlicher Anstrengung.
+
+Forscher-Annotation:
+- Schwierigkeit: Stammaufgabe
+- Taxonomie: Stufe 2 (Anwendung/Transfer)
+- Explizitheit: Explizit
+- Format: Korrekte <option> Verwendung mit genau 3 Optionen
+- Qualität: Verwendet persönliche Ansprache ("du") und konkrete Alltagssituation
+- Sprachliche Klarheit: Direkte Ansprache macht Frage zugänglicher
+- Besonderheit: Testet Übertragung von Konzept auf alltägliche Erfahrung
+
+BEISPIEL 3 - Vergleichende Analyse (Qualitätsbewertung: Gut)
+Frage: Kreuze die korrekte Aussage an. Kinder und Erwachsene... <option> haben vollkommen identische Bedürfnisse, da alle Menschen gleich sind. <option> unterscheiden sich in ihren Bedürfnissen - Kinder wollen z.B. häufiger spielen, während Erwachsene eher den Wunsch nach finanzieller Sicherheit haben. <option> können keine unterschiedlichen Bedürfnisse haben, weil Bedürfnisse für alle Menschen festgelegt sind.
+
+Forscher-Annotation:
+- Schwierigkeit: schwer
+- Taxonomie: Stufe 1 (Wissen/Reproduktion)
+- Explizitheit: Explizit
+- Format: Korrekte <option> Verwendung mit genau 3 Optionen
+- Qualität: Vergleicht unterschiedliche Populationen, erfordert differenziertes Verständnis
+- Sprachliche Klarheit: Klare Instruktion "Kreuze die korrekte Aussage an"
+- Besonderheit: Inkludiert konkrete Beispiele (spielen vs. finanzielle Sicherheit)
+
+QUALITÄTSMERKMALE FÜR SINGLE-CHOICE BASIEREND AUF FORSCHER-BEWERTUNGEN:
+
+1. FORMAT:
+   - Immer <option> Markup verwenden (NIEMALS A), B), C))
+   - GENAU 3 Optionen für Single-Choice (nicht mehr, nicht weniger)
+   - Eine eindeutig korrekte Antwort
+
+2. INHALTLICHE QUALITÄT:
+   - Distraktoren repräsentieren realistische Fehlvorstellungen
+   - Verwendung konkreter, alltäglicher Beispiele
+   - Persönliche Ansprache ("du") kann Zugänglichkeit erhöhen
+   - Vergleiche zwischen Gruppen/Situationen für höhere Schwierigkeit
+
+3. SPRACHLICHE KLARHEIT:
+   - Explizite Instruktionen ("Was zeigt...", "Kreuze an...")
+   - Direkte, klare Formulierungen ohne Passiv oder komplexe Strukturen
+   - Konkrete Beispiele in Antwortoptionen
+
+4. SCHWIERIGKEITSABSTUFUNG:
+   - Stammaufgabe: Grunddefinitionen, einfache Situationsanwendung
+   - schwer: Vergleichende Analyse, differenzierte Konzeptanwendung
+   - Stufe 1: Wissensreproduktion mit korrekter Definition
+   - Stufe 2: Transfer auf neue Situationen und Kontexte
+
+5. BEWÄHRTE STRATEGIEN:
+   - Alltagssituationen als Beispiele nutzen
+   - "Du"-Ansprache für persönlichen Bezug
+   - Konkrete Beispiele in längeren Antwortoptionen
+   - Vergleiche zwischen verschiedenen Gruppen (Kinder/Erwachsene)

@@ -1,0 +1,9 @@
+{
+  "final_questions": [
+    "Was ist ein Bedürfnis? <option>Ein Wunsch, den man nicht erfüllen kann<option>Ein Wunsch, den man erfüllen muss<option>Ein Wunsch, der unbegrenzt ist<option>Ein Gefühl, dass einem etwas fehlt<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+    "Warum entstehen Bedürfnisse? <option>Weil man das Gefühl hat, dass einem etwas zu viel gibt<option>Weil man das Gefühl hat, dass einem etwas fehlt<option>Weil man sich selbst überschätzt<option>Weil man andere überschätzt<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+    "Wie verhalten sich Menschen, wenn ihre Bedürfnisse erfüllt sind? <option>Sie widmen sich sofort einem anderen Bedürfnis<option>Sie widmen sich immer wieder dem gleichen Bedürfnis<option>Sie geben auf alle ihre Bedürfnisse<option>Sie haben keine Bedürfnisse mehr<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+  ],
+  "question_count": 3,
+  "finalized_at": "2025-08-16T22:49:47.440672"
+}

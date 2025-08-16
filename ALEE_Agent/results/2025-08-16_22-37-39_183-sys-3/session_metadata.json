@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 60.43673610687256,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was bedeutet Bedarf im Wirtschaftskontext? <true-false>Was bedeutet Bedarf im Wirtschaftskontext?<true-false>Die Aussage ist falsch",
+        "Kannst du best\u00e4tigen, dass man nicht nur bei dem Einsatz von Mitteln f\u00fcr den Kauf von Gegenst\u00e4nden von Bedarf spricht? <true-false>Kannst du best\u00e4tigen, dass man nicht nur bei dem Einsatz von Mitteln f\u00fcr den Kauf von Gegenst\u00e4nden von Bedarf spricht?<true-false>Die Aussage ist falsch",
+        "Ist es wahr oder falsch, dass der Bedarf in der Wirtschaft etwas anderes als das Bed\u00fcrfnis ist? <true-false>Ist es wahr oder falsch, dass der Bedarf in der Wirtschaft etwas anderes als das Bed\u00fcrfnis ist?<true-false>Die Aussage ist falsch"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T22:37:39.843751",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

@@ -1,0 +1,6 @@
+### p.item_X_obstacle_complex_np (Komplexe Nominalphrasen in Antwortoptionen):
+**NICHT ENTHALTEN**:
+- Einfache Nominalphrasen: "die Inflation", "der Zinssatz"
+- Maximal ein Attribut: "steigende Preise"
+
+Erstelle Antwortoptionen mit einfachen Nominalphrasen ohne komplexe Verschachtelungen oder multiple Attribute.

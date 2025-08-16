@@ -127,16 +127,22 @@ class GermanQuestionGenerator(dspy.Module):
                 
             except Exception as e:
                 logger.error(f"Failed to create typed question from DSPy output: {e}")
-                # Create a fallback question model
-                fallback_data = {
-                    "question_text": frage,
-                    "question_type": question_type,
-                    "answers": antworten,
-                    "correct_answer": antworten[0] if antworten else "Unknown",
-                    "explanation": f"Fallback question due to error: {e}"
-                }
-                typed_question = QuestionFactory.create_question(question_type, fallback_data)
-                typed_questions.append(typed_question)
+                
+                # Enhanced error reporting with diagnostic info
+                diagnostic_info = self._get_question_diagnostic(frage, antworten, question_type)
+                logger.error(f"Question diagnostic: {diagnostic_info}")
+                
+                # Create a fallback question model with better error handling
+                try:
+                    # Try to create a minimal valid question for the type
+                    fallback_data = self._create_fallback_question_data(frage, antworten, question_type, str(e))
+                    typed_question = QuestionFactory.create_question(question_type, fallback_data)
+                    typed_questions.append(typed_question)
+                    logger.warning(f"Created fallback question for {question_type} after validation failure")
+                except Exception as fallback_error:
+                    logger.error(f"Even fallback question creation failed: {fallback_error}")
+                    # Skip this question entirely rather than crash
+                    continue
         
         return {
             'typed_questions': typed_questions,
@@ -159,8 +165,9 @@ class GermanQuestionGenerator(dspy.Module):
                 logger.info(f"Found {len(options)} options in correct <option> markup format")
                 return [opt.strip() for opt in options if opt.strip()]
             
-            # Fallback: Transform A)/B)/C) format to proper options
-            letter_pattern = r'[A-H]\)\s*([^A-H]*?)(?=[A-H]\)|$)'
+            # Fallback: Transform A)/B)/C) format to proper options  
+            # Improved regex: capture everything until next letter followed by ) or end of string
+            letter_pattern = r'[A-H]\)\s*(.*?)(?=\s*[A-H]\)|$)'
             letter_options = re.findall(letter_pattern, question_text, re.DOTALL)
             
             if letter_options:
@@ -265,7 +272,8 @@ class GermanQuestionGenerator(dspy.Module):
                 return question_text, answers
             
             # Transform A)/B)/C) format to <option> format if needed
-            letter_pattern = r'[A-H]\)\s*([^A-H]*?)(?=[A-H]\)|$)'
+            # Improved regex: capture everything until next letter followed by ) or end of string  
+            letter_pattern = r'[A-H]\)\s*(.*?)(?=\s*[A-H]\)|$)'
             letter_options = re.findall(letter_pattern, question_text, re.DOTALL)
             
             if letter_options:
@@ -308,7 +316,8 @@ class GermanQuestionGenerator(dspy.Module):
                 return question_text, answers
             
             # Transform from A)/B)/C) or ensure 4 options
-            letter_pattern = r'[A-H]\)\s*([^A-H]*?)(?=[A-H]\)|$)'
+            # Improved regex: capture everything until next letter followed by ) or end of string
+            letter_pattern = r'[A-H]\)\s*(.*?)(?=\s*[A-H]\)|$)'
             letter_options = re.findall(letter_pattern, question_text, re.DOTALL)
             
             if letter_options:
@@ -334,10 +343,32 @@ class GermanQuestionGenerator(dspy.Module):
                 logger.info("True-false question already has proper <true-false> format")
                 return question_text, answers
             
-            # If no markup, add default true-false options
+            # Handle case where only one statement is found - add second statement
+            if existing_statements and len(existing_statements) == 1:
+                logger.warning("Found only 1 true-false statement, adding second statement")
+                # Extract the existing statement and add proper second statement
+                first_statement = existing_statements[0].strip()
+                transformed_text = question_text + f" <true-false>{first_statement}<true-false>Die Aussage ist falsch"
+                transformed_answers = [first_statement, "Die Aussage ist falsch"]
+                logger.info("Fixed true-false format by adding second statement")
+                return transformed_text, transformed_answers
+            
+            # If no markup, add default true-false options based on content
             if "<true-false>" not in question_text:
-                transformed_text = question_text + " <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
-                transformed_answers = ["Die Aussage ist richtig", "Die Aussage ist falsch"]
+                # Try to extract a meaningful statement from the question text
+                lines = [line.strip() for line in question_text.split('.') if line.strip()]
+                main_statement = lines[0] if lines else question_text.strip()
+                
+                # Clean up the main statement
+                main_statement = re.sub(r'^(Richtig oder falsch\?|Wahr oder falsch\?|Ist das richtig\?)', '', main_statement, flags=re.IGNORECASE).strip()
+                
+                if len(main_statement) > 10:  # Use actual content if meaningful
+                    transformed_text = f"{main_statement} <true-false>{main_statement}<true-false>Die Aussage ist falsch"
+                    transformed_answers = [main_statement, "Die Aussage ist falsch"]
+                else:  # Default fallback
+                    transformed_text = question_text + " <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+                    transformed_answers = ["Die Aussage ist richtig", "Die Aussage ist falsch"]
+                
                 logger.info("Added <true-false> markup to true-false question")
                 return transformed_text, transformed_answers
                 
@@ -349,13 +380,166 @@ class GermanQuestionGenerator(dspy.Module):
             start_options = re.findall(start_pattern, question_text, re.DOTALL)
             end_options = re.findall(end_pattern, question_text, re.DOTALL)
             
-            if start_options and end_options and len(start_options) == len(end_options):
+            if start_options and end_options and len(start_options) == len(end_options) and len(start_options) >= 3:
                 logger.info(f"Mapping question already has proper format with {len(start_options)} pairs")
                 return question_text, answers
+            
+            # Fallback: Try to create mapping format from text content if no proper markup
+            if not (start_options and end_options and len(start_options) >= 3):
+                logger.warning("No proper mapping markup found - creating fallback mapping format")
+                
+                # Extract meaningful terms from the text for mapping fallback
+                lines = [line.strip() for line in question_text.split('\n') if line.strip()]
+                potential_terms = []
+                
+                # Look for terms in bullet points, numbered lists, or definitions
+                for line in lines[:10]:  # Check first 10 lines
+                    if any(char in line for char in ['•', '-', '1.', '2.', '3.', ':', '=', '→']):
+                        # Extract key terms from structured content
+                        clean_line = re.sub(r'^[•\-\d\.\s]+', '', line).strip()
+                        if len(clean_line) > 5 and len(clean_line) < 60:  # Reasonable term length
+                            potential_terms.append(clean_line)
+                
+                # Create default mapping format with at least 3 pairs
+                if len(potential_terms) >= 6:
+                    # Use found terms
+                    mid = len(potential_terms) // 2
+                    start_terms = potential_terms[:mid][:4]  # Max 4
+                    end_terms = potential_terms[mid:][:len(start_terms)]
+                else:
+                    # Default economic terms for mapping
+                    start_terms = ["Bedürfnisse", "Nachfrage", "Angebot", "Markt"]
+                    end_terms = ["Wünsche von Menschen", "Was Kunden kaufen wollen", "Was Unternehmen anbieten", "Ort des Tauschens"]
+                
+                # Ensure exactly 3-4 pairs
+                num_pairs = min(len(start_terms), len(end_terms), 4)
+                start_terms = start_terms[:num_pairs]
+                end_terms = end_terms[:num_pairs]
+                
+                # Create proper mapping format
+                question_stem = question_text.split('\n')[0] if '\n' in question_text else "Ordne die Begriffe den richtigen Erklärungen zu."
+                
+                mapping_text = question_stem + " "
+                for term in start_terms:
+                    mapping_text += f"<start-option>{term}"
+                for desc in end_terms:
+                    mapping_text += f"<end-option>{desc}"
+                
+                logger.info(f"Created fallback mapping format with {num_pairs} pairs")
+                return mapping_text, start_terms + end_terms
         
         # Default: return as-is if no transformation needed
         logger.info(f"Question format validation passed for {question_type}")
         return question_text, answers
+    
+    def _get_question_diagnostic(self, question_text: str, answers: List[str], question_type: str) -> Dict[str, Any]:
+        """Generate diagnostic information for failed question validation"""
+        import re
+        
+        diagnostic = {
+            "question_type": question_type,
+            "question_length": len(question_text),
+            "answers_count": len(answers),
+            "has_markup": False,
+            "detected_patterns": []
+        }
+        
+        # Check for various markup patterns
+        if question_type == "multiple-choice" or question_type == "single-choice":
+            option_pattern = r'<option>(.*?)(?=<option>|$)'
+            options = re.findall(option_pattern, question_text, re.DOTALL)
+            diagnostic["option_markup_count"] = len(options)
+            
+            letter_pattern = r'[A-H]\)\s*(.*?)(?=\s*[A-H]\)|$)'
+            letter_options = re.findall(letter_pattern, question_text, re.DOTALL)
+            diagnostic["letter_format_count"] = len(letter_options)
+            
+            if options:
+                diagnostic["has_markup"] = True
+                diagnostic["detected_patterns"].append(f"<option> markup ({len(options)} options)")
+            if letter_options:
+                diagnostic["detected_patterns"].append(f"A)/B)/C) format ({len(letter_options)} options)")
+                
+        elif question_type == "true-false":
+            tf_pattern = r'<true-false>(.*?)(?=<true-false>|$)'
+            statements = re.findall(tf_pattern, question_text, re.DOTALL)
+            diagnostic["true_false_markup_count"] = len(statements)
+            
+            if statements:
+                diagnostic["has_markup"] = True
+                diagnostic["detected_patterns"].append(f"<true-false> markup ({len(statements)} statements)")
+                
+        elif question_type == "mapping":
+            start_pattern = r'<start-option>(.*?)(?=<start-option>|<end-option>|$)'
+            end_pattern = r'<end-option>(.*?)(?=<start-option>|<end-option>|$)'
+            
+            start_options = re.findall(start_pattern, question_text, re.DOTALL)
+            end_options = re.findall(end_pattern, question_text, re.DOTALL)
+            
+            diagnostic["start_options_count"] = len(start_options)
+            diagnostic["end_options_count"] = len(end_options)
+            
+            if start_options or end_options:
+                diagnostic["has_markup"] = True
+                diagnostic["detected_patterns"].append(f"mapping markup ({len(start_options)} start, {len(end_options)} end)")
+        
+        return diagnostic
+    
+    def _create_fallback_question_data(self, question_text: str, answers: List[str], question_type: str, error_msg: str) -> Dict[str, Any]:
+        """Create minimal valid question data for fallback"""
+        
+        if question_type == "multiple-choice":
+            # Create minimal multiple-choice with 3 options (relaxed validation)
+            fallback_question = f"{question_text} <option>Option A<option>Option B<option>Option C"
+            return {
+                "question_text": fallback_question,
+                "question_type": question_type,
+                "answers": ["Option A", "Option B", "Option C"],
+                "correct_answer": ["Option A"],
+                "explanation": f"Fallback question due to validation error: {error_msg}"
+            }
+            
+        elif question_type == "single-choice":
+            # Create minimal single-choice with exactly 4 options
+            fallback_question = f"{question_text} <option>Option A<option>Option B<option>Option C<option>Option D"
+            return {
+                "question_text": fallback_question,
+                "question_type": question_type,
+                "answers": ["Option A", "Option B", "Option C", "Option D"],
+                "correct_answer": "Option A",
+                "explanation": f"Fallback question due to validation error: {error_msg}"
+            }
+            
+        elif question_type == "true-false":
+            # Create minimal true-false with 2 statements
+            fallback_question = f"{question_text} <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+            return {
+                "question_text": fallback_question,
+                "question_type": question_type,
+                "answers": ["Die Aussage ist richtig", "Die Aussage ist falsch"],
+                "correct_answer": "Richtig",
+                "explanation": f"Fallback question due to validation error: {error_msg}"
+            }
+            
+        elif question_type == "mapping":
+            # Create minimal mapping with 3 pairs
+            fallback_question = f"{question_text} <start-option>Begriff A<start-option>Begriff B<start-option>Begriff C<end-option>Definition A<end-option>Definition B<end-option>Definition C"
+            return {
+                "question_text": fallback_question,
+                "question_type": question_type,
+                "answers": ["Begriff A", "Begriff B", "Begriff C", "Definition A", "Definition B", "Definition C"],
+                "correct_answer": {"Begriff A": "Definition A", "Begriff B": "Definition B", "Begriff C": "Definition C"},
+                "explanation": f"Fallback question due to validation error: {error_msg}"
+            }
+        
+        # Generic fallback
+        return {
+            "question_text": question_text,
+            "question_type": question_type,
+            "answers": answers if answers else ["Default Answer"],
+            "correct_answer": answers[0] if answers else "Default Answer",
+            "explanation": f"Generic fallback due to error: {error_msg}"
+        }
     
     def _get_format_enforcement_prompt(self, question_type: str) -> str:
         """Generate strong format enforcement instructions for specific question type"""

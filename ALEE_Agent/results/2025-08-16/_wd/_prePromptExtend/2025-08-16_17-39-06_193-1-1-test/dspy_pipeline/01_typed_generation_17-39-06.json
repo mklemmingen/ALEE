@@ -1,0 +1,277 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T17:39:06.998255",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Welche Bedingung des Preisbildungsmodells wird nicht bei dem Beispiel mit der Sammelkarte erfüllt?\n\nA) Es gibt auf diesem Markt viele Anbieter und viele Nachfrager.\nB) Kein Anbieter oder Nachfrager beherrscht den Markt allein.\nC) Die Produkte auf dem Markt haben alle die gleiche Qualität.\nD) Die Anbieter und Nachfrager wissen genau, zu welchen Preisen Produkte auf einem Markt angeboten werden. <option>A) Es gibt auf diesem Markt viele Anbieter und viele Nachfrager.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Es gibt auf diesem Markt viele Anbieter und viele Nachfrager.",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Es gibt auf diesem Markt viele Anbieter und viele Nachfrager.",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen basieren auf dem Verständnis des Preisbildungsmodells und dessen Grenzen. Die Antworten sollen zeigen, dass das Modell nur unter bestimmten Annahmen gilt und dass externe Faktoren den Preisbildungsvorgang beeinflussen können.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Sehr gut! Die Frage erfüllt die Erwartungen an eine Stammaufgabe.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage bereits gut strukturiert und ansprechend ist."
+            ],
+            "reasoning": "Die Frage erfordert ein tiefes Verständnis des Preisbildungsmodells und seine Anwendung auf das gegebene Beispiel. Die Option A) Es gibt auf diesem Markt viele Anbieter und viele Nachfrager. ist ein wichtiger Aspekt dieses Modells, da es zu einem funktionierenden Markt führt.",
+            "target_value": "stammaufgabe",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage bezieht sich auf die Preisbildungsmodelle und fordert den Testkandidaten auf, eine Bedingung zu identifizieren, die bei einem Beispiel mit einer Sammelkarte nicht erfüllt wird. Die richtige Antwort ist A) Es gibt auf diesem Markt viele Anbieter und viele Nachfrager., da dies die Definition eines perfekten Wettbewerbsmarktes ist, der nicht durch ein Beispiel mit einer Sammelkarte repräsentiert wird.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Frage bezieht sich auf die Preisbildungsmodelle und fordert den Testkandidaten auf, eine Bedingung zu identifizieren, die bei einem Beispiel mit einer Sammelkarte nicht erfüllt wird. Die richtige Antwort ist A) Es gibt auf diesem Markt viele Anbieter und viele Nachfrager., da dies die Definition eines perfekten Wettbewerbsmarktes ist, der nicht durch ein Beispiel mit einer Sammelkarte repräsentiert wird.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität des Problems basiert auf der Verständnis der Bedingungen für einen perfekten Wettbewerb und der Anwendung dieser Konzepte auf ein Beispiel. Die Frage erfordert, dass der Schüler die Eigenschaften eines Marktes analysiert und beurteilt, ob bestimmte Bedingungen erfüllt sind.",
+            "suggestions": [
+              "Die Frage könnte um eine Erklärung der Auswirkungen von A) Es gibt auf diesem Markt viele Anbieter und viele Nachfrager. für die Preise in einem perfekten Wettbewerb ergänzt werden, sodass der Schüler auch verstehen kann, warum diese Bedingung wichtig ist."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 3 basiert auf der Tatsache, dass die Frage eine gute Analyse des Marktes und die Anwendung von Konzepten zum perfekten Wettbewerb erfordert. Die Frage ist jedoch nicht zu anspruchsvoll, da sie sich eher auf ein Verständnis der Bedingungen konzentriert als auf komplexe mathematische Berechnungen.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält sprachliche Hindernisse in Form von überzähligen und nicht relevanten Optionen (Zusätzliche Option 2-6). Diese können die Lesbarkeit der Frage beeinträchtigen und den Lerner erhöhten Zeitaufwand bei der Beantwortung erfordern.",
+            "suggestions": [
+              "- Die überzähligen Optionen sollten entfernt werden, um die Lesbarkeit der Frage zu verbessern.",
+              "- Eine klare Formulierung der Frage sollte gewährleisten, dass die richtige Antwort evident ist und keine Mehrdeutigkeiten aufkommen lassen."
+            ],
+            "reasoning": "Die Bewertung von 4 basiert darauf, dass es zwar einige sprachliche Hindernisse in Form überzähliger Optionen gibt, diese jedoch nicht so gravierend sind, dass sie die Gesamtlesebarkeit der Frage beeinträchtigen würden. Die Lerninhalte und das Preisbildungsmodell werden klar dargestellt.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 2,
+            "feedback": "Die Anweisungsklarheit ist nicht gut, da die Frage zu vage ist und die Antworten nicht eindeutig sind. Es fehlt an Kontext, damit der Leser weiß, was die richtige Antwort ist.",
+            "suggestions": [
+              "Eine mögliche Verbesserung wäre, die Frage so zu ändern, dass sie klar und spezifisch ist. Beispielsweise: \"Welche Bedingung des Preisbildungsmodells wird bei dem Beispiel der Sammelkarte nicht erfüllt?\"."
+            ],
+            "reasoning": "Die Begründung für die Bewertung ist, dass die Anweisungsklarheit nicht gut ist und es an Kontext mangelt. Die richtige Antwort ist nicht klar, da mehrere Optionen als falsch markiert sind.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 2
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Bedingung des Preisbildungsmodells wird nicht bei dem Beispiel mit der Sammelkarte erfüllt?\n\nA) Es gibt auf diesem Markt viele Anbieter und viele Nachfrager.\nB) Kein Anbieter oder Nachfrager beherrscht den Markt allein.\nC) Die Produkte auf dem Markt haben alle die gleiche Qualität.\nD) Die Anbieter und Nachfrager wissen genau, zu welchen Preisen Produkte auf einem Markt angeboten werden. <option>A) Es gibt auf diesem Markt viele Anbieter und viele Nachfrager.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Warum kann der Preisbildungsvorgang durch Faktoren beeinflusst werden, die nicht im Modell enthalten sind? <option>Weil es auf dem Markt viele verschiedene Produkte gibt.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Weil es auf dem Markt viele verschiedene Produkte gibt.",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Weil es auf dem Markt viele verschiedene Produkte gibt.",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen basieren auf dem Verständnis des Preisbildungsmodells und dessen Grenzen. Die Antworten sollen zeigen, dass das Modell nur unter bestimmten Annahmen gilt und dass externe Faktoren den Preisbildungsvorgang beeinflussen können.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist zwar stammaufgabe, aber die Beantwortungen haben nichts mit dem Thema Preisbildung zu tun. Es fehlt ein Verständnis für das Thema und die Antwortmöglichkeiten sind nicht relevant.",
+            "suggestions": [
+              "- Eine Überarbeitung der Frage, um sie auf das Thema Preisbildung zu fokussieren.",
+              "- Die Antwortmöglichkeiten sollten direkt mit dem Thema Preisbildung zusammenhängen."
+            ],
+            "reasoning": "Die Bewertung von 2 basiert darauf, dass die Frage stammaufgabe ist, aber die Beantwortungen nicht relevant für das Thema sind. Die Überarbeitung der Frage und die Antwortmöglichkeiten wäre notwendig, um eine bessere Übereinstimmung mit dem Thema Preisbildung zu erreichen.",
+            "target_value": "stammaufgabe",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Antwortmöglichkeiten sind zwar korrekt, jedoch fehlt es an einer tiefgreifenden Erklärung. Einige Optionen wirken eher wie Ablenkungen und nicht direkt mit dem Frageinhalt in Verbindung.",
+            "suggestions": [
+              "Es könnte hilfreich sein, den Schülern die Möglichkeit zu geben, ihre Antworten zu begründen oder zu erläutern. Dies würde nicht nur das Wissen über die Faktoren der Preisbildung verbessern, sondern auch die Fähigkeit zur Argumentation und zum kritischen Denken."
+            ],
+            "reasoning": "Die Bewertung von 2 ergibt sich aus der Tatsache, dass die Frage eher auf ein Verständnis des Modells und seiner Grenzen abzielt als auf eine direkte Anwendung von Wissen. Die Schüler müssen in der Lage sein, kritisch über das Thema nachzudenken und seine Schwächen zu erkennen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": true
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität wird anhand der Antwortoptionen und dem Kontext bewertet. Die richtige Antwort zeigt ein Verständnis für die Komplexität von Preisbildungmodellen, aber es gibt auch einige unklare Optionen, was darauf schließen lässt, dass weitere Überlegungen erforderlich sind.",
+            "suggestions": [
+              "- Mehr Informationen über den Kontext der Frage liefern.",
+              "- Die Optionen sollten genauer definiert werden, um Verwirrung zu vermeiden.",
+              "- Es sollte ein besseres Verständnis für die mathematische Modellierung gezeigt werden."
+            ],
+            "reasoning": "Die Bewertung basiert auf dem Verständnis der mathematischen Komplexität und der Fähigkeit, unvorhergesehene Faktoren bei Preisbildungmodellen zu berücksichtigen. Die Antwort zeigt ein grundlegendes Verständnis, aber es gibt auch noch Verbesserungspotential.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Es besteht ein sprachliches Hindernis im Bereich der Wirtschaftswissenschaften. Die Frage und die Optionen scheinen überfrachtet mit spezifischen wirtschaftlichen Begriffen zu sein, was für nichtwirtschaftlich geschulte Personen schwer verständlich sein kann.",
+            "suggestions": [
+              "- Eine Klarstellung der wichtigsten Faktoren, die die Preisbildung beeinflussen (z.B. Kosten, Nachfrage), könnte helfen.",
+              "- Die Optionen könnten prägnanter formuliert werden, um Missverständnisse zu vermeiden."
+            ],
+            "reasoning": "Die Frage und die Optionen wurden als komplex eingeschätzt, was für Lernende möglicherweise ein Hindernis darstellen kann. Durch eine präzise Formulierung der Frage und klarer Optionen könnte das Verständnis erhöht werden.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist gut, da der Kontext und der Zweck der Frage klar benannt sind. Die Antwortmöglichkeiten sind eindeutig und passen zum Thema.",
+            "suggestions": [
+              "Keine Verbesserungen notwendig."
+            ],
+            "reasoning": "Die Anweisung wird mit einer Bewertung von 3 bewertet, da die Frage explizit formuliert ist und die Antwortmöglichkeiten eindeutig sind. Die Klarheit der Anweisung wird als gut eingeschätzt.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 2,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Average rating 2.8 below threshold, 2 experts suggest improvements",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Warum kann der Preisbildungsvorgang durch Faktoren beeinflusst werden, die nicht im Modell enthalten sind? <option>Weil es auf dem Markt viele verschiedene Produkte gibt.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Was passiert, wenn ein Anbieter seinen Freund gegenüber anderen Marktteilnehmern bevorzugt?\n\nA) Der Markt wird transparenter.\nB) Der Preis sinkt.\nC) Der Anbieter verletzt die Annahmen des Modells.\nD) Die Nachfrager werden unzufriedener. <option>C) Weil der Anbieter seine Beziehung zu seinem Freund über die Marktmechanik stellt.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "C) Weil der Anbieter seine Beziehung zu seinem Freund über die Marktmechanik stellt.",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "C) Weil der Anbieter seine Beziehung zu seinem Freund über die Marktmechanik stellt.",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen basieren auf dem Verständnis des Preisbildungsmodells und dessen Grenzen. Die Antworten sollen zeigen, dass das Modell nur unter bestimmten Annahmen gilt und dass externe Faktoren den Preisbildungsvorgang beeinflussen können.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist ansprechend formuliert und enthält ein relevantes Beispiel aus der realen Welt. Allerdings ist die Antwortwahl C) nicht sofort einleuchtend, da sie eine spezifische Annahme des Modells als Grund für die Verletzung angibt.",
+            "suggestions": [
+              "Die Frage könnte um mehr Kontext erweitert werden, um den Leser besser verstehen zu lassen, warum der Anbieter seine Beziehung über die Marktmechanik stellt. Es wäre hilfreich, wenn die Antwortoptionen klarer und prägnanter formuliert wären."
+            ],
+            "reasoning": "Die Frage ist stammaufgabe, da sie ein grundlegendes Konzept im Rahmen der Marktmechanik thematisiert. Die Antwortwahl C) ist jedoch nicht sofort einleuchtend, da sie eine spezifische Annahme des Modells als Grund für die Verletzung angibt. Dies könnte zu Missverständnissen bei den Lesern führen.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage und Antworten liefern eine gute Übersicht über das Thema. Die richtige Antwort (C) ist genau und beschreibt den Einfluss von Beziehungen zwischen Anbietern auf die Marktmechanik.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Frage wird mit einer Bloom'schen Taxonomiestufe der Stufe 1 (Wissen/Reproduktion) versehen. Die Frage und Antworten erfordern ein Verständnis des Themas und die Fähigkeit, das richtige Beispiel für eine Marktmechanik zu identifizieren.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität dieser Frage liegt in der Analyse der Marktunregelmäßigkeit und der Fähigkeit, zwischen den verschiedenen Optionen zu unterscheiden. Die richtige Antwort erfordert ein Verständnis der Annahmen des Modells und die Fähigkeit, auf ein spezielles Beispiel reagieren.",
+            "suggestions": [
+              "Um die Komplexität dieser Frage anzupassen, könnten weitere Beispiele für Marktunregelmäßigkeiten verwendet werden, um das Verständnis der Studierenden zu überprüfen. Es könnte auch hilfreich sein, mehrere Fragen in einem einzigen Test zu kombinieren, um ein differenzierteres Bild des Verständnisses der Studierenden zu erhalten."
+            ],
+            "reasoning": "Die Bewertung erfolgte aufgrund der Analyse der Marktunregelmäßigkeit und der Fähigkeit, zwischen den verschiedenen Optionen zu unterscheiden. Die richtige Antwort erfordert ein Verständnis der Annahmen des Modells und die Fähigkeit, auf ein spezielles Beispiel reagieren.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält keine sprachlichen Hindernisse. Die Antwortoptionen sind klar und verständlich formuliert. Der Fokus liegt auf der Analyse der Marktmechanik und ihrer Annahmen, was eine komplexe Thematik ist.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung des Textes."
+            ],
+            "reasoning": "Die Begründung für die Bewertung als 4 (aus 5 möglichen) liegt darin, dass die Frage zwar anspruchsvoll ist, aber dennoch eine klare und verständliche Formulierung aufweist. Der Fokus auf die Marktmechanik und ihre Annahmen ermöglicht eine fundierte Diskussion.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit und Explizitheit der Frage sind gut, da die richtige Antwort klar definiert ist und keine Interpretation erfordert. Es wird jedoch empfohlen, weitere Optionen zur Verdeutlichung des Konzepts zu hinzufügen.",
+            "suggestions": [
+              "Es könnte hilfreich sein, mehr Optionen zur Verdeutlichung des Konzepts der Marktmechanik und ihrer Grenzen anzubieten. So kann der Leser besser verstehen, wie die Annahmen des Modells beeinflusst werden können."
+            ],
+            "reasoning": "Die Anweisungsklarheit ist gut, da die richtige Antwort klar definiert ist. Die Frage erfordert jedoch auch ein Verständnis für die Marktmechanik und ihre Grenzen. Daher wird empfohlen, weitere Optionen zur Verdeutlichung des Konzepts anzubieten.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.4 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was passiert, wenn ein Anbieter seinen Freund gegenüber anderen Marktteilnehmern bevorzugt?\n\nA) Der Markt wird transparenter.\nB) Der Preis sinkt.\nC) Der Anbieter verletzt die Annahmen des Modells.\nD) Die Nachfrager werden unzufriedener. <option>C) Weil der Anbieter seine Beziehung zu seinem Freund über die Marktmechanik stellt.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

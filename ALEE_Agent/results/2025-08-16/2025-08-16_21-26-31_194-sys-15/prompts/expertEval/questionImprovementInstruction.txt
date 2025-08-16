@@ -1,0 +1,9 @@
+=== IHRE AUFGABE ===
+Verbessern Sie die 3 Fragen basierend auf den Expertenvorschlägen.
+Geben Sie die verbesserten Fragen in diesem exakten Format zurück:
+
+1. [Verbesserte erste Frage]
+2. [Verbesserte zweite Frage]  
+3. [Verbesserte dritte Frage]
+
+Konzentrieren Sie sich darauf, die Expertenvorschläge umzusetzen und dabei den Bildungswert zu erhalten.

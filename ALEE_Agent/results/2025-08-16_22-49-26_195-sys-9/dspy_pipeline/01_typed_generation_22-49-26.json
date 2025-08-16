@@ -1,0 +1,281 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:49:26.582729",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Wer erhält ein Konzertticket, wenn es über den Markt verkauft wird? <option>Nur wer das Konzert gerne sehen möchte<option>Jeder, der ein Ticket kaufen kann<option>Derjenige, der das teuerste Angebot gibt<option>Keiner, weil die Tickets nicht verkauft werden<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Nur wer das Konzert gerne sehen möchte",
+          "Jeder, der ein Ticket kaufen kann",
+          "Derjenige, der das teuerste Angebot gibt",
+          "Keiner, weil die Tickets nicht verkauft werden",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Nur wer das Konzert gerne sehen möchte",
+          "Jeder, der ein Ticket kaufen kann"
+        ],
+        "explanation": "Die Fragen sind so formuliert, dass sie den Begriff \"Markt\" im Zusammenhang mit Verteilungsmechanismen erklären. Die Antworten sollen zeigen, wie der Markt Güter verteilt und was er für das Wirtschaftsleben bedeutet.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert und bezieht sich auf das deutsche Schwierigkeitsgrad 'leicht'.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage bereits gut formuliert ist."
+            ],
+            "reasoning": "Die Bewertung von 4 ergibt sich aus der richtigen Beziehung zwischen dem Konzertticket und dem Verkauf. Die Frage zeigt eine klare Antwortmöglichkeit für den leicht schwierigen Schwierigkeitsgrad, was die richtige Lösung ist.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist für die Stufe 1 (Wissen/Reproduktion) nicht geeignet, da sie das Verständnis einer Situation erfordert. Eine mögliche Anpassung wäre eine Frage zu gestalten, die einfach nur nach der Person fragt, die ein Konzertticket erhält, wenn es über den Markt verkauft wird.",
+            "suggestions": [
+              "Eine alternative Frage könnte lauten: \"Wer erhält ein Konzertticket, wenn es über den Markt verkauft wird?\" mit Antworten wie \"Der Organisator\", \"Jeder Käufer\" oder \"Niemand\"."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Stufe 1 (Wissen/Reproduktion) und dem Faktor, dass die Frage Analyse und Bewertung erfordert.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage bezieht sich auf die Grundlagen der Mikroökonomie, insbesondere auf den Marktmechanismus. Die richtige Antwort zeigt ein gutes Verständnis des Prinzips des Marktes.",
+            "suggestions": [
+              "Für eine korrekte Komplexität könnten weitere Fragen zu Themen wie Gleichgewichtspreisen, Einkommensverteilung oder Marktversagen hinzugefügt werden."
+            ],
+            "reasoning": "Die Mathematik-Bewertung von 3 basiert auf dem Verständnis des Marktes und der richtigen Antwort. Die Frage erfordert ein gewisses Maß an wirtschaftlichem Verständnis, was eine Bewältigung von Stufe 2 entspricht.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält mehrere sprachliche Hindernisse, die es schwierig machen, sie zu verstehen. Die Passivkonstruktionen sind besonders problematisch, da sie es schwierig machen, den Subjekt-Objekt-Bezug klar zu erkennen. Die Negationen können auch verwirrend sein, insbesondere wenn sie mit anderen sprachlichen Hindernissen kombiniert werden.",
+            "suggestions": [
+              "Um die sprachlichen Hindernisse zu überwinden, könnten folgende Vorschläge gemacht werden:",
+              "* Verwenden Sie aktive Konstruktionen anstelle von Passivkonstruktionen.",
+              "* Vermeiden Sie komplexe NP-Strukturen und verwenden Sie stattdessen einfache Sätze.",
+              "* Verwenden Sie klare und präzise Sprache, um Negationen zu vermeiden."
+            ],
+            "reasoning": "Die Bewertung von 4 wird durch die Anzahl der sprachlichen Hindernisse in der Frage bestimmt. Die Passivkonstruktionen und komplexe NP-Strukturen sind besonders problematisch, während die Negationen weniger stark beeinträchtigend sind.",
+            "target_value": "Item 1: Passiv; Item 2: Negation; Item 3: Passiv; Item 3: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Komplexe NP; Item 6: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Negation; Item 7: Komplexe NP",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist deutlich und klarsprachig formuliert, was es den Teilnehmern ermöglicht, ihre Entscheidungen fundiert zu treffen. Die Antwortmöglichkeiten sind ausreichend weit gefasst, um eine Vielzahl von Sichtweisen abzubilden.",
+            "suggestions": [
+              "Keine Vorschläge zur Verbesserung der Anweisungsklarheit sind erforderlich."
+            ],
+            "reasoning": "Die Bewertung von 4 basiert auf der Tatsache, dass die Frage eindeutig ist und die Antwortmöglichkeiten klar sind. Die Explizitheit der Zielsetzung wird als positiv angesehen, da sie eindeutige Anweisungen zur Lösungsfindung bereitstellt.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wer erhält ein Konzertticket, wenn es über den Markt verkauft wird? <option>Nur wer das Konzert gerne sehen möchte<option>Jeder, der ein Ticket kaufen kann<option>Derjenige, der das teuerste Angebot gibt<option>Keiner, weil die Tickets nicht verkauft werden<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Welchen Effekt hat der Markt auf den Warenbestand? <option>Er erhöht ihn<option>Er senkt ihn<option>Er sorgt dafür, dass nur diejenigen Güter hergestellt und verkauft werden, die die Menschen wollen<option>Er sorgt dafür, dass alle Güter verkaufbar sind<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Er erhöht ihn",
+          "Er senkt ihn",
+          "Er sorgt dafür, dass nur diejenigen Güter hergestellt und verkauft werden, die die Menschen wollen",
+          "Er sorgt dafür, dass alle Güter verkaufbar sind",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Er erhöht ihn",
+          "Er senkt ihn"
+        ],
+        "explanation": "Die Fragen sind so formuliert, dass sie den Begriff \"Markt\" im Zusammenhang mit Verteilungsmechanismen erklären. Die Antworten sollen zeigen, wie der Markt Güter verteilt und was er für das Wirtschaftsleben bedeutet.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage bezieht sich auf die Marktmechanismen, aber die Frage ist etwas verwirrend geschrieben.",
+            "suggestions": [
+              "Klare und präzise Fragen formulieren, um das Verständnis der Antwortmöglichkeiten zu erleichtern."
+            ],
+            "reasoning": "Die Frage bezieht sich auf die Marktmechanismen, aber die Frage ist etwas verwirrend geschrieben. Die richtigen Antworten sind \"Er erhöht ihn\" und \"Er senkt ihn\", da der Markt durch Preisanpassung bestimmt, ob ein Gut produziert oder nicht.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage und die Antworten sind gut formuliert und passen zu der gegebenen Taxonomiestufe. Die Frage befasst sich mit einem fundamentalen Konzept der Wirtschaft, nämlich dem Markt und seinem Einfluss auf den Warenbestand.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich"
+            ],
+            "reasoning": "Die Bewertung von 3 ist gerechtfertigt, da die Frage ein grundlegendes Verständnis des Marktes und seiner Auswirkungen auf den Warenbestand erfordert. Die richtigen Antworten sind klar definiert und passen zu der gegebenen Taxonomiestufe.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Der Schüler zeigt ein gutes Verständnis für die grundlegenden Prinzipien der Marktwirtschaft. Die richtige Antwort auf die Frage ist jedoch nicht völlig klar, da sich einige Optionen nur annähernd mit der richtigen Antwort abstimmen lassen.",
+            "suggestions": [
+              "- Der Schüler sollte besser über die Marktmechanismen und ihre Auswirkungen auf den Warenbestand informiert werden.",
+              "- Die Frage könnte von einer Formulierung profitieren, die klarer zwischen Angebot und Nachfrage unterscheidet."
+            ],
+            "reasoning": "Die richtige Antwort wird aus folgendem Grunde gewählt: Der Markt sorgt dafür, dass die Produktion auf die tatsächlichen Bedürfnisse der Menschen abgestimmt ist. Die Optionen 1-4 erfüllen diese Beschreibung, während die Optionen 5 und 6 nicht direkt damit zusammenhängen.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält sowohl Passivkonstruktionen als auch Negationen, was zu Verwirrung führen kann. Die Optionen sollten in aktivem Stil formuliert und die verwendeten Konstruktionen vereinfacht werden.",
+            "suggestions": [
+              "1. Aktive Formulierung der Optionen (z.B. \"Der Markt erhöht den Warenbestand\" anstelle von \"Er erhöht ihn\")",
+              "2. Vereinfachung komplexer Nomen",
+              "3. Vermeidung übermäßiger Negationen"
+            ],
+            "reasoning": "Die Passivkonstruktionen und Negationen in der Frage führen zu einer verminderten Verständlichkeit. Durch aktive Formulierung der Optionen und Vereinfachung der verwendeten Konstruktionen kann die Frage besser von den Schülern verstanden werden.",
+            "target_value": "Item 1: Passiv; Item 2: Negation; Item 3: Passiv; Item 3: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Komplexe NP; Item 6: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Negation; Item 7: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Der Feedback-Bereich ist gut besetzt und zeigt ein tiefes Verständnis für das Thema. Die Frage selbst ist klar formuliert und die richtigen Antworten sind leicht zu erkennen. Allerdings fehlt es an einer expliziten Begründung in der Anweisung, warum dieser Fragenbereich wichtig ist.",
+            "suggestions": [
+              "- Eine kurze Einführung zum Thema Marktwirtschaft wäre wünschenswert.",
+              "- Die Frage könnte um eine explizite Erklärung der Auswirkungen des Marktes auf die Warenbestände erweitert werden."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 4, da das Thema gut abgedeckt wird und die Fragen klar formuliert sind. Die Begründung könnte jedoch besser durchgeführt werden, um den Lernenden ein tieferes Verständnis des Themas zu vermitteln.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welchen Effekt hat der Markt auf den Warenbestand? <option>Er erhöht ihn<option>Er senkt ihn<option>Er sorgt dafür, dass nur diejenigen Güter hergestellt und verkauft werden, die die Menschen wollen<option>Er sorgt dafür, dass alle Güter verkaufbar sind<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Was ist das einheitliche Tauschmittel im Wirtschaftsleben? <option>Geld<option>Zeit<option>Arbeit<option>Energie<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Geld",
+          "Zeit",
+          "Arbeit",
+          "Energie",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Geld",
+          "Zeit"
+        ],
+        "explanation": "Die Fragen sind so formuliert, dass sie den Begriff \"Markt\" im Zusammenhang mit Verteilungsmechanismen erklären. Die Antworten sollen zeigen, wie der Markt Güter verteilt und was er für das Wirtschaftsleben bedeutet.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist für den Schwierigkeitsgrad \"leicht\" gut geeignet, da das Konzept von Geld als einheitlichem Tauschmittel in der Grundschule oder im ersten Schuljahr des Gymnasiums unterrichtet wird.",
+            "suggestions": [],
+            "reasoning": "Die Frage ist gut formuliert und die Antwortmöglichkeiten sind plausibel. Die Frage bezieht sich auf ein grundlegendes Konzept der Volkswirtschaftslehre, das in der Grundschule oder im ersten Schuljahr des Gymnasiums unterrichtet wird. Es gibt keine spezifischen Verbesserungsvorschläge.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage erfüllt die Anforderungen der Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie. Die Antwortoptionen sind klar definiert und die richtige Antwort ist eindeutig. Es besteht jedoch keine Notwendigkeit zur Differenzierung oder Analyse, da es sich lediglich um eine einfache Identifikation eines Begriffs handelt.",
+            "suggestions": [
+              "Keine Vorschläge für Anpassungen erforderlich."
+            ],
+            "reasoning": "Die Frage wird als angemessen bewertet, da sie ein klares und direktes Verständnis des Konzepts \"Geld\" als Tauschmittel im Wirtschaftsleben erfordert. Die Antwortoptionen sind genau definiert und die richtige Antwort ist eindeutig identifizierbar.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität der Frage liegt im Verständnis des Wirtschaftskonzepts \"einheitliches Tauschmittel\". Die richtige Antwort zeigt, dass die Person ein grundlegendes Verständnis von Geld als Wertaustauschemittel besitzt.",
+            "suggestions": [
+              "Keine Anpassungen notwendig. Der Mathematikstoff wird an der Zielstufe 2 behandelt und die Frage passt gut hier rein."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus der Tatsache, dass die Person Geld als einheitliches Tauschmittel identifizieren kann, aber möglicherweise nicht in der Lage ist, weitere wirtschaftliche Konzepte zu analysieren. Die Frage ist für die Zielstufe 2 geeignet.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Einige sprachliche Hindernisse können identifiziert werden:\n- Passiv (Item 1, 3, 5, 7): Es gibt einige Passivkonstruktionen in der Frage und Antworten.\n- Negation (Item 2, 6): Die Frage enthält eine Negationskonstruktion (\"Was ist das einheitliche Tauschmittel im Wirtschaftsleben?\", wobei \"nicht\" impliziert ist).\n- Komplexe NP (Item 4, 5, 6, 7): In einigen Antworten werden komplexe Nomen verwendet.",
+            "suggestions": [
+              "Einige Vorschläge zur Anpassung der sprachlichen Hindernisse:",
+              "- Vereinfachen der Passivkonstruktionen.",
+              "- Beseitigung der Negationskonstruktion in der Frage (z.B. \"Was ist das Tauschmittel im Wirtschaftsleben?\").",
+              "- Vereinfachen der komplexen NP."
+            ],
+            "reasoning": "Die Bewertung von 4 basiert auf der Anzahl der Identifizierten sprachlichen Hindernisse. Insgesamt gibt es sieben verschiedene Fälle, aber einige davon sind wiederholte Beobachtungen (z.B., Passiv bei Item 1 und 3). Daher ist eine Bewertung von 4 gerechtfertigt, da es sich um mehrere Identifizierte Hindernisse handelt.",
+            "target_value": "Item 1: Passiv; Item 2: Negation; Item 3: Passiv; Item 3: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Komplexe NP; Item 6: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Negation; Item 7: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist insgesamt klar, aber es fehlt an Kontext, warum Geld als einheitliches Tauschmittel erwähnt wird und nicht andere Optionen. Es wäre hilfreich, wenn die Frage mehr Hintergrundinformationen enthielte.",
+            "suggestions": [
+              "- Einfügen einer kurzen Erläuterung, warum Geld das wichtigste Tauschmittel ist",
+              "- Zuerkennung der anderen Optionen als sekundäre Bedeutungen"
+            ],
+            "reasoning": "Die Anweisungs-Bewertung beträgt 4, da die Frage explizit ist und eine Liste mit Optionen enthält. Allerdings fehlt an Kontext, was die Klarheit der Anweisung mindert.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 4,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.8 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist das einheitliche Tauschmittel im Wirtschaftsleben? <option>Geld<option>Zeit<option>Arbeit<option>Energie<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

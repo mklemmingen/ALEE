@@ -1,0 +1,9 @@
+{
+  "final_questions": [
+    "Wie verändert sich der Gleichgewichtspreis, wenn das Angebot zu jedem gegebenen Preis steigt? <true-false>Wie verändert sich der Gleichgewichtspreis, wenn das Angebot zu jedem gegebenen Preis steigt?<true-false>Die Aussage ist falsch",
+    "Wie verändert sich der Gleichgewichtspreis, wenn die Nachfrage zu jedem gegebenen Preis fällt? <true-false>Wie verändert sich der Gleichgewichtspreis, wenn die Nachfrage zu jedem gegebenen Preis fällt?<true-false>Die Aussage ist falsch",
+    "(Keine dritte Frage generiert, da es nur zwei mögliche true-false Fragen gibt) <true-false>(Keine dritte Frage generiert, da es nur zwei mögliche true-false Fragen gibt)<true-false>Die Aussage ist falsch"
+  ],
+  "question_count": 3,
+  "finalized_at": "2025-08-16T22:50:16.793629"
+}

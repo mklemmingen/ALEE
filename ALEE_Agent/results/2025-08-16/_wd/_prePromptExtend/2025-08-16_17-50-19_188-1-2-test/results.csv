@@ -1,0 +1,30 @@
+c_id,subject,type,text,question_1,initial_question_1,question_2,initial_question_2,question_3,initial_question_3,p.instruction_explicitness_of_instruction,p.mathematical_requirement_level,p.taxanomy_level,question_type,p.variation,answers,typed_pipeline_used,refinement_applied,format_preserved,expert_average_ratings,p.root_text_reference_explanatory_text,p.root_text_obstacle_passive,p.root_text_obstacle_negation,p.root_text_obstacle_complex_np,p.root_text_contains_irrelevant_information,p.instruction_obstacle_passive,p.instruction_obstacle_complex_np,dspy_consensus_used,dspy_modular_prompts,dspy_expert_count,dspy_all_approved,p.item_1_obstacle_passive,p.item_1_obstacle_negation,p.item_1_obstacle_complex_np,p.item_2_obstacle_passive,p.item_2_obstacle_negation,p.item_2_obstacle_complex_np,p.item_3_obstacle_passive,p.item_3_obstacle_negation,p.item_3_obstacle_complex_np,p.item_4_obstacle_passive,p.item_4_obstacle_negation,p.item_4_obstacle_complex_np,p.item_5_obstacle_passive,p.item_5_obstacle_negation,p.item_5_obstacle_complex_np,p.item_6_obstacle_passive,p.item_6_obstacle_negation,p.item_6_obstacle_complex_np,p.item_7_obstacle_passive,p.item_7_obstacle_negation,p.item_7_obstacle_complex_np,p.item_8_obstacle_passive,p.item_8_obstacle_negation,p.item_8_obstacle_complex_np
+188-1-2-test,stammaufgabe,multiple-choice,"Anbieter und Nachfrager auf Märkten Märkte sind Treffpunkte von Angebot und Nachfrage. Bei uns werden die meisten Güter über Märkte verteilt. Doch was genau ist so ein Markt? Die Nachfrage ist die Menge an Gütern, die Nachfrager und Nachfragerinnen auf Märkten kaufen wollen. Erinnerst du dich an das Konzertkarten-Beispiel? Hier sind die Fans die Nachfragerinnen und Nachfrager, denn sie wollen eine der Konzertkarten kaufen. Das Ziel der Nachfragerinnen und Nachfrager ist es, die Güter, die sie zur Befriedigung ihrer Bedürfnisse benötigen, zu möglichst niedrigen Preisen einzukaufen. Alltagssprache vs. Fachsprache: In der Alltagssprache sprechen wir auch von einer Nachfrage, wenn man etwas nicht verstanden hat. In der Fachsprache der Wirtschaft ist die Nachfrage die Menge an Gütern, die Käuferinnen und Käufer auf Märkten erwerben wollen. Das Angebot ist die Summe aller angebotenen Güter auf einem Markt. In dem Konzertkarten-Beispiel sind die Tickets, die die zum Verkauf stehen, das Angebot. In diesem Beispiel ist also der Konzertveranstalter der Anbieter. Anbieter wollen ihre Sachgüter oder Dienstleistungen auf Märkten verkaufen oder tauschen. Dabei ist ihr Ziel einen möglichst hohen Preis zu erzielen.  ","Was genau ist das Ziel der Nachfragerinnen und Nachfrager auf Märkten?
+A) Das höchste Preis zu erzielen
+B) Die Güter, die sie zur Befriedigung ihrer Bedürfnisse benötigen, zu möglichst niedrigen Preisen einzukaufen
+C) Die Konzertkarten zum günstigsten Preis zu kaufen
+D) Die Tickets der Konzertveranstalter zu kaufen <option>[B] Das Ziel der Nachfragerinnen und Nachfrager ist es<option>die Güter<option>die sie zur Befriedigung ihrer Bedürfnisse benötigen<option>zu möglichst niedrigen Preisen einzukaufen.
+C) Die Konzertkarten zum günstigsten Preis zu kaufen
+D) Die Tickets der Konzertveranstalter zu kaufen<option>Zusätzliche Option 5<option>Zusätzliche Option 6","Was genau ist das Ziel der Nachfragerinnen und Nachfrager auf Märkten?
+A) Das höchste Preis zu erzielen
+B) Die Güter, die sie zur Befriedigung ihrer Bedürfnisse benötigen, zu möglichst niedrigen Preisen einzukaufen
+C) Die Konzertkarten zum günstigsten Preis zu kaufen
+D) Die Tickets der Konzertveranstalter zu kaufen","Was genau ist das Angebot auf einem Markt?
+A) Die Menge an Gütern, die Käuferinnen und Käufer erwerben wollen
+B) Die Summe aller angebotenen Güter auf einem Markt
+C) Das höchste Preis zu erzielen
+D) Die Konzertkarten zum günstigsten Preis zu kaufen <option>[B] Die Summe aller angebotenen Güter auf einem Markt<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6","Was genau ist das Angebot auf einem Markt?
+A) Die Menge an Gütern, die Käuferinnen und Käufer erwerben wollen
+B) Die Summe aller angebotenen Güter auf einem Markt
+C) Das höchste Preis zu erzielen
+D) Die Konzertkarten zum günstigsten Preis zu kaufen","Wer ist der Anbieter im Konzertkarten-Beispiel?
+A) Die Fans, die eine der Konzertkarten kaufen wollen
+B) Der Konzertveranstalter
+C) Die Tickets, die zum Verkauf stehen
+D) Die Käuferinnen und Käufer auf dem Markt <option>B) Der Konzertveranstalter<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6","Wer ist der Anbieter im Konzertkarten-Beispiel?
+A) Die Fans, die eine der Konzertkarten kaufen wollen
+B) Der Konzertveranstalter
+C) Die Tickets, die zum Verkauf stehen
+D) Die Käuferinnen und Käufer auf dem Markt",Explizit,0 (Kein Bezug),Stufe 1 (Wissen/Reproduktion),multiple-choice,stammaufgabe,"[B] Das Ziel der Nachfragerinnen und Nachfrager ist es, die Güter, die sie zur Befriedigung ihrer Bedürfnisse benötigen, zu möglichst niedrigen Preisen einzukaufen.
+C) Die Konzertkarten zum günstigsten Preis zu kaufen
+D) Die Tickets der Konzertveranstalter zu kaufen, Zusätzliche Option 5, Zusätzliche Option 6, [B] Die Summe aller angebotenen Güter auf einem Markt, Zusätzliche Option 2, Zusätzliche Option 3, Zusätzliche Option 4, Zusätzliche Option 5, Zusätzliche Option 6, B) Der Konzertveranstalter, Zusätzliche Option 2, Zusätzliche Option 3, Zusätzliche Option 4, Zusätzliche Option 5, Zusätzliche Option 6",True,"[True, False, False]","[True, True, True]","[2.8, 3.2, 3.2]",Nicht vorhanden,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,True,True,5,True,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten

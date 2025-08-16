@@ -1,0 +1,9 @@
+{
+  "final_questions": [
+    "Was genau ist die Nachfrage in der Wirtschaft? <option>Die Menge an Gütern, die Anbieter auf Märkten verkaufen wollen<option>Die Summe aller angebotenen Güter auf einem Markt<option>Die Menge an Gütern, die Käuferinnen und Käufer auf Märkten erwerben wollen<option>Das Angebot",
+    "Was ist das Ziel der Anbieter? <option>Einen möglichst niedrigen Preis zu erzielen<option>Ein bestimmtes Produkt zu verkaufen<option>Die Nachfrage zu maximieren<option>Einen möglichst hohen Preis zu erzielen",
+    "Was ist ein Markt? <option>Ein Ort, an dem Güter gekauft und verkauft werden<option>Ein Ort, an dem Anbieter ihre Sachgüter oder Dienstleistungen verkaufen wollen<option>Ein Ort, an dem die Nachfrage maximiert wird<option>Ein Ort, an dem der Preis niedrig ist"
+  ],
+  "question_count": 3,
+  "finalized_at": "2025-08-16T22:43:00.692486"
+}

@@ -1,0 +1,8 @@
+### p.item_X_obstacle_negation (Verneinungen in Antwortoptionen):
+**ENTHALTEN** - Beispiele:
+- "nicht", "kein", "keine", "niemand", "nichts"
+- "Es ist unwahrscheinlich, dass..."
+- "Das Unternehmen kann nicht..."
+- Doppelte Verneinungen: "nicht ungewöhnlich"
+
+Erstelle Antwortoptionen mit Verneinungen und negativen Partikeln.

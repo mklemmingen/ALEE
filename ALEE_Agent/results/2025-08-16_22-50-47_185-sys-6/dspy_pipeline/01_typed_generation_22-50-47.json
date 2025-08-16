@@ -1,0 +1,266 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:50:47.883860",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was ist gegeben, wenn du Freitagabends ins Kino gehst? <option>Das Ziel ist gegeben<option>Die Mittel sind gegeben<option>Beides ist gegeben<option>Option 4",
+        "question_type": "single-choice",
+        "answers": [
+          "Das Ziel ist gegeben",
+          "Die Mittel sind gegeben",
+          "Beides ist gegeben",
+          "Option 4"
+        ],
+        "correct_answer": "Das Ziel ist gegeben",
+        "explanation": "Die Fragen wurden generiert, um die Fähigkeit des Lernenden zu testen, zwischen Minimal- und Maximalprinzip zu unterscheiden. Die Antworten sollen zeigen, ob der Lernende versteht, dass das Ziel oder die Mittel gegeben sein müssen, um eine Handlung als Minimal- oder Maximalprinzip zu klassifizieren.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage scheint sich gut an die Schwierigkeitsstufe 'leicht' anzupassen, da sie ein allgemeines Wissen verlangt und nicht spezielle mathematische oder logische Fähigkeiten erfordert.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge erforderlich, da die Frage gut an das Ziel Schwierigkeitsstufe 'leicht' angepasst ist."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Tatsache, dass die Frage ein allgemeines Wissen erfordert und keine spezifischen mathematischen oder logischen Fähigkeiten. Dies trifft auf Fragen zu Alltagsangelegenheiten wie das Besuchen des Kinos zu.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage erfordert die Anwendung von Vorwissen auf ein bestimmtes Szenario. Die Antwortoptionen sind klar definiert und es ist evident, was gegeben ist (das Ziel) und was nicht (die Mittel). Die Frage ist daher eine gute Beispiel für Stufe 2 der Bloom'schen Taxonomie.",
+            "suggestions": [
+              "Keine Vorschläge. Die Frage entspricht den Anforderungen an Stufe 2."
+            ],
+            "reasoning": "Die Antwortoptionen und die Formulierung der Frage sind so gestaltet, dass sie das Wissen auf ein bestimmtes Problem anwenden lässt. Dies ist ein Kriterium für eine Frage zur Stufe 2 der Bloom'schen Taxonomie.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage liegt in der Analyse des gegebenen Elements und seiner Beziehung zum Zielsystem. Die richtige Antwort, \"Das Ziel ist gegeben\", zeigt ein Verständnis für die Priorisierung von Zielen bei der Planung.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich. Die Frage entspricht den Erwartungen an mathematische Komplexität auf der Stufe 2."
+            ],
+            "reasoning": "Die Bewertung erfolgte basierend auf dem Verständnis des gegebenen Elements und seiner Beziehung zum Zielsystem. Die richtige Antwort zeigt ein adäquates Maß an mathematischer Komplexität für die gegebene Stufe.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse, aber die Antworten sind gut formuliert und leicht zu verstehen. Der Passiv ist nicht immer notwendig, es könnte auch aktiv geschrieben werden. Die Negation in den Optionen ist jedoch gut umgesetzt.",
+            "suggestions": [
+              "- Aktives Schreiben bei Bedarf (z.B. \"Was ist gegeben, wenn du Freitagabends ins Kino gehst?\")",
+              "- Verwendung von einfachen Nominalphrasen anstatt komplexer"
+            ],
+            "reasoning": "Die Frage enthält einige sprachliche Hindernisse, die jedoch nicht schwerwiegend sind. Die Antworten sind gut formuliert und leicht zu verstehen. Der Passiv wird in einigen Fällen verwendet, aber es könnte auch aktiv geschrieben werden. Die Negation ist jedoch gut umgesetzt.",
+            "target_value": "Grundtext: Passiv; Grundtext: Komplexe Nominalphrasen; Item 1: Negation; Item 1: Komplexe NP; Item 2: Passiv; Item 2: Negation; Item 2: Komplexe NP; Item 4: Passiv; Item 5: Negation; Item 6: Passiv; Item 6: Negation; Item 7: Komplexe NP; Item 8: Passiv; Item 8: Komplexe NP; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifischere Beispiele oder Erklärungen für jeden Punkt angegeben würden. So wäre es für den Schüler klarer, was genau gemeint ist.",
+            "suggestions": [
+              "- Spezifische Beispiele für jeden Punkt anbieten",
+              "- Klarstellende Erklärungen für jeden Punkt hinzufügen"
+            ],
+            "reasoning": "Die Anweisungs-Bewertung beträgt 3, da die Optionen zu allgemein und vage sind. Eine höhere Bewertung würde bedeuten, dass die Frage deutlich genug ist, um ein klares Verständnis zu ermöglichen.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 4,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.6 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist gegeben, wenn du Freitagabends ins Kino gehst? <option>Das Ziel ist gegeben<option>Die Mittel sind gegeben<option>Beides ist gegeben<option>Option 4"
+      },
+      {
+        "question_text": "Willst du wissen, ob eine Handlung dem Minimal- oder Maximalprinzip folgt? Frag dich zuerst: <option>Was ist dein Ziel?<option>Welche Mittel hast du?<option>Beides ist irrelevant<option>Option 4",
+        "question_type": "single-choice",
+        "answers": [
+          "Was ist dein Ziel?",
+          "Welche Mittel hast du?",
+          "Beides ist irrelevant",
+          "Option 4"
+        ],
+        "correct_answer": "Was ist dein Ziel?",
+        "explanation": "Die Fragen wurden generiert, um die Fähigkeit des Lernenden zu testen, zwischen Minimal- und Maximalprinzip zu unterscheiden. Die Antworten sollen zeigen, ob der Lernende versteht, dass das Ziel oder die Mittel gegeben sein müssen, um eine Handlung als Minimal- oder Maximalprinzip zu klassifizieren.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist für den Schwierigkeitsgrad leicht geeignet, da sie ein grundlegendes Konzept der Philosophie beinhaltet und die Antwortwahl klar definiert ist. Der Schwerpunkt liegt auf der Aufforderung an den Leser, seine eigenen Ziele und Mittel zu reflektieren.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Frage wird als \"leicht\" bewertet, da sie eine grundlegende Konzeption behandelt und die Antwortmöglichkeiten klar definiert sind. Die Aufforderung an den Leser, seine eigenen Ziele und Mittel zu reflektieren, ist ein wichtiger Aspekt der Frage.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist eher auf Stufe 1 (Erkennen) ausgerichtet, da der Testkandidat lediglich den richtigen Antwortsatz wählen soll. Stufe 2 (Anwendung/Transfer) wäre erreicht, wenn er anhand des bereitgestellten Materials eine eigene Argumentation vortragen könnte.",
+            "suggestions": [
+              "Eine mögliche Anpassung wäre die Erstellung eines eigenen Szenarios, in dem der Testkandidat das Minimal- bzw. Maximalprinzip unter Beweis stellen muss."
+            ],
+            "reasoning": "Die Frage ist zwar für Stufe 2 (Anwendung/Transfer) konzipiert, aber aufgrund der zu geringen Anforderungen an eigenständige Argumentation eher mit Stufe 1 (Erkennen) verbunden. Daher wird eine Bewertung von 2 zutreffend sein.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist an sich bereit, mathematische Komplexität zu erfordern, aber die gewählten Antwortmöglichkeiten sind nicht klar mit den Prinzipien der Mathematik verbunden. Um die mathematische Komplexität zu erhöhen, könnten Optionen wie \"Wie viel Aufwand ist erforderlich?\" oder \"Welche Kriterien müssen erfüllt werden?\" integriert werden.",
+            "suggestions": [
+              "- Integriere Prinzipien der Mathematik (z.B. Minimalprinzip, Maximalprinzip) in die Frage.",
+              "- Füge Optionen hinzu, die die mathematische Komplexität erhöhen."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Annahme, dass die Frage mit mathematischen Konzepten arbeitet. Die Antwortmöglichkeiten erfordern jedoch ein differenzierteres Verständnis des Themas als gegeben ist. Daher wird die Beweritung auf 3 gesetzt.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse, aber sie sind nicht so schwerwiehend wie in einigen anderen Fragen. Die Komplexe Nominalphrasen können Schwierigkeiten bei der Verständlichkeit bereiten, und die Passivkonstruktionen können das Ziel der Handlung verwischen lassen.",
+            "suggestions": [
+              "* Eine klare Formulierung des Ziels der Handlung.",
+              "* Vereinfachung der Komplexe Nominalphrasen.",
+              "* Vermeidung von Passivkonstruktionen, um das Ziel der Handlung klarer zu machen."
+            ],
+            "reasoning": "Die Beweggründe für die Bewertung als 3 sind:\n* Die Frage enthält einige sprachliche Hindernisse, aber sie sind nicht so schwerwiegend wie in einigen anderen Fragen.\n* Die Komplexe Nominalphrasen können Schwierigkeiten bei der Verständlichkeit bereiten, und die Passivkonstruktionen können das Ziel der Handlung verwischen lassen.",
+            "target_value": "Grundtext: Passiv; Grundtext: Komplexe Nominalphrasen; Item 1: Negation; Item 1: Komplexe NP; Item 2: Passiv; Item 2: Negation; Item 2: Komplexe NP; Item 4: Passiv; Item 5: Negation; Item 6: Passiv; Item 6: Negation; Item 7: Komplexe NP; Item 8: Passiv; Item 8: Komplexe NP; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisung könnte klärender sein, indem man das Ziel expliziter definiert und die Mitteloptionen spezifischer macht.",
+            "suggestions": [
+              "- Fügen Sie eine explizite Beschreibung des Ziels ein.",
+              "- Stellen Sie sicher, dass alle Optionen relevant für das Thema sind."
+            ],
+            "reasoning": "Die Anweisung wird mit 3 bewertet, da sie zwar den Kern der Frage enthält, aber nicht klar genug formuliert ist. Die explizite Beschreibung des Ziels und die spezifischen Mitteloptionen würden die Klarheit verbessern.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 2.8 below threshold but insufficient expert consensus",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Willst du wissen, ob eine Handlung dem Minimal- oder Maximalprinzip folgt? Frag dich zuerst: <option>Was ist dein Ziel?<option>Welche Mittel hast du?<option>Beides ist irrelevant<option>Option 4"
+      },
+      {
+        "question_text": "Was ist das Ziel, wenn wir versuchen, ein bestimmtes Ziel mit einem möglichst geringen Einsatz an Mitteln zu erreichen? <option>Wir wollen ein Maximum erzielen<option>Wir wollen ein Minimum erzielen<option>Es ist egal<option>Option 4",
+        "question_type": "single-choice",
+        "answers": [
+          "Wir wollen ein Maximum erzielen",
+          "Wir wollen ein Minimum erzielen",
+          "Es ist egal",
+          "Option 4"
+        ],
+        "correct_answer": "Wir wollen ein Maximum erzielen",
+        "explanation": "Die Fragen wurden generiert, um die Fähigkeit des Lernenden zu testen, zwischen Minimal- und Maximalprinzip zu unterscheiden. Die Antworten sollen zeigen, ob der Lernende versteht, dass das Ziel oder die Mittel gegeben sein müssen, um eine Handlung als Minimal- oder Maximalprinzip zu klassifizieren.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert, aber einige der Optionen sind nicht sehr spezifisch. Zum Beispiel könnte \"Option 4\" mehr Kontext benötigen.",
+            "suggestions": [
+              "- Überprüfe die Genauigkeit der Optionen und füge möglicherweise weitere Optionen hinzu.",
+              "- Stelle sicher, dass alle Optionen klar und eindeutig definiert sind."
+            ],
+            "reasoning": "Die Bewertung von 4/5 beruht auf der Tatsache, dass die Frage eine klare und spezifische Frage stellt, aber einige der Optionen nicht sehr spezifisch sind. Die richtigen Antworten sind jedoch klar identifizierbar und passen gut zum Thema der Optimierung.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage und Antworten sind im Wesentlichen korrekt formuliert. Die richtige Antwort zeigt ein Verständnis für die Idee der Ressourcenoptimierung, was eine Anwendung/Transfer-Fähigkeit ist. Allerdings wäre es wünschenswert, wenn die Frage noch deutlicher mit Bloom's Taxonomie in Beziehung gebracht würde.",
+            "suggestions": [
+              "- Eine mögliche Erweiterung der Frage könnte darin bestehen, explizit auf eine bestimmte Taxonomiestufe hinzuweisen (z.B. \"Anwendung/Transfer\") und zu fragen, wie die Optionen sich in Bezug auf diese Stufe verhalten.",
+              "- In der Antwort könnte ein Hinweis auf die genaue Anwendung der Begriffe \"Maximum\" und \"Minimum\" im Kontext von Optimierungsproblemen hilfreich sein."
+            ],
+            "reasoning": "Die Bewertung von 3 (Anwendung/Transfer) basiert darauf, dass die Frage tatsächlich eine Anwendung/Fähigkeit beinhaltet. Die Antwort zeigt ein Verständnis für das Konzept der Ressourcenoptimierung und wie man es in einem bestimmten Kontext anwendet.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert die Anwendung von mathematischer Optimierungskompetenz. Die Antwortmöglichkeiten sind plausibel, aber die richtige Lösung ist nicht unbedingt ein Maximum oder Minimum. Es kommt auf die spezifischen Bedingungen an.",
+            "suggestions": [
+              "- Eine genauere Formulierung der Frage könnte helfen, um den mathematischen Kontext besser zu verstehen.",
+              "- Weitere Optionen wie \"Ein Gleichgewicht finden\" könnten hilfreich sein, um mehrere Faktoren abzuwägen."
+            ],
+            "reasoning": "Die richtige Antwort wird bestimmt durch die Art der Optimierung. Wenn es darum geht, ein Maximum zu erreichen, ist das Ziel oft eine Erhöhung von Ausgaben oder Ressourcen. Im anderen Fall wäre ein Minimum das Ziel, z.B. um Kosten zu minimieren.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse wie komplexe Nominalphrasen, Negationen und Passivkonstruktionen. Diese können für Lerner mit begrenztem Sprachwissen oder für solche mit unterschiedlichen Bildungsinteressen eine Herausforderung darstellen.",
+            "suggestions": [
+              "- Bei der Formulierung von Fragen sollte man darauf achten, dass komplexe Konzepte in einfachen Worten erklärt werden. - Die Frage könnte um einen Hinweis auf die Bedeutung des Minimalismus und seiner Beziehung zu Ressourcenkostenermittlung erweitert werden."
+            ],
+            "reasoning": "Die Bewertung von 4 ergibt sich aus der Tatsache, dass die Frage trotz einiger sprachlicher Schwierigkeiten gut formuliert ist. Sie erfordert tatsächliches Verständnis und nicht nur Wissensabfrage. Der Wert 4 deutet auf eine mittlere Schwierigkeit hin, was für Fragen im Bereich Bildungsfragen typisch sein kann.",
+            "target_value": "Grundtext: Passiv; Grundtext: Komplexe Nominalphrasen; Item 1: Negation; Item 1: Komplexe NP; Item 2: Passiv; Item 2: Negation; Item 2: Komplexe NP; Item 4: Passiv; Item 5: Negation; Item 6: Passiv; Item 6: Negation; Item 7: Komplexe NP; Item 8: Passiv; Item 8: Komplexe NP; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem das Ziel expliziter genannt würde. Bisher ist nicht klar, welches Maximum erreicht werden soll.",
+            "suggestions": [
+              "Das Ziel sollte explizit genannt werden, um Verwirrung zu vermeiden. Zum Beispiel: \"Das Ziel ist es, ein Maximum an Leistung oder Erfolg zu erzielen.\""
+            ],
+            "reasoning": "Die Anweisungs-Bewertung 3 (von 5) wird aufgrund der mangelnden Klarheit des Ziels vergeben.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.4 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist das Ziel, wenn wir versuchen, ein bestimmtes Ziel mit einem möglichst geringen Einsatz an Mitteln zu erreichen? <option>Wir wollen ein Maximum erzielen<option>Wir wollen ein Minimum erzielen<option>Es ist egal<option>Option 4"
+      }
+    ],
+    "question_types_generated": [
+      "single-choice",
+      "single-choice",
+      "single-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

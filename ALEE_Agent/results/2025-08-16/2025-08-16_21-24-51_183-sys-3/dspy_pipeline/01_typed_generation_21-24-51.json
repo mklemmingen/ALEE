@@ -1,0 +1,258 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T21:24:51.502551",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was bezeichnet man in der Wirtschaft als konkrete Bereitschaft, seine Mittel für bestimmte Dinge oder Leistungen zur Befriedigung von Bedürfnissen zu verwenden?\n\nA) Bedürfnis\nB) Bedarf <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Richtig",
+        "explanation": "Die Fragengenerierung basierte auf der Analyse des Textes und der Parametervariation. Die Fragen wurden so gestellt, dass sie die Hauptpunkte des Textes hervorheben und die Schüler dazu bringen, kritisch über die Begriffe Bedürfnis und Bedarf nachzudenken.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist schwierig zu verstehen und könnte klarer formuliert werden. Der Begriff \"Bereitschaft\" wird nicht genau verwendet, was zu Missverständnissen führen kann.",
+            "suggestions": [
+              "- Eine klare Formulierung der Frage würde helfen, Missverständnisse zu vermeiden.",
+              "- Die Verwendung von allgemeineren Begriffen wie \"Vorsorge\" oder \"Investition\" könnte helfen, die Frage besser zu verstehen."
+            ],
+            "reasoning": "Die Frage bezieht sich auf das Konzept der Bereitschaft in der Wirtschaft. Die richtige Antwort ist jedoch nicht eindeutig. Die Aussage \"Die Aussage ist richtig\" kann falsch sein, da es mehrere Möglichkeiten gibt, die Bereitschaft zu beschreiben. Die Formulierung der Frage ist daher nicht genau und könnte zu Missverständnissen führen.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert und die Antwortmöglichkeiten sind klare Definitionen. Die richtige Antwort \"Bedarf\" wird genau definiert, aber es wäre hilfreich, wenn in der Frage auch ein Beispiel angegeben würde, um den Begriff besser zu verstehen.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich"
+            ],
+            "reasoning": "Die Frage bewegt sich auf Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie, da sie ein Wissen über einen bestimmten Begriff in der Wirtschaft erfordert. Die Antwortmöglichkeiten sind so formuliert, dass die richtige Antwort offensichtlich ist.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität der Frage liegt im Verständnis des wirtschaftlichen Konzepts von Bedarfsmäßigkeit, was eine relativ einfache mathematische Konstruktion ist. Die Frage erfordert jedoch ein grundlegendes Verständnis der Beziehungen zwischen Bedürfnissen, Bedarf und Mitteln.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich, da die Frage in einer angemessenen mathematischen Komplexität für eine Mathematikstufe 2 formuliert ist."
+            ],
+            "reasoning": "Die Bewertung basiert auf der richtigen Identifizierung des wirtschaftlichen Konzepts von Bedarfsmäßigkeit und dem Verständnis seiner Beziehung zu Bedürfnissen und Mitteln. Die Frage erfordert ein grundlegendes Verständnis mathematischer Konzepte in einem ökonomischen Kontext.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Antwortmöglichkeiten \"Bedürfnis\" und \"Bedarf\" sind beide gültige Begriffe in der Wirtschaftswissenschaft. Allerdings ist die Frage nach der Definition des Begriffs, den man in der Wirtschaft als konkrete Bereitschaft, seine Mittel für bestimmte Dinge oder Leistungen zur Befriedigung von Bedürfnissen zu verwenden, befragt. Die richtige Antwort ist daher \"Bedarf\", da es sich um die konkrete Bereitschaft handelt.",
+            "suggestions": [
+              "- Die Frage könnte präziser formuliert werden, um das Hindernis zu minimieren.",
+              "- Die Optionen könnten noch präziser definiert werden, um Verwirrung zu vermeiden."
+            ],
+            "reasoning": "Die Bewertung von 4 berücksichtigt die sprachlichen Eigenschaften der Frage und die Optionen. Die richtige Antwort \"Bedarf\" ist korrekt definiert als konkrete Bereitschaft, seine Mittel für bestimmte Dinge oder Leistungen zur Befriedigung von Bedürfnissen zu verwenden.",
+            "target_value": "Grundtext: Negation; Item 1: Passiv; Item 1: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Komplexe NP; Item 4: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Negation; Item 5: Komplexe NP; Item 7: Passiv; Item 8: Negation",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut, aber es wäre hilfreich, wenn die Frage mehr Kontext über die Wirtschaft und das Konzept der Bedürfnisbefriedigung liefern würde.",
+            "suggestions": [
+              "Ein möglicher Vorschlag zur Verbesserung der Anweisungsklarheit wäre eine Erklärung des Konzepts der Bedürfnisbefriedigung in der Wirtschaft und wie dies mit dem Begriff \"Bedarf\" zusammenhängt."
+            ],
+            "reasoning": "Die Bewerung lautet 4, da die Frage gut formuliert ist, aber es fehlt an Kontext. Die richtige Antwort \"Bedarf\" ist auch klar definiert.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 4,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.8 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was bezeichnet man in der Wirtschaft als konkrete Bereitschaft, seine Mittel für bestimmte Dinge oder Leistungen zur Befriedigung von Bedürfnissen zu verwenden?\n\nA) Bedürfnis\nB) Bedarf <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "Aus dem Bedürfnis, etwas zu essen, erwächst der konkrete Bedarf nach einem Apfel. Was bedeutet dies?\n\nA) Man muss einen Apfel kaufen.\nB) Man kann einen Apfel essen. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragengenerierung basierte auf der Analyse des Textes und der Parametervariation. Die Fragen wurden so gestellt, dass sie die Hauptpunkte des Textes hervorheben und die Schüler dazu bringen, kritisch über die Begriffe Bedürfnis und Bedarf nachzudenken.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist im Bereich der Schwierigkeit \"leicht\" zu platzieren. Die Beispiele für Wünsche und Bedürfnisse sind klar verständlich, und die Aussagen sind logisch miteinander verbunden.",
+            "suggestions": [
+              "Möglicherweise könnte die Frage durch den Einsatz von besseren Beispielen oder dem Erweitern der Situationen gesteigert werden. Zum Beispiel: \"Wenn es keine Äpfel im Supermarkt gibt, muss ich einen Apfel kaufen.\" oder \"Ich habe Hunger und möchte einen Apfel essen.\""
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf folgendem:\n\n- Die Frage bezieht sich klar auf das Konzept der Bedürfnisse und Wünsche.\n- Die Beispiele sind verständlich, und die Aussagen sind logisch miteinander verbunden.\n- Die Frage ist im Bereich der Schwierigkeit \"leicht\" zu platzieren.\n\nDie Bewertung von 3 ergibt sich aus der Tatsache, dass die Frage zwar ein Verständnis des Konzepts zeigt, aber nicht über das hinausgeht, was als \"leicht\" betrachtet werden kann.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage könnte ein bisschen komplexer gestaltet werden, um mehrere Denkfähigkeiten abzufragen. Zum Beispiel könnten die Antwortmöglichkeiten ergänzt werden durch Optionen wie \"Man muss einen Apfel kaufen, wenn man Hunger hat.\" oder \"Ein Apfel ist nur eine mögliche Lösung für den Bedarf nach einem Früchteverzehr.\"",
+            "suggestions": [
+              "Die Frage könnte umgestellt werden in ein Frage, die mehrere Denkfähigkeiten abfragt. Zum Beispiel: \"Aus dem Bedürfnis, etwas zu essen, erwächst der konkrete Bedarf nach einem Apfel. Was bedeutet dies? (Wählen Sie alle richtigen Antworten.)\" Dann könnten die Antwortmöglichkeiten erweitert werden durch Optionen wie \"Man muss einen Apfel kaufen.\" / \"Ein Apfel ist nur eine mögliche Lösung für den Bedarf nach einem Früchteverzehr.\""
+            ],
+            "reasoning": "Die Frage erfordert von den Schülern lediglich, dass sie ein simples Wiederholen und Reproduzieren von Informationen ausführen. Es gibt keine Anforderungen an die Analyse oder Bewertung des Themas.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieses Problems liegt im Bereich der Logik und Argumentationsfähigkeit, insbesondere bei der Identifizierung von Bedürfnissen und deren Konkretisierung. Die Lösung erfordert ein Verständnis des Beziehungsgeflechts zwischen allgemeinen Bedürfnissen und konkreten Anforderungen.",
+            "suggestions": [
+              "Um die mathematische Komplexität zu erhöhen, könnten weitere Fragen folgen, die das Verständnis logischer Schlussfolgerungen im Kontext von Mathematik betreffen. Beispielsweise könnte man nach einer Erklärung fragen, warum der Bedarf an einem Apfel aus dem Hunger resultiert oder welche Arten von Bedürfnissen außerdem aufgetreten sein könnten."
+            ],
+            "reasoning": "Die Bewertung als 3 basiert darauf, dass das Problem ein grundlegendes Verständnis logischer Argumentationen in Bezug auf Mathematik erfordert. Die Lösung zeigt eine Fähigkeit, allgemeine Bedürfnisse zu erkennen und diese auf konkrete Anforderungen abzubilden.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die sprachlichen Hindernisse in dieser Frage sind für Lerner mit fortgeschrittenem Niveau anspruchsvoll, da sie komplexe NP, das Passive und Negation beinhalten. Diese Hindernisse erfordern eine sorgfältige Lesung und Interpretation der Frage.",
+            "suggestions": [
+              "Um die sprachlichen Hindernisse zu überwinden, könnten Lerner folgende Vorschläge unternehmen:",
+              "",
+              "* Üben Sie das Lesen von komplexen NP.",
+              "* Üben Sie die Verwendung des Aktivs anstelle des Passiven.",
+              "* Üben Sie die Interpretation negierter Aussagen."
+            ],
+            "reasoning": "Die Bewertung der sprachlichen Hindernisse erfolgte auf der Grundlage der Schwierigkeitsstufe, die diese Hindernisse für Lerner mit fortgeschrittenem Niveau darstellen. Die wichtigsten Hindernisse sind komplexe NP, das Passive und Negation.",
+            "target_value": "Grundtext: Negation; Item 1: Passiv; Item 1: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Komplexe NP; Item 4: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Negation; Item 5: Komplexe NP; Item 7: Passiv; Item 8: Negation",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist klar, aber die explizite Konsequenzierung erfordert eine präzisere Formulierung. Die richtige Antwort sollte explizit erwähnt werden (\"Der Wunsch nach einem Apfel bedeutet, dass man einen Apfel kaufen muss.\").",
+            "suggestions": [
+              "Die Anweisung könnte wie folgt formuliert werden: \"Aus dem Bedürfnis, etwas zu essen, erwächst der konkrete Bedarf nach einem Apfel. Daher muss man einen Apfel kaufen.\""
+            ],
+            "reasoning": "Die richtige Bewertung resultiert aus der expliziten Konsequenzierung des Wunsches nach einem Apfel. Die Anweisung ist jedoch nicht so präzise formuliert, dass die richtige Antwort unmissverständlich ist.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Aus dem Bedürfnis, etwas zu essen, erwächst der konkrete Bedarf nach einem Apfel. Was bedeutet dies?\n\nA) Man muss einen Apfel kaufen.\nB) Man kann einen Apfel essen. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "Wenn man unglücklich mit seinem Haarschnitt ist, geht man zum Friseur. Aus dem Bedürfnis, sein Aussehen zu verbessern, erwächst der konkrete Bedarf nach einem neuen Haarschnitt vom Friseur. Was bedeutet dies?\n\nA) Man muss einen neuen Haarschnitt bekommen.\nB) Man kann seine Haare selbst schneiden. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragengenerierung basierte auf der Analyse des Textes und der Parametervariation. Die Fragen wurden so gestellt, dass sie die Hauptpunkte des Textes hervorheben und die Schüler dazu bringen, kritisch über die Begriffe Bedürfnis und Bedarf nachzudenken.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert und deckt den gewünschten Bereich ab.",
+            "suggestions": [
+              "Keine Verbesserungen nötig."
+            ],
+            "reasoning": "Begründung: Die Frage ist leicht, bezieht sich auf ein allgemeines Wissen und entspricht der Beschreibung. Der Antworttext ist klar und verständlich. Keine größeren Probleme oder Schwierigkeiten erkennbar.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und passt gut zur Bloom'schen Taxonomiestufe \"Wissen/Reproduktion\". Die Antwortmöglichkeiten sind klar und einfach. Es gibt jedoch keine Möglichkeit, die Komplexität des Themas zu bewerten oder kritisch über die Beziehung zwischen Bedürfnis und konkretem Bedarf nachzudenken.",
+            "suggestions": [
+              "Um das Thema weiter zu vertiefen, könnten Fragen formuliert werden, die den Testkandidaten dazu bringen, kritisch über die Beziehung zwischen Bedürfnis und konkretem Bedarf nachzudenken. Zum Beispiel: \"Wie würdest du beurteilen, ob ein Bedürfnis existiert oder nicht?\""
+            ],
+            "reasoning": "Die Antwort von 3 (Bewertung) wird gewählt, da die Frage die Verstehensfähigkeit des Testkandidaten beurteilt. Die Frage ist jedoch nicht so komplex wie es für eine Bewertung der Stufe 2 oder höher erforderlich wäre.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage ist eher gering. Sie befasst sich mit einem einfachen Beispielszenario für logische Folgen zwischen Gefühlen und Wünschen. Die notwendigen Denkfähigkeiten erfordern kein tiefes Verständnis von Mathematik, sondern vielmehr die Fähigkeit, logischen Zusammenhängen zu folgen.",
+            "suggestions": [
+              "Für eine korrekte Komplexitätserkennung könnte man weitere Fragen erstellen, in denen sich komplexe mathematische Konzepte und logische Argumentationen abbilden. Ein Beispiel: \"Ein Unternehmen investiert 10.000 Euro in ein Projekt. Wenn es mit einem Gewinn von 20% rechnet, aber tatsächlich nur 15% erzielt, was bedeutet dies für den endgültigen Umsatz des Projekts?\""
+            ],
+            "reasoning": "Die Bewertung der mathematischen Komplexität als 3 basiert auf der Tatsache, dass die Frage zwar logische Fähigkeiten und Verständnis von Folgen erfordert, aber keine tiefgreifenden mathematischen Konzepte wie Algebra oder Geometrie. Die notwendige Denkfähigkeit ist eher anwendungsorientiert und befasst sich mit der Erkennung logischer Zusammenhänge in einem einfachen Alltagsszenario.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse, wie z.B. Passivkonstruktionen (Item 1, Item 3, Item 5 und Item 7) und komplexe Nomenphrasen (Item 2, Item 4 und Item 5). Die Negation ist jedoch nicht eindeutig erkennbar (Item 8). Die Frage benötigt daher eine Klärung der sprachlichen Struktur.",
+            "suggestions": [
+              "1. Klarstellung der sprachlichen Struktur",
+              "2. Vereinfachung von Passivkonstruktionen und komplexen Nomenphrasen"
+            ],
+            "reasoning": "Die Frage wird aufgrund ihrer sprachlichen Hindernisse mit 3 Punkten bewertet. Die richtige Antwort ist nicht eindeutig erkennbar, was darauf schließen lässt, dass die Frage nicht klar oder präzise formuliert wurde.",
+            "target_value": "Grundtext: Negation; Item 1: Passiv; Item 1: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Komplexe NP; Item 4: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Negation; Item 5: Komplexe NP; Item 7: Passiv; Item 8: Negation",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist klar und explizit formuliert, sodass die richtige Antwort ohne Schwierigkeiten erkannt werden kann. Es gibt keine Unklarheiten oder mehrdeutigen Ausdrücke, die zur falschen Interpretation führen könnten.",
+            "suggestions": [
+              "Keine Vorschläge zum Verbessern der Anweisungsklarheit erforderlich."
+            ],
+            "reasoning": "Die richtige Antwort kann direkt aus der Aussage abgeleitet werden, da sie explizit die Notwendigkeit eines neuen Haarschnitts erwähnt. Es gibt keine impliziten Hinweise oder Mehrdeutigkeiten, die zur falschen Interpretation führen könnten.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wenn man unglücklich mit seinem Haarschnitt ist, geht man zum Friseur. Aus dem Bedürfnis, sein Aussehen zu verbessern, erwächst der konkrete Bedarf nach einem neuen Haarschnitt vom Friseur. Was bedeutet dies?\n\nA) Man muss einen neuen Haarschnitt bekommen.\nB) Man kann seine Haare selbst schneiden. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      }
+    ],
+    "question_types_generated": [
+      "true-false",
+      "true-false",
+      "true-false"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

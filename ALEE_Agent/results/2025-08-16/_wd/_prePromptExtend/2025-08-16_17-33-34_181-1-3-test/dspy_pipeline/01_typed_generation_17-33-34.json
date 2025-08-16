@@ -1,0 +1,281 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T17:33:34.062445",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was ist der Hauptunterschied zwischen einem Wunsch und einem Bedürfnis?\n\nA) Ein Wunsch erfüllt sich sofort, ein Bedürfnis erst später\nB) Ein Wunsch ist etwas, das man gerne hat, ein Bedürfnis etwas, das notwendig ist\nC) Ein Wunsch ist immer positiv, ein Bedürfnis oft negativ\nD) Ein Wunsch ist unbegrenzt, ein Bedürfnis begrenzt <option>A) Ein Wunsch ist etwas<option>das man gerne hat<option>ein Bedürfnis etwas<option>das notwendig ist\nB) Ein Wunsch erfüllt sich sofort<option>ein Bedürfnis erst später\nC) Ein Wunsch ist immer positiv<option>ein Bedürfnis oft negativ\nD) Ein Wunsch ist unbegrenzt<option>ein Bedürfnis begrenzt",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Ein Wunsch ist etwas",
+          "das man gerne hat",
+          "ein Bedürfnis etwas",
+          "das notwendig ist\nB) Ein Wunsch erfüllt sich sofort",
+          "ein Bedürfnis erst später\nC) Ein Wunsch ist immer positiv",
+          "ein Bedürfnis oft negativ\nD) Ein Wunsch ist unbegrenzt",
+          "ein Bedürfnis begrenzt"
+        ],
+        "correct_answer": [
+          "A) Ein Wunsch ist etwas",
+          "das man gerne hat"
+        ],
+        "explanation": "Die Fragen wurden auf der Grundlage des bereitgestellten Textes generiert, um die Fähigkeit zu beurteilen, den Begriff \"Bedürfnisse\" und seine Auswirkungen auf menschliches Verhalten zu verstehen. Durch die Auswahlmöglichkeiten soll die Fähigkeit getestet werden, Wünsche von Bedürfnissen zu unterscheiden und ihre individuellen Unterschiede zu erkennen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert eine klare und genaue Definition der Begriffe Wunsch und Bedürfnis. Die richtige Antwort zeigt ein gutes Verständnis des Unterschieds zwischen diesen beiden Konzepten.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge, da die Frage bereits gut formuliert ist."
+            ],
+            "reasoning": "Die Bewertung von 3 (aus 5) basiert auf folgendem:\n\n* Die Frage erfordert eine klare und genaue Definition der Begriffe Wunsch und Bedürfnis.\n* Die richtige Antwort (A) lautet korrekt und zeigt ein gutes Verständnis des Unterschieds zwischen diesen beiden Konzepten.\n* Die Frage ist jedoch nicht besonders anspruchsvoll, was sie zu einer stammaufgabe macht.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage erfordert ein Verständnis von den Konzepten \"Wunsch\" und \"Bedürfnis\", aber die Antwortmöglichkeiten sind nicht vollständig klar. Einige Optionen verwenden das Wort \"notwendig\", was für Bedürfnisse jedoch nicht immer zutrifft.",
+            "suggestions": [
+              "- Die Frage könnte um mehr spezifische Beispiele erweitert werden, um die Unterschiede besser hervorzuheben.",
+              "- Die Antwortmöglichkeiten könnten präziser formuliert werden, um sicherzustellen, dass der Schüler nicht durch unklare Definitionen verwirrt wird."
+            ],
+            "reasoning": "Die Frage erfordert Stufe 1 (Wissen/Reproduktion), da der Schüler die richtige Antwort aus einer Reihe von Optionen wählen muss. Die Frage prüft das Wissen des Schülers über die Definition von Wünschen und Bedürfnissen, aber keine Anwendung oder Analyse.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 1,
+            "feedback": "Die Frage erfordert keine mathematischen Kenntnisse, sondern vielmehr ein Verständnis von Begriffen im Kontext der Pädagogik. Daher ist die Komplexität eher sprachlich als mathematisch.",
+            "suggestions": [
+              "Keine Anpassungen notwendig, da es sich um kein mathematisches Thema handelt."
+            ],
+            "reasoning": "Die Frage ist auf ein anderes Fachgebiet bezogen und daher kann die Komplexität nicht wie bei mathematischen Fragen bewertet werden.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist klar formuliert und die Optionen sind gut definiert, sodass der Testkandidat leicht zwischen den Konzepten unterscheiden kann. Es gibt jedoch keine sprachlichen Hindernisse in der Frage oder in den Antworten.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung erforderlich"
+            ],
+            "reasoning": "Die Frage erfordert ein Verständnis des Konzepts von Wunsch und Bedürfnis, das für die Bildungsfrage relevant ist. Die richtige Antwort (A) ist eine klare und präzise Definition dieser Konzepte.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut. Die Frage und die Antworten sind deutlich formuliert, und der richtige Unterschied zwischen Wunsch und Bedürfnis wird genau beschrieben. Es gibt jedoch keine explizite Erklärung für den Begriff \"notwendig\" in Bezug auf ein Bedürfnis.",
+            "suggestions": [
+              "Es wäre hilfreich, einen zusätzlichen Abschnitt zur Erklärung der Bedeutung von \"notwendig\" im Kontext eines Bedürfnisses hinzuzufügen. Dies würde die Anweisungsklarheit verbessern und den Leser besser verstehen lassen."
+            ],
+            "reasoning": "Die Begründung für die Bewertung 4 (aus 5) liegt darin, dass die Frage und Antworten gut formuliert sind, aber es fehlt ein zusätzlicher Abschnitt zur Erklärung der Bedeutung von \"notwendig\" im Kontext eines Bedürfnisses.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 4,
+          "math_expert": 1,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist der Hauptunterschied zwischen einem Wunsch und einem Bedürfnis?\n\nA) Ein Wunsch erfüllt sich sofort, ein Bedürfnis erst später\nB) Ein Wunsch ist etwas, das man gerne hat, ein Bedürfnis etwas, das notwendig ist\nC) Ein Wunsch ist immer positiv, ein Bedürfnis oft negativ\nD) Ein Wunsch ist unbegrenzt, ein Bedürfnis begrenzt <option>A) Ein Wunsch ist etwas<option>das man gerne hat<option>ein Bedürfnis etwas<option>das notwendig ist\nB) Ein Wunsch erfüllt sich sofort<option>ein Bedürfnis erst später\nC) Ein Wunsch ist immer positiv<option>ein Bedürfnis oft negativ\nD) Ein Wunsch ist unbegrenzt<option>ein Bedürfnis begrenzt"
+      },
+      {
+        "question_text": "Warum unterscheiden sich die Bedürfnisse von Kindern stark? <option>Weil Kinder nicht wissen, was sie wollen<option>Weil Kinder keine Verantwortung übernehmen müssen<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Weil Kinder nicht wissen, was sie wollen",
+          "Weil Kinder keine Verantwortung übernehmen müssen",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Weil Kinder nicht wissen, was sie wollen",
+          "Weil Kinder keine Verantwortung übernehmen müssen"
+        ],
+        "explanation": "Die Fragen wurden auf der Grundlage des bereitgestellten Textes generiert, um die Fähigkeit zu beurteilen, den Begriff \"Bedürfnisse\" und seine Auswirkungen auf menschliches Verhalten zu verstehen. Durch die Auswahlmöglichkeiten soll die Fähigkeit getestet werden, Wünsche von Bedürfnissen zu unterscheiden und ihre individuellen Unterschiede zu erkennen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist nicht perfekt angepasst an die Schwierigkeit, da sie keine klaren Antworten auf die Optionen enthält. Die Antwortmöglichkeiten sollten besser definiert sein, um eine klare Übereinstimmung mit der Schwierigkeit zu erreichen.",
+            "suggestions": [
+              "- Vereinfache die Frage durch klare und präzise Antwortmöglichkeiten.",
+              "- Überprüfe die Antwortmöglichkeiten auf Relevanz für die Stammaufgabe."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert darauf, dass die Frage zwar eine stammaufgabe bezieht, aber nicht perfekt angepasst ist. Die Antwortmöglichkeiten sollten besser definiert sein, um eine klare Übereinstimmung mit der Schwierigkeit zu erreichen.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist gut formuliert, um eine Analyse sozialer Fähigkeiten zu ermöglichen. Die Antwortoptionen sind jedoch nicht ideal, da sie keine klaren Beispiele für die zugrunde liegenden Gründe bieten. Eine bessere Frage würde spezifischere Beispiele oder konkretere Szenarien beschreiben.",
+            "suggestions": [
+              "Eine mögliche Anpassung wäre, mehr spezifische Beispiele zu verwenden, um die sozialen Fähigkeiten von Kindern in verschiedenen Situationen zu beleuchten. Zum Beispiel: „Warum unterscheiden sich die Bedürfnisse von Kindern stark? (a) Weil sie unterschiedlich groß sind, (b) weil sie verschiedene Interessen haben oder (c) weil sie unterschiedliche Verantwortung übernehmen müssen.“"
+            ],
+            "reasoning": "Die Taxonomie-Bewertung liegt bei 2, da die Frage zwar sozialkompetitive Fähigkeiten anspricht, aber nicht klar ist, wie diese Fähigkeit von den Kindern angewendet wird. Die Antwortoptionen sind zu vage und geben keinen klaren Hinweis darauf, wie Kinder ihre Bedürfnisse ausdrücken oder erkennen können.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": true
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Komplexität dieser Frage liegt in ihrer Fähigkeit, komplexe Gedanken und Verhaltensweisen zu erklären. Allerdings sind diese Inhalte nicht für mathematische Fähigkeiten relevant.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich, da die Frage nicht mit Mathematik zusammenhängt."
+            ],
+            "reasoning": "Die Bewertung ist niedrig, weil es sich um keine Frage handelt, die direkte mathematische Fähigkeiten beurteilt. Sie erfordert eher eine Analyse psychologischer Aspekte.",
+            "target_value": "0",
+            "applied": true
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse, insbesondere in den Optionen. Die Wörter \"Zusätzliche Option\" sind nicht klar definiert und könnten als Unsinn interpretiert werden. Es könnte hilfreich sein, die Bedeutung dieser Worte zu erklären.",
+            "suggestions": [
+              "- Erklärung der Wörter \"Verantwortung\"",
+              "- Verwendung von klaren und präzisen Sprache in den Optionen",
+              "- Entfernung von unklaren oder unpräzisen Optionen"
+            ],
+            "reasoning": "Die Bewertung erfolgte aufgrund der sprachlichen Komplexität der Frage. Die verwendete Sprache ist nicht immer klar und präzise, insbesondere in den Optionen.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem die Optionen nicht nur als Zahlen, sondern mit einem klaren Inhalt bezeichnet würden. Dies würde die Kommunikation zwischen Aufgabensteller und Schüler erleichtern.",
+            "suggestions": [
+              "Optionen sollten klar benannt sein (z.B. \"Weil Kinder keine Verantwortung übernehmen müssen\") anstatt nur mit einer Zahl."
+            ],
+            "reasoning": "Die Anweisung wird als gut bewertet, da die Antwortoptionen explizit genannt werden und der Aufgabensteller seine Erwartungen klar kommuniziert. Die Optionen könnten verbessert werden, indem sie besser beschrieben würden.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 2,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Average rating 2.8 below threshold, 2 experts suggest improvements",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Warum unterscheiden sich die Bedürfnisse von Kindern stark? <option>Weil Kinder nicht wissen, was sie wollen<option>Weil Kinder keine Verantwortung übernehmen müssen<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Wie reagiert ein Mensch normalerweise, wenn ein Bedürfnis erfüllt ist?\n\nA) Er widmet sich sofort einem anderen Bedürfnis\nB) Er wird traurig und braucht Zeit zum Nachdenken\nC) Er bleibt bei dem bereits erfüllten Bedürfnis\nD) Er ignoriert das gerade erfüllte Bedürfnis <option>A) Er widmet sich sofort einem anderen Bedürfnis\nC) Er bleibt bei dem bereits erfüllten Bedürfnis\nB) Er wird traurig und braucht Zeit zum Nachdenken\nD) Er ignoriert das gerade erfüllte Bedürfnis<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Er widmet sich sofort einem anderen Bedürfnis\nC) Er bleibt bei dem bereits erfüllten Bedürfnis\nB) Er wird traurig und braucht Zeit zum Nachdenken\nD) Er ignoriert das gerade erfüllte Bedürfnis",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Er widmet sich sofort einem anderen Bedürfnis\nC) Er bleibt bei dem bereits erfüllten Bedürfnis\nB) Er wird traurig und braucht Zeit zum Nachdenken\nD) Er ignoriert das gerade erfüllte Bedürfnis",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen wurden auf der Grundlage des bereitgestellten Textes generiert, um die Fähigkeit zu beurteilen, den Begriff \"Bedürfnisse\" und seine Auswirkungen auf menschliches Verhalten zu verstehen. Durch die Auswahlmöglichkeiten soll die Fähigkeit getestet werden, Wünsche von Bedürfnissen zu unterscheiden und ihre individuellen Unterschiede zu erkennen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage hat einige Schwierigkeiten: Die Optionen sind nicht klar definiert und die Antwortmöglichkeiten wirken nicht konsistent. Zudem ist der Begriff \"Bedürfnis\" nicht genau definiert.",
+            "suggestions": [
+              "- Klarheit in den Optionen verbessern",
+              "- Präzise definieren, was unter einem \"Bedürfnis\" verstanden wird",
+              "- Konsistenz bei Antwortmöglichkeiten aufrechterhalten"
+            ],
+            "reasoning": "Die Frage ist nicht perfekt für eine Stammaufgabe geeignet. Die Optionen wirken zu sehr auf das menschliche Verhalten bezogen und es fehlt an Allgemeingültigkeit. Es gibt jedoch auch positive Aspekte: Mit ein wenig Anpassung könnte die Frage als stammenspezifisches Beispiel verwendet werden, um über die Rolle der Bedürfnisse im menschlichen Leben nachzudenken.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage hat eine gewisse logische Konsistenz, da sie das menschliche Verhalten bei der Erfüllung von Bedürfnissen beschreibt. Die verwendeten Optionen sind jedoch etwas unkonventionell und könnten zu Missverständnissen führen.",
+            "suggestions": [
+              "Die Frage könnte durch eine klarere Definition des Konzepts \"Bedürfnisse\" und ihre Beziehung zum menschlichen Verhalten erläutert werden. Dies würde helfen, die Optionen zu überprüfen und sicherzustellen, dass sie logisch sind."
+            ],
+            "reasoning": "Die Frage wird mit der Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie verbunden, was bedeutet, dass das Hauptziel darin besteht, die Fähigkeit des Schülers zu überprüfen, Informationen aus dem Gedächtnis abzurufen. Die richtige Antwort auf diese Frage zeigt ein Verständnis für menschliche Bedürfnisse und Verhaltensweisen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Mathematische Komplexität dieser Frage beträgt 3, da sie ein einfaches Konzept (psychologische Komplexität) mit einer klaren Antwortoption verbindet. Die Frage erfordert keine umfangreichen mathematischen Berechnungen oder komplexe Denkprozesse.",
+            "suggestions": [
+              "Keine Vorschläge für Anpassungen, da die Frage bereits eine einfache und klar definierte Komplexität aufweist."
+            ],
+            "reasoning": "Die Mathematik-Bewertung beträgt 3, weil sich diese Frage mit der psychologischen Komplexität befasst, was ein grundlegendes Konzept in verschiedenen Kontexten ist. Die Frage erfordert keine komplizierten mathematischen Berechnungen und die Antwortoptionen sind klar definiert.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage zeigt ein gutes Verständnis der menschlichen Bedürfnisse und Reaktionen. Die einzigen sprachlichen Hindernisse bestehen darin, dass die Frage einige ungewöhnliche oder unübliche Antworten beinhaltet.",
+            "suggestions": [
+              "Keine Vorschläge für eine Anpassung der Frage, da es keine sprachlichen Hindernisse gibt."
+            ],
+            "reasoning": "Die Bewertung von 4 berücksichtigt die Genauigkeit und Präzision der Fragen. Die richtigen Antworten sind klar definiert und typisch menschliche Reaktionen auf erfüllte Bedürfnisse darstellend.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifischer auf menschliche Verhaltensweisen bei der Erfüllung von Bedürfnissen eingegangen wird. Die Optionen sollten klar und ohne Verwirrung präsentiert werden.",
+            "suggestions": [
+              "- Anweisungen sollten genau und leicht verständlich sein.",
+              "- Optionen sollten so formuliert werden, dass sie eindeutige menschliche Verhaltensweisen beschreiben.",
+              "- Die Anzahl der Optionen sollte reduziert werden, um die Entscheidung zu erleichtern."
+            ],
+            "reasoning": "Die richtige Antwort „C) Er bleibt bei dem bereits erfüllten Bedürfnis“ ist ein grundlegendes Verständnis menschlicher Natur. Menschen neigen oft dazu, beim Erfüllen eines Bedürfnisses dabei zu bleiben und nicht sofort zu einem anderen zu wechseln.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.4 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wie reagiert ein Mensch normalerweise, wenn ein Bedürfnis erfüllt ist?\n\nA) Er widmet sich sofort einem anderen Bedürfnis\nB) Er wird traurig und braucht Zeit zum Nachdenken\nC) Er bleibt bei dem bereits erfüllten Bedürfnis\nD) Er ignoriert das gerade erfüllte Bedürfnis <option>A) Er widmet sich sofort einem anderen Bedürfnis\nC) Er bleibt bei dem bereits erfüllten Bedürfnis\nB) Er wird traurig und braucht Zeit zum Nachdenken\nD) Er ignoriert das gerade erfüllte Bedürfnis<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

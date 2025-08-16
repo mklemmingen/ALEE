@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Any, List, Optional
 
+import numpy as np
 import pandas as pd
 
 
@@ -70,13 +71,34 @@ class CallerLogger:
         }
         return entry
     
+    def _ensure_json_serializable(self, obj: Any) -> Any:
+        """Convert numpy types and other non-JSON serializable objects to JSON-compatible types"""
+        if isinstance(obj, (np.integer, np.int64, np.int32, np.int16, np.int8)):
+            return int(obj)
+        elif isinstance(obj, (np.floating, np.float64, np.float32)):
+            return float(obj)
+        elif isinstance(obj, np.bool_):
+            return bool(obj)
+        elif isinstance(obj, np.ndarray):
+            return obj.tolist()
+        elif isinstance(obj, dict):
+            return {key: self._ensure_json_serializable(value) for key, value in obj.items()}
+        elif isinstance(obj, (list, tuple)):
+            return [self._ensure_json_serializable(item) for item in obj]
+        elif hasattr(obj, 'item'):  # Handle other numpy scalar types
+            return obj.item()
+        else:
+            return obj
+    
     def _write_log_entry(self, entry: Dict[str, Any]):
         """Write log entry to JSONL file and memory"""
-        self.log_entries.append(entry)
+        # Convert to JSON-serializable format
+        serializable_entry = self._ensure_json_serializable(entry)
+        self.log_entries.append(serializable_entry)
         
         # Write to file immediately for persistence
         with open(self.log_file_path, 'a', encoding='utf-8') as f:
-            f.write(json.dumps(entry, ensure_ascii=False) + '\n')
+            f.write(json.dumps(serializable_entry, ensure_ascii=False) + '\n')
     
     def log_session_start(self):
         """Log session start with metadata"""

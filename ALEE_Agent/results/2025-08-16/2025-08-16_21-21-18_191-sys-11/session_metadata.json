@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 0.11311769485473633,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Welche Aussage ist falsch?\n\nM\u00e4rkte sind nur an einen bestimmten Ort gebunden.\nDer Wochenmarkt auf dem Marktplatz ist ein Beispiel f\u00fcr einen Markt.\nViele Dinge k\u00f6nnen auch im Internet gekauft werden, was ebenfalls ein Markt ist.\n\nA) Die erste Aussage ist falsch.\nB) Die zweite Aussage ist falsch.\nC) Die dritte Aussage ist falsch.\nD) Alle Aussagen sind wahr. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "Welche Aussage ist richtig?\n\nM\u00e4rkte k\u00f6nnen nur in der physischen Welt stattfinden.\nDer Internetmarkt ist kein Markt, da er nicht im physischen Raum stattfindet.\nWir m\u00fcssen immer an einen bestimmten Ort gehen, um ein Produkt zu kaufen.\n\nA) Die erste Aussage ist wahr.\nB) Die zweite Aussage ist wahr.\nC) Die dritte Aussage ist wahr.\nD) Alle Aussagen sind falsch. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "Welche Aussage ist richtig?\n\nM\u00e4rkte k\u00f6nnen nur an einem bestimmten Ort stattfinden, wie zum Beispiel auf dem Marktplatz.\nDer Wochenmarkt ist ein Markt, der immer am Sonntag stattfindet.\nWir m\u00fcssen immer Geld bezahlen, um ein Produkt zu kaufen.\n\nA) Die erste Aussage ist wahr.\nB) Die zweite Aussage ist wahr.\nC) Die dritte Aussage ist wahr.\nD) Alle Aussagen sind falsch. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T21:21:18.223000",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

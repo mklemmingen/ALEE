@@ -1,0 +1,282 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T21:27:08.620189",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Welcher der folgenden Faktoren trägt dazu bei, dass die Nachfrage nach einer Sammelkarte tendenziell steigt? <option>Verringerung des Preises<option>Zunahme der Nachfrage nach dem Produkt<option>Wachsende Konjunktur<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Verringerung des Preises",
+          "Zunahme der Nachfrage nach dem Produkt",
+          "Wachsende Konjunktur",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Verringerung des Preises",
+          "Zunahme der Nachfrage nach dem Produkt"
+        ],
+        "explanation": "Die Fragen sollen das Verständnis der Mechanismen von Nachfrage, Angebot und Preis unterstreichen. Die Optionen sind so formuliert, dass die richtige Antwort logisch aus den beschriebenen Mechanismen folgt.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage könnte etwas spezifischer formuliert werden, um die Schwierigkeit zu erhöhen (e.g. \"Welche Faktoren tragen dazu bei, dass sich die Nachfrage nach einer Sammelkarte im Rahmen einer konjunkturellen Erholung steigert?\"). Die Optionen sind jedoch gut gewählt und passen zum Themenbereich.",
+            "suggestions": [
+              "- Spezifischere Frageformulierung",
+              "- Mehr Fokus auf die wirtschaftlichen Aspekte der Nachfrage"
+            ],
+            "reasoning": "Die Frage erfüllt zwar die grundlegenden Anforderungen, ist jedoch nicht besonders herausfordernd oder anspruchsvoll. Die richtigen Antworten sind auch relativ offensichtlich und könnten von einem Durchschnittsschüler ohne besonderes Wissen erkannt werden. Eine stammaufgabe sollte jedoch eine gewisse Tiefe und Komplexität aufweisen, die hier leider nicht vollständig erreicht wird.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und die Antwortmöglichkeiten sind klar definiert. Die Frage richtet sich an das Wissen des Schülers über die Auswirkungen von Preisänderungen, Nachfragezunahme und Konjunktur auf den Markt. Es gibt jedoch keine Anforderung, dass der Schüler kritisch über die Beziehungen zwischen diesen Faktoren nachdenken muss.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Frage erfüllt die Anforderungen für Stufe 1 (Wissen/Reproduktion), da der Schüler aufgefordert wird, bestimmte Faktoren zu identifizieren. Die Frage ist jedoch nicht so komplex oder anspruchsvoll wie es für eine höhere Taxonomiestufe erforderlich wäre.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexitätsanalyse zeigt an, dass die Frage eher einfach ist und sich auf allgemeine Beobachtungen über Marktdynamiken bezieht. Es gibt keine spezifischen mathematischen Anforderungen oder Konzepte, die in diesem Frage-Beispiel relevant sind.",
+            "suggestions": [
+              "Es werden keine Anpassungen für korrekte Komplexität benötigt, da die Frage bereits eine angemessene Schwierigkeit hat."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus der Tatsache, dass es in diesem Frage-Beispiel keine komplexen mathematischen Konzepte oder Gleichungen gibt. Die Frage bezieht sich eher auf allgemeine Beobachtungen über Marktdynamiken und ist daher als eher einfach einzustufen.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält insgesamt 8 sprachliche Hindernisse, davon sind 5 Passivkonstruktionen und 3 komplexe NP. Die Negationen in Item 2 und 6 können auch schwierig zu verstehen sein.",
+            "suggestions": [
+              "- Vereinfachen Sie die Frage durch Verwendung von Aktivform anstatt Passivform.",
+              "- Vermeiden Sie komplexe Nominalphrasen, indem Sie einfache Pronomen oder Artikel verwenden.",
+              "- Verwenden Sie einfache Negationen wie \"nicht\" anstatt komplexer Formulierungen."
+            ],
+            "reasoning": "Die Bewertung von 4 basiert auf der Anzahl der sprachlichen Hindernisse in der Frage. Die Passivkonstruktionen und komplexe NP können für Nicht-Muttersprachler schwierig zu verstehen sein, daher wurde eine mittlere Bewertung gewählt.",
+            "target_value": "Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Komplexe NP; Item 2: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Negation; Item 3: Komplexe NP; Item 5: Passiv; Item 6: Negation; Item 7: Passiv; Item 7: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist gut strukturiert und leicht verständlich. Die explizite Zielsetzung trägt dazu bei, dass die Aufgabe klar und unmissverständlich ist. Es wäre jedoch hilfreich, wenn die Optionen noch detaillierter beschrieben wären, um sicherzustellen, dass der Befragte genau weiß, was er tun soll.",
+            "suggestions": [
+              "- Optionen sollten detaillierter beschrieben werden, um sicherzustellen, dass der Befragte genau weiß, was er tun soll.",
+              "- Eine kurze Erklärung zu jedem Option wäre hilfreich, um den Kontext zu vermitteln."
+            ],
+            "reasoning": "Die Anweisung wird mit einer Expliziten Zielsetzung versehen, die es ermöglicht, klar und unmissverständlich zu definieren, welche Faktoren die Nachfrage nach einer Sammelkarte beeinflussen. Die Optionen sollten jedoch detaillierter beschrieben werden, um sicherzustellen, dass der Befragte genau weiß, was er tun soll.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.4 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welcher der folgenden Faktoren trägt dazu bei, dass die Nachfrage nach einer Sammelkarte tendenziell steigt? <option>Verringerung des Preises<option>Zunahme der Nachfrage nach dem Produkt<option>Wachsende Konjunktur<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Welcher der folgenden Faktoren trägt dazu bei, dass das Angebot an Sammelkarten tendenziell steigt? <option>Verringerung des Preises<option>Wachsende Konjunktur<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Verringerung des Preises",
+          "Wachsende Konjunktur",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Verringerung des Preises",
+          "Wachsende Konjunktur"
+        ],
+        "explanation": "Die Fragen sollen das Verständnis der Mechanismen von Nachfrage, Angebot und Preis unterstreichen. Die Optionen sind so formuliert, dass die richtige Antwort logisch aus den beschriebenen Mechanismen folgt.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist eher einfach gehalten und deckt einen grundlegenden Aspekt der Marktwirtschaft ab, sodass es als \"stammaufgabe\" geeignet erscheint. Es gibt jedoch keine spezifischen Details zur Schwierigkeit des Themas oder Anforderungen an das Thema.",
+            "suggestions": [
+              "Die Frage könnte genauer definiert werden, indem spezifischere Faktoren erwähnt würden, die auf dem Markt für Sammelkarten relevant sind. Zudem könnten mehrere Optionen, die als falsch identifiziert werden können, hinzugefügt werden, um die Schwierigkeit der Frage zu erhöhen."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Tatsache, dass die Frage ein grundlegendes Thema abdeckt und keine komplexen Aspekte oder spezifische Anforderungen an das Thema enthält. Die Begründung könnte durch eine genauere Definition der Faktoren gefüllt werden, die auf dem Markt für Sammelkarten relevant sind.",
+            "target_value": "stammaufgabe",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage entspricht größtenteils der Stufe 1 (Wissen/Reproduktion), da die Befragten einfach bestimmen sollen, welcher Faktor für das steigende Angebot an Sammelkarten verantwortlich ist. Die Antwortmöglichkeiten sind jedoch etwas unkonventionell formuliert und beziehen sich nicht direkt auf den Kontext von Sammelkarten.",
+            "suggestions": [
+              "Eine überarbeitete Version der Frage könnte spezifischer sein: \"Welcher Faktor trägt dazu bei, dass das Angebot an Sammelkarten tendenziell steigt?\" Die Optionen könnten wie folgt formuliert werden: \"Preisreduktion\", \"Wachsende Konjunktur\", \"Erhöhte Nachfrage\" usw."
+            ],
+            "reasoning": "Die Frage wird als Stufe 1 (Wissen/Reproduktion) bewertet, da die Befragten lediglich bestimmen sollen, welcher Faktor für das steigende Angebot an Sammelkarten verantwortlich ist. Die Antwortmöglichkeiten sind zwar nicht direkt relevant, aber es handelt sich hierbei um eine einfache Identifikation von Faktoren.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität der Frage ist auf Mathematik-Stufe 0 angesiedelt und bezieht sich auf die Grundlagen der Wirtschaftswissenschaft. Die Antwortmöglichkeiten sind relativ einfach und können durch logisches Denken gelöst werden.",
+            "suggestions": [
+              "Um die Komplexität zu erhöhen, könnten weitere Faktoren wie Marktwiderstände oder politische Einflüsse eingeführt werden."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Tatsache, dass alle Optionen plausibel sind und durch die Analyse des Wirtschaftskontexts überprüfbar sind. Die Frage erfordert ein Verständnis der Grundlagen der Wirtschaftswissenschaft und Fähigkeit zur logischen Argumentation.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage könnte durch eine Überarbeitung der Formulierung und Struktur erleichtert werden, um die sprachlichen Hindernisse zu reduzieren. Zum Beispiel könnten komplexe Nominalphrasen in einfache Nomen überführt oder Passivformen in Aktivformen umgewandelt werden.",
+            "suggestions": [
+              "- Vereinfachen der komplexen Nominalphrasen",
+              "- Umwandeln von Passivformen in Aktivformen",
+              "- Vermeiden von Negationen"
+            ],
+            "reasoning": "Die sprachlichen Hindernisse in der Frage werden durch die Komplexität der Formulierung und Struktur hervorgerufen. Durch eine Überarbeitung kann diese Komplexität reduziert und die Lesbarkeit verbessert werden.",
+            "target_value": "Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Komplexe NP; Item 2: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Negation; Item 3: Komplexe NP; Item 5: Passiv; Item 6: Negation; Item 7: Passiv; Item 7: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist zwar explizit, aber die Optionsformulierungen könnten mehr Klarheit bieten. Die Beziehung zwischen Anbieterzahl und Angebot an Sammelkarten könnte auch genauer definiert werden.",
+            "suggestions": [
+              "- Optionen sollten klar und direkt auf den Zusammenhang zwischen Anbieterzahl und Angebot an Sammelkarten bezogen sein.",
+              "- Eine genauere Definition der Beziehung zwischen Anbieterzahl und Angebot an Sammelkarten könnte hilfreich sein."
+            ],
+            "reasoning": "Die Frage ist explizit, aber die Optionsformulierungen sind nicht ideal. Die Begründung für die Bewertung von 3 liegt darin, dass die Frage zwar explizit formuliert ist, aber noch einige Verbesserungsbedarf aufweist.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welcher der folgenden Faktoren trägt dazu bei, dass das Angebot an Sammelkarten tendenziell steigt? <option>Verringerung des Preises<option>Wachsende Konjunktur<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Welcher der folgenden Faktoren ist ein Ergebnis einer steigenden Nachfrage und eines sinkenden Angebots? <option>Steigerung des Preises<option>Verringerung des Preises<option>Verringern der Nachfrage<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Steigerung des Preises",
+          "Verringerung des Preises",
+          "Verringern der Nachfrage",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Steigerung des Preises",
+          "Verringerung des Preises"
+        ],
+        "explanation": "Die Fragen sollen das Verständnis der Mechanismen von Nachfrage, Angebot und Preis unterstreichen. Die Optionen sind so formuliert, dass die richtige Antwort logisch aus den beschriebenen Mechanismen folgt.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert, aber es fehlt an Details, die klären, wie das Angebot im Vergleich zur Nachfrage beeinflusst wird.",
+            "suggestions": [
+              "- Eine genauere Formulierung könnte sein: \"Welcher der folgenden Faktoren ist ein Ergebnis einer steigenden Nachfrage und eines sinkenden Angebots, was zu einem erhöhten Preis führt?\"",
+              "- Hinzufügen von Beispielen oder grafischen Darstellungen zur Verdeutlichung des Marktdynamik"
+            ],
+            "reasoning": "Die Frage hat eine mittlere Schwierigkeit. Sie ist nicht zu einfach, aber auch nicht zu komplex. Die Antwortmöglichkeiten sind klar und logisch abgeleitet aus der Frage. Es gibt jedoch Raum für Verbesserungen, wie oben erwähnt.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist im Wesentlichen eine Identifikationsaufgabe (was passiert, wenn...), wobei der Schüler aufgefordert wird, ein Ergebnis einer bestimmten Marktänderung zu benennen. Es fehlt jedoch an Tiefe oder Analyse, was typischerweise für höhere Taxonomiestufen relevant ist.",
+            "suggestions": [
+              "- Um die Frage an die Stufe 2 der Bloom'schen Taxonomie (Analyse) anzupassen, könnte man den Schüler auffordern, mehrere Faktoren zu analysieren, die sich auf das Ergebnis auswirken könnten.",
+              "- Eine andere Möglichkeit wäre, die Frage so zu reformulieren, dass der Schüler nicht nur ein bestimmtes Ergebnis benennen soll, sondern auch erläutern muss, warum dies passieren würde."
+            ],
+            "reasoning": "Die Bewertung als 3 (Analyse) basiert auf dem Umstand, dass die Frage zwar ein Verständnis von Marktmechanismen verlangt, aber den Schüler nicht dazu anregt, kritisch über die zugrunde liegenden Prinzipien nachzudenken.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage bezieht sich auf einfache mathematische Konzepte. Die Antwortmöglichkeiten sind einfach und erfordern keine komplexen Berechnungen.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich, da die Frage grundlegende mathematische Konzepte beinhaltet."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Komplexität des mathematischen Konzepts in der Frage. Bei einer Ziel-Mathematikstufe von 0 wird eine einfache Frage mit einfachen Antworten bevorzugt.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse, aber sie sind nicht übermäßig schwer zu verstehen. Die Passivkonstruktionen in Item 1 und Item 3 können für Deutschlerner schwieriger sein als Aktivkonstruktionen, da sie die Verantwortung oft nicht klar definieren. Die Negation in Item 2 und Item 7 ist ebenfalls ein Problem, aber es gibt keine unklaren NP-Strukturen.",
+            "suggestions": [
+              "* In den Passiv-Konstruktionen in Item 1 und Item 3 könnte die Verantwortung klarer definiert werden.",
+              "* Die Negation in Item 2 und Item 7 sollte auf andere Weise formuliert werden, z.B. mit einer einfachen Negationsformel."
+            ],
+            "reasoning": "Die Bewertung von 4 wird durch die Tatsache gerechtfertigt, dass es sich bei den sprachlichen Hindernissen um komplexe Nominalphrasen und Passivkonstruktionen handelt, aber sie sind nicht extrem schwer zu verstehen. Die Negation ist ebenfalls ein Problem, aber es gibt keine unklaren NP-Strukturen.",
+            "target_value": "Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Komplexe NP; Item 2: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Negation; Item 3: Komplexe NP; Item 5: Passiv; Item 6: Negation; Item 7: Passiv; Item 7: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit wird als sehr gut eingeschätzt, da alle wichtigen Informationen präzise und genau formuliert sind. Es ist leicht, die richtige Antwort zu finden.",
+            "suggestions": [
+              "Keine Verbesserungen erforderlich, da die Anweisung bereits sehr klar und genau ist."
+            ],
+            "reasoning": "Die Anweisung wird als gut bewertet, weil sie präzise und genaue Informationen liefert. Die Antwortmöglichkeiten sind auch korrekt ausgewählt, was es leicht macht, die richtige Antwort zu finden.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.4 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welcher der folgenden Faktoren ist ein Ergebnis einer steigenden Nachfrage und eines sinkenden Angebots? <option>Steigerung des Preises<option>Verringerung des Preises<option>Verringern der Nachfrage<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

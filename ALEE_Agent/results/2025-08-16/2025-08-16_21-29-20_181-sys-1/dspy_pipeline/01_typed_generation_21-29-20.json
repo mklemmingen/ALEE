@@ -1,0 +1,282 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T21:29:20.468869",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was ist ein Hauptunterschied zwischen den Bedürfnissen von Kindern und Erwachsenen?\n\nA) Kinder haben oft das Bedürfnis, finanziell abgesichert zu sein.\nB) Erwachsene haben häufiger das Bedürfnis, sich zu wärmen.\nC) Kinder wollen häufiger spielen als Erwachsene.\nD) Kinder haben oft das Bedürfnis, etwas zu unternehmen. <option>A) Kinder haben oft das Bedürfnis<option>finanziell abgesichert zu sein ist falsch.\nB) Erwachsene haben häufiger das Bedürfnis<option>sich zu wärmen ist falsch.\nC) Kinder wollen häufiger spielen als Erwachsene ist richtig.\nD) Kinder haben oft das Bedürfnis<option>etwas zu unternehmen ist falsch.<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Kinder haben oft das Bedürfnis",
+          "finanziell abgesichert zu sein ist falsch.\nB) Erwachsene haben häufiger das Bedürfnis",
+          "sich zu wärmen ist falsch.\nC) Kinder wollen häufiger spielen als Erwachsene ist richtig.\nD) Kinder haben oft das Bedürfnis",
+          "etwas zu unternehmen ist falsch.",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Kinder haben oft das Bedürfnis",
+          "finanziell abgesichert zu sein ist falsch.\nB) Erwachsene haben häufiger das Bedürfnis"
+        ],
+        "explanation": "Die Fragen sind auf die Wissensstufe 1 (Wissen/Reproduktion) ausgerichtet und beziehen sich direkt auf den bereitgestellten Text. Sie sollen das Verständnis der Bedürfnisse als Wünsche von Menschen, ihre Natur und wie sie befriedigt werden, testen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist zwar etwas komplex, aber dennoch gut formuliert und ansprechend. Die Optionen sind sorgfältig ausgewählt und bieten eine klare Auswahlmöglichkeit. Es gibt jedoch keinen deutlichen Hinweis darauf, dass die Antwort \"C) Kinder wollen häufiger spielen als Erwachsene\" die einzige richtige ist.",
+            "suggestions": [
+              "Um die Frage noch ansprechender zu machen, könnten weitere Optionen hinzugefügt werden, um die Vielfalt der menschlichen Bedürfnisse besser abzubilden. Zum Beispiel: \"Kinder haben oft das Bedürfnis, sich sicher und geschützt zu fühlen\" oder \"Erwachsene haben häufiger das Bedürfnis, sich selbstständig und unabhängig zu fühlen\"."
+            ],
+            "reasoning": "Die Frage erreicht eine Bewertung von 4, da sie ein komplexes Konzept anspricht und die Optionen sorgfältig ausgewählt sind. Allerdings ist die Frage nicht perfekt, da es keine klare Antwort gibt und die Optionen nicht ausreichend differenziert sind. Die Bewertung könnte höher sein, wenn die Frage noch mehr Details und Relevanz für das Thema \"Unterschied zwischen den Bedürfnissen von Kindern und Erwachsenen\" enthält.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert ein differenziertes Verständnis des Themas und die Fähigkeit, zwischen den Bedürfnissen verschiedener Altersgruppen zu unterscheiden. Die richtige Antwort zeigt ein gutes Verständnis der Thematik.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung"
+            ],
+            "reasoning": "Die Frage ist für die Stufe 1 (Wissen/Reproduktion) geeignet, da sie das Wissen des Schülers über die unterschiedlichen Bedürfnisse von Kindern und Erwachsenen testet. Die richtige Antwort zeigt ein Verständnis der Thematik und die Fähigkeit, eine Verallgemeinerung vorzunehmen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfordert ein Verständnis für die grundlegenden Bedürfnisse von Kindern. Es wurde jedoch beobachtet, dass es keine Anforderungen an mathematische Komplexität gibt, sondern eher soziale und emotionale Fähigkeiten.",
+            "suggestions": [
+              "Um die mathematische Komplexität zu erhöhen, könnte man Fragen zu Zahlen, Mengen oder einfachen geometrischen Formen einbauen. Zum Beispiel: „Wie viele Spielzeuge können 5 Kinder teilen?“ oder „Ein Quadrat mit einer Seitenlänge von 4 hat eine Fläche von“."
+            ],
+            "reasoning": "Die mathematische Komplexität dieser Frage ist gering, da es sich um ein soziales und emotionsbezogenes Thema handelt. Es gibt keine Anforderungen an Zahlen, Mengen oder geometrische Formen.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält keine offensichtlichen sprachlichen Hindernisse. Die Antwortoptionen sind klar formuliert und leicht verständlich.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung der Fragen, da keine schwerwiegenden sprachlichen Hindernisse erkannt wurden."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Annahme, dass die Frage eine klare und verständliche Formulierung hat und die Antwortoptionen leicht zu verstehen sind. Es gibt keine offensichtlichen sprachlichen Hindernisse, die eine Anpassung erfordern würden.",
+            "target_value": "Item 1: Passiv; Item 2: Negation; Item 3: Passiv; Item 3: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Komplexe NP; Item 6: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Negation; Item 7: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit könnte noch verbessert werden, indem die Antwortoptionen in einer logischeren Reihenfolge angeordnet werden. Die falschen Optionen könnten auch ein wenig deutlicher herausgestellt werden.",
+            "suggestions": [
+              "* Die Antwortoptionen sollten in einer logischeren Reihenfolge angeordnet werden.",
+              "* Die falschen Optionen sollten ein wenig deutlicher herausgestellt werden."
+            ],
+            "reasoning": "Die Anweisungsklarheit wird durch die explizite Formulierung der Frage und die klaren Antwortoptionen unterstützt. Die Bewertung von 4 ist gerechtfertigt, da die Anweisungsklarheit gut ist, aber noch ein paar Verbesserungenspotential hat.",
+            "target_value": "Explizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist ein Hauptunterschied zwischen den Bedürfnissen von Kindern und Erwachsenen?\n\nA) Kinder haben oft das Bedürfnis, finanziell abgesichert zu sein.\nB) Erwachsene haben häufiger das Bedürfnis, sich zu wärmen.\nC) Kinder wollen häufiger spielen als Erwachsene.\nD) Kinder haben oft das Bedürfnis, etwas zu unternehmen. <option>A) Kinder haben oft das Bedürfnis<option>finanziell abgesichert zu sein ist falsch.\nB) Erwachsene haben häufiger das Bedürfnis<option>sich zu wärmen ist falsch.\nC) Kinder wollen häufiger spielen als Erwachsene ist richtig.\nD) Kinder haben oft das Bedürfnis<option>etwas zu unternehmen ist falsch.<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Wie beschreibt der Text die Natur von Bedürfnissen? <option>Sie sind begrenzt und nur für eine Person gültig.<option>Sie erfüllen sich nie, da sie unbefriedigt bleiben.<option>Sie werden immer erfüllt, ohne dass neue entstehen.<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Sie sind begrenzt und nur für eine Person gültig.",
+          "Sie erfüllen sich nie, da sie unbefriedigt bleiben.",
+          "Sie werden immer erfüllt, ohne dass neue entstehen.",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Sie sind begrenzt und nur für eine Person gültig.",
+          "Sie erfüllen sich nie, da sie unbefriedigt bleiben."
+        ],
+        "explanation": "Die Fragen sind auf die Wissensstufe 1 (Wissen/Reproduktion) ausgerichtet und beziehen sich direkt auf den bereitgestellten Text. Sie sollen das Verständnis der Bedürfnisse als Wünsche von Menschen, ihre Natur und wie sie befriedigt werden, testen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert, um die Komplexität der Natur von Bedürfnissen aufzuzeigen. Die Antwortmöglichkeiten sind klar und prägnant, obwohl sie kein einheitliches Muster in Bezug auf die Schwierigkeitsgraden ausdrücken.",
+            "suggestions": [
+              "- Eine überarbeitete Frage könnte sich spezifischer auf das Konzept der Bedürfnisse und ihrer Erfüllung konzentrieren.",
+              "- Die Antwortmöglichkeiten könnten um detailliertere Erklärungen ergänzt werden, um die Schwierigkeit zu erhöhen."
+            ],
+            "reasoning": "Die Frage basiert auf einem Stamm-Materialien-Konzept und ist daher nicht geeignet für eine stammaufgabe. Die Antwortmöglichkeiten sind aber gut formuliert und prägnant. Um die Bewertung von 3 zu erreichen, müsste die Frage sich spezifischer auf das Konzept der Bedürfnisse konzentrieren und möglicherweise um detailliertere Erklärungen in den Antwortmöglichkeiten ergänzt werden.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist eher mit Stufe 3 (Anwendung) verbunden, da der Leser die Konzepte anwenden soll. Die Frage könnte jedoch durch eine andere Formulierung auf Stufe 1 angepasst werden. Derzeit sind die Antwortmöglichkeiten nicht spezifisch genug.",
+            "suggestions": [
+              "- Eine Überarbeitung der Frage, um sie direkt mit dem Konzept von Bedürfnissen in Verbindung zu bringen.",
+              "- Die Erweiterung der Antwortmöglichkeiten, um mehr spezifische Beispiele für die Natur von Bedürfnissen enthalten."
+            ],
+            "reasoning": "Die Frage erfordert ein differenzierteres Verständnis des Konzepts von Bedürfnissen. Derzeit sind die Antwortmöglichkeiten zu vage und passen nicht gut zur Stufe 1 (Wissen/Reproduktion). Eine Überarbeitung der Frage würde ihr bessere Anwendungsbewertungen ermöglichen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert ein hohes Maß an mathematischer Komplexität, da der Text die Natur von Bedürfnissen beschreibt. Die richtige Antwort zeigt eine starke Fähigkeit, komplexe Konzepte zu analysieren und zu verstehen.",
+            "suggestions": [
+              "Um die mathematische Komplexität zu erhöhen, könnten weitere Fragen gefragt werden, die das Verständnis von komplexeren mathematischen Konzepten erfordern, wie z.B. Funktionen oder Relationen."
+            ],
+            "reasoning": "Die Bewertung erfolgt auf der Grundlage der Fähigkeit, komplexe mathematische Konzepte zu verstehen und zu analysieren. Die richtige Antwort zeigt ein hohes Maß an mathematischer Komplexität, daher wird eine Bewertung von 3 vergeben.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Antwortoptionen enthalten einige sprachliche Hindernisse wie Passivkonstruktionen (Item 1, 3, 5 und 7) und Negationen (Item 2 und 6). Darüber hinaus beinhalten einige Optionen komplexe Nominalphrasen (Item 4, 5 und 7).",
+            "suggestions": [
+              "- Verwenden Sie aktives Konjugationsmuster anstelle des Passivs.",
+              "- Formulieren Sie die Negationen so, dass sie nicht zu viel Text erfordern."
+            ],
+            "reasoning": "Die Auswahl der Antwortoptionen und die Beurteilung ihrer sprachlichen Hindernisse basiert auf der Analyse der Merkmale jedes Items. Die Vorschläge zur Anpassung wurden anhand dieser Analyse formuliert, um eine bessere Lesbarkeit und Verständlichkeit zu erreichen.",
+            "target_value": "Item 1: Passiv; Item 2: Negation; Item 3: Passiv; Item 3: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Komplexe NP; Item 6: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Negation; Item 7: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist im Allgemeinen klar formuliert, aber einige Optionen könnten für Laien schwierig zu verstehen sein. Beispielsweise könnte die dritte Option \"Sie werden immer erfüllt, ohne dass neue entstehen\" als widersprüchlich wahrgenommen werden, da Bedürfnisse oft sich wiederholen und nicht vollständig befriedigt werden können.",
+            "suggestions": [
+              "Die Frage könnte durch Hinzufügen von Beispielen oder Erklärungen für jede Option erleichtert werden. Es wäre auch hilfreich, wenn die Optionen in einem neutraleren Ton formuliert wären, um Missverständnisse zu vermeiden."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 3, da die Frage im Allgemeinen klar ist, aber einige Optionen Schwierigkeiten aufwerfen. Die explizite Formulierung der Frage erleichtert es den Teilnehmern, ihre Kenntnisse anzuwenden.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 4,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wie beschreibt der Text die Natur von Bedürfnissen? <option>Sie sind begrenzt und nur für eine Person gültig.<option>Sie erfüllen sich nie, da sie unbefriedigt bleiben.<option>Sie werden immer erfüllt, ohne dass neue entstehen.<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Was passiert, wenn ein Bedürfnis befriedigt ist?\n\nA) Man widmet sich sofort einem anderen Bedürfnis.\nB) Das Befriedigte wird langsam vergessen.\nC) Es kommt zu neuen Bedürfnissen hinzu.\nD) Die Bedürfnisse werden unbegrenzt. <option>A) Man widmet sich sofort einem anderen Bedürfnis ist richtig.\nB) Das Befriedigte wird langsam vergessen ist falsch.\nC) Es kommt zu neuen Bedürfnissen hinzu ist falsch.\nD) Die Bedürfnisse werden unbegrenzt ist falsch.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Man widmet sich sofort einem anderen Bedürfnis ist richtig.\nB) Das Befriedigte wird langsam vergessen ist falsch.\nC) Es kommt zu neuen Bedürfnissen hinzu ist falsch.\nD) Die Bedürfnisse werden unbegrenzt ist falsch.",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Man widmet sich sofort einem anderen Bedürfnis ist richtig.\nB) Das Befriedigte wird langsam vergessen ist falsch.\nC) Es kommt zu neuen Bedürfnissen hinzu ist falsch.\nD) Die Bedürfnisse werden unbegrenzt ist falsch.",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen sind auf die Wissensstufe 1 (Wissen/Reproduktion) ausgerichtet und beziehen sich direkt auf den bereitgestellten Text. Sie sollen das Verständnis der Bedürfnisse als Wünsche von Menschen, ihre Natur und wie sie befriedigt werden, testen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist für das Ziel Schwierigkeitsgrad \"stammaufgabe\" zu einfach. Die richtige Antwort ist klar erkennbar und die Frage erfordert keine tiefe Analyse oder kritische Denkfähigkeit.",
+            "suggestions": [
+              "Um die Schwierigkeit zu erhöhen, könnten folgende Vorschläge gemacht werden:",
+              "* Mehrere falsche Optionen mit ähnlich klingender Rechtschreibung hinzufügen.",
+              "* Die Frage so formulieren, dass mehrere Bedürfnisse gleichzeitig befriedigt sind und das Verhalten danach beschrieben wird."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der folgenden Begründung:\n* Die Frage ist klar und einfach zu verstehen.\n* Die richtige Antwort ist erkennbar, aber die Frage erfordert keine tiefen Kenntnisse oder kritisches Denken.\n* Das Ziel Schwierigkeitsgrad \"stammaufgabe\" sollte komplexere Fragen beinhalten, die mehr als nur eine einfache Rechtschreib- oder Wortschatzprüfung sind.",
+            "target_value": "stammaufgabe",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist relativ einfach und die Antwortmöglichkeiten sind klar definiert. Es fehlt jedoch an Tiefe in der Fragestellung, da sie sich eher auf eine Oberflächenbewertung konzentriert als auf ein tiefes Verständnis des Konzepts.",
+            "suggestions": [
+              "Eine mögliche Anpassung wäre, die Frage zu vertiefen, indem man Fragen wie \"Was sind die langfristigen Folgen der Befriedigung eines Bedürfnisses?\" oder \"Wie kann man seine Bedürfnisse effektiver bewältigen?\" hinzufügen."
+            ],
+            "reasoning": "Die Bewertung von 2 (Analyse) wird aufgrund des Fehlens an Tiefe in der Fragestellung und der Oberflächenbewertung vorgenommen. Die richtige Antwort zeigt ein Verständnis für das Konzept, aber es fehlt an einer tiefen Analyse.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist komplex und erfordert ein tiefes Verständnis der menschlichen Psychologie. Die richtige Antwort zeigt, dass man mit den Grundprinzipien von Maslows Theorie vertraut ist. Es wird jedoch empfohlen, sich auf die Mathematikstufe 1 oder höher zu konzentrieren, da diese Frage eher in das Bereich der Sozialwissenschaften fällt.",
+            "suggestions": [
+              "Es könnte hilfreich sein, ähnliche Fragen mit einem stärkeren mathematischen Fokus zu integrieren, um die Komplexität und Schwierigkeit für den Schüler zu erhöhen. Zum Beispiel könnten Fragen zur Modellierung menschlicher Bedürfnisse oder zur Analyse von Daten aus sozialwissenschaftlichen Studien verwendet werden."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Komplexität der Frage und dem Verständnis des Schülers für die Theorie der menschlichen Bedürfnisse. Da die richtige Antwort A) Man widmet sich sofort einem anderen Bedürfnis ist, wird angenommen, dass der Schüler ein grundlegendes Verständnis von Maslows Theorie besitzt und in der Lage ist, diese Anwendung auf ein bestimmtes Szenario anzuwenden.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse, wie z.B. die Verwendung von Passivformen (Item 1, 3-7) und Negationen (Item 2, 6). Des Weiteren werden komplexe Nominalphrasen verwendet (Item 4, 5, 7).",
+            "suggestions": [
+              "Um die sprachlichen Hindernisse zu überwinden, könnten folgende Vorschläge gemacht werden:",
+              "",
+              "* Verwenden Sie aktive Formen anstelle von Passivformen.",
+              "* Vermeiden Sie die Verwendung von Negationen.",
+              "* Vereinfachen Sie komplexe Nominalphrasen."
+            ],
+            "reasoning": "Die Bewertung der sprachlichen Hindernisse basiert auf folgenden Kriterien:\n\n* Die Verwendung von Passivformen wird als schwierig eingestuft, da sie die Struktur des Satzes beeinträchtigen kann.\n* Die Negation wird ebenfalls als schwierig eingeschätzt, da sie die Bedeutung des Satzes ändern kann.\n* Komplexe Nominalphrasen werden als schwierig bewertet, da sie den Leser erschwerten können, die Bedeutung zu verstehen.\n\nDie Gesamtbewertung der sprachlichen Hindernisse beträgt 4 von 5 möglichen Punkten.",
+            "target_value": "Item 1: Passiv; Item 2: Negation; Item 3: Passiv; Item 3: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Komplexe NP; Item 6: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Negation; Item 7: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut, da die richtige Antwortoption explizit benannt wird. Die Frage bezieht sich auf eine grundlegende Prinzipien der Bedürfnisbefriedigung in der deutschen Bildungsfrage.",
+            "suggestions": [
+              "Keine Verbesserungen notwendig"
+            ],
+            "reasoning": "Die Anweisungsbewertung ist 4, da die richtige Antwortoption explizit benannt wird und die Frage ein grundlegendes Prinzip der Bedürfnisbefriedigung in der deutschen Bildungsfrage bezieht. Die Anweisungsklarheit ist gut.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was passiert, wenn ein Bedürfnis befriedigt ist?\n\nA) Man widmet sich sofort einem anderen Bedürfnis.\nB) Das Befriedigte wird langsam vergessen.\nC) Es kommt zu neuen Bedürfnissen hinzu.\nD) Die Bedürfnisse werden unbegrenzt. <option>A) Man widmet sich sofort einem anderen Bedürfnis ist richtig.\nB) Das Befriedigte wird langsam vergessen ist falsch.\nC) Es kommt zu neuen Bedürfnissen hinzu ist falsch.\nD) Die Bedürfnisse werden unbegrenzt ist falsch.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

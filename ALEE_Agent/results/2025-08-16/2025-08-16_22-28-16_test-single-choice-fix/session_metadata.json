@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 71.15345358848572,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was sind Bed\u00fcrfnisse? <option>W\u00fcnsche von Tieren<option>W\u00fcnsche von Menschen<option>Notwendigkeiten f\u00fcr das Leben<option>Freiwillige Handlungen",
+        "Wie entstehen Bed\u00fcrfnisse? <option>Wenn Menschen etwas haben, was sie nicht ben\u00f6tigen<option>Wenn Menschen das Gef\u00fchl haben, dass ihnen etwas fehlt<option>Wenn Menschen andere Menschen helfen m\u00f6chten<option>Wenn Menschen neue Dinge entdecken",
+        "Was ist ein Merkmal von Bed\u00fcrfnissen? <option>Sie sind freiwillige Handlungen<option>Sie entstehen nur bei Tieren<option>Sie haben nichts mit dem Leben zu tun<option>Sie entstehen, wenn Menschen das Gef\u00fchl haben, dass ihnen etwas fehlt"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T22:28:16.918290",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

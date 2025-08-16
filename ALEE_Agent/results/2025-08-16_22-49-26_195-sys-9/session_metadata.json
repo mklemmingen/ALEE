@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 0.0896155834197998,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Wer erh\u00e4lt ein Konzertticket, wenn es \u00fcber den Markt verkauft wird? <option>Nur wer das Konzert gerne sehen m\u00f6chte<option>Jeder, der ein Ticket kaufen kann<option>Derjenige, der das teuerste Angebot gibt<option>Keiner, weil die Tickets nicht verkauft werden<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Welchen Effekt hat der Markt auf den Warenbestand? <option>Er erh\u00f6ht ihn<option>Er senkt ihn<option>Er sorgt daf\u00fcr, dass nur diejenigen G\u00fcter hergestellt und verkauft werden, die die Menschen wollen<option>Er sorgt daf\u00fcr, dass alle G\u00fcter verkaufbar sind<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Was ist das einheitliche Tauschmittel im Wirtschaftsleben? <option>Geld<option>Zeit<option>Arbeit<option>Energie<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T22:49:26.583190",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

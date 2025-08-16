@@ -1,0 +1,260 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T21:25:39.345504",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was genau bezeichnet man unter Opportunitätskosten?\n\nA) Die Kosten für das Kinoticket\nB) Das Gehalt, das man hätte verdienen können, wenn man jobben gegangen wäre\nC) Beide A und B\nD) Keine der oben genannten Optionen <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragengenerierung basiert auf dem Text und den Parametern. Die Fragestellungen sind als true-false-Fragen formuliert, um die Teilnehmer dazu zu bringen, kritisch über die Aussagen nachzudenken.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist komplex genug, um ein tieferes Verständnis der Opportunitätskosten zu erfordern. Die Antwortmöglichkeiten sind auch plausibel und überzeugend dargestellt.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge"
+            ],
+            "reasoning": "Die Frage ist eine sogenannte \"Stammaufgabe\", die ein mittleres Schwierigkeitsniveau aufweist. Die Antwortmöglichkeiten sind klar und präzise formuliert, was ein gutes Zeichen für eine gute Frage ist. Es gibt jedoch keine speziellen Anforderungen oder Herausforderungen an das Verständnis des Konzepts Opportunitätskosten, was die Frage vielleicht etwas zu einfach macht.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage erfordert ein Verständnis der mikroökonomischen Konzepte. Die Antwort B ist korrekt und zeigt ein fundiertes Verständnis von Opportunitätskosten.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich, da die Frage und Antworten bereits auf die Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie ausgerichtet sind."
+            ],
+            "reasoning": "Die Frage ist erfolgreich in der Stufe 1 der Bloom'schen Taxonomie evaluiert worden, indem sie ein Verständnis des Konzepts von Opportunitätskosten erforderte und die richtige Antwort abgefragt hat. Die Begründung für diese Bewertung liegt darin, dass das Verständnis der mikroökonomischen Konzepte und die Fähigkeit, sich auf Fragen zu diesen Themen einlassen, ein grundlegender Aspekt von Wissen/Reproduktion ist.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 4,
+            "feedback": "Die Frage erfordert ein tiefes Verständnis der Opportunitätskosten und ihrer Beziehung zum Zeitwert. Die richtige Antwort zeigt, dass die Person versteht, wie man den Wert einer Entscheidung berechnen kann.",
+            "suggestions": [
+              "Keine Vorschläge erforderlich"
+            ],
+            "reasoning": "Die Begründung ist einfach: Die Frage bezieht sich auf die Opportunitätskosten und die Person hat die richtige Antwort gewählt. Dies zeigt, dass sie ein gutes Verständnis der mikroökonomischen Konzepte besitzt.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die sprachlichen Hindernisse in dieser Frage bestehen aus einer komplexen Nominalphrasen (Item 6: Komplexe NP) und Passivkonstruktionen (z.B. Item 1: Passiv; Item 3: Passiv; Item 5: Passiv; Item 7: Passiv). Die Negationen (z.B. Item 1: Negation; Item 4: Negation; Item 8: Negation) erfordern besondere Aufmerksamkeit, um sicherzustellen, dass die richtige Antwort ausgewählt wird.",
+            "suggestions": [
+              "Um die sprachlichen Hindernisse zu überwinden, könnte man folgende Vorschläge unterbreiten:",
+              "",
+              "* Vereinfachen der komplexen Nominalphrasen",
+              "* Vermeiden von Passivkonstruktionen oder deren klare Darstellung",
+              "* Klarere Formulierung der Negationen"
+            ],
+            "reasoning": "Die Bewertung 4 basiert auf der Schwierigkeit, die sprachlichen Hindernisse zu erkennen und zu verstehen. Die Frage erfordert eine gute Kenntnis des Konzepts Opportunitätskosten sowie die Fähigkeit, komplexe Nominalphrasen und Passivkonstruktionen zu analysieren.",
+            "target_value": "Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Negation; Item 1: Komplexe NP; Item 3: Passiv; Item 4: Negation; Item 5: Passiv; Item 5: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Komplexe NP; Item 8: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Der Anweisung ist klar und direkt formuliert. Die Antwortmöglichkeiten sind gut ausgewählt und passen zu der Frage.",
+            "suggestions": [
+              "Keine Vorschläge, da die Anweisung bereits gut formuliert ist."
+            ],
+            "reasoning": "Die Beweggründe für die Bewertung von 4 liegen darin, dass die Frage klar gestellt ist und die Antwortmöglichkeiten gut ausgewählt sind. Es gibt keine unklaren oder irreführenden Elemente in der Anweisung.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 4,
+          "math_expert": 4,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.8 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was genau bezeichnet man unter Opportunitätskosten?\n\nA) Die Kosten für das Kinoticket\nB) Das Gehalt, das man hätte verdienen können, wenn man jobben gegangen wäre\nC) Beide A und B\nD) Keine der oben genannten Optionen <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "Was genau ist ein Vorteil einer Handlung?\n\nA) Nur Geld\nB) Nur Zeit\nC) Nur Spaß oder Erholung\nD) Alle der oben genannten Optionen <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragengenerierung basiert auf dem Text und den Parametern. Die Fragestellungen sind als true-false-Fragen formuliert, um die Teilnehmer dazu zu bringen, kritisch über die Aussagen nachzudenken.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert, aber die Antwortmöglichkeiten könnten noch besser geordnet werden, um das Verständnis der richtigen Antwort zu erleichtern. Es wäre hilfreich, wenn die falschen Optionen mehr abstrakt und weniger konkreten Bezug haben würden.",
+            "suggestions": [
+              "- Die falschen Optionen sollten so formuliert sein, dass sie nicht leicht als \"falsch\" erkannt werden können.",
+              "- Es könnte hilfreich sein, ein Beispiel für die richtige Antwort zu geben."
+            ],
+            "reasoning": "Die Bewertung von 4 gibt an, dass die Frage gut ist, aber mit einem paar Änderungen perfekt gemacht werden könnte. Die richtige Antwort sollte leicht erkennbar sein und es wäre hilfreich, wenn die falschen Optionen mehr abstrakt formuliert würden, um das Verständnis der richtigen Antwort zu erleichtern.",
+            "target_value": "stammaufgabe",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage könnte präziser gestaltet werden, indem klare Beispiele für Vorteile von Handlungen angegeben werden. Außerdem sollte das Konzept \"Vorteil\" definiert und erklärt werden.",
+            "suggestions": [
+              "- Die Frage sollte klarer gestellt werden, indem die Optionen spezifischer sind.",
+              "- Ein Beispiel oder eine Erklärung des Begriffs \"Vorteil\" sollte hinzugefügt werden.",
+              "- Die Schüler sollten aufgefordert werden, ein Beispiel für einen Vorteil einer Handlung zu beschreiben."
+            ],
+            "reasoning": "Die Frage erfordert von den Schülern, ihr Wissen über das Konzept \"Vorteil einer Handlung\" anzuwenden und es zu erklären. Die Bewertung wird erschwert durch die unklare Struktur der Antwortmöglichkeiten.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert ein Verständnis der Begriffe \"Vorteil\" und \"Handlung\", was für die Mathematikstufe 0 relevant ist. Die Frage ist jedoch leicht verständlich und erfordert keine komplexen mathematischen Konzepte.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich, da die Frage der richtigen Komplexität entspricht."
+            ],
+            "reasoning": "Die Aussage \"Der Vorteil einer Handlung ist nur Geld\" ist falsch. Ein Vorteil kann auch Zeit oder Spaß sein. Daher ist die Aussage falsch und die Antwort \"Die Aussage ist falsch\" ist korrekt.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist zwar korrekt formuliert, aber die Optionen könnten noch besser abgefasst werden. Die Verwendung von <true-false> formatiertes könnte für Kinder oder Schwächepersonen verwirrend sein. Es wäre hilfreich, wenn die Optionen klar und einfach definiert wären.",
+            "suggestions": [
+              "- Die Frage sollte in einem neutralen Stil formuliert werden.",
+              "- Die Optionen sollten klar und einfach definiert werden.",
+              "- Ein Beispiel oder eine Erklärung für das Konzept \"Vorteil einer Handlung\" könnte hilfreich sein."
+            ],
+            "reasoning": "Die Bewertung von 4 basiert auf den sprachlichen Hindernissen in der Frage. Die Verwendung von <true-false> formatierten Optionen und die fehlende Definition des Konzepts \"Vorteil einer Handlung\" führen zu einer mittleren Bewertung.",
+            "target_value": "Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Negation; Item 1: Komplexe NP; Item 3: Passiv; Item 4: Negation; Item 5: Passiv; Item 5: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Komplexe NP; Item 8: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist gut, da alle Optionen klar beschrieben und direkt auf das Thema bezogen sind. Allerdings wäre es hilfreich, wenn eine Erklärung oder Begründung für die richtige Antwortoption hinzugefügt würde.",
+            "suggestions": [
+              "Es könnte hilfreich sein, eine kurze Begründung oder Erklärung für die richtige Antwortoption hinzuzufügen. Dies würde den Lernenden helfen, besser zu verstehen und sich fundierte Entscheidungen zu treffen."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung von 3 (Zweifelhaft) ergibt sich daraus, dass die Anweisung explizit ist, aber eine kurze Erklärung oder Begründung fehlt. Dies könnte zur Verwirrung bei den Lernenden führen und sie nicht optimal unterstützen.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was genau ist ein Vorteil einer Handlung?\n\nA) Nur Geld\nB) Nur Zeit\nC) Nur Spaß oder Erholung\nD) Alle der oben genannten Optionen <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "Was genau bezeichnet man unter Kosten einer Handlung?\n\nA) Nur die Zeit, die benötigt wird, um die Handlung durchzuführen\nB) Nur Güter, die für die Durchführung der Handlung benötigt werden\nC) Beide A und B\nD) Keine der oben genannten Optionen <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragengenerierung basiert auf dem Text und den Parametern. Die Fragestellungen sind als true-false-Fragen formuliert, um die Teilnehmer dazu zu bringen, kritisch über die Aussagen nachzudenken.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage entspricht der Schwierigkeitsstufe Stammaufgabe. Die richtige Antwort ist jedoch nicht eindeutig und könnte auch auf eine andere Weise gedacht sein, daher wird die Bewertung mit 3 angegeben.",
+            "suggestions": [
+              "Es wäre hilfreich, wenn die Frage noch ein bisschen mehr Kontext hätte oder wenn die Optionen noch ein bisschen detaillierter beschrieben wären."
+            ],
+            "reasoning": "Die Frage ist für eine Stammaufgabe gut geeignet. Die richtige Antwort C) Beide A und B erfordert, dass der Prüfling über den Kostenbegriff nachdenkt und weiß, dass diese auch die benötigten Güter einschließen.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist auf Stufe 1 der Bloom'schen Taxonomie ausgerichtet, aber die Antwortmöglichkeiten sind nicht so spezifisch formuliert, dass sie eine eindeutige Wahl zulassen. Eine mögliche Verbesserung wäre, die Optionen genauer zu definieren.",
+            "suggestions": [
+              "Die Frage könnte durch präzisere Formulierung der Antwortmöglichkeiten verbessert werden. So könnte beispielsweise Option A als \"Nur die direkten Geldkosten\" und Option B als \"Nur die indirekten Kosten\" definiert werden."
+            ],
+            "reasoning": "Die Frage ist auf Stufe 1 der Bloom'schen Taxonomie ausgerichtet, da sie das Wissen über die Kosten einer Handlung abfragt. Die Antwortmöglichkeiten sind jedoch nicht so spezifisch formuliert, dass sie eine eindeutige Wahl zulassen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 4,
+            "feedback": "Die Frage prüft das Verständnis der mathematischen Komplexität in Bezug auf Kosten. Die richtige Antwort zeigt ein grundlegendes Verständnis des Konzepts und ist daher ein guter Einsteiger-Level (0).",
+            "suggestions": [
+              "Keine Anpassungen erforderlich, da die Frage eine fundierte und mathematisch korrekte Definition von Kosten präsentiert."
+            ],
+            "reasoning": "Die richtige Antwort „C) Beide A und B“ wird durch das Konzept der Kosten in der Mikroökonomik gestützt. Die Zeit und Güter werden als Kosten für eine Handlung angesehen, was ein grundlegendes Prinzip der wirtschaftlichen Analyse ist.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält sprachliche Hindernisse, insbesondere Negationen und komplexe Nominalphrasen. Die Antwortoptionen sind jedoch korrekt formuliert und daher nicht als Hindernis zu bewerten.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung erforderlich, da die Frage bereits gut formuliert ist und die Antwortoptionen klar und eindeutig sind."
+            ],
+            "reasoning": "Die Begründung für die Bewertung als 3 (mittelgradige Schwierigkeit) liegt darin, dass die Frage zwar eine gewisse Komplexität aufweist, aber dennoch verständlich ist. Die sprachlichen Hindernisse wie Negationen und komplexe Nominalphrasen sind jedoch vorhanden und können von Lernenden als Herausforderung empfunden werden.",
+            "target_value": "Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Negation; Item 1: Komplexe NP; Item 3: Passiv; Item 4: Negation; Item 5: Passiv; Item 5: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Komplexe NP; Item 8: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut, da sie genau definiert, was unter Kosten einer Handlung verstanden wird. Es könnte jedoch hilfreich sein, ein Beispiel hinzuzufügen, um die Konzepte besser zu verstehen.",
+            "suggestions": [
+              "Ein Beispiel zur Verdeutlichung der Kosten: Wenn man zum Beispiel das Haus putzen möchte, dann sind die benötigten Güter Farbe, Putzmittel und Wasser. Die Zeit, die dafür benötigt wird, ist ebenfalls ein Kostenfaktor."
+            ],
+            "reasoning": "Die Aussage ist richtig, da sie explizit definiert, was unter Kosten einer Handlung verstanden wird. Diese Definition umfasst sowohl die Güter als auch die benötigte Zeit.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 4,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was genau bezeichnet man unter Kosten einer Handlung?\n\nA) Nur die Zeit, die benötigt wird, um die Handlung durchzuführen\nB) Nur Güter, die für die Durchführung der Handlung benötigt werden\nC) Beide A und B\nD) Keine der oben genannten Optionen <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      }
+    ],
+    "question_types_generated": [
+      "true-false",
+      "true-false",
+      "true-false"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

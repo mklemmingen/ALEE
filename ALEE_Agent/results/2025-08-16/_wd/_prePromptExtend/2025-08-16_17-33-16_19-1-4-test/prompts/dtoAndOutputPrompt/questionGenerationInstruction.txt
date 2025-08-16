@@ -1,0 +1,32 @@
+=== GENERIERUNGSANWEISUNG ===
+Generiere genau 3 verschiedene Fragen basierend auf den obigen Anforderungen.
+
+ABSOLUT KRITISCHE FORMAT-ANFORDERUNGEN (HÖCHSTE PRIORITÄT):
+- NIEMALS A), B), C), D) Format verwenden - Dies führt zu Validierungsfehlern!
+- Verwende für Multiple-Choice und Single-Choice AUSSCHLIESSLICH: <option>Option1<option>Option2<option>Option3...
+- Verwende für True-False AUSSCHLIESSLICH: <true-false>Aussage1<true-false>Aussage2
+- Verwende für Mapping AUSSCHLIESSLICH: <start-option>Begriff1<start-option>Begriff2<end-option>Definition1<end-option>Definition2
+
+OPTIONSANZAHL (STRIKT EINHALTEN):
+- Multiple-Choice: GENAU 6-8 inhaltlich sinnvolle Optionen (KEINE Platzhalter!)
+- Single-Choice: GENAU 4 inhaltlich sinnvolle Optionen
+- True-False: GENAU 2 Aussagen 
+- Mapping: Gleiche Anzahl Start- und End-Optionen
+
+INHALTSQUALITÄT:
+- Alle Optionen müssen kontextbezogen und pädagogisch sinnvoll sein
+- KEINE generischen Fülloptionen wie "Zusätzliche Option X" oder "Weitere Möglichkeit"
+- Jede Option muss eine realistische, themenbezogene Antwortmöglichkeit darstellen
+- Bei Multiple-Choice: Verwende plausible Distraktoren basierend auf häufigen Missverständnissen
+
+STRUKTURIERTE AUSGABE ERFORDERLICH:
+- Verwende die vorgegebenen DSPy-Ausgabefelder
+- Generiere strukturierte Antworten für frage_1, frage_2, frage_3
+- Füge entsprechende antworten_1, antworten_2, antworten_3 hinzu
+- Begründe die Fragengenerierung in generation_rationale
+
+QUALITÄTSSICHERUNG:
+- Alle Fragen müssen die Parameter-Anforderungen erfüllen
+- Markup-Format strikt einhalten - bei Formatfehlern wird die Generierung abgelehnt
+- Educationally meaningful content bereitstellen
+- Siehe dspyExamples.txt für hochwertige Beispiele aus genehmigten Daten

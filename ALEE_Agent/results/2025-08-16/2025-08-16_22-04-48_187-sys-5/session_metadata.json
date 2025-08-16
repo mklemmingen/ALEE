@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 79.77952718734741,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was ist ein Merkmal von freien G\u00fctern? <option>Sie sind nur f\u00fcr eine begrenzte Zeit verf\u00fcgbar.<option>Sie k\u00f6nnen kostenlos genutzt werden.<option>Sie sind immer knapp.<option>Sie m\u00fcssen bezahlt werden.<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Welche Art der Knappheit liegt vor, wenn die Menge eines Gutes zwar vorhanden ist, aber die Mittel der Menschen nicht ausreichen, um es so viel zu haben, wie sie wollen? <option>Relative Knappheit<option>Keine Knappheit<option>Unbekannt<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Welche Art der Knappheit bezieht sich auf die Verf\u00fcgbarkeit eines Gutes an einem bestimmten Ort und zu einer bestimmten Zeit? <option>Relative Knappheit<option>Keine Knappheit<option>Unbekannt<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T22:04:48.760932",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

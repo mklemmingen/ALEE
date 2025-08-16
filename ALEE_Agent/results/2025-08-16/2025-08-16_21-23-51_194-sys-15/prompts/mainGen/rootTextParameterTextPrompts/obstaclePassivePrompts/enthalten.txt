@@ -1,0 +1,28 @@
+ROOT TEXT PARAMETER: Obstacle Passive - ENTHALTEN
+
+Der Referenztext soll Passivkonstruktionen enthalten, die das Textverständnis erschweren können.
+
+ZWECK:
+Passivformulierungen erhöhen die sprachliche Komplexität und erfordern zusätzliche kognitive Verarbeitung für das Verständnis der Handlungsträger.
+
+IMPLEMENTATION:
+- Verwendung von Passivformen statt Aktivkonstruktionen
+- Verschleierung der handelnden Akteure
+- Komplexere Satzstrukturen durch Passivkonstruktionen
+- Erhöhte Abstraktion durch unpersönliche Formulierungen
+
+STAKEHOLDER-BEISPIELE MIT PASSIV:
+"Bedürfnisse werden als Wünsche definiert, die von Menschen verspürt werden. Es wird davon ausgegangen, dass sie entstehen, wenn ein Mangel empfunden wird. In der Wirtschaft werden solche Wünsche allgemein als Bedürfnisse bezeichnet. Wenn Kälte verspürt wird, wird das Bedürfnis nach Wärme entwickelt. Wenn Einsamkeit gefühlt wird, wird möglicherweise ein Bedürfnis nach Zuneigung oder Freundschaft entwickelt."
+
+PASSIVKONSTRUKTIONEN:
+- "werden als ... definiert"
+- "wird davon ausgegangen"
+- "werden ... bezeichnet"
+- "wird ... entwickelt"
+- "wird ... gefühlt"
+
+QUALITÄTSKRITERIEN:
+- Natürlich wirkende Passivformulierungen
+- Grammatisch korrekte Passivkonstruktionen
+- Erhöhte Komplexität ohne Unverständlichkeit
+- Verschleierung der Handlungsträger

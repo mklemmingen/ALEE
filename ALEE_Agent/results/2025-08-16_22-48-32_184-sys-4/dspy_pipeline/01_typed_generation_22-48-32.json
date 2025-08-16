@@ -1,0 +1,299 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:48:32.894512",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Ordne die Begriffe den richtigen Erklärungen zu. <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "question_type": "mapping",
+        "answers": [
+          "Bedürfnisse",
+          "Nachfrage",
+          "Angebot",
+          "Markt",
+          "Wünsche von Menschen",
+          "Was Kunden kaufen wollen",
+          "Was Unternehmen anbieten",
+          "Ort des Tauschens"
+        ],
+        "correct_answer": {
+          "Bedürfnisse": "Wünsche von Menschen",
+          "Nachfrage": "Was Kunden kaufen wollen",
+          "Angebot": "Was Unternehmen anbieten",
+          "Markt": "Ort des Tauschens"
+        },
+        "explanation": "Die Fragengenerierung basiert auf dem Text und den Parametern. Die Fragen sollen das Konzept der Güter und Bedürfnisse verdeutlichen und die Verbindung zwischen beiden zeigen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist zwar komplex, aber die Begriffe und Erklärungen entsprechen weitgehend dem erwarteten Schwierigkeitsgrad. Es gibt jedoch keine direkten Beziehungen zwischen den Begriffen und ihren Erklärungen, was zu einer geringeren Bewertung führt.",
+            "suggestions": [
+              "- Die Frage könnte durch die Hinzufügung von direkten Beziehungen zwischen den Begriffen und ihren Erklärungen verbessert werden.",
+              "- Es wäre hilfreich, wenn die Frage mehr Kontext über die Wirtschaft oder Marktdynamik lieferte."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus folgenden Gründen:\n- Die Begriffe sind korrekt aufgeführt und entsprechen den erwarteten Erklärungen.\n- Es fehlt jedoch an direkten Beziehungen zwischen den Begriffen und ihren Erklärungen, was zu einer geringeren Bewertung führt.\n- Die Frage könnte durch mehr Kontext oder direkte Beziehungen zwischen den Begriffen und ihren Erklärungen verbessert werden.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert die Anwendung von Kenntnissen über Wirtschaftslehre, insbesondere der Begriffe Bedürfnisse, Nachfrage, Angebot und Markt. Die Antworten sind jedoch nicht so spezifisch formuliert, dass sie auf eine bestimmte Erklärung hinweisen würden, ohne bereits vorherige Kenntnisse zu haben.",
+            "suggestions": [
+              "Um die Frage an die Stufe 2 (Anwendung/Transfer) anzupassen, sollten die Begriffe in der Frage noch spezifischer und komplexer formuliert werden, sodass es schwieriger wird, sie ohne vorherige Kenntnisse zuordnen zu können."
+            ],
+            "reasoning": "Die Frage erfüllt die Anforderungen der Stufe 2 (Anwendung/Transfer), da sie die Anwendung von Kenntnissen auf ein neues Szenario beinhaltet. Die Antworten sind jedoch nicht so spezifisch formuliert, dass sie unbedingt eine bestimmte Erklärung nahelegen.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die mathematische Komplexität liegt auf einem niedrigen Niveau, da die Frage sich mit grundlegenden mikroökonomischen Konzepten beschäftigt. Die richtigen Antworten sind für die Zielgruppe von Mathematikstufe 0 geeignet.",
+            "suggestions": [
+              "Die Fragen könnten noch mehr auf die mathematische Komplexität des Begriffs eingehen und es könnte ein Beispiel zur Verdeutlichung der mikroökonomischen Konzepte geben."
+            ],
+            "reasoning": "Die Bewerung von 2 ergibt sich aus der Tatsache, dass die Frage grundlegende mikroökonomische Konzepte beinhaltet. Die richtigen Antworten sind für Mathematikstufe 0 geeignet und es wird nicht viel mathematische Komplexität erfordert.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält mehrere sprachliche Hindernisse, darunter Passivkonstruktionen und Negationen. Diese können für Lerner mit begrenztem Deutschkenntnissspielraum schwierig sein. Es ist jedoch auch zu beachten, dass die Anweisung in passiver Form gegeben wird, was ebenfalls als Hindernis gewertet werden kann.",
+            "suggestions": [
+              "- Die Frage sollte in aktive Form formuliert werden.",
+              "- Negationen sollten vermieden werden.",
+              "- Komplexe Nominalgruppen können vereinfacht werden.",
+              "- Die Anweisung sollte in aktiver Form gegeben werden."
+            ],
+            "reasoning": "Die Bewertung von 4 basiert auf der Tatsache, dass es sich um eine komplexe Frage handelt, die mehrere sprachliche Hindernisse enthält. Die Passivkonstruktionen und Negationen können für Lerner schwierig sein, während die komplexen Nominalgruppen ein weiteres Hindernis darstellen. Die Anweisung in passiver Form ist ebenfalls als Hindernis zu bewerten.",
+            "target_value": "Grundtext: Passiv; Grundtext: Negation; Item 1: Komplexe NP; Item 2: Passiv; Item 2: Komplexe NP; Item 3: Negation; Item 3: Komplexe NP; Item 4: Passiv; Item 4: Negation; Item 4: Komplexe NP; Item 6: Passiv; Item 7: Negation; Item 8: Passiv; Item 8: Negation; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifische Fragen zur Beziehung zwischen den einzelnen Begriffen gestellt werden. Zum Beispiel: \"Wie stehen Bedürfnisse und Nachfrage zueinander?\" oder \"Was ist das Angebot in einer Marktwirtschaft?\"",
+            "suggestions": [
+              "- Die Frage sollte explizit spezifische Beziehungen zwischen den Begriffen beschreiben.",
+              "- Die Antwortmöglichkeiten sollten klar und prägnant sein, um Missverständnisse zu vermeiden."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung von 3 ergibt sich aus der mangelnden Klarheit und Spezifität in der Frage. Die Beantwortung erforderte eine gewisse Interpretation, was nicht erwünscht ist bei einer expliziten Bewertung der Anweisungsklarheit.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Ordne die Begriffe den richtigen Erklärungen zu. <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens"
+      },
+      {
+        "question_text": "Ordne die Begriffe den richtigen Erklärungen zu. <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "question_type": "mapping",
+        "answers": [
+          "Bedürfnisse",
+          "Nachfrage",
+          "Angebot",
+          "Markt",
+          "Wünsche von Menschen",
+          "Was Kunden kaufen wollen",
+          "Was Unternehmen anbieten",
+          "Ort des Tauschens"
+        ],
+        "correct_answer": {
+          "Bedürfnisse": "Wünsche von Menschen",
+          "Nachfrage": "Was Kunden kaufen wollen",
+          "Angebot": "Was Unternehmen anbieten",
+          "Markt": "Ort des Tauschens"
+        },
+        "explanation": "Die Fragengenerierung basiert auf dem Text und den Parametern. Die Fragen sollen das Konzept der Güter und Bedürfnisse verdeutlichen und die Verbindung zwischen beiden zeigen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist zwar komplex, aber die Begriffe und Erklärungen entsprechen weitgehend dem erwarteten Schwierigkeitsgrad. Es gibt jedoch keine direkten Beziehungen zwischen den Begriffen und ihren Erklärungen, was zu einer geringeren Bewertung führt.",
+            "suggestions": [
+              "- Die Frage könnte durch die Hinzufügung von direkten Beziehungen zwischen den Begriffen und ihren Erklärungen verbessert werden.",
+              "- Es wäre hilfreich, wenn die Frage mehr Kontext über die Wirtschaft oder Marktdynamik lieferte."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus folgenden Gründen:\n- Die Begriffe sind korrekt aufgeführt und entsprechen den erwarteten Erklärungen.\n- Es fehlt jedoch an direkten Beziehungen zwischen den Begriffen und ihren Erklärungen, was zu einer geringeren Bewertung führt.\n- Die Frage könnte durch mehr Kontext oder direkte Beziehungen zwischen den Begriffen und ihren Erklärungen verbessert werden.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert die Anwendung von Kenntnissen über Wirtschaftslehre, insbesondere der Begriffe Bedürfnisse, Nachfrage, Angebot und Markt. Die Antworten sind jedoch nicht so spezifisch formuliert, dass sie auf eine bestimmte Erklärung hinweisen würden, ohne bereits vorherige Kenntnisse zu haben.",
+            "suggestions": [
+              "Um die Frage an die Stufe 2 (Anwendung/Transfer) anzupassen, sollten die Begriffe in der Frage noch spezifischer und komplexer formuliert werden, sodass es schwieriger wird, sie ohne vorherige Kenntnisse zuordnen zu können."
+            ],
+            "reasoning": "Die Frage erfüllt die Anforderungen der Stufe 2 (Anwendung/Transfer), da sie die Anwendung von Kenntnissen auf ein neues Szenario beinhaltet. Die Antworten sind jedoch nicht so spezifisch formuliert, dass sie unbedingt eine bestimmte Erklärung nahelegen.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die mathematische Komplexität liegt auf einem niedrigen Niveau, da die Frage sich mit grundlegenden mikroökonomischen Konzepten beschäftigt. Die richtigen Antworten sind für die Zielgruppe von Mathematikstufe 0 geeignet.",
+            "suggestions": [
+              "Die Fragen könnten noch mehr auf die mathematische Komplexität des Begriffs eingehen und es könnte ein Beispiel zur Verdeutlichung der mikroökonomischen Konzepte geben."
+            ],
+            "reasoning": "Die Bewerung von 2 ergibt sich aus der Tatsache, dass die Frage grundlegende mikroökonomische Konzepte beinhaltet. Die richtigen Antworten sind für Mathematikstufe 0 geeignet und es wird nicht viel mathematische Komplexität erfordert.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält mehrere sprachliche Hindernisse, darunter Passivkonstruktionen und Negationen. Diese können für Lerner mit begrenztem Deutschkenntnissspielraum schwierig sein. Es ist jedoch auch zu beachten, dass die Anweisung in passiver Form gegeben wird, was ebenfalls als Hindernis gewertet werden kann.",
+            "suggestions": [
+              "- Die Frage sollte in aktive Form formuliert werden.",
+              "- Negationen sollten vermieden werden.",
+              "- Komplexe Nominalgruppen können vereinfacht werden.",
+              "- Die Anweisung sollte in aktiver Form gegeben werden."
+            ],
+            "reasoning": "Die Bewertung von 4 basiert auf der Tatsache, dass es sich um eine komplexe Frage handelt, die mehrere sprachliche Hindernisse enthält. Die Passivkonstruktionen und Negationen können für Lerner schwierig sein, während die komplexen Nominalgruppen ein weiteres Hindernis darstellen. Die Anweisung in passiver Form ist ebenfalls als Hindernis zu bewerten.",
+            "target_value": "Grundtext: Passiv; Grundtext: Negation; Item 1: Komplexe NP; Item 2: Passiv; Item 2: Komplexe NP; Item 3: Negation; Item 3: Komplexe NP; Item 4: Passiv; Item 4: Negation; Item 4: Komplexe NP; Item 6: Passiv; Item 7: Negation; Item 8: Passiv; Item 8: Negation; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifische Fragen zur Beziehung zwischen den einzelnen Begriffen gestellt werden. Zum Beispiel: \"Wie stehen Bedürfnisse und Nachfrage zueinander?\" oder \"Was ist das Angebot in einer Marktwirtschaft?\"",
+            "suggestions": [
+              "- Die Frage sollte explizit spezifische Beziehungen zwischen den Begriffen beschreiben.",
+              "- Die Antwortmöglichkeiten sollten klar und prägnant sein, um Missverständnisse zu vermeiden."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung von 3 ergibt sich aus der mangelnden Klarheit und Spezifität in der Frage. Die Beantwortung erforderte eine gewisse Interpretation, was nicht erwünscht ist bei einer expliziten Bewertung der Anweisungsklarheit.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Ordne die Begriffe den richtigen Erklärungen zu. <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens"
+      },
+      {
+        "question_text": "Ordne die Begriffe den richtigen Erklärungen zu. <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "question_type": "mapping",
+        "answers": [
+          "Bedürfnisse",
+          "Nachfrage",
+          "Angebot",
+          "Markt",
+          "Wünsche von Menschen",
+          "Was Kunden kaufen wollen",
+          "Was Unternehmen anbieten",
+          "Ort des Tauschens"
+        ],
+        "correct_answer": {
+          "Bedürfnisse": "Wünsche von Menschen",
+          "Nachfrage": "Was Kunden kaufen wollen",
+          "Angebot": "Was Unternehmen anbieten",
+          "Markt": "Ort des Tauschens"
+        },
+        "explanation": "Die Fragengenerierung basiert auf dem Text und den Parametern. Die Fragen sollen das Konzept der Güter und Bedürfnisse verdeutlichen und die Verbindung zwischen beiden zeigen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist zwar komplex, aber die Begriffe und Erklärungen entsprechen weitgehend dem erwarteten Schwierigkeitsgrad. Es gibt jedoch keine direkten Beziehungen zwischen den Begriffen und ihren Erklärungen, was zu einer geringeren Bewertung führt.",
+            "suggestions": [
+              "- Die Frage könnte durch die Hinzufügung von direkten Beziehungen zwischen den Begriffen und ihren Erklärungen verbessert werden.",
+              "- Es wäre hilfreich, wenn die Frage mehr Kontext über die Wirtschaft oder Marktdynamik lieferte."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus folgenden Gründen:\n- Die Begriffe sind korrekt aufgeführt und entsprechen den erwarteten Erklärungen.\n- Es fehlt jedoch an direkten Beziehungen zwischen den Begriffen und ihren Erklärungen, was zu einer geringeren Bewertung führt.\n- Die Frage könnte durch mehr Kontext oder direkte Beziehungen zwischen den Begriffen und ihren Erklärungen verbessert werden.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert die Anwendung von Kenntnissen über Wirtschaftslehre, insbesondere der Begriffe Bedürfnisse, Nachfrage, Angebot und Markt. Die Antworten sind jedoch nicht so spezifisch formuliert, dass sie auf eine bestimmte Erklärung hinweisen würden, ohne bereits vorherige Kenntnisse zu haben.",
+            "suggestions": [
+              "Um die Frage an die Stufe 2 (Anwendung/Transfer) anzupassen, sollten die Begriffe in der Frage noch spezifischer und komplexer formuliert werden, sodass es schwieriger wird, sie ohne vorherige Kenntnisse zuordnen zu können."
+            ],
+            "reasoning": "Die Frage erfüllt die Anforderungen der Stufe 2 (Anwendung/Transfer), da sie die Anwendung von Kenntnissen auf ein neues Szenario beinhaltet. Die Antworten sind jedoch nicht so spezifisch formuliert, dass sie unbedingt eine bestimmte Erklärung nahelegen.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die mathematische Komplexität liegt auf einem niedrigen Niveau, da die Frage sich mit grundlegenden mikroökonomischen Konzepten beschäftigt. Die richtigen Antworten sind für die Zielgruppe von Mathematikstufe 0 geeignet.",
+            "suggestions": [
+              "Die Fragen könnten noch mehr auf die mathematische Komplexität des Begriffs eingehen und es könnte ein Beispiel zur Verdeutlichung der mikroökonomischen Konzepte geben."
+            ],
+            "reasoning": "Die Bewerung von 2 ergibt sich aus der Tatsache, dass die Frage grundlegende mikroökonomische Konzepte beinhaltet. Die richtigen Antworten sind für Mathematikstufe 0 geeignet und es wird nicht viel mathematische Komplexität erfordert.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält mehrere sprachliche Hindernisse, darunter Passivkonstruktionen und Negationen. Diese können für Lerner mit begrenztem Deutschkenntnissspielraum schwierig sein. Es ist jedoch auch zu beachten, dass die Anweisung in passiver Form gegeben wird, was ebenfalls als Hindernis gewertet werden kann.",
+            "suggestions": [
+              "- Die Frage sollte in aktive Form formuliert werden.",
+              "- Negationen sollten vermieden werden.",
+              "- Komplexe Nominalgruppen können vereinfacht werden.",
+              "- Die Anweisung sollte in aktiver Form gegeben werden."
+            ],
+            "reasoning": "Die Bewertung von 4 basiert auf der Tatsache, dass es sich um eine komplexe Frage handelt, die mehrere sprachliche Hindernisse enthält. Die Passivkonstruktionen und Negationen können für Lerner schwierig sein, während die komplexen Nominalgruppen ein weiteres Hindernis darstellen. Die Anweisung in passiver Form ist ebenfalls als Hindernis zu bewerten.",
+            "target_value": "Grundtext: Passiv; Grundtext: Negation; Item 1: Komplexe NP; Item 2: Passiv; Item 2: Komplexe NP; Item 3: Negation; Item 3: Komplexe NP; Item 4: Passiv; Item 4: Negation; Item 4: Komplexe NP; Item 6: Passiv; Item 7: Negation; Item 8: Passiv; Item 8: Negation; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifische Fragen zur Beziehung zwischen den einzelnen Begriffen gestellt werden. Zum Beispiel: \"Wie stehen Bedürfnisse und Nachfrage zueinander?\" oder \"Was ist das Angebot in einer Marktwirtschaft?\"",
+            "suggestions": [
+              "- Die Frage sollte explizit spezifische Beziehungen zwischen den Begriffen beschreiben.",
+              "- Die Antwortmöglichkeiten sollten klar und prägnant sein, um Missverständnisse zu vermeiden."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung von 3 ergibt sich aus der mangelnden Klarheit und Spezifität in der Frage. Die Beantwortung erforderte eine gewisse Interpretation, was nicht erwünscht ist bei einer expliziten Bewertung der Anweisungsklarheit.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Ordne die Begriffe den richtigen Erklärungen zu. <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens"
+      }
+    ],
+    "question_types_generated": [
+      "mapping",
+      "mapping",
+      "mapping"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 0.0861959457397461,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was passiert, wenn der Preis der Milch \u00fcber dem Gleichgewichtspreis liegt? <option>Viele Landwirte produzieren mehr Milch als gefragt.<option>Die Nachfrage nach Milch ist h\u00f6her als das Angebot.<option>Der Preis sinkt, um das Gleichgewicht wieder herzustellen.<option>Die Menschen haben weniger Geld f\u00fcr Milch.",
+        "Was ist der Gleichgewichtspreis in unserem Beispiel? <option>1 Euro<option>2 Euro<option>3 Euro<option>4 Euro",
+        "Warum liegt das Angebot an Milch \u00fcber der Nachfrage, wenn der Preis unter dem Gleichgewichtspreis ist? <option>Die Menschen haben weniger Geld f\u00fcr Milch.<option>Viele Landwirte produzieren mehr Milch als gefragt.<option>Der Preis sinkt nicht schnell genug, um das Gleichgewicht wieder herzustellen.<option>Die Nachfrage nach Milch ist h\u00f6her als das Angebot."
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T22:51:04.603992",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

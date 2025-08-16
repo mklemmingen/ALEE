@@ -1,0 +1,52 @@
+=== HOCHWERTIGE BEISPIELE AUS GENEHMIGTEN DATEN ===
+
+WICHTIGER HINWEIS: Die folgenden Beispiele stammen aus von Forschern validierten und annotierten Bildungsfragen. Jeder Fragetyp hat spezifische Qualitätsmerkmale, die beachtet werden müssen.
+
+MULTIPLE-CHOICE FORMAT (6-8 Optionen):
+Beispiel 1 - Forscher-validiert (Stammaufgabe, Stufe 1):
+Was sind Bedürfnisse in der Wirtschaft? <option> Bedürfnisse sind Wünsche, die entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. <option> Bedürfnisse sind nur lebensnotwendige Dinge wie Essen und Trinken. <option> Bedürfnisse sind Produkte, die man im Laden kaufen kann. <option> Bedürfnisse sind Geldbeträge, die man zum Leben braucht.
+
+Beispiel 2 - Forscher-validiert (Schwer, Stufe 1):
+Ein Schüler kommt nach dem Sport nach Hause. Er will duschen, hat Hunger, will sich ausruhen. Später ist ihm langweilig und er möchte einen Film schauen. Welche Aussage beschreibt diese Situation am besten? <option> Der Schüler hat nur ein einziges Bedürfnis. <option> Der Schüler hat gleichzeitig mehrere Bedürfnisse, und wenn eines befriedigt ist, widmet er sich einem anderen. <option> Der Schüler hat keine echten Bedürfnisse, nur Wünsche. <option> Der Schüler sollte sich nur um sein wichtigstes Bedürfnis kümmern. <option> Die Bedürfnisse des Schülers sind alle gleich wichtig und müssen gleichzeitig erfüllt werden.
+
+Beispiel 3 - Stakeholder-Daten:
+Wobei handelt es sich um ein Bedürfnis, das befriedigt werden kann? <option> Liebe <option> Wasser <option> Seife <option> Hunger <option> Fahrradbremse <option> Freiheit <option> Regen <option> Schlaf
+
+SINGLE-CHOICE FORMAT (Genau 3 Optionen - NICHT 4!):
+Beispiel 1 - Forscher-validiert (Stammaufgabe, Stufe 1):
+Was sind Bedürfnisse in der Wirtschaft? <option> Bedürfnisse sind Wünsche, die entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. <option> Bedürfnisse sind nur materielle Güter, die man kaufen kann. <option> Bedürfnisse sind ausschließlich lebensnotwendige Dinge wie Nahrung und Wasser.
+
+Beispiel 2 - Forscher-validiert (Stammaufgabe, Stufe 2):
+Nach dem Sport kommst du nach Hause und möchtest duschen, essen und dich ausruhen. Was zeigt dieses Beispiel über Bedürfnisse? <option> Menschen haben immer nur ein Bedürfnis zur gleichen Zeit. <option> Menschen haben gleichzeitig sehr viele unterschiedliche Bedürfnisse. <option> Bedürfnisse entstehen nur nach körperlicher Anstrengung.
+
+Beispiel 3 - Forscher-validiert (Schwer, Stufe 1):
+Kreuze die korrekte Aussage an. Kinder und Erwachsene... <option> haben vollkommen identische Bedürfnisse, da alle Menschen gleich sind. <option> unterscheiden sich in ihren Bedürfnissen - Kinder wollen z.B. häufiger spielen, während Erwachsene eher den Wunsch nach finanzieller Sicherheit haben. <option> können keine unterschiedlichen Bedürfnisse haben, weil Bedürfnisse für alle Menschen festgelegt sind.
+
+TRUE-FALSE FORMAT:
+Beispiel 1 - Forscher-validiert (Stammaufgabe, Stufe 1):
+Entscheide, ob die Aussagen richtig oder falsch sind. <true-false> Bedürfnisse sind Wünsche, die entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. <true-false> Wenn es kalt ist, hat man das Bedürfnis sich zu wärmen. <true-false> Alle Menschen haben immer die gleichen Bedürfnisse. <true-false> Bedürfnisse können nur mit Geld befriedigt werden. <true-false> In der Wirtschaft bezeichnet man Wünsche allgemein als Bedürfnisse. <true-false> Bedürfnisse entstehen nur bei Kindern.
+
+Beispiel 2 - Forscher-validiert (Stammaufgabe, Stufe 2):
+Entscheide, ob die Aussagen richtig oder falsch sind. <true-false> Bedürfnisse unterscheiden sich individuell je nach Person. <true-false> Wenn ein Bedürfnis befriedigt ist, widmet man sich direkt einem anderen. <true-false> Menschen haben nur ein Bedürfnis gleichzeitig. <true-false> In der Wirtschaft gehen wir davon aus, dass Bedürfnisse unbegrenzt sind. <true-false> Erwachsene haben niemals das Bedürfnis zu spielen. <true-false> Nach dem Sport kann man mehrere Bedürfnisse gleichzeitig haben.
+
+Beispiel 3 - Forscher-validiert (Schwer, Stufe 1):
+Entscheide, ob die Aussagen richtig oder falsch sind. <true-false> Kinder haben häufig andere Bedürfnisse als Erwachsene. <true-false> Manche Kinder spielen lieber draußen und andere verbringen die Zeit lieber drinnen. <true-false> Erwachsene haben vielleicht eher den Wunsch, finanziell abgesichert zu sein. <true-false> Bedürfnisse sind bei allen Kindern untereinander immer identisch. <true-false> Das Bedürfnis nach Zuneigung entsteht nur, wenn man Geld hat. <true-false> Langweile kann zu einem Bedürfnis nach Unterhaltung führen.
+
+MAPPING FORMAT:
+Beispiel 1 - Forscher-validiert (Stammaufgabe, Stufe 1):
+Ordne die links stehenden Begriffe der richtigen Beschreibung zu. <start-option> Bedürfnisse <start-option> Wenn es kalt ist <start-option> Bedürfnisse von Kindern <start-option> Bedürfnisse sind unbegrenzt <end-option> ... hat man das Bedürfnis sich zu wärmen. <end-option> ... sind Wünsche, die entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. <end-option> ... jeder Mensch hat gleichzeitig sehr viele unterschiedliche Bedürfnisse. <end-option> ... unterscheiden sich von denen der Erwachsenen, z.B. wollen sie häufiger spielen.
+
+Beispiel 2 - Forscher-validiert (Stammaufgabe, Stufe 2):
+Ordne die verschiedenen Beispiele der passenden Bedürfnisart zu. <start-option> Bedürfnis nach Sauberkeit <start-option> Bedürfnis nach Nahrung <start-option> Bedürfnis nach Erholung <start-option> Bedürfnis nach Unterhaltung <end-option> ... wenn du nach dem Sport duschen willst. <end-option> ... wenn du Hunger hast. <end-option> ... wenn du dich ausruhen willst. <end-option> ... wenn dir langweilig ist und du einen Film anschauen möchtest.
+
+Beispiel 3 - Forscher-validiert (Schwer, Stufe 1):
+Ordne die Bedürfnismerkmale den entsprechenden Erklärungen zu. <start-option> Bedürfnisse sind individuell <start-option> Bedürfnisse entstehen durch Mangel <start-option> Bedürfnisse sind vielfältig <start-option> Bedürfnisse verändern sich <start-option> Bedürfnisse sind gleichzeitig <start-option> Bedürfnisse sind situativ <end-option> ... weil jede Person andere Wünsche und Interessen hat. <end-option> ... weil Menschen das Gefühl haben, dass ihnen etwas fehlt. <end-option> ... weil es viele verschiedene Arten von Wünschen gibt. <end-option> ... weil sich Wünsche je nach Alter und Situation wandeln. <end-option> ... weil Menschen mehrere Bedürfnisse zur gleichen Zeit haben können. <end-option> ... weil Bedürfnisse vom Kontext und der aktuellen Lage abhängen.
+
+WICHTIGE FORMATREGELN:
+1. NIEMALS A), B), C) verwenden - NUR das spezifizierte Markup-Format
+2. Multiple-Choice: 4-6 Optionen mit <option> Markup (basierend auf Forscher-Daten)
+3. Single-Choice: GENAU 3 Optionen mit <option> Markup
+4. True-False: Statements mit <true-false> Markup
+5. Mapping: <start-option> und <end-option> paarweise
+6. Alle Optionen müssen inhaltlich sinnvoll und kontextbezogen sein
+7. KEINE generischen Platzhalter wie "Zusätzliche Option X"

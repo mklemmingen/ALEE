@@ -1,0 +1,9 @@
+{
+  "final_questions": [
+    "Was ist gegeben, wenn du Freitagabends ins Kino gehst? <option>Das Ziel ist gegeben<option>Die Mittel sind gegeben<option>Beides ist gegeben<option>Option 4",
+    "Willst du wissen, ob eine Handlung dem Minimal- oder Maximalprinzip folgt? Frag dich zuerst: <option>Was ist dein Ziel?<option>Welche Mittel hast du?<option>Beides ist irrelevant<option>Option 4",
+    "Was ist das Ziel, wenn wir versuchen, ein bestimmtes Ziel mit einem möglichst geringen Einsatz an Mitteln zu erreichen? <option>Wir wollen ein Maximum erzielen<option>Wir wollen ein Minimum erzielen<option>Es ist egal<option>Option 4"
+  ],
+  "question_count": 3,
+  "finalized_at": "2025-08-16T22:50:47.884244"
+}

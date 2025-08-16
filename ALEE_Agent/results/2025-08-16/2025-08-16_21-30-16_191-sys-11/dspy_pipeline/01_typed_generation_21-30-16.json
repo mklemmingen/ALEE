@@ -1,0 +1,261 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T21:30:16.542342",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Welche Aussage ist falsch?\n\nMärkte sind nur an einen bestimmten Ort gebunden.\nDer Wochenmarkt auf dem Marktplatz ist ein Beispiel für einen Markt.\nViele Dinge können auch im Internet gekauft werden, was ebenfalls ein Markt ist.\n\nA) Die erste Aussage ist falsch.\nB) Die zweite Aussage ist falsch.\nC) Die dritte Aussage ist falsch.\nD) Alle Aussagen sind wahr. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Richtig",
+        "explanation": "Die Fragengenerierung basiert auf der Analyse des Quelltextes und den bereitgestellten Parametern. Die Fragen wurden so gestaltet, dass sie die komplexe Konzepte und sprachlichen Strukturen abdecken, die in dem Text erwähnt sind.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage hat eine gute Beziehung zur Ziel-Schwierigkeit. Die Antworten sind jedoch nicht ideal, da sie nicht direkt auf den Text in der Frage verweisen.",
+            "suggestions": [
+              "Es wäre hilfreich, wenn die Antwortmöglichkeiten spezifischer wären und direkt auf die Aussagen in der Frage Bezug genommen hätten. Zum Beispiel: A) Die erste Aussage ist falsch, weil Märkte nicht an einem bestimmten Ort gebunden sind. B) Die zweite Aussage ist falsch, weil es keinen einheitlichen Markt gibt. C) Die dritte Aussage ist falsch, weil das Internet auch eine Form eines Marktes darstellt."
+            ],
+            "reasoning": "Die Frage hat eine gute Beziehung zur Ziel-Schwierigkeit \"schwer\", da sie komplex und anspruchsvoll wirkt. Allerdings sind die Antwortmöglichkeiten nicht ideal. Sie könnten spezifischer sein, um sicherzustellen, dass die richtige Antwort auch richtig identifiziert wird.",
+            "target_value": "schwer",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Bewertung basiert auf der Fähigkeit des Prüflings, die Aussagen zu analysieren und die Falschaussage zu erkennen. Dies ist ein Grundniveau-Analyse-Task (Bloom-Taxonomie: Stufe 1).",
+            "suggestions": [
+              "Da alle Optionen als falsch markiert sind, könnte eine Anpassung darin bestehen, den Prüfling zur Erstellung eigener Aussagen zu ermutigen, anstatt ihm vorformulierte Optionen anzubieten. Dies würde die Fähigkeit des Prüflings testen, kritisch über die Materie nachzudenken."
+            ],
+            "reasoning": "Die Bewerterin hat eine Analyse der Situation vorgenommen und beurteilt, dass die dritte Aussage falsch ist. Sie stellt fest, dass Märkte nicht an einen bestimmten Ort gebunden sind, sondern auch im Internet stattfinden können.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": true
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage liegt bei Mittelstufe. Die Frage erfordert ein Verständnis von Allgemeinbegriffen und die Fähigkeit, Aussagen zu analysieren und zu bewerten.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich"
+            ],
+            "reasoning": "Die Bewerter stellte fest, dass die Frage sich mit allgemeinen Begriffen befasst und die Fähigkeit erfordert, Aussagen zu analysieren. Daher wird eine Bewertung von 3 vergeben.",
+            "target_value": "1",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Einige der Hindernisse in dieser Frage sind leicht zu überwinden, während andere schwieriger zu verstehen sein könnten. Beispielsweise können einige Leser Schwierigkeiten haben, die Negationen und passive Konstruktionen in den Aussagen zu erkennen und zu verstehen.",
+            "suggestions": [
+              "Um die sprachlichen Hindernisse zu überwinden, kann man folgende Vorschläge machen:",
+              "* Die Frage könnte auf ein einfacheres Niveau vereinfacht werden, um die Leser nicht zu überfordern.",
+              "* Die Negationen und passive Konstruktionen könnten durch klare und direkte Aussagen ersetzt werden.",
+              "* Die komplexe Nomen könnten durch einfachere und leichter verständliche Ausdrücke ersetzt werden."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Schwierigkeit, die sprachlichen Hindernisse zu überwinden. Mit einer Bewertung von 4 wird angedeutet, dass die Frage zwar nicht unüberwindlich ist, aber auch nicht für jeden Leser leicht verständlich sein sollte.",
+            "target_value": "Grundtext: Negation; Item 1: Passiv; Item 1: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Komplexe NP; Item 4: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Negation; Item 5: Komplexe NP; Item 7: Passiv; Item 8: Negation",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut, da die falsche Aussage leicht erkennbar ist. Es könnte jedoch empfehlenswert sein, noch mehr auf die Erklärungen der richtigen Antworten einzugehen.",
+            "suggestions": [
+              "Mögliche Verbesserung: Eine kurze Erklärung, warum einige Aussagen falsch sind und wie man sie von wahren Aussagen unterscheiden kann."
+            ],
+            "reasoning": "Die Anweisungsklarheit wird als 4 bewertet, da die richtige Antwort leicht erkennbar ist, aber nicht übermäßig ausführlich erklärt wird. Einige mögliche Verbesserungen könnten helfen, die Klarheit zu erhöhen.",
+            "target_value": "Explizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 3 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Aussage ist falsch?\n\nMärkte sind nur an einen bestimmten Ort gebunden.\nDer Wochenmarkt auf dem Marktplatz ist ein Beispiel für einen Markt.\nViele Dinge können auch im Internet gekauft werden, was ebenfalls ein Markt ist.\n\nA) Die erste Aussage ist falsch.\nB) Die zweite Aussage ist falsch.\nC) Die dritte Aussage ist falsch.\nD) Alle Aussagen sind wahr. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "Welche Aussage ist richtig?\n\nMärkte können nur in der physischen Welt stattfinden.\nDer Internetmarkt ist kein Markt, da er nicht im physischen Raum stattfindet.\nWir müssen immer an einen bestimmten Ort gehen, um ein Produkt zu kaufen.\n\nA) Die erste Aussage ist wahr.\nB) Die zweite Aussage ist wahr.\nC) Die dritte Aussage ist wahr.\nD) Alle Aussagen sind falsch. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Richtig",
+        "explanation": "Die Fragengenerierung basiert auf der Analyse des Quelltextes und den bereitgestellten Parametern. Die Fragen wurden so gestaltet, dass sie die komplexe Konzepte und sprachlichen Strukturen abdecken, die in dem Text erwähnt sind.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist schwierig, da sie einen komplexen Begriff wie \"Markt\" anspricht und die Fähigkeit erfordert, zwischen verschiedenen Kontexten zu unterscheiden. Die Antwortmöglichkeiten sind jedoch klar definiert, was es den Studierenden ermöglicht, ihre Kenntnisse anzuwenden.",
+            "suggestions": [
+              "- Eine mögliche Verbesserung besteht darin, eine zusätzliche Frage hinzuzufügen, die sich auf einen anderen Aspekt des Marktes bezieht, um ein breiteres Verständnis der Studierenden zu erfordern.",
+              "- Alternativ könnte eine andere Option in den Antworten angezeigt werden, die die Fähigkeit der Studierenden testet, kritisch über den Begriff \"Markt\" nachzudenken."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf dem Umstand, dass die Frage komplex ist und das Verständnis des Begriffs \"Markt\" erfordert. Die Antwortmöglichkeiten sind jedoch klar definiert, was es den Studierenden ermöglicht, ihre Kenntnisse anzuwenden. Der Schwierigkeitsgrad der Frage wird als schwer eingestuft, da sie ein tiefes Verständnis des Themas voraussetzt.",
+            "target_value": "schwer",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und erfordert eine gezielte Analyse der Aussagen. Die Antwortmöglichkeiten sind klar und leicht zu verstehen. Der Testkandidat muss kritisch denken und die Aussagen bewerten, um zur richtigen Antwort zu gelangen.",
+            "suggestions": [
+              "Keine Anpassungsvorschläge erforderlich"
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Tatsache, dass der Testkandidat die Aussagen bewerten muss und kritisch denken muss, um zur richtigen Antwort zu gelangen. Dies ist ein Zeichen für eine überdurchschnittliche Fähigkeit im Bereich Wissen/Reproduktion.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert ein Verständnis für die Konzepte von Markt und räumliche Lokalisation. Der Schüler muss erkennen, dass Märkte nicht an bestimmten Orten eingeschränkt sind, sondern auch in der digitalen Welt stattfinden können.",
+            "suggestions": [
+              "Es könnte hilfreich sein, den Schülern Beispiele für digitale Märkte wie Online-Shopping-Plattformen oder virtuelle Marktplätze zu geben. Außerdem sollte die Frage so gestaltet werden, dass der Schüler erkennen muss, dass die dritte Aussage falsch ist."
+            ],
+            "reasoning": "Die Bewerterin hat sich auf die Analyse der mathematischen Komplexität des Themas konzentriert und dabei das Konzept von Markt und räumlicher Lokalisation berücksichtigt. Die Bewertung basiert auf dem Verständnis, dass Märkte nicht an bestimmten Orten eingeschränkt sind.",
+            "target_value": "1",
+            "applied": true
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert eine sorgfältige Analyse der Aussagen, um die korrekte Antwort zu finden. Die Negationen und Passivkonstruktionen können jedoch zu Verwirrung führen, wenn sie nicht genau verstanden werden.",
+            "suggestions": [
+              "Um die sprachlichen Hindernisse zu überwinden, könnten folgende Vorschläge gemacht werden:",
+              "",
+              "* Eine Erklärung der Negation und Passivkonstruktionen in der Frageanleitung oder im Fußnotenbereich.",
+              "* Die Verwendung von einfachen Sprache für die Aussagen, um das Verständnis zu erleichtern."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Schwierigkeit der sprachlichen Hindernisse in der Frage. Während einige Lerner möglicherweise keine Probleme haben, anderen könnte dies ein Hindernis darstellen. Daher ist eine Bewertung von mittlerem Schwierigkeitsgrad angemessen.",
+            "target_value": "Grundtext: Negation; Item 1: Passiv; Item 1: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Komplexe NP; Item 4: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Negation; Item 5: Komplexe NP; Item 7: Passiv; Item 8: Negation",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem die Optionen klarer und deutlicher formuliert werden. Die Frage sollte auch spezifischer sein und nur eine Aussage enthalten, anstatt mehrere.",
+            "suggestions": [
+              "- Die Optionen sollten klar und deutlich formuliert werden.",
+              "- Die Frage sollte spezifischer sein und nur eine Aussage enthalten.",
+              "- Der Begriff \"Aussage\" könnte durch einen anderen Begriff ersetzt werden, um die Klarheit zu erhöhen."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist aufgrund der mangelnden Klarheit und Explizitheit der Frage und Optionen gering. Die Anweisungsklarheit könnte verbessert werden, indem die vorgeschlagenen Änderungen umgesetzt werden.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Aussage ist richtig?\n\nMärkte können nur in der physischen Welt stattfinden.\nDer Internetmarkt ist kein Markt, da er nicht im physischen Raum stattfindet.\nWir müssen immer an einen bestimmten Ort gehen, um ein Produkt zu kaufen.\n\nA) Die erste Aussage ist wahr.\nB) Die zweite Aussage ist wahr.\nC) Die dritte Aussage ist wahr.\nD) Alle Aussagen sind falsch. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "Welche Aussage ist richtig?\n\nMärkte können nur an einem bestimmten Ort stattfinden, wie zum Beispiel auf dem Marktplatz.\nDer Wochenmarkt ist ein Markt, der immer am Sonntag stattfindet.\nWir müssen immer Geld bezahlen, um ein Produkt zu kaufen.\n\nA) Die erste Aussage ist wahr.\nB) Die zweite Aussage ist wahr.\nC) Die dritte Aussage ist wahr.\nD) Alle Aussagen sind falsch. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Richtig",
+        "explanation": "Die Fragengenerierung basiert auf der Analyse des Quelltextes und den bereitgestellten Parametern. Die Fragen wurden so gestaltet, dass sie die komplexe Konzepte und sprachlichen Strukturen abdecken, die in dem Text erwähnt sind.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage beinhaltet eine gute Mischung aus wahr und falsch, was für eine Schwierigkeitsstufe von \"schwer\" geeignet ist. Allerdings sollte die dritte Aussage vielleicht explizit als falsch gelassen werden, da sie für viele Menschen nicht offensichtlich ist.",
+            "suggestions": [
+              "Bei der Frage könnte man die letzte Aussage (Wir müssen immer Geld bezahlen, um ein Produkt zu kaufen) leichter erkennbar als falsch machen, indem man beispielsweise \"außerhalb des Marktes\" oder ähnliches schreibt."
+            ],
+            "reasoning": "Die Bewertung von 4 ergibt sich daraus, dass die Frage eine gute Mischung aus wahr und falsch beinhaltet, was für eine Schwierigkeitsstufe von \"schwer\" geeignet ist. Die Begründung dafür ist, dass die erste Aussage wahr ist, die zweite und dritte Aussagen jedoch falsch sind.",
+            "target_value": "schwer",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut gestaltet, um das Verständnis des Themas zu überprüfen. Die Antwortmöglichkeiten sind klar und präzise formuliert. Die Frage ist jedoch etwas einfach für die Stufe 1 der Bloom'schen Taxonomie.",
+            "suggestions": [
+              "Eine mögliche Anpassung wäre, die Frage schwieriger zu gestalten oder mehrere Fragen in einem Satz zu kombinieren, um das Verständnis und die Analyse des Themas zu überprüfen."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Stufe 1 der Bloom'schen Taxonomie, bei der das Wissen und die Reproduktion getestet werden. Die Frage ist gut gestaltet, um dieses Niveau abzubilden. Die Anpassungsvorschläge richten sich an die Schwierigkeitsstufe und den Umfang des Themas.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexitätsanalyse ergab, dass die Mathematik-Bewertung 3 ist. Dies liegt daran, dass die Frage nicht explizit mathematische Konzepte beinhaltet und eher auf den wirtschaftlichen Kontext abzielt.",
+            "suggestions": [
+              "Um eine höhere Komplexität zu erreichen, könnte man Fragen formulieren, die sich direkt auf mathematische Konzepte wie Zahlenrechnung, Mengenlehre oder geometrische Figuren beziehen. Dies würde es den Schülern ermöglichen, ihre mathematischen Fähigkeiten unter Beweis zu stellen."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Tatsache, dass die Frage nicht explizit mathematische Konzepte beinhaltet. Sie konzentriert sich eher auf wirtschaftliche und allgemeine Kenntnisse. Um eine höhere Komplexität zu erreichen, sollten Fragen formuliert werden, die sich direkt auf mathematische Konzepte beziehen.",
+            "target_value": "1",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält mehrere sprachliche Hindernisse, darunter Negationen und Passivkonstruktionen. Die Antwortoptionen müssen sorgfältig geprüft werden, um sicherzustellen, dass sie mit den Aussagen in der Frage übereinstimmen.",
+            "suggestions": [
+              "- Eine mögliche Vorschlag wäre, die Frage zu vereinfachen und eine bessere Struktur für die Antwortoptionen zu wählen.",
+              "- Es könnte auch hilfreich sein, einige Beispiele oder Illustrationen hinzuzufügen, um den Lesern helfen zu lassen, wie sie mit den sprachlichen Hindernissen umgehen sollen."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Tatsache, dass die Frage mehrere sprachliche Hindernisse enthält, aber es gibt auch einige Möglichkeiten, diese zu bewältigen. Die Antworten sind nicht unbedingt komplex oder schwierig zu verstehen.",
+            "target_value": "Grundtext: Negation; Item 1: Passiv; Item 1: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Komplexe NP; Item 4: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Negation; Item 5: Komplexe NP; Item 7: Passiv; Item 8: Negation",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist klar formuliert und es besteht kein Bedarf an weiterer Erläuterung.",
+            "suggestions": [
+              "Nichts"
+            ],
+            "reasoning": "Die Anweisung wurde aufgrund der eindeutigen Formulierung einer richtigen und falschen Aussage mit expliziter Zielsetzung als sehr klar bewertet.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 2 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Aussage ist richtig?\n\nMärkte können nur an einem bestimmten Ort stattfinden, wie zum Beispiel auf dem Marktplatz.\nDer Wochenmarkt ist ein Markt, der immer am Sonntag stattfindet.\nWir müssen immer Geld bezahlen, um ein Produkt zu kaufen.\n\nA) Die erste Aussage ist wahr.\nB) Die zweite Aussage ist wahr.\nC) Die dritte Aussage ist wahr.\nD) Alle Aussagen sind falsch. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      }
+    ],
+    "question_types_generated": [
+      "true-false",
+      "true-false",
+      "true-false"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

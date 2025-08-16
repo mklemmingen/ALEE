@@ -1,0 +1,274 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T17:33:16.400094",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Welche Auswirkung hat es auf den Preis einer Sammelkarte, wenn sich viele Personen für sie interessieren?\nA) Der Preis steigt\nB) Der Preis sinkt\nC) Der Preis bleibt gleich\nD) Es ist nicht möglich zu sagen <option>A) Der Preis steigt<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Der Preis steigt",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Der Preis steigt",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen wurden auf der Grundlage des gegebenen Textes und der Parameter \"stammaufgabe\", \"multiple-choice\" und \"Stufe 1 (Wissen/Reproduktion)\" generiert. Der Fokus lag dabei auf dem Preisbildungsmodell und der Beziehung zwischen Angebot, Nachfrage und Preis.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage entspricht dem deutschen Schwierigkeitsgrad \"stammaufgabe\", da sie einen gewissen Grad an kognitiver Anforderung und Analyse erfordert, um die Beziehung zwischen Interesse und Preis zu verstehen.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage bereits gut formuliert ist."
+            ],
+            "reasoning": "Die Begründung für diese Bewertung besteht darin, dass die Frage ein Verständnis der Auswirkungen von Nachfrage auf den Preis erfordert. Dies ist eine komplexe Aufgabe, die kognitive Fähigkeiten und Analysefähigkeiten beinhaltet.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage entspricht nicht genau der Stufe 1 (Wissen/Reproduktion), da sie eine Anwendung von Kenntnissen erfordert. Es ist jedoch möglich, dass die Frage für ein bestimmtes Lernziel oder in einem bestimmten Kontext geeignet ist.",
+            "suggestions": [
+              "Es könnte hilfreich sein, die Frage anhand eines Beispiels zu illustrieren, um den Konnex zwischen Nachfrage und Preis besser verständlich zu machen. Es wäre auch gut, mehrere Fragen mit unterschiedlichen Schwierigkeitsgraden abzufragen."
+            ],
+            "reasoning": "Die Bewertung erfolgte unter der Annahme, dass die Frage als allgemeine Informationsabfrage konzipiert ist. Bei näherer Betrachtung zeigt sich jedoch, dass sie eher ein Anwendungsbeispiel beinhaltet. Daher wurde eine Abstufung in die richtige Stufe vorgenommen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 4,
+            "feedback": "Die Komplexität der Frage liegt darin, dass sie den Marktmechanismus und die Auswirkungen von Nachfrage auf den Preis erklären soll. Die richtige Antwort zeigt ein Verständnis für dieses Konzept.",
+            "suggestions": [
+              "Eine mögliche Anpassung wäre eine bessere Erläuterung des Marktwert-Konzepts und seiner Beziehung zur Nachfrage."
+            ],
+            "reasoning": "Die Bewertung von 4 ergibt sich aus der richtigen Antwort und dem Verständnis für den Marktmechanismus. Die Frage ist jedoch relativ einfach gehalten, sodass ein höherer Wert wie 5 nicht gerechtfertigt ist.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist klar formuliert und die Antwortmöglichkeiten sind gut definiert. Der Testkandidat muss lediglich logisches Denken anwenden, um die richtige Antwort zu finden. Einziges Hindernis könnte sein, dass der Testkandidat nicht über ausreichend Wissen über Märkte oder Preisschwankungen verfügt.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung erforderlich, da die Frage klar und prägnant formuliert ist."
+            ],
+            "reasoning": "Die richtige Antwort wurde aus dem Kontext der Frage abgeleitet. Die Frage erfordert logisches Denken und Verständnis von Marktpreisen.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut, aber könnte noch verbessert werden. Die Frage ist klar formuliert, aber einige der Optionen könnten prägnanter formuliert werden, um Missverständnisse zu vermeiden.",
+            "suggestions": [
+              "- Eine korrigierte Formulierung der Frage: \"Wie reagiert der Preis einer Sammelkarte auf das Interesse von vielen Personen?\"",
+              "- Eine bessere Ordnung der Optionen, z.B. durch eine klare Abtrennung zwischen den richtigen und falschen Antworten"
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 4, da die Frage klar formuliert ist, aber einige der Optionen nicht ideal sind. Die Begründung für die Bewertung lautet: \"Die Frage ist prägnant und leicht verständlich, aber einige der Optionen könnten noch verbessert werden.\"",
+            "target_value": "Explizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 4,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Auswirkung hat es auf den Preis einer Sammelkarte, wenn sich viele Personen für sie interessieren?\nA) Der Preis steigt\nB) Der Preis sinkt\nC) Der Preis bleibt gleich\nD) Es ist nicht möglich zu sagen <option>A) Der Preis steigt<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Was passiert mit dem Angebot von Sammelkarten, wenn der Preis sehr hoch ist?\nA) Das Angebot erhöht sich\nB) Das Angebot verringert sich\nC) Es wird kein Angebot gegeben\nD) Es ist nicht möglich zu sagen <option>B) Das Angebot verringert sich<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "B) Das Angebot verringert sich",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "B) Das Angebot verringert sich",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen wurden auf der Grundlage des gegebenen Textes und der Parameter \"stammaufgabe\", \"multiple-choice\" und \"Stufe 1 (Wissen/Reproduktion)\" generiert. Der Fokus lag dabei auf dem Preisbildungsmodell und der Beziehung zwischen Angebot, Nachfrage und Preis.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist nicht perfekt formuliert, aber sie hat eindeutig das Thema der Auswirkungen von Preisänderungen auf Angebote. Die Antwortmöglichkeiten sind jedoch zu weit gefächert und machen es schwierig, eine richtige Antwort zu finden.",
+            "suggestions": [
+              "Die Frage könnte besser formuliert werden, indem die Antwortmöglichkeiten näher an das Thema herangeführt würden. Zum Beispiel: \"Wenn der Preis sehr hoch ist, passiert mit dem Angebot von Sammelkarten...\""
+            ],
+            "reasoning": "Die Bewertung 3 basiert auf folgendem: Die Frage hat eindeutiges Thema und richtige Antwortmöglichkeiten, aber diese sind zu weit gefächert. Die Frage ist nicht perfekt formuliert, aber sie ist noch weit entfernt von einer schlechten Frage.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage entspricht der Stufe 1 der Bloom'schen Taxonomie, da sie Wissen/Reproduktion erfordert. Die richtige Antwort zeigt ein Verständnis für die Analyse von Veränderungen in einem Angebot. Es ist jedoch zu beachten, dass einige Optionen unnötig sind und die Frage möglicherweise nicht so prägnant wäre.",
+            "suggestions": [
+              "- Überprüfen Sie die Reihenfolge der Optionen, um sicherzustellen, dass die richtige Antwort leichter zu finden ist.",
+              "- Verwenden Sie eindeutigere Optionen, um Verwechslungen zwischen ähnlichen Antworten zu vermeiden."
+            ],
+            "reasoning": "Die Frage wird aufgrund ihrer Fokus auf Analyse und Wissen/Reproduktion der Stufe 1 der Bloom'schen Taxonomie zugeordnet. Die richtige Antwort zeigt ein Verständnis für die Auswirkungen des Preises auf das Angebot.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität ist für die richtige Antwort relevant, da sie ein Verständnis der Beziehung zwischen Preis und Angebot beinhaltet, was ein Grundkonzept der Mathematik ist. Die Frage erfordert eine Anwendung wirtschaftlicher Prinzipien auf einen spezifischen Kontext.",
+            "suggestions": [
+              "Es könnte hilfreich sein, dem Schüler vorher die grundlegenden Konzepte von Angebot und Preis zu erklären, um sicherzustellen, dass er den Zusammenhang versteht. Dies könnte durch Anwendung auf reale Szenarien verdeutlicht werden."
+            ],
+            "reasoning": "Die Bewerterin hat die richtige Antwort als B) Das Angebot verringert sich ausgewählt und diese Entscheidung mit einer Bewertung von 3 (aus 5 möglichen Punkten) gerechtfertigt, da sie das Konzept der Preis-Beziehung versteht. Die mathematische Komplexität ist in diesem Szenario relevant.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält keine sprachlichen Hindernisse. Der Text ist klar und einfach formuliert. Einzig das Format der Antwortmöglichkeiten wirkt etwas ungewöhnlich, da es Zusätzliche Optionen gibt, die nicht direkt mit dem Thema zusammenhängen.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung erforderlich"
+            ],
+            "reasoning": "Die Frage ist gut formuliert und enthält keine sprachlichen Hindernisse. Die Antwortmöglichkeiten sind klar und logisch, wenn auch etwas ungewöhnlich formatiert.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist an sich gut, aber die Optionen könnten noch übersichtlicher gestaltet werden, um Missverständnisse zu vermeiden. Es wäre hilfreich, wenn die falschen Antworten nicht so leicht übersehen würden.",
+            "suggestions": [
+              "- Die Anzahl der Optionen könnte reduziert werden, um Missverständnisse zu vermeiden.",
+              "- Die falschen Antworten könnten noch eindeutiger gekennzeichnet werden, z.B. mit einem roten Kreuz oder einer anderen visuellen Markierung."
+            ],
+            "reasoning": "Die Anweisung ist explizit formuliert und gibt dem Nutzer direkt eine klare Antwortmöglichkeit. Allerdings führt die Vielzahl der falschen Antworten dazu, dass der Nutzer Mühe hat, das richtige Ergebnis zu finden.",
+            "target_value": "Explizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 4,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was passiert mit dem Angebot von Sammelkarten, wenn der Preis sehr hoch ist?\nA) Das Angebot erhöht sich\nB) Das Angebot verringert sich\nC) Es wird kein Angebot gegeben\nD) Es ist nicht möglich zu sagen <option>B) Das Angebot verringert sich<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Wie wirkt sich ein hoher Preis auf die Nachfrage nach einer Sammelkarte aus?\nA) Die Nachfrage erhöht sich\nB) Die Nachfrage verringert sich\nC) Die Nachfrage bleibt gleich\nD) Es ist nicht möglich zu sagen <option>B) Die Nachfrage verringert sich<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "B) Die Nachfrage verringert sich",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "B) Die Nachfrage verringert sich",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen wurden auf der Grundlage des gegebenen Textes und der Parameter \"stammaufgabe\", \"multiple-choice\" und \"Stufe 1 (Wissen/Reproduktion)\" generiert. Der Fokus lag dabei auf dem Preisbildungsmodell und der Beziehung zwischen Angebot, Nachfrage und Preis.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist insgesamt gut formuliert. Allerdings könnte es hilfreich sein, die Beziehung zwischen Preis und Nachfrage explizit zu erläutern.",
+            "suggestions": [],
+            "reasoning": "Begründung: Die Frage ist stammaufgabe, da sie eine allgemeine Kenntnis der Wirtschaftswissenschaften verlangt. Der Schüler muss erkennen können, dass ein hoher Preis das Angebot beeinflusst und die Nachfrage verringert. Die richtige Antwort B) Die Nachfrage verringert sich ist plausibel und logisch. Der Schüler wird aufgefordert, ein Verständnis der Beziehung zwischen Preis und Nachfrage unter Beweis zu stellen.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und erfordert eine Analyse des Testteilnehmers. Die Optionen sind klar definiert und es gibt keine offensichtlichen Fehlstellen oder Unklarheiten in der Frage.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung"
+            ],
+            "reasoning": "Die Antwort kann durch logisches Denken und ein Verständnis des Konzepts des Preises und seiner Auswirkungen auf die Nachfrage erreicht werden. Die Frage erfordert keine spezifischen Kenntnisse aus dem Bereich der Sammelkarten, sondern vielmehr eine allgemeine Fähigkeit zur Analyse von Beziehungen zwischen Variablen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die mathematische Komplexität ist für den Bildungsstandard dieser Frage nicht relevant, da sie eher auf ökonomische Prinzipien abzielt. Es wird jedoch erwartet, dass die Schüler logisch argumentieren und zwischen Ursache-Wirkungs-Beziehungen unterscheiden können.",
+            "suggestions": [
+              "Keine Anpassung nötig, da die Frage nicht spezifisch auf mathematische Komplexität abzielt."
+            ],
+            "reasoning": "Die Bewertung von 2 basiert darauf, dass die Schüler logisch argumentieren und zwischen Ursache-Wirkungs-Beziehungen unterscheiden können. Dies erfordert kritisches Denken und Analyse des Themas, was für den Bildungsstandard dieser Frage relevant ist.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Keine sprachlichen Hindernisse wurden in der Frage gefunden. Die Formulierung ist klar und leicht verständlich.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung, da die Frage keine sprachlichen Hindernisse aufweist."
+            ],
+            "reasoning": "Die Bewertung basiert auf dem logischen Inhalt der Frage und den gegebenen Antwortmöglichkeiten. Es wurden keine sprachlichen Fehler oder Unklarheiten gefunden.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist teilweise klar, aber die Antwortmöglichkeiten sind zu vage. Es fehlt an Präzision in der Frage und den Antworten.",
+            "suggestions": [
+              "- Die Frage sollte speziellere Situationen beschreiben.",
+              "- Die Antwortmöglichkeiten sollten genau und eindeutig sein, ohne überflüssige Optionen."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung von 4 ergibt sich aus der teilweisen Klarheit der Anweisung. Die Fragen sind zwar präzise, aber die Antwortmöglichkeiten fehlen an Spezifität und Eindeutigkeit.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.4 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wie wirkt sich ein hoher Preis auf die Nachfrage nach einer Sammelkarte aus?\nA) Die Nachfrage erhöht sich\nB) Die Nachfrage verringert sich\nC) Die Nachfrage bleibt gleich\nD) Es ist nicht möglich zu sagen <option>B) Die Nachfrage verringert sich<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

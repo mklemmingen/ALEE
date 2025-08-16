@@ -1,0 +1,12 @@
+=== IHRE AUFGABE ===
+Bewerten Sie diese 3 Fragen entsprechend Ihrer Expertise.
+
+Antworten Sie mit GENAU diesem JSON-Format:
+{
+    "status": "gut" oder "schlecht",
+    "reasoning": "Ihre Erklärung warum diese Fragen gut/schlecht sind",
+    "suggestions": ["spezifischer Vorschlag 1", "spezifischer Vorschlag 2", "..."]
+}
+
+Wenn Status "gut" ist, können Vorschläge leer [] sein.
+Wenn Status "schlecht" ist, geben Sie spezifische umsetzbare Vorschläge zur Verbesserung der Fragen.

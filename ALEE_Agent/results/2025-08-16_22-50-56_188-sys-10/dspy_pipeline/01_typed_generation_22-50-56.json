@@ -1,0 +1,265 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:50:56.288447",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was genau ist die Nachfrage in der Wirtschaft? <option>Die Menge an Gütern, die Anbieter auf Märkten verkaufen wollen<option>Die Summe aller angebotenen Güter auf einem Markt<option>Die Menge an Gütern, die Käuferinnen und Käufer auf Märkten erwerben wollen<option>Das Angebot",
+        "question_type": "single-choice",
+        "answers": [
+          "Die Menge an Gütern, die Anbieter auf Märkten verkaufen wollen",
+          "Die Summe aller angebotenen Güter auf einem Markt",
+          "Die Menge an Gütern, die Käuferinnen und Käufer auf Märkten erwerben wollen",
+          "Das Angebot"
+        ],
+        "correct_answer": "Die Menge an Gütern, die Anbieter auf Märkten verkaufen wollen",
+        "explanation": "Die Fragen sind basierend auf den Parametern stammaufgabe, single-choice und Stufe 2 (Anwendung/Transfer) generiert worden. Die Textobstacle passive wurde berücksichtigt, um komplexe Sachverhalte zu erfassen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist insgesamt gut formuliert, aber es wäre hilfreich, wenn die Optionen besser definiert wären, um Missverständnisse zu vermeiden. Die Begriffe \"Angebot\" und \"Nachfrage\" sollten klarer voneinander unterschieden werden.",
+            "suggestions": [
+              "Die Frage könnte durch eine präzisere Definition des Begriffs \"Nachfrage\" im Vorfeld erleichtert werden, sowie durch die Hinzufügung von Beispielen oder Erläuterungen für ein besseres Verständnis. Die Optionen sollten genau und klar definiert sein."
+            ],
+            "reasoning": "Die Frage erfordert vom Leser ein Verständnis des wirtschaftlichen Begriffs \"Nachfrage\", der sich auf die Menge an Gütern bezieht, die Käuferinnen und Käufer auf Märkten erwerben wollen. Die richtige Antwort ist die Menge an Gütern, die Käuferinnen und Käufer auf Märkten erwerben wollen.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Der Taxonomie-Begriff \"Anwendung/Transfer\" wird angewendet, aber die Frage scheint sich eher auf Wirtschaftskonzepte zu beziehen als auf Anwendungen oder Transfers von bereits behandelten Konzepten. Daher ist es schwierig, ein geeignetes Feedback für dieses Szenario abzugeben.",
+            "suggestions": [
+              "Eine mögliche Anpassung könnte darin bestehen, die Frage zu spezifizieren und sie an die Ziel-Taxonomie anzupassen. Beispielsweise: \"Wie kann man das Konzept der Nachfrage in der Wirtschaft verstehen und wie wird es auf Märkten angewendet?\""
+            ],
+            "reasoning": "Die Frage bezieht sich zwar auf die Wirtschaft, aber die Optionen sind nicht klar formuliert. Eine bessere Formulierung könnte dazu führen, dass die Frage besser an die Ziel-Taxonomie Stufe 2 (Anwendung/Transfer) angepasst ist.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Der Schüler zeigte ein Verständnis für das Konzept der Nachfrage, aber die falsche Antwort (Die Menge an Gütern, die Anbieter auf Märkten verkaufen wollen) ist nahe dran. Es gibt Raum für Verbesserung.",
+            "suggestions": [
+              "Der Schüler sollte sich mit dem Konzept der Nachfrage auseinandersetzen und das Prinzip der Vorratsbildung verstehen, dass die Nachfrage nicht gleich dem Angebot sein muss."
+            ],
+            "reasoning": "Die richtige Antwort \"Die Menge an Gütern, die Käuferinnen und Käufer auf Märkten erwerben wollen\" wird aus der Definition von Nachfrage abgeleitet. Die Frage erfordert vom Schüler ein Verständnis des Konzepts und seine Anwendung in einem wirtschaftlichen Kontext.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die sprachlichen Hindernisse sind hauptsächlich Passivkonstruktionen und komplexe Nomenbalken, die das Verständnis erschweren können. Es ist wichtig, eine aktive und klare Sprache zu verwenden.",
+            "suggestions": [
+              "- Aktivierung der Frage: Um den Fokus auf die Handlung des Anbieters zu legen.",
+              "- Vereinfachung komplexer Nomenbalken: Durch Wiederholung oder Verwendung von anderen Wortformen.",
+              "- Vermeidung von Passivkonstruktionen: Durch Änderung in Aktivform."
+            ],
+            "reasoning": "Die Bewertung wurde auf 4 gesetzt, da die Hindernisse zwar vorhanden sind, aber nicht so schwerwiegend sind, dass sie das Verständnis der Frage vollständig verhindern. Die Vorschläge zielen darauf ab, den Fokus zu verbessern und die Sprache klarer zu machen.",
+            "target_value": "Grundtext: Passiv; Item 1: Negation; Item 2: Passiv; Item 2: Negation; Item 3: Komplexe NP; Item 4: Passiv; Item 4: Komplexe NP; Item 5: Negation; Item 5: Komplexe NP; Item 6: Passiv; Item 6: Negation; Item 6: Komplexe NP; Item 8: Passiv; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Frage könnte für Lernende, die mit der Wirtschaftswissenschaft nicht vertraut sind, als zu einfach empfunden werden. Eine mögliche Verbesserung wäre eine weitere Erklärung zum Begriff des Angebots und seiner Bedeutung in der Wirtschaft.",
+            "suggestions": [
+              "- Eine kurze Erklärung zum Begriff des Angebots und seiner Bedeutung in der Wirtschaft könnte hilfreich sein.",
+              "- Die Frage könnte mit einem allgemeinen Satz beginnen, um den Kontext zu klären: \"Was genau ist das Angebot in der Wirtschaft?\""
+            ],
+            "reasoning": "Die Bewertung von 3 basiert darauf, dass die Frage relativ einfach und die Antwortmöglichkeiten deutlich sind. Die Verbesserungen vorschlagen, um die Klarheit und Verständlichkeit für Lernende zu erhöhen.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was genau ist die Nachfrage in der Wirtschaft? <option>Die Menge an Gütern, die Anbieter auf Märkten verkaufen wollen<option>Die Summe aller angebotenen Güter auf einem Markt<option>Die Menge an Gütern, die Käuferinnen und Käufer auf Märkten erwerben wollen<option>Das Angebot"
+      },
+      {
+        "question_text": "Was ist das Ziel der Anbieter? <option>Einen möglichst niedrigen Preis zu erzielen<option>Ein bestimmtes Produkt zu verkaufen<option>Die Nachfrage zu maximieren<option>Einen möglichst hohen Preis zu erzielen",
+        "question_type": "single-choice",
+        "answers": [
+          "Einen möglichst niedrigen Preis zu erzielen",
+          "Ein bestimmtes Produkt zu verkaufen",
+          "Die Nachfrage zu maximieren",
+          "Einen möglichst hohen Preis zu erzielen"
+        ],
+        "correct_answer": "Einen möglichst niedrigen Preis zu erzielen",
+        "explanation": "Die Fragen sind basierend auf den Parametern stammaufgabe, single-choice und Stufe 2 (Anwendung/Transfer) generiert worden. Die Textobstacle passive wurde berücksichtigt, um komplexe Sachverhalte zu erfassen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage entspricht der Ziel-Schwierigkeit \"stammaufgabe\", aber es gibt keine spezifischen Anforderungen oder Herausforderungen, die über das normale Verständnis hinausgehen würden. Die Antwortmöglichkeiten sind eindeutig und klar definiert.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge erforderlich"
+            ],
+            "reasoning": "Die Frage ist im Allgemeinen gut formuliert und die Antwortmöglichkeiten sind korrekt. Die Frage erfordert ein grundlegendes Verständnis des Konzepts, aber es gibt keine spezifischen Anforderungen oder Herausforderungen, die über das normale Verständnis hinausgehen würden.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert die Anwendung von Kenntnissen, aber die Antwortmöglichkeiten sind nicht sehr präzise. Einige der Optionen könnten durchaus für ein Unternehmen relevant sein, aber sie decken nicht alle möglichen Ziele ab.",
+            "suggestions": [
+              "Eine mögliche Anpassung wäre, mehrere Szenarien zu besprechen und die Teilnehmer darum zu bitten, das Ziel des Unternehmens in jedem Fall zu identifizieren. Dies würde die Komplexität der Frage erhöhen, aber es würde auch ein differenzierteres Verständnis der Anwendung von Kenntnissen demonstrieren."
+            ],
+            "reasoning": "Die Bewertung erfolgte aufgrund der Art und Weise, wie sich die Frage an die Fähigkeit des Testteilnehmers anpasst, sein Wissen auf ein bestimmtes Szenario anzuwenden. Die Antwortmöglichkeiten waren zwar nicht sehr präzise, aber das Ziel der Frage ist klar: Anwendung von Kenntnissen.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält eine relevante wirtschaftliche Frage, aber die mathematische Komplexität ist nicht direkt ansprechbar. Die Bewertung basiert eher auf dem Verständnis der wirtschaftlichen Prinzipien als auf einer expliziten mathematischen Berechnung.",
+            "suggestions": [
+              "Um die mathematische Komplexität zu steigern, könnte man beispielsweise Fragen wie \"Ein Unternehmen möchte sein Angebot um 10% erhöhen. Wie würde sich das Angebot auf den Markt auswirken?\" stellen, was eine direkte Anwendung mathematischer Konzepte ermöglicht."
+            ],
+            "reasoning": "Die Bewertung basiert auf dem Grad der Verbindung zwischen der Frage und mathematischen Prinzipien. Die richtige Antwort ist wirtschaftlich relevant, aber die mathematische Komplexität ist nicht explizit ansprechbar. Daher beträgt die Bewertung 3.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält mehrere sprachliche Hindernisse, darunter 2 Negationen, 4 Passivkonstruktionen und 3 komplexe NPs. Diese können die Lesbarkeit der Frage für Lerner beeinträchtigen.",
+            "suggestions": [
+              "- Vereinfachen der Passivkonstruktionen",
+              "- Vermeiden von komplexen NP-Konstruktionen",
+              "- Klare Anordnung von Optionen"
+            ],
+            "reasoning": "Die Bewertung basiert auf der Häufigkeit und Schwere sprachlicher Hindernisse in der Frage. Die vorgeschlagenen Maßnahmen sollen die Verständlichkeit der Frage erhöhen.",
+            "target_value": "Grundtext: Passiv; Item 1: Negation; Item 2: Passiv; Item 2: Negation; Item 3: Komplexe NP; Item 4: Passiv; Item 4: Komplexe NP; Item 5: Negation; Item 5: Komplexe NP; Item 6: Passiv; Item 6: Negation; Item 6: Komplexe NP; Item 8: Passiv; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist teilweise vorhanden, aber die Explizitheit des Ziels könnte verbessert werden, indem sich auf ein spezifisches Ziel konzentriert wird. Die Antwortmöglichkeiten sind gut.",
+            "suggestions": [
+              "- Konzentriere dich auf ein bestimmtes Ziel in der Anweisung.",
+              "- Überprüfe die Reihenfolge der Antwortoptionen, um sicherzustellen, dass die am relevantesten ist zuerst steht."
+            ],
+            "reasoning": "Die Anweisung wird aufgrund ihrer Explizitheit und Klarheit bewertet. Die implizite Zielsetzung reduziert jedoch die Effektivität der Anweisung, da sie nicht direkt auf ein bestimmtes Ziel abzielt. Diese Einschränkung führt zu einer Bewertung von 4.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist das Ziel der Anbieter? <option>Einen möglichst niedrigen Preis zu erzielen<option>Ein bestimmtes Produkt zu verkaufen<option>Die Nachfrage zu maximieren<option>Einen möglichst hohen Preis zu erzielen"
+      },
+      {
+        "question_text": "Was ist ein Markt? <option>Ein Ort, an dem Güter gekauft und verkauft werden<option>Ein Ort, an dem Anbieter ihre Sachgüter oder Dienstleistungen verkaufen wollen<option>Ein Ort, an dem die Nachfrage maximiert wird<option>Ein Ort, an dem der Preis niedrig ist",
+        "question_type": "single-choice",
+        "answers": [
+          "Ein Ort, an dem Güter gekauft und verkauft werden",
+          "Ein Ort, an dem Anbieter ihre Sachgüter oder Dienstleistungen verkaufen wollen",
+          "Ein Ort, an dem die Nachfrage maximiert wird",
+          "Ein Ort, an dem der Preis niedrig ist"
+        ],
+        "correct_answer": "Ein Ort, an dem Güter gekauft und verkauft werden",
+        "explanation": "Die Fragen sind basierend auf den Parametern stammaufgabe, single-choice und Stufe 2 (Anwendung/Transfer) generiert worden. Die Textobstacle passive wurde berücksichtigt, um komplexe Sachverhalte zu erfassen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und erfordert ein grundlegendes Verständnis des Marktes. Der Schwierigkeitsgrad ist für eine Stammaufgabe angemessen.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge, da die Frage und Antworten gut sind."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus der Tatsache, dass die Frage ein grundlegendes Konzept des Marktes erläutert und die richtigen Antworten klar definiert sind. Die Frage erfordert kein spezifisches Wissen oder Analysen, sondern eher ein Verständnis des Begriffs.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist auf Stufe 2 (Anwendung/Transfer) der Bloom'schen Taxonomie geeignet. Die Antwortmöglichkeiten sind jedoch alle korrekt, sodass die Frage nicht genau genug ist. Der Testkandidat sollte die richtige Antwort aus dem Kontext ersehen können.",
+            "suggestions": [
+              "Es wird empfohlen, die Frage zu präzisieren, indem man spezifischere Antwortmöglichkeiten verwendet, um das Verständnis des Testkandidaten zu überprüfen."
+            ],
+            "reasoning": "Die Frage ist gut geeignet, um das Wissen des Testkandidaten über Markttechnologien zu bewerten. Die richtige Antwort ist jedoch nicht eindeutig, was die Präzisierung der Frage erfordert.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage ist relativ gering, da sie sich auf grundlegende Begriffe der Wirtschaft bezieht. Die richtige Antwort erfordert jedoch ein gewisses Verständnis des Marktkonzepts.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich, da die Frage bereits eine einfache und allgemeinverständliche Form hat."
+            ],
+            "reasoning": "Die Mathematik-Bewertung ist 3, weil die Frage sich auf grundlegende Begriffe der Wirtschaft bezieht und keine komplexen mathematischen Konzepte erfordert.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Antwortoptionen beziehen sich auf verschiedene Aspekte eines Marktes, aber die Sprache ist geprägt von Passivkonstruktionen, Negationen und komplexen Nomen. Diese machen es schwierig, die Frage und Antworten zu verstehen.",
+            "suggestions": [
+              "- Die Verwendung aktiver Formulierungen anstatt Passivkonstruktionen könnte helfen, die Fragen und Antworten einfacher zu verstehen.",
+              "- Die Vermeidung von Negationen könnte dazu beitragen, die Sprache klarer und direkter zu gestalten."
+            ],
+            "reasoning": "Die Frage und Antworten sind aufgrund der sprachlichen Hindernisse komplex. Durch die Anpassung der Sprache könnten diese Hindernisse überwunden werden, was das Verständnis der Fragen und Antworten erleichtern würde.",
+            "target_value": "Grundtext: Passiv; Item 1: Negation; Item 2: Passiv; Item 2: Negation; Item 3: Komplexe NP; Item 4: Passiv; Item 4: Komplexe NP; Item 5: Negation; Item 5: Komplexe NP; Item 6: Passiv; Item 6: Negation; Item 6: Komplexe NP; Item 8: Passiv; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist begrenzt, da die Frage nicht klar zwischen den verschiedenen Aspekten eines Marktes unterscheidet. Die Antwortmöglichkeiten sind zwar korrekt, aber es fehlt eine klare Erklärung der Beziehungen zwischen den einzelnen Optionen.",
+            "suggestions": [
+              "- Eine präzisere Definition des Begriffs \"Markt\" könnte hilfreich sein.",
+              "- Die Frage könnte in zwei separate Fragen aufgeteilt werden, um die verschiedenen Aspekte eines Marktes klarer zu beschreiben."
+            ],
+            "reasoning": "Die Bewertung von 3 Punkten basiert darauf, dass die Anweisungsklarheit begrenzt ist und es an einer klaren Definition des Begriffs \"Markt\" mangelt. Die Antwortmöglichkeiten sind zwar korrekt, aber die Frage könnte präziser formuliert werden.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist ein Markt? <option>Ein Ort, an dem Güter gekauft und verkauft werden<option>Ein Ort, an dem Anbieter ihre Sachgüter oder Dienstleistungen verkaufen wollen<option>Ein Ort, an dem die Nachfrage maximiert wird<option>Ein Ort, an dem der Preis niedrig ist"
+      }
+    ],
+    "question_types_generated": [
+      "single-choice",
+      "single-choice",
+      "single-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

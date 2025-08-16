@@ -1,0 +1,39 @@
+c_id,subject,type,text,question_1,initial_question_1,question_2,initial_question_2,question_3,initial_question_3,p.instruction_explicitness_of_instruction,p.mathematical_requirement_level,p.taxanomy_level,question_type,p.variation,answers,typed_pipeline_used,refinement_applied,format_preserved,expert_average_ratings,p.root_text_reference_explanatory_text,p.root_text_obstacle_passive,p.root_text_obstacle_negation,p.root_text_obstacle_complex_np,p.root_text_contains_irrelevant_information,p.instruction_obstacle_passive,p.instruction_obstacle_complex_np,dspy_consensus_used,dspy_modular_prompts,dspy_expert_count,dspy_all_approved,p.item_1_obstacle_passive,p.item_1_obstacle_negation,p.item_1_obstacle_complex_np,p.item_2_obstacle_passive,p.item_2_obstacle_negation,p.item_2_obstacle_complex_np,p.item_3_obstacle_passive,p.item_3_obstacle_negation,p.item_3_obstacle_complex_np,p.item_4_obstacle_passive,p.item_4_obstacle_negation,p.item_4_obstacle_complex_np,p.item_5_obstacle_passive,p.item_5_obstacle_negation,p.item_5_obstacle_complex_np,p.item_6_obstacle_passive,p.item_6_obstacle_negation,p.item_6_obstacle_complex_np,p.item_7_obstacle_passive,p.item_7_obstacle_negation,p.item_7_obstacle_complex_np,p.item_8_obstacle_passive,p.item_8_obstacle_negation,p.item_8_obstacle_complex_np
+181-sys-1,stammaufgabe,multiple-choice,"Bedürfnisse sind Wünsche Menschen haben Wünsche. Sie entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. In der Wirtschaft bezeichnet man solche Wünsche allgemein auch als Bedürfnisse. Wenn es kalt ist, hat man das Bedürfnis sich zu wärmen. Wenn du dich einsam fühlst, hast du vielleicht ein Bedürfnis nach Zuneigung oder Freundschaft. Wenn dir langweilig ist, hast du zumeist das Bedürfnis, etwas zu unternehmen. <image>Du siehst: Bedürfnisse können ganz vielfältig sein! Und sie unterscheiden sich individuell je nach Person. Kinder haben z. B. häufig andere Bedürfnisse als Erwachsene. Sie wollen z. B. häufiger spielen. Erwachsene hingegen haben vielleicht eher den Wunsch, finanziell abgesichert zu sein. Aber auch die Bedürfnisse von Kindern untereinander unterscheiden sich. Manche Kinder spielen lieber draußen und andere verbringen die Zeit lieber drinnen zum Beispiel beim Lesen. In der Wirtschaft gehen wir davon aus, dass Bedürfnisse unbegrenzt sind. Jeder Mensch hat gleichzeitig sehr viele unterschiedliche Bedürfnisse. Wenn ein Bedürfnis erfüllt (man sagt: befriedigt) ist, widmet man sich direkt einem anderen. Beispiel: Stell dir vor, du kommst nach dem Sport nach Hause. Du willst duschen (du hast das Bedürfnis nach Sauberkeit), hast Hunger (Bedürfnis etwas zu essen), willst dich ausruhen (Bedürfnis nach Erholung). Später am Abend ist dir dann vielleicht langweilig und du möchtest dir einen Film anschauen (Bedürfnis nach Unterhaltung) … Du siehst: Man hat nicht nur sehr viele Bedürfnisse gleichzeitig, meist kommen auch immer wieder neue dazu! ","Was ist ein Hauptunterschied zwischen den Bedürfnissen von Kindern und Erwachsenen?
+
+A) Kinder haben oft das Bedürfnis, finanziell abgesichert zu sein.
+B) Erwachsene haben häufiger das Bedürfnis, sich zu wärmen.
+C) Kinder wollen häufiger spielen als Erwachsene.
+D) Kinder haben oft das Bedürfnis, etwas zu unternehmen. <option>A) Kinder haben oft das Bedürfnis<option>finanziell abgesichert zu sein ist falsch.
+B) Erwachsene haben häufiger das Bedürfnis<option>sich zu wärmen ist falsch.
+C) Kinder wollen häufiger spielen als Erwachsene ist richtig.
+D) Kinder haben oft das Bedürfnis<option>etwas zu unternehmen ist falsch.<option>Zusätzliche Option 5<option>Zusätzliche Option 6","Was ist ein Hauptunterschied zwischen den Bedürfnissen von Kindern und Erwachsenen?
+
+A) Kinder haben oft das Bedürfnis, finanziell abgesichert zu sein.
+B) Erwachsene haben häufiger das Bedürfnis, sich zu wärmen.
+C) Kinder wollen häufiger spielen als Erwachsene.
+D) Kinder haben oft das Bedürfnis, etwas zu unternehmen.","Wie beschreibt der Text die Natur von Bedürfnissen? <option>Sie sind begrenzt und nur für eine Person gültig.<option>Sie erfüllen sich nie, da sie unbefriedigt bleiben.<option>Sie werden immer erfüllt, ohne dass neue entstehen.<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6","Wie beschreibt der Text die Natur von Bedürfnissen?
+
+A) Sie sind begrenzt und nur für eine Person gültig.
+B) Jeder Mensch hat gleichzeitig sehr viele unterschiedliche Bedürfnisse.
+C) Sie erfüllen sich nie, da sie unbefriedigt bleiben.
+D) Sie werden immer erfüllt, ohne dass neue entstehen.","Was passiert, wenn ein Bedürfnis befriedigt ist?
+
+A) Man widmet sich sofort einem anderen Bedürfnis.
+B) Das Befriedigte wird langsam vergessen.
+C) Es kommt zu neuen Bedürfnissen hinzu.
+D) Die Bedürfnisse werden unbegrenzt. <option>A) Man widmet sich sofort einem anderen Bedürfnis ist richtig.
+B) Das Befriedigte wird langsam vergessen ist falsch.
+C) Es kommt zu neuen Bedürfnissen hinzu ist falsch.
+D) Die Bedürfnisse werden unbegrenzt ist falsch.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6","Was passiert, wenn ein Bedürfnis befriedigt ist?
+
+A) Man widmet sich sofort einem anderen Bedürfnis.
+B) Das Befriedigte wird langsam vergessen.
+C) Es kommt zu neuen Bedürfnissen hinzu.
+D) Die Bedürfnisse werden unbegrenzt.",Explizit,0 (Kein Bezug),Stufe 1 (Wissen/Reproduktion),multiple-choice,stammaufgabe,"A) Kinder haben oft das Bedürfnis, finanziell abgesichert zu sein ist falsch.
+B) Erwachsene haben häufiger das Bedürfnis, sich zu wärmen ist falsch.
+C) Kinder wollen häufiger spielen als Erwachsene ist richtig.
+D) Kinder haben oft das Bedürfnis, etwas zu unternehmen ist falsch., Zusätzliche Option 5, Zusätzliche Option 6, Sie sind begrenzt und nur für eine Person gültig., Sie erfüllen sich nie, da sie unbefriedigt bleiben., Sie werden immer erfüllt, ohne dass neue entstehen., Zusätzliche Option 4, Zusätzliche Option 5, Zusätzliche Option 6, A) Man widmet sich sofort einem anderen Bedürfnis ist richtig.
+B) Das Befriedigte wird langsam vergessen ist falsch.
+C) Es kommt zu neuen Bedürfnissen hinzu ist falsch.
+D) Die Bedürfnisse werden unbegrenzt ist falsch., Zusätzliche Option 2, Zusätzliche Option 3, Zusätzliche Option 4, Zusätzliche Option 5, Zusätzliche Option 6",True,"[True, False, True]","[True, True, True]","[3.2, 3.2, 3.0]",Nicht vorhanden,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Enthalten,Nicht Enthalten,Nicht Enthalten,True,True,5,True,Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Enthalten,Nicht Enthalten,Enthalten,Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten,Enthalten,Enthalten,Nicht Enthalten,Enthalten,Nicht Enthalten,Enthalten,Enthalten,Enthalten,Enthalten,Enthalten,Nicht Enthalten,Nicht Enthalten,Nicht Enthalten

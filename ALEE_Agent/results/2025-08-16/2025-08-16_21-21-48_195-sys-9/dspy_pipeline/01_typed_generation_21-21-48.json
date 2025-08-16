@@ -1,0 +1,278 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T21:21:48.884905",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was ist der Hauptvorteil eines Marktes bei Knappe Gütern?\nA) Alle können die Güter kaufen\nB) Nur diejenigen, die bereit sind zu bezahlen, bekommen die Güter\nC) Der Preis wird von den Verkäufern festgelegt\nD) Die Güter werden kostenlos verteilt <option>A) Nur diejenigen<option>die bereit sind zu bezahlen<option>bekommen die Güter<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Nur diejenigen",
+          "die bereit sind zu bezahlen",
+          "bekommen die Güter",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Nur diejenigen",
+          "die bereit sind zu bezahlen"
+        ],
+        "explanation": "Die Fragen sollen den Leser dazu bringen, das Konzept von Märkten und Verteilungsmechanismen anhand des gegebenen Textes zu verstehen. Die richtigen Antworten sind basierend auf dem Text und sollen die Komplexität der Märkte und ihre verschiedenen Funktionen verdeutlichen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist leicht verständlich und entspricht der vorgegebenen Schwierigkeitsstufe. Die Optionen sind klar definiert und es gibt keine verwirrenden Informationen.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage bereits gut formuliert ist."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus der Tatsache, dass die Frage ein grundlegendes Konzept vermittelt, aber nicht zu komplex oder anspruchsvoll ist. Die Optionen sind klar definiert und es gibt keine verwirrenden Informationen.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und es gibt eine klare richtige Antwort. Die Optionen sind auch plausibel und erfordern ein Verständnis des Konzepts. Der Prüfling muss jedoch zwischen verschiedenen Möglichkeiten unterscheiden, um die richtige Antwort zu finden.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Frage ist für Stufe 1 (Wissen/Reproduktion) geeignet, da der Prüfling lediglich eine Tatsache oder ein Konzept wiederholen soll. Die Frage erfordert kein Verständnis oder Anwendung des Konzepts.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität der Frage liegt in ihrer Verbindung zwischen Marktmechanismus und knappen Gütern. Die richtige Antwort erfordert eine Analyse des Konzepts von Märkten und dessen Auswirkungen auf die Verteilung von knappen Ressourcen.",
+            "suggestions": [
+              "Korrekturen sind nicht erforderlich, da die Frage und Antworten sich auf ein grundlegendes Konzept der Mikroökonomie beziehen. Es wäre jedoch hilfreich, wenn weitere Fragen mit komplexeren mathematischen Inhalten für eine höhere Mathematikstufe (z.B. 2) verfügbar wären."
+            ],
+            "reasoning": "Die Bewertung von 3 wird aufgrund der Verbindung zwischen Marktmechanismus und knappen Gütern sowie der Erforderlichkeit einer Analyse des Konzepts von Märkten für die richtige Antwort vorgenommen. Die Frage erfordert ein gewisses Maß an mathematischer Komplexität, um den Hauptvorteil eines Marktes bei Knappe Gütern zu verstehen.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse, aber auch einige Optionen sind unscharf formuliert. Es fehlt eine klare und direkte Formulierung der Hauptvorteile eines Marktes bei knappen Gütern.",
+            "suggestions": [
+              "- Eine überarbeitete Formulierung könnte wie folgt aussehen: \"Was sind die Vorteile eines Marktes bei knappen Gütern? A) Nur diejenigen, die bereit sind zu bezahlen, bekommen die Güter. B) Die Verkäufer bestimmen den Preis.\"",
+              "- Eine weitere Überarbeitung könnte die Ausklammerung von zusätzlichen Optionen (4, 5 und 6) beinhalten."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Anzahl der sprachlichen Hindernisse in der Frage. Es gibt mehrere Passivkonstruktionen, Komplexe Nomen und unscharfe Formulierungen. Die Vorschläge zielen darauf ab, die Sprache einfacher und direkter zu formulieren.",
+            "target_value": "Item 1: Passiv; Item 2: Negation; Item 3: Passiv; Item 3: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Komplexe NP; Item 6: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Negation; Item 7: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifischere Optionen angeboten werden. Die aktuelle Auswahl beinhaltet mehr als die notwendigen Informationen, was zu Verwirrung bei der Antwort führen kann.",
+            "suggestions": [
+              "Es könnten spezifischerer gestellt werden, wie etwa: \"A) Nur diejenigen, die bereit sind zu bezahlen, bekommen die Güter\" und \"B) Alle können die Güter kaufen\"."
+            ],
+            "reasoning": "Die Begründung für die Bewertung basiert auf der Analyse der Anweisungsklarheit und -explizitheit. Die richtige Antwort ist explizit genug, um eine klare Entscheidung zu ermöglichen. Es fehlt jedoch an Klarheit in der Formulierung der Optionen.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.4 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist der Hauptvorteil eines Marktes bei Knappe Gütern?\nA) Alle können die Güter kaufen\nB) Nur diejenigen, die bereit sind zu bezahlen, bekommen die Güter\nC) Der Preis wird von den Verkäufern festgelegt\nD) Die Güter werden kostenlos verteilt <option>A) Nur diejenigen<option>die bereit sind zu bezahlen<option>bekommen die Güter<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Wie funktioniert der Marktmechanismus bei Konzertkarten? <option>Nur die schnellsten Kunden bekommen die Karten<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Nur die schnellsten Kunden bekommen die Karten",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Nur die schnellsten Kunden bekommen die Karten",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen sollen den Leser dazu bringen, das Konzept von Märkten und Verteilungsmechanismen anhand des gegebenen Textes zu verstehen. Die richtigen Antworten sind basierend auf dem Text und sollen die Komplexität der Märkte und ihre verschiedenen Funktionen verdeutlichen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage könnte genauer formuliert werden, indem man spezifischeren Bezug auf die Marktmechanismen nimmt. Zum Beispiel, wie funktioniert der Mechanismus bei Konzertkarten, wenn es um die Verteilung geht? Oder welche Rolle spielen Markttendenzen bei der Entscheidungsfindung?",
+            "suggestions": [
+              "- Fügen Sie spezifischere Beispiele oder Details ein, um den Marktmechanismus genauer zu beschreiben.",
+              "- Legen Sie den Fokus auf die Interaktion zwischen Kunden und Markt, wie z.B. die Auswirkungen von Geschwindigkeit auf die Kartenverteilung."
+            ],
+            "reasoning": "Die Frage erfüllt einige Anforderungen an eine schwierige Frage, da sie für sich genommen nicht leicht zu beantworten ist und verschiedene Faktoren in Betracht zieht. Die Antwortmöglichkeiten sind auch relativ vielfältig. Es fehlt jedoch die Genauigkeit im Hinblick auf den Marktmechanismus selbst.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage weist eine mittlere Komplexität auf und bezieht sich eher auf das Reproduzieren von Informationen als auf die Analyse oder Synthese. Die Antwortmöglichkeiten sind jedoch nicht direkt relevant für den Marktmechanismus bei Konzertkarten.",
+            "suggestions": [
+              "Es könnte hilfreich sein, eine Frage zu formulieren, die mehr auf die Analyse des Marktmechanismus abzielt, wie z.B. \"Wie kann der Marktmechanismus bei Konzertkarten dazu führen, dass bestimmte Kunden bevorzugt behandelt werden?\""
+            ],
+            "reasoning": "Die Bewertung als Stufe 3 (Anwendung) basiert auf dem Umstand, dass die Frage zwar ein Wissen über den Marktmechanismus verlangt, jedoch nicht eine Analyse oder Synthese dieser Informationen. Die Begründung für die Bewertung ist daher, dass die Frage eher auf das Reproduzieren von Informationen abzielt und weniger auf die Anwendung dieses Wissens in einem konkreten Kontext.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Antwort enthält keine mathematische Komplexitätsanalyse. Es fehlt an einer Beschreibung, wie die Marktmechanismen bei Konzertkarten quantitativ modelliert werden könnten.",
+            "suggestions": [
+              "Ermitteln Sie die Anzahl der verkauften Karten pro Zeitabschnitt. Analysieren Sie den Einfluss von Preissenkungen oder anderen Faktoren auf die Verteilung der Karten."
+            ],
+            "reasoning": "Die Antwort wird mit 3 bewertet, da sie ein grundlegendes Verständnis des Konzepts Marktmechanismus zeigt. Es fehlt jedoch an einer mathematischen Analyse oder Modellierung der Komplexität dieses Prozesses.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse, wie z.B. Passivkonstruktionen und Negationen. Dies könnte für Lerner mit begrenztem Sprachverständnis hinderlich sein. Es wäre hilfreich, wenn die Frage auf eine Weise formuliert würde, die leichter verständlich ist.",
+            "suggestions": [
+              "- Die Frage sollte in Aktivform formuliert werden, um ein besseres Verständnis des Marktmechanismus zu ermöglichen.",
+              "- Die Negationen sollten entfernt oder neu formuliert werden, um die Bedeutung der Frage klarer zu machen."
+            ],
+            "reasoning": "Die Bewertung von 3 wird aufgrund der sprachlichen Hindernisse in der Frage vorgenommen. Die Passivkonstruktionen und Negationen können für Lerner mit begrenztem Sprachverständnis hinderlich sein, aber sie geben auch einen Einblick in die Funktionsweise des Marktmechanismus bei Konzertkarten.",
+            "target_value": "Item 1: Passiv; Item 2: Negation; Item 3: Passiv; Item 3: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Komplexe NP; Item 6: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Negation; Item 7: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist nicht optimal, da sie sich auf einen bestimmten Marktmechanismus bezieht (der Wettbewerb um Karten), aber keine klaren Regeln oder Bedingungen für die Verteilung der Karten enthält. Dies kann zu Verwirrung und Frustration bei den Kunden führen.",
+            "suggestions": [
+              "Eine mögliche Verbesserung wäre, eine klare Regelung einzuführen, wie z.B. eine Losziehung oder ein Ziehlosverfahren, um sicherzustellen, dass alle Kunden gleichberechtigt an der Verteilung der Karten teilnehmen können."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 4, da die Anweisung nicht vollständig klar und eindeutig ist. Die Begründung dafür ist, dass die Anweisung sich auf einen bestimmten Marktmechanismus bezieht, aber keine klaren Regeln oder Bedingungen für die Verteilung der Karten enthält.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wie funktioniert der Marktmechanismus bei Konzertkarten? <option>Nur die schnellsten Kunden bekommen die Karten<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Was ist der Hauptunterschied zwischen einem Markt und anderen Verteilungsmechanismen?\nA) Der Preis wird vom Verkaufsführer festgelegt\nB) Der Tausch als Grundprinzip des Marktes\nC) Alle können die Güter kostenlos kaufen\nD) Die Güter werden nach dem Zufallsprinzip verteilt <option>B) Der Tausch als Grundprinzip des Marktes<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "B) Der Tausch als Grundprinzip des Marktes",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "B) Der Tausch als Grundprinzip des Marktes",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen sollen den Leser dazu bringen, das Konzept von Märkten und Verteilungsmechanismen anhand des gegebenen Textes zu verstehen. Die richtigen Antworten sind basierend auf dem Text und sollen die Komplexität der Märkte und ihre verschiedenen Funktionen verdeutlichen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage und die Antwortoptionen entsprechen den Anforderungen einer leicht schwierigen Frage. Die Optionen sind klar strukturiert und die richtige Antwort ist nicht zu schwer zu finden.",
+            "suggestions": [
+              "Es gibt keine Vorschläge für Verbesserungen, da die Frage und Antwortoptionen wie erwartet sind."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Tatsache, dass die richtige Antwort leicht zugänglich ist. Die Frage stellt eine klare Definition des Kernaspekts von Marktwirtschaft dar, was als Zeichen dafür gilt, dass sie für Lernende in einer frühen Phase ihrer Ausbildung geeignet ist.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfordert eine Analyse des Konzepts von Märkten und ihre Auswirkungen auf die Gesellschaft. Die richtige Antwort zeigt ein Verständnis der grundlegenden Prinzipien des Tauschs, was für das Verständnis komplexer wirtschaftlicher Systeme entscheidend ist.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage bereits eine klare und präzise Definition eines Marktes beinhaltet."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Fähigkeit, die Differenzierung zwischen einem Markt und anderen Verteilungsmechanismen zu erklären. Die richtige Antwort zeigt ein Verständnis des grundlegenden Prinzips des Tauschs im Markt, was für das Verständnis komplexer wirtschaftlicher Systeme entscheidend ist.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert ein tiefes Verständnis des Marktes und seiner Grundprinzipien. Die richtige Antwort B) Der Tausch als Grundprinzip des Marktes, ist ein wesentlicher Aspekt der Mikroökonomie.",
+            "suggestions": [
+              "- Stärken die Kenntnisse über den Marktmechanismus und seine Grundprinzipien",
+              "- Erweitern Sie Ihre Fähigkeiten in Mikroökonomie"
+            ],
+            "reasoning": "Die Frage erfordert ein Verständnis des Marktmechanismus und seiner Grundprinzipien. Die richtige Antwort B) Der Tausch als Grundprinzip des Marktes, ist ein wesentlicher Aspekt der Mikroökonomie.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Passivkonstruktionen können als Schwierigkeit empfunden werden, da sie den Fokus vom Handelnden auf das Handeln verschieben. Die Negationen können ebenfalls als Herausforderung gelten, da sie die Bedeutung der Frage umkehren. Komplexe Nomenphrasen können es schwierig machen, die genaue Bedeutung einer Wortgruppe zu verstehen.",
+            "suggestions": [
+              "- Die Passivkonstruktionen sollten durch Aktivformen ersetzt werden, um den Fokus auf den Handelnden zu legen.",
+              "- Die Negationen sollten durch positive Aussagen ersetzt werden, um die Bedeutung der Frage klarer zu machen.",
+              "- Komplexe Nomenphrasen sollten in einfacherer Sprache formuliert werden, um ihre genaue Bedeutung zu klären."
+            ],
+            "reasoning": "Die sprachlichen Hindernisse in dieser Frage können dazu führen, dass Lerner Schwierigkeiten haben, die Frage zu verstehen. Durch die Anpassungen der Vorschläge kann die Frage für Lerner leichter verständlich werden und somit ein besseres Verständnis des Themas fördern.",
+            "target_value": "Item 1: Passiv; Item 2: Negation; Item 3: Passiv; Item 3: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Komplexe NP; Item 6: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Negation; Item 7: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisung ist relativ klar. Der Unterschied zwischen einem Markt und anderen Verteilungsmechanismen wird gut beschrieben.",
+            "suggestions": [
+              "Keine Verbesserungen erforderlich."
+            ],
+            "reasoning": "Die Antwort auf die Frage zeigt ein gutes Verständnis der Grundlagen des Marktes. Die richtige Antwort ist auch explizit genannt, was das Ziel der Aufgabe erfüllt.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 2.8 below threshold but insufficient expert consensus",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist der Hauptunterschied zwischen einem Markt und anderen Verteilungsmechanismen?\nA) Der Preis wird vom Verkaufsführer festgelegt\nB) Der Tausch als Grundprinzip des Marktes\nC) Alle können die Güter kostenlos kaufen\nD) Die Güter werden nach dem Zufallsprinzip verteilt <option>B) Der Tausch als Grundprinzip des Marktes<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

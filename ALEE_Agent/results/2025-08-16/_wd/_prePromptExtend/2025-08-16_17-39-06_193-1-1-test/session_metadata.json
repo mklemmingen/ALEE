@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 66.9567859172821,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Welche Bedingung des Preisbildungsmodells wird nicht bei dem Beispiel mit der Sammelkarte erf\u00fcllt?\n\nA) Es gibt auf diesem Markt viele Anbieter und viele Nachfrager.\nB) Kein Anbieter oder Nachfrager beherrscht den Markt allein.\nC) Die Produkte auf dem Markt haben alle die gleiche Qualit\u00e4t.\nD) Die Anbieter und Nachfrager wissen genau, zu welchen Preisen Produkte auf einem Markt angeboten werden. <option>A) Es gibt auf diesem Markt viele Anbieter und viele Nachfrager.<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Warum kann der Preisbildungsvorgang durch Faktoren beeinflusst werden, die nicht im Modell enthalten sind? <option>Weil es auf dem Markt viele verschiedene Produkte gibt.<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Was passiert, wenn ein Anbieter seinen Freund gegen\u00fcber anderen Marktteilnehmern bevorzugt?\n\nA) Der Markt wird transparenter.\nB) Der Preis sinkt.\nC) Der Anbieter verletzt die Annahmen des Modells.\nD) Die Nachfrager werden unzufriedener. <option>C) Weil der Anbieter seine Beziehung zu seinem Freund \u00fcber die Marktmechanik stellt.<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T17:39:06.998756",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

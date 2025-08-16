@@ -1,0 +1,20 @@
+**What is an Instruction?**
+An instruction is the directive text that specifies the task a student must perform. It differs from the root text (the main content/context of the question) by providing the actionable command. Instructions typically appear as the final sentence(s) before answer options begin and may exist independently without root text.
+
+**Definition of Implicit Instructions**: 
+Implicit instructions do not specify the exact number of correct answers expected from the student.
+
+**Scope**: 
+- Applied to multiple-choice and true-false question types
+- Mapping questions are always implicit by nature
+- Single-choice questions are always explicit by nature
+
+**Identification Criteria**:
+An instruction is implicit when it does NOT specify the exact number of correct answers.
+Examples:
+(multiple-choice) Wähle die zutreffenden Aussagen aus. Es können auch mehrere Antworten richtig sein.
+(multiple-choice) Wähle die Antworten aus, in welchen die Grenzen des Modellautos deutlich werden.
+(true-false) Entscheide, ob die Aussagen falsch oder richtig sind.
+(true-false) Kreuze die zutreffenden Aussagen an.
+(mapping) Ordne die links stehenden Beschreibung den richtigen Begriffen zu.
+(mapping) Ordne die Begriffe richtig zu.

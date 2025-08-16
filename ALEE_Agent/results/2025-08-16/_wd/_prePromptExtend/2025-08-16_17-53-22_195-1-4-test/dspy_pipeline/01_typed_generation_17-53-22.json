@@ -1,0 +1,286 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T17:53:22.638671",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was ist der Hauptvorteil des Verteilungsmechanismus Marktes?\n\nA) Die Verteilung von Gütern aufgrund der sozialen Bedürfnisse.\nB) Die Verwendung von Geld als einheitliches Tauschmittel.\nC) Die Kombination verschiedener Verteilungsmechanismen.\nD) Die Begrenzung der Anzahl der verfügbaren Plätze. <option>A) Die Verteilung von Gütern aufgrund der sozialen Bedürfnisse.\nB) Die Verwendung von Geld als einheitliches Tauschmittel.\nC) Die Kombination verschiedener Verteilungsmechanismen.\nD) Die Begrenzung der Anzahl der verfügbaren Plätze.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "A) Die Verteilung von Gütern aufgrund der sozialen Bedürfnisse.\nB) Die Verwendung von Geld als einheitliches Tauschmittel.\nC) Die Kombination verschiedener Verteilungsmechanismen.\nD) Die Begrenzung der Anzahl der verfügbaren Plätze.",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "A) Die Verteilung von Gütern aufgrund der sozialen Bedürfnisse.\nB) Die Verwendung von Geld als einheitliches Tauschmittel.\nC) Die Kombination verschiedener Verteilungsmechanismen.\nD) Die Begrenzung der Anzahl der verfügbaren Plätze.",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen sind so gestaltet, dass sie das Verständnis des Konzepts von Märkten und Verteilungsmechanismen testen. Die richtigen Antworten basieren auf den im Text beschriebenen Eigenschaften von Märkten und deren Vor- und Nachteile.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert ein tiefes Verständnis des Themas. Es ist ratsam, sich auf die Kernpunkte der stammaufgabe zu konzentrieren und den Schwierigkeitsgrad zu überprüfen, um sicherzustellen, dass er nicht für Lernende mit niedrigem Niveau geeignet ist.",
+            "suggestions": [
+              "- Die Frage könnte an die Fähigkeit angepasst werden, mehrere Verteilungsmechanismen in Beziehung zu setzen.",
+              "- Es sollte überprüft werden, ob alle Optionen gleichwertig sind und keine davon tendenziell bevorzugt wird."
+            ],
+            "reasoning": "Die Frage ist als stammaufgabe formuliert, da sie die Fähigkeit der Lernenden erfordert, komplexe Informationen zu analysieren und zu bewerten. Die richtige Antwort muss im Kontext des Themas verstanden werden, und es wird ein tiefes Verständnis der Verteilungsmechanismen vorausgesetzt.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und die Antworten sind klar definiert. Es handelt sich jedoch um eine relativ einfache Frage, die in der Regel für Stufe 1 (Wissen/Reproduktion) geeignet ist.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich."
+            ],
+            "reasoning": "Die richtige Antwort wird aufgrund ihrer Übereinstimmung mit den Grundlagen der Verteilungsmechanismen in der Wirtschaftswissenschaft bewertet. Die Frage ist für die Stufe 1 (Wissen/Reproduktion) geeignet, da sie ein grundlegendes Verständnis des Themas voraussetzt.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfordert ein Verständnis des Konzepts der Verteilungsmechanismen und ihrer Auswirkungen auf die Ressourcenverteilung. Die richtige Antwort ist jedoch nicht mit mathematischen Komplexitätsanalysen oder -bewertungen direkt verbunden.",
+            "suggestions": [
+              "Keine spezifischen Anpassungen erforderlich, da das Thema eher ökonomischer Natur ist und keine direkte Beziehung zu Mathematikkomplexität hat."
+            ],
+            "reasoning": "Die Bewertung erfolgte auf der Grundlage des Verständnisses des Konzepts der Verteilungsmechanismen. Die richtige Antwort wurde ausgewählt, da sie dem Hauptvorteil dieses Mechanismus entspricht.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Keine spezifischen sprachlichen Hindernisse wurden gefunden. Die Frage ist gut formuliert und die Antwortoptionen sind leicht verständlich.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung erforderlich."
+            ],
+            "reasoning": "Die Frage erfüllt die Anforderungen an Klarheit und Verständlichkeit, daher ist keine besondere Begründung erforderlich.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifischer auf den Gegenstand eingegangen wird. Es wäre hilfreich, wenn die Fragen klar definiert wären und die Antwortmöglichkeiten genauer beschrieben wären.",
+            "suggestions": [
+              "- Spezifizierung der Frage",
+              "- Genauere Beschreibung der Antwortmöglichkeiten"
+            ],
+            "reasoning": "Die Anweisungs-Bewertung von 3 (durchschnittlich) basiert auf der Tatsache, dass die Frage klar und genau definiert ist. Allerdings fehlt es an einer ausreichenden Erklärung der Vorteile des Verteilungsmechanismus Marktes. Die Antwortmöglichkeiten sind zwar vorhanden, aber nicht genug ausgeführt.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 2.8 below threshold but insufficient expert consensus",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist der Hauptvorteil des Verteilungsmechanismus Marktes?\n\nA) Die Verteilung von Gütern aufgrund der sozialen Bedürfnisse.\nB) Die Verwendung von Geld als einheitliches Tauschmittel.\nC) Die Kombination verschiedener Verteilungsmechanismen.\nD) Die Begrenzung der Anzahl der verfügbaren Plätze. <option>A) Die Verteilung von Gütern aufgrund der sozialen Bedürfnisse.\nB) Die Verwendung von Geld als einheitliches Tauschmittel.\nC) Die Kombination verschiedener Verteilungsmechanismen.\nD) Die Begrenzung der Anzahl der verfügbaren Plätze.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Wie wird der Wert von Gütern im Markt-System bestimmt?\n\nA) Durch die sozialen Bedürfnisse der Menschen.\nB) Durch den Preis, den jemand bereit ist zu bezahlen.\nC) Durch die Kombination verschiedener Verteilungsmechanismen.\nD) Durch das Verhältnis von Eiern und Äpfeln. <option>B) Durch den Preis<option>den jemand bereit ist zu bezahlen.\nA) Durch die sozialen Bedürfnisse der Menschen.\nC) Durch die Kombination verschiedener Verteilungsmechanismen.\nD) Durch das Verhältnis von Eiern und Äpfeln.<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "B) Durch den Preis",
+          "den jemand bereit ist zu bezahlen.\nA) Durch die sozialen Bedürfnisse der Menschen.\nC) Durch die Kombination verschiedener Verteilungsmechanismen.\nD) Durch das Verhältnis von Eiern und Äpfeln.",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "B) Durch den Preis",
+          "den jemand bereit ist zu bezahlen.\nA) Durch die sozialen Bedürfnisse der Menschen.\nC) Durch die Kombination verschiedener Verteilungsmechanismen.\nD) Durch das Verhältnis von Eiern und Äpfeln."
+        ],
+        "explanation": "Die Fragen sind so gestaltet, dass sie das Verständnis des Konzepts von Märkten und Verteilungsmechanismen testen. Die richtigen Antworten basieren auf den im Text beschriebenen Eigenschaften von Märkten und deren Vor- und Nachteile.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage hat eine hohe Übereinstimmung mit dem Ziel einer Stamm-Aufgabe. Der Schwierigkeitsgrad der Frage ist angemessen für ein Grundlagen-Konzept.",
+            "suggestions": [
+              "Keine spezifischen Verbesserungen erforderlich, da die Frage bereits eine hohe Qualität aufweist."
+            ],
+            "reasoning": "Die Bewertung berücksichtigt die Übereinstimmung der Frage mit dem Ziel einer Stamm-Aufgabe und der Angemessenheit des Schwierigkeitsgrades. Die richtige Antwort ist gut verständlich und ein grundlegendes Konzept, das in Wirtschaftskursen oft besprochen wird.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist auf eine hohe Ebene der Bloom'schen Taxonomie abgestimmt (Stufe 1: Wissen/Reproduktion), da sie nach der Reproduktion eines grundlegenden Konzepts aus der Wirtschaftswissenschaft fragt. Die Antwortmöglichkeiten sind jedoch nicht ideal, da einige davon (z.B. das Verhältnis von Eiern und Äpfeln) irrelevant oder sogar falsch sind. Eine bessere Frage würde mehr plausible Optionen bieten.",
+            "suggestions": [
+              "Eine mögliche Anpassung der Frage könnte darin bestehen, die Antwortmöglichkeiten zu überarbeiten, um sie relevanter und plausibler zu machen. Zum Beispiel:",
+              "",
+              "* Wie wird der Wert von Gütern im Markt-System bestimmt?",
+              "A) Durch die sozialen Bedürfnisse der Menschen.",
+              "B) Durch den Preis, den jemand bereit ist zu bezahlen.",
+              "C) Durch das Angebot und die Nachfrage.",
+              "D) Durch die regulatorischen Rahmenbedingungen.",
+              "",
+              "Diese überarbeitete Frage würde eine bessere Übereinstimmung mit der Bloom'schen Taxonomie aufrechterhalten und gleichzeitig ein realistischeres Bild der Wirtschaftswissenschaften bieten."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert darauf, dass die Frage nach einem grundlegenden Konzept aus der Wirtschaftswissenschaft fragt (den Preis als Determinante des Wertes von Gütern), was auf einer hohen Ebene der Bloom'schen Taxonomie liegt. Die Antwortmöglichkeiten sind jedoch nicht ideal, was eine Abwertung um einen Punkt herabsetzt.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Komplexität dieser Frage liegt im Bereich der makroskopischen Überlegungen, da sie sich mit den grundlegenden Prinzipien des Marktsystems auseinandersetzt. Die Frage erfordert ein Verständnis von Angebot und Nachfrage sowie ihrer Auswirkungen auf Preise.",
+            "suggestions": [
+              "Um die Komplexität dieser Frage zu überprüfen, könnte man die Relevanz der Optionen für das Marktsystem und ihre Beziehung zu dem gegebenen Thema bewerten. Zudem würde es hilfreich sein, eine mehrere Schritte umfassende Erklärung zur mathematischen Hintergründe bereitzustellen."
+            ],
+            "reasoning": "Die Bewerung für diese Frage basiert auf der Fähigkeit des Schülers, die Grundlagen der Mikroökonomie zu verstehen und sie auf das gegebene Szenario anzuwenden. Die richtige Antwort zeigt ein Verständnis dafür, wie Preise durch Angebot und Nachfrage bestimmt werden.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält keine sprachlichen Hindernisse, die als unklar oder schwierig empfunden würden. Die Antwortoptionen sind klar und logisch geordnet.",
+            "suggestions": [
+              "Keine Vorschläge zur Änderung der Frage erforderlich."
+            ],
+            "reasoning": "Die Bewertung von 3 wurde vergeben, da die Frage eine klare und logische Struktur aufweist und keine sprachlichen Hindernisse enthält. Die Antwortoptionen sind leicht verständlich und es gibt keine Anzeichen für Verwirrung oder Unklarheit.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Frage erfordert ein tiefes Verständnis der Marktmechanismen und den Faktoren, die den Wert von Gütern bestimmen. Die richtige Antwort ist jedoch klar formuliert und sollte für einen Schüler mit grundlegendem Wissen über Märkte leicht zu verstehen sein.",
+            "suggestions": [
+              "- Die Frage könnte ein Bild oder eine Grafik beinhalten, um das Verständnis der Marktmechanismen zu erleichtern.",
+              "- Der Schüler könnte aufgefordert werden, ein Beispiel für einen Markt zu nennen, in dem der Preis die richtige Antwort bestimmt."
+            ],
+            "reasoning": "Die Frage wird von einer expliziten Zielsetzung begleitet, nämlich das Verständnis der Marktmechanismen und den Faktoren, die den Wert von Gütern bestimmen. Die richtige Antwort ist durch eine klare Formulierung gekennzeichnet und sollte für einen Schüler mit grundlegendem Wissen über Märkte leicht zu verstehen sein.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wie wird der Wert von Gütern im Markt-System bestimmt?\n\nA) Durch die sozialen Bedürfnisse der Menschen.\nB) Durch den Preis, den jemand bereit ist zu bezahlen.\nC) Durch die Kombination verschiedener Verteilungsmechanismen.\nD) Durch das Verhältnis von Eiern und Äpfeln. <option>B) Durch den Preis<option>den jemand bereit ist zu bezahlen.\nA) Durch die sozialen Bedürfnisse der Menschen.\nC) Durch die Kombination verschiedener Verteilungsmechanismen.\nD) Durch das Verhältnis von Eiern und Äpfeln.<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Warum ist der Markt-Verteilungsmechanismus in der Regel bevorzugt? <option>Weil er die Kombination verschiedener Verteilungsmechanismen erleichtert.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Weil er die Kombination verschiedener Verteilungsmechanismen erleichtert.",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Weil er die Kombination verschiedener Verteilungsmechanismen erleichtert.",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen sind so gestaltet, dass sie das Verständnis des Konzepts von Märkten und Verteilungsmechanismen testen. Die richtigen Antworten basieren auf den im Text beschriebenen Eigenschaften von Märkten und deren Vor- und Nachteile.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist anspruchsvoll formuliert, aber die Antwortmöglichkeiten sind zu einfach. Es fehlt an einer tiefgreifenden Analyse oder Argumentation.",
+            "suggestions": [
+              "* Formuliere die Frage noch anspruchsvoller und präziser.",
+              "* Stelle sicher, dass die Antwortmöglichkeiten eine tiefe Analyse oder Argumentation erfordern."
+            ],
+            "reasoning": "Die Bewertung ist 3, weil die Frage zwar anspruchsvoll formuliert ist, aber die Antwortmöglichkeiten zu einfach sind. Die Frage sollte noch mehr anspruchsvoller und präziser formuliert werden, um eine tiefe Analyse oder Argumentation zu erfordern.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist zwar auf Stufe 1 (Wissen/Reproduktion) ausgerichtet, aber einige Antwortmöglichkeiten sind nicht direkt mit der Frage in Beziehung stehend. Die Frage könnte daher noch weiter gefasst werden, um mehr Optionen anbieten zu können.",
+            "suggestions": [
+              "- Die Frage könnte erweitert werden, um genauer auf den Markt-Verteilungsmechanismus und seine Vorteile einzugehen.",
+              "- Möglich wäre auch eine Erweiterung der Antwortmöglichkeiten, indem weitere Optionen hinzugenommen werden, die spezifischer auf den Markt-Verteilungsmechanismus Bezug nehmen."
+            ],
+            "reasoning": "Die Bewertung dieser Frage basiert auf dem Verständnis des Markt-Verteilungsmechanismus und seiner Vorteile. Die Frage ist zwar auf Stufe 1 (Wissen/Reproduktion) ausgerichtet, aber einige Antwortmöglichkeiten sind nicht direkt mit der Frage in Beziehung stehend.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": true
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die mathematische Komplexität des Markt-Verteilungsmechanismus ist als \"mittel\" einzustufen, da er zwar eine gewisse Tiefe und Vielseitigkeit aufweist, aber nicht unbedingt die höchste Stufe der Komplexität erreicht. Die Fähigkeit zur Kombination verschiedener Verteilungsmechanismen ist ein wichtiger Aspekt, aber es gibt auch Möglichkeiten, die Komplexität noch weiter zu steigern.",
+            "suggestions": [
+              "Es könnte empfehlenswert sein, in der Zukunft mehr auf die Entwicklung komplexerer Kombinationen von Verteilungsmechanismen zu setzen und über die möglichen Grenzen der Flexibilität des Markt-Verteilungsmechanismus nachzudenken."
+            ],
+            "reasoning": "Die Bewertung als 2 beruht darauf, dass der Markt-Verteilungsmechanismus eine bestimmte Tiefe der mathematischen Komplexität erreicht hat und die Möglichkeit zur Kombination verschiedener Verteilungsmechanismen ein wichtiger Aspekt ist. Die möglichen Grenzen der Flexibilität sind jedoch noch nicht ausreichend erforscht.",
+            "target_value": "0",
+            "applied": true
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 2,
+            "feedback": "Keine sprachlichen Hindernisse, die Frage ist leicht verständlich. Es könnte jedoch hilfreich sein, eine kurze Begründung für die Vor- und Nachteile des Markt-Verteilungsmechanismus hinzuzufügen.",
+            "suggestions": [
+              "Eine mögliche Vorschlag wäre, in der Frage nach dem Vorteil des Markt-Verteilungsmechanismus zu fragen. Zum Beispiel: \"Warum ist der Markt-Verteilungsmechanismus bevorzugt, weil er die Kombination verschiedener Verteilungsmechanismen erleichtert?\""
+            ],
+            "reasoning": "Die Frage wird mit einer klaren und prägnanten Formulierung gestellt, sodass die Antwort leicht zu verstehen ist. Es gibt keine sprachlichen Hindernisse.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist eingeschränkt, da die Optionen nicht direkt auf das Thema beziehbar sind. Die Frage sollte präziser formuliert werden, um ein klares Verständnis zu ermöglichen.",
+            "suggestions": [
+              "- Eine präzisere Formulierung der Frage: \"Warum wird der Markt-Verteilungsmechanismus in der Regel bevorzugt, weil er die Kombination verschiedener Verteilungsmechanismen erleichtert?\"",
+              "- Eine Überprüfung der Optionen auf Relevanz und Präzision"
+            ],
+            "reasoning": "Die Anweisungsklarheit ist eingeschränkt, da die Optionen nicht direkt auf das Thema beziehbar sind. Die Frage sollte präziser formuliert werden, um ein klares Verständnis zu ermöglichen.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 2,
+          "obstacle_expert": 2,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Average rating 2.4 below threshold, 3 experts suggest improvements",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Warum ist der Markt-Verteilungsmechanismus in der Regel bevorzugt? <option>Weil er die Kombination verschiedener Verteilungsmechanismen erleichtert.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

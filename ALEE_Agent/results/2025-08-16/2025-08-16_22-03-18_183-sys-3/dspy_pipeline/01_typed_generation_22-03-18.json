@@ -1,0 +1,256 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:03:18.686816",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was bedeutet Bedarf im Wirtschaftskontext? <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragengenerierung basierte auf den Parametern und dem Text. Die Fragen wurden so formuliert, dass sie das Verständnis des Schülers für die Begriffe \"Bedürfnis\" und \"Bedarf\" im Wirtschaftskontext testen. Die Antwortoptionen wurden so ausgewählt, dass sie eine klare Entscheidung zwischen wahr oder falsch ermöglichen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert, aber die Antwortmöglichkeiten könnten etwas präziser sein. Zum Beispiel könnte \"Die Aussage ist wahr\" oder \"Die Aussage ist falsch\" anstelle von \"Die Aussage ist richtig\" oder \"Die Aussage ist falsch\" verwendet werden.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge, da die Frage bereits gut formuliert ist. Es könnte jedoch eine zusätzliche Option zur Verdeutlichung der Frage hinzugefügt werden."
+            ],
+            "reasoning": "Die Bewertung von 4 wird erreicht, weil die Frage leicht ist und die Antwortmöglichkeiten klar sind. Die Begründung für die Bewertung ist, dass die Frage ein einfaches Verständnis des Begriffs \"Bedarf\" im Wirtschaftskontext erfordert und die Antwortmöglichkeiten nicht zu komplex oder unklar sind.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist zwar eindeutig auf Stufe 1 (Wissen/Reproduktion) ausgelegt, aber es fehlt an prägnanter Sprache. Die Antwortmöglichkeiten sind gut durchdacht und passen zur Frage.",
+            "suggestions": [
+              "Keine Vorschläge für eine Anpassung der Frage oder der Antworten."
+            ],
+            "reasoning": "Die Bewertung ergibt sich aus der Tatsache, dass die Frage ein Wissensproblem darstellt, bei dem die Schüler das Bedeutungswert einer Begriffskombination bewerten soll. Die Antwortmöglichkeiten sind ausreichend prägnant und passen gut zur Frage.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 4,
+            "feedback": "Die mathematische Komplexität dieser Frage liegt bei 4, da sie sich auf das Verständnis von Logik und Aussagen bezieht. Die richtige Antwort ist jedoch nicht klar definiert.",
+            "suggestions": [
+              "Die Frage sollte so formuliert werden, dass die richtige Antwort klar erkennbar ist. Beispielsweise könnte man \"In einem Wirtschaftskontext bedeutet Bedarf: eine Menge an benötigten Ressourcen\" schreiben."
+            ],
+            "reasoning": "Die Bewertung von 4 basiert auf der Tatsache, dass die Frage sich um Logik und Aussagen dreht. Die richtige Antwort ist jedoch nicht klar definiert.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält einige schwierige sprachliche Strukturen, wie z.B. Negationen und komplexe Nominalphrasen. Diese können möglicherweise Schwierigkeiten bei der Verständigung mit Lernenden verschiedener Hintergrundsprachen verursachen.",
+            "suggestions": [
+              "- Eine Vereinfachung der sprachlichen Strukturen durch eine Klarstellung der Negationen und einer Vereinfachung der Nominalphrasen.",
+              "- Ein Hinzufügen von Übungsaufgaben, die auf die einzelnen sprachlichen Hindernisse abzielen."
+            ],
+            "reasoning": "Die Bewertung basiert auf den in der Frage vorhandenen sprachlichen Hindernissen. Die Höhepunkte wurden mit 4 bewertet, da sie für Lernende verschiedener Hintergrundsprachen möglicherweise nicht leicht zu verstehen sind.",
+            "target_value": "Grundtext: Negation; Item 1: Passiv; Item 1: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Komplexe NP; Item 4: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Negation; Item 5: Komplexe NP; Item 7: Passiv; Item 8: Negation",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist gut, da die Frage explizit formuliert ist und die Antwortmöglichkeiten genau sind. Es gibt jedoch keine Anforderungen an die Begründung oder Argumentation, was als Mangel empfunden werden könnte.",
+            "suggestions": [
+              "Es wäre hilfreich, wenn die Frage auch eine Erklärung oder Begründung für die richtige Antwort enthielte. Dies würde die Anweisungsklarheit weiter verbessern und den Lernenden helfen, die Aussage besser zu verstehen."
+            ],
+            "reasoning": "Die bewertung ist 3, da die Frage explizit formuliert ist und die Antwortmöglichkeiten genau sind. Es fehlt jedoch an der Begründung oder Argumentation für die richtige Antwort.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 2,
+          "math_expert": 4,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was bedeutet Bedarf im Wirtschaftskontext? <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "Kannst du bestätigen, dass man nicht nur bei dem Einsatz von Mitteln für den Kauf von Gegenständen von Bedarf spricht? <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragengenerierung basierte auf den Parametern und dem Text. Die Fragen wurden so formuliert, dass sie das Verständnis des Schülers für die Begriffe \"Bedürfnis\" und \"Bedarf\" im Wirtschaftskontext testen. Die Antwortoptionen wurden so ausgewählt, dass sie eine klare Entscheidung zwischen wahr oder falsch ermöglichen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage entspricht gut dem deutschen Schwierigkeitsgrad. Der Inhalt ist abteilungrelevant und die Struktur der Frage ist klar.",
+            "suggestions": [
+              "Es gibt keine Vorschläge für Verbesserungen, da die Frage bereits gut strukturiert und relevant ist."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 4 (gut) besteht darin, dass der Inhalt der Frage relevant für den deutschen Bildungsstandards ist und die Struktur der Frage klar und leicht zu verstehen ist. Die true-false-Optionen sind auch gut geeignet.",
+            "target_value": "leicht",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Antwortoptionen sind klar und einfach formuliert. Die Frage ist jedoch relativ einfach gestellt, sodass ein tieferes Verständnis des Themas nicht gefordert wird.",
+            "suggestions": [
+              "Es könnten weitere Fragen erstellt werden, die auf der gleichen Stufe verbleiben, aber komplexere Aspekte des Themas erfassen. Zum Beispiel: \"Wie würde sich der Bedarf an Gegenständen ändern, wenn sich das Einkommen eines Menschen erhöht?\""
+            ],
+            "reasoning": "Die Frage wird bewertet als 4, da sie ein einfaches Wissen über die Begriffe prüft und kein tieferes Verständnis oder Analyse des Themas erfordert. Die Antwortoptionen sind klar und einfach formuliert, was auch zu einer leichteren Bewertung der Frage führt.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage liegt in der Analyse und Bewertung des logischen Arguments. Die richtige Antwort zeigt ein Verständnis für die Nuancen des Begriffs \"Bedarf\" und seine Anwendung in verschiedenen Kontexten.",
+            "suggestions": [
+              "- Eine mögliche Anpassung wäre, um den Umfang der Frage zu erweitern, sodass es mehrere Situationen gibt, in denen der Bedarf nicht nur auf den Kauf von Gegenständen beschränkt ist.",
+              "- Eine alternative Frage könnte die Analyse eines weiter gefassten Konzepts der \"Bedürfnisse\" beinhalten."
+            ],
+            "reasoning": "Die Bewertung als 3 (auf einer Skala von 1 bis 5) basiert auf dem Verständnis, dass die richtige Antwort ein Verständnis für logische Argumentation und sprachliche Nuancen zeigt. Die Frage erfordert kritisches Denken und Analyse, um zur richtigen Schlussfolgerung zu gelangen.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage beinhaltet einige schwierige Aspekte der deutschen Sprache. Zum einen gibt es mehrere Negationen (\"nicht nur\", \"falsch\") und komplexe Nominalphrasen, die die Lesbarkeit reduzieren. Ebenso verwendet die Frage das Passiv (etwa bei \"man spricht von Bedarf\"). Die Aussage selbst ist jedoch klar formuliert.",
+            "suggestions": [
+              "Um die Lesbarkeit zu verbessern, könnten einige Änderungen vorgenommen werden: ",
+              "- In der ersten Hälfte könnte man den Satzbau vereinfachen (etwa durch eine Verwendung des Aktivs).",
+              "- Bei den Negationen kann es hilfreich sein, sie leichter erkennbar zu machen (z.B. durch Anführungszeichen oder Unterstreichung).",
+              "- Die komplexe Nominalphrase (\"Einsatz von Mitteln für den Kauf\") könnte in einzelne Wörter zerlegt werden."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Schwierigkeit, die von den sprachlichen Hindernissen ausgeht. Eine hohe Zahl ist hier nur dann gerechtfertigt, wenn das Hindernis nicht leicht zu umgehen ist und dem Leser oder Hörer die Verständigung erheblich erschwert.",
+            "target_value": "Grundtext: Negation; Item 1: Passiv; Item 1: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Komplexe NP; Item 4: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Negation; Item 5: Komplexe NP; Item 7: Passiv; Item 8: Negation",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Das Feedback ist positiv, da die Frage explizit formuliert ist und die Antworten klar sind. Es gibt jedoch keine Hinweise auf ein differenziertes Verständnis des Begriffs \"Bedarf\".",
+            "suggestions": [
+              "Es könnten weitere Beispiele für den Einsatz von Mitteln ohne Bedarf bereitgestellt werden, um das Thema zu verdeutlichen."
+            ],
+            "reasoning": "Die richtige Antwort ist \"Die Aussage ist richtig\", da der Begriff \"Bedarf\" nicht immer im Kontext des Kaufens von Gegenständen verwendet wird. Es ist auch möglich, Mittel ohne Bedarf einzusetzen, zum Beispiel für einen unerwarteten Notfall.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 4,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Kannst du bestätigen, dass man nicht nur bei dem Einsatz von Mitteln für den Kauf von Gegenständen von Bedarf spricht? <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "Ist es wahr oder falsch, dass der Bedarf in der Wirtschaft etwas anderes als das Bedürfnis ist? <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Richtig",
+        "explanation": "Die Fragengenerierung basierte auf den Parametern und dem Text. Die Fragen wurden so formuliert, dass sie das Verständnis des Schülers für die Begriffe \"Bedürfnis\" und \"Bedarf\" im Wirtschaftskontext testen. Die Antwortoptionen wurden so ausgewählt, dass sie eine klare Entscheidung zwischen wahr oder falsch ermöglichen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist schwierig genug, um ein tiefes Verständnis der Wirtschaftsbegriffe abzubilden. Die Antwortmöglichkeiten sind klar und passend zur Frage.",
+            "suggestions": [],
+            "reasoning": "Die Frage erfordert die Fähigkeit, den wirtschaftlichen Kontext zu verstehen und zwischen verwandten Begriffen zu unterscheiden. Die richtige Antwort zeigt ein Verständnis der Differenz zwischen \"Bedarf\" und \"Bedürfnis\". Die Frage ist anspruchsvoll genug, um ein tiefes Verständnis abzubilden.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage erfordert ein Verständnis der Begrifflichkeiten und ihre Definitionen. Die Antwortmöglichkeiten sind klar und einfach ausgedrückt, aber es wäre hilfreich, wenn die Frage sich auf ein bestimmtes Beispiel oder Szenario beziehen würde, um das Wissen des Schülers zu überprüfen.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Bewertung der Frage als Stufe 1 (Wissen/Reproduktion) basiert auf der Tatsache, dass die Frage ein Verständnis von Begriffen erfordert und keine Analyse oder Synthese darstellt. Die Antwortmöglichkeiten sind einfach und direkt ausgedrückt.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage erreicht eine mittlere Komplexität hinsichtlich Mathematik. Sie erfordert ein Verständnis von wirtschaftlichen Konzepten und der Beziehung zwischen Bedarf und Bedürfnis, was in der Mathematik im Rahmen von Mikroökonomie diskutiert wird.",
+            "suggestions": [
+              "Um die Komplexität zu erhöhen, könnten weitere Fragen zur Wirtschaftsmathematik hinzugefügt werden, wie z.B. Fragen zu Kosten-Nutzen-Analysen oder optimaler Ressourcenzuweisung."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der mittleren Komplexität der Frage und dem Faktor, dass sie ein Verständnis wirtschaftlicher Konzepte erfordert. Die richtige Antwort ist jedoch leicht erkennbar, was die Schwierigkeit verringert.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Das Hauptproblem ist die Komplexität des Textes. Die verwendeten komplexen Nominalphrasen machen es schwierig, die Bedeutung der Aussagen zu verstehen. Zudem verwenden einige Items ein Passivkonstrukt, was das Verständnis erschwert.",
+            "suggestions": [
+              "- Vereinfachen des Textes und Vermeiden von komplexen Nominalphrasen.",
+              "- Verwenden von aktivem Konstrukt anstatt Passivum.",
+              "- Reduktion der Anzahl der verwendeten Fachbegriffe."
+            ],
+            "reasoning": "Die Bewertung basiert auf dem Grad der Komplexität und des Schwierigkeitsgrades, den die Frage darstellt. Die Bewertung von 4 spiegelt das Ausmaß der sprachlichen Hindernisse wider.",
+            "target_value": "Grundtext: Negation; Item 1: Passiv; Item 1: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Komplexe NP; Item 4: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Negation; Item 5: Komplexe NP; Item 7: Passiv; Item 8: Negation",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist klar und leicht zu verstehen. Der Unterschied zwischen Bedarf und Bedürfnis wird genau beschrieben.",
+            "suggestions": [
+              "Keine Verbesserungen erforderlich."
+            ],
+            "reasoning": "Der Grund für die Bewertung als 4 (aus 5) ist, dass der Begriff \"Bedarf\" im wirtschaftlichen Kontext oft mit \"Bedürfnis\" gleichgesetzt wird. Die explizite Erklärung des Unterschieds zwischen beiden Begriffen macht die Anweisungsklarheit hoch.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 4,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.8 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Ist es wahr oder falsch, dass der Bedarf in der Wirtschaft etwas anderes als das Bedürfnis ist? <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      }
+    ],
+    "question_types_generated": [
+      "true-false",
+      "true-false",
+      "true-false"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

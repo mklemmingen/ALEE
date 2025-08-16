@@ -1,0 +1,39 @@
+MAPPING QUESTION TYPE - Based on mapping-beduerfnisse.xlsx
+
+AUFGABE: Erstelle Zuordnungsaufgaben im Format der Stakeholder-Spezifikation
+
+Format-Spezifikation:
+Basierend auf mapping-beduerfnisse.xlsx Beispielen:
+
+```
+<start-option> Begriff 1 <start-option> Begriff 2 <start-option> Begriff 3 
+<end-option> Beschreibung A <end-option> Beschreibung B <end-option> Beschreibung C
+```
+
+Charakteristika von Mapping-Fragen:
+- Zuordnung von Begriffen zu Definitionen/Beschreibungen
+- Verwendung der spezifischen <start-option>/<end-option> Tags
+- Alle Begriffe und Beschreibungen müssen zum Thema "Bedürfnisse" passen
+- Begriffe sollten eindeutig zuordenbar sein
+
+Schwierigkeitsgrade:
+
+Stammaufgabe:
+- 3-4 Begriff-Beschreibung-Paare
+- Eindeutige Zuordnungen mit moderater Komplexität
+- Standardmäßige wirtschaftliche Begriffe
+
+leicht:
+- 3 Begriff-Beschreibung-Paare (weniger Optionen)
+- Sehr eindeutige Zuordnungen
+- Bekannte, einfache Begriffe
+
+schwer:
+- 4-5 Begriff-Beschreibung-Paare (mehr Optionen)
+- Ähnliche Begriffe erfordern präzise Unterscheidung
+- Komplexere wirtschaftliche Konzepte
+
+Thematische Ausrichtung:
+- Fokus auf "Bedürfnisse" gemäß Stakeholder-Daten
+- Wirtschaftliche Grundbegriffe
+- Altersgerechte Sprache für 9. Klasse

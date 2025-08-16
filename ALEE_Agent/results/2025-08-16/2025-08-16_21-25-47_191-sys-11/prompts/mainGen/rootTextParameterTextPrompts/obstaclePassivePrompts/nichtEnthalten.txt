@@ -1,0 +1,28 @@
+ROOT TEXT PARAMETER: Obstacle Passive - NICHT ENTHALTEN
+
+Der Referenztext soll Aktivkonstruktionen verwenden und Passivformulierungen vermeiden.
+
+ZWECK:
+Aktivformulierungen schaffen Klarheit über Handlungsträger und erleichtern das Textverständnis durch direkte, natürliche Sprachstrukturen.
+
+IMPLEMENTATION:
+- Verwendung von Aktivformen statt Passivkonstruktionen
+- Klare Benennung der handelnden Akteure
+- Direkte, einfache Satzstrukturen
+- Natürliche Sprachverwendung ohne zusätzliche Komplexität
+
+STAKEHOLDER-BEISPIELE MIT AKTIV:
+"Menschen haben Bedürfnisse als Wünsche. Diese entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. Die Wirtschaft bezeichnet solche Wünsche allgemein als Bedürfnisse. Wenn es kalt ist, entwickelt man das Bedürfnis sich zu wärmen. Wenn du dich einsam fühlst, entwickelst du möglicherweise ein Bedürfnis nach Zuneigung oder Freundschaft."
+
+AKTIVKONSTRUKTIONEN:
+- "Menschen haben Bedürfnisse"
+- "Diese entstehen"
+- "Die Wirtschaft bezeichnet"
+- "man entwickelt das Bedürfnis"
+- "du entwickelst"
+
+QUALITÄTSKRITERIEN:
+- Klare Subjekt-Prädikat-Objekt-Strukturen
+- Direkte Handlungszuschreibungen
+- Natürliche, flüssige Sprachverwendung
+- Reduktion kognitiver Belastung durch Sprachkomplexität

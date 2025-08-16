@@ -14,6 +14,8 @@ Usage:
 import csv
 import json
 import shutil
+import fcntl
+import threading
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Union, Optional
@@ -29,6 +31,7 @@ class ResultManager:
             self.base_results_dir = Path(base_results_dir)
         self.base_results_dir.mkdir(exist_ok=True)
         self.current_session_dir = None  # Track current active session
+        self._csv_lock = threading.Lock()  # Thread safety for CSV operations
         
     def save_results(self, 
                     csv_data: Union[List[Dict[str, Any]], str, Path], 
@@ -288,6 +291,12 @@ class ResultManager:
             self._save_metadata(self.current_session_dir, final_metadata)
             print(f"Successfully updated session metadata with final_results_saved=True")
             
+            # Append to master and daily CSV files
+            if csv_data:
+                master_success = self._append_to_master_csv(csv_data)
+                daily_success = self._append_to_daily_csv(csv_data)
+                print(f"CSV append results - Master: {'✅' if master_success else '⚠️'}, Daily: {'✅' if daily_success else '⚠️'}")
+            
             return True
             
         except Exception as e:
@@ -441,6 +450,82 @@ class ResultManager:
             return sorted([d.name for d in self.base_results_dir.iterdir() if d.is_dir()], reverse=True)
         except Exception:
             return []
+    
+    def _append_to_master_csv(self, csv_data: Dict[str, Any]) -> bool:
+        """Append CSV data to master results file for cumulative analysis"""
+        master_csv_path = self.base_results_dir / "master_results.csv"
+        return self._safe_append_csv_row(master_csv_path, csv_data)
+    
+    def _append_to_daily_csv(self, csv_data: Dict[str, Any]) -> bool:
+        """Append CSV data to daily results file for date-based analysis"""
+        today = datetime.now().strftime("%Y-%m-%d")
+        daily_csv_path = self.base_results_dir / f"daily_{today}_results.csv"
+        return self._safe_append_csv_row(daily_csv_path, csv_data)
+    
+    def _ensure_csv_headers(self, csv_path: Path, fieldnames: List[str]) -> bool:
+        """Ensure CSV file exists with proper headers"""
+        try:
+            if not csv_path.exists():
+                # Create new file with headers
+                with open(csv_path, 'w', newline='', encoding='utf-8') as csvfile:
+                    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                    writer.writeheader()
+                print(f"Created new CSV file with headers: {csv_path}")
+                return True
+            else:
+                # Validate existing headers
+                with open(csv_path, 'r', encoding='utf-8') as csvfile:
+                    reader = csv.DictReader(csvfile)
+                    existing_fieldnames = reader.fieldnames or []
+                    
+                    # Check if we have new fields to add
+                    missing_fields = set(fieldnames) - set(existing_fieldnames)
+                    if missing_fields:
+                        print(f"Warning: CSV file {csv_path} missing fields: {missing_fields}")
+                        # Could implement field addition logic here if needed
+                    
+                return True
+                
+        except Exception as e:
+            print(f"Warning: Failed to ensure CSV headers for {csv_path}: {e}")
+            return False
+    
+    def _safe_append_csv_row(self, csv_path: Path, csv_data: Dict[str, Any]) -> bool:
+        """Safely append a row to CSV file with thread safety and error handling"""
+        try:
+            with self._csv_lock:
+                fieldnames = list(csv_data.keys())
+                
+                # Ensure file exists with proper headers
+                if not self._ensure_csv_headers(csv_path, fieldnames):
+                    return False
+                
+                # Append the row with file locking
+                with open(csv_path, 'a', newline='', encoding='utf-8') as csvfile:
+                    # Apply file lock for atomic operation
+                    fcntl.flock(csvfile.fileno(), fcntl.LOCK_EX)
+                    
+                    try:
+                        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+                        
+                        # Handle missing fields gracefully by providing empty values
+                        safe_row = {field: csv_data.get(field, '') for field in fieldnames}
+                        writer.writerow(safe_row)
+                        
+                        csvfile.flush()  # Ensure data is written
+                        
+                    finally:
+                        # Always release the lock
+                        fcntl.flock(csvfile.fileno(), fcntl.LOCK_UN)
+                
+                return True
+                
+        except Exception as e:
+            print(f"Warning: Failed to append row to {csv_path}: {e}")
+            # Log the error but don't break the main flow
+            import traceback
+            print(f"CSV append error details: {traceback.format_exc()}")
+            return False
 
 
 # Convenience function for simple usage

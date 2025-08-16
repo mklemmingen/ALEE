@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 0.10560274124145508,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was ist der Hauptvorteil eines Marktes bei Knappe G\u00fctern?\nA) Alle k\u00f6nnen die G\u00fcter kaufen\nB) Nur diejenigen, die bereit sind zu bezahlen, bekommen die G\u00fcter\nC) Der Preis wird von den Verk\u00e4ufern festgelegt\nD) Die G\u00fcter werden kostenlos verteilt <option>A) Nur diejenigen<option>die bereit sind zu bezahlen<option>bekommen die G\u00fcter<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Wie funktioniert der Marktmechanismus bei Konzertkarten? <option>Nur die schnellsten Kunden bekommen die Karten<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Was ist der Hauptunterschied zwischen einem Markt und anderen Verteilungsmechanismen?\nA) Der Preis wird vom Verkaufsf\u00fchrer festgelegt\nB) Der Tausch als Grundprinzip des Marktes\nC) Alle k\u00f6nnen die G\u00fcter kostenlos kaufen\nD) Die G\u00fcter werden nach dem Zufallsprinzip verteilt <option>B) Der Tausch als Grundprinzip des Marktes<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T21:21:14.075331",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

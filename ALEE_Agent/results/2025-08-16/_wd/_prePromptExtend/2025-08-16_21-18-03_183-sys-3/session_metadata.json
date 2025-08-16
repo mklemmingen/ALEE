@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 0.12015199661254883,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was bezeichnet man in der Wirtschaft als konkrete Bereitschaft, seine Mittel f\u00fcr bestimmte Dinge oder Leistungen zur Befriedigung von Bed\u00fcrfnissen zu verwenden?\n\nA) Bed\u00fcrfnis\nB) Bedarf <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "Aus dem Bed\u00fcrfnis, etwas zu essen, erw\u00e4chst der konkrete Bedarf nach einem Apfel. Was bedeutet dies?\n\nA) Man muss einen Apfel kaufen.\nB) Man kann einen Apfel essen. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "Wenn man ungl\u00fccklich mit seinem Haarschnitt ist, geht man zum Friseur. Aus dem Bed\u00fcrfnis, sein Aussehen zu verbessern, erw\u00e4chst der konkrete Bedarf nach einem neuen Haarschnitt vom Friseur. Was bedeutet dies?\n\nA) Man muss einen neuen Haarschnitt bekommen.\nB) Man kann seine Haare selbst schneiden. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T21:18:03.852262",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

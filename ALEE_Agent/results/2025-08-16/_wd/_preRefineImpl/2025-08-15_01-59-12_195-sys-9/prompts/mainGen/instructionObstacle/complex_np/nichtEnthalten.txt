@@ -1,0 +1,6 @@
+### p.instruction_obstacle_complex_np (Komplexe Nominalphrasen in der Aufgabenstellung):
+**NICHT ENTHALTEN**:
+- Einfache Nominalphrasen: "die Inflation", "der Zinssatz"
+- Maximal ein Attribut: "steigende Preise"
+
+Erstelle Aufgabenanweisungen mit einfachen Nominalphrasen ohne komplexe Verschachtelungen oder multiple Attribute.

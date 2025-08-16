@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 69.6728789806366,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was ist ein Bed\u00fcrfnis? <option>Ein Wunsch, den man nicht erf\u00fcllen kann<option>Ein Wunsch, den man erf\u00fcllen muss<option>Ein Wunsch, der unbegrenzt ist<option>Ein Gef\u00fchl, dass einem etwas fehlt<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Warum entstehen Bed\u00fcrfnisse? <option>Weil man das Gef\u00fchl hat, dass einem etwas zu viel gibt<option>Weil man das Gef\u00fchl hat, dass einem etwas fehlt<option>Weil man sich selbst \u00fcbersch\u00e4tzt<option>Weil man andere \u00fcbersch\u00e4tzt<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Wie verhalten sich Menschen, wenn ihre Bed\u00fcrfnisse erf\u00fcllt sind? <option>Sie widmen sich sofort einem anderen Bed\u00fcrfnis<option>Sie widmen sich immer wieder dem gleichen Bed\u00fcrfnis<option>Sie geben auf alle ihre Bed\u00fcrfnisse<option>Sie haben keine Bed\u00fcrfnisse mehr<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T22:35:27.922710",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

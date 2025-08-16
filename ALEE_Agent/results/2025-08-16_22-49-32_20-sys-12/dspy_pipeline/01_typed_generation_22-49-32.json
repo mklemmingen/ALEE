@@ -1,0 +1,294 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:49:32.802788",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Wie kann man Modelle verstehen, die die Wirklichkeit abbilden? <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "question_type": "mapping",
+        "answers": [
+          "Bedürfnisse",
+          "Nachfrage",
+          "Angebot",
+          "Markt",
+          "Wünsche von Menschen",
+          "Was Kunden kaufen wollen",
+          "Was Unternehmen anbieten",
+          "Ort des Tauschens"
+        ],
+        "correct_answer": {
+          "Bedürfnisse": "Wünsche von Menschen",
+          "Nachfrage": "Was Kunden kaufen wollen",
+          "Angebot": "Was Unternehmen anbieten",
+          "Markt": "Ort des Tauschens"
+        },
+        "explanation": "Die Fragen sollen das Konzept der Modelle und ihre Beziehung zur Wirklichkeit verdeutlichen. Die Antworten sollen zeigen, wie Modelle die Komplexität der Realität vereinfachen, um sie besser zu verstehen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert, aber die Antwortmöglichkeiten könnten noch spezifischer sein, da einige Optionen sich auf denselben Begriff beziehen (z.B. \"Nachfrage\" und \"Wünsche von Menschen\"). Einige der Optionen sind auch nicht direkt mit dem Abbild der Wirklichkeit verbunden.",
+            "suggestions": [
+              "- Die Antwortmöglichkeiten könnten noch spezifischer formuliert werden, um die Übereinstimmung zu erhöhen.",
+              "- Es könnte ein Beispiel für eine Wirtschaftsmodellierung und deren Anwendung in der Realität hilfreich sein."
+            ],
+            "reasoning": "Die Frage und Antwortmöglichkeiten sind weit gefasst. Die richtigen Antworten liegen eher auf dem Gebiet der Wirtschaftswissenschaften, speziell im Bereich des Modellierens von Marktprozessen. Einige Optionen beziehen sich direkt auf das Konzept der Nachfrage und des Angebots. Um eine bessere Übereinstimmung zu erreichen, sollten die Antwortmöglichkeiten noch spezifischer formuliert werden.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert und deckt die erforderliche Stufe 2 (Anwendung/Transfer) ab. Es gibt jedoch einige ungenaue oder allgemeine Optionen, die nicht direkt mit der Taxonomiestufe korrelieren.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich"
+            ],
+            "reasoning": "Die Frage erfordert die Fähigkeit, Konzepte zur Marktforschung und -analyse anzuwenden. Die richtigen Optionen beziehen sich alle auf Aspekte des Marktes und der Kundenbedürfnisse.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage zeigt ein gutes Verständnis der Grundlagen der Ökonomie. Die richtigen Antworten sind jedoch nicht immer klar voneinander unterschieden. Es wäre hilfreich, wenn die Fragen besser differenziert wären.",
+            "suggestions": [
+              "- Die Fragen sollten besser differenziert sein, um ein differenzierteres Verständnis der Komplexität zu ermöglichen.",
+              "- Die Antworten sollten klarer voneinander unterschieden werden."
+            ],
+            "reasoning": "Die Mathematikbewertung wurde auf 3 gesetzt, da die Frage ein gutes Verständnis der Grundlagen der Ökonomie zeigt. Allerdings sind die Fragen nicht immer gut differenziert und die Antworten sind manchmal nicht klar voneinander unterschieden.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Hindernisse in der Frage sind eher aufgrund der sprachlichen Komplexität als aus der tatsächlichen Schwierigkeit des Themas selbst. Der Hauptfokus sollte auf die Analyse der Bedeutung und Beziehung zwischen den verschiedenen Konzepten liegen.",
+            "suggestions": [
+              "- Eine umfassendere Erklärung der Begriffe \"Bedürfnisse\", \"Nachfrage\" und \"Angebot\" könnte nützlich sein, um die Komplexität zu reduzieren.",
+              "- Die Verwendung von Aktiv statt Passiv in einigen Sätzen kann dazu beitragen, die Frage leichter verständlich zu machen."
+            ],
+            "reasoning": "Die Bewertung wurde aufgrund der sprachlichen Hindernisse wie komplexe Nomen und passives Konjunktiv vorgenommen. Der Fokus sollte jedoch auf die Analyse des Themas selbst liegen, anstatt sich mit den komplexen Spracheinheiten zu beschäftigen.",
+            "target_value": "Grundtext: Passiv; Grundtext: Negation; Item 1: Komplexe NP; Item 2: Passiv; Item 2: Komplexe NP; Item 3: Negation; Item 3: Komplexe NP; Item 4: Passiv; Item 4: Negation; Item 4: Komplexe NP; Item 6: Passiv; Item 7: Negation; Item 8: Passiv; Item 8: Negation; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist mangelhaft, da die Frage nicht eindeutig formuliert ist und die Antwortoptionen mehrere Konzepte abdecken. Eine Klarer Formulierung der Frage könnte sein: \"Wie können Modelle der Mikroökonomie verstanden werden?\" oder ähnlich.",
+            "suggestions": [
+              "- Die Frage sollte präziser formuliert werden, um eindeutig zu sein.",
+              "- Die Antwortoptionen sollten auf das spezifische Thema der Frage bezogen werden."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 3, da die Anweisungsklarheit mangelhaft ist und die Frage nicht präzise formuliert ist. Die Begründung für die Bewertung ist, dass die Antwortoptionen mehrere Konzepte abdecken und die Frage nicht eindeutig ist.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 4,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.6 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wie kann man Modelle verstehen, die die Wirklichkeit abbilden? <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens"
+      },
+      {
+        "question_text": "Was ist ein Beispiel für eine Straßenkarte als Modell der Wirklichkeit? <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "question_type": "mapping",
+        "answers": [
+          "Bedürfnisse",
+          "Nachfrage",
+          "Angebot",
+          "Markt",
+          "Wünsche von Menschen",
+          "Was Kunden kaufen wollen",
+          "Was Unternehmen anbieten",
+          "Ort des Tauschens"
+        ],
+        "correct_answer": {
+          "Bedürfnisse": "Wünsche von Menschen",
+          "Nachfrage": "Was Kunden kaufen wollen",
+          "Angebot": "Was Unternehmen anbieten",
+          "Markt": "Ort des Tauschens"
+        },
+        "explanation": "Die Fragen sollen das Konzept der Modelle und ihre Beziehung zur Wirklichkeit verdeutlichen. Die Antworten sollen zeigen, wie Modelle die Komplexität der Realität vereinfachen, um sie besser zu verstehen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und entspricht dem Ziel der Schwierigkeit \"leicht\". Sie erfordert ein Verständnis des Marktes und seiner Komponenten, aber es gibt keine komplexen Begriffe oder Konzepte.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage gut formuliert ist und dem Ziel entspricht."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Formulierung der Frage, die klare und präzise ist. Die Antwortmöglichkeiten sind alle plausible Bezeichnungen für den Markt und seine Komponenten. Es gibt keine Fehler oder Ungenauigkeiten in der Frage.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert und deckt den Stufenstand der Anwendung/Transfer (Stufe 2) ab. Die Antwortmöglichkeiten sind plausibel und passen zum Themenbereich. Das Thema \"Modell\" wird angemessen vorgestellt, aber es wäre hilfreich, wenn die Fragen noch mehr auf die spezifische Anwendung des Modells (hier: Straßenkarte) eingehen würde.",
+            "suggestions": [
+              "Zur Verdeutlichung der Beziehung zwischen dem Modell und seiner Anwendung könnte eine zusätzliche Frage formuliert werden, in der das Studenten aufgefordert wird, ein Beispiel für die Verwendung einer Straßenkarte als Entscheidungshilfe zu beschreiben. Beispielsweise: \"Wie könnte man mit Hilfe einer Straßenkarte eine Entscheidung über den kürzesten Weg zwischen zwei Orten treffen?\""
+            ],
+            "reasoning": "Die Frage erfordert vom Schüler, ein Beispiel für die Anwendung eines Modells in einem spezifischen Kontext zu identifizieren. Die richtige Antwort zeigt an, dass der Schüler die Fähigkeit besitzt, zwischen verschiedenen Konzepten wie Bedürfnissen, Nachfrage und Angebot zu unterscheiden. Dies ist eine Schlüsselkompetenz für das Verständnis wirtschaftlicher Prozesse.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität der Frage liegt in ihrer Verbindung von wirtschaftlichen und sozialen Aspekten, was eine genaue Identifizierung des richtigen Konzepts erfordert. Die Antwortmöglichkeiten sollten daher auf ein tieferes Verständnis dieser Zusammenhänge abzielen.",
+            "suggestions": [
+              "Um die Komplexität der Frage zu erhöhen, könnten weitere Optionen wie \"Konsum\", \"Produktion\" oder \"Wirtschaftssystem\" hinzugefügt werden, um ein breiteres Spektrum an wirtschaftlichen Konzepten abzudecken."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Komplexität des Themas und dem Bedarf an tieferem Verständnis. Die richtige Antwort \"Markt\" ist zwar nicht schwierig zu finden, die Frage als Ganzes erfordert jedoch ein gewisses Maß an Kenntnissen über wirtschaftliche Konzepte.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die sprachlichen Hindernisse in dieser Frage sind eher komplex und erfordern von den Schülern ein hohes Maß an Sprachverständnis und Analysefähigkeit. Die Passivkonstruktionen und Negationen machen die Frage schwierig zu verstehen, aber die komplexe Struktur der Nomen unterstützt das Verständnis des Themas.",
+            "suggestions": [
+              "- Die Frage sollte in einer aktiven Form formuliert werden, um die Komplexität zu reduzieren.",
+              "- Die Negationen sollten entfernt oder durch positive Aussagen ersetzt werden, um die Lesbarkeit zu verbessern.",
+              "- Die komplexe Struktur der Nomen sollte durch einfachere Beispiele ergänzt werden, um das Verständnis zu erleichtern."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 4 ist wie folgt: Die Frage enthält mehrere sprachliche Hindernisse, darunter Passivkonstruktionen und Negationen. Diese machen die Frage schwierig zu verstehen und erfordern ein hohes Maß an Sprachverständnis und Analysefähigkeit. Die komplexe Struktur der Nomen unterstützt das Verständnis des Themas, aber sie ist auch eine Herausforderung für die Schüler.",
+            "target_value": "Grundtext: Passiv; Grundtext: Negation; Item 1: Komplexe NP; Item 2: Passiv; Item 2: Komplexe NP; Item 3: Negation; Item 3: Komplexe NP; Item 4: Passiv; Item 4: Negation; Item 4: Komplexe NP; Item 6: Passiv; Item 7: Negation; Item 8: Passiv; Item 8: Negation; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist insgesamt gut, da sie eine klare Frage stellt und genau definierte Antwortmöglichkeiten bietet. Die Implizitheit des Ziels ist einigermaßen klar, aber könnte noch besser formuliert werden.",
+            "suggestions": [
+              "- Eine bessere Formulierung des Zieles, beispielsweise \"Beschreiben Sie die implizite Beziehung zwischen Bedürfnissen und Angeboten auf einer Straßenkarte.\"",
+              "- Einige der Antwortmöglichkeiten sind sehr ähnlich formuliert. Es wäre hilfreich, sie noch mehr zu differenzieren."
+            ],
+            "reasoning": "Die Frage wird bewertet als \"gut\", da sie eine klare und präzise Anweisung gibt. Die implizite Explizitheit des Ziels ist einigermaßen klar, aber könnte noch besser formuliert werden.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 4,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist ein Beispiel für eine Straßenkarte als Modell der Wirklichkeit? <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens"
+      },
+      {
+        "question_text": "Was muss man wissen, um Modelle zu verstehen? <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "question_type": "mapping",
+        "answers": [
+          "Bedürfnisse",
+          "Nachfrage",
+          "Angebot",
+          "Markt",
+          "Wünsche von Menschen",
+          "Was Kunden kaufen wollen",
+          "Was Unternehmen anbieten",
+          "Ort des Tauschens"
+        ],
+        "correct_answer": {
+          "Bedürfnisse": "Wünsche von Menschen",
+          "Nachfrage": "Was Kunden kaufen wollen",
+          "Angebot": "Was Unternehmen anbieten",
+          "Markt": "Ort des Tauschens"
+        },
+        "explanation": "Die Fragen sollen das Konzept der Modelle und ihre Beziehung zur Wirklichkeit verdeutlichen. Die Antworten sollen zeigen, wie Modelle die Komplexität der Realität vereinfachen, um sie besser zu verstehen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Gut, dass Sie verschiedene Aspekte des Marktes berücksichtigt haben. Die Frage ist jedoch leicht formuliert, sodass ein perfekter Übereinstimmung (5) leider nicht erreicht wurde.",
+            "suggestions": [
+              "Können Sie Ihre Frage noch etwas spezifischer für das Thema \"Modelle verstehen\" formulieren? Vielleicht können Sie Beispiele von verschiedenen Modellen hinzufügen, die in den Bereichen Bedürfnisse, Nachfrage, Angebot und Markt relevant sind."
+            ],
+            "reasoning": "Die Frage zielt zwar auf ein grundlegendes Verständnis von Modellen ab, ist aber in ihrer Formulierung etwas allgemein. Einige der Optionen wie \"Wünsche von Menschen\", \"Was Kunden kaufen wollen\" oder \"Ort des Tauschens\" sind zwar mit dem Markt und den Aspekten von Bedürfnissen und Nachfrage verwandt, aber es fehlt an Spezifität in Bezug auf das Thema \"Modelle\". Die richtigen Antworten decken jedoch die meisten der relevanten Aspekte ab.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist gut für die Anwendung/Transfer-Taxonomiestufe geeignet. Sie erfordert, dass der Testkandidat seine Kenntnisse auf ein bestimmtes Szenario anwendet, was typisch für diese Taxonomiestufe ist.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung, da die Frage bereits gut geeignet ist."
+            ],
+            "reasoning": "Die Frage erfordert die Anwendung von Konzepten auf ein bestimmtes Szenario, was an die Stufe 2 der Bloom'schen Taxonomie entspricht. Die Optionen beziehen sich auf verschiedene Aspekte des Marktes und des Handelns, was darauf hindeutet, dass das Verständnis von Modellen in diesem Kontext ein Transfer von Konzepten auf ein bestimmtes Szenario beinhaltet.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage hat eine moderate Komplexität und erfordert ein grundlegendes Verständnis der mikroökonomischen Grundlagen. Die richtigen Antworten zeigen ein gutes Verständnis des Themas, aber es fehlen einige Details und Beispiele.",
+            "suggestions": [
+              "Es könnten mehr Beispiele oder Szenarien verwendet werden, um die mikroökonomischen Konzepte besser zu illustrieren. Zudem könnte das Thema der Marktdynamik vertieft werden, um ein besseres Verständnis der Wechselwirkungen zwischen Angebot und Nachfrage zu ermöglichen."
+            ],
+            "reasoning": "Die richtigen Antworten zeigen ein gutes Verständnis der mikroökonomischen Grundlagen. Die Frage erfordert ein grundlegendes Verständnis der Begriffe Bedürfnisse, Nachfrage, Angebot, Markt, Wünsche von Menschen, was Kunden kaufen wollen und was Unternehmen anbieten. Die richtigen Antworten zeigen ein gutes Verständnis des Themas.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die sprachlichen Hindernisse in dieser Frage machen es für Leseinteressierte schwierig, das Thema und die Optionen zu verstehen. Die Verwendung von Passivkonstruktionen und Negationen kann für Nicht-Muttersprachler unklar sein. Darüber hinaus sind einige der Optionen sehr breit gefasst (z.B. \"Markt\") oder enthalten keine klare Bezugnahme auf das Thema.",
+            "suggestions": [
+              "- Die Frage könnte klarer und prägnanter formuliert werden, um die sprachlichen Hindernisse zu reduzieren.",
+              "- Einige Optionen könnten nochmals überarbeitet werden, um sie besser an das Thema anzupassen (z.B. \"Was Unternehmen anbieten\" könnte in \"Was Unternehmen anbieten und Kunden kaufen wollen\" geändert werden).",
+              "- Die Frage könnte zusätzliche Informationen oder Kontext liefern, um den Lesern zu helfen, die Optionen besser zu verstehen."
+            ],
+            "reasoning": "Die Bewertung von 4 basiert auf der Schwierigkeit, die sprachlichen Hindernisse in dieser Frage zu überwinden. Die Verwendung von Passivkonstruktionen und Negationen sowie komplexe NP-Konstruktionen machen es für Nicht-Muttersprachler schwierig, das Thema und die Optionen zu verstehen.",
+            "target_value": "Grundtext: Passiv; Grundtext: Negation; Item 1: Komplexe NP; Item 2: Passiv; Item 2: Komplexe NP; Item 3: Negation; Item 3: Komplexe NP; Item 4: Passiv; Item 4: Negation; Item 4: Komplexe NP; Item 6: Passiv; Item 7: Negation; Item 8: Passiv; Item 8: Negation; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifischere Beispiele oder Erklärungen für jedes Modell gegeben würden. Es fehlt eindeutig an Klarheit über das Ziel der Frage.",
+            "suggestions": [
+              "1. Fügen Sie spezifische Beispiele für jedes Modell hinzu, wie z.B. \"Ein Kundenbeziehungsmodell\" oder \"Ein Produktionsmodell\".",
+              "2. Erklären Sie, warum die richtige Antwort eine Kombination der Begriffe ist und was das Ziel der Frage ist."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Schwierigkeit, die Anweisung zu verstehen, da sie sehr allgemein formuliert ist. Die explizite Erwähnung der richtigen Antwort im Antwortbereich deutet darauf hin, dass die richtige Antwort leicht erreichbar ist, was dazu führt, dass sich die Bewertung um 1 erhöht.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was muss man wissen, um Modelle zu verstehen? <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens"
+      }
+    ],
+    "question_types_generated": [
+      "mapping",
+      "mapping",
+      "mapping"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

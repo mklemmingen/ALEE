@@ -1,0 +1,290 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:29:35.299510",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Ordne die Begriffe den richtigen Erklärungen zu. <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "question_type": "mapping",
+        "answers": [
+          "Bedürfnisse",
+          "Nachfrage",
+          "Angebot",
+          "Markt",
+          "Wünsche von Menschen",
+          "Was Kunden kaufen wollen",
+          "Was Unternehmen anbieten",
+          "Ort des Tauschens"
+        ],
+        "correct_answer": {
+          "Bedürfnisse": "Wünsche von Menschen",
+          "Nachfrage": "Was Kunden kaufen wollen",
+          "Angebot": "Was Unternehmen anbieten",
+          "Markt": "Ort des Tauschens"
+        },
+        "explanation": "Die Fragen wurden auf der Grundlage des bereitgestellten Textes generiert. Bei Frage 1 wird die Übereinstimmung zwischen den im Text genannten Begriffen überprüft. In Frage 2 soll die Überschrift des Textes identifiziert werden. Bei Frage 3 wird das Unternehmen als Verkäufer ermittelt.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist zwar komplex, aber die Begriffe und Erklärungen entsprechen weitgehend dem erwarteten Schwierigkeitsgrad. Es gibt jedoch keine direkten Beziehungen zwischen den Begriffen und ihren Erklärungen, was zu einer geringeren Bewertung führt.",
+            "suggestions": [
+              "- Die Frage könnte durch die Hinzufügung von direkten Beziehungen zwischen den Begriffen und ihren Erklärungen verbessert werden.",
+              "- Es wäre hilfreich, wenn die Frage mehr Kontext über die Wirtschaft oder Marktdynamik lieferte."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus folgenden Gründen:\n- Die Begriffe sind korrekt aufgeführt und entsprechen den erwarteten Erklärungen.\n- Es fehlt jedoch an direkten Beziehungen zwischen den Begriffen und ihren Erklärungen, was zu einer geringeren Bewertung führt.\n- Die Frage könnte durch mehr Kontext oder direkte Beziehungen zwischen den Begriffen und ihren Erklärungen verbessert werden.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert vom Schüler, den Begriff mit dem korrekten Wort zu verbinden. Das richtige Arrangement der Wörter zeigt ein Verständnis der Grundkonzepte des Marktes und wirtschaftlicher Dynamik.",
+            "suggestions": [
+              "Keine spezifischen Vorschläge erforderlich, da die Frage auf einem grundlegenden Verständnisebene bleibt und Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie erreicht."
+            ],
+            "reasoning": "Die Begründung für diese Bewertung basiert darauf, dass die Frage sich auf das Wiederholen und Ordnen von Informationen konzentriert, ohne ein tiefes Verständnis oder Analyse des Themas zu erfordern. Das ist typisch für Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die mathematische Komplexität liegt auf einem niedrigen Niveau, da die Frage sich mit grundlegenden mikroökonomischen Konzepten beschäftigt. Die richtigen Antworten sind für die Zielgruppe von Mathematikstufe 0 geeignet.",
+            "suggestions": [
+              "Die Fragen könnten noch mehr auf die mathematische Komplexität des Begriffs eingehen und es könnte ein Beispiel zur Verdeutlichung der mikroökonomischen Konzepte geben."
+            ],
+            "reasoning": "Die Bewerung von 2 ergibt sich aus der Tatsache, dass die Frage grundlegende mikroökonomische Konzepte beinhaltet. Die richtigen Antworten sind für Mathematikstufe 0 geeignet und es wird nicht viel mathematische Komplexität erfordert.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert und die Antworten sind klar und präzise definiert. Es gibt keine sprachlichen Hindernisse, die eine Bewertung erfordern würden.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung, da es keine Hindernisse gibt."
+            ],
+            "reasoning": "Die Frage ist gut formuliert und die Antworten sind klar und präzise definiert. Es gibt keine sprachlichen Hindernisse, die eine Bewertung erfordern würden. Die richtigen Begriffe können leicht den richtigen Erklärungen zugeordnet werden.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifische Fragen zur Beziehung zwischen den einzelnen Begriffen gestellt werden. Zum Beispiel: \"Wie stehen Bedürfnisse und Nachfrage zueinander?\" oder \"Was ist das Angebot in einer Marktwirtschaft?\"",
+            "suggestions": [
+              "- Die Frage sollte explizit spezifische Beziehungen zwischen den Begriffen beschreiben.",
+              "- Die Antwortmöglichkeiten sollten klar und prägnant sein, um Missverständnisse zu vermeiden."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung von 3 ergibt sich aus der mangelnden Klarheit und Spezifität in der Frage. Die Beantwortung erforderte eine gewisse Interpretation, was nicht erwünscht ist bei einer expliziten Bewertung der Anweisungsklarheit.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Ordne die Begriffe den richtigen Erklärungen zu. <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens"
+      },
+      {
+        "question_text": "Ordne die Begriffe den richtigen Erklärungen zu. <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "question_type": "mapping",
+        "answers": [
+          "Bedürfnisse",
+          "Nachfrage",
+          "Angebot",
+          "Markt",
+          "Wünsche von Menschen",
+          "Was Kunden kaufen wollen",
+          "Was Unternehmen anbieten",
+          "Ort des Tauschens"
+        ],
+        "correct_answer": {
+          "Bedürfnisse": "Wünsche von Menschen",
+          "Nachfrage": "Was Kunden kaufen wollen",
+          "Angebot": "Was Unternehmen anbieten",
+          "Markt": "Ort des Tauschens"
+        },
+        "explanation": "Die Fragen wurden auf der Grundlage des bereitgestellten Textes generiert. Bei Frage 1 wird die Übereinstimmung zwischen den im Text genannten Begriffen überprüft. In Frage 2 soll die Überschrift des Textes identifiziert werden. Bei Frage 3 wird das Unternehmen als Verkäufer ermittelt.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist zwar komplex, aber die Begriffe und Erklärungen entsprechen weitgehend dem erwarteten Schwierigkeitsgrad. Es gibt jedoch keine direkten Beziehungen zwischen den Begriffen und ihren Erklärungen, was zu einer geringeren Bewertung führt.",
+            "suggestions": [
+              "- Die Frage könnte durch die Hinzufügung von direkten Beziehungen zwischen den Begriffen und ihren Erklärungen verbessert werden.",
+              "- Es wäre hilfreich, wenn die Frage mehr Kontext über die Wirtschaft oder Marktdynamik lieferte."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus folgenden Gründen:\n- Die Begriffe sind korrekt aufgeführt und entsprechen den erwarteten Erklärungen.\n- Es fehlt jedoch an direkten Beziehungen zwischen den Begriffen und ihren Erklärungen, was zu einer geringeren Bewertung führt.\n- Die Frage könnte durch mehr Kontext oder direkte Beziehungen zwischen den Begriffen und ihren Erklärungen verbessert werden.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert vom Schüler, den Begriff mit dem korrekten Wort zu verbinden. Das richtige Arrangement der Wörter zeigt ein Verständnis der Grundkonzepte des Marktes und wirtschaftlicher Dynamik.",
+            "suggestions": [
+              "Keine spezifischen Vorschläge erforderlich, da die Frage auf einem grundlegenden Verständnisebene bleibt und Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie erreicht."
+            ],
+            "reasoning": "Die Begründung für diese Bewertung basiert darauf, dass die Frage sich auf das Wiederholen und Ordnen von Informationen konzentriert, ohne ein tiefes Verständnis oder Analyse des Themas zu erfordern. Das ist typisch für Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die mathematische Komplexität liegt auf einem niedrigen Niveau, da die Frage sich mit grundlegenden mikroökonomischen Konzepten beschäftigt. Die richtigen Antworten sind für die Zielgruppe von Mathematikstufe 0 geeignet.",
+            "suggestions": [
+              "Die Fragen könnten noch mehr auf die mathematische Komplexität des Begriffs eingehen und es könnte ein Beispiel zur Verdeutlichung der mikroökonomischen Konzepte geben."
+            ],
+            "reasoning": "Die Bewerung von 2 ergibt sich aus der Tatsache, dass die Frage grundlegende mikroökonomische Konzepte beinhaltet. Die richtigen Antworten sind für Mathematikstufe 0 geeignet und es wird nicht viel mathematische Komplexität erfordert.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert und die Antworten sind klar und präzise definiert. Es gibt keine sprachlichen Hindernisse, die eine Bewertung erfordern würden.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung, da es keine Hindernisse gibt."
+            ],
+            "reasoning": "Die Frage ist gut formuliert und die Antworten sind klar und präzise definiert. Es gibt keine sprachlichen Hindernisse, die eine Bewertung erfordern würden. Die richtigen Begriffe können leicht den richtigen Erklärungen zugeordnet werden.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifische Fragen zur Beziehung zwischen den einzelnen Begriffen gestellt werden. Zum Beispiel: \"Wie stehen Bedürfnisse und Nachfrage zueinander?\" oder \"Was ist das Angebot in einer Marktwirtschaft?\"",
+            "suggestions": [
+              "- Die Frage sollte explizit spezifische Beziehungen zwischen den Begriffen beschreiben.",
+              "- Die Antwortmöglichkeiten sollten klar und prägnant sein, um Missverständnisse zu vermeiden."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung von 3 ergibt sich aus der mangelnden Klarheit und Spezifität in der Frage. Die Beantwortung erforderte eine gewisse Interpretation, was nicht erwünscht ist bei einer expliziten Bewertung der Anweisungsklarheit.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Ordne die Begriffe den richtigen Erklärungen zu. <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens"
+      },
+      {
+        "question_text": "Ordne die Begriffe den richtigen Erklärungen zu. <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "question_type": "mapping",
+        "answers": [
+          "Bedürfnisse",
+          "Nachfrage",
+          "Angebot",
+          "Markt",
+          "Wünsche von Menschen",
+          "Was Kunden kaufen wollen",
+          "Was Unternehmen anbieten",
+          "Ort des Tauschens"
+        ],
+        "correct_answer": {
+          "Bedürfnisse": "Wünsche von Menschen",
+          "Nachfrage": "Was Kunden kaufen wollen",
+          "Angebot": "Was Unternehmen anbieten",
+          "Markt": "Ort des Tauschens"
+        },
+        "explanation": "Die Fragen wurden auf der Grundlage des bereitgestellten Textes generiert. Bei Frage 1 wird die Übereinstimmung zwischen den im Text genannten Begriffen überprüft. In Frage 2 soll die Überschrift des Textes identifiziert werden. Bei Frage 3 wird das Unternehmen als Verkäufer ermittelt.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist zwar komplex, aber die Begriffe und Erklärungen entsprechen weitgehend dem erwarteten Schwierigkeitsgrad. Es gibt jedoch keine direkten Beziehungen zwischen den Begriffen und ihren Erklärungen, was zu einer geringeren Bewertung führt.",
+            "suggestions": [
+              "- Die Frage könnte durch die Hinzufügung von direkten Beziehungen zwischen den Begriffen und ihren Erklärungen verbessert werden.",
+              "- Es wäre hilfreich, wenn die Frage mehr Kontext über die Wirtschaft oder Marktdynamik lieferte."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus folgenden Gründen:\n- Die Begriffe sind korrekt aufgeführt und entsprechen den erwarteten Erklärungen.\n- Es fehlt jedoch an direkten Beziehungen zwischen den Begriffen und ihren Erklärungen, was zu einer geringeren Bewertung führt.\n- Die Frage könnte durch mehr Kontext oder direkte Beziehungen zwischen den Begriffen und ihren Erklärungen verbessert werden.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert vom Schüler, den Begriff mit dem korrekten Wort zu verbinden. Das richtige Arrangement der Wörter zeigt ein Verständnis der Grundkonzepte des Marktes und wirtschaftlicher Dynamik.",
+            "suggestions": [
+              "Keine spezifischen Vorschläge erforderlich, da die Frage auf einem grundlegenden Verständnisebene bleibt und Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie erreicht."
+            ],
+            "reasoning": "Die Begründung für diese Bewertung basiert darauf, dass die Frage sich auf das Wiederholen und Ordnen von Informationen konzentriert, ohne ein tiefes Verständnis oder Analyse des Themas zu erfordern. Das ist typisch für Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die mathematische Komplexität liegt auf einem niedrigen Niveau, da die Frage sich mit grundlegenden mikroökonomischen Konzepten beschäftigt. Die richtigen Antworten sind für die Zielgruppe von Mathematikstufe 0 geeignet.",
+            "suggestions": [
+              "Die Fragen könnten noch mehr auf die mathematische Komplexität des Begriffs eingehen und es könnte ein Beispiel zur Verdeutlichung der mikroökonomischen Konzepte geben."
+            ],
+            "reasoning": "Die Bewerung von 2 ergibt sich aus der Tatsache, dass die Frage grundlegende mikroökonomische Konzepte beinhaltet. Die richtigen Antworten sind für Mathematikstufe 0 geeignet und es wird nicht viel mathematische Komplexität erfordert.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert und die Antworten sind klar und präzise definiert. Es gibt keine sprachlichen Hindernisse, die eine Bewertung erfordern würden.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung, da es keine Hindernisse gibt."
+            ],
+            "reasoning": "Die Frage ist gut formuliert und die Antworten sind klar und präzise definiert. Es gibt keine sprachlichen Hindernisse, die eine Bewertung erfordern würden. Die richtigen Begriffe können leicht den richtigen Erklärungen zugeordnet werden.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifische Fragen zur Beziehung zwischen den einzelnen Begriffen gestellt werden. Zum Beispiel: \"Wie stehen Bedürfnisse und Nachfrage zueinander?\" oder \"Was ist das Angebot in einer Marktwirtschaft?\"",
+            "suggestions": [
+              "- Die Frage sollte explizit spezifische Beziehungen zwischen den Begriffen beschreiben.",
+              "- Die Antwortmöglichkeiten sollten klar und prägnant sein, um Missverständnisse zu vermeiden."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung von 3 ergibt sich aus der mangelnden Klarheit und Spezifität in der Frage. Die Beantwortung erforderte eine gewisse Interpretation, was nicht erwünscht ist bei einer expliziten Bewertung der Anweisungsklarheit.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Ordne die Begriffe den richtigen Erklärungen zu. <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens"
+      }
+    ],
+    "question_types_generated": [
+      "mapping",
+      "mapping",
+      "mapping"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

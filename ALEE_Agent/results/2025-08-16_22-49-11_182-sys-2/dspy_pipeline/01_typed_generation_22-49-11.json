@@ -1,0 +1,265 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:49:11.851858",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was sind die drei Grundbedürfnisse, die man als Erstes befriedigen muss, wenn man auf einer einsamen Insel gestrandet ist? <option>Sicherheitsbedürfnisse<option>Soziale Bedürfnisse<option>Physiologische Grundbedürfnisse<option>Option 4",
+        "question_type": "single-choice",
+        "answers": [
+          "Sicherheitsbedürfnisse",
+          "Soziale Bedürfnisse",
+          "Physiologische Grundbedürfnisse",
+          "Option 4"
+        ],
+        "correct_answer": "Sicherheitsbedürfnisse",
+        "explanation": "Die Fragen sollen das Verständnis des Konzepts der Bedürfnispyramide von Maslow prüfen und die Anwendung auf ein hypothetisches Szenario ermöglichen. Die Antworten sollen auf der Grundlage der Beschreibung in dem Text ermittelt werden.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage entspricht der Ziel-Schwierigkeit \"schwer\" und erfordert tatsächlich ein tiefes Verständnis des Themas. Die richtigen Antworten sind gut formuliert und passen genau zur Frage.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage bereits gut strukturiert ist."
+            ],
+            "reasoning": "Die Frage erfordert ein tiefes Verständnis des Themas \"Grundbedürfnisse\" und die richtigen Antworten sind genau darauf abgestimmt. Die Frage entspricht der Ziel-Schwierigkeit \"schwer\", da sie ein hohes Maß an Wissen und Analysefähigkeiten erfordert.",
+            "target_value": "schwer",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist gut formuliert und erfordert die Anwendung von Wissen über Grundbedürfnisse. Die Antwortmöglichkeiten sind klar und leicht verständlich.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage bereits gut formuliert ist."
+            ],
+            "reasoning": "Die Frage erfordert die Anwendung von Wissen über Grundbedürfnisse und deren Priorisierung in einer bestimmten Situation. Die richtigen Antworten sind Sicherheitsbedürfnisse, Soziale Bedürfnisse und Physiologische Grundbedürfnisse.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert die Anwendung von Kenntnissen über menschliche Grundbedürfnisse in einem Notfall. Die richtigen Antworten zeigen ein Verständnis für die Dringlichkeit der Befriedigung dieser Bedürfnisse.",
+            "suggestions": [
+              "- Es könnte hilfreich sein, den Kontext zu erweitern, um Beispiele für jeden Typ von Grundbedürfnissen zu liefern.",
+              "- Die Frage könnte durch eine Übersicht über die richtigen Antworten aufgeklärt werden, damit das Verständnis der Befriedigung von Notfall-Bedürfnissen erleichtert wird."
+            ],
+            "reasoning": "Die Bewertung berücksichtigte die Fähigkeit, menschliche Grundbedürfnisse in einem Notfall zu priorisieren. Die richtigen Antworten zeigten ein Verständnis der Dringlichkeit, diese Bedürfnisse zu befriedigen. Die Punktzahl von 3 basiert auf dieser Analyse.",
+            "target_value": "1",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Es gibt mehrere sprachliche Hindernisse in dieser Frage. Zunächst ist Option 4 keine gültige Antwortmöglichkeit und könnte zu Missverständnissen führen. Darüber hinaus verwendet die Frage Passiv und Komplexe NP, was für Nicht-Natursprecher schwierig sein kann.",
+            "suggestions": [
+              "- Die Frage sollte mehrere Optionen haben, die eine gültige Antwort darstellen.",
+              "- Die verwendeten sprachlichen Strukturen wie Passiv und Komplexe NP sollten so formuliert werden, dass sie für alle Testteilnehmer verständlich sind."
+            ],
+            "reasoning": "Die Bewertung ist 3, da es in der Frage einige sprachliche Hindernisse gibt, aber die Frage dennoch verständlich ist. Die verwendeten sprachlichen Strukturen sind komplex, aber nicht so, dass sie für alle Testteilnehmer unverständlich wären.",
+            "target_value": "Grundtext: Passiv; Item 1: Negation; Item 2: Passiv; Item 2: Negation; Item 3: Komplexe NP; Item 4: Passiv; Item 4: Komplexe NP; Item 5: Negation; Item 5: Komplexe NP; Item 6: Passiv; Item 6: Negation; Item 6: Komplexe NP; Item 8: Passiv; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifischere Antwortmöglichkeiten formuliert würden. Zum Beispiel: \"Physiologische Grundbedürfnisse wie Hunger und Durst\", \"Sicherheitsbedürfnisse wie Schutz vor der Umwelt\" usw.",
+            "suggestions": [
+              "- Formulieren spezifischere Antwortmöglichkeiten",
+              "- Erklären die Relevanz der verschiedenen Grundbedürfnisse in einem Überlebensszenario"
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 4, da die Frage nicht direkt formuliert ist, aber die Antwortmöglichkeiten sehr allgemein und dennoch für eine implizite Frage akzeptabel sind. Die Vorschläge zur Verbesserung der Anweisungsklarheit sollen helfen, die Relevanz der verschiedenen Grundbedürfnisse zu verdeutlichen.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 2 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was sind die drei Grundbedürfnisse, die man als Erstes befriedigen muss, wenn man auf einer einsamen Insel gestrandet ist? <option>Sicherheitsbedürfnisse<option>Soziale Bedürfnisse<option>Physiologische Grundbedürfnisse<option>Option 4"
+      },
+      {
+        "question_text": "Welche Bedürfnisgruppe steht in der Pyramide von Maslow an zweiter Stelle nach den physiologischen Grundbedürfnissen? <option>Sicherheitsbedürfnisse<option>Soziale Bedürfnisse<option>Selbstverwirklichungsbedürfnisse<option>Option 4",
+        "question_type": "single-choice",
+        "answers": [
+          "Sicherheitsbedürfnisse",
+          "Soziale Bedürfnisse",
+          "Selbstverwirklichungsbedürfnisse",
+          "Option 4"
+        ],
+        "correct_answer": "Sicherheitsbedürfnisse",
+        "explanation": "Die Fragen sollen das Verständnis des Konzepts der Bedürfnispyramide von Maslow prüfen und die Anwendung auf ein hypothetisches Szenario ermöglichen. Die Antworten sollen auf der Grundlage der Beschreibung in dem Text ermittelt werden.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage entspricht dem Schwierigkeitsgrad \"schwer\", da es um ein komplexes Konzept geht und die Antworten nicht direkt aus der Frage ablesbar sind. Die Frage könnte durch eine bessere Erklärung des Konzepts unterstützt werden.",
+            "suggestions": [
+              "- Eine detailliertere Beschreibung des Konzepts der Bedürfnispyramide von Maslow könnte hilfreich sein.",
+              "- Die Optionen könnten besser an das Thema angepasst werden, um die Antwortmöglichkeiten zu reduzieren."
+            ],
+            "reasoning": "Die Bewertung ergibt sich aus der Tatsache, dass die Frage komplex ist und die Antworten nicht direkt ablesbar sind. Es fehlt jedoch eine genauere Erklärung des Konzepts, was es schwierig macht, die richtige Antwort zu finden.",
+            "target_value": "schwer",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert eine Anwendung des Wissens über die Bedürfnispyramide und nicht nur ein Erinnern der Reihenfolge. Die Antwort \"Option 4\" ist falsch, da es keine gültige Option ist.",
+            "suggestions": [
+              "Die Frage sollte klarer formuliert sein, um Missverständnisse zu vermeiden."
+            ],
+            "reasoning": "Die Begründung für die Bewertung liegt in der Anforderung, eine Anwendung des Wissens über die Bedürfnispyramide nach Maslow. Die richtige Antwort zeigt ein Verständnis der Hierarchie von Bedürfnissen.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität dieser Frage liegt in der Fähigkeit, die Pyramide von Maslow zu verstehen und die Reihenfolge der Bedürfnisse nachzuvollziehen. Es ist jedoch keine sehr komplexe mathematische Aufgabe.",
+            "suggestions": [
+              "Es gibt keinen speziellen Vorschlag für Anpassungen, da es sich um eine Frage aus dem Bereich der Psychologie handelt und nicht direkt mit Mathematik zu tun hat."
+            ],
+            "reasoning": "Die Bewertung von 3 berücksichtigt die Fähigkeit zur Analyse psychologischer Theorien und die Verständnis ihrer Struktur, ohne dabei jedoch komplexe mathematische Berechnungen zu beinhalten.",
+            "target_value": "1",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse, wie z.B. die Verwendung von Passivform und Negation in einigen Teilaspekten der Frage. Diese können für Lerner schwierig zu verstehen sein.",
+            "suggestions": [
+              "- Verwenden Sie aktive Form für die meisten Teilaspekte.",
+              "- Vermeiden Sie übermäßige Komplexität im Satzbau.",
+              "- Verdeutlichen Sie wichtige Begriffe und Konzepte."
+            ],
+            "reasoning": "Die Begründung für die Bewertung als 3 (mittel) ist, dass die Frage einige Hindernisse enthält, aber diese nicht so stark sind, dass sie den Lerner vollständig behindern. Die Vorschläge sollen helfen, die Frage angemessen zu präzisieren.",
+            "target_value": "Grundtext: Passiv; Item 1: Negation; Item 2: Passiv; Item 2: Negation; Item 3: Komplexe NP; Item 4: Passiv; Item 4: Komplexe NP; Item 5: Negation; Item 5: Komplexe NP; Item 6: Passiv; Item 6: Negation; Item 6: Komplexe NP; Item 8: Passiv; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist gut. Die Frage bezieht sich auf ein bekanntes Modell und die Antworten sind klar formuliert. Der einzige Kritikpunkt ist, dass es nicht explizit darauf hinweist, dass man die richtige Antwort ermitteln soll.",
+            "suggestions": [
+              "Um die Anweisungsklarheit zu verbessern, könnte man eine zusätzliche Frage hinzufügen, in der es explizit darauf ankommt, dass man die richtige Antwort ermitteln soll. Zum Beispiel: \"Welche Bedürfnisgruppe steht in der Pyramide von Maslow an zweiter Stelle nach den physiologischen Grundbedürfnissen? (A) Sicherheitsbedürfnisse (B) Soziale Bedürfnisse (C) Selbstverwirklichungsbedürfnisse\""
+            ],
+            "reasoning": "Die Bewertung 3 wurde gewählt, da die Anweisungsklarheit gut ist und nur ein kleiner Kritikpunkt hinsichtlich der Explizitheit vorhanden ist. Die richtige Antwort ist klar formuliert und das Modell der Pyramide von Maslow ist bekannt.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Bedürfnisgruppe steht in der Pyramide von Maslow an zweiter Stelle nach den physiologischen Grundbedürfnissen? <option>Sicherheitsbedürfnisse<option>Soziale Bedürfnisse<option>Selbstverwirklichungsbedürfnisse<option>Option 4"
+      },
+      {
+        "question_text": "Welches ist das nächste, was du tun würdest, nachdem alle deine physiologischen Grundbedürfnisse befriedigt sind? <option>Ein wetterfestes Haus bauen<option>Einen Speer anfertigen, um dich vor wilden Tieren zu schützen<option>Kontakt mit Menschen aufnehmen<option>Option 4",
+        "question_type": "single-choice",
+        "answers": [
+          "Ein wetterfestes Haus bauen",
+          "Einen Speer anfertigen, um dich vor wilden Tieren zu schützen",
+          "Kontakt mit Menschen aufnehmen",
+          "Option 4"
+        ],
+        "correct_answer": "Ein wetterfestes Haus bauen",
+        "explanation": "Die Fragen sollen das Verständnis des Konzepts der Bedürfnispyramide von Maslow prüfen und die Anwendung auf ein hypothetisches Szenario ermöglichen. Die Antworten sollen auf der Grundlage der Beschreibung in dem Text ermittelt werden.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist schwierig, da der Befragte seine Prioritäten setzen muss. Einige Antworten mögen für den Befragten plausibel sein, während andere nicht so relevant sind. Der richtige Antwortmöglichkeit ist jedoch schwer zu bestimmen.",
+            "suggestions": [
+              "Die Frage könnte durch eine Erklärung des Kontexts der Situation und die Bedeutung jeder Antwortoption erleichtert werden. Außerdem könnten weitere Fragen verwendet werden, um den Befragten zu bewerten."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf folgendem: Die Frage ist schwierig, da sie das Priorisieren erfordert. Die Antwortmöglichkeiten sind jedoch nicht sehr spezifisch und die richtige Antwort ist schwer zu bestimmen. Es gibt keine offensichtliche Falschantwort.",
+            "target_value": "schwer",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut für die Taxonomiestufe 2 geeignet, da sie ein reales Szenario beschreibt und die Schüler dazu auffordert, ihre Kenntnisse zu übertragen. Jedoch sollte die Frage so gestaltet werden, dass es nicht mehr als eine mögliche Antwort gibt, um sicherzustellen, dass die Schüler ihre Fähigkeit zum Anwenden zeigen können.",
+            "suggestions": [
+              "Die Optionen sollten präziser formuliert werden, um sicherzustellen, dass die Schüler nur eine Antwort auswählen müssen und ihr Wissen eindeutig anwenden. Beispielsweise könnten die Optionen wie folgt gestaltet werden: \"Ein Zelt aufbauen\", \"Einen Schutzschild anfertigen\" oder \"Mit anderen Menschen zusammenarbeiten\"."
+            ],
+            "reasoning": "Die Frage bezieht sich auf Bloom'sche Taxonomiestufe 2 (Anwendung/Transfer) weil sie das Anwenden von Lerninhalten in einem neuen Kontext verlangt. Die richtigen Antworten zeigen ein Verständnis der Bedürfnisse eines Menschen und die Fähigkeit, diese in einem bestimmten Kontext anzuwenden.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage erforderte die Fähigkeit, sich in eine primitive menschliche Situation hineinzuversetzen und zu erkennen, dass soziale Bindungen ein grundlegendes Bedürfnis sind. Die richtige Antwort zeigt ein Verständnis für die menschlichen Grundbedürfnisse sowie die Fähigkeit, Prioritäten zu setzen.",
+            "suggestions": [
+              "Um die Komplexität der Frage weiter zu steigern, könnten zusätzliche Optionen eingebracht werden, die ebenfalls auf die Befriedigung grundlegender menschlicher Bedürfnisse abzielen, wie zum Beispiel \"Wasser und Nahrung suchen\" oder \"Ein Lager errichten\". Dies würde den Testkandidaten erfordern, seine Fähigkeit zur Priorisierung und Entscheidungsfindung in komplexen Situationen weiter zu entwickeln."
+            ],
+            "reasoning": "Die Bewertergung basiert auf der Analyse, ob die Antwort zeigt, dass der Testkandidat ein Verständnis für die menschlichen Grundbedürfnisse besitzt und in der Lage ist, Prioritäten zu setzen. Die richtige Antwort erfüllt diese Kriterien und daher wurde eine Bewertung von 3 vergeben.",
+            "target_value": "1",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält ein hohes Maß an sprachlichen Hindernissen, was die Verständlichkeit erschwert. Es ist jedoch zu beachten, dass einige der Antworten ebenfalls von diesen Hindernissen betroffen sind.",
+            "suggestions": [
+              "- Die Frage könnte in einer aktiven Formulierung formuliert werden, um das Passivproblem zu minimieren.",
+              "- Die Antwortmöglichkeiten sollten auf eine Weise gestaltet sein, dass sie die sprachlichen Hindernisse vermeiden oder minimieren."
+            ],
+            "reasoning": "Die Bewertung von 3 ist gerechtfertigt, da die Frage und Antworten mehrere sprachliche Hindernisse enthalten. Die Vorschläge zielen darauf ab, diese Hindernisse zu minimieren oder zu umgehen.",
+            "target_value": "Grundtext: Passiv; Item 1: Negation; Item 2: Passiv; Item 2: Negation; Item 3: Komplexe NP; Item 4: Passiv; Item 4: Komplexe NP; Item 5: Negation; Item 5: Komplexe NP; Item 6: Passiv; Item 6: Negation; Item 6: Komplexe NP; Item 8: Passiv; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist teilweise verwirrend, da die Antwortmöglichkeiten zwar allgemein beschreiben, aber nicht explizit auf das nächste zu tun beziehen. Die Frage wirft eher ein Verständnis des Befragten über seine Prioritäten und Handlungen in einer bestimmten Situation ab.",
+            "suggestions": [
+              "- Die Anweisung könnte klarer formuliert werden, indem explizit darauf hingewiesen wird, was als nächstes unternommen werden soll.",
+              "- Die Antwortmöglichkeiten könnten spezifischer sein und direkt auf das Nächste beziehen, das zu tun ist."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung beträgt 3, da die Frage zwar offene Aspekte des menschlichen Verhaltens anspricht, aber die Antwortmöglichkeiten nicht so spezifisch sind, dass sie eine klare Priorität für das Nächste zu tun abgeben.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welches ist das nächste, was du tun würdest, nachdem alle deine physiologischen Grundbedürfnisse befriedigt sind? <option>Ein wetterfestes Haus bauen<option>Einen Speer anfertigen, um dich vor wilden Tieren zu schützen<option>Kontakt mit Menschen aufnehmen<option>Option 4"
+      }
+    ],
+    "question_types_generated": [
+      "single-choice",
+      "single-choice",
+      "single-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

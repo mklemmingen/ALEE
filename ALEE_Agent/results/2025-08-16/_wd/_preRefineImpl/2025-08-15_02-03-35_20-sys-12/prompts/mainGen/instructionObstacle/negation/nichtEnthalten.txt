@@ -1,0 +1,6 @@
+### p.instruction_obstacle_negation (Verneinungen in der Aufgabenstellung):
+**NICHT ENTHALTEN**:
+- Ausschließlich positive Formulierungen
+- Keine negativen Partikel oder Prefixe
+
+Erstelle Aufgabenanweisungen ohne Verneinungen, verwende nur positive Formulierungen.

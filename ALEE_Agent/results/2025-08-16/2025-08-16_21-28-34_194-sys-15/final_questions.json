@@ -1,0 +1,9 @@
+{
+  "final_questions": [
+    "Was passiert mit dem Gleichgewichtspreis, wenn die Preise für Futtermittel fallen?\n\nA) Er sinkt\nB) Er bleibt gleich\nC) Er steigt <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+    "Warum tritt ein Nachfrageanstieg auf, wenn sich die Vorlieben der Nachfrager ändern?\n\nA) Weil sie mehr Geld haben\nB) Weil sie weniger Geld haben\nC) Weil ihre Vorlieben sich ändern <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+    "Was passiert mit dem Angebot, wenn die Produktionskosten fallen?\n\nA) Es sinkt\nB) Es bleibt gleich\nC) Es steigt <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+  ],
+  "question_count": 3,
+  "finalized_at": "2025-08-16T21:28:34.407231"
+}

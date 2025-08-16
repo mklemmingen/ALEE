@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 0.09361982345581055,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was sind G\u00fcter, die niemandem geh\u00f6ren und somit unbegrenzt genutzt werden k\u00f6nnen? <option>Knappheit<option>Relative Knappheit<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Warum liegt Absolute Knappheit vor? <option>Weil die Mittel der Menschen nicht ausreichen.<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Was ist entscheidend f\u00fcr Relative Knappheit?\n\nA) Die Menge, in der ein Gut vorhanden ist\nB) Die Zeit und der Ort, an dem ein Gut verf\u00fcgbar ist\nC) Die Mittel der Menschen\nD) Der Preis eines Gutes <option>[option] C) Die Mittel der Menschen [/option]\n[option] A) Die Menge<option>in der ein Gut vorhanden ist [/option]\n[option] B) Die Zeit und der Ort<option>an dem ein Gut verf\u00fcgbar ist [/option]\n[option] D) Der Preis eines Gutes [/option]<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T21:27:34.752191",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

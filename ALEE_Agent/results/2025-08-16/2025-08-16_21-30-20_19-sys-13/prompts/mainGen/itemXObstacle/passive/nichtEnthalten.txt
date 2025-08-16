@@ -1,0 +1,7 @@
+### p.item_X_obstacle_passive (Passivkonstruktionen in Antwortoptionen):
+**NICHT ENTHALTEN** - Beispiele:
+- "Angebot und Nachfrage bestimmen den Preis"
+- "Die Regierung ergreift die Maßnahme"
+- "Unternehmen produzieren Güter"
+
+Erstelle Antwortoptionen ohne Passivkonstruktionen, verwende aktive Formulierungen.

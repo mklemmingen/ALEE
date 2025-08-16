@@ -1,0 +1,259 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:49:22.369688",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was sind Opportunitätskosten? <true-false>Was sind Opportunitätskosten?<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Was sind Opportunitätskosten?",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragen wurden basierend auf dem gegebenen Text generiert, um den Begriff \"Opportunitätskosten\" zu erklären und die Auswirkungen auf Entscheidungen zu verdeutlichen. Die Antwortmöglichkeiten sollen klare und wahrheitsgetreue Aussagen enthalten.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist schwierig, da sie eine genaue Definition des Konzepts erfordert. Die Optionen sind jedoch nicht ausreichend präzise definiert, um eine eindeutige Antwort zu ermöglichen.",
+            "suggestions": [
+              "- Erweitern Sie die Optionen auf 3-4 Stichpunkte und definieren Sie sie detailliert.",
+              "- Wiederholen Sie den Text der Frage in allen Optionen."
+            ],
+            "reasoning": "Die Bewertung von 3 berücksichtigt, dass die Frage eine genaue Definition des Konzepts erfordert, aber die Optionen nicht ausreichend präzise definiert sind. Daher ist die Frage schwierig, aber das Format und die Formulierung können verbessert werden.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage passt gut zur Ziel-Taxonomiestufe. Die Antwortoptionen sind deutlich und bestätigen die falsche Aussage, was ein typisches Merkmal für Fragen auf Stufe 1 der Taxonomie darstellt.",
+            "suggestions": [
+              "Keine Anpassungsvorschläge erforderlich"
+            ],
+            "reasoning": "Die Frage ist gut formuliert und die Antwortoptionen sind klar. Die Aussage als falsch bestätigt, dass es sich um ein einfaches Wissenserwartungsmerkmal handelt.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität der Frage reicht aus, um den Stoff auf Grundniveau zu beurteilen. Die Frage ist jedoch nicht sehr speziell und könnte von Schülern mit geringerem Verständnis auch richtig beantwortet werden.",
+            "suggestions": [
+              "Keine Vorschläge für Anpassungen."
+            ],
+            "reasoning": "Die Bewegung von 1 auf 3 ergibt sich aus der Tatsache, dass die Frage für Schüler mit Grundniveaukenntnissen im Bereich Kostenrechnung und Opportunitätskosten ansprechbar ist. Die Antwortmöglichkeiten sind jedoch nicht sehr speziell formuliert.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse, die eine Überprüfung der Verständlichkeit und des sprachlichen Levels erfordern. Die Negationen sind teilweise nicht klar ausgedrückt und die komplexe Nominalphrasen können für Leseanfänger schwierig zu verstehen sein.",
+            "suggestions": [
+              "- Klarer Ausdruck von Negationen (z.B. \"ist falsch\" statt \"Die Aussage ist falsch\")",
+              "- Vereinfachung komplexer Nominalphrasen (z.B. Verwendung einfacherer Wörter oder Strukturen)",
+              "- Vermeidung des Passivs bei einfachen Prädikaten"
+            ],
+            "reasoning": "Die Bewertung von 4 ergibt sich aus der Kombination von sprachlichen Hindernissen, die nicht unbedingt für Leseanfänger schwer zu verstehen sind, aber aufgrund ihrer Komplexität und des notwendigen sprachlichen Levels eine Überprüfung erfordern.",
+            "target_value": "Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Negation; Item 1: Komplexe NP; Item 3: Passiv; Item 4: Negation; Item 5: Passiv; Item 5: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Komplexe NP; Item 8: Negation; Item 8: Komplexe NP",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Anweisungsklarheit: 2/5 (zu wenig explizite Definition von Opportunitätskosten)",
+            "suggestions": [
+              "Der Lehrer sollte präzisere Antwortmöglichkeiten geben, z.B. \"Die Aussage ist korrekt\" oder \"Die Aussage ist falsch\". Darüber hinaus sollte der Begriff Opportunitätskosten in der Frage explizit definiert werden."
+            ],
+            "reasoning": "Die Anweisung wird aufgrund mangelnder Klarheit und Explizitheit beurteilt. Die vorgeschlagenen Verbesserungen sollen die Anweisungsklarheit erhöhen.",
+            "target_value": "Explizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 4,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 2 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was sind Opportunitätskosten? <true-false>Was sind Opportunitätskosten?<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "Wann entstehen Opportunitätskosten? <true-false>Wann entstehen Opportunitätskosten?<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Wann entstehen Opportunitätskosten?",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragen wurden basierend auf dem gegebenen Text generiert, um den Begriff \"Opportunitätskosten\" zu erklären und die Auswirkungen auf Entscheidungen zu verdeutlichen. Die Antwortmöglichkeiten sollen klare und wahrheitsgetreue Aussagen enthalten.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage bezieht sich auf die Opportunitätskosten und impliziert, dass diese immer entstehen. Das ist nicht ganz korrekt, da Opportunitätskosten nur dann entstehen, wenn man tatsächlich eine Alternative verpasst.",
+            "suggestions": [
+              "- Die Frage sollte sich eher auf den spezifischen Kontext der Opportunitätskosten und deren Entstehung beziehen. - Eine alternative Frage könnte lauten: „Unter welchen Umständen entstehen Opportunitätskosten?“ oder ähnlich."
+            ],
+            "reasoning": "Die Frage ist im Grunde genommen korrekt, aber die spezifische Formulierung und der Kontext lassen den Eindruck einer nicht ganz richtigen Verwendung des Begriffs „Opportunitätskosten“ entstehen. Da Opportunitätskosten tatsächlich in bestimmten Situationen entstehen können, ist die Frage jedoch nicht vollständig falsch.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage könnte an Stufe 3 (Analyse) angepasst werden, indem ein Bezug zu dem Konzept von Opportunitätskosten hergestellt und der Testkandidat aufgefordert wird, die Aussage kritisch zu bewerten.",
+            "suggestions": [
+              "Eine mögliche Anpassung der Frage könnte wie folgt aussehen: \"Welche Kosten entstehen bei einer Entscheidung gegen eine andere Alternative?\" Dies würde den Testkandidaten auffordern, über das Konzept von Opportunitätskosten nachzudenken und sie anzuwenden."
+            ],
+            "reasoning": "Die Frage kann nicht auf höhere Taxonomiestufen (Analyse oder Bewertung) angepasst werden, da sie lediglich ein Wissenserwartungs-Niveau abbildet. Eine Umstellung auf Stufe 3 würde das Niveau der Frage an die Fähigkeit des Testkandidaten anpassen, kritisch zu denken und über komplexe Konzepte nachzudenken.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Komplexität der Frage liegt im Verständnis des Konzepts Opportunitätskosten. Die Antwort ist richtig, da Opportunitätskosten durch das Nichtverwenden einer Ressource oder eine Entscheidung entstehen, die einen Nutzen verpasst.",
+            "suggestions": [
+              "Keine Vorschläge erforderlich"
+            ],
+            "reasoning": "Die Bewerter hat das Konzept Opportunitätskosten verstanden und richtig angewendet. Die Frage ist für eine Mathematikstufe 0 geeignet, da sie ein grundlegendes wirtschaftskonomenisches Konzept beinhaltet.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse, wie z.B. komplexe Nominalphrasen und Negationen. Die Begriffe sind jedoch nicht ungewöhnlich für das Thema Wirtschaft und finanzwissenschaftlichen Fragen.",
+            "suggestions": [
+              "- Die Frage könnte klarer formuliert werden, um die potenziellen Hindernisse zu minimieren.",
+              "- Es könnte eine kurze Erklärung hinzugefügt werden, um den Begriff \"Opportunitätskosten\" für Lernende zu erklären."
+            ],
+            "reasoning": "Die Bewertung von 4 berücksichtigt die Anwesenheit von komplexen Nominalphrasen und Negationen in der Frage. Da diese jedoch nicht ungewöhnlich sind, wurde ein moderates Hindernis bewertet.",
+            "target_value": "Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Negation; Item 1: Komplexe NP; Item 3: Passiv; Item 4: Negation; Item 5: Passiv; Item 5: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Komplexe NP; Item 8: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem spezifischere Beispiele für Opportunitätskosten angegeben werden. Die Begründung dafür ist jedoch gut und leicht verständlich.",
+            "suggestions": [
+              "* Spezifische Beispiele für Opportunitätskosten in der Anweisung aufnehmen",
+              "* Klarstellung, dass Opportunitätskosten auch vor der Entscheidung entstehen können"
+            ],
+            "reasoning": "Die Anweisungs-Bewertung liegt bei 4, da die Aussage falsch ist und keine klaren Beispiele für Opportunitätskosten angegeben werden. Die Begründung dafür ist jedoch gut.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wann entstehen Opportunitätskosten? <true-false>Wann entstehen Opportunitätskosten?<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "Wie können Kosten und Nutzen sich auf ein Ziel auswirken? <true-false>Wie können Kosten und Nutzen sich auf ein Ziel auswirken?<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Wie können Kosten und Nutzen sich auf ein Ziel auswirken?",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragen wurden basierend auf dem gegebenen Text generiert, um den Begriff \"Opportunitätskosten\" zu erklären und die Auswirkungen auf Entscheidungen zu verdeutlichen. Die Antwortmöglichkeiten sollen klare und wahrheitsgetreue Aussagen enthalten.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage könnte komplexer formuliert werden, um die möglichen Auswirkungen von Kosten und Nutzen auf ein Ziel zu erklären. Die Antwortoptionen sollten jedoch in einer üblicher true-false-Formulierung präsentiert werden.",
+            "suggestions": [
+              "Die Frage könnte beispielsweise wie folgt rephrasiert werden: \"Welche Aussage über die Auswirkungen von Kosten und Nutzen auf ein Ziel ist falsch?\" Die Antwortoptionen sollten dann in einer üblichen true-false-Formulierung präsentiert werden."
+            ],
+            "reasoning": "Die Bewertung wurde auf 3 gesetzt, da die Frage zwar einfach formuliert ist, aber dennoch eine klare und direkte Frage stellt. Die Antwortoptionen sind jedoch nicht optimal präsentiert, um die Schwierigkeit der Frage zu erhöhen.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist gut formuliert und testet das Wissen des Schülers. Die Antwortmöglichkeit ist jedoch nicht ideal, da sie zu allgemein ist. Ein besserer Ansatz wäre es, eine spezifische Aussage anzubieten, die direkt auf die Frage antwortet.",
+            "suggestions": [
+              "Eine mögliche Alternative zur Antwortmöglichkeit könnte sein: \"Kosten und Nutzen beeinflussen das Ziel nicht.\" Dies würde den Schüler dazu bringen, über die Beziehung zwischen Kosten, Nutzen und Zielen nachzudenken."
+            ],
+            "reasoning": "Die Bewertung von 2 ergibt sich aus der Tatsache, dass die Frage ein True-False-Fragen ist und das Wissen des Schülers getestet wird. Die Antwortmöglichkeit ist jedoch nicht ideal, was zu einer niedrigeren Bewertung führt.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage liegt im Bereich der Entscheidungstheorie und könnte mit einfachen Verständnis- und Analysefähigkeiten abgedeckt werden. Die richtige Antwort zeigt ein grundlegendes Verständnis dieses Konzepts.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich, da die Frage der richtigen Komplexität entspricht."
+            ],
+            "reasoning": "Die Aussage ist falsch, weil Kosten und Nutzen tatsächlich Einfluss auf ein Ziel haben können, was ein grundlegendes Konzept in der Entscheidungsfindung ist.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse, wie z.B. die Verwendung von Negationen und komplexen Nominalphrasen. Es gibt jedoch auch einige leicht übersetzte Passage im Text.",
+            "suggestions": [
+              "- Vereinfachen Sie die Aussage und entfernen Sie unnötige Komplexe NP",
+              "- Überprüfen Sie, ob alle Elemente einer Negation vorhanden sind, damit der Leser nicht falsche Schlüsse zieht"
+            ],
+            "reasoning": "Die Bewertung von 3 wird aufgrund mehrerer sprachlicher Hindernisse in der Frage vergeben.",
+            "target_value": "Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Negation; Item 1: Komplexe NP; Item 3: Passiv; Item 4: Negation; Item 5: Passiv; Item 5: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Komplexe NP; Item 8: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem die Frage präziser formuliert wäre. Es ist auch schwierig, auf die Antwortmöglichkeiten zu antworten, da sie sich widersprechen.",
+            "suggestions": [
+              "1. Formulieren Sie die Frage präziser: \"Wie können Kosten und Nutzen ein Ziel beeinflussen?\"",
+              "2. Entfernen Sie das zweite Markup-Element, um Klarheit zu schaffen.",
+              "3. Formulieren Sie die Antwortmöglichkeiten klarer."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 3, da die Frage explizit ist, aber die Antwortmöglichkeiten konkurrieren miteinander und daher nicht klar sind.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 2.8 below threshold but insufficient expert consensus",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wie können Kosten und Nutzen sich auf ein Ziel auswirken? <true-false>Wie können Kosten und Nutzen sich auf ein Ziel auswirken?<true-false>Die Aussage ist falsch"
+      }
+    ],
+    "question_types_generated": [
+      "true-false",
+      "true-false",
+      "true-false"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

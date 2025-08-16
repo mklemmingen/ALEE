@@ -1,0 +1,256 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:10:36.458802",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Wie verändert sich der Gleichgewichtspreis, wenn das Angebot zu jedem gegebenen Preis steigt? <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragengeneration basiert auf der Analyse des Textes und den Parametereingaben. Die richtigen Antworten sind auf der Grundlage der im Text beschriebenen Konzepte von Verschiebungen der Nachfrage- und Angebotsgeraden ermittelt worden.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut, aber die Antwortmöglichkeiten könnten präziser formuliert werden. Außerdem sollte der Schwierigkeitsgrad leicht sein, daher wäre eine leichtere Formulierung angemessen.",
+            "suggestions": [
+              "- Die Frage könnte leichter formulierte werden.",
+              "- Die Antwortmöglichkeiten sollten präzise und genau formuliert werden."
+            ],
+            "reasoning": "Die Frage bezieht sich auf mikroökonomische Grundlagen, insbesondere das Konzept des Angebots und Gleichgewichtspreises. Die richtige Antwort ist \"Die Aussage ist falsch\", da ein steigendes Angebot zu jedem gegebenen Preis nicht automatisch zu einer Änderung des Gleichgewichtspreises führt. Dies erfordert eine Analyse der Auswirkungen eines steigenden Angebots auf den Markt und die Preise.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist gut formuliert, aber die Antwortmöglichkeiten könnten präziser sein. Die Bezeichnung \"true-false\" könnte durch \"Richtig/Falsch\" ersetzt werden, um die deutsche Sprache zu verwenden.",
+            "suggestions": [],
+            "reasoning": "Die Frage entspricht der Stufe 1 der Bloom'schen Taxonomie (Wissen/Reproduktion), da es sich um ein einfaches Reproduzieren von Wissen handelt. Die Antwortmöglichkeiten sind jedoch nicht ideal, um ein differenzierteres Verständnis des Themas zu fördern.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Der Begriff \"Gleichgewichtspreis\" und die Beziehung zwischen Angebot und Preisschwankungen ist gut verstanden. Es fehlt jedoch an Verständnis für den direkten Einfluss eines steigenden Angebots auf den Gleichgewichtspreis.",
+            "suggestions": [
+              "Weitere Anpassung: Der Stoff sollte umfassender behandeln, wie ein steigendes Angebot den Markt beeinflusst. Dies könnte durch zusätzliche Beispiele und Erklärungen erfolgen, um das Verständnis der Komplexität zu verbessern."
+            ],
+            "reasoning": "Die Aussage ist falsch, da das Angebot zu jedem gegebenen Preis steigen würde, was wiederum dazu führen würde, dass sich der Gleichgewichtspreis senkt. Dies liegt daran, dass ein steigendes Angebot zu einer Verringerung des Angebots führt, was letztlich den Gleichgewichtspreis senken würde.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält mehrere sprachliche Hindernisse, darunter die Verwendung von negativen Formen und komplexe Nominalphrasen. Die richtige Antwort erfordert jedoch ein Verständnis der mikroökonomischen Prinzipien und ihre Auswirkungen auf den Gleichgewichtspreis.",
+            "suggestions": [
+              "* Eine Vereinfachung des Textes, um die komplexen Nominalphrasen zu reduzieren.",
+              "* Die Verwendung von positiven Formen anstelle der negativen Formen.",
+              "* Ein Übersetzung in eine einfachere Sprache."
+            ],
+            "reasoning": "Die Frage erfordert ein tiefes Verständnis der mikroökonomischen Prinzipien und ihre Auswirkungen auf den Gleichgewichtspreis. Die richtige Antwort ist jedoch nicht ohne Fehler zu finden, da die Frage selbst einige sprachliche Hindernisse enthält.",
+            "target_value": "Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Negation; Item 1: Komplexe NP; Item 3: Passiv; Item 4: Negation; Item 5: Passiv; Item 5: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Komplexe NP; Item 8: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist gut, da sich der Testteilnehmer schnell auf die Frage einstellen kann. Die Antwortmöglichkeiten sind klar und prägnant formuliert.",
+            "suggestions": [
+              "Keine Verbesserungen erforderlich."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 3, da die Aussage explizit ist und die richtige Antwort leicht zu erkennen ist. Die Anweisungsklarheit ist gut, aber es gibt keine Notwendigkeit für Verbesserungen.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wie verändert sich der Gleichgewichtspreis, wenn das Angebot zu jedem gegebenen Preis steigt? <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "Wie verändert sich der Gleichgewichtspreis, wenn die Nachfrage zu jedem gegebenen Preis fällt? <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragengeneration basiert auf der Analyse des Textes und den Parametereingaben. Die richtigen Antworten sind auf der Grundlage der im Text beschriebenen Konzepte von Verschiebungen der Nachfrage- und Angebotsgeraden ermittelt worden.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage könnte leichter verständlich formuliert werden, indem man den Kontext besser beschreibt. Zum Beispiel: \"Wie reagiert der Marktpreis auf eine Nachfrageabsenkung?\"",
+            "suggestions": [
+              "- Eine detailliertere Beschreibung des Themas vor der Frage",
+              "- Die Verwendung einfacherer Begriffe, um den Kontext besser zu verstehen"
+            ],
+            "reasoning": "Die Frage ist nicht schlecht formuliert, aber sie könnte leicht verbessert werden. Der Hauptgrund dafür ist, dass die richtige Antwort nicht sofort klar ist und man mehr Kontext benötigt, um sie zu verstehen.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist für Stufe 1 (Wissen/Reproduktion) geeignet und die Antwortmöglichkeiten passen dazu. Es gibt jedoch keine Analyse oder Bewertung des Themas, was typischerweise für höhere Taxonomiestufen erforderlich ist.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Wahl der Antwortmöglichkeiten true-false passt zum Thema und die Frage ist klar formuliert. Es fehlen jedoch weitere Informationen, um eine fundierte Entscheidung über die Taxonomiestufe zu treffen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität wird als angemessen betrachtet. Die Frage erfordert ein Verständnis der Markttheorie und ihre Anwendung auf den Gleichgewichtspreis bei einer sinkenden Nachfrage.",
+            "suggestions": [
+              "Keine Vorschläge für Anpassungen, da die Komplexität angemessen ist."
+            ],
+            "reasoning": "Die Antwort wurde als richtig bewertet, weil sie ein Verständnis der Markttheorie zeigt und ihre Anwendung auf den Gleichgewichtspreis bei einer sinkenden Nachfrage.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält einige komplexe Ausdrücke, wie z.B. \"der Gleichgewichtspreis\", aber es handelt sich nicht um besonders schwierige sprachliche Hindernisse. Die meisten Begriffe sind im Allgemeinen bekannt und leicht verständlich.",
+            "suggestions": [
+              "- Eine Vereinfachung der Komplexität der Nominalphrasen könnte helfen, die Frage leichter zu verstehen.",
+              "- Die Verwendung von aktiven Satzkonstruktionen anstelle von passiven könnte ebenfalls hilfreich sein.",
+              "- Es wäre hilfreich, wenn die Aussagen klar und direkt formuliert wären."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Schwierigkeit des Textes. Ein Wert von 3 bedeutet, dass es sich um durchschnittliche sprachliche Hindernisse handelt. Die Frage ist nicht besonders einfach oder schwer verständlich, aber sie enthält einige komplexe Ausdrücke.",
+            "target_value": "Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Negation; Item 1: Komplexe NP; Item 3: Passiv; Item 4: Negation; Item 5: Passiv; Item 5: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Komplexe NP; Item 8: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisung ist zu allgemein formuliert und könnte für Lernende, die nicht bereits ein grundlegendes Verständnis von Angebot und Nachfrage haben, Schwierigkeiten bereiten. Eine mögliche Verbesserung wäre eine genauere Beschreibung des Zusammenhanges zwischen Gleichgewichtspreis und Nachfrageschwankungen.",
+            "suggestions": [
+              "- Die Anweisung könnte detaillierter formuliert werden.",
+              "- In der Frage sollte ein expliziter Bezug zu dem Konzept der Einkommenskurve hergestellt werden, um die Beziehung zwischen Gleichgewichtspreis und Nachfrageschwankungen besser verständlich zu machen."
+            ],
+            "reasoning": "Die Anweisung wurde aufgrund ihrer Allgemeinheit mit einer Bewertung von 3 bewertet. Die Frage könnte besser formuliert werden, um ein tieferes Verständnis des Themas bei den Lernenden zu fördern.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wie verändert sich der Gleichgewichtspreis, wenn die Nachfrage zu jedem gegebenen Preis fällt? <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "(Keine dritte Frage generiert, da es nur zwei mögliche true-false Fragen gibt) <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragengeneration basiert auf der Analyse des Textes und den Parametereingaben. Die richtigen Antworten sind auf der Grundlage der im Text beschriebenen Konzepte von Verschiebungen der Nachfrage- und Angebotsgeraden ermittelt worden.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Schwierigkeit der Frage scheint den Ziel-Schwierigkeitsgrad \"leicht\" zu entsprechen, da es sich um eine einfache true-false Frage handelt. Es wird also keine spezifische Anpassung erforderlich sein.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Begründung für die Bewertung ist, dass die Frage aufgrund ihrer Art und der Antwortmöglichkeiten dem Ziel-Schwierigkeitsgrad \"leicht\" entspricht. Es gibt keine Anzeichen dafür, dass die Frage über den Ziel-Schwierigkeitsgrad hinausgeht oder besondere Kenntnisse erfordert.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist eher ein einfacher Test der Fähigkeit, eine Aussage zu beurteilen, als ein echter Beweis von Verständnis. Die Taxonomie-Bewertung könnte höher sein, wenn die Frage komplexere Denkfähigkeiten erforderte.",
+            "suggestions": [
+              "Um die Frage an die Stufe 2 anzupassen, könnte man beispielsweise eine Frage wie \"Wie kann man das falsche Argument widerlegen?\" stellen. Oder: \"Welches ist der logische Grund für deine Antwort?\""
+            ],
+            "reasoning": "Die Begründung für die Taxonomie-Bewertung von 2 (Übergeordnete Denkfähigkeit) liegt darin, dass die Frage zwar ein einfaches Ja/Nein erfordert, aber die Fähigkeit zum Verstehen der Aussage und ihre Wahrheit zu beurteilen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Bewertung basiert auf der Komplexitätsanalyse als 2 (Moderat) und der mathematischen Bewältigungskraft im Bereich des Mathematikunterrichts. Die Frage vereinfacht die mathematische Komplexität.",
+            "suggestions": [
+              "Keine Anpassungen notwendig, da die Komplexitätsanalyse als moderat eingestuft wurde und das Konzept der True-False-Fragen für die Mathematik nicht unbedingt komplex ist."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Komplexitätsanalyse im Bereich Mathematik. Die Frage vereinfacht die mathematische Komplexität. Daher wird eine moderate Komplexitätsbewertung von 3 vorgenommen.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Es gibt vier Hindernisse in der Frage: Negation und komplexe Nominalphrasen. Diese können Schwierigkeiten bei der Verständigung verursachen.",
+            "suggestions": [
+              "Eine mögliche Anpassung wäre, die Frage in eine einfache Aussage zu formulieren, z.B. \"Die Aussage ist falsch.\" Dies würde das Verständnis erleichtern und weniger Hindernisse enthalten."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Häufigkeit der sprachlichen Hindernisse in der Frage. Es gibt vier solcher Hindernisse, die das Verständnis erschweren könnten.",
+            "target_value": "Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Negation; Item 1: Komplexe NP; Item 3: Passiv; Item 4: Negation; Item 5: Passiv; Item 5: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Komplexe NP; Item 8: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisung ist klar und explizit formulierte Fragen. Die Befragten wissen genau, was sie beurteilen sollen.",
+            "suggestions": [
+              "Keine Vorschläge zur Verbesserung der Klarheit, da die Anweisung bereits gut formuliert ist."
+            ],
+            "reasoning": "Die explizite Formulierung der Fragen erleichtert es den Befragten, eine fundierte Entscheidung zu treffen. Die Klarheit und Präzision der Fragen garantieren eine genaue Bewertung der Aussagen.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 2.8 below threshold but insufficient expert consensus",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "(Keine dritte Frage generiert, da es nur zwei mögliche true-false Fragen gibt) <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      }
+    ],
+    "question_types_generated": [
+      "true-false",
+      "true-false",
+      "true-false"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

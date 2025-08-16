@@ -1,0 +1,264 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:50:14.686620",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was passiert, wenn der Preis der Milch über dem Gleichgewichtspreis liegt? <option>Viele Landwirte produzieren mehr Milch als gefragt.<option>Die Nachfrage nach Milch ist höher als das Angebot.<option>Der Preis sinkt, um das Gleichgewicht wieder herzustellen.<option>Die Menschen haben weniger Geld für Milch.",
+        "question_type": "single-choice",
+        "answers": [
+          "Viele Landwirte produzieren mehr Milch als gefragt.",
+          "Die Nachfrage nach Milch ist höher als das Angebot.",
+          "Der Preis sinkt, um das Gleichgewicht wieder herzustellen.",
+          "Die Menschen haben weniger Geld für Milch."
+        ],
+        "correct_answer": "Viele Landwirte produzieren mehr Milch als gefragt.",
+        "explanation": "Die Fragengeneration basiert auf dem Verständnis des Konzepts des Gleichgewichtspreises und der Anwendung auf ein Beispiel. Die Sprachbarrieren im Text wurden entfernt, um den Schwierigkeitsgrad zu erhöhen. Die Antworten sollen die Fähigkeit zeigen, kritisch über die Auswirkungen von Preissenkung oder -steigerung nachzudenken.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert und anspruchsvoll. Sie verlangt vom Leser ein tiefes Verständnis von mikroökonomischen Konzepten, was sie als schwierige Frage ausweist.",
+            "suggestions": [
+              "- Die Frage könnte durch Hinzufügen weiterer Kontextinformationen zu ihrer Relevanz für die Realwelt erhoben werden.",
+              "- Bei der Beantwortung dieser Frage könnte man nachdenken, ob es weitere Faktoren gibt, die den Preis eines Produkts beeinflussen könnten."
+            ],
+            "reasoning": "Die Frage ist schwer, weil sie ein tiefsitzendes Verständnis der mikroökonomischen Prinzipien erfordert. Die richtigen Antworten zeugen von einer soliden Analyse des Angebots-, Nachfrage- und Preissystems. Es fehlt jedoch an spezifischem Kontext, was die Frage zwar anspruchsvoll macht, aber nicht unbedingt realitätsnah.",
+            "target_value": "schwer",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert und die Antworten sind plausibel. Es gibt jedoch einen Hinweis darauf, dass einige der Optionen möglicherweise nicht direkt mit dem Konzept des Gleichgewichtspreises zusammenhängen, was die Bewertung erschwert.",
+            "suggestions": [
+              "Es könnte hilfreich sein, ein Beispiel für eine Frage zu geben, die sich explizit auf Stufe 2 (Anwendung/Transfer) bezieht. Dies könnte den Schülern helfen, das Konzept der Anwendung von Wissen in neuen Kontexten besser zu verstehen."
+            ],
+            "reasoning": "Die Bewertung erfolgte basierend auf dem Verständnis des Gleichgewichtspreises und der Fähigkeit, die richtige Antwort auszuwählen. Die Frage erfordert ein Anwenden von Wissen über den Markt und seine Reaktionen auf Änderungen.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut formuliert und die Antwortmöglichkeiten sind plausibel. Die richtige Antwort erfordert jedoch ein Verständnis des Konzepts des Gleichgewichtspreises und seiner Auswirkungen auf den Markt.",
+            "suggestions": [
+              "Eine mögliche Anpassung wäre, dass die Frage mehr Kontext liefert, um die Situation zu verdeutlichen. Zum Beispiel könnte erwähnt werden, dass die Landwirte bereits viel Milch produzieren und nun noch mehr produzieren müssen."
+            ],
+            "reasoning": "Die richtige Antwort wird ausgewählt, weil sie das Konzept des Gleichgewichtspreises am besten erklärt. Wenn der Preis der Milch über dem Gleichgewichtspreis liegt, bedeutet dies, dass die Landwirte zu viel Milch produzieren und daher den Preis senken müssen, um wieder in Balance zu kommen.",
+            "target_value": "1",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Es gibt einige sprachliche Hindernisse in der Frage und den Antworten. Beispielsweise ist die Passivkonstruktion \"wird über dem Gleichgewichtspreis liegen\" schwierig zu verstehen. Ebenso sind komplexe Nominalphrasen wie \"die Nachfrage nach Milch\" herausfordernd.",
+            "suggestions": [
+              "- Die Frage könnte vereinfacht werden, indem sie in Aktiv konstruiert wird.",
+              "- Die Antwortoptionen könnten klarer formuliert werden, um die relevanteste Option leichter erkennbar zu machen."
+            ],
+            "reasoning": "Die Bewertung von 3 wurde vergeben, da es sich bei den sprachlichen Hindernissen nicht um extreme Fälle handelt. Es gibt jedoch immer noch einige Herausforderungen, wie beispielsweise die Passivkonstruktionen und komplexe Nominalphrasen.",
+            "target_value": "Grundtext: Passiv; Grundtext: Komplexe Nominalphrasen; Item 1: Negation; Item 1: Komplexe NP; Item 2: Passiv; Item 2: Negation; Item 2: Komplexe NP; Item 4: Passiv; Item 5: Negation; Item 6: Passiv; Item 6: Negation; Item 7: Komplexe NP; Item 8: Passiv; Item 8: Komplexe NP; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisung ist nicht klar genug, um ein klares Ziel für die Explizitheit der Antwortoptionen festzustellen. Die Frage könnte leichter verständlich formuliert werden, indem sie speziell das Gleichgewicht zwischen Angebot und Nachfrage im Fokus hat.",
+            "suggestions": [
+              "- Formulieren Sie die Frage so, dass sie explizit das Gleichgewicht zwischen Angebot und Nachfrage in Bezug auf Preisänderungen fragt.",
+              "- Stellen Sie sicher, dass alle Antwortoptionen eindeutig damit zusammenhängen, was passiert, wenn der Preis der Milch über dem Gleichgewichtspreis liegt."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 3 ( Mittelwert ) basiert darauf, dass die Frage zwar einige allgemeine Kenntnisse über Marktteilnehmer und Preisanpassungen vermittelt, aber nicht explizit daran interessiert ist, die Beziehung zwischen Gleichgewichtspreis und Preisänderungen zu analysieren. Daher wurde entschieden, die Anweisung mit einer mittleren Bewertung zu bewerten.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 4,
+          "math_expert": 4,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was passiert, wenn der Preis der Milch über dem Gleichgewichtspreis liegt? <option>Viele Landwirte produzieren mehr Milch als gefragt.<option>Die Nachfrage nach Milch ist höher als das Angebot.<option>Der Preis sinkt, um das Gleichgewicht wieder herzustellen.<option>Die Menschen haben weniger Geld für Milch."
+      },
+      {
+        "question_text": "Was ist der Gleichgewichtspreis in unserem Beispiel? <option>1 Euro<option>2 Euro<option>3 Euro<option>4 Euro",
+        "question_type": "single-choice",
+        "answers": [
+          "1 Euro",
+          "2 Euro",
+          "3 Euro",
+          "4 Euro"
+        ],
+        "correct_answer": "1 Euro",
+        "explanation": "Die Fragengeneration basiert auf dem Verständnis des Konzepts des Gleichgewichtspreises und der Anwendung auf ein Beispiel. Die Sprachbarrieren im Text wurden entfernt, um den Schwierigkeitsgrad zu erhöhen. Die Antworten sollen die Fähigkeit zeigen, kritisch über die Auswirkungen von Preissenkung oder -steigerung nachzudenken.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage entspricht gut dem gewünschten Schwierigkeitsgrad, da sie mehrere Antwortmöglichkeiten enthält und somit eine komplexe Denkprozess verlangt. Die Frage könnte jedoch noch weiter verbessert werden, indem sie einen eindeutigen Hinweis auf den Gleichgewichtspreis enthält.",
+            "suggestions": [
+              "Hinweis auf den Gleichgewichtspreis in der Frage ergänzen"
+            ],
+            "reasoning": "Die Frage wurde als schwierig bewertet, weil sie mehrere Antwortmöglichkeiten beinhaltet und somit einen komplexen Denkprozess verlangt. Die richtige Antwort ist nicht offensichtlich, sodass der Schüler kritisch über die Optionen nachdenken muss. Dies entspricht gut dem gewünschten Schwierigkeitsgrad.",
+            "target_value": "schwer",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage entspricht der Stufe 2 (Anwendung/Transfer) von Bloom's Taxonomie. Die Antwortmöglichkeiten sind klar definiert und es ist nicht notwendig, die Konzepte neu zu definieren.",
+            "suggestions": [
+              "Keine Anpassungsvorschläge erforderlich."
+            ],
+            "reasoning": "Die Frage zielt auf die Anwendung des Gleichgewichtspreis-Konzepts in einem Beispiel ab. Die Antwortmöglichkeiten sind klar definiert, was eine Bewertung von 3 (Anwendung/Transfer) rechtfertigt.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität der Frage ist eher gering als erwartet. Die Optionen deuten auf eine einfache Wahl anstatt auf eine tiefgreifende mathematische Berechnung hin. Es fehlt an Hinweisen darauf, dass das Gleichgewichtspreisrechnen komplexer mathematischer Operationen bedarf.",
+            "suggestions": [
+              "Die Frage sollte so gestaltet werden, dass die Antwortoptionen klar mit der Komplexität des Themas in Verbindung gebracht werden. Es könnte beispielsweise erwähnt werden, welche mathematischen Konzepte zum Ermitteln eines Gleichgewichtspreises herangezogen werden."
+            ],
+            "reasoning": "Die Bewerung von 3 basiert auf der Annahme, dass die Frage in einem Bereich liegt, der für Mathematikstufe 1 relevant ist. Die Komplexität, die ansonsten zu erwarten wäre, fehlt jedoch. Daher wird eine mäßige Bewertung zugrunde gelegt.",
+            "target_value": "1",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die sprachlichen Hindernisse in dieser Frage sind moderat, da es sich bei fast allen Optionen um komplexe Nominalphrasen handelt. Die Verwendung von Passivsatz und Negationen ist ebenfalls ein Merkmal dieses Textes. Das Hauptthema wird jedoch klar dargestellt.",
+            "suggestions": [
+              "- Vereinfachen der komplexen Nominalphrasen, um eine bessere Lesbarkeit zu erreichen",
+              "- Vermeiden von Passivsätzen und Negationen, wo es möglich ist"
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Tatsache, dass komplexe Nominalphrasen und Passivsätze in fast allen Optionen verwendet werden. Dies kann zwar eine gewisse Schwierigkeit darstellen, aber das Hauptthema ist dennoch klar erkennbar.",
+            "target_value": "Grundtext: Passiv; Grundtext: Komplexe Nominalphrasen; Item 1: Negation; Item 1: Komplexe NP; Item 2: Passiv; Item 2: Negation; Item 2: Komplexe NP; Item 4: Passiv; Item 5: Negation; Item 6: Passiv; Item 6: Negation; Item 7: Komplexe NP; Item 8: Passiv; Item 8: Komplexe NP; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 2,
+            "feedback": "Die Anweisung könnte anstelle eines Fragezeichens (e.g. ?) ein Fragenzeichen mit einem Punkt über dem i (i.e. ¿?) oder einen anderen Hinweis auf die Explizitheit der Antwort erhalten, um die Klarheit zu erhöhen.",
+            "suggestions": [
+              "Hinweis: Explizite Frageformulierung (z.B. \"Welcher Preis ist der Gleichgewichtspreis?\") oder Hervorhebung der richtigen Antwortoption (z.B. durch Fettschrift)."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung wurde auf 2 gesetzt, da die Anweisung zwar eindeutig genug ist, um eine Antwort zu finden, aber nicht explizit genug, um sicherzustellen, dass der Befragte die richtige Antwort findet.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 2
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist der Gleichgewichtspreis in unserem Beispiel? <option>1 Euro<option>2 Euro<option>3 Euro<option>4 Euro"
+      },
+      {
+        "question_text": "Warum liegt das Angebot an Milch über der Nachfrage, wenn der Preis unter dem Gleichgewichtspreis ist? <option>Die Menschen haben weniger Geld für Milch.<option>Viele Landwirte produzieren mehr Milch als gefragt.<option>Der Preis sinkt nicht schnell genug, um das Gleichgewicht wieder herzustellen.<option>Die Nachfrage nach Milch ist höher als das Angebot.",
+        "question_type": "single-choice",
+        "answers": [
+          "Die Menschen haben weniger Geld für Milch.",
+          "Viele Landwirte produzieren mehr Milch als gefragt.",
+          "Der Preis sinkt nicht schnell genug, um das Gleichgewicht wieder herzustellen.",
+          "Die Nachfrage nach Milch ist höher als das Angebot."
+        ],
+        "correct_answer": "Die Menschen haben weniger Geld für Milch.",
+        "explanation": "Die Fragengeneration basiert auf dem Verständnis des Konzepts des Gleichgewichtspreises und der Anwendung auf ein Beispiel. Die Sprachbarrieren im Text wurden entfernt, um den Schwierigkeitsgrad zu erhöhen. Die Antworten sollen die Fähigkeit zeigen, kritisch über die Auswirkungen von Preissenkung oder -steigerung nachzudenken.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert, aber die Antwortmöglichkeiten könnten noch genauer auf das Thema abgestimmt werden. Insbesondere die Option \"Der Preis sinkt nicht schnell genug\" könnte als zusätzliche Erklärung zur richtigen Antwort verwendet werden.",
+            "suggestions": [
+              "- Die Frage könnte um einen Absatz erweitert werden, der genau erklärt, warum das Angebot über dem Gleichgewichtspreis liegt.",
+              "- Die Antworten könnten noch genauer auf das Thema abgestimmt werden."
+            ],
+            "reasoning": "Die Bewertung basiert auf folgendem: Die Frage bezieht sich korrekt auf die Mikroökonomie und das Konzept des Gleichgewichtspreises. Die richtige Antwort ist auch genau ausgedrückt. Es gibt jedoch einige Punkte, an denen die Frage noch verbessert werden könnte.",
+            "target_value": "schwer",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und die Antwortmöglichkeiten sind plausibel. Die richtige Antwort erfordert jedoch ein bisschen mehr, als nur „wissen zu wissen“ (Stufe 1), da es um das Verständnis eines wirtschaftlichen Prinzips geht.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Frage ist gut geeignet für die Anwendung von Kenntnissen (Stufe 2) und erfordert vom Schüler, das Konzept des Angebots und der Nachfrage anzuwenden. Die richtige Antwort zeigt, dass der Schüler ein Verständnis für wirtschaftliche Prinzipien besitzt.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage ist relativ einfach, da sie nur die Grundlagen der Gleichgewichtsanalyse erfordert. Die Antwortoptionen sind klar und überschaubar.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich, da die Frage bereits eine angemessene Komplexität aufweist."
+            ],
+            "reasoning": "Die Mathematik-Bewertung von 3 basiert darauf, dass die Frage grundlegende Konzepte der Gleichgewichtsanalyse anspricht und das Überangebot an Milch aufgrund des Preises erläutert. Die richtige Antwort zeigt ein Verständnis für den Zusammenhang zwischen Angebot, Nachfrage und Preis.",
+            "target_value": "1",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Das Problem besteht in der Komplexität des Textes. Viele Sätze enthalten mehrere Verben, was zu Unsicherheit über die Hauptverbform führt. Darüber hinaus können komplexe Nominalphrasen schwierig zu verstehen sein.",
+            "suggestions": [
+              "* Vereinfachen Sie den Text durch Ersetzen von Passivkonstruktionen durch aktive Konstruktionen.",
+              "* Verwenden Sie einfache Nominalphrasen anstelle komplexer Strukturen.",
+              "* Stellen Sie sicher, dass alle Antworten vollständig und eindeutig sind."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Schwierigkeit des Textes und der Notwendigkeit einer Erklärung. Die Frage ist zwar ansprechend, aber die Sprache ist zu komplex für Lernende mit Grundkenntnissen.",
+            "target_value": "Grundtext: Passiv; Grundtext: Komplexe Nominalphrasen; Item 1: Negation; Item 1: Komplexe NP; Item 2: Passiv; Item 2: Negation; Item 2: Komplexe NP; Item 4: Passiv; Item 5: Negation; Item 6: Passiv; Item 6: Negation; Item 7: Komplexe NP; Item 8: Passiv; Item 8: Komplexe NP; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist gut, da die Frage klar und prägnant formuliert ist. Allerdings fehlt ein Hinweis darauf, dass nur eine Antwort richtig sein kann, was den Schülern hilft, sich besser zu konzentrieren.",
+            "suggestions": [
+              "Ein möglicher Vorschlag wäre, einen Hinweis in der Frage hinzuzufügen, dass es nur eine richtige Antwort gibt und die Schüler bitte genau prüfen sollen, ob jede Antwortoption plausibel ist. Dies könnte als kleiner Hinweis am Ende der Frage formuliert werden."
+            ],
+            "reasoning": "Die Bewertung von 3 wird aufgrund der guten Anweisungsklarheit und der korrekten Identifizierung der richtigen Antwort vergeben. Die Begründung dafür ist, dass die Frage klar formuliert ist und die Schüler die notwendige Voraussetzung für eine korrekte Lösung haben.",
+            "target_value": "Implizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Warum liegt das Angebot an Milch über der Nachfrage, wenn der Preis unter dem Gleichgewichtspreis ist? <option>Die Menschen haben weniger Geld für Milch.<option>Viele Landwirte produzieren mehr Milch als gefragt.<option>Der Preis sinkt nicht schnell genug, um das Gleichgewicht wieder herzustellen.<option>Die Nachfrage nach Milch ist höher als das Angebot."
+      }
+    ],
+    "question_types_generated": [
+      "single-choice",
+      "single-choice",
+      "single-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

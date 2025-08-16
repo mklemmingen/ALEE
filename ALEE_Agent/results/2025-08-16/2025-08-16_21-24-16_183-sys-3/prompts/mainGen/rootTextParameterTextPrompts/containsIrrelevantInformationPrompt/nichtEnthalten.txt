@@ -1,0 +1,28 @@
+ROOT TEXT PARAMETER: Contains Irrelevant Information - NICHT ENTHALTEN
+
+Der Referenztext soll ausschließlich fragenrelevante Informationen enthalten.
+
+ZWECK:
+Klare, fokussierte Texte erleichtern das Verstehen und ermöglichen präzise Antworten ohne Ablenkung durch Nebeninformationen.
+
+IMPLEMENTATION:
+- Nur direkt fragenrelevante Konzepte präsentieren
+- Klare, lineare Informationsstruktur
+- Jeder Satz trägt zur Zielfrage bei
+- Keine thematischen Abschweifungen
+- Präzise, auf das Wesentliche beschränkte Beispiele
+
+STAKEHOLDER-BEISPIEL:
+"Bedürfnisse sind Wünsche Menschen haben. Sie entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. In der Wirtschaft bezeichnet man solche Wünsche allgemein auch als Bedürfnisse. Wenn es kalt ist, hat man das Bedürfnis sich zu wärmen. Wenn du dich einsam fühlst, hast du vielleicht ein Bedürfnis nach Zuneigung oder Freundschaft. Wenn dir langweilig ist, hast du zumeist das Bedürfnis, etwas zu unternehmen."
+
+RELEVANTE ELEMENTE:
+- Definition von Bedürfnissen
+- Direkte Beispiele für Bedürfnisse
+- Klare Ursache-Wirkungs-Beziehungen
+- Alle Informationen tragen zur Begriffsklärung bei
+
+QUALITÄTSKRITERIEN:
+- Jede Information direkt anwendbar für Fragen
+- Logische Abfolge der Konzepte
+- Keine redundanten oder ablenkenden Details
+- Effiziente Informationsvermittlung

@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 77.99639415740967,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was ist ein Hauptzweck von Modellen? <option>Sie bilden die Wirklichkeit vollst\u00e4ndig ab.<option>Sie vereinfachen die Wirklichkeit, damit wir sie besser verstehen.<option>Sie helfen uns nicht dabei, die Wirklichkeit zu verstehen.<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Welche Art von Modell wird h\u00e4ufig in der Wirtschaft verwendet?\nA) Ein Modellauto\nB) Ein Preisbildungsmodell\nC) Eine Stra\u00dfenkarte\nD) Ein Globus <option>B) Ein Preisbildungsmodell<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Warum m\u00fcssen bestimmte Modellannahmen getroffen werden, damit ein Modell funktioniert? <option>Weil sie die Wirklichkeit vollst\u00e4ndig abbilden.<option>Weil sie die Technik im Modell vernachl\u00e4ssigen.<option>Weil sie sich nicht bewusst sind, dass Modelle vereinfacht dargestellt werden.<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T17:34:54.391498",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

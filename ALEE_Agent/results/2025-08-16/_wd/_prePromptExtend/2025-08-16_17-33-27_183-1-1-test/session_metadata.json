@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 0.09947633743286133,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was bedeutet der Begriff \"Bedarf\" in der Wirtschaft?\nA) Die Bereitschaft, Mittel f\u00fcr bestimmte Dinge oder Leistungen einzusetzen\nB) Das Gef\u00fchl von Hunger oder Langeweile\nC) Der konkrete Bedarf nach einem bestimmten Gegenstand\nD) Die Wunsch nach Unterhaltung <option>A) Die Bereitschaft<option>Mittel f\u00fcr bestimmte Dinge oder Leistungen einzusetzen<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Ein Beispiel f\u00fcr den \u00dcbergang vom Bed\u00fcrfnis zur Befriedigung ist: <option>Wenn man langweilig ist, willst du ein neues Videospiel haben.<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Was spricht man nicht nur bei dem Einsatz von Mitteln f\u00fcr den Kauf von Gegenst\u00e4nden von Bedarf?\nA) Der Verzehr von Nahrung\nB) Das Tragen von Kleidung\nC) Der Einsatz von Dienstleistungen wie Haarschnitten oder Bankberatungen\nD) Alle der oben genannten Beispiele <option>C) Der Einsatz von Dienstleistungen wie Haarschnitten oder Bankberatungen<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T17:33:27.682293",
+  "final_results_saved": true,
+  "total_processing_time": 0.0
+}

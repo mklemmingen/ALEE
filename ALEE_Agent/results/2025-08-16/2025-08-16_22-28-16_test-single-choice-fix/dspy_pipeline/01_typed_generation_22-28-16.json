@@ -1,0 +1,262 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:28:16.916940",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was sind Bedürfnisse? <option>Wünsche von Tieren<option>Wünsche von Menschen<option>Notwendigkeiten für das Leben<option>Freiwillige Handlungen",
+        "question_type": "single-choice",
+        "answers": [
+          "Wünsche von Tieren",
+          "Wünsche von Menschen",
+          "Notwendigkeiten für das Leben",
+          "Freiwillige Handlungen"
+        ],
+        "correct_answer": "Wünsche von Tieren",
+        "explanation": "Die Fragengenerierung wurde auf der Grundlage des gegebenen Textes und der Parametern durchgeführt. Die Fragen wurden so formuliert, dass sie den Stufen 1 (Wissen/Reproduktion) entsprechen. Die Antwortmöglichkeiten wurden sorgfältig ausgewählt, um die richtigen Antworten zu unterstützen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist im Allgemeinen gut formuliert, aber die Antwortmöglichkeiten könnten ein bisschen präziser sein. Die Option \"Freiwillige Handlungen\" könnte als \"Wünsche von Menschen, soweit sie freiwillig sind\" oder ähnlich umschrieben werden.",
+            "suggestions": [
+              "Die Antwortmöglichkeiten könnten noch ein bisschen präziser formuliert sein, um sicherzustellen, dass die Frage keine Überraschungen enthält. Möglicherweise sollte \"Notwendigkeiten für das Leben\" in \"Grundbedürfnisse\" oder ähnlich umbenannt werden."
+            ],
+            "reasoning": "Die Frage ist stammaufgabe, da sie ein Verständnis von Bedürfnissen erfordert und die Antwortmöglichkeiten darauf abzielen. Die Optionen sind jedoch nicht perfekt präzise formuliert, was die Bewertung auf 4 reduziert.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage bezieht sich gut auf die Stufe 1 der Bloom'schen Taxonomie, da sie ein Verständnis des Begriffs \"Bedürfnisse\" erfordert. Die Antwortoptionen sind ebenfalls relevant für diese Taxonomiestufe.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Frage ist auf die Stufe 1 der Bloom'schen Taxonomie ausgelegt, da sie ein Verständnis des Begriffs \"Bedürfnisse\" erfordert. Die Antwortoptionen sind relevant für diese Taxonomiestufe.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Komplexität der Frage liegt in der Analyse der Beziehung zwischen Wünschen, Notwendigkeiten und Handlungen. Um mathematisch zu argumentieren, müssten die Optionen quantifiziert oder durch ein Beispiel erläutert werden, um die Kausalität zwischen ihnen offensichtlich zu machen.",
+            "suggestions": [
+              "- Erweitern Sie den Kontext, indem Sie Beispiele für Wünsche von Tieren und Menschen geben, um die Abhängigkeit zu verdeutlichen.",
+              "- Diskutieren Sie die Notwendigkeiten für das Leben in einem mathematischen Kontext, etwa durch das Modellieren von Abhängigkeiten zwischen Gesundheit und Nahrungsaufnahme."
+            ],
+            "reasoning": "Die Mathematik-Bewertung ist 2, da die Frage anspruchsvoll ist, aber der Kontext nicht ausreichend mathematischer Komplexität enthält. Es fehlen quantitative Beispiele oder ein mathematisches Modell, um die Kausalitäten zwischen den Optionen zu verdeutlichen.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die sprachlichen Hindernisse in dieser Frage sind minimal. Die Formulierung ist einfach und unmissverständlich, die Wörter werden korrekt verwendet. Es gibt keine Missverständnisse oder potenziell falsche Interpretationen.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung erforderlich"
+            ],
+            "reasoning": "Die Frage ist für Lernende leicht verständlich, da sie ein grundlegendes Konzept erfasst. Die Antwortoptionen sind logisch und helfen dabei, das Thema zu verstehen.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut, da der Begriff Bedürfnisse explizit definiert wird. Die Antwortoptionen sind auch gut ausgewählt, um die verschiedenen Arten von Bedürfnissen zu repräsentieren.",
+            "suggestions": [
+              "Keine Verbesserungen notwendig"
+            ],
+            "reasoning": "Die Anweisungsklarheit und Explizitheit sind gut, da der Begriff Bedürfnisse explizit definiert wird. Die Antwortoptionen sind auch gut ausgewählt, um die verschiedenen Arten von Bedürfnissen zu repräsentieren.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.4 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was sind Bedürfnisse? <option>Wünsche von Tieren<option>Wünsche von Menschen<option>Notwendigkeiten für das Leben<option>Freiwillige Handlungen"
+      },
+      {
+        "question_text": "Wie entstehen Bedürfnisse? <option>Wenn Menschen etwas haben, was sie nicht benötigen<option>Wenn Menschen das Gefühl haben, dass ihnen etwas fehlt<option>Wenn Menschen andere Menschen helfen möchten<option>Wenn Menschen neue Dinge entdecken",
+        "question_type": "single-choice",
+        "answers": [
+          "Wenn Menschen etwas haben, was sie nicht benötigen",
+          "Wenn Menschen das Gefühl haben, dass ihnen etwas fehlt",
+          "Wenn Menschen andere Menschen helfen möchten",
+          "Wenn Menschen neue Dinge entdecken"
+        ],
+        "correct_answer": "Wenn Menschen etwas haben, was sie nicht benötigen",
+        "explanation": "Die Fragengenerierung wurde auf der Grundlage des gegebenen Textes und der Parametern durchgeführt. Die Fragen wurden so formuliert, dass sie den Stufen 1 (Wissen/Reproduktion) entsprechen. Die Antwortmöglichkeiten wurden sorgfältig ausgewählt, um die richtigen Antworten zu unterstützen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Fragen sind zu vage. Die Antworten müssen spezifischer sein.",
+            "suggestions": [
+              "Fügen Sie weitere Details hinzu, um die Frage spezifischer zu machen. Beispielsweise: \"Wenn Menschen etwas haben, was sie nicht benötigen, aber das Gefühl haben, dass ihnen etwas fehlt.\" oder \"Wenn Menschen andere Menschen helfen möchten und neue Dinge entdecken.\""
+            ],
+            "reasoning": "Die Fragen sind zwar allgemein auf die Bedürfnisse gerichtet, aber die Optionen sind zu vage. Die Antworten sollten spezifischer sein, um sicherzustellen, dass die Teilnehmer ihre Kenntnisse und Fähigkeiten unter Beweis stellen können.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist einfach genug formuliert, um ein Verständnis der Basiswissen zu prüfen. Allerdings wäre es hilfreich, wenn die Antwortmöglichkeiten besser aufeinander abgestimmt wären und eine klare Fragestellung beinhalteten.",
+            "suggestions": [
+              "Die Frage könnte durch Hinzufügen von mehr Optionen oder durch die Veränderung der bestehenden Optionen zu einer komplexeren Frage gestaltet werden, die auch die Fähigkeit zur Analyse und Bewertung prüfen würde. Beispielsweise könnten Optionen wie \"Wenn Menschen neue Bedürfnisse entdecken\" oder \"Wenn Menschen ihre eigenen Werte ändern\" hinzugefügt werden."
+            ],
+            "reasoning": "Die Frage wird als Stufe 1 (Wissen/Reproduktion) eingestuft, da sie auf die Reproduktion von Wissen abzielt und keine Analyse oder Bewertung der Optionen beinhaltet. Die Antwortmöglichkeiten sind eine Liste von möglichen Gründen für die Entstehung von Bedürfnissen, aber es fehlt an einer tiefergehenden Analyse dieser Möglichkeiten.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität der Frage liegt in der Fähigkeit, verschiedene Aspekte der Bedürfnisentwicklung abzubilden. Die richtige Antwort zeugt von einer Vielschichtigkeit im Verständnis menschlicher Emotionen und Interaktionen.",
+            "suggestions": [
+              "Um die Komplexität der Frage zu erhöhen, könnten weitere Aspekte wie soziale Einflüsse oder kulturelle Normen hinzugefügt werden. Alternativ könnten sichere Aussagen über das Unverständnis von Bedürfnissen in Bezug auf die richtigen Antworten ergeben."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Fähigkeit, mehrere Aspekte der Frage richtig zu benennen und so ein differenziertes Verständnis menschlicher Bedürfnisse abzubilden. Die Komplexität liegt in der Kombination verschiedener Faktoren zur Erschaffung eines umfassenden Bildes.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält keine sprachlichen Hindernisse. Die Optionen sind klar und leicht verständlich.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung."
+            ],
+            "reasoning": "Die Frage ist gut formuliert, die Antworten sind klare und kurze Sätze, die sich leicht verstehen lassen. Es gibt keine sprachlichen Hindernisse oder Unklarheiten in der Frage oder den Antworten.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist insgesamt gut, aber die Antwortoptionen könnten besser angeordnet sein, um eindeutigere Beziehungen zwischen den Optionen herzustellen. Außerdem fehlen klare Verbindungen zwischen den Szenarien und dem Entstehen von Bedürfnissen.",
+            "suggestions": [
+              "- Die Antwortoptionen könnten besser angeordnet werden, indem ähnliche oder verwandte Szenarien zusammengefasst werden.",
+              "- Die Option \"Wenn Menschen neue Dinge entdecken\" könnte als Beispiel für ein neues Bedürfnis dienen und mit einer expliziten Verbindung zu den anderen Optionen versehen werden."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung von 4 gibt an, dass die Anweisungen im Allgemeinen klar sind, aber noch einige Verbesserungspotenziale haben. Die richtigen Antworten wurden identifiziert und die möglichen Verbesserungen der Anweisungsklarheit wurden erörtert.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wie entstehen Bedürfnisse? <option>Wenn Menschen etwas haben, was sie nicht benötigen<option>Wenn Menschen das Gefühl haben, dass ihnen etwas fehlt<option>Wenn Menschen andere Menschen helfen möchten<option>Wenn Menschen neue Dinge entdecken"
+      },
+      {
+        "question_text": "Was ist ein Merkmal von Bedürfnissen? <option>Sie sind freiwillige Handlungen<option>Sie entstehen nur bei Tieren<option>Sie haben nichts mit dem Leben zu tun<option>Sie entstehen, wenn Menschen das Gefühl haben, dass ihnen etwas fehlt",
+        "question_type": "single-choice",
+        "answers": [
+          "Sie sind freiwillige Handlungen",
+          "Sie entstehen nur bei Tieren",
+          "Sie haben nichts mit dem Leben zu tun",
+          "Sie entstehen, wenn Menschen das Gefühl haben, dass ihnen etwas fehlt"
+        ],
+        "correct_answer": "Sie sind freiwillige Handlungen",
+        "explanation": "Die Fragengenerierung wurde auf der Grundlage des gegebenen Textes und der Parametern durchgeführt. Die Fragen wurden so formuliert, dass sie den Stufen 1 (Wissen/Reproduktion) entsprechen. Die Antwortmöglichkeiten wurden sorgfältig ausgewählt, um die richtigen Antworten zu unterstützen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 2,
+            "feedback": "Die Frage sollte sich eher auf die Definition oder Beispiele für Bedürfnisse konzentrieren. Die Antwortmöglichkeiten sind zu vage und enthalten falsche Informationen.",
+            "suggestions": [
+              "- Eine präzisere Frage, beispielsweise: \"Was ist ein Merkmal von Bedürfnissen?\"",
+              "- Eine klare Definition oder Beispiele für Bedürfnisse in der Frage",
+              "- Antwortmöglichkeiten, die auf tatsächliche Merkmale von Bedürfnissen abzielen"
+            ],
+            "reasoning": "Die Bewertung basiert auf der Überzeugung, dass die Frage nicht genau genug ist und die Antwortmöglichkeiten falsche Informationen enthalten. Die Schwierigkeit entspricht daher nicht dem deutschen Schwierigkeitsgrad.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage könnte leichter verständlich gemacht werden, indem man Beispiele für Bedürfnisse anführt und die Schüler dazu auffordert, diese zu identifizieren. Außerdem wäre es hilfreich, wenn die richtige Antwort in der Frage hervorgehoben würde, um Missverständnisse zu vermeiden.",
+            "suggestions": [
+              "- Die Frage könnte angepasst werden, indem man Beispiele für Bedürfnisse anführt und die Schüler dazu auffordert, diese zu identifizieren.",
+              "- Die richtige Antwort in der Frage hervorheben, um Missverständnisse zu vermeiden."
+            ],
+            "reasoning": "Die Taxonomiestufe 1 (Wissen/Reproduktion) ist nicht angemessen, da die Schüler die Definition von Bedürfnissen nicht reproduzieren können und stattdessen falsche Aussagen über sie treffen. Es wäre besser, eine Frage zu erstellen, die die Fähigkeit der Schüler beurteilt, Beispiele für Bedürfnisse anzugeben.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage zeigt ein gutes Verständnis für das Konzept von Bedürfnissen. Die Komplexität der Frage liegt im Bereich der sozialen und psychologischen Aspekte des menschlichen Verhaltens.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich, da die Frage bereits eine angemessene Komplexität aufweist."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Korrektheit der Definition von Bedürfnissen und dem Verständnis für das Konzept im Zusammenhang mit dem menschlichen Verhalten.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse, wie zum Beispiel den Begriff \"freiwillige Handlungen\". Es ist jedoch nicht ersichtlich, dass dies ein Hindernis für die richtige Beantwortung der Frage darstellt.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung des Textes, da die Frage in sich selbst logisch und konsistent ist."
+            ],
+            "reasoning": "Die Frage wurde als logisch und konsistent bewertet. Der einzige Hinweis auf ein Hindernis war der Begriff \"freiwillige Handlungen\", aber dieser trug nicht dazu bei, dass die richtige Antwort falsch erscheint.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist ausreichend. Die Frage hat eine klare Bedeutung, die Antwortmöglichkeiten sind präzise definiert. Es gibt jedoch einen Fehler in der Formulierung der Antwortmöglichkeit \"Sie entstehen nur bei Tieren\". Da Bedürfnisse auch bei allen Lebewesen auftreten und nicht nur bei Tieren, sollte diese Option korrigiert werden.",
+            "suggestions": [
+              "Es wird empfohlen, die Anweisung zu überarbeiten. Die Antwortmöglichkeit \"Sie entstehen nur bei Tieren\" sollte geändert werden in \"Sie entstehen auch bei allen Lebewesen\". Dies würde den Fehler korrigieren und die Genauigkeit der Frage verbessern."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 4, da die Klarheit ausreichend ist. Der Hauptfehler liegt jedoch in der Formulierung einer Antwortmöglichkeit, die zu viel Informationen enthält und sich nicht auf das Wesentliche der Frage beschränkt.",
+            "target_value": "Explizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 2,
+          "taxonomy_expert": 4,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist ein Merkmal von Bedürfnissen? <option>Sie sind freiwillige Handlungen<option>Sie entstehen nur bei Tieren<option>Sie haben nichts mit dem Leben zu tun<option>Sie entstehen, wenn Menschen das Gefühl haben, dass ihnen etwas fehlt"
+      }
+    ],
+    "question_types_generated": [
+      "single-choice",
+      "single-choice",
+      "single-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 0.08422040939331055,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Ordne die Begriffe den richtigen Erkl\u00e4rungen zu. <start-option>Bed\u00fcrfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>W\u00fcnsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "Ordne die Begriffe den richtigen Erkl\u00e4rungen zu. <start-option>Bed\u00fcrfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>W\u00fcnsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "Ordne die Begriffe den richtigen Erkl\u00e4rungen zu. <start-option>Bed\u00fcrfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>W\u00fcnsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T22:50:52.074892",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

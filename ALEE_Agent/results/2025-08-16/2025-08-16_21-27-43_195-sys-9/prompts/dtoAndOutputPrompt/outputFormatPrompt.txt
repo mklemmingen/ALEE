@@ -1,0 +1,16 @@
+=== FINAL JSON FORMAT (For CSV Export Only) ===
+
+Wandele die fertige Frage in folgendes JSON-Format um:
+
+{"question": "[Die vollständige Frage mit <option> Markup]", "answers": ["Option 1", "Option 2", "Option 3", "Option 4", "Option 5", "Option 6"], "correct_answer": ["Option X"]}
+
+BEISPIEL:
+{"question": "Was sind Bedürfnisse? <option>Materielle Güter<option>Wünsche die entstehen wenn etwas fehlt<option>Nur Luxusartikel<option>Immer gleich<option>Physische Objekte<option>Psychische Bedürfnisse", "answers": ["Materielle Güter", "Wünsche die entstehen wenn etwas fehlt", "Nur Luxusartikel", "Immer gleich", "Physische Objekte", "Psychische Bedürfnisse"], "correct_answer": ["Wünsche die entstehen wenn etwas fehlt"]}
+
+FORMAT-ANFORDERUNGEN:
+- Verwende <option> Markup (NICHT A), B), C))
+- Mindestens 6 Optionen, maximal 8 Optionen
+- correct_answer als Liste (für multiple korrekte Antworten)
+- Keine Buchstaben-Kennzeichnungen (A, B, C) verwenden
+
+ACHTUNG: Beginne direkt mit { und ende mit } - keine anderen Zeichen!

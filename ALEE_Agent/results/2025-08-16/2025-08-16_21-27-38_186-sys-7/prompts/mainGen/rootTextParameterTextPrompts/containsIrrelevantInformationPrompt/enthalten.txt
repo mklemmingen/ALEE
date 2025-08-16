@@ -1,0 +1,26 @@
+ROOT TEXT PARAMETER: Contains Irrelevant Information - ENTHALTEN
+
+Der Referenztext soll irrelevante Informationen enthalten, die nicht zur Beantwortung der Frage beitragen.
+
+ZWECK:
+Diese Zusatzinformationen erhöhen die kognitive Belastung und erfordern vom Schüler, relevante von irrelevanten Informationen zu unterscheiden.
+
+IMPLEMENTATION:
+- Zusätzliche Details einbauen, die thematisch verwandt aber nicht fragerichtig sind
+- Ablenkende Nebeninformationen hinzufügen
+- Komplexere Textstruktur mit mehreren Informationsebenen
+- Unwichtige Beispiele oder Zusatzkonzepte erwähnen
+
+STAKEHOLDER-BEISPIEL:
+"Bedürfnisse sind Wünsche Menschen haben. Sie entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. In der Wirtschaft bezeichnet man solche Wünsche allgemein auch als Bedürfnisse. Übrigens wurde der Begriff Bedürfnis erstmals 1776 von Adam Smith verwendet, der auch die unsichtbare Hand der Märkte beschrieb. Wenn es kalt ist, hat man das Bedürfnis sich zu wärmen. Die Temperatur wird normalerweise in Celsius gemessen, benannt nach Anders Celsius, einem schwedischen Astronomen. Wenn du dich einsam fühlst, hast du vielleicht ein Bedürfnis nach Zuneigung oder Freundschaft."
+
+IRRELEVANTE ELEMENTE:
+- Historische Informationen zu Adam Smith
+- Temperaturmessung und Anders Celsius
+- Details zur unsichtbaren Hand (nicht fragenrelevant)
+
+QUALITÄTSKRITERIEN:
+- Irrelevante Informationen thematisch plausibel
+- Keine komplett fremden Themen
+- Logischer Textfluss trotz Zusatzinformationen
+- Ablenkung ohne Verwirrung

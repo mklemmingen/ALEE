@@ -1,0 +1,279 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T17:34:54.391023",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was ist ein Hauptzweck von Modellen? <option>Sie bilden die Wirklichkeit vollständig ab.<option>Sie vereinfachen die Wirklichkeit, damit wir sie besser verstehen.<option>Sie helfen uns nicht dabei, die Wirklichkeit zu verstehen.<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Sie bilden die Wirklichkeit vollständig ab.",
+          "Sie vereinfachen die Wirklichkeit, damit wir sie besser verstehen.",
+          "Sie helfen uns nicht dabei, die Wirklichkeit zu verstehen.",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Sie bilden die Wirklichkeit vollständig ab.",
+          "Sie vereinfachen die Wirklichkeit, damit wir sie besser verstehen."
+        ],
+        "explanation": "Die Fragen wurden anhand der gegebenen Texte und Parameter generiert. Die Beziehung zwischen Modellen und Realität ist ein zentraler Aspekt des Textes, daher sind die Fragen darauf ausgerichtet, diese Beziehung zu verdeutlichen. Jede Frage ist auf das Thema \"Modelle\" bezogen und soll das Verständnis der Zusammenhänge zwischen Modell und Wirklichkeit fördern.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und der Hauptzweck von Modellen wird genau beschrieben. Die Optionen sind auch plausibel und passen zum Thema.",
+            "suggestions": [
+              "Keine Verbesserungen erforderlich, die Frage ist klar und prägnant formuliert."
+            ],
+            "reasoning": "Die Bewertung von 3 ist aufgrund der folgenden Gründe erfolgt: \n- Die Frage bezieht sich genau auf den Hauptzweck von Modellen. \n- Die Optionen sind plausibel und passen zum Thema.\nAllerdings fehlt eine klare Definition des Begriffs \"Wirklichkeit\", was die Verständlichkeit der Frage verringern könnte.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 4,
+            "feedback": "Die Frage erfordert vom Schüler ein Verständnis des Zwecks von Modellen in Bezug auf die Vereinfachung und Abstraktion der Wirklichkeit. Die richtige Antwort zeigt ein tieferes Verständnis dieses Konzepts, was für eine Taxonomiestufe höher als Stufe 1 (Wissen/Reproduktion) spricht.",
+            "suggestions": [
+              "Es gibt keine Anpassungen erforderlich, da die Frage bereits auf eine angemessene Weise gestaltet ist, um ein tieferes Verständnis des Konzepts abzubilden."
+            ],
+            "reasoning": "Die Begründung für diese Bewertung liegt darin, dass die Frage nicht nur nach der Definition von Modellen fragt, sondern vielmehr danach, wie sie verwendet werden können, um die Wirklichkeit zu verstehen. Dies zeigt ein Verständnis des Konzepts auf einer höheren Ebene als bloßes Wissen oder Reproduktion.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 4,
+            "feedback": "Die mathematische Komplexität ist moderat, da die Frage eine grundlegende Konzeption im Kontext von Modellen beinhaltet. Die richtige Antwort erfordert ein Verständnis der Eigenschaften von Modellen und ihre Beziehung zur Wirklichkeit.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich, da die Frage bereits eine moderate Komplexität aufweist."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Fähigkeit, das Konzept von Modellen und ihre Funktion im Verständnis der Wirklichkeit zu erkennen. Die richtige Antwort zeigt ein Verständnis für die Vereinfachungscharakteristik von Modellen und ihre Bedeutung bei der Erläuterung komplexer Sachverhalte.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage beinhaltet keine sprachlichen Hindernisse, da sie in einer klaren und verständlichen Sprache formuliert ist. Die Antwortmöglichkeiten sind ebenfalls klar definiert und passen zu der Frage.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung erforderlich."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Tatsache, dass die Frage und die Antwortmöglichkeiten keine offensichtlichen sprachlichen Hindernisse aufweisen. Die Formulierung ist klar und verständlich, was es einfacher macht, die Frage zu beantworten.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut. Die Frage bezieht sich klar auf die Verwendung von Modellen in der Bildung, und die Antwortoptionen sind deutlich und prägnant formuliert.",
+            "suggestions": [
+              "Keine Vorschläge für Verbesserungen, da die Anweisungsklarheit gut ist."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung von 4 ergibt sich aus der Tatsache, dass die Frage und Antwortoptionen klar und prägnant formuliert sind. Die richtige Antwort ist auch logisch und verständlich formuliert. Der einzige Punkt, an dem die Anweisungsklarheit verbessert werden könnte, wäre die Erwähnung eines konkreten Beispiels für die Verwendung von Modellen in der Bildung.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 4,
+          "math_expert": 4,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.6 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist ein Hauptzweck von Modellen? <option>Sie bilden die Wirklichkeit vollständig ab.<option>Sie vereinfachen die Wirklichkeit, damit wir sie besser verstehen.<option>Sie helfen uns nicht dabei, die Wirklichkeit zu verstehen.<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Welche Art von Modell wird häufig in der Wirtschaft verwendet?\nA) Ein Modellauto\nB) Ein Preisbildungsmodell\nC) Eine Straßenkarte\nD) Ein Globus <option>B) Ein Preisbildungsmodell<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "B) Ein Preisbildungsmodell",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "B) Ein Preisbildungsmodell",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragen wurden anhand der gegebenen Texte und Parameter generiert. Die Beziehung zwischen Modellen und Realität ist ein zentraler Aspekt des Textes, daher sind die Fragen darauf ausgerichtet, diese Beziehung zu verdeutlichen. Jede Frage ist auf das Thema \"Modelle\" bezogen und soll das Verständnis der Zusammenhänge zwischen Modell und Wirklichkeit fördern.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist für die Schwierigkeitsstufe \"stammaufgabe\" geeignet, da sie einen gewissen Grad an Kenntnissen über die Wirtschaftstheorie verlangt. Der Schüler sollte in der Lage sein, das Konzept eines Preisbildungsmodells zu erkennen und seine Bedeutung in der Wirtschaft zu verstehen.",
+            "suggestions": [
+              "Keine Vorschläge für Verbesserungen."
+            ],
+            "reasoning": "Die Frage ist gut formuliert und die Antwortmöglichkeiten sind plausibel. Der Schüler wird dazu animiert, über die Verwendung von Modellen in der Wirtschaft nachzudenken. Die einzige Kritikpunkt ist, dass es möglicherweise zu viele Optionen gibt, was den Schüler verwirren könnte.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert die Fähigkeit, Informationen zu analysieren und ein Modell auszuwählen, das für eine bestimmte Situation geeignet ist. Die Antwort zeigt eine grundlegende Kenntnis der Wirtschaft und ihrer Modelle. Es gibt jedoch keine explizite Anforderung an Kritik oder Bewertung des Modells.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage bereits eindeutige Antworten hat und es keine Anpassungen erforderlich sind."
+            ],
+            "reasoning": "Die Antwort wurde aufgrund der expliziten Erwähnung von \"Preisbildungsmodell\" als häufig verwendetes Modell in der Wirtschaft ausgewählt. Dies zeigt eine begrenzte, aber korrekte Kenntnis des Themas.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Das Problem zeigt eine rudimentäre mathematische Komplexität, da es sich um eine einfache Frage mit einer richtigen Antwort handelt. Die richtige Antwort ist jedoch nicht besonders anspruchsvoll oder komplex, sodass die Bewertung für mathematische Fähigkeiten als 2 (zweite Stufe) bewertet werden kann.",
+            "suggestions": [
+              "Es sind keine spezifischen Anpassungen erforderlich, da die Frage bereits auf einer grundlegenden Ebene steht. Eine mögliche Erweiterung könnte darin bestehen, das Problem zu schwieriger zu gestalten oder mehrere richtige Antworten anzubieten."
+            ],
+            "reasoning": "Die Bewertung als 2 basiert darauf, dass die Frage zwar ein grundlegendes mathematisches Konzept beinhaltet, dies jedoch nicht in einer anspruchsvollen oder komplexen Weise dargestellt ist. Die Antwortmöglichkeiten sind klar und einfach zu verstehen.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage könnte präziser formuliert werden, um sicherzustellen, dass die Antwortmöglichkeiten direkt mit der Wirtschaft zusammenhängen. Zudem wäre es hilfreich, wenn die Zusätzlichen Optionen spezifischer beschrieben würden, um das Verständnis für den Schüler zu erleichtern.",
+            "suggestions": [
+              "Vorschlag 1: Verbessere die Formulierung der Frage und passe sie an die Themen des Bildungsbereichs Wirtschaft an.",
+              "Vorschlag 2: Füge spezifische Beschreibungen für die Zusätzlichen Optionen ein."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Annahme, dass die Frage nicht präzise genug formuliert ist und die Antwortmöglichkeiten nicht direkt mit der Wirtschaft zusammenhängen. Die richtige Antwort könnte jedoch eines der Zusätzlichen Optionen sein.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist gut strukturiert und es ist leicht, die richtige Antwort zu finden. Es gibt jedoch einige überflüssige Optionen (Zusätzliche Option 2-6), die nicht direkt zur Frage beitragen.",
+            "suggestions": [
+              "Es könnte empfehlenswert sein, die Anzahl der Optionen zu reduzieren, um die Entscheidungsschwelle für den Testteilnehmer zu minimieren. Es ist auch eine gute Idee, die Fragen so zu gestalten, dass sie nicht mehr als 2-3 überflüssige Optionen enthalten."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 4 liegt darin, dass die Anweisungsklarheit sehr gut ist und es leicht ist, die richtige Antwort zu finden. Die Reduzierung der Anzahl der Optionen würde jedoch zu einer noch besseren Klarheit führen.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Art von Modell wird häufig in der Wirtschaft verwendet?\nA) Ein Modellauto\nB) Ein Preisbildungsmodell\nC) Eine Straßenkarte\nD) Ein Globus <option>B) Ein Preisbildungsmodell<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Warum müssen bestimmte Modellannahmen getroffen werden, damit ein Modell funktioniert? <option>Weil sie die Wirklichkeit vollständig abbilden.<option>Weil sie die Technik im Modell vernachlässigen.<option>Weil sie sich nicht bewusst sind, dass Modelle vereinfacht dargestellt werden.<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Weil sie die Wirklichkeit vollständig abbilden.",
+          "Weil sie die Technik im Modell vernachlässigen.",
+          "Weil sie sich nicht bewusst sind, dass Modelle vereinfacht dargestellt werden.",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Weil sie die Wirklichkeit vollständig abbilden.",
+          "Weil sie die Technik im Modell vernachlässigen."
+        ],
+        "explanation": "Die Fragen wurden anhand der gegebenen Texte und Parameter generiert. Die Beziehung zwischen Modellen und Realität ist ein zentraler Aspekt des Textes, daher sind die Fragen darauf ausgerichtet, diese Beziehung zu verdeutlichen. Jede Frage ist auf das Thema \"Modelle\" bezogen und soll das Verständnis der Zusammenhänge zwischen Modell und Wirklichkeit fördern.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist schwierig und erfordert ein tiefes Verständnis der Thematik. Die Antwortoptionen sind jedoch nicht sehr hilfreich, da sie eher allgemeine Aussagen treffen als spezifische Erklärungen für die Notwendigkeit von Modellannahmen bieten.",
+            "suggestions": [
+              "- Eine genauere Definition der Modellannahmen und ihre Auswirkungen auf das Modell.",
+              "- Eine klare Erklärung, wie die vereinfachte Darstellung des Systems im Modell eine Herausforderung darstellt."
+            ],
+            "reasoning": "Die Frage bewertet 3, da sie zwar ein Verständnis der Grundprinzipien und Annahmen erfordert, aber auch einige Schwierigkeiten bei der Interpretation der Antwortoptionen aufweist. Die richtige Antwort ist jedoch klar erkennbar, wenn man die Thematik versteht.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist gut formuliert, aber die Antwortmöglichkeiten sind etwas unklar. Es wäre hilfreich, wenn die Optionen genau definiert wären, um Missverständnisse zu vermeiden. Zudem sollte die Frage mehr an den Stufen der Taxonomie angepasst sein, um ein differenzierteres Verständnis des Themas abzufragen.",
+            "suggestions": [
+              "- Die Optionen sollten genau definiert werden.",
+              "- Die Frage sollte an die Stufen 2 (Analyse) oder höher angepasst werden, um ein differenzierteres Verständnis des Themas abzufragen."
+            ],
+            "reasoning": "Die Antwortmöglichkeiten sind nicht genau genug definiert. Um eine Taxonomie-Bewertung von 2 zu erreichen, müsste die Frage so gefasst sein, dass der Schüler erkennen kann, wie Modelle vereinfacht dargestellt werden und welches Verhältnis zwischen Realität und Vereinfachung besteht. Die Antwortmöglichkeiten sollten genau definieren, was unter \"Vereinfachung\" verstanden wird.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfordert vom Schüler eine kritische Denkfähigkeit, um die Grenzen von mathematischen Modellen zu erkennen. Die richtige Antwort zeigt ein Verständnis dafür, dass Modelle nicht immer realistisch sind und oft vereinfacht werden müssen.",
+            "suggestions": [
+              "Um sicherzustellen, dass das mathematische Modell korrekt ist, sollten die Schüler folgende Punkte beachten:",
+              "",
+              "* Vereinfachungen in Modellen sollten explizit gemacht werden.",
+              "* Die Grenzen der Modelle sollten erkannt und berücksichtigt werden.",
+              "* Die Ergebnisse des Modells sollten kritisch bewertet werden."
+            ],
+            "reasoning": "Die richtige Antwort ist \"Weil sie sich nicht bewusst sind, dass Modelle vereinfacht dargestellt werden.\" Weil dies zeigt, dass der Schüler versteht, dass mathematische Modelle oft vereinfachte Darstellungen von komplexen Phänomenen sind. Dies ist ein wichtiger Aspekt der mathematischen Komplexitätsanalyse.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage bezieht sich auf die Herausforderungen bei der Entwicklung von künstlichen Intelligenz-Modellen. Die richtige Antwort ist jedoch leicht verständlich und gibt keinen Hinweis darauf, dass es sich um ein sprachliches Hindernis handelt.",
+            "suggestions": [
+              "Keine Vorschläge zur Hindernisanpassung erforderlich"
+            ],
+            "reasoning": "Die Frage wird als gut formuliert angesehen. Die richtige Antwort ist jedoch keine Herausforderung für Sprachlernende, da sie leicht verständlich und klar ist.",
+            "target_value": "Keine sprachlichen Hindernisse",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist sehr gut, da die Fragen klar und präzise formuliert sind. Die Antwortmöglichkeiten sind ausreichend genau und liefern einen guten Überblick über das Thema. Es gibt jedoch einige Optionen, die nicht direkt relevant für das Thema sind (Zusätzliche Option 4-6), aber diese können leicht ignoriert werden.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge erforderlich"
+            ],
+            "reasoning": "Die Anweisung wird mit einer Bewertung von 4 bewertet, da sie sehr gut strukturiert und konsistent ist. Die Antworten liefern einen guten Überblick über das Thema, aber es gibt einige Optionen, die nicht direkt relevant sind.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Warum müssen bestimmte Modellannahmen getroffen werden, damit ein Modell funktioniert? <option>Weil sie die Wirklichkeit vollständig abbilden.<option>Weil sie die Technik im Modell vernachlässigen.<option>Weil sie sich nicht bewusst sind, dass Modelle vereinfacht dargestellt werden.<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

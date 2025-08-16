@@ -1,0 +1,283 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T21:19:33.615281",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was sind Güter, die niemandem gehören und somit unbegrenzt genutzt werden können? <option>Knappheit<option>Relative Knappheit<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Knappheit",
+          "Relative Knappheit",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Knappheit",
+          "Relative Knappheit"
+        ],
+        "explanation": "Die Fragengenerierung basierte auf der Analyse des Textes in Bezug auf die Parametern. Es wurden komplexe Konzepte wie relative Knappheit und absolute Knappheit behandelt, um das Verständnis des Lesers zu prüfen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage entspricht der Schwierigkeit \"schwer\" insofern, als sie ein Begriffswissen erfordert, um die Eigenschaften von Gütern zu verstehen. Die Antwortoptionen sind jedoch nicht perfekt angepasst an die Frage.",
+            "suggestions": [
+              "Die Frage könnte durch das Hinzufügen einer Option \"Keine knappen Ressourcen\" verbessert werden, um den Begriff des Nicht-Knapp-Seins zu verdeutlichen. Zusätzlich sollte in der Frage klar erwähnt werden, dass es sich bei Gütern mit nicht-knapper Natur um öffentliche oder allgemein zugängliche Güter handelt."
+            ],
+            "reasoning": "Die Bewertung von 3 ergibt sich aus dem Faktor, dass die Frage zwar schwierig ist und ein gewisses Wissen über die Eigenschaften von Gütern erfordert, aber auch nicht perfekt angepasst an die Schwierigkeit \"schwer\" ist. Die Antwortoptionen sind jedoch gut für den Kontext der Frage geeignet.",
+            "target_value": "schwer",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage könnte präziser formuliert werden, um direkt auf den Gegenstand der Taxonomiestufe Stufe 1 (Wissen/Reproduktion) einzugehen. Derzeit sind die Antwortmöglichkeiten nicht direkt relevant für die Frage.",
+            "suggestions": [
+              "Um die Frage zu verbessern:",
+              "- Formuliere die Frage so, dass sie direkt auf die Güter eingeht, die niemandem gehören und somit unbegrenzt genutzt werden können.",
+              "- Überprüfe die Antwortmöglichkeiten und passe sie an, um sicherzustellen, dass sie relevant für die Frage sind."
+            ],
+            "reasoning": "Die Begründung für die Bewertung Stufe 3 (Leistung) basiert darauf, dass die Frage zwar nach Wissen fragt, aber die Antwortmöglichkeiten nicht direkt auf den Gegenstand der Taxonomiestufe Stufe 1 (Wissen/Reproduktion) eingehen. Daher wird eine höhere Taxonomiestufe zugeordnet.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Komplexität dieser Frage ist relativ einfach, da sie auf grundlegenden mathematischen Begriffen basiert. Es fehlt jedoch an einem direkten Bezug zu der Ziel-Mathematikstufe 1, was einen tiefer gehenden Verständnis der Konzepte erfordert.",
+            "suggestions": [
+              "- Eine Erklärung zu den mathematischen Begriffen \"Knappheit\" und \"Relative Knappheit\" könnte helfen, die Komplexität zu erhöhen.",
+              "- Die Frage sollte so gestellt werden, dass sie spezifisch an die Ziel-Mathematikstufe 1 angepasst ist."
+            ],
+            "reasoning": "Die Bewerterin hat diese Bewertung basierend auf der Tatsache getroffen, dass die richtige Antwort eng mit den grundlegenden mathematischen Begriffen \"Knappheit\" und \"Relative Knappheit\" zusammenhängt. Es wurde jedoch festgestellt, dass die Frage nicht spezifisch genug an die Ziel-Mathematikstufe 1 angepasst ist.",
+            "target_value": "1",
+            "applied": true
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält mehrere sprachliche Hindernisse, darunter komplexe Nominalphrasen, Passivkonstruktionen und komplexe NP-Strukturen. Die Verwendung von Negationen kann die Lesbarkeit erschweren.",
+            "suggestions": [
+              "- Vereinfachen der Komplexität des Textes durch Vermeidung von Passivkonstruktionen",
+              "- Verwenden einfacherer NP-Strukturen",
+              "- Reduzierung der Anzahl der Negationen"
+            ],
+            "reasoning": "Die Hindernis-Bewertung ist 4, weil es sich um komplexe sprachliche Strukturen handelt, die für Lerner schwer verständlich sein können. Es gibt jedoch keine extreme Komplexität oder Unüberschaubarkeit.",
+            "target_value": "Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Komplexe NP; Item 2: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Negation; Item 3: Komplexe NP; Item 5: Passiv; Item 6: Negation; Item 7: Passiv; Item 7: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 2,
+            "feedback": "Die Anweisungsklarheit ist unscharf und bedarf der Klarstellung. Die Frage scheint sich nicht direkt mit der Definition von Gütern zu beschäftigen, die niemandem gehören, sondern vielmehr mit Arten von Knappheit.",
+            "suggestions": [
+              "Eine mögliche Verbesserung wäre, die Frage zu spezifizieren und klar zu definieren, was unter Gütern verstanden wird, die niemandem gehören. Zum Beispiel: \"Was sind Güter in einem Ökonomiesystem, die nicht durch private Eigentumsrechte beschränkt sind?\""
+            ],
+            "reasoning": "Die Anweisungs-Bewertung wurde auf 2 gesetzt, da die Frage nicht klar und präzise ist. Die Antwortoptionen beziehen sich nicht direkt auf Güter ohne Eigentümer und erfordern eine Klärung des Begriffs \"Güter\" in diesem Kontext.",
+            "target_value": "Explizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 4,
+          "instruction_expert": 2
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Average rating 2.8 below threshold, 2 experts suggest improvements",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was sind Güter, die niemandem gehören und somit unbegrenzt genutzt werden können? <option>Knappheit<option>Relative Knappheit<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Warum liegt Absolute Knappheit vor? <option>Weil die Mittel der Menschen nicht ausreichen.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Weil die Mittel der Menschen nicht ausreichen.",
+          "Zusätzliche Option 2",
+          "Zusätzliche Option 3",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Weil die Mittel der Menschen nicht ausreichen.",
+          "Zusätzliche Option 2"
+        ],
+        "explanation": "Die Fragengenerierung basierte auf der Analyse des Textes in Bezug auf die Parametern. Es wurden komplexe Konzepte wie relative Knappheit und absolute Knappheit behandelt, um das Verständnis des Lesers zu prüfen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Es fehlt an einer klaren und direkten Beziehung zwischen dem Thema und den Optionen. Eine klare Bezeichnung als \"A, B, C\" für die Optionen wäre hilfreich.",
+            "suggestions": [
+              "-Optionen sollten eine klare Nummerierung (A, B, C) erhalten",
+              "-Klarer Abstand zwischen Frage und Antworten"
+            ],
+            "reasoning": "Die Bewertung wurde auf 3 gesetzt, da die Beziehung zwischen der Frage und den Optionen nicht direkt ist. Die Frage wirft zwar das Thema \"Absolute Knappheit\" auf, aber die Optionen deuten eher auf Wirtschaft oder Finanzen hin, anstatt direkte Gründe für Absolute Knappheit zu liefern.",
+            "target_value": "schwer",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage ist gut formuliert und die Antworten sind klar definiert, sodass der Schüler problemlos zwischen den Optionen unterscheiden kann. Die Frage erfordert jedoch, dass der Schüler bereits über grundlegende Kenntnisse über Absolute Knappheit verfügt.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich"
+            ],
+            "reasoning": "Die Frage erfüllt die Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie, da sie das Wiedergeben von Informationen und die Reproduktion bereits vorhandenen Wissens beinhaltet. Der Schüler muss lediglich die richtige Antwort aus den Optionen wählen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": true
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Antwort Optionen zeigten keine klare Verbindung zur mathematischen Konzeption von Absolute Knappheit. Die meisten Optionen waren eher allgemeine Aussagen ohne Bezug zu den mathematischen Aspekten des Themas.",
+            "suggestions": [
+              "Um die Komplexität der Frage zu erhöhen, sollten wir spezifischere Fragen stellen oder Anforderungen an die Antworten legen, die direkt mit den mathematischen Konzepten zusammenhängen."
+            ],
+            "reasoning": "Die Bewerung wurde als 2 gewertet, da es in der Frage keine klare Verbindung zur mathematischen Komplexität gab. Die Antwortmöglichkeiten zeigten auch kein Verständnis für die mathematischen Aspekte des Themas.",
+            "target_value": "1",
+            "applied": true
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist in sich widersprüchlich, da sie \"Absolute Knappheit\" thematisiert, aber mehrere Optionen enthält. Die Antworten sind teilweise korrekt, aber zeigen Schwächen bei der Verwendung komplexer NP und Negationsausdrücke.",
+            "suggestions": [
+              "- Vereinfachen Sie die Frage, indem Sie sie in ein einfacheres Thema umwandeln.",
+              "- Achten Sie auf konsistente Formulierung in den Antworten.",
+              "- Stellen Sie sicher, dass alle Optionen logisch miteinander verbunden sind."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Anwesenheit von Komplexität in der Frage und den Antworten. Die Passivkonstruktionen und Negationsausdrücke stellen ein Hindernis dar, aber die Antworten zeugen auch von mangelnder konsistenter Formulierung.",
+            "target_value": "Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Komplexe NP; Item 2: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Negation; Item 3: Komplexe NP; Item 5: Passiv; Item 6: Negation; Item 7: Passiv; Item 7: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit wird durch die Explizitheit der Frage und die Nennung der Optionen unterstützt. Es könnte jedoch hilfreich sein, weitere Kontextinformationen oder Beispiele zu liefern, um die Verständlichkeit für den Schüler zu verbessern.",
+            "suggestions": [
+              "- Die Hinzufügung von weiteren Kontextinformationen oder Beispielen kann dazu beitragen, dass der Schüler die Konzepte besser versteht.",
+              "- Eine detailliertere Erklärung des Begriffs \"Absolute Knappheit\" könnte hilfreich sein."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 3, da die Frage klar und explizit formuliert ist. Die Nennung der Optionen erleichtert es dem Schüler, seine Antwort zu wählen. Dennoch könnten weitere Kontextinformationen oder Beispiele dazu beitragen, dass die Verständlichkeit verbessert wird.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 2,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Average rating 2.6 below threshold, 2 experts suggest improvements",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Warum liegt Absolute Knappheit vor? <option>Weil die Mittel der Menschen nicht ausreichen.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Was ist entscheidend für Relative Knappheit?\n\nA) Die Menge, in der ein Gut vorhanden ist\nB) Die Zeit und der Ort, an dem ein Gut verfügbar ist\nC) Die Mittel der Menschen\nD) Der Preis eines Gutes <option>[option] C) Die Mittel der Menschen [/option]\n[option] A) Die Menge<option>in der ein Gut vorhanden ist [/option]\n[option] B) Die Zeit und der Ort<option>an dem ein Gut verfügbar ist [/option]\n[option] D) Der Preis eines Gutes [/option]<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "[option] C) Die Mittel der Menschen [/option]\n[option] A) Die Menge",
+          "in der ein Gut vorhanden ist [/option]\n[option] B) Die Zeit und der Ort",
+          "an dem ein Gut verfügbar ist [/option]\n[option] D) Der Preis eines Gutes [/option]",
+          "Zusätzliche Option 4",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "[option] C) Die Mittel der Menschen [/option]\n[option] A) Die Menge",
+          "in der ein Gut vorhanden ist [/option]\n[option] B) Die Zeit und der Ort"
+        ],
+        "explanation": "Die Fragengenerierung basierte auf der Analyse des Textes in Bezug auf die Parametern. Es wurden komplexe Konzepte wie relative Knappheit und absolute Knappheit behandelt, um das Verständnis des Lesers zu prüfen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist schwierig und erfordert einen guten Verständnis der Wirtschaftswissenschaft. Die Antwortoptionen sollten präzise und klar formuliert sein, um Missverständnisse zu vermeiden.",
+            "suggestions": [
+              "Für eine bessere Übereinstimmung könnte die Frage noch spezifischer auf Relative Knappheit bezogen werden. Die Antwortmöglichkeiten sollten auch präziser definiert sein, um Verwirrung zu vermeiden."
+            ],
+            "reasoning": "Die Frage erfüllt grundsätzlich die Anforderungen an eine schwierige Frage (schwer), da sie ein komplexes Konzept wie Relative Knappheit behandelt. Allerdings ist die Formulierung der Antwortoptionen nicht ideal, was zu Missverständnissen führen könnte.",
+            "target_value": "schwer",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfordert eine Analyse und Bewertung des Konzepts von Relative Knappheit. Die richtige Antwort zeigt ein Verständnis der Definition und ihrer Bedeutung im Kontext wirtschaftlicher Entscheidungen.",
+            "suggestions": [
+              "Keine Vorschläge, da die Frage bereits mit einer klaren Definition und korrekter Antwort versehen ist."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Fähigkeit des Schülers, die Konzepte von Relative Knappheit zu analysieren und zu bewerten. Die richtige Antwort zeigt ein Verständnis der Definition und ihrer Bedeutung, was eine Stufe 2-Ergebnis (Analyse) entspricht.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage wurde gut gestellt, aber die Optionen sollten präziser formuliert sein. Die Wahlmöglichkeiten für die Zusätzlichen Optionen sind nicht relevant für die Frage und sollten entfernt werden. Der Preis eines Gutes (D) ist kein relevantes Kriterium für Relative Knappheit.",
+            "suggestions": [
+              "Die Optionen sollten präziser formuliert sein, um die Relevanz der richtigen Antwort zu erhöhen. Die Zusätzlichen Optionen sollten entfernt werden und an ihre Stelle sollte ein relevanter Kriterium wie z.B. \"Die Technologie zur Herstellung\" kommen."
+            ],
+            "reasoning": "Die Frage wird beurteilt, indem man die Relevanz der Antwortoptionen für Relative Knappheit berücksichtigt. Die richtige Antwort, dass es sich um die Mittel der Menschen handelt (C), ist entscheidend für Relative Knappheit, da diese daran ausgerichtet ist, den optimalen Einsatz von begrenzten Ressourcen zur Erreichung bestimmter Ziele zu ermöglichen.",
+            "target_value": "1",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage zeigt einige sprachliche Hindernisse auf, wie z.B. komplexe Nominalphrasen und Passivkonstruktionen, was für den Testteilnehmer eine Herausforderung darstellt. Darüber hinaus fehlt es an syntaktischer Kohärenz in einigen Antworten.",
+            "suggestions": [
+              "* Vereinfachen der komplexen Nominalphrasen durch klare und präzise Wörterwahl.",
+              "* Vermeidung von Passivkonstruktionen, um die sprachliche Struktur zu verbessern.",
+              "* Klarstellung der Negationsformen, um Verwirrung zu vermeiden."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Analyse der sprachlichen Hindernisse in der Frage und den Antworten. Die komplexen Nominalphrasen und Passivkonstruktionen stellen eine Herausforderung für den Testteilnehmer dar, was sie zu einem sprachlichen Hindernis macht. Durch die Verwendung von klaren und präzisen Wörtern und die Vermeidung von Passivkonstruktionen kann die sprachliche Struktur verbessert werden.",
+            "target_value": "Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Komplexe NP; Item 2: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Negation; Item 3: Komplexe NP; Item 5: Passiv; Item 6: Negation; Item 7: Passiv; Item 7: Negation; Item 8: Komplexe NP",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit wird durch die explizite Angabe der richtigen Antwort und den klaren Rahmen für die Auswahlmöglichkeiten unterstützt. Die Verwendung von [option] und [/option]-Tags erleichtert die Lesbarkeit.",
+            "suggestions": [
+              "Keine Verbesserungen erforderlich, da die Anweisung bereits klar und explizit formuliert ist."
+            ],
+            "reasoning": "Die hohe Bewertung (4 von 5) wird durch die klare und direkte Formulierung der Frage, sowie den expliziten Hinweisen für die richtige Antwort erreicht. Die Auswahlmöglichkeiten sind sorgfältig in Bezug auf Relevanz und Klarheit gewählt.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist entscheidend für Relative Knappheit?\n\nA) Die Menge, in der ein Gut vorhanden ist\nB) Die Zeit und der Ort, an dem ein Gut verfügbar ist\nC) Die Mittel der Menschen\nD) Der Preis eines Gutes <option>[option] C) Die Mittel der Menschen [/option]\n[option] A) Die Menge<option>in der ein Gut vorhanden ist [/option]\n[option] B) Die Zeit und der Ort<option>an dem ein Gut verfügbar ist [/option]\n[option] D) Der Preis eines Gutes [/option]<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

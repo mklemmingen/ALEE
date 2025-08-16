@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 0.09995388984680176,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was ist ein Hauptunterschied zwischen den Bed\u00fcrfnissen von Kindern und Erwachsenen?\n\nA) Kinder haben oft das Bed\u00fcrfnis, finanziell abgesichert zu sein.\nB) Erwachsene haben h\u00e4ufiger das Bed\u00fcrfnis, sich zu w\u00e4rmen.\nC) Kinder wollen h\u00e4ufiger spielen als Erwachsene.\nD) Kinder haben oft das Bed\u00fcrfnis, etwas zu unternehmen. <option>A) Kinder haben oft das Bed\u00fcrfnis<option>finanziell abgesichert zu sein ist falsch.\nB) Erwachsene haben h\u00e4ufiger das Bed\u00fcrfnis<option>sich zu w\u00e4rmen ist falsch.\nC) Kinder wollen h\u00e4ufiger spielen als Erwachsene ist richtig.\nD) Kinder haben oft das Bed\u00fcrfnis<option>etwas zu unternehmen ist falsch.<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Wie beschreibt der Text die Natur von Bed\u00fcrfnissen? <option>Sie sind begrenzt und nur f\u00fcr eine Person g\u00fcltig.<option>Sie erf\u00fcllen sich nie, da sie unbefriedigt bleiben.<option>Sie werden immer erf\u00fcllt, ohne dass neue entstehen.<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6",
+        "Was passiert, wenn ein Bed\u00fcrfnis befriedigt ist?\n\nA) Man widmet sich sofort einem anderen Bed\u00fcrfnis.\nB) Das Befriedigte wird langsam vergessen.\nC) Es kommt zu neuen Bed\u00fcrfnissen hinzu.\nD) Die Bed\u00fcrfnisse werden unbegrenzt. <option>A) Man widmet sich sofort einem anderen Bed\u00fcrfnis ist richtig.\nB) Das Befriedigte wird langsam vergessen ist falsch.\nC) Es kommt zu neuen Bed\u00fcrfnissen hinzu ist falsch.\nD) Die Bed\u00fcrfnisse werden unbegrenzt ist falsch.<option>Zus\u00e4tzliche Option 2<option>Zus\u00e4tzliche Option 3<option>Zus\u00e4tzliche Option 4<option>Zus\u00e4tzliche Option 5<option>Zus\u00e4tzliche Option 6"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T21:22:11.964214",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

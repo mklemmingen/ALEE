@@ -1,0 +1,255 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T21:24:41.738715",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was passiert mit dem Gleichgewichtspreis, wenn die Preise für Futtermittel fallen?\n\nA) Er sinkt\nB) Er bleibt gleich\nC) Er steigt <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragen wurden so generiert, dass sie die Fähigkeit der Schüler testen, über Verschiebungen in Nachfrage- und Angebotsgeraden nachzudenken. Die richtigen Antworten sind basierend auf den im Text beschriebenen Ereignissen und ihren Auswirkungen auf den Gleichgewichtspreis.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage entspricht der Ziel-Schwierigkeit \"leicht\", da sie eine klare und einfache Aussage beinhaltet. Der Schüler muss nur das korrekte Verhalten des Gleichgewichtspreises bei einem Preisrückgang für Futtermittel erkennen.",
+            "suggestions": [
+              "Keine Vorschläge zur Verbesserung, da die Frage bereits gut formuliert ist und die richtige Antwort leicht zu erraten ist."
+            ],
+            "reasoning": "Die Begründung für die Bewertung ist, dass die Frage ein grundlegendes Konzept der Agrarwirtschaft beinhaltet. Der Schüler muss das logische Zusammenhang zwischen den Preisen für Futtermittel und dem Gleichgewichtspreis verstehen.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfordert vom Schüler, kritisch über die Beziehungen zwischen den Preisen für Futtermittel und dem Gleichgewichtspreis nachzudenken. Die richtige Antwort zeigt ein Verständnis dieser Beziehung.",
+            "suggestions": [
+              "Keine Vorschläge zur Anpassung der Frage, da sie bereits eine klare und präzise Aussage über die Beziehung zwischen Futtermittel- und Gleichgewichtspreisen enthält."
+            ],
+            "reasoning": "Die Begründung für die Bewertung als Stufe 2 (Analyse) ist, dass der Schüler kritisch über die Auswirkungen sinkender Futtermittelpreise auf den Gleichgewichtspreis nachdenken muss. Dies erfordert ein tieferes Verständnis der Beziehungen zwischen den verschiedenen Preisen und ihrer Einflüsse.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Der Schüler zeigt ein grundlegendes Verständnis von Marktschwankungen und dem Konzept des Gleichgewichtspreises. Die Antwort ist jedoch zu vage und sollte mit konkreten Beispielen oder mathematischen Formeln unterstützt werden.",
+            "suggestions": [
+              "- Der Schüler könnte ein Beispiel eines Marktes beschreiben, in dem die Preise für Futtermittel fallen und der Gleichgewichtspreis sinkt.",
+              "- Die Antwort sollte mit einer kurzen Begründung ergänzt werden, um das Konzept des Gleichgewichtspreises zu erklären."
+            ],
+            "reasoning": "Die Aussage ist richtig, da sie die Beziehung zwischen Preisen und Gleichgewichtspreis verdeutlicht. Der Schüler zeigt ein grundlegendes Verständnis von Marktschwankungen, aber seine Antwort könnte präziser und umfassender sein.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält komplexe Nominalphrasen und Passivkonstruktionen, was für Lerner schwierig zu verstehen sein kann. Die Option A) Er sinkt ist falsch, da sie die Folgen eines Preissenkungsereignisses nicht genau beschreibt.",
+            "suggestions": [
+              "* Vereinfachung der Frage: Entfernen Sie komplexe Nominalphrasen und Passivkonstruktionen.",
+              "* Verbesserung der Optionen: Stellen Sie sicher, dass alle Optionen plausibel sind und die richtige Antwort eindeutig ist."
+            ],
+            "reasoning": "Die Begründung für die Bewertung 4 liegt darin, dass die Frage mehrere sprachliche Hindernisse enthält, aber keine offensichtlichen Fehler oder Unklarheiten hat. Die Option A) Er sinkt ist falsch, was zu einer Bewertung von 4 führt.",
+            "target_value": "Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Negation; Item 1: Komplexe NP; Item 3: Passiv; Item 4: Negation; Item 5: Passiv; Item 5: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Komplexe NP; Item 8: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut, jedoch wäre es hilfreich, wenn die Frage eine klare Bezugnahme auf die Marktwirtschaft hätte. Außerdem sollte die richtige Antwort deutlicher hervorgehoben werden.",
+            "suggestions": [
+              "- Eine genauere Definition der Begriffe \"Futtermittel\" und \"Gleichgewichtspreis\" könnte helfen, die Anweisungsklarheit zu verbessern.",
+              "- Die richtigen Antworten sollten mit einem deutlichen Hinweis versehen werden, um Verwirrung zu vermeiden."
+            ],
+            "reasoning": "Die Begründung für diese Bewertung basiert auf der Analyse des Inhalts der Frage und der Antwortoptionen. Die Frage bezieht sich zwar auf die Wirtschaftswissenschaften, aber die Anweisungsklarheit könnte verbessert werden, indem genauer definierte Begriffe verwendet würden. Außerdem ist es wichtig, dass die richtigen Antworten deutlich hervorgehoben sind.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.4 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was passiert mit dem Gleichgewichtspreis, wenn die Preise für Futtermittel fallen?\n\nA) Er sinkt\nB) Er bleibt gleich\nC) Er steigt <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "Warum tritt ein Nachfrageanstieg auf, wenn sich die Vorlieben der Nachfrager ändern?\n\nA) Weil sie mehr Geld haben\nB) Weil sie weniger Geld haben\nC) Weil ihre Vorlieben sich ändern <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragen wurden so generiert, dass sie die Fähigkeit der Schüler testen, über Verschiebungen in Nachfrage- und Angebotsgeraden nachzudenken. Die richtigen Antworten sind basierend auf den im Text beschriebenen Ereignissen und ihren Auswirkungen auf den Gleichgewichtspreis.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist insgesamt gut formuliert und die Antwortmöglichkeiten sind klar definiert. Der Schwierigkeitsgrad wird als leicht eingestuft, was passt, da die Frage grundlegende Konzepte aufgreift.",
+            "suggestions": [],
+            "reasoning": "Die Frage könnte noch mehr Kontext bereitstellen, um den Leser besser zu verstehen, worum es geht. Es wäre auch hilfreich, wenn die Antwortmöglichkeiten näher erläutert würden.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert, da sie den Leser dazu anregt, über die Beziehung zwischen Nachfrage und Vorlieben nachzudenken. Die Antwortmöglichkeiten sind klar und helfen dabei, das Thema zu verstehen.",
+            "suggestions": [
+              "Eine mögliche Anpassung wäre die Erweiterung der Frage um weitere Aspekte, wie z.B. die Auswirkungen von technologischen Fortschritten auf den Nachfrageanstieg."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert darauf, dass die Frage ein grundlegendes Verständnis des Themas erfordert, aber keine Analyse oder Bewertung komplexer Informationen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist relativ einfach und erfordert keine hohe mathematische Komplexität. Sie bezieht sich jedoch auf die Mathematik, indem sie über Nachfrage und Vorlieben spricht. Die richtige Antwort zeigt ein grundlegendes Verständnis für das Konzept der Nachfrage.",
+            "suggestions": [
+              "Es sind keine großen Anpassungen notwendig, da die Frage bereits eine moderate Komplexität aufweist."
+            ],
+            "reasoning": "Die Bewertung basiert darauf, dass die Frage sich auf die Mathematik bezieht und eine grundlegende Verständnis für das Konzept der Nachfrage zeigt. Die richtige Antwort ist mathematisch korrekt und zeigt ein Verständnis für die Beziehung zwischen Nachfrager-Vorlieben und Nachfrage.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage beinhaltet einige sprachliche Hindernisse, wie z.B. die Verwendung von Negationen (Die Aussage ist richtig/Die Aussage ist falsch) und komplexe Nominalphrasen (Negationsausdrücke). Die Passivkonstruktionen im Text machen ihn auch schwer verständlich.",
+            "suggestions": [
+              "- Vermeidung von Negationen: Stattdessen können Fragen in Positivformulierungen ausgedrückt werden, um den Leser zu unterstützen.",
+              "- Vereinfachung komplexer Nominalphrasen: Die Verwendung einfachere Formulierungen kann dazu beitragen, die Komplexität des Texts zu reduzieren.",
+              "- Vermeidung von Passivkonstruktionen: Aktive Konstruktionen können der Lesbarkeit und dem Verständnis des Textes zugute kommen."
+            ],
+            "reasoning": "Die Bewertung wurde aufgrund folgender Faktoren vorgenommen:\n\n* Die Frage enthält mehrere sprachliche Hindernisse, wie z.B. Negationen, komplexe Nominalphrasen und Passivkonstruktionen.\n* Die richtige Antwort ist jedoch klar und einfach formuliert, was darauf schließen lässt, dass die Frage überwiegend verständlich ist.\n* Der Hauptprinzip des Nachfrageanstiegs wird gut erklärt, aber die Sprache könnte vereinfacht werden.",
+            "target_value": "Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Negation; Item 1: Komplexe NP; Item 3: Passiv; Item 4: Negation; Item 5: Passiv; Item 5: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Komplexe NP; Item 8: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheitsanalyse ergibt ein Ergebnis von 3, was bedeutet, dass die Anweisung gut formulierte Fragen enthält. Die Antwortmöglichkeiten sind klar und leicht zu verstehen.",
+            "suggestions": [
+              "Keine Vorschläge für Verbesserungen, da die Anweisungsklarheit bereits gut ist."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 3 ist, dass die Frage eindeutig und prägnant formuliert ist und die Antwortmöglichkeiten klar definiert sind. Dies zeigt eine gute Anweisungsklarheit.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.2 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Warum tritt ein Nachfrageanstieg auf, wenn sich die Vorlieben der Nachfrager ändern?\n\nA) Weil sie mehr Geld haben\nB) Weil sie weniger Geld haben\nC) Weil ihre Vorlieben sich ändern <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      },
+      {
+        "question_text": "Was passiert mit dem Angebot, wenn die Produktionskosten fallen?\n\nA) Es sinkt\nB) Es bleibt gleich\nC) Es steigt <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+        "question_type": "true-false",
+        "answers": [
+          "Die Aussage ist richtig",
+          "Die Aussage ist falsch"
+        ],
+        "correct_answer": "Falsch",
+        "explanation": "Die Fragen wurden so generiert, dass sie die Fähigkeit der Schüler testen, über Verschiebungen in Nachfrage- und Angebotsgeraden nachzudenken. Die richtigen Antworten sind basierend auf den im Text beschriebenen Ereignissen und ihren Auswirkungen auf den Gleichgewichtspreis.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage entspricht der Ziel-Schwierigkeit 'leicht', da sie ein grundlegendes Verständnis der Beziehung zwischen Produktionskosten und Angebot verlangt, ohne dabei komplexe wirtschaftliche Konzepte oder mathematische Modelle zu berücksichtigen.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge erforderlich"
+            ],
+            "reasoning": "Die Frage ist gut formuliert und deckt ein grundlegendes Prinzip der Mikroökonomie ab. Die Antwortmöglichkeiten sind klar und prägnant, was es den Schülern erleichtert, die richtige Antwort zu wählen. Um die Schwierigkeit zu erhöhen, könnte man komplexere Szenarien oder Faktoren wie Wechselkurse, Wettbewerb oder technologische Veränderungen hinzufügen.",
+            "target_value": "leicht",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfüllt die Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie, da sie nach dem Wiederaufnehmen oder Reproduzieren von Informationen fragt. Die Frage ist jedoch sehr einfach und könnte für eine höhere Taxonomiestufe optimiert werden, indem komplexere Denkfähigkeiten wie Analysen oder Bewertungen hinzugefügt würden.",
+            "suggestions": [
+              "- Eine Erweiterung der Frage um ein Beispiel, das den Einfluss von Produktionskosten auf das Angebot verdeutlicht.",
+              "- Die Einführung einer Frage, die die Anwendung des Gleichgewichtsangebots erfordert, wie z.B. \"Wie reagiert das Angebot auf eine Senkung der Produktionskosten?\""
+            ],
+            "reasoning": "Die Bewertung von 2 ist gerechtfertigt, da die Frage zwar nach dem Wiederaufnehmen oder Reproduzieren von Informationen fragt, aber nicht anspruchsvoll genug ist, um eine höhere Taxonomiestufe zu erreichen.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Komplexität der Frage liegt im Bereich der Mikroökonomie und erfordert ein Verständnis des Konzepts der Angebotselasticität. Die richtige Antwort zeigt an, dass der Schüler in der Lage ist, die Beziehung zwischen Produktionskosten und Angebot zu analysieren.",
+            "suggestions": [
+              "Die Frage könnte durch die Hinzufügung von Beispielrechnungen oder Grafiken verdeutlicht werden, um das Konzept der Angebotselasticität besser zu erklären. Außerdem könnten weitere Fragen entwickelt werden, um die Komplexität und den Schwierigkeitsgrad zu erhöhen."
+            ],
+            "reasoning": "Die Bewerterin hat entschieden, dass die mathematische Komplexität dieser Frage als „mittel“ bewertet wird (3 von 5). Die richtige Antwort zeigt an, dass der Schüler ein grundlegendes Verständnis des Konzepts der Angebotselasticität besitzt. Der Bewertungskriterium liegt darin, dass die richtige Antwort das Hauptziel der Frage erfüllt und eine klare und logische Argumentation zeigt.",
+            "target_value": "2",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Das wichtigste sprachliche Hindernis in dieser Frage besteht darin, dass die Negation (Die Aussage ist richtig/falsch) das Verständnis des Begriffs \"Angebot\" erschwert. Dieser Begriff wird in der Ökonomie oft als reale Menge an Gütern oder Dienstleistungen verwendet, die bei einem gegebenen Preis angeboten werden. Die Frage impliziert jedoch, dass das Angebot direkt mit den Produktionskosten zusammenhängt, was nicht immer der Fall ist.",
+            "suggestions": [
+              "Zum besseren Verständnis könnte man die Frage dahingehend präzisieren, dass sie explizit zwischen dem Angebotspreis und den Produktionskosten unterscheidet. So würde klar werden, ob das Angebot direkt von den Produktionskosten beeinflusst wird oder ob es auch vom Preis des Angebotes abhängt."
+            ],
+            "reasoning": "Die Bewertung der sprachlichen Hindernisse erfolgte basierend auf dem Grad der Komplexität und Unklarheit, die durch die verwendeten Begriffe und Strukturen entsteht. Die Frage wirft mehrere Fragen auf: Wie genau definiert man das \"Angebot\", und wie beeinflussen Produktionskosten es? Durch Präzisierung der Definitionen könnte die sprachliche Hindernisanalyse weiterentwickelt werden.",
+            "target_value": "Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Negation; Item 1: Komplexe NP; Item 3: Passiv; Item 4: Negation; Item 5: Passiv; Item 5: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Komplexe NP; Item 8: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut, aber es wäre hilfreich, wenn die Frage noch ein Beispiel oder eine Situation beschreibt, um das Thema besser zu veranschaulichen. So würde die Klarheit noch weiter verbessert werden.",
+            "suggestions": [
+              "Beispiel oder Situation hinzufügen, um das Thema besser zu veranschaulichen"
+            ],
+            "reasoning": "Die Aussage ist richtig, da fallen Produktionskosten dazu führen können, dass das Angebot sinkt. Dies liegt daran, dass die Hersteller weniger Kosten haben und so ihr Preis senken können, was wiederum mehr Nachfrage nach ihrem Produkt erzeugen kann.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.4 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was passiert mit dem Angebot, wenn die Produktionskosten fallen?\n\nA) Es sinkt\nB) Es bleibt gleich\nC) Es steigt <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+      }
+    ],
+    "question_types_generated": [
+      "true-false",
+      "true-false",
+      "true-false"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

@@ -1,0 +1,281 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:49:09.747734",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was ist ein Bedürfnis? <option>Ein Wunsch, den man nicht erfüllen kann<option>Ein Wunsch, den man erfüllen muss<option>Ein Wunsch, der unbegrenzt ist<option>Ein Gefühl, dass einem etwas fehlt<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Ein Wunsch, den man nicht erfüllen kann",
+          "Ein Wunsch, den man erfüllen muss",
+          "Ein Wunsch, der unbegrenzt ist",
+          "Ein Gefühl, dass einem etwas fehlt",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Ein Wunsch, den man nicht erfüllen kann",
+          "Ein Wunsch, den man erfüllen muss"
+        ],
+        "explanation": "Die Fragen wurden anhand des Textes und der Parametern generiert. Die erste Frage beantwortet das Kernkonzept von Bedürfnissen, die zweite Frage erläutert den Ursprung von Bedürfnissen und die dritte Frage beschreibt das Verhalten von Menschen bei erfüllten Bedürfnissen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist für eine stammaufgabe angemessen, jedoch könnten einige Antwortoptionen präziser formuliert werden, um Missverständnisse zu vermeiden.",
+            "suggestions": [
+              "Option 1 und Option 4 könnten durch präzisere Formulierungen (z.B. \"Ein Wunsch, der von außen nicht erfüllt werden kann\" oder \"Ein Mangel an etwas\") unterstützt werden, um das Konzept der Bedürfnisse besser abzubilden."
+            ],
+            "reasoning": "Die Frage erfordert ein Verständnis des Begriffs \"Bedürfnis\" und seine Beziehung zu Wünschen und Gefühlen. Die Antwortmöglichkeiten spiegeln die Komplexität dieses Konzepts wider, indem sie mehrere Aspekte abdecken (z.B. Erreichbarkeit, Unbegrenzung). Die Frage ist jedoch nicht zu anspruchsvoll oder präzise formuliert, um ein klares Verständnis des Begriffs \"Bedürfnis\" im Kontext der stammaufgabe zu fördern.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 2,
+            "feedback": "Die Frage entspricht weitgehend den Anforderungen an eine Taxonomiestufe 1. Die Antwortmöglichkeiten sind alle korrekte Definitionen von Bedürfnis und die Frage erfordert, dass der Schüler diese Definitionen reproduzieren kann. Lediglich die Zusätzlichen Optionen 5 und 6 scheinen nicht direkt mit dem Konzept des Bedürfnisses zusammenzuhangen.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Frage ist gut geeignet, um das Wissen der Schüler über die Definition eines Bedürfnisses zu überprüfen. Die Antwortmöglichkeiten sind klar und prägnant formuliert und es gibt keine offensichtlichen Fehler oder Unklarheiten.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die Antwortmöglichkeiten sind sehr allgemein und nicht direkt auf die Definition eines Bedürfnisses bezogen. Die Frage erfordert eine genauere Analyse des Begriffs \"Bedürfnis\" in einem psychologischen Kontext.",
+            "suggestions": [
+              "- Eine detailliertere Erklärung der unterschiedlichen Typen von Wünschen (z.B., unerfüllbare vs. erfüllbare) und wie sie zu Bedürfnissen werden.",
+              "- Ein Beispiel, das zeigt, wie man zwischen einem Wunsch und einem tatsächlichen Bedürfnis unterscheiden kann."
+            ],
+            "reasoning": "Die Bewerbung von 3 Punkten basiert darauf, dass die Antwortmöglichkeiten zwar mit dem Begriff \"Wunsch\" beginnen, aber nicht genau den Aspekt eines tatsächlichen Mangels oder einer unerfüllbaren Sehnsucht erfassen. Ein Bedürfnis ist in der Regel ein Gefühl, das aufgrund einer tatsächlichen Unzulänglichkeit oder einem Mangel entsteht.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die sprachlichen Hindernisse in dieser Frage stammen hauptsächlich aus dem Gebiet der Passivkonstruktionen und Negationen. Komplexe Nominalphrasen spielen ebenfalls eine Rolle, besonders in Option 4 und 7.",
+            "suggestions": [
+              "- Die Verwendung von Aktivform anstatt Passivform bei wichtigen Wörtern könnte helfen.",
+              "- Das Entfernen oder Umformulieren der Frage in eine aktive Form könnte die Komplexität reduzieren.",
+              "- Eine klare Definition von \"Bedürfnis\" könnte als Einführung für schwierige Begriffe dienen, um Lernenden zu helfen."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Anzahl und Schwere der sprachlichen Hindernisse. Die Frage enthält 4 Passivkonstruktionen und 2 Negationen, die als schwierig für Deutschlerner gelten können. Komplexe Nominalphrasen sind ebenfalls vorhanden, aber in diesem Fall eher sekundäre Hindernisse.",
+            "target_value": "Item 1: Passiv; Item 2: Negation; Item 3: Passiv; Item 3: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Komplexe NP; Item 6: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Negation; Item 7: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist gut, aber es wäre hilfreich, wenn die Begriffe \"Wunsch\" oder \"Bedürfnis\" genauer definiert würden, um Missverständnisse zu vermeiden.",
+            "suggestions": [
+              "* Eine klare Definition von \"Wunsch\" und \"Bedürfnis\" geben",
+              "* Die falschen Optionen als \"Falsch\" oder \"Irrelevante Option\" bezeichnen"
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 3, da die Anweisung klar ist, aber nicht perfekt. Die richtige Antwort wird explizit genannt und die falschen Antworten werden als irrelevante Optionen bezeichnet. Es fehlt jedoch eine klare Definition der Begriffe \"Wunsch\" und \"Bedürfnis\".",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 2,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 2.8 below threshold but insufficient expert consensus",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist ein Bedürfnis? <option>Ein Wunsch, den man nicht erfüllen kann<option>Ein Wunsch, den man erfüllen muss<option>Ein Wunsch, der unbegrenzt ist<option>Ein Gefühl, dass einem etwas fehlt<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Warum entstehen Bedürfnisse? <option>Weil man das Gefühl hat, dass einem etwas zu viel gibt<option>Weil man das Gefühl hat, dass einem etwas fehlt<option>Weil man sich selbst überschätzt<option>Weil man andere überschätzt<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Weil man das Gefühl hat, dass einem etwas zu viel gibt",
+          "Weil man das Gefühl hat, dass einem etwas fehlt",
+          "Weil man sich selbst überschätzt",
+          "Weil man andere überschätzt",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Weil man das Gefühl hat, dass einem etwas zu viel gibt",
+          "Weil man das Gefühl hat, dass einem etwas fehlt"
+        ],
+        "explanation": "Die Fragen wurden anhand des Textes und der Parametern generiert. Die erste Frage beantwortet das Kernkonzept von Bedürfnissen, die zweite Frage erläutert den Ursprung von Bedürfnissen und die dritte Frage beschreibt das Verhalten von Menschen bei erfüllten Bedürfnissen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist gut geeignet für eine stammaufgabe, da sie ein grundlegendes Konzept in der Sozialpsychologie abfragt. Die Antwortmöglichkeiten sind plausibel und ermöglichen eine Diskussion über verschiedene Aspekte des Bedürfnisbegriffs.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Frage erreicht einen hohen Bewertungspunkt (4) aufgrund ihrer Relevanz für das Konzept der stammaufgabe und ihrer Fähigkeit, ein breites Publikum zum Nachdenken über Bedürfnisse anzuregen. Die Antwortmöglichkeiten sind gut formuliert und ermöglichen eine Diskussion über verschiedene Perspektiven.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage sollte klarer und spezifischer formuliert werden, um eine eindeutige Antwort zu ermöglichen. Es wäre hilfreich, wenn die Antwortmöglichkeiten in ihrer Formulierung präziser wären, um sicherzustellen, dass der Schüler das Konzept von Bedürfnissen auf eine gegebene Frage angemessen anwenden kann.",
+            "suggestions": [
+              "Die Frage sollte so rephrasiert werden, dass sie deutlicher auf ein bestimmtes Aspekt der Entstehung von Bedürfnisse abzielt. Zum Beispiel: \"Welche Ursache führt dazu, dass jemand das Gefühl hat, etwas zu wenig zu haben?\"."
+            ],
+            "reasoning": "Die Bewertung basiert auf der Tatsache, dass die Frage zwar ein wichtiges Konzept anspricht, aber in ihrer Formulierung und den Antwortmöglichkeiten nicht stringent genug ist. Die gegebene Antwortmöglichkeit \"Weil man das Gefühl hat, dass einem etwas zu viel gibt\" kann als Beispiel für eine falsche Begründung von Bedürfnissen gelten, da sie eher auf ein Fehlen anstatt eines Überflusses abzielt.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage ist relativ gering, da sie sich um eine einfache Wissensanwendung (Ursachen für Bedürfnisse) handelt. Die Lösung erfordert jedoch ein gewisses Maß an sozialer und emotionaler Intelligenz sowie die Fähigkeit, komplexe Situationen zu analysieren.",
+            "suggestions": [
+              "Um die Komplexität der Frage zu erhöhen, könnten folgende Anpassungen vorgenommen werden:",
+              "- Fügen Sie weitere Optionen hinzu, die spezielle mathematische Konzepte beinhalten (z.B. Mengentheorie, Funktionen).",
+              "- Verlangen Sie von den Schülern, ihre eigenen Definitionen von Bedürfnissen zu erstellen und dann zu begründen, warum sie diese Definitionen als wahr oder falsch ansehen."
+            ],
+            "reasoning": "Die Bewertung dieser Frage als 3 beruht auf der Tatsache, dass die mathematische Komplexität relativ gering ist. Die Frage selbst erfordert keine spezifischen mathematischen Konzepte, sondern eher ein Verständnis sozialer und emotionaler Dynamiken. Der Wert von 3 stellt jedoch auch einen gewissen Grad an Komplexität dar, da die Schüler in der Lage sein müssen, komplexe Situationen zu analysieren und verschiedene Aspekte zu berücksichtigen.",
+            "target_value": "0",
+            "applied": true
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Passivkonstruktionen in der Frage können für Lerner schwierig zu verstehen sein. Die Negationen in den Antwortmöglichkeiten können ebenfalls als Hindernis empfunden werden. Es wäre hilfreich, die Frage und Antworten klarer zu strukturieren.",
+            "suggestions": [
+              "- Die Frage könnte rekonstruiert werden, indem sie aktiv konstruktionsweise formuliert wird.",
+              "- Die Antwortmöglichkeiten sollten klarer strukturiert werden, z.B. durch eine einheitliche Formulierung der Antworten."
+            ],
+            "reasoning": "Die sprachlichen Hindernisse in der Frage können zu Verständnisschwierigkeiten für Lerner führen. Durch die Rekonstruktion der Frage und die Klarstrukturierung der Antwortmöglichkeiten kann die Bedeutungsklärung erleichtert werden.",
+            "target_value": "Item 1: Passiv; Item 2: Negation; Item 3: Passiv; Item 3: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Komplexe NP; Item 6: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Negation; Item 7: Komplexe NP",
+            "applied": true
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit ist gut, aber einige Antwortoptionen sind nicht sehr prägnant formuliert (Zusätzliche Option 5 und Zusätzliche Option 6). Es wäre hilfreich, wenn die Frage expliziter darauf hinweisen würde, dass alle Optionen relevant sein sollten.",
+            "suggestions": [
+              "Es könnte hilfreich sein, die Antwortoptionen etwas prägnanter zu formulieren (z.B. \"Weil man sich selbst überbewertet\" anstatt \"Weil man sich selbst überschätzt\"). Außerdem sollte die Frage explizit darauf hinweisen, dass alle Optionen relevant sind."
+            ],
+            "reasoning": "Die Anweisungs-Bewertung ist 3, weil die Frage explizit formuliert ist und es klare Antwortmöglichkeiten gibt. Allerdings sind einige der Antwortoptionen nicht sehr prägnant formuliert, was die Klarheit der Anweisung etwas beeinträchtigt.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 4,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 2 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Warum entstehen Bedürfnisse? <option>Weil man das Gefühl hat, dass einem etwas zu viel gibt<option>Weil man das Gefühl hat, dass einem etwas fehlt<option>Weil man sich selbst überschätzt<option>Weil man andere überschätzt<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Wie verhalten sich Menschen, wenn ihre Bedürfnisse erfüllt sind? <option>Sie widmen sich sofort einem anderen Bedürfnis<option>Sie widmen sich immer wieder dem gleichen Bedürfnis<option>Sie geben auf alle ihre Bedürfnisse<option>Sie haben keine Bedürfnisse mehr<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Sie widmen sich sofort einem anderen Bedürfnis",
+          "Sie widmen sich immer wieder dem gleichen Bedürfnis",
+          "Sie geben auf alle ihre Bedürfnisse",
+          "Sie haben keine Bedürfnisse mehr",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Sie widmen sich sofort einem anderen Bedürfnis",
+          "Sie widmen sich immer wieder dem gleichen Bedürfnis"
+        ],
+        "explanation": "Die Fragen wurden anhand des Textes und der Parametern generiert. Die erste Frage beantwortet das Kernkonzept von Bedürfnissen, die zweite Frage erläutert den Ursprung von Bedürfnissen und die dritte Frage beschreibt das Verhalten von Menschen bei erfüllten Bedürfnissen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage bezieht sich auf grundlegende Aspekte der Psychologie und ist daher als stammaufgabe geeignet. Die Antwortmöglichkeiten sind jedoch nicht sehr spezifisch, sodass ein bisschen mehr Klarheit in Bezug auf die zugrunde liegenden psychologischen Prinzipien wünschenswert wäre.",
+            "suggestions": [
+              "Es könnte hilfreich sein, die Frage um ein bisschen mehr Spezifik zu erweitern, z.B. durch den Hinweis, dass es sich um eine bestimmte Art von Bedürfnis (z.B. körperliche oder emotionale) handelt."
+            ],
+            "reasoning": "Die Bewertung ist 3, da die Frage und Antworten zwar allgemein relevant sind, aber der Schwierigkeitsgrad als stammaufgabe etwas zu sehr auf das Verständnis grundlegender Konzepte setzt, ohne jedoch spezifische Anforderungen an die Reaktion oder den Kontext zu stellen. Der Feedbackpunkt trifft auf das Fehlen von Spezifik in Bezug auf die zugrunde liegenden psychologischen Prinzipien.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist zwar mit der Taxonomiestufe 1 (Wissen/Reproduktion) gekennzeichnet, es handelt sich jedoch um eine Frage, die auf der Stufe 2 (Analyse) beantwortet werden muss. Die richtigen Antworten erfordern ein Verständnis des Themas und eine Analyse der Situation.",
+            "suggestions": [
+              "Die Frage sollte möglicherweise auf die Stufe 2 (Analyse) korrigiert werden, um sie besser mit der erforderlichen Taxonomiestufe zu decken."
+            ],
+            "reasoning": "Die Begründung für die Bewertung als 3 ergibt sich aus der Tatsache, dass es sich bei den richtigen Antworten nicht nur um das Wiedergeben von Informationen handelt (Stufe 1), sondern vielmehr um eine Analyse des Themas und ein Verständnis des menschlichen Verhaltens in Bezug auf Bedürfnisse.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 1,
+            "feedback": "Keine mathematische Komplexitätsanalyse erforderlich. Die Frage bezieht sich auf Soziologie oder Psychologie.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich, da die Frage nicht für eine mathematische Komplexität bewertet werden muss."
+            ],
+            "reasoning": "Die Frage ist kein Beispiel für eine mathematische Komplexitätsbewertung. Die Bewerter müssen sich auf ihre Fachkenntnisse in Soziologie oder Psychologie konzentrieren.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 4,
+            "feedback": "Die Frage enthält einigen passiven Satzbau, was für einige Lernende möglicherweise schwierig zu verstehen ist. Die Negation in der Frage kann ebenfalls zur Verwirrung beitragen. Es ist ratsam, die Frage anhand eines aktiven Satzbaus neu formulieren und mehr klare Beispiele verwenden.",
+            "suggestions": [
+              "- Formulierung der Frage mit aktivem Satzbau (z.B. \"Wenn Menschen ihre Bedürfnisse erfüllt haben...\")",
+              "- Verwendung von einfachen, einprägsamen Beispielen",
+              "- Hinzufügen von weiteren Optionen, die eine direkte Antwort auf die Frage ermöglichen"
+            ],
+            "reasoning": "Die Bewertung von 4 berücksichtigt die Tatsache, dass einige sprachliche Hindernisse wie Passiv und Negation vorhanden sind, aber nicht so stark ausgeprägt sind, dass sie für Lernende mit unterschiedlichem Hintergrund unüberwindbar wären. Die Frage bietet jedoch noch Möglichkeiten zur Klärung durch Anpassung des Satzbaus und der Beispiele.",
+            "target_value": "Item 1: Passiv; Item 2: Negation; Item 3: Passiv; Item 3: Negation; Item 4: Komplexe NP; Item 5: Passiv; Item 5: Komplexe NP; Item 6: Negation; Item 6: Komplexe NP; Item 7: Passiv; Item 7: Negation; Item 7: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit ist gut, da die Frage und die Antwortmöglichkeiten klar und direkt aufeinander bezogen sind. Die Explizitheit des Ziels wird als \"Explizit\" angegeben, was bedeuten könnte, dass das Ziel eindeutig und offensichtlich definiert wurde. Dennoch könnte es sinnvoll sein, die Antwortmöglichkeiten zu präzisieren oder weitere Informationen zur Kontextualisierung der Frage bereitzustellen.",
+            "suggestions": [
+              "Ein möglicher Vorschlag wäre, die Antwortoptionen noch ein bisschen spezifischer zu fassen, um sicherzustellen, dass alle relevante Aspekte im Zusammenhang mit menschlichen Bedürfnissen abgedeckt sind. Zum Beispiel könnte eine Option wie \"Sie konzentrieren sich auf Selbstverbesserung\" oder \"Sie suchen nach sozialer Verbindung\" hinzugefügt werden."
+            ],
+            "reasoning": "Die Bewertung von 4 ist berechtigt, da die Frage und Antworten klar strukturiert sind. Die Explizitheit des Ziels wird auch explizit als \"Explizit\" angegeben, was das Eintreten der Antwortoptionen erleichtert. Dennoch könnte man sich überlegen, ob weitere Details oder eine Verstärkung der Explizitheit die Anweisungsklarheit noch weiter verbessern würden.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 1,
+          "obstacle_expert": 4,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wie verhalten sich Menschen, wenn ihre Bedürfnisse erfüllt sind? <option>Sie widmen sich sofort einem anderen Bedürfnis<option>Sie widmen sich immer wieder dem gleichen Bedürfnis<option>Sie geben auf alle ihre Bedürfnisse<option>Sie haben keine Bedürfnisse mehr<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

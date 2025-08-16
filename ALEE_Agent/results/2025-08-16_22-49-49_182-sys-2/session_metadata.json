@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 0.09229159355163574,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Was sind die drei Grundbed\u00fcrfnisse, die man als Erstes befriedigen muss, wenn man auf einer einsamen Insel gestrandet ist? <option>Sicherheitsbed\u00fcrfnisse<option>Soziale Bed\u00fcrfnisse<option>Physiologische Grundbed\u00fcrfnisse<option>Option 4",
+        "Welche Bed\u00fcrfnisgruppe steht in der Pyramide von Maslow an zweiter Stelle nach den physiologischen Grundbed\u00fcrfnissen? <option>Sicherheitsbed\u00fcrfnisse<option>Soziale Bed\u00fcrfnisse<option>Selbstverwirklichungsbed\u00fcrfnisse<option>Option 4",
+        "Welches ist das n\u00e4chste, was du tun w\u00fcrdest, nachdem alle deine physiologischen Grundbed\u00fcrfnisse befriedigt sind? <option>Ein wetterfestes Haus bauen<option>Einen Speer anfertigen, um dich vor wilden Tieren zu sch\u00fctzen<option>Kontakt mit Menschen aufnehmen<option>Option 4"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T22:49:49.543644",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}

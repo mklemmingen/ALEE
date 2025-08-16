@@ -1,0 +1,9 @@
+{
+  "final_questions": [
+    "Welche Aussage ist falsch?\n\nMärkte sind nur an einen bestimmten Ort gebunden.\nDer Wochenmarkt auf dem Marktplatz ist ein Beispiel für einen Markt.\nViele Dinge können auch im Internet gekauft werden, was ebenfalls ein Markt ist.\n\nA) Die erste Aussage ist falsch.\nB) Die zweite Aussage ist falsch.\nC) Die dritte Aussage ist falsch.\nD) Alle Aussagen sind wahr. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+    "Welche Aussage ist richtig?\n\nMärkte können nur in der physischen Welt stattfinden.\nDer Internetmarkt ist kein Markt, da er nicht im physischen Raum stattfindet.\nWir müssen immer an einen bestimmten Ort gehen, um ein Produkt zu kaufen.\n\nA) Die erste Aussage ist wahr.\nB) Die zweite Aussage ist wahr.\nC) Die dritte Aussage ist wahr.\nD) Alle Aussagen sind falsch. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch",
+    "Welche Aussage ist richtig?\n\nMärkte können nur an einem bestimmten Ort stattfinden, wie zum Beispiel auf dem Marktplatz.\nDer Wochenmarkt ist ein Markt, der immer am Sonntag stattfindet.\nWir müssen immer Geld bezahlen, um ein Produkt zu kaufen.\n\nA) Die erste Aussage ist wahr.\nB) Die zweite Aussage ist wahr.\nC) Die dritte Aussage ist wahr.\nD) Alle Aussagen sind falsch. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch"
+  ],
+  "question_count": 3,
+  "finalized_at": "2025-08-16T21:25:47.606324"
+}

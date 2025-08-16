@@ -1,0 +1,33 @@
+{
+  "step_name": "03_refinement_decisions",
+  "timestamp": "2025-08-16T21:27:26.495835",
+  "step_data": {
+    "refinement_summary": {
+      "total_questions": 3,
+      "questions_refined": 2,
+      "refinement_rate": 0.6666666666666666,
+      "format_preservation_rate": 1.0,
+      "expert_suggestion_counts": {
+        "variation_expert": 3,
+        "taxonomy_expert": 3,
+        "math_expert": 3,
+        "obstacle_expert": 3,
+        "instruction_expert": 3
+      },
+      "average_ratings_by_type": {
+        "multiple-choice": 3.1333333333333333
+      },
+      "questions_needing_attention": []
+    },
+    "questions_refined": 2,
+    "refinement_rate": 0.6666666666666666,
+    "format_preservation_rate": 1.0,
+    "refinement_algorithm": "expert_consensus_with_decision_engine"
+  },
+  "step_metadata": {
+    "step_description": "Type-aware refinement decisions with format preservation",
+    "processing_time_ms": 0.11467933654785156,
+    "questions_processed": 3,
+    "pipeline_type": "type_aware"
+  }
+}

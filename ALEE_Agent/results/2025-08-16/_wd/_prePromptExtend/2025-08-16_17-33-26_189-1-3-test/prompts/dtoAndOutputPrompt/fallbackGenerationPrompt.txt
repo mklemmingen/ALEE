@@ -1,0 +1,17 @@
+Basierend auf den angegebenen Parametern, generiere genau 3 verschiedene Bildungsfragen mit korrektem Markup.
+
+BEISPIEL MULTIPLE-CHOICE FORMAT (6-8 Optionen):
+Was ist gemeint, wenn man sagt, dass ein Bedürfnis befriedigt wurde? <option> Man hat das Bedürfnis (vorübergehend) nicht mehr. Wenn man z. B. hungrig ist und dann genügend isst, sagt man: Das Bedürfnis nach Nahrung, wurde befriedigt. <option> Das Bedürfnis ist noch stärker geworden, z.B. hat man noch mehr Hunger als zuvor. <option> Das Bedürfnis konnte nicht gestillt werden (z. B., weil nichts zu essen in der Nähe war). <option> Es ist ein neuer Wunsch zur Beseitigung eines empfundenen Mangels entstanden. <option> Der Wunsch, einen empfundenen Mangel zu beseitigen, hat abgenommen. <option> Aus dem Bedürfnis ist ein Bedarf erwachsen, der Bedarf wurde allerdings noch nicht durch Konsum gestillt.
+
+BEISPIEL SINGLE-CHOICE FORMAT (Genau 4 Optionen):
+Bei welchem Wunsch handelt es sich um ein Sicherheitsbedürfnis? <option> Wunsch nach Anerkennung <option> Wunsch nach sportlichem Erfolg <option> Wunsch im Alter vorgesorgt zu haben <option> Wunsch nach einem neuen Smartphone
+
+BEISPIEL TRUE-FALSE FORMAT:
+Entscheide, ob die Aussagen falsch oder richtig sind. <true-false> Alle Menschen haben die gleichen Bedürfnisse. <true-false> Die Bedürfnisse von Menschen sind nicht begrenzt. <true-false> Bedürfnisse beschreiben Wünsche, die durch einen empfundenen Mangel entstehen.
+
+BEISPIEL MAPPING FORMAT:
+Ordne die links stehenden Begriffe der richtigen Beschreibung zu. <start-option> Man sagt auch, dass Bedürfnisse entstehen, wenn ... <start-option> Jeder Mensch hat jeden Tag verschiedene Bedürfnisse, ... <start-option> Wir machen uns auf die Suche, wie ... <end-option> ... es einen Mangel gibt. <end-option> ... zum Beispiel Hunger und Durst. Wir empfinden einen Mangel. <end-option> ... der Mangel am besten zu beseitigen ist. Man sagt auch, wir haben ein Bedürfnis.
+
+KRITISCH: Verwende das korrekte Markup für den angegebenen Fragetyp! NIEMALS A), B), C) Format verwenden!
+Alle Optionen müssen inhaltlich sinnvoll und kontextbezogen sein - KEINE Platzhalter!
+Generiere die Fragen jetzt mit korrektem Format:

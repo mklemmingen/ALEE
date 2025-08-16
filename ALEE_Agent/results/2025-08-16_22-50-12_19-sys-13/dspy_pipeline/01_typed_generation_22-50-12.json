@@ -1,0 +1,281 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:50:12.569473",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Was ist der Hauptgrund dafür, warum ein hoher Preis für eine Sammelkarte tendenziell zu einer geringeren Nachfrage führt? <option>Weil die Leute mehr Geld haben<option>Weil sie die Karte nicht so gerne haben<option>Weil das Angebot höher wird<option>Weil die Nachfrage nach dem Geld steigt<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Weil die Leute mehr Geld haben",
+          "Weil sie die Karte nicht so gerne haben",
+          "Weil das Angebot höher wird",
+          "Weil die Nachfrage nach dem Geld steigt",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Weil die Leute mehr Geld haben",
+          "Weil sie die Karte nicht so gerne haben"
+        ],
+        "explanation": "Die Fragen wurden so gestaltet, dass sie die Mechanismen des Preisbildungsmodells abbilden und auf den Parametern basieren. Die Stammaufgabe ergibt sich aus der Komplexität des Textes.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage benötigt ein bisschen mehr Tiefe und Spezifizität. Zum Beispiel könnten weitere Optionen wie \"Weil die Preise für ähnliche Karten in der Vergangenheit stiegen\" oder \"Weil es schwieriger ist, sich eine Karte zu leisten\" hinzugefügt werden.",
+            "suggestions": [
+              "- Einfügen von zusätzlichen Optionen, die den Marktsituationen und der Beziehung zwischen Angebot und Nachfrage besser gerecht werden.",
+              "- Erweiterung des Kontexts, um weitere Faktoren zu berücksichtigen, wie z.B. die Preissensibilität der Kartenkäufer."
+            ],
+            "reasoning": "Die Bewertung von 3 resultiert aus der Tatsache, dass die Frage den grundlegenden Marktsituationen gerecht wird und ein Verständnis des Zusammenhangs zwischen Angebot und Nachfrage verlangt. Allerdings fehlt noch eine gewisse Tiefe und Spezifizität in der Frage selbst.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage erfüllt die Anforderungen der Stufe 1 (Wissen/Reproduktion) der Bloom'schen Taxonomie. Die Antworten sind alle plausibel und geben einen klaren Grund dafür an, warum ein hoher Preis zu einer geringeren Nachfrage führt.",
+            "suggestions": [
+              "Keine Vorschläge"
+            ],
+            "reasoning": "Die Frage ist gut formuliert und die Antworten sind alle klar und präzise. Es gibt keine Anzeichen dafür, dass die Frage oder die Antworten irgendeine weitere Analyse oder Bewertung erfordern.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Das Problem liegt in der Tatsache, dass die Antwortoptionen nicht direkt mit Mathematik zusammenhängen. Die Frage scheint eher auf ökonomische Zusammenhänge abzuzielen. Eine mathematische Lösung ist nicht direkt erforderlich.",
+            "suggestions": [
+              "Der Test könnte an Mathemaatikken orientiertere Fragen beziehen, um die Komplexität zu erhöhen."
+            ],
+            "reasoning": "Die Frage kann als unmathematisch angesehen werden. Die richtige Antwort ist eher ein wirtschaftliches Prinzip, als eine mathematische Lösung.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält mehrere sprachliche Hindernisse, darunter komplexe Nominalphrasen und Passivkonstruktionen. Die Antwortmöglichkeiten enthalten ebenfalls einige sprachliche Schwierigkeiten, wie Negationen und komplexe Nomen. Um die Lesbarkeit zu verbessern, könnte man die Frage und die Antwortmöglichkeiten vereinfachen.",
+            "suggestions": [
+              "* Vereinfachen Sie die Frage und die Antwortmöglichkeiten.",
+              "* Verwenden Sie aktive Konstruktionen anstelle von Passivkonstruktionen.",
+              "* Vermeiden Sie komplexe Nominalphrasen."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf der Anzahl der sprachlichen Hindernisse, die in der Frage und den Antwortmöglichkeiten vorhanden sind. Die Vereinfachung der Frage und der Antwortmöglichkeiten würde die Lesbarkeit verbessern und die Kommunikation erleichtern.",
+            "target_value": "Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Komplexe NP; Item 2: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Negation; Item 3: Komplexe NP; Item 5: Passiv; Item 6: Negation; Item 7: Passiv; Item 7: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisung ist überzeugend formuliert und die Antwortmöglichkeiten sind gut ausgewählt, um das Thema zu verdeutlichen. Eine mögliche Verbesserung wäre es, wenn einige der Optionen noch klarer definiert würden, um Missverständnisse zu vermeiden.",
+            "suggestions": [
+              "- Klarere Definition einiger Antwortmöglichkeiten",
+              "- Optionen sollten besser auf die Frage abgestimmt sein"
+            ],
+            "reasoning": "Die bewertung von 4 ist gerechtfertigt, da die Anweisung klar und prägnant formuliert ist. Die möglichen Verbesserungen wurden jedoch identifiziert.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.0 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Was ist der Hauptgrund dafür, warum ein hoher Preis für eine Sammelkarte tendenziell zu einer geringeren Nachfrage führt? <option>Weil die Leute mehr Geld haben<option>Weil sie die Karte nicht so gerne haben<option>Weil das Angebot höher wird<option>Weil die Nachfrage nach dem Geld steigt<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Welches von den folgenden Szenarien zeigt, wie ein hoher Preis zu einem höheren Angebot führen kann? <option>Wenn nur eine Person für die Sammelkarte interessiert ist und sie hochpreisen möchte<option>Wenn zehn Personen für die Karte interessiert sind, aber der Verkäufer dennoch einen hohen Preis verlangt<option>Wenn ein Mitschüler taucht auf und mehrere Exemplare der Sammelkarte besitzt, um sie zu überbieten<option>Wenn niemand für die Karte interessiert ist und sie deshalb keinen Preis haben kann<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Wenn nur eine Person für die Sammelkarte interessiert ist und sie hochpreisen möchte",
+          "Wenn zehn Personen für die Karte interessiert sind, aber der Verkäufer dennoch einen hohen Preis verlangt",
+          "Wenn ein Mitschüler taucht auf und mehrere Exemplare der Sammelkarte besitzt, um sie zu überbieten",
+          "Wenn niemand für die Karte interessiert ist und sie deshalb keinen Preis haben kann",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Wenn nur eine Person für die Sammelkarte interessiert ist und sie hochpreisen möchte",
+          "Wenn zehn Personen für die Karte interessiert sind, aber der Verkäufer dennoch einen hohen Preis verlangt"
+        ],
+        "explanation": "Die Fragen wurden so gestaltet, dass sie die Mechanismen des Preisbildungsmodells abbilden und auf den Parametern basieren. Die Stammaufgabe ergibt sich aus der Komplexität des Textes.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist schwierig, da sie eine Analyse des Marktes und der menschlichen Entscheidungsfindung erfordert. Die richtige Antwort ist nicht sofort offensichtlich und erfordert ein tieferes Verständnis des Themas.",
+            "suggestions": [],
+            "reasoning": "Die Frage zielt auf die Fähigkeit ab, komplexe Informationen zu analysieren und eine logische Schlussfolgerung zu ziehen. Die richtige Antwort ist durch ihre Logik und ihr Verständnis des Themas gerechtfertigt.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage und Antworten zeigen ein gutes Verständnis für die Zusammenhänge zwischen Preis und Angebot. Die richtige Antwort weist auf eine Analyse des Marktes hin und zeigt ein Bewusstsein dafür, wie Preise das Angebot beeinflussen können.",
+            "suggestions": [
+              "Keine Anpassungen erforderlich"
+            ],
+            "reasoning": "Die Frage ist gut formuliert und die Antworten sind klare und eindeutige Beispiele für die Situationen, in denen ein hoher Preis zu einem höheren Angebot führen kann. Die richtige Antwort zeigt ein gutes Verständnis dafür, wie Preise das Angebot beeinflussen können.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieser Frage ist gering, da es sich um eine einfache Anwendung des Konzepts von Nachfrage und Angebot handelt. Die Analyse der Situation und die Berechnung des Preis-Effekts sind jedoch wichtig für ein vollständiges Verständnis.",
+            "suggestions": [
+              "Es könnten zusätzliche Fragen gestellt werden, um das Verständnis der Mathematik dahinter zu überprüfen, wie zum Beispiel: Wie würde sich der Preis ändern, wenn die Nachfrage sinkt oder steigt? Oder: Welche Faktoren beeinflussen den Preis eines Produkts?"
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf dem Faktor, dass das Konzept von Nachfrage und Angebot grundlegend ist, aber auch einfache Anwendungen davon vorausgesetzt werden. Eine tiefergehende Analyse mathematischer Komplexität würde mehrere Faktoren berücksichtigen.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die sprachlichen Hindernisse in dieser Frage sind die Komplexität der Nominalphrasen, die Passivkonstruktionen und die Negationen. Diese machen es schwierig, das Szenario zu verstehen und die richtige Antwort zu wählen.",
+            "suggestions": [
+              "* Vereinfachen Sie die Sprache in der Frage, indem Sie einfache Nominalphrasen verwenden.",
+              "* Verwenden Sie Aktivkonstruktionen anstelle von Passivkonstruktionen.",
+              "* Entfernen Sie Negationen oder formulieren Sie sie klarer."
+            ],
+            "reasoning": "Die Bewertung 3 basiert auf der Komplexität der sprachlichen Hindernisse in der Frage. Die Komplexe Nominalphrase, die Passivkonstruktionen und die Negationen machen es schwierig, das Szenario zu verstehen und die richtige Antwort zu wählen.",
+            "target_value": "Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Komplexe NP; Item 2: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Negation; Item 3: Komplexe NP; Item 5: Passiv; Item 6: Negation; Item 7: Passiv; Item 7: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist klar und präzise formuliert. Die Antwortmöglichkeiten sind gut gewählt und die richtige Antwort ist nicht sofort offensichtlich. Einziges Manko: die Optionen 5 und 6 scheinen nicht direkt mit der Frage zusammenzuhalten.",
+            "suggestions": [
+              "- Klarheit bei der Formulierung der Fragen sicherzustellen, dass alle Optionen relevant für die Frage sind.",
+              "- In der Begründung genauer darauf hinweisen, welche Marktteorie (z.B. Law of Supply und Demand) hier zugrunde liegt."
+            ],
+            "reasoning": "Die richtige Antwort ist Option 2, da sie verdeutlicht, dass bei hoher Nachfrage ein hoher Preis zum niedrigeren Angebot führen kann. Dies liegt daran, dass Kunden durch den hohen Preis abgeschreckt werden und das Angebot somit sinkt. Die anderen Optionen sind falsch, da Option 1 nicht direkt mit der Beziehung zwischen Preis und Angebot zusammenhängt, Option 3 gar nicht relevant ist (der Mitschüler taucht auf und überbietet?) und Option 4 offensichtlich falsch ist.",
+            "target_value": "Explizit",
+            "applied": false
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": false,
+        "refinement_reasoning": "Average rating 3.4 meets threshold, no critical issues",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welches von den folgenden Szenarien zeigt, wie ein hoher Preis zu einem höheren Angebot führen kann? <option>Wenn nur eine Person für die Sammelkarte interessiert ist und sie hochpreisen möchte<option>Wenn zehn Personen für die Karte interessiert sind, aber der Verkäufer dennoch einen hohen Preis verlangt<option>Wenn ein Mitschüler taucht auf und mehrere Exemplare der Sammelkarte besitzt, um sie zu überbieten<option>Wenn niemand für die Karte interessiert ist und sie deshalb keinen Preis haben kann<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      },
+      {
+        "question_text": "Wie beschreibt das Preisbildungsmodell die Beziehung zwischen Preis und Angebot? <option>Je höher der Preis, desto höher das Angebot<option>Je geringer der Preis, desto höher das Angebot<option>Je höher der Preis, desto geringer das Angebot<option>Je geringer der Preis, desto geringer das Angebot<option>Zusätzliche Option 5<option>Zusätzliche Option 6",
+        "question_type": "multiple-choice",
+        "answers": [
+          "Je höher der Preis, desto höher das Angebot",
+          "Je geringer der Preis, desto höher das Angebot",
+          "Je höher der Preis, desto geringer das Angebot",
+          "Je geringer der Preis, desto geringer das Angebot",
+          "Zusätzliche Option 5",
+          "Zusätzliche Option 6"
+        ],
+        "correct_answer": [
+          "Je höher der Preis, desto höher das Angebot",
+          "Je geringer der Preis, desto höher das Angebot"
+        ],
+        "explanation": "Die Fragen wurden so gestaltet, dass sie die Mechanismen des Preisbildungsmodells abbilden und auf den Parametern basieren. Die Stammaufgabe ergibt sich aus der Komplexität des Textes.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält eine Mischung aus richtigen und falschen Aussagen. Die Optionen \"Je höher der Preis, desto höher das Angebot\" und \"Je geringer der Preis, desto höher das Angebot\" stimmen nicht mit dem umgekehrten proportionalen Funktionsverhalten überein.",
+            "suggestions": [
+              "Die Frage könnte präziser formuliert werden, indem die richtigen Optionen (\"Je höher der Preis, desto geringer das Angebot\" und \"Je geringer der Preis, desto höher das Angebot\") hervorgehoben würden."
+            ],
+            "reasoning": "Die Bewertung von 3 basiert auf folgendem: Die Frage enthält eine Mischung aus richtigen und falschen Aussagen. Die Optionen \"Je höher der Preis, desto höher das Angebot\" und \"Je geringer der Preis, desto höher das Angebot\" stimmen nicht mit dem umgekehrten proportionalen Funktionsverhalten überein. Trotzdem kann die Frage als stammaufgabe eingestuft werden, da sie eine klare Definition des Preisbildungsmodells beinhaltet.",
+            "target_value": "stammaufgabe",
+            "applied": false
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage ist gut formuliert und deckt ein wichtiges Konzept der Mikroökonomie ab. Die Antwortmöglichkeiten sind klar und präzise definiert, was die Möglichkeit für den Schüler bietet, seine Kenntnisse auf eine direkte Weise zu demonstrieren.",
+            "suggestions": [
+              "Keine Anpassungsvorschläge erforderlich"
+            ],
+            "reasoning": "Die Antwort wurde auf der Grundlage des Preisbildungsmodells bewertet. Die richtigen Antworten beziehen sich auf die grundlegenden Beziehungen zwischen Preis und Angebot, wie sie im Modell beschrieben sind.",
+            "target_value": "Stufe 1 (Wissen/Reproduktion)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 3,
+            "feedback": "Die mathematische Komplexität dieses Problems ist mittelgradig. Das Problem erfordert ein Verständnis von einfachen Beziehungen zwischen Variablen und die Fähigkeit, diese Beziehungen zu analysieren.",
+            "suggestions": [
+              "Für eine korrekte Komplexitätsanalyse könnte empfohlen werden, das Problem anhand der richtigen Antwortoptionen neu zu formulieren oder eine weitere Option hinzuzufügen, die den Verlauf der Preis-Beziehung genau beschreibt."
+            ],
+            "reasoning": "Die Mathematik-Bewertung von 3 basiert auf der Komplexität des Problems und der Fähigkeit, einfache Beziehungen zwischen Variablen zu analysieren. Das Problem erfordert ein Verständnis von einfachen Beziehungen zwischen Variablen und die Fähigkeit, diese Beziehungen zu analysieren.",
+            "target_value": "0",
+            "applied": false
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die sprachlichen Hindernisse in dieser Frage sind die Komplexe Nominalphrasen und die Passivkonstruktion. Diese können für Nichtmuttersprachler schwierig sein, da sie eine komplexe Grammatik und einen ungewohnten Satzbau enthalten.",
+            "suggestions": [
+              "Um diese Hindernisse zu überwinden, könnten folgende Vorschläge gemacht werden:",
+              "",
+              "* Die Frage könnte in einfachere Sprache übersetzt werden, um die Komplexität der Nominalphrasen und Passivkonstruktionen zu reduzieren.",
+              "* Die Frage könnte mit einer kurzen Erklärung oder einem Beispiel versehen werden, um den Kontext und das Preisbildungsmodell besser zu verstehen."
+            ],
+            "reasoning": "Die Begründung für die Hindernis-Bewertung von 3 ist wie folgt: Die Komplexe Nominalphrasen und Passivkonstruktionen in dieser Frage sind für Nichtmuttersprachler schwierig, da sie eine komplexe Grammatik und einen ungewohnten Satzbau enthalten. Dies kann zu Verständnisproblemen führen.",
+            "target_value": "Grundtext: Komplexe Nominalphrasen; Item 1: Passiv; Item 1: Komplexe NP; Item 2: Negation; Item 2: Komplexe NP; Item 3: Passiv; Item 3: Negation; Item 3: Komplexe NP; Item 5: Passiv; Item 6: Negation; Item 7: Passiv; Item 7: Negation; Item 8: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 4,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem die falsche Antwortoption (\"Je höher der Preis, desto höher das Angebot\") entfernt wird. Außerdem sollte eine explizite Erklärung für die richtige Antwort gegeben werden.",
+            "suggestions": [
+              "- Falsche Optionen entfernen",
+              "- Explizite Erklärung für die richtige Antwort"
+            ],
+            "reasoning": "Die richtige Antwort ist \"Je geringer der Preis, desto höher das Angebot\", da bei sinkenden Preisen die Nachfrage steigt und damit auch das Angebot. Dies liegt daran, dass Preissenkungen zu einer Verringerung der Kosten für die Käufer führen, was wiederum zu einer Steigerung des Bedarfs führt.",
+            "target_value": "Explizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 3,
+          "taxonomy_expert": 3,
+          "math_expert": 3,
+          "obstacle_expert": 3,
+          "instruction_expert": 4
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 1 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Wie beschreibt das Preisbildungsmodell die Beziehung zwischen Preis und Angebot? <option>Je höher der Preis, desto höher das Angebot<option>Je geringer der Preis, desto höher das Angebot<option>Je höher der Preis, desto geringer das Angebot<option>Je geringer der Preis, desto geringer das Angebot<option>Zusätzliche Option 5<option>Zusätzliche Option 6"
+      }
+    ],
+    "question_types_generated": [
+      "multiple-choice",
+      "multiple-choice",
+      "multiple-choice"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

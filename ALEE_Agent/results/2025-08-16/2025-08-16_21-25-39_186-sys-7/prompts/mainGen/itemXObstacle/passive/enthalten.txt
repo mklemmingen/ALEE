@@ -1,0 +1,7 @@
+### p.item_X_obstacle_passive (Passivkonstruktionen in Antwortoptionen):
+**ENTHALTEN** - Beispiele:
+- "Der Preis wird durch Angebot und Nachfrage bestimmt"
+- "Es wurde entschieden, dass..."
+- "Die Maßnahme wird von der Regierung ergriffen"
+
+Erstelle Antwortoptionen mit Passivkonstruktionen, die das Verstehen erschweren können.

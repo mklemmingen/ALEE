@@ -1,0 +1,290 @@
+{
+  "step_name": "01_typed_generation",
+  "timestamp": "2025-08-16T22:48:03.134272",
+  "step_data": {
+    "typed_questions": [
+      {
+        "question_text": "Welche Bedingung ist nicht erfüllt, wenn man das Beispiel mit der Sammelkarte betrachtet?  <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "question_type": "mapping",
+        "answers": [
+          "Bedürfnisse",
+          "Nachfrage",
+          "Angebot",
+          "Markt",
+          "Wünsche von Menschen",
+          "Was Kunden kaufen wollen",
+          "Was Unternehmen anbieten",
+          "Ort des Tauschens"
+        ],
+        "correct_answer": {
+          "Bedürfnisse": "Wünsche von Menschen",
+          "Nachfrage": "Was Kunden kaufen wollen",
+          "Angebot": "Was Unternehmen anbieten",
+          "Markt": "Ort des Tauschens"
+        },
+        "explanation": "Die Fragen basieren auf dem Verständnis des Textes bezüglich der Grenzen von Modellen und der Bedeutung realer Faktoren bei der Preisbildung. Die Mapping-Fragen sollen verdeutlichen, wie diese Annahmen mit den tatsächlichen Bedingungen in Beziehung stehen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist für ein Stuftereichtes Niveau gut geeignet, da sie eine klare Verbindung zwischen theoretischen Konzepten und alltäglichen Beobachtungen herstellt. Die Antwortmöglichkeiten sind präzise und abgedeckten die verschiedenen Aspekte des Themas.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge, da die Frage bereits gut strukturiert und informativ ist."
+            ],
+            "reasoning": "Die Frage bewertet 4 von 5 möglichen Punkten, weil sie den Lernenden auffordert, die Theorie anhand des gegebenen Beispiels zu überprüfen. Dies erfordert ein Verständnis der Konzepte und ihre Anwendung auf ein reales Szenario. Die Antwortmöglichkeiten sind präzise und abgedeckt alle Aspekte des Themas, was es dem Lernenden ermöglicht, seine Kenntnisse effektiv anzuwenden.",
+            "target_value": "stammaufgabe",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält ein klares Beispiel und eine klare Frage. Der Schüler muss das Konzept anwenden und die richtige Antwort finden. Die Optionen sind jedoch zu umfangreich, was es schwierig macht, die richtige Antwort zu finden.",
+            "suggestions": [
+              "Um die Taxonomie-Anpassung zu verbessern, könnte man die Optionen reduzieren und nur die wichtigsten Bedingungen nennen."
+            ],
+            "reasoning": "Die Frage wird auf Stufe 2 bewertet, da der Schüler das Konzept anwenden soll. Die Optionen sind jedoch zu umfangreich, was es schwierig macht, die richtige Antwort zu finden. Eine Anpassung der Frage kann helfen, den Schwierigkeitsgrad zu senken.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfordert ein Verständnis der mikroökonomischen Begriffe und ihrer Anwendung. Die richtige Antwort ist jedoch leicht zu erraten, da die anderen Optionen offensichtlich falsch sind. Eine mögliche Komplexitätsanalyse könnte sein, dass bei dieser Stufe (0) das Verständnis von Markten und deren Funktionen noch nicht angeeignet werden sollte.",
+            "suggestions": [
+              "- Die Frage sollte im Rahmen eines Lehrbuchs oder einer Lehrplanung mit weiteren Informationen über den Markt und die Mikroökonomie ergänzt werden.",
+              "- Möglicherweise ist eine zusätzliche Aufgabenstellung erforderlich, um das Verständnis der Begriffe zu stärken."
+            ],
+            "reasoning": "Die Bewertung wurde auf 2 gesetzt, da die Frage ein grundlegendes Verständnis von mikroökonomischen Begriffen erfordert. Die richtige Antwort ist leicht ablesbar, was darauf hindeutet, dass die Frage nicht über das Niveau der Zielstufe (0) hinausgeht.",
+            "target_value": "0",
+            "applied": true
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse wie Passivkonstruktionen (z.B. \"ist nicht erfüllt\") und komplexe Nominalphrasen (z.B. \"Bedürfnisse von Menschen\"). Es gibt jedoch keine großen Schwierigkeiten beim Verständnis der Frage.",
+            "suggestions": [
+              "Die Fragen könnten leichter verständlich gemacht werden, indem man aktivische Konstruktionen verwendet und komplexe Nominalphrasen in einfache Nomen umwandelt. Beispielsweise könnte die Frage \"Was sind die Bedingungen, die nicht erfüllt sind, wenn man das Beispiel mit der Sammelkarte betrachtet?\" in \"Was müssen nicht erfüllt sein, wenn man das Beispiel mit der Sammelkarte betrachtet?\""
+            ],
+            "reasoning": "Die Frage wird auf einer mittleren Schwierigkeitsstufe bewertet, da es einige sprachliche Hindernisse gibt, aber diese sind für die meisten Schüler nicht zu groß. Die Frage ist jedoch gut formuliert und es besteht kein großer Sprachverständnisschwall.",
+            "target_value": "Grundtext: Passiv; Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 2: Passiv; Item 3: Negation; Item 4: Passiv; Item 4: Negation; Item 5: Komplexe NP; Item 6: Passiv; Item 6: Komplexe NP; Item 7: Negation; Item 7: Komplexe NP; Item 8: Passiv; Item 8: Negation; Item 8: Komplexe NP; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem genauere Informationen über das Beispiel und die zu analysierende Bedingung gegeben würden. Außerdem wäre es hilfreich, wenn explizit erwähnt würde, was genau nicht erfüllt ist.",
+            "suggestions": [
+              "- Geben Sie genaue Informationen über das Beispiel und die zu analysierende Bedingung.",
+              "- Erwähnen Sie explizit, was genau nicht erfüllt ist."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 3 (Mittelwert) liegt darin, dass die Anweisung zwar klar formuliert ist, aber dennoch mehr Klarheit benötigt, um sicherzustellen, dass die richtige Antwort ermittelt werden kann. Die implizite Zielsetzung erschwert die Bewertung.",
+            "target_value": "Implizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 3 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Bedingung ist nicht erfüllt, wenn man das Beispiel mit der Sammelkarte betrachtet?  <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens"
+      },
+      {
+        "question_text": "Welche Bedingung ist nicht erfüllt, wenn man das Beispiel mit der Sammelkarte betrachtet?  <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "question_type": "mapping",
+        "answers": [
+          "Bedürfnisse",
+          "Nachfrage",
+          "Angebot",
+          "Markt",
+          "Wünsche von Menschen",
+          "Was Kunden kaufen wollen",
+          "Was Unternehmen anbieten",
+          "Ort des Tauschens"
+        ],
+        "correct_answer": {
+          "Bedürfnisse": "Wünsche von Menschen",
+          "Nachfrage": "Was Kunden kaufen wollen",
+          "Angebot": "Was Unternehmen anbieten",
+          "Markt": "Ort des Tauschens"
+        },
+        "explanation": "Die Fragen basieren auf dem Verständnis des Textes bezüglich der Grenzen von Modellen und der Bedeutung realer Faktoren bei der Preisbildung. Die Mapping-Fragen sollen verdeutlichen, wie diese Annahmen mit den tatsächlichen Bedingungen in Beziehung stehen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist für ein Stuftereichtes Niveau gut geeignet, da sie eine klare Verbindung zwischen theoretischen Konzepten und alltäglichen Beobachtungen herstellt. Die Antwortmöglichkeiten sind präzise und abgedeckten die verschiedenen Aspekte des Themas.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge, da die Frage bereits gut strukturiert und informativ ist."
+            ],
+            "reasoning": "Die Frage bewertet 4 von 5 möglichen Punkten, weil sie den Lernenden auffordert, die Theorie anhand des gegebenen Beispiels zu überprüfen. Dies erfordert ein Verständnis der Konzepte und ihre Anwendung auf ein reales Szenario. Die Antwortmöglichkeiten sind präzise und abgedeckt alle Aspekte des Themas, was es dem Lernenden ermöglicht, seine Kenntnisse effektiv anzuwenden.",
+            "target_value": "stammaufgabe",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält ein klares Beispiel und eine klare Frage. Der Schüler muss das Konzept anwenden und die richtige Antwort finden. Die Optionen sind jedoch zu umfangreich, was es schwierig macht, die richtige Antwort zu finden.",
+            "suggestions": [
+              "Um die Taxonomie-Anpassung zu verbessern, könnte man die Optionen reduzieren und nur die wichtigsten Bedingungen nennen."
+            ],
+            "reasoning": "Die Frage wird auf Stufe 2 bewertet, da der Schüler das Konzept anwenden soll. Die Optionen sind jedoch zu umfangreich, was es schwierig macht, die richtige Antwort zu finden. Eine Anpassung der Frage kann helfen, den Schwierigkeitsgrad zu senken.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfordert ein Verständnis der mikroökonomischen Begriffe und ihrer Anwendung. Die richtige Antwort ist jedoch leicht zu erraten, da die anderen Optionen offensichtlich falsch sind. Eine mögliche Komplexitätsanalyse könnte sein, dass bei dieser Stufe (0) das Verständnis von Markten und deren Funktionen noch nicht angeeignet werden sollte.",
+            "suggestions": [
+              "- Die Frage sollte im Rahmen eines Lehrbuchs oder einer Lehrplanung mit weiteren Informationen über den Markt und die Mikroökonomie ergänzt werden.",
+              "- Möglicherweise ist eine zusätzliche Aufgabenstellung erforderlich, um das Verständnis der Begriffe zu stärken."
+            ],
+            "reasoning": "Die Bewertung wurde auf 2 gesetzt, da die Frage ein grundlegendes Verständnis von mikroökonomischen Begriffen erfordert. Die richtige Antwort ist leicht ablesbar, was darauf hindeutet, dass die Frage nicht über das Niveau der Zielstufe (0) hinausgeht.",
+            "target_value": "0",
+            "applied": true
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse wie Passivkonstruktionen (z.B. \"ist nicht erfüllt\") und komplexe Nominalphrasen (z.B. \"Bedürfnisse von Menschen\"). Es gibt jedoch keine großen Schwierigkeiten beim Verständnis der Frage.",
+            "suggestions": [
+              "Die Fragen könnten leichter verständlich gemacht werden, indem man aktivische Konstruktionen verwendet und komplexe Nominalphrasen in einfache Nomen umwandelt. Beispielsweise könnte die Frage \"Was sind die Bedingungen, die nicht erfüllt sind, wenn man das Beispiel mit der Sammelkarte betrachtet?\" in \"Was müssen nicht erfüllt sein, wenn man das Beispiel mit der Sammelkarte betrachtet?\""
+            ],
+            "reasoning": "Die Frage wird auf einer mittleren Schwierigkeitsstufe bewertet, da es einige sprachliche Hindernisse gibt, aber diese sind für die meisten Schüler nicht zu groß. Die Frage ist jedoch gut formuliert und es besteht kein großer Sprachverständnisschwall.",
+            "target_value": "Grundtext: Passiv; Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 2: Passiv; Item 3: Negation; Item 4: Passiv; Item 4: Negation; Item 5: Komplexe NP; Item 6: Passiv; Item 6: Komplexe NP; Item 7: Negation; Item 7: Komplexe NP; Item 8: Passiv; Item 8: Negation; Item 8: Komplexe NP; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem genauere Informationen über das Beispiel und die zu analysierende Bedingung gegeben würden. Außerdem wäre es hilfreich, wenn explizit erwähnt würde, was genau nicht erfüllt ist.",
+            "suggestions": [
+              "- Geben Sie genaue Informationen über das Beispiel und die zu analysierende Bedingung.",
+              "- Erwähnen Sie explizit, was genau nicht erfüllt ist."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 3 (Mittelwert) liegt darin, dass die Anweisung zwar klar formuliert ist, aber dennoch mehr Klarheit benötigt, um sicherzustellen, dass die richtige Antwort ermittelt werden kann. Die implizite Zielsetzung erschwert die Bewertung.",
+            "target_value": "Implizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 3 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Bedingung ist nicht erfüllt, wenn man das Beispiel mit der Sammelkarte betrachtet?  <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens"
+      },
+      {
+        "question_text": "Welche Bedingung ist nicht erfüllt, wenn man das Beispiel mit der Sammelkarte betrachtet?  <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens",
+        "question_type": "mapping",
+        "answers": [
+          "Bedürfnisse",
+          "Nachfrage",
+          "Angebot",
+          "Markt",
+          "Wünsche von Menschen",
+          "Was Kunden kaufen wollen",
+          "Was Unternehmen anbieten",
+          "Ort des Tauschens"
+        ],
+        "correct_answer": {
+          "Bedürfnisse": "Wünsche von Menschen",
+          "Nachfrage": "Was Kunden kaufen wollen",
+          "Angebot": "Was Unternehmen anbieten",
+          "Markt": "Ort des Tauschens"
+        },
+        "explanation": "Die Fragen basieren auf dem Verständnis des Textes bezüglich der Grenzen von Modellen und der Bedeutung realer Faktoren bei der Preisbildung. Die Mapping-Fragen sollen verdeutlichen, wie diese Annahmen mit den tatsächlichen Bedingungen in Beziehung stehen.",
+        "expert_suggestions": [
+          {
+            "expert_type": "variation_expert",
+            "rating": 4,
+            "feedback": "Die Frage ist für ein Stuftereichtes Niveau gut geeignet, da sie eine klare Verbindung zwischen theoretischen Konzepten und alltäglichen Beobachtungen herstellt. Die Antwortmöglichkeiten sind präzise und abgedeckten die verschiedenen Aspekte des Themas.",
+            "suggestions": [
+              "Keine Verbesserungsvorschläge, da die Frage bereits gut strukturiert und informativ ist."
+            ],
+            "reasoning": "Die Frage bewertet 4 von 5 möglichen Punkten, weil sie den Lernenden auffordert, die Theorie anhand des gegebenen Beispiels zu überprüfen. Dies erfordert ein Verständnis der Konzepte und ihre Anwendung auf ein reales Szenario. Die Antwortmöglichkeiten sind präzise und abgedeckt alle Aspekte des Themas, was es dem Lernenden ermöglicht, seine Kenntnisse effektiv anzuwenden.",
+            "target_value": "stammaufgabe",
+            "applied": true
+          },
+          {
+            "expert_type": "taxonomy_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält ein klares Beispiel und eine klare Frage. Der Schüler muss das Konzept anwenden und die richtige Antwort finden. Die Optionen sind jedoch zu umfangreich, was es schwierig macht, die richtige Antwort zu finden.",
+            "suggestions": [
+              "Um die Taxonomie-Anpassung zu verbessern, könnte man die Optionen reduzieren und nur die wichtigsten Bedingungen nennen."
+            ],
+            "reasoning": "Die Frage wird auf Stufe 2 bewertet, da der Schüler das Konzept anwenden soll. Die Optionen sind jedoch zu umfangreich, was es schwierig macht, die richtige Antwort zu finden. Eine Anpassung der Frage kann helfen, den Schwierigkeitsgrad zu senken.",
+            "target_value": "Stufe 2 (Anwendung/Transfer)",
+            "applied": false
+          },
+          {
+            "expert_type": "math_expert",
+            "rating": 2,
+            "feedback": "Die Frage erfordert ein Verständnis der mikroökonomischen Begriffe und ihrer Anwendung. Die richtige Antwort ist jedoch leicht zu erraten, da die anderen Optionen offensichtlich falsch sind. Eine mögliche Komplexitätsanalyse könnte sein, dass bei dieser Stufe (0) das Verständnis von Markten und deren Funktionen noch nicht angeeignet werden sollte.",
+            "suggestions": [
+              "- Die Frage sollte im Rahmen eines Lehrbuchs oder einer Lehrplanung mit weiteren Informationen über den Markt und die Mikroökonomie ergänzt werden.",
+              "- Möglicherweise ist eine zusätzliche Aufgabenstellung erforderlich, um das Verständnis der Begriffe zu stärken."
+            ],
+            "reasoning": "Die Bewertung wurde auf 2 gesetzt, da die Frage ein grundlegendes Verständnis von mikroökonomischen Begriffen erfordert. Die richtige Antwort ist leicht ablesbar, was darauf hindeutet, dass die Frage nicht über das Niveau der Zielstufe (0) hinausgeht.",
+            "target_value": "0",
+            "applied": true
+          },
+          {
+            "expert_type": "obstacle_expert",
+            "rating": 3,
+            "feedback": "Die Frage enthält einige sprachliche Hindernisse wie Passivkonstruktionen (z.B. \"ist nicht erfüllt\") und komplexe Nominalphrasen (z.B. \"Bedürfnisse von Menschen\"). Es gibt jedoch keine großen Schwierigkeiten beim Verständnis der Frage.",
+            "suggestions": [
+              "Die Fragen könnten leichter verständlich gemacht werden, indem man aktivische Konstruktionen verwendet und komplexe Nominalphrasen in einfache Nomen umwandelt. Beispielsweise könnte die Frage \"Was sind die Bedingungen, die nicht erfüllt sind, wenn man das Beispiel mit der Sammelkarte betrachtet?\" in \"Was müssen nicht erfüllt sein, wenn man das Beispiel mit der Sammelkarte betrachtet?\""
+            ],
+            "reasoning": "Die Frage wird auf einer mittleren Schwierigkeitsstufe bewertet, da es einige sprachliche Hindernisse gibt, aber diese sind für die meisten Schüler nicht zu groß. Die Frage ist jedoch gut formuliert und es besteht kein großer Sprachverständnisschwall.",
+            "target_value": "Grundtext: Passiv; Grundtext: Negation; Grundtext: Komplexe Nominalphrasen; Item 2: Passiv; Item 3: Negation; Item 4: Passiv; Item 4: Negation; Item 5: Komplexe NP; Item 6: Passiv; Item 6: Komplexe NP; Item 7: Negation; Item 7: Komplexe NP; Item 8: Passiv; Item 8: Negation; Item 8: Komplexe NP; Anweisung: Passiv; Anweisung: Komplexe NP",
+            "applied": false
+          },
+          {
+            "expert_type": "instruction_expert",
+            "rating": 3,
+            "feedback": "Die Anweisungsklarheit könnte verbessert werden, indem genauere Informationen über das Beispiel und die zu analysierende Bedingung gegeben würden. Außerdem wäre es hilfreich, wenn explizit erwähnt würde, was genau nicht erfüllt ist.",
+            "suggestions": [
+              "- Geben Sie genaue Informationen über das Beispiel und die zu analysierende Bedingung.",
+              "- Erwähnen Sie explizit, was genau nicht erfüllt ist."
+            ],
+            "reasoning": "Die Begründung für die Bewertung von 3 (Mittelwert) liegt darin, dass die Anweisung zwar klar formuliert ist, aber dennoch mehr Klarheit benötigt, um sicherzustellen, dass die richtige Antwort ermittelt werden kann. Die implizite Zielsetzung erschwert die Bewertung.",
+            "target_value": "Implizit",
+            "applied": true
+          }
+        ],
+        "expert_ratings": {
+          "variation_expert": 4,
+          "taxonomy_expert": 3,
+          "math_expert": 2,
+          "obstacle_expert": 3,
+          "instruction_expert": 3
+        },
+        "refinement_applied": true,
+        "refinement_reasoning": "Critical format/structure issues identified by 3 experts",
+        "format_preserved": true,
+        "parameters_maintained": true,
+        "original_question": "Welche Bedingung ist nicht erfüllt, wenn man das Beispiel mit der Sammelkarte betrachtet?  <start-option>Bedürfnisse<start-option>Nachfrage<start-option>Angebot<start-option>Markt<end-option>Wünsche von Menschen<end-option>Was Kunden kaufen wollen<end-option>Was Unternehmen anbieten<end-option>Ort des Tauschens"
+      }
+    ],
+    "question_types_generated": [
+      "mapping",
+      "mapping",
+      "mapping"
+    ],
+    "generation_result": {
+      "typed_questions": [
+        

@@ -1,0 +1,77 @@
+=== TRUE-FALSE FRAGEN MIT FORSCHER-ANNOTATIONEN ===
+
+Diese Beispiele zeigen von Forschern validierte True-False-Fragen mit Qualitätsbewertungen:
+
+BEISPIEL 1 - Grundkonzepte testen (Qualitätsbewertung: Sehr gut)
+Frage: Entscheide, ob die Aussagen richtig oder falsch sind. <true-false> Bedürfnisse sind Wünsche, die entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. <true-false> Wenn es kalt ist, hat man das Bedürfnis sich zu wärmen. <true-false> Alle Menschen haben immer die gleichen Bedürfnisse. <true-false> Bedürfnisse können nur mit Geld befriedigt werden. <true-false> In der Wirtschaft bezeichnet man Wünsche allgemein als Bedürfnisse. <true-false> Bedürfnisse entstehen nur bei Kindern.
+
+Korrekte Antworten: Richtig: Aussagen 1, 2, 5 | Falsch: Aussagen 3, 4, 6
+
+Forscher-Annotation:
+- Schwierigkeit: Stammaufgabe
+- Taxonomie: Stufe 1 (Wissen/Reproduktion)
+- Explizitheit: Explizit ("Entscheide, ob die Aussagen richtig oder falsch sind")
+- Format: Korrekte <true-false> Verwendung mit 6 Aussagen
+- Qualität: Mischt grundlegende Definitionen mit häufigen Missverständnissen
+- Sprachliche Klarheit: Klare, direkte Aussagen ohne komplexe Strukturen
+- Besonderheit: Gute Balance zwischen wahren und falschen Aussagen (3:3)
+
+BEISPIEL 2 - Konzeptvertiefung (Qualitätsbewertung: Sehr gut)
+Frage: Entscheide, ob die Aussagen richtig oder falsch sind. <true-false> Bedürfnisse unterscheiden sich individuell je nach Person. <true-false> Wenn ein Bedürfnis befriedigt ist, widmet man sich direkt einem anderen. <true-false> Menschen haben nur ein Bedürfnis gleichzeitig. <true-false> In der Wirtschaft gehen wir davon aus, dass Bedürfnisse unbegrenzt sind. <true-false> Erwachsene haben niemals das Bedürfnis zu spielen. <true-false> Nach dem Sport kann man mehrere Bedürfnisse gleichzeitig haben.
+
+Korrekte Antworten: Richtig: Aussagen 1, 2, 4, 6 | Falsch: Aussagen 3, 5
+
+Forscher-Annotation:
+- Schwierigkeit: Stammaufgabe
+- Taxonomie: Stufe 2 (Anwendung/Transfer)
+- Explizitheit: Explizit
+- Format: Korrekte <true-false> Verwendung mit 6 Aussagen
+- Qualität: Testet tieferes Verständnis von Bedürfniskonzepten
+- Sprachliche Klarheit: Direkte Aussagen, keine sprachlichen Hindernisse
+- Besonderheit: Gute Balance zwischen wahren und falschen Aussagen (4:2)
+
+BEISPIEL 3 - Differenzierte Anwendung (Qualitätsbewertung: Gut)
+Frage: Entscheide, ob die Aussagen richtig oder falsch sind. <true-false> Kinder haben häufig andere Bedürfnisse als Erwachsene. <true-false> Manche Kinder spielen lieber draußen und andere verbringen die Zeit lieber drinnen. <true-false> Erwachsene haben vielleicht eher den Wunsch, finanziell abgesichert zu sein. <true-false> Bedürfnisse sind bei allen Kindern untereinander immer identisch. <true-false> Das Bedürfnis nach Zuneigung entsteht nur, wenn man Geld hat. <true-false> Langweile kann zu einem Bedürfnis nach Unterhaltung führen.
+
+Korrekte Antworten: Richtig: Aussagen 1, 2, 3, 6 | Falsch: Aussagen 4, 5
+
+Forscher-Annotation:
+- Schwierigkeit: schwer
+- Taxonomie: Stufe 1 (Wissen/Reproduktion)
+- Explizitheit: Explizit
+- Format: Korrekte <true-false> Verwendung mit 6 Aussagen
+- Qualität: Differenziert zwischen verschiedenen Altersgruppen und Situationen
+- Sprachliche Klarheit: Teilweise komplexere Sätze, aber verständlich
+- Besonderheit: Nutzt konkrete Beispiele (draußen/drinnen spielen, finanzielle Sicherheit)
+
+QUALITÄTSMERKMALE FÜR TRUE-FALSE BASIEREND AUF FORSCHER-BEWERTUNGEN:
+
+1. FORMAT:
+   - Immer <true-false> Markup verwenden
+   - 4-6 Aussagen für optimale Testabdeckung
+   - Ausgewogene Verteilung von wahren und falschen Aussagen
+
+2. INHALTLICHE QUALITÄT:
+   - Mischt grundlegende Definitionen mit Anwendungskonzepten
+   - Testet häufige Missverständnisse als falsche Aussagen
+   - Verwendet konkrete Beispiele und Alltagssituationen
+   - Unterschiedliche Aspekte des gleichen Konzepts abdecken
+
+3. SPRACHLICHE KLARHEIT:
+   - Explizite Instruktionen ("Entscheide, ob die Aussagen richtig oder falsch sind")
+   - Direkte, klare Aussagenformulierung
+   - Vermeidung von Doppelnegationen
+   - Einfache bis mittlere Satzstrukturen
+
+4. SCHWIERIGKEITSABSTUFUNG:
+   - Stammaufgabe: Grunddefinitionen und einfache Konzeptanwendung
+   - schwer: Differenzierte Anwendung auf verschiedene Gruppen/Situationen
+   - Stufe 1: Faktenwissen und Begriffsverständnis
+   - Stufe 2: Konzeptanwendung und Transfer
+
+5. BEWÄHRTE STRATEGIEN:
+   - 3:3 oder 4:2 Balance zwischen wahren und falschen Aussagen
+   - Konkrete Beispiele verwenden (draußen/drinnen, finanzielle Sicherheit)
+   - Altersgruppen vergleichen (Kinder vs. Erwachsene)
+   - Alltagssituationen einbeziehen (Sport, Langweile)
+   - Häufige Missverständnisse als "falsch" einbauen

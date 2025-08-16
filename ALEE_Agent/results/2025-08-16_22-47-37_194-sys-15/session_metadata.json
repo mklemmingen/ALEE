@@ -1,0 +1,37 @@
+{
+  "dspy_pipeline_used": true,
+  "type_aware_pipeline": true,
+  "single_pass_consensus": true,
+  "expert_consensus_achieved": true,
+  "typed_questions_used": true,
+  "refinement_decisions_made": true,
+  "processing_time": 64.70340418815613,
+  "generation_updates": [
+    {
+      "iteration": 1,
+      "questions": [
+        "Wie ver\u00e4ndert sich der Gleichgewichtspreis, wenn das Angebot zu jedem gegebenen Preis steigt? <true-false>Wie ver\u00e4ndert sich der Gleichgewichtspreis, wenn das Angebot zu jedem gegebenen Preis steigt?<true-false>Die Aussage ist falsch",
+        "Wie ver\u00e4ndert sich der Gleichgewichtspreis, wenn die Nachfrage zu jedem gegebenen Preis f\u00e4llt? <true-false>Wie ver\u00e4ndert sich der Gleichgewichtspreis, wenn die Nachfrage zu jedem gegebenen Preis f\u00e4llt?<true-false>Die Aussage ist falsch",
+        "(Keine dritte Frage generiert, da es nur zwei m\u00f6gliche true-false Fragen gibt) <true-false>(Keine dritte Frage generiert, da es nur zwei m\u00f6gliche true-false Fragen gibt)<true-false>Die Aussage ist falsch"
+      ],
+      "expert_consensus": [
+        true,
+        true,
+        true
+      ],
+      "dspy_metadata": {
+        "modular_prompts_used": true,
+        "enhanced_expert_prompts": true,
+        "parameter_knowledge_sharing": true,
+        "single_pass_consensus": true,
+        "all_approved": true
+      }
+    }
+  ],
+  "pipeline_steps_saved": 4,
+  "total_expert_evaluations": 0,
+  "dspy_architecture": "sequential_server_reuse",
+  "session_completed_at": "2025-08-16T22:47:37.946205",
+  "final_results_saved": true,
+  "total_processing_time": -1e-06
+}
