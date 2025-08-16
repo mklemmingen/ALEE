@@ -5,10 +5,11 @@ NO hardcoded prompt strings - uses ModularPromptBuilder for all prompts
 
 import logging
 from typing import Dict, Any, Optional, List
+
 from models import BaseQuestionModel, QuestionFactory, ExpertSuggestion
-from signatures import *
 from prompt_builder import ModularPromptBuilder, ExpertPromptEnhancer
 from question_refiner import BatchQuestionRefiner
+from signatures import *
 
 logger = logging.getLogger(__name__)
 
@@ -435,8 +436,7 @@ class GermanQuestionGenerator(dspy.Module):
     
     def _extract_correct_answer(self, question_text: str, answers: List[str], question_type: str) -> Any:
         """Extract correct answer based on question type with robust format handling"""
-        import re
-        
+
         if question_type == "multiple-choice":
             # Multiple choice expects List[str] with 2+ correct answers
             if len(answers) >= 2:

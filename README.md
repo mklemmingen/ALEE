@@ -22,7 +22,7 @@ This project is part of ALEE Tübingens ongoing research into educational AI sys
 
 ---
 
-## Educational Processing Architecture
+## Processing Architecture
 
 ```mermaid
 graph TB
@@ -30,52 +30,53 @@ graph TB
         A[HTTP POST Request<br/>39 SYSARCH Parameters<br/>c_id, text, question_type, p_variation, etc.]
     end
     
-    subgraph "Layer 2: AI Orchestrator"
-        B[Educational Question Processing Engine<br/>educational_question_generator.py]
+    subgraph "Layer 2: DSPy Orchestrator"
+        B[Educational Question Processing Engine<br/>_server_question_generator.py]
         B1[AI System Initialization<br/>Multi-Server Language Model Setup]
-        B2[German Educational Pipeline<br/>Single-Pass Processing]
+        B2[DSPy Educational Pipeline<br/>Single-Pass Processing]
     end
     
     subgraph "Question Generation Phase"
-        C[Educational Question Generator<br/>Language Model Server Port 8001]
-        C1[Modular Prompt Construction<br/>From Parameter-Specific Educational Templates]
-        C2[German Educational Question Generation<br/>AI Reasoning with Educational Context]
-        C3[Generate Exactly 3 Questions<br/>With Structured Educational Outputs]
+        C[DSPy Question Generator<br/>Language Model Server Port 8001]
+        C1[Modular Prompt Construction<br/>Parameter-Specific Educational Templates]
+        C2[DSPy Question Generation Module<br/>Declarative Language Model Programming]
+        C3[Generate 3 Questions<br/>Structured Educational Outputs]
     end
     
     subgraph "Layer 3: Expert Educational Validation"
-        D[Parallel Expert Processing<br/>5 Specialized Educational Validators<br/>Enhanced Parameter Knowledge Distribution]
+        D[DSPy Expert Validation Modules<br/>5 Specialized Domain Validators<br/>Parameter Knowledge Distribution]
         
-        subgraph "Educational Expert Validators with Parameter Enhancement"
-            E[Difficulty Assessment Expert<br/>Language Model Server Port 8002<br/>Enhanced with difficulty, taxonomy, question type knowledge]
-            F[Cognitive Taxonomy Expert<br/>Language Model Server Port 8003<br/>Enhanced with taxonomy, question type knowledge]
-            G[Mathematical Complexity Expert<br/>Language Model Server Port 8004<br/>Enhanced with mathematical requirement knowledge]
-            H[Linguistic Barrier Expert<br/>Language Model Server Port 8006<br/>Enhanced with comprehensive linguistic obstacle knowledge]
-            I[Instruction Clarity Expert<br/>Language Model Server Port 8007<br/>Enhanced with explicitness, question type knowledge]
+        subgraph "Educational Expert Validators"
+            E[Difficulty Assessment Expert<br/>Language Model Server Port 8002<br/>Informed by difficulty, taxonomy, question type parameters]
+            F[Cognitive Taxonomy Expert<br/>Language Model Server Port 8003<br/>Informed by taxonomy, question type parameters]
+            G[Mathematical Complexity Expert<br/>Language Model Server Port 8004<br/>Informed by mathematical requirement parameters]
+            TR[Text Reference Expert<br/>Language Model Server Port 8005<br/>Informed by text reference parameters]
+            H[Linguistic Barrier Expert<br/>Language Model Server Port 8006<br/>Informed by linguistic obstacle parameters]
+            I[Instruction Clarity Expert<br/>Language Model Server Port 8007<br/>Informed by explicitness, question type parameters]
         end
         
         subgraph "Expert Knowledge Enhancement"
-            EP[Educational Parameter Enhancer<br/>Parameter Knowledge Distribution<br/>Format Preservation Protocol]
+            EP[Parameter Enhancer<br/>Parameter Knowledge Distribution<br/>Format Preservation Protocol]
         end
     end
     
     subgraph "Expert Consensus & Educational Refinement Phase"
         J[Educational Expert Consensus<br/>Expert Feedback Aggregation + Question Refinement]
-        J1[Expert Rating & Suggestion Aggregation<br/>Parameter Knowledge Integration]
-        J2[Question Refinement with Educational Guardrails<br/>Format Preservation + SYSARCH Compliance]
-        J3[Refined Educational Question Output<br/>No Iteration Required]
+        J1[Pydantic Expert Rating Aggregation<br/>Type-Safe Parameter Integration]
+        J2[Type-Safe Question Refinement<br/>Format Preservation + SYSARCH Compliance]
+        J3[Refined Educational Question Output<br/>Single-Pass Processing]
     end
     
     subgraph "Result Management"
-        K[Comprehensive Result Storage<br/>ResultManager Integration]
-        K1[Educational Pipeline Step Tracking<br/>Generation → Experts → Consensus+Refinement]
+        K[Result Storage System<br/>ResultManager Integration]
+        K1[DSPy Pipeline Step Tracking<br/>Generation → Experts → Consensus+Refinement]
         K2[SYSARCH CSV Generation<br/>All 39 Parameters + Metadata]
         K3[Session-Based Storage<br/>results/YYYY-MM-DD_HH-MM-SS_c_id/]
     end
     
     subgraph "Output"
         L[HTTP Response<br/>question_1, question_2, question_3<br/>Processing Time + CSV Data]
-        M[Saved Results<br/>• Complete DSPy Pipeline JSON<br/>• Expert Evaluations × 15<br/>• SYSARCH CSV Format<br/>• Prompt Snapshots<br/>• Processing Metadata]
+        M[Saved Results<br/>• DSPy Pipeline JSON<br/>• Expert Evaluations × 18<br/>• SYSARCH CSV Format<br/>• Prompt Snapshots<br/>• Processing Metadata]
     end
 
     A --> B
@@ -89,11 +90,19 @@ graph TB
     D --> E
     D --> F
     D --> G
+    D --> TR
     D --> H
     D --> I
+    EP --> E
+    EP --> F
+    EP --> G
+    EP --> TR
+    EP --> H
+    EP --> I
     E --> J
     F --> J
     G --> J
+    TR --> J
     H --> J
     I --> J
     J --> J1
@@ -117,13 +126,14 @@ graph TB
 
 ### Educational Expert Validators
 
-| Educational Expert Module | AI Reasoning Signature | Language Model Port | Model | Target Parameters | Educational Expertise |
-|---------------|----------------|-------------|-------|-------------------|-----------|
-| **VariationExpertGerman** | `ValidateVariationGerman` | 8002 | mistral:7b | `p_variation` | Difficulty assessment (leicht/stammaufgabe/schwer) |
-| **TaxonomyExpertGerman** | `ValidateTaxonomyGerman` | 8003 | qwen2.5:7b | `p_taxonomy_level` | Bloom's taxonomy (Stufe 1/2) |
-| **MathExpertGerman** | `ValidateMathematicalGerman` | 8004 | llama3.2:3b | `p_mathematical_requirement_level` | Mathematical complexity (0-2) |
-| **ObstacleExpertGerman** | `ValidateObstacleGerman` | 8006 | mistral:7b | `p_*_obstacle_*` | Linguistic barriers (passive, negation, complex NP) |
-| **InstructionExpertGerman** | `ValidateInstructionGerman` | 8007 | llama3.1:8b | `p_instruction_*` | Instruction clarity and explicitness |
+| Educational Expert Module     | AI Reasoning Signature        | Language Model Port | Model       | Target Parameters                  | Educational Expertise                               |
+|-------------------------------|-------------------------------|---------------------|-------------|------------------------------------|-----------------------------------------------------|
+| **VariationExpertGerman**     | `ValidateVariationGerman`     | 8002                | mistral:7b  | `p_variation`                      | Difficulty assessment (leicht/stammaufgabe/schwer)  |
+| **TaxonomyExpertGerman**      | `ValidateTaxonomyGerman`      | 8003                | qwen2.5:7b  | `p_taxonomy_level`                 | Bloom's taxonomy (Stufe 1/2)                        |
+| **MathExpertGerman**          | `ValidateMathematicalGerman`  | 8004                | llama3.2:3b | `p_mathematical_requirement_level` | Mathematical complexity (0-2)                       |
+| **TextReferenceExpertGerman** | `ValidateTextReferenceGerman` | 8005                | llama3.2:3b | `p_root_text_reference_*`          | Text reference validation                           |
+| **ObstacleExpertGerman**      | `ValidateObstacleGerman`      | 8006                | mistral:7b  | `p_*_obstacle_*`                   | Linguistic barriers (passive, negation, complex NP) |
+| **InstructionExpertGerman**   | `ValidateInstructionGerman`   | 8007                | llama3.1:8b | `p_instruction_*`                  | Instruction clarity and explicitness                |
 
 ### DSPy - Why and how?
 
@@ -389,7 +399,7 @@ GET /system-capabilities    # Educational AI system configuration and module inf
 
 ## Pipeline Tracking
 
-The system saves comprehensive pipeline information for research and debugging:
+The system saves pipeline information for research and debugging:
 
 ### Pipeline Steps Saved
 

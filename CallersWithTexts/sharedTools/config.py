@@ -5,8 +5,8 @@ Centralized settings for orchestrator communication, timeouts, and validation ru
 """
 
 import os
-from typing import Dict, Any, List
 from pathlib import Path
+from typing import Dict, Any, List
 
 
 class CallerConfig:
@@ -33,7 +33,7 @@ class CallerConfig:
     VALID_EXPLICITNESS_VALUES = ["Explizit", "Implizit"]
     
     # File Paths
-    STAKEHOLDER_CSV_PATH = "../../.dev/providedProjectFromStakeHolder/explanation_metadata.csv"
+    STAKEHOLDER_CSV_PATH = "../.dev/providedProjectFromStakeHolder/explanation_metadata.csv"
     LOG_DIR = "../_logs"
     
     # Logging Configuration

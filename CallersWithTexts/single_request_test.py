@@ -6,14 +6,14 @@ Includes structured logging, parameter validation, and performance analysis
 """
 
 import asyncio
-import json
 import time
 from typing import Dict, Any, Optional
 
 # Import modular components
 from sharedTools.caller import OrchestorCaller
+from sharedTools.config import CallerConfig
 from sharedTools.logger import CallerLogger
-from sharedTools.config import CallerConfig, TestConfig
+
 
 class SingleRequestTest:
     """Enhanced single request test with modular components"""

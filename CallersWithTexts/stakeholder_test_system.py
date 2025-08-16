@@ -11,8 +11,8 @@ from typing import Dict, Any
 
 # Import new modular components
 from sharedTools.caller import OrchestorCaller
+from sharedTools.config import CallerConfig
 from sharedTools.logger import CallerLogger
-from sharedTools.config import CallerConfig, TestConfig
 
 
 class StakeholderTestSystem:

@@ -6,12 +6,11 @@ Provides structured logging for all CallersWithTexts scripts and analysis capabi
 
 import json
 import logging
-import re
 import statistics
 from collections import defaultdict, Counter
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Dict, Any, List, Optional, Tuple, Union
+from typing import Dict, Any, List, Optional
 
 import pandas as pd
 

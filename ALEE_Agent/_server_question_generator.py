@@ -7,8 +7,10 @@ Replaces complex iteration system with intelligent expert consensus
 import logging
 import time
 from typing import Dict, List, Any
+
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
+
 from modules import GermanEducationalPipeline, TypeAwareEducationalPipeline, ModularPromptBuilder
 from prompt_builder import ExpertPromptEnhancer
 from result_manager import ResultManager

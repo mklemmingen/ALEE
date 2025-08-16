@@ -11,8 +11,6 @@ from pathlib import Path
 from typing import Dict, Any, List, Optional
 
 # Import new modular components
-from sharedTools.caller import OrchestorCaller
-from sharedTools.logger import CallerLogger
 from sharedTools.config import CallerConfig
 
 try:
