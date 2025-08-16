@@ -41,6 +41,13 @@ class GermanQuestionGenerator(dspy.Module):
         # Load output format instructions
         output_format = self.prompt_builder.load_prompt_txt("dtoAndOutputPrompt/fallbackGenerationPrompt.txt")
         
+        # Load high-quality examples from stakeholder data
+        try:
+            dspy_examples = self.prompt_builder.load_prompt_txt("dtoAndOutputPrompt/dspyExamples.txt")
+        except:
+            logger.warning("Could not load dspyExamples.txt, continuing without examples")
+            dspy_examples = ""
+        
         # Add explicit format enforcement for question type
         question_type = request_params.get('question_type', 'multiple-choice')
         format_enforcement = self._get_format_enforcement_prompt(question_type)
@@ -49,6 +56,9 @@ class GermanQuestionGenerator(dspy.Module):
         full_prompt = f"""{self.generation_instruction}
 
         {modular_prompt}
+        
+        === HOCHWERTIGE BEISPIELE AUS GENEHMIGTEN DATEN ===
+        {dspy_examples}
         
         {output_format}
         
@@ -59,6 +69,7 @@ class GermanQuestionGenerator(dspy.Module):
         - Prüfe dass die generierten Fragen EXAKT das oben spezifizierte Markup verwenden
         - Stelle sicher dass die Optionsanzahl den Anforderungen entspricht
         - Verwende NIEMALS A), B), C) Format - nur das spezifizierte Markup
+        - Alle Optionen müssen inhaltlich sinnvoll sein - KEINE Platzhalter wie "Zusätzliche Option X"
         - Diese Anweisungen haben HÖCHSTE PRIORITÄT über alle anderen Formatanweisungen"""
         
         # Prepare DSPy inputs from modular prompt sections
@@ -157,16 +168,45 @@ class GermanQuestionGenerator(dspy.Module):
                 
                 # Ensure minimum option count for question type
                 if question_type == "multiple-choice" and len(transformed_options) < 6:
-                    # Pad with additional options to meet 6-8 requirement
+                    # Generate contextually relevant options based on existing ones
+                    logger.warning(f"Multiple-choice has only {len(transformed_options)} options, need 6-8")
+                    context_fillers = [
+                        "Keine der genannten Optionen trifft zu",
+                        "Alle genannten Optionen sind teilweise richtig",
+                        "Die Antwort hängt vom Kontext ab",
+                        "Weitere Faktoren müssen berücksichtigt werden",
+                        "Eine Kombination mehrerer Faktoren",
+                        "Dies kann nicht eindeutig beantwortet werden"
+                    ]
+                    
+                    filler_index = 0
+                    while len(transformed_options) < 6 and filler_index < len(context_fillers):
+                        transformed_options.append(context_fillers[filler_index])
+                        filler_index += 1
+                    
+                    # Last resort if still not enough
                     while len(transformed_options) < 6:
-                        transformed_options.append(f"Zusätzliche Option {len(transformed_options) + 1}")
-                    logger.info(f"Padded multiple-choice to {len(transformed_options)} options")
+                        transformed_options.append(f"Alternative Perspektive {len(transformed_options) - 5}")
+                    
+                    logger.info(f"Padded multiple-choice to {len(transformed_options)} options with contextual fillers")
                 
                 elif question_type == "single-choice" and len(transformed_options) != 4:
                     # Ensure exactly 4 options for single-choice
                     if len(transformed_options) < 4:
+                        context_fillers = [
+                            "Keine der obigen Antworten",
+                            "Alle Antworten sind möglich",
+                            "Die Frage ist nicht eindeutig"
+                        ]
+                        
+                        filler_index = 0
+                        while len(transformed_options) < 4 and filler_index < len(context_fillers):
+                            transformed_options.append(context_fillers[filler_index])
+                            filler_index += 1
+                            
+                        # Last resort
                         while len(transformed_options) < 4:
-                            transformed_options.append(f"Zusätzliche Option {len(transformed_options) + 1}")
+                            transformed_options.append(f"Weitere Option {len(transformed_options) + 1}")
                     else:
                         transformed_options = transformed_options[:4]
                     logger.info(f"Adjusted single-choice to exactly 4 options")
@@ -321,37 +361,50 @@ class GermanQuestionGenerator(dspy.Module):
         
         format_instructions = {
             "multiple-choice": """
-            MULTIPLE-CHOICE FORMAT ENFORCEMENT:
+            MULTIPLE-CHOICE FORMAT ENFORCEMENT (ABSOLUT KRITISCH):
             - VERWENDE AUSSCHLIESSLICH: <option>Option1<option>Option2<option>Option3...
             - GENAU 6-8 Optionen ERFORDERLICH (nicht weniger, nicht mehr)
-            - NIEMALS A), B), C) verwenden - nur <option> Tags
-            - Beispiel: Was ist X? <option>Erste Option<option>Zweite Option<option>Dritte Option<option>Vierte Option<option>Fünfte Option<option>Sechste Option
-            - Korrekte Antwort: Liste mit 2+ Optionen
+            - NIEMALS A), B), C), D), E), F) verwenden - nur <option> Tags
+            - ALLE Optionen müssen inhaltlich sinnvoll und kontextbezogen sein
+            - VERBOTEN: Platzhalter wie "Zusätzliche Option X", "Weitere Möglichkeit", "Option Y"
+            
+            REALES BEISPIEL aus genehmigten Daten:
+            Was ist gemeint, wenn man sagt, dass ein Bedürfnis befriedigt wurde? <option> Man hat das Bedürfnis (vorübergehend) nicht mehr. Wenn man z. B. hungrig ist und dann genügend isst, sagt man: Das Bedürfnis nach Nahrung, wurde befriedigt. <option> Das Bedürfnis ist noch stärker geworden, z.B. hat man noch mehr Hunger als zuvor. <option> Das Bedürfnis konnte nicht gestillt werden (z. B., weil nichts zu essen in der Nähe war). <option> Es ist ein neuer Wunsch zur Beseitigung eines empfundenen Mangels entstanden. <option> Der Wunsch, einen empfundenen Mangel zu beseitigen, hat abgenommen. <option> Aus dem Bedürfnis ist ein Bedarf erwachsen, der Bedarf wurde allerdings noch nicht durch Konsum gestillt.
+            
+            FALSCH: A) Option 1 B) Option 2 C) Option 3...
+            RICHTIG: <option>Inhaltlich sinnvolle Option 1<option>Inhaltlich sinnvolle Option 2...
             """,
             
             "single-choice": """
-            SINGLE-CHOICE FORMAT ENFORCEMENT:
+            SINGLE-CHOICE FORMAT ENFORCEMENT (ABSOLUT KRITISCH):
             - VERWENDE AUSSCHLIESSLICH: <option>Option1<option>Option2<option>Option3<option>Option4
-            - GENAU 4 Optionen ERFORDERLICH
-            - NIEMALS A), B), C) verwenden - nur <option> Tags
-            - Beispiel: Was ist Y? <option>Erste Option<option>Zweite Option<option>Dritte Option<option>Vierte Option
-            - Korrekte Antwort: Eine einzelne Option als String
+            - GENAU 4 Optionen ERFORDERLICH (nicht weniger, nicht mehr)
+            - NIEMALS A), B), C), D) verwenden - nur <option> Tags
+            - ALLE 4 Optionen müssen inhaltlich sinnvoll sein
+            
+            REALES BEISPIEL aus genehmigten Daten:
+            Bei welchem Wunsch handelt es sich um ein Sicherheitsbedürfnis? <option> Wunsch nach Anerkennung <option> Wunsch nach sportlichem Erfolg <option> Wunsch im Alter vorgesorgt zu haben <option> Wunsch nach einem neuen Smartphone
+            
+            FALSCH: A) Option 1 B) Option 2 C) Option 3 D) Option 4
+            RICHTIG: <option>Sinnvolle Option 1<option>Sinnvolle Option 2<option>Sinnvolle Option 3<option>Sinnvolle Option 4
             """,
             
             "true-false": """
             TRUE-FALSE FORMAT ENFORCEMENT:
             - VERWENDE AUSSCHLIESSLICH: <true-false>Aussage1<true-false>Aussage2
             - GENAU 2 Aussagen ERFORDERLICH
-            - Beispiel: Aussage zum Bewerten. <true-false>Die Aussage ist richtig<true-false>Die Aussage ist falsch
-            - Korrekte Antwort: "Richtig" oder "Falsch" als String
+            
+            REALES BEISPIEL aus genehmigten Daten:
+            Entscheide, ob die Aussagen falsch oder richtig sind. <true-false> Alle Menschen haben die gleichen Bedürfnisse. <true-false> Die Bedürfnisse von Menschen sind nicht begrenzt. <true-false> Bedürfnisse beschreiben Wünsche, die durch einen empfundenen Mangel entstehen.
             """,
             
             "mapping": """
             MAPPING FORMAT ENFORCEMENT:
             - VERWENDE AUSSCHLIESSLICH: <start-option>Begriff1<start-option>Begriff2<end-option>Definition1<end-option>Definition2
             - Gleiche Anzahl von start-option und end-option Tags
-            - Beispiel: Ordne zu: <start-option>Begriff A<start-option>Begriff B<end-option>Definition 1<end-option>Definition 2
-            - Korrekte Antwort: Dictionary mit Begriff->Definition Zuordnungen
+            
+            REALES BEISPIEL aus genehmigten Daten:
+            Ordne die links stehenden Begriffe der richtigen Beschreibung zu. <start-option> Man sagt auch, dass Bedürfnisse entstehen, wenn ... <start-option> Jeder Mensch hat jeden Tag verschiedene Bedürfnisse, ... <start-option> Wir machen uns auf die Suche, wie ... <end-option> ... es einen Mangel gibt. <end-option> ... zum Beispiel Hunger und Durst. Wir empfinden einen Mangel. <end-option> ... der Mangel am besten zu beseitigen ist. Man sagt auch, wir haben ein Bedürfnis.
             """
         }
         

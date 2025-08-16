@@ -1,0 +1,1409 @@
+(.venv) ➜  CallersWithTexts git:(master) ✗ python3 single_request_test.py
+2025-08-16 15:25:04,935 - INFO - Starting DSPy server...
+2025-08-16 15:25:04,935 - INFO - Please ensure the DSPy orchestrator is running on port 8000
+2025-08-16 15:25:04,935 - INFO - Run: python3 ALEE_Agent/_server_question_generator.py
+2025-08-16 15:25:06,937 - INFO - ============================================================
+2025-08-16 15:25:06,938 - INFO - SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR
+2025-08-16 15:25:06,938 - INFO - ============================================================
+2025-08-16 15:25:06,938 - INFO - Testing DSPy health endpoint...
+2025-08-16 15:25:06,959 - INFO - DSPy health check: {'status': 'healthy', 'dspy_ready': True, 'expert_lms_configured': 7, 'modular_prompts_enabled': True, 'consensus_architecture': 'single_pass'}
+2025-08-16 15:25:06,969 - INFO - Loaded 16 texts from CSV
+2025-08-16 15:25:06,970 - INFO -
+Selected text: 186-1-2 - 7
+2025-08-16 15:25:06,970 - INFO - Text preview: Opportunitätskosten  Entscheidest du dich dafür, Freitagabend ins Kino zu gehen, statt zu jobben, dann entstehen dir nicht nur die Kosten für das Kinoticket. Du verzichtest auch auf das Gehalt, dass d...
+2025-08-16 15:25:06,970 - INFO - Sending request to DSPy endpoint...
+2025-08-16 15:25:06,970 - INFO - Request parameters: {
+  "c_id": "186-1-2-test",
+  "text": "Opportunitätskosten  Entscheidest du dich dafür, Freitagabend ins Kino zu gehen, statt zu jobben, dann entstehen dir nicht nur die Kosten für das Kinoticket. Du verzichtest auch auf das Gehalt, dass du hättest verdienen können, wenn du jobben gegangen wärst.  Das, worauf man verzichtet, wenn man sich für eine Handlungsalternative entscheidet, nennt man Opportunitätskosten (auch: Verzichtskosten). Kosten und Nutzen beziehen sich nicht allein auf Geld. Der Nutzen einer Handlung kann z.B. auch Spaß oder Erholung sein. Die Kosten einer Handlung umfassen z.B. auch die Zeit, die du brauchst, um die Handlung durchzuführen oder Güter, die für die Durchführung der Handlung benötigt werden. ",
+  "question_type": "multiple-choice",
+  "p_variation": "stammaufgabe",
+  "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+  "p_mathematical_requirement_level": "0",
+  "p_root_text_reference_explanatory_text": "Nicht vorhanden",
+  "p_root_text_obstacle_passive": "Nicht Enthalten",
+  "p_root_text_obstacle_negation": "Nicht Enthalten",
+  "p_root_text_obstacle_complex_np": "Nicht Enthalten",
+  "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+  "p_item_1_obstacle_passive": "Nicht Enthalten",
+  "p_item_1_obstacle_negation": "Nicht Enthalten",
+  "p_item_1_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_2_obstacle_passive": "Nicht Enthalten",
+  "p_item_2_obstacle_negation": "Nicht Enthalten",
+  "p_item_2_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_3_obstacle_passive": "Nicht Enthalten",
+  "p_item_3_obstacle_negation": "Nicht Enthalten",
+  "p_item_3_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_4_obstacle_passive": "Nicht Enthalten",
+  "p_item_4_obstacle_negation": "Nicht Enthalten",
+  "p_item_4_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_5_obstacle_passive": "Nicht Enthalten",
+  "p_item_5_obstacle_negation": "Nicht Enthalten",
+  "p_item_5_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_6_obstacle_passive": "Nicht Enthalten",
+  "p_item_6_obstacle_negation": "Nicht Enthalten",
+  "p_item_6_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_7_obstacle_passive": "Nicht Enthalten",
+  "p_item_7_obstacle_negation": "Nicht Enthalten",
+  "p_item_7_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_8_obstacle_passive": "Nicht Enthalten",
+  "p_item_8_obstacle_negation": "Nicht Enthalten",
+  "p_item_8_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_obstacle_passive": "Nicht Enthalten",
+  "p_instruction_obstacle_negation": "Nicht Enthalten",
+  "p_instruction_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_explicitness_of_instruction": "Explizit"
+}
+2025-08-16 15:25:07,139 - INFO - ✅ Request successful in 0.17s
+2025-08-16 15:25:07,139 - INFO -
+============================================================
+2025-08-16 15:25:07,139 - INFO - VALIDATING RESULT
+2025-08-16 15:25:07,139 - INFO - ============================================================
+2025-08-16 15:25:07,139 - INFO - ✅ Field 'question_1' present
+2025-08-16 15:25:07,139 - INFO - ✅ Field 'question_2' present
+2025-08-16 15:25:07,139 - INFO - ✅ Field 'question_3' present
+2025-08-16 15:25:07,139 - INFO - ✅ Field 'c_id' present
+2025-08-16 15:25:07,139 - INFO - ✅ Field 'processing_time' present
+2025-08-16 15:25:07,139 - INFO - ✅ Field 'csv_data' present
+2025-08-16 15:25:07,139 - INFO - ✅ question_1 has content (210 chars)
+2025-08-16 15:25:07,140 - INFO - ✅ question_2 has content (252 chars)
+2025-08-16 15:25:07,140 - INFO - ✅ question_3 has content (219 chars)
+2025-08-16 15:25:07,140 - INFO - ✅ CSV field 'c_id' present
+2025-08-16 15:25:07,140 - INFO - ✅ CSV field 'subject' present
+2025-08-16 15:25:07,140 - INFO - ✅ CSV field 'type' present
+2025-08-16 15:25:07,140 - INFO - ✅ CSV field 'text' present
+2025-08-16 15:25:07,140 - INFO - ✅ CSV field 'answers' present
+2025-08-16 15:25:07,140 - INFO - ✅ DSPy consensus architecture used
+2025-08-16 15:25:07,140 - INFO - ✅ All questions approved by experts
+2025-08-16 15:25:07,140 - INFO -
+Validation Summary: 16/16 passed (100.0%)
+2025-08-16 15:25:07,140 - INFO -
+============================================================
+2025-08-16 15:25:07,140 - INFO - GENERATED QUESTIONS
+2025-08-16 15:25:07,140 - INFO - ============================================================
+2025-08-16 15:25:07,140 - INFO -
+Question 1:
+2025-08-16 15:25:07,140 - INFO - Was sind Opportunitätskosten? <option>Zeit, die man nicht benötigt hat<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:25:07,140 - INFO -
+Question 2:
+2025-08-16 15:25:07,140 - INFO - Warum beziehen sich Kosten und Nutzen nicht allein auf Geld? <option>Weil man Zeit auch als Wert betrachten kann<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:25:07,140 - INFO -
+Question 3:
+2025-08-16 15:25:07,140 - INFO - Was sind Beispiele für die Kosten einer Handlung? <option>Keine dieser Optionen<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:25:07,140 - INFO -
+============================================================
+2025-08-16 15:25:07,140 - INFO - DSPY PROCESSING METADATA
+2025-08-16 15:25:07,140 - INFO - ============================================================
+2025-08-16 15:25:07,140 - INFO - Single-pass consensus: True
+2025-08-16 15:25:07,140 - INFO - Modular prompts used: True
+2025-08-16 15:25:07,140 - INFO - All approved: True
+2025-08-16 15:25:07,140 - INFO - Expert consensus: [True, True, True]
+2025-08-16 15:25:07,140 - INFO -
+============================================================
+2025-08-16 15:25:07,140 - INFO - TEST SUMMARY
+2025-08-16 15:25:07,140 - INFO - ============================================================
+2025-08-16 15:25:07,140 - INFO - Test Status: ✅ PASSED
+2025-08-16 15:25:07,140 - INFO - Processing Time: 0.16s
+2025-08-16 15:25:07,140 - INFO - C_ID: 186-1-2-test
+2025-08-16 15:25:07,140 - INFO - Expert Count: 5
+2025-08-16 15:25:07,140 - INFO - All Approved: True
+(.venv) ➜  CallersWithTexts git:(master) ✗ python3 single_request_test.py
+2025-08-16 15:25:19,905 - INFO - Starting DSPy server...
+2025-08-16 15:25:19,905 - INFO - Please ensure the DSPy orchestrator is running on port 8000
+2025-08-16 15:25:19,905 - INFO - Run: python3 ALEE_Agent/_server_question_generator.py
+2025-08-16 15:25:21,907 - INFO - ============================================================
+2025-08-16 15:25:21,907 - INFO - SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR
+2025-08-16 15:25:21,907 - INFO - ============================================================
+2025-08-16 15:25:21,907 - INFO - Testing DSPy health endpoint...
+2025-08-16 15:25:21,918 - INFO - DSPy health check: {'status': 'healthy', 'dspy_ready': True, 'expert_lms_configured': 7, 'modular_prompts_enabled': True, 'consensus_architecture': 'single_pass'}
+2025-08-16 15:25:21,924 - INFO - Loaded 16 texts from CSV
+2025-08-16 15:25:21,924 - INFO -
+Selected text: 181-1-3 - 1
+2025-08-16 15:25:21,924 - INFO - Text preview: Bedürfnisse sind Wünsche Menschen haben Wünsche. Sie entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. In der Wirtschaft bezeichnet man solche Wünsche allgemein auch als Bedürfnisse. Wenn es...
+2025-08-16 15:25:21,924 - INFO - Sending request to DSPy endpoint...
+2025-08-16 15:25:21,925 - INFO - Request parameters: {
+  "c_id": "181-1-3-test",
+  "text": "Bedürfnisse sind Wünsche Menschen haben Wünsche. Sie entstehen, wenn man das Gefühl hat, dass einem etwas fehlt. In der Wirtschaft bezeichnet man solche Wünsche allgemein auch als Bedürfnisse. Wenn es kalt ist, hat man das Bedürfnis sich zu wärmen. Wenn du dich einsam fühlst, hast du vielleicht ein Bedürfnis nach Zuneigung oder Freundschaft. Wenn dir langweilig ist, hast du zumeist das Bedürfnis, etwas zu unternehmen. <image>Du siehst: Bedürfnisse können ganz vielfältig sein! Und sie unterscheiden sich individuell je nach Person. Kinder haben z. B. häufig andere Bedürfnisse als Erwachsene. Sie wollen z. B. häufiger spielen. Erwachsene hingegen haben vielleicht eher den Wunsch, finanziell abgesichert zu sein. Aber auch die Bedürfnisse von Kindern untereinander unterscheiden sich. Manche Kinder spielen lieber draußen und andere verbringen die Zeit lieber drinnen zum Beispiel beim Lesen. In der Wirtschaft gehen wir davon aus, dass Bedürfnisse unbegrenzt sind. Jeder Mensch hat gleichzeitig sehr viele unterschiedliche Bedürfnisse. Wenn ein Bedürfnis erfüllt (man sagt: befriedigt) ist, widmet man sich direkt einem anderen. Beispiel: Stell dir vor, du kommst nach dem Sport nach Hause. Du willst duschen (du hast das Bedürfnis nach Sauberkeit), hast Hunger (Bedürfnis etwas zu essen), willst dich ausruhen (Bedürfnis nach Erholung). Später am Abend ist dir dann vielleicht langweilig und du möchtest dir einen Film anschauen (Bedürfnis nach Unterhaltung) … Du siehst: Man hat nicht nur sehr viele Bedürfnisse gleichzeitig, meist kommen auch immer wieder neue dazu! ",
+  "question_type": "multiple-choice",
+  "p_variation": "stammaufgabe",
+  "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+  "p_mathematical_requirement_level": "0",
+  "p_root_text_reference_explanatory_text": "Nicht vorhanden",
+  "p_root_text_obstacle_passive": "Nicht Enthalten",
+  "p_root_text_obstacle_negation": "Nicht Enthalten",
+  "p_root_text_obstacle_complex_np": "Nicht Enthalten",
+  "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+  "p_item_1_obstacle_passive": "Nicht Enthalten",
+  "p_item_1_obstacle_negation": "Nicht Enthalten",
+  "p_item_1_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_2_obstacle_passive": "Nicht Enthalten",
+  "p_item_2_obstacle_negation": "Nicht Enthalten",
+  "p_item_2_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_3_obstacle_passive": "Nicht Enthalten",
+  "p_item_3_obstacle_negation": "Nicht Enthalten",
+  "p_item_3_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_4_obstacle_passive": "Nicht Enthalten",
+  "p_item_4_obstacle_negation": "Nicht Enthalten",
+  "p_item_4_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_5_obstacle_passive": "Nicht Enthalten",
+  "p_item_5_obstacle_negation": "Nicht Enthalten",
+  "p_item_5_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_6_obstacle_passive": "Nicht Enthalten",
+  "p_item_6_obstacle_negation": "Nicht Enthalten",
+  "p_item_6_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_7_obstacle_passive": "Nicht Enthalten",
+  "p_item_7_obstacle_negation": "Nicht Enthalten",
+  "p_item_7_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_8_obstacle_passive": "Nicht Enthalten",
+  "p_item_8_obstacle_negation": "Nicht Enthalten",
+  "p_item_8_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_obstacle_passive": "Nicht Enthalten",
+  "p_instruction_obstacle_negation": "Nicht Enthalten",
+  "p_instruction_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_explicitness_of_instruction": "Explizit"
+}
+2025-08-16 15:26:35,150 - INFO - ✅ Request successful in 73.23s
+2025-08-16 15:26:35,150 - INFO -
+============================================================
+2025-08-16 15:26:35,150 - INFO - VALIDATING RESULT
+2025-08-16 15:26:35,150 - INFO - ============================================================
+2025-08-16 15:26:35,150 - INFO - ✅ Field 'question_1' present
+2025-08-16 15:26:35,150 - INFO - ✅ Field 'question_2' present
+2025-08-16 15:26:35,150 - INFO - ✅ Field 'question_3' present
+2025-08-16 15:26:35,150 - INFO - ✅ Field 'c_id' present
+2025-08-16 15:26:35,150 - INFO - ✅ Field 'processing_time' present
+2025-08-16 15:26:35,150 - INFO - ✅ Field 'csv_data' present
+2025-08-16 15:26:35,150 - INFO - ✅ question_1 has content (628 chars)
+2025-08-16 15:26:35,150 - INFO - ✅ question_2 has content (277 chars)
+2025-08-16 15:26:35,150 - INFO - ✅ question_3 has content (609 chars)
+2025-08-16 15:26:35,150 - INFO - ✅ CSV field 'c_id' present
+2025-08-16 15:26:35,150 - INFO - ✅ CSV field 'subject' present
+2025-08-16 15:26:35,150 - INFO - ✅ CSV field 'type' present
+2025-08-16 15:26:35,150 - INFO - ✅ CSV field 'text' present
+2025-08-16 15:26:35,150 - INFO - ✅ CSV field 'answers' present
+2025-08-16 15:26:35,150 - INFO - ✅ DSPy consensus architecture used
+2025-08-16 15:26:35,150 - INFO - ✅ All questions approved by experts
+2025-08-16 15:26:35,150 - INFO -
+Validation Summary: 16/16 passed (100.0%)
+2025-08-16 15:26:35,150 - INFO -
+============================================================
+2025-08-16 15:26:35,150 - INFO - GENERATED QUESTIONS
+2025-08-16 15:26:35,150 - INFO - ============================================================
+2025-08-16 15:26:35,150 - INFO -
+Question 1:
+2025-08-16 15:26:35,150 - INFO - Was ist der Hauptunterschied zwischen einem Wunsch und einem Bedürfnis?
+
+A) Ein Wunsch erfüllt sich sofort, ein Bedürfnis erst später
+B) Ein Wunsch ist etwas, das man gerne hat, ein Bedürfnis etwas, das notwendig ist
+C) Ein Wunsch ist immer positiv, ein Bedürfnis oft negativ
+D) Ein Wunsch ist unbegrenzt, ein Bedürfnis begrenzt <option>A) Ein Wunsch ist etwas<option>das man gerne hat<option>ein Bedürfnis etwas<option>das notwendig ist
+B) Ein Wunsch erfüllt sich sofort<option>ein Bedürfnis erst später
+C) Ein Wunsch ist immer positiv<option>ein Bedürfnis oft negativ
+D) Ein Wunsch ist unbegrenzt<option>ein Bedürfnis begrenzt
+2025-08-16 15:26:35,150 - INFO -
+Question 2:
+2025-08-16 15:26:35,150 - INFO - Warum unterscheiden sich die Bedürfnisse von Kindern stark? <option>Weil Kinder nicht wissen, was sie wollen<option>Weil Kinder keine Verantwortung übernehmen müssen<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:26:35,150 - INFO -
+Question 3:
+2025-08-16 15:26:35,150 - INFO - Wie reagiert ein Mensch normalerweise, wenn ein Bedürfnis erfüllt ist?
+
+A) Er widmet sich sofort einem anderen Bedürfnis
+B) Er wird traurig und braucht Zeit zum Nachdenken
+C) Er bleibt bei dem bereits erfüllten Bedürfnis
+D) Er ignoriert das gerade erfüllte Bedürfnis <option>A) Er widmet sich sofort einem anderen Bedürfnis
+C) Er bleibt bei dem bereits erfüllten Bedürfnis
+B) Er wird traurig und braucht Zeit zum Nachdenken
+D) Er ignoriert das gerade erfüllte Bedürfnis<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:26:35,150 - INFO -
+============================================================
+2025-08-16 15:26:35,150 - INFO - DSPY PROCESSING METADATA
+2025-08-16 15:26:35,150 - INFO - ============================================================
+2025-08-16 15:26:35,150 - INFO - Single-pass consensus: True
+2025-08-16 15:26:35,150 - INFO - Modular prompts used: True
+2025-08-16 15:26:35,150 - INFO - All approved: True
+2025-08-16 15:26:35,150 - INFO - Expert consensus: [True, True, True]
+2025-08-16 15:26:35,150 - INFO -
+============================================================
+2025-08-16 15:26:35,150 - INFO - TEST SUMMARY
+2025-08-16 15:26:35,150 - INFO - ============================================================
+2025-08-16 15:26:35,150 - INFO - Test Status: ✅ PASSED
+2025-08-16 15:26:35,150 - INFO - Processing Time: 73.22s
+2025-08-16 15:26:35,150 - INFO - C_ID: 181-1-3-test
+2025-08-16 15:26:35,150 - INFO - Expert Count: 5
+2025-08-16 15:26:35,150 - INFO - All Approved: True
+(.venv) ➜  CallersWithTexts git:(master) ✗ python3 single_request_test.py
+2025-08-16 15:26:52,671 - INFO - Starting DSPy server...
+2025-08-16 15:26:52,671 - INFO - Please ensure the DSPy orchestrator is running on port 8000
+2025-08-16 15:26:52,671 - INFO - Run: python3 ALEE_Agent/_server_question_generator.py
+2025-08-16 15:26:54,673 - INFO - ============================================================
+2025-08-16 15:26:54,673 - INFO - SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR
+2025-08-16 15:26:54,673 - INFO - ============================================================
+2025-08-16 15:26:54,673 - INFO - Testing DSPy health endpoint...
+2025-08-16 15:26:54,686 - INFO - DSPy health check: {'status': 'healthy', 'dspy_ready': True, 'expert_lms_configured': 7, 'modular_prompts_enabled': True, 'consensus_architecture': 'single_pass'}
+2025-08-16 15:26:54,692 - INFO - Loaded 16 texts from CSV
+2025-08-16 15:26:54,693 - INFO -
+Selected text: 182-1-3 - 2
+2025-08-16 15:26:54,693 - INFO - Text preview: Die Bedürfnispyramide nach Maslow Es gibt verschiedene Arten von Bedürfnissen. Der Psychologe Abraham Maslow entwickelte eine Pyramide, die Bedürfnisse verschiedenen Gruppen zuordnet und nach ihrer Dr...
+2025-08-16 15:26:54,694 - INFO - Sending request to DSPy endpoint...
+2025-08-16 15:26:54,694 - INFO - Request parameters: {
+  "c_id": "182-1-3-test",
+  "text": "Die Bedürfnispyramide nach Maslow Es gibt verschiedene Arten von Bedürfnissen. Der Psychologe Abraham Maslow entwickelte eine Pyramide, die Bedürfnisse verschiedenen Gruppen zuordnet und nach ihrer Dringlichkeit sortiert. Bedürfnisse auf unteren Stufen müssen in der Regel zunächst befriedigt werden, bevor man sich der Befriedigung weiter obenstehender Bedürfnisse widmet. <image><image>Stell dir vor, du bist auf einer einsamen Insel gestrandet. Um was kümmerst du dich zuerst? Klar, zunächst kümmerst du dich um das, was du zum Überleben brauchst: Essen, Trinken, einen Schlafplatz (Physiologische Grundbedürfnisse). Und dann? Vielleicht baust du dir einen Speer, um dich vor wilden Tieren zu schützen. Oder du baust dir eine wetterfeste Behausung (Sicherheitsbedürfnisse). Wenn alle dies erledigt ist, beginnst du womöglich etwas einsam zu werden – du wünschst dir Kontakt mit Menschen (soziale Bedürfnisse)… → So gelangt man von Bedürfnis zu Bedürfnis – und in der Pyramide immer weiter nach oben. ",
+  "question_type": "multiple-choice",
+  "p_variation": "stammaufgabe",
+  "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+  "p_mathematical_requirement_level": "0",
+  "p_root_text_reference_explanatory_text": "Nicht vorhanden",
+  "p_root_text_obstacle_passive": "Nicht Enthalten",
+  "p_root_text_obstacle_negation": "Nicht Enthalten",
+  "p_root_text_obstacle_complex_np": "Nicht Enthalten",
+  "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+  "p_item_1_obstacle_passive": "Nicht Enthalten",
+  "p_item_1_obstacle_negation": "Nicht Enthalten",
+  "p_item_1_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_2_obstacle_passive": "Nicht Enthalten",
+  "p_item_2_obstacle_negation": "Nicht Enthalten",
+  "p_item_2_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_3_obstacle_passive": "Nicht Enthalten",
+  "p_item_3_obstacle_negation": "Nicht Enthalten",
+  "p_item_3_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_4_obstacle_passive": "Nicht Enthalten",
+  "p_item_4_obstacle_negation": "Nicht Enthalten",
+  "p_item_4_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_5_obstacle_passive": "Nicht Enthalten",
+  "p_item_5_obstacle_negation": "Nicht Enthalten",
+  "p_item_5_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_6_obstacle_passive": "Nicht Enthalten",
+  "p_item_6_obstacle_negation": "Nicht Enthalten",
+  "p_item_6_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_7_obstacle_passive": "Nicht Enthalten",
+  "p_item_7_obstacle_negation": "Nicht Enthalten",
+  "p_item_7_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_8_obstacle_passive": "Nicht Enthalten",
+  "p_item_8_obstacle_negation": "Nicht Enthalten",
+  "p_item_8_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_obstacle_passive": "Nicht Enthalten",
+  "p_instruction_obstacle_negation": "Nicht Enthalten",
+  "p_instruction_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_explicitness_of_instruction": "Explizit"
+}
+2025-08-16 15:26:54,713 - ERROR - ❌ Request failed: HTTP 500
+2025-08-16 15:26:54,713 - ERROR - Error: {"detail":{"error_type":"DSPY_GENERATION_ERROR","message":"Failed to create multiple-choice question: 2 validation errors for MultipleChoiceModel\nquestion_text\n  Value error, Multiple choice needs at least 6 options, found 4 [type=value_error, input_value='Was sind die ersten Bed...erwirklichung)</option>', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/value_error\ncorrect_answer\n  Input should be a valid list [type=list_type, input_value='Physiologische Grundbed..., Schlafplatz)</option>', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/list_type","c_id":"182-1-3-test","processing_time":0.014173030853271484}}
+2025-08-16 15:26:54,713 - ERROR - Request failed - no result received
+(.venv) ➜  CallersWithTexts git:(master) ✗ python3 single_request_test.py
+2025-08-16 15:26:56,375 - INFO - Starting DSPy server...
+2025-08-16 15:26:56,375 - INFO - Please ensure the DSPy orchestrator is running on port 8000
+2025-08-16 15:26:56,375 - INFO - Run: python3 ALEE_Agent/_server_question_generator.py
+2025-08-16 15:26:58,377 - INFO - ============================================================
+2025-08-16 15:26:58,377 - INFO - SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR
+2025-08-16 15:26:58,377 - INFO - ============================================================
+2025-08-16 15:26:58,377 - INFO - Testing DSPy health endpoint...
+2025-08-16 15:26:58,387 - INFO - DSPy health check: {'status': 'healthy', 'dspy_ready': True, 'expert_lms_configured': 7, 'modular_prompts_enabled': True, 'consensus_architecture': 'single_pass'}
+2025-08-16 15:26:58,393 - INFO - Loaded 16 texts from CSV
+2025-08-16 15:26:58,394 - INFO -
+Selected text: 189-1-3 - 8
+2025-08-16 15:26:58,394 - INFO - Text preview: Verteilungsmechanismus ohne Markt Die Mitglieder der Band „Economics“, kommen für ein Konzert in ihre Heimatstadt. Sie treten in dem kleinen Club auf, in dem sie ihr erstes Konzert gegeben haben. Alle...
+2025-08-16 15:26:58,394 - INFO - Sending request to DSPy endpoint...
+2025-08-16 15:26:58,395 - INFO - Request parameters: {
+  "c_id": "189-1-3-test",
+  "text": "Verteilungsmechanismus ohne Markt Die Mitglieder der Band „Economics“, kommen für ein Konzert in ihre Heimatstadt. Sie treten in dem kleinen Club auf, in dem sie ihr erstes Konzert gegeben haben. Allerdings ist hier nur Platz für 300 Menschen. Da nicht genug Plätze für alle da sind, muss die Band entscheiden, wer eines der Tickets bekommt. Hierfür gibt es verschiedene Ansätze: <image>Zuteilung: Die Band könnte die Konzertkarten einfach an die alten Bekannten verteilen. Oder sie verteilt die Tickets an die ältesten Interessenten. Wenn knappe Güter von jemandem aufgrund festgelegter Kriterien verteilt werden, spricht man vom Verteilungsmechanismus der Zuteilung.  <image>Windhund-Verfahren: Natürlich könnte die Band die Tickets auch an die Personen verteilen, die sie als erstes um eines bitten. Nach dem Motto: Wer zuerst kommt – mahlt zuerst. Dieser Verteilungsmechanismus, bei dem diejenigen die Güter bekommen, die zuerst nach ihnen verlangen, wird als Windhund-Verfahren bezeichnet. <image>Verlosung: Alternativ könnten sie auch den Zufall entscheiden lassen. Zum Beispiel könnten die „Economics“ Lose verteilen und die Gewinner bekämen eines der Tickets. Dieser Verteilungsmechanismus, der auf Zufall basiert, wird Verlosung genannt. ",
+  "question_type": "multiple-choice",
+  "p_variation": "stammaufgabe",
+  "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+  "p_mathematical_requirement_level": "0",
+  "p_root_text_reference_explanatory_text": "Nicht vorhanden",
+  "p_root_text_obstacle_passive": "Nicht Enthalten",
+  "p_root_text_obstacle_negation": "Nicht Enthalten",
+  "p_root_text_obstacle_complex_np": "Nicht Enthalten",
+  "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+  "p_item_1_obstacle_passive": "Nicht Enthalten",
+  "p_item_1_obstacle_negation": "Nicht Enthalten",
+  "p_item_1_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_2_obstacle_passive": "Nicht Enthalten",
+  "p_item_2_obstacle_negation": "Nicht Enthalten",
+  "p_item_2_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_3_obstacle_passive": "Nicht Enthalten",
+  "p_item_3_obstacle_negation": "Nicht Enthalten",
+  "p_item_3_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_4_obstacle_passive": "Nicht Enthalten",
+  "p_item_4_obstacle_negation": "Nicht Enthalten",
+  "p_item_4_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_5_obstacle_passive": "Nicht Enthalten",
+  "p_item_5_obstacle_negation": "Nicht Enthalten",
+  "p_item_5_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_6_obstacle_passive": "Nicht Enthalten",
+  "p_item_6_obstacle_negation": "Nicht Enthalten",
+  "p_item_6_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_7_obstacle_passive": "Nicht Enthalten",
+  "p_item_7_obstacle_negation": "Nicht Enthalten",
+  "p_item_7_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_8_obstacle_passive": "Nicht Enthalten",
+  "p_item_8_obstacle_negation": "Nicht Enthalten",
+  "p_item_8_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_obstacle_passive": "Nicht Enthalten",
+  "p_instruction_obstacle_negation": "Nicht Enthalten",
+  "p_instruction_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_explicitness_of_instruction": "Explizit"
+}
+2025-08-16 15:28:03,092 - INFO - ✅ Request successful in 64.70s
+2025-08-16 15:28:03,092 - INFO -
+============================================================
+2025-08-16 15:28:03,092 - INFO - VALIDATING RESULT
+2025-08-16 15:28:03,092 - INFO - ============================================================
+2025-08-16 15:28:03,092 - INFO - ✅ Field 'question_1' present
+2025-08-16 15:28:03,092 - INFO - ✅ Field 'question_2' present
+2025-08-16 15:28:03,092 - INFO - ✅ Field 'question_3' present
+2025-08-16 15:28:03,092 - INFO - ✅ Field 'c_id' present
+2025-08-16 15:28:03,092 - INFO - ✅ Field 'processing_time' present
+2025-08-16 15:28:03,092 - INFO - ✅ Field 'csv_data' present
+2025-08-16 15:28:03,092 - INFO - ✅ question_1 has content (241 chars)
+2025-08-16 15:28:03,092 - INFO - ✅ question_2 has content (284 chars)
+2025-08-16 15:28:03,092 - INFO - ✅ question_3 has content (225 chars)
+2025-08-16 15:28:03,092 - INFO - ✅ CSV field 'c_id' present
+2025-08-16 15:28:03,092 - INFO - ✅ CSV field 'subject' present
+2025-08-16 15:28:03,092 - INFO - ✅ CSV field 'type' present
+2025-08-16 15:28:03,092 - INFO - ✅ CSV field 'text' present
+2025-08-16 15:28:03,092 - INFO - ✅ CSV field 'answers' present
+2025-08-16 15:28:03,092 - INFO - ✅ DSPy consensus architecture used
+2025-08-16 15:28:03,092 - INFO - ✅ All questions approved by experts
+2025-08-16 15:28:03,092 - INFO -
+Validation Summary: 16/16 passed (100.0%)
+2025-08-16 15:28:03,092 - INFO -
+============================================================
+2025-08-16 15:28:03,092 - INFO - GENERATED QUESTIONS
+2025-08-16 15:28:03,092 - INFO - ============================================================
+2025-08-16 15:28:03,092 - INFO -
+Question 1:
+2025-08-16 15:28:03,092 - INFO - Welcher Verteilungsmechanismus ist am ehesten mit dem Motto "Wer zuerst kommt – mahlt zuerst" verbunden? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Losverfahren<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:28:03,092 - INFO -
+Question 2:
+2025-08-16 15:28:03,092 - INFO - Ein Verteilungsmechanismus, bei dem die Konzertkarten an die ältesten Interessenten verteilt werden, gehört zu welchem der folgenden Typen? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:28:03,092 - INFO -
+Question 3:
+2025-08-16 15:28:03,092 - INFO - Bei welchen Verteilungsmechanismus entscheidet der Zufall, wer die Konzertkarten erhält? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Losverfahren<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:28:03,092 - INFO -
+============================================================
+2025-08-16 15:28:03,092 - INFO - DSPY PROCESSING METADATA
+2025-08-16 15:28:03,092 - INFO - ============================================================
+2025-08-16 15:28:03,092 - INFO - Single-pass consensus: True
+2025-08-16 15:28:03,092 - INFO - Modular prompts used: True
+2025-08-16 15:28:03,092 - INFO - All approved: True
+2025-08-16 15:28:03,092 - INFO - Expert consensus: [True, True, True]
+2025-08-16 15:28:03,092 - INFO -
+============================================================
+2025-08-16 15:28:03,092 - INFO - TEST SUMMARY
+2025-08-16 15:28:03,092 - INFO - ============================================================
+2025-08-16 15:28:03,092 - INFO - Test Status: ✅ PASSED
+2025-08-16 15:28:03,093 - INFO - Processing Time: 64.69s
+2025-08-16 15:28:03,093 - INFO - C_ID: 189-1-3-test
+2025-08-16 15:28:03,093 - INFO - Expert Count: 5
+2025-08-16 15:28:03,093 - INFO - All Approved: True
+(.venv) ➜  CallersWithTexts git:(master) ✗ python3 single_request_test.py
+2025-08-16 15:28:15,914 - INFO - Starting DSPy server...
+2025-08-16 15:28:15,914 - INFO - Please ensure the DSPy orchestrator is running on port 8000
+2025-08-16 15:28:15,914 - INFO - Run: python3 ALEE_Agent/_server_question_generator.py
+2025-08-16 15:28:17,916 - INFO - ============================================================
+2025-08-16 15:28:17,916 - INFO - SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR
+2025-08-16 15:28:17,916 - INFO - ============================================================
+2025-08-16 15:28:17,917 - INFO - Testing DSPy health endpoint...
+2025-08-16 15:28:17,928 - INFO - DSPy health check: {'status': 'healthy', 'dspy_ready': True, 'expert_lms_configured': 7, 'modular_prompts_enabled': True, 'consensus_architecture': 'single_pass'}
+2025-08-16 15:28:17,932 - INFO - Loaded 16 texts from CSV
+2025-08-16 15:28:17,933 - INFO -
+Selected text: 194-1-4 - 16
+2025-08-16 15:28:17,933 - INFO - Text preview: Verschiebungen der Nachfragegerade In unserer Stadt Ökonomia hat ein bekanntes wissenschaftliches Institut eine Studie veröffentlicht. Die Forscher*innen haben herausgefunden, dass Milch sehr gesund i...
+2025-08-16 15:28:17,933 - INFO - Sending request to DSPy endpoint...
+2025-08-16 15:28:17,933 - INFO - Request parameters: {
+  "c_id": "194-1-4-test",
+  "text": "Verschiebungen der Nachfragegerade In unserer Stadt Ökonomia hat ein bekanntes wissenschaftliches Institut eine Studie veröffentlicht. Die Forscher*innen haben herausgefunden, dass Milch sehr gesund ist und vor Krankheiten schützt. Die Bewohner*innen Ökonomias lesen die Studie und sind begeistert. Sie wollen mehr Milch trinken und fragen somit mehr Liter Milch nach. Bei einem Preis von 0,50 € fragen sie jetzt 90l Milch nach (statt wie zuvor 70l), bei einem Preis von 1€ sind es 80l (statt wie zuvor 60l), … : <image>Wie stellt man nun diese Veränderungen in unserem Diagramm dar? Dazu tragen wir die neue Nachfrage in unser Diagramm ein: <image>Du siehst: Der Gleichgewichtspreis erhöht sich. Betrug er zuvor 2€, liegt er jetzt bei 2,50 €.  Wenn etwas passiert, das die Nachfrage zu jedem gegebenen Preis verändert, verschiebt sich die Nachfragegerade. Eine Verschiebung nach rechts zeigt einen Nachfrageanstieg an, nach links einen Nachfragerückgang. Gründe für Verschiebungen können z.B. sein, dass sich die Vorlieben der Nachfrager*innen ändern (wie beim Milch-Beispiel) oder insgesamt mehr oder weniger Einkommen haben (z. B. durch Gehaltserhöhungen oder -kürzungen).  Verschiebungen der Angebotsgerade Gute Neuigkeiten für die Milch-Landwirt*innen in Ökonomia: Durch ein vor Kurzem abgeschlossenes internationales Handelsabkommen sind die Preise für Futtermittel gefallen. Dadurch sinken die Produktionskosten und sie können bei gleichen Kosten mehr Milch anbieten. Bei einem Preis von 0,50 € bieten sie jetzt 30l an (statt wie zuvor 10l), bei einem Preis von 1 € 40l (statt wie zuvor 20l), … : <image>Im Diagramm:  <image>Du siehst: Der Gleichgewichtspreis sinkt, er beträgt jetzt wieder 2 €. Wenn etwas passiert, das das Angebot zu jedem gegebenen Preis verändert, verschiebt sich die Angebotsgerade. Eine Verschiebung nach rechts beschreibt einen Angebotsanstieg, nach links einen Angebotsrückgang. Es gibt verschiedene Gründe für Verschiebungen der Angebotsgerade, z. B. technische Innovationen, veränderte Kosten für Vorprodukte (wie beim Milch-Beispiel) oder Umwelteinflüsse (z. B. eine Dürre, die Futtermittelpreise erhöht).  ",
+  "question_type": "multiple-choice",
+  "p_variation": "stammaufgabe",
+  "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+  "p_mathematical_requirement_level": "0",
+  "p_root_text_reference_explanatory_text": "Nicht vorhanden",
+  "p_root_text_obstacle_passive": "Nicht Enthalten",
+  "p_root_text_obstacle_negation": "Nicht Enthalten",
+  "p_root_text_obstacle_complex_np": "Nicht Enthalten",
+  "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+  "p_item_1_obstacle_passive": "Nicht Enthalten",
+  "p_item_1_obstacle_negation": "Nicht Enthalten",
+  "p_item_1_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_2_obstacle_passive": "Nicht Enthalten",
+  "p_item_2_obstacle_negation": "Nicht Enthalten",
+  "p_item_2_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_3_obstacle_passive": "Nicht Enthalten",
+  "p_item_3_obstacle_negation": "Nicht Enthalten",
+  "p_item_3_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_4_obstacle_passive": "Nicht Enthalten",
+  "p_item_4_obstacle_negation": "Nicht Enthalten",
+  "p_item_4_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_5_obstacle_passive": "Nicht Enthalten",
+  "p_item_5_obstacle_negation": "Nicht Enthalten",
+  "p_item_5_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_6_obstacle_passive": "Nicht Enthalten",
+  "p_item_6_obstacle_negation": "Nicht Enthalten",
+  "p_item_6_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_7_obstacle_passive": "Nicht Enthalten",
+  "p_item_7_obstacle_negation": "Nicht Enthalten",
+  "p_item_7_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_8_obstacle_passive": "Nicht Enthalten",
+  "p_item_8_obstacle_negation": "Nicht Enthalten",
+  "p_item_8_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_obstacle_passive": "Nicht Enthalten",
+  "p_instruction_obstacle_negation": "Nicht Enthalten",
+  "p_instruction_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_explicitness_of_instruction": "Explizit"
+}
+2025-08-16 15:28:18,045 - INFO - ✅ Request successful in 0.11s
+2025-08-16 15:28:18,045 - INFO -
+============================================================
+2025-08-16 15:28:18,045 - INFO - VALIDATING RESULT
+2025-08-16 15:28:18,045 - INFO - ============================================================
+2025-08-16 15:28:18,045 - INFO - ✅ Field 'question_1' present
+2025-08-16 15:28:18,045 - INFO - ✅ Field 'question_2' present
+2025-08-16 15:28:18,045 - INFO - ✅ Field 'question_3' present
+2025-08-16 15:28:18,045 - INFO - ✅ Field 'c_id' present
+2025-08-16 15:28:18,045 - INFO - ✅ Field 'processing_time' present
+2025-08-16 15:28:18,045 - INFO - ✅ Field 'csv_data' present
+2025-08-16 15:28:18,045 - INFO - ✅ question_1 has content (578 chars)
+2025-08-16 15:28:18,045 - INFO - ✅ question_2 has content (796 chars)
+2025-08-16 15:28:18,045 - INFO - ✅ question_3 has content (788 chars)
+2025-08-16 15:28:18,045 - INFO - ✅ CSV field 'c_id' present
+2025-08-16 15:28:18,045 - INFO - ✅ CSV field 'subject' present
+2025-08-16 15:28:18,045 - INFO - ✅ CSV field 'type' present
+2025-08-16 15:28:18,045 - INFO - ✅ CSV field 'text' present
+2025-08-16 15:28:18,045 - INFO - ✅ CSV field 'answers' present
+2025-08-16 15:28:18,045 - INFO - ✅ DSPy consensus architecture used
+2025-08-16 15:28:18,045 - INFO - ✅ All questions approved by experts
+2025-08-16 15:28:18,045 - INFO -
+Validation Summary: 16/16 passed (100.0%)
+2025-08-16 15:28:18,045 - INFO -
+============================================================
+2025-08-16 15:28:18,045 - INFO - GENERATED QUESTIONS
+2025-08-16 15:28:18,045 - INFO - ============================================================
+2025-08-16 15:28:18,045 - INFO -
+Question 1:
+2025-08-16 15:28:18,045 - INFO - Welche Auswirkung hat eine Erhöhung der Nachfrage auf den Gleichgewichtspreis?
+A) Der Gleichgewichtspreis sinkt.
+B) Der Gleichgewichtspreis bleibt gleich.
+C) Der Gleichgewichtspreis steigt.
+D) Es kann nicht bestimmt werden, was mit dem Gleichgewichtspreis passiert. <option>A) Der Gleichgewichtspreis sinkt.
+B) Der Gleichgewichtspreis bleibt gleich.
+C) Der Gleichgewichtspreis steigt.
+D) Es kann nicht bestimmt werden<option>was mit dem Gleichgewichtspreis passiert.<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:28:18,045 - INFO -
+Question 2:
+2025-08-16 15:28:18,045 - INFO - Was tritt ein, wenn die Produktionskosten für Milch-Landwirt*innen in Ökonomia sinken?
+A) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.
+B) Die Verschiebung der Nachfragegeraden führt zu einem Anstieg des Gleichgewichtspreises.
+C) Das Angebot erhöht sich, was zu einem Sinken des Gleichgewichtspreises führt.
+D) Der Gleichgewichtspreis bleibt gleich. <option>A) Das Angebot erhöht sich<option>was zu einem Sinken des Gleichgewichtspreises führt.
+B) Die Verschiebung der Nachfragegeraden führt zu einem Anstieg des Gleichgewichtspreises.
+C) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.
+D) Der Gleichgewichtspreis bleibt gleich.<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:28:18,045 - INFO -
+Question 3:
+2025-08-16 15:28:18,045 - INFO - Was tritt ein, wenn die Nachfrage nach Milch in Ökonomia steigt?
+A) Die Verschiebung der Nachfragegeraden führt zu einem Sinken des Gleichgewichtspreises.
+B) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.
+C) Die Nachfrage nach Milch führt zu einem Anstieg des Gleichgewichtspreises.
+D) Der Gleichgewichtspreis bleibt gleich. <option>A) Die Nachfrage nach Milch führt zu einem Anstieg des Gleichgewichtspreises.
+B) Die Verschiebung der Nachfragegeraden führt zu einem Sinken des Gleichgewichtspreises.
+C) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.
+D) Der Gleichgewichtspreis bleibt gleich.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:28:18,045 - INFO -
+============================================================
+2025-08-16 15:28:18,045 - INFO - DSPY PROCESSING METADATA
+2025-08-16 15:28:18,045 - INFO - ============================================================
+2025-08-16 15:28:18,045 - INFO - Single-pass consensus: True
+2025-08-16 15:28:18,045 - INFO - Modular prompts used: True
+2025-08-16 15:28:18,045 - INFO - All approved: True
+2025-08-16 15:28:18,045 - INFO - Expert consensus: [True, True, True]
+2025-08-16 15:28:18,045 - INFO -
+============================================================
+2025-08-16 15:28:18,045 - INFO - TEST SUMMARY
+2025-08-16 15:28:18,045 - INFO - ============================================================
+2025-08-16 15:28:18,045 - INFO - Test Status: ✅ PASSED
+2025-08-16 15:28:18,045 - INFO - Processing Time: 0.11s
+2025-08-16 15:28:18,045 - INFO - C_ID: 194-1-4-test
+2025-08-16 15:28:18,045 - INFO - Expert Count: 5
+2025-08-16 15:28:18,045 - INFO - All Approved: True
+(.venv) ➜  CallersWithTexts git:(master) ✗ python3 single_request_test.py
+2025-08-16 15:28:20,321 - INFO - Starting DSPy server...
+2025-08-16 15:28:20,321 - INFO - Please ensure the DSPy orchestrator is running on port 8000
+2025-08-16 15:28:20,321 - INFO - Run: python3 ALEE_Agent/_server_question_generator.py
+2025-08-16 15:28:22,324 - INFO - ============================================================
+2025-08-16 15:28:22,324 - INFO - SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR
+2025-08-16 15:28:22,324 - INFO - ============================================================
+2025-08-16 15:28:22,324 - INFO - Testing DSPy health endpoint...
+2025-08-16 15:28:22,333 - INFO - DSPy health check: {'status': 'healthy', 'dspy_ready': True, 'expert_lms_configured': 7, 'modular_prompts_enabled': True, 'consensus_architecture': 'single_pass'}
+2025-08-16 15:28:22,334 - INFO - Loaded 16 texts from CSV
+2025-08-16 15:28:22,334 - INFO -
+Selected text: 19-1-4 - 14
+2025-08-16 15:28:22,334 - INFO - Text preview: Preisbildungsmodell Du hast schon gelernt, dass auf Märkten ein Zusammentreffen von Angebot und Nachfrage stattfindet. Um Güter gegen Geld zu tauschen, bildet sich dabei ein Preis, aber wie funktionie...
+2025-08-16 15:28:22,334 - INFO - Sending request to DSPy endpoint...
+2025-08-16 15:28:22,335 - INFO - Request parameters: {
+  "c_id": "19-1-4-test",
+  "text": "Preisbildungsmodell Du hast schon gelernt, dass auf Märkten ein Zusammentreffen von Angebot und Nachfrage stattfindet. Um Güter gegen Geld zu tauschen, bildet sich dabei ein Preis, aber wie funktioniert das genau? Betrachten wir dafür ein Beispiel. Stell dir vor, du besitzt eine seltene Sammelkarte und möchtest diese verkaufen. Mechanismus Nr. 1 (Nachfrage): Je höher die Nachfrage, desto höher ist tendenziell der Preis. Umgekehrt gilt: Je geringer die Nachfrage, desto geringer ist tendenziell der Preis. Wenn sich nur eine Person für deine Sammelkarte interessiert, wirst du sie vermutlich nicht so teuer verkaufen können. Interessieren sich dagegen zehn Personen für sie (höhere Nachfrage), kannst du vermutlich einen höheren Preis erzielen. Die Interessenten konkurrieren dann um deine Sammelkarte – und überbieten sich hoffentlich gegenseitig. Mechanismus Nr. 2 (Angebot): Je höher das Angebot, desto geringer ist tendenziell der Preis. Umgekehrt gilt: Je geringer das Angebot, desto höher ist tendenziell der Preis. Stell dir vor, ein Mitschüler taucht auf und besitzt gleich mehrere Exemplare deiner Sammelkarte, die er ebenfalls verkaufen möchte (höheres Angebot). Die Interessenten können sich jetzt zwischen euch und euren Angeboten entscheiden – und du musst deine Preisvorstellung vielleicht nach unten korrigieren, damit du deine Karte trotz der Konkurrenz durch deinen Mitschüler loswirst. Mechanismus Nr. 3 (Preis): Je höher der Preis, desto geringer ist die Nachfrage und desto höher das Angebot. Je geringer der Preis, desto höher ist die Nachfrage und desto geringer das Angebot. Grundsätzlich gilt: Je höher der Preis deiner Sammelkarte ist, desto weniger deiner Mitschüler*innen werden diese kaufen wollen. Gleichzeitig ist der Preis auch für die Anbieter*innen wichtig: Je teurer man die Karte verkaufen kann, desto mehr Leute sind bereit, ihre Karten anzubieten. <image>",
+  "question_type": "multiple-choice",
+  "p_variation": "stammaufgabe",
+  "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+  "p_mathematical_requirement_level": "0",
+  "p_root_text_reference_explanatory_text": "Nicht vorhanden",
+  "p_root_text_obstacle_passive": "Nicht Enthalten",
+  "p_root_text_obstacle_negation": "Nicht Enthalten",
+  "p_root_text_obstacle_complex_np": "Nicht Enthalten",
+  "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+  "p_item_1_obstacle_passive": "Nicht Enthalten",
+  "p_item_1_obstacle_negation": "Nicht Enthalten",
+  "p_item_1_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_2_obstacle_passive": "Nicht Enthalten",
+  "p_item_2_obstacle_negation": "Nicht Enthalten",
+  "p_item_2_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_3_obstacle_passive": "Nicht Enthalten",
+  "p_item_3_obstacle_negation": "Nicht Enthalten",
+  "p_item_3_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_4_obstacle_passive": "Nicht Enthalten",
+  "p_item_4_obstacle_negation": "Nicht Enthalten",
+  "p_item_4_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_5_obstacle_passive": "Nicht Enthalten",
+  "p_item_5_obstacle_negation": "Nicht Enthalten",
+  "p_item_5_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_6_obstacle_passive": "Nicht Enthalten",
+  "p_item_6_obstacle_negation": "Nicht Enthalten",
+  "p_item_6_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_7_obstacle_passive": "Nicht Enthalten",
+  "p_item_7_obstacle_negation": "Nicht Enthalten",
+  "p_item_7_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_8_obstacle_passive": "Nicht Enthalten",
+  "p_item_8_obstacle_negation": "Nicht Enthalten",
+  "p_item_8_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_obstacle_passive": "Nicht Enthalten",
+  "p_instruction_obstacle_negation": "Nicht Enthalten",
+  "p_instruction_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_explicitness_of_instruction": "Explizit"
+}
+2025-08-16 15:28:22,437 - INFO - ✅ Request successful in 0.10s
+2025-08-16 15:28:22,437 - INFO -
+============================================================
+2025-08-16 15:28:22,437 - INFO - VALIDATING RESULT
+2025-08-16 15:28:22,437 - INFO - ============================================================
+2025-08-16 15:28:22,437 - INFO - ✅ Field 'question_1' present
+2025-08-16 15:28:22,437 - INFO - ✅ Field 'question_2' present
+2025-08-16 15:28:22,437 - INFO - ✅ Field 'question_3' present
+2025-08-16 15:28:22,437 - INFO - ✅ Field 'c_id' present
+2025-08-16 15:28:22,437 - INFO - ✅ Field 'processing_time' present
+2025-08-16 15:28:22,437 - INFO - ✅ Field 'csv_data' present
+2025-08-16 15:28:22,437 - INFO - ✅ question_1 has content (372 chars)
+2025-08-16 15:28:22,437 - INFO - ✅ question_2 has content (378 chars)
+2025-08-16 15:28:22,437 - INFO - ✅ question_3 has content (383 chars)
+2025-08-16 15:28:22,437 - INFO - ✅ CSV field 'c_id' present
+2025-08-16 15:28:22,437 - INFO - ✅ CSV field 'subject' present
+2025-08-16 15:28:22,437 - INFO - ✅ CSV field 'type' present
+2025-08-16 15:28:22,437 - INFO - ✅ CSV field 'text' present
+2025-08-16 15:28:22,437 - INFO - ✅ CSV field 'answers' present
+2025-08-16 15:28:22,437 - INFO - ✅ DSPy consensus architecture used
+2025-08-16 15:28:22,437 - INFO - ✅ All questions approved by experts
+2025-08-16 15:28:22,437 - INFO -
+Validation Summary: 16/16 passed (100.0%)
+2025-08-16 15:28:22,437 - INFO -
+============================================================
+2025-08-16 15:28:22,437 - INFO - GENERATED QUESTIONS
+2025-08-16 15:28:22,437 - INFO - ============================================================
+2025-08-16 15:28:22,437 - INFO -
+Question 1:
+2025-08-16 15:28:22,437 - INFO - Welche Auswirkung hat es auf den Preis einer Sammelkarte, wenn sich viele Personen für sie interessieren?
+A) Der Preis steigt
+B) Der Preis sinkt
+C) Der Preis bleibt gleich
+D) Es ist nicht möglich zu sagen <option>A) Der Preis steigt<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:28:22,437 - INFO -
+Question 2:
+2025-08-16 15:28:22,437 - INFO - Was passiert mit dem Angebot von Sammelkarten, wenn der Preis sehr hoch ist?
+A) Das Angebot erhöht sich
+B) Das Angebot verringert sich
+C) Es wird kein Angebot gegeben
+D) Es ist nicht möglich zu sagen <option>B) Das Angebot verringert sich<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:28:22,437 - INFO -
+Question 3:
+2025-08-16 15:28:22,437 - INFO - Wie wirkt sich ein hoher Preis auf die Nachfrage nach einer Sammelkarte aus?
+A) Die Nachfrage erhöht sich
+B) Die Nachfrage verringert sich
+C) Die Nachfrage bleibt gleich
+D) Es ist nicht möglich zu sagen <option>B) Die Nachfrage verringert sich<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:28:22,437 - INFO -
+============================================================
+2025-08-16 15:28:22,437 - INFO - DSPY PROCESSING METADATA
+2025-08-16 15:28:22,437 - INFO - ============================================================
+2025-08-16 15:28:22,437 - INFO - Single-pass consensus: True
+2025-08-16 15:28:22,437 - INFO - Modular prompts used: True
+2025-08-16 15:28:22,437 - INFO - All approved: True
+2025-08-16 15:28:22,437 - INFO - Expert consensus: [True, True, True]
+2025-08-16 15:28:22,437 - INFO -
+============================================================
+2025-08-16 15:28:22,437 - INFO - TEST SUMMARY
+2025-08-16 15:28:22,437 - INFO - ============================================================
+2025-08-16 15:28:22,437 - INFO - Test Status: ✅ PASSED
+2025-08-16 15:28:22,437 - INFO - Processing Time: 0.10s
+2025-08-16 15:28:22,437 - INFO - C_ID: 19-1-4-test
+2025-08-16 15:28:22,437 - INFO - Expert Count: 5
+2025-08-16 15:28:22,437 - INFO - All Approved: True
+(.venv) ➜  CallersWithTexts git:(master) ✗ python3 single_request_test.py
+2025-08-16 15:28:24,170 - INFO - Starting DSPy server...
+2025-08-16 15:28:24,170 - INFO - Please ensure the DSPy orchestrator is running on port 8000
+2025-08-16 15:28:24,170 - INFO - Run: python3 ALEE_Agent/_server_question_generator.py
+2025-08-16 15:28:26,172 - INFO - ============================================================
+2025-08-16 15:28:26,173 - INFO - SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR
+2025-08-16 15:28:26,173 - INFO - ============================================================
+2025-08-16 15:28:26,173 - INFO - Testing DSPy health endpoint...
+2025-08-16 15:28:26,183 - INFO - DSPy health check: {'status': 'healthy', 'dspy_ready': True, 'expert_lms_configured': 7, 'modular_prompts_enabled': True, 'consensus_architecture': 'single_pass'}
+2025-08-16 15:28:26,188 - INFO - Loaded 16 texts from CSV
+2025-08-16 15:28:26,188 - INFO -
+Selected text: 182-1-3 - 2
+2025-08-16 15:28:26,188 - INFO - Text preview: Die Bedürfnispyramide nach Maslow Es gibt verschiedene Arten von Bedürfnissen. Der Psychologe Abraham Maslow entwickelte eine Pyramide, die Bedürfnisse verschiedenen Gruppen zuordnet und nach ihrer Dr...
+2025-08-16 15:28:26,188 - INFO - Sending request to DSPy endpoint...
+2025-08-16 15:28:26,188 - INFO - Request parameters: {
+  "c_id": "182-1-3-test",
+  "text": "Die Bedürfnispyramide nach Maslow Es gibt verschiedene Arten von Bedürfnissen. Der Psychologe Abraham Maslow entwickelte eine Pyramide, die Bedürfnisse verschiedenen Gruppen zuordnet und nach ihrer Dringlichkeit sortiert. Bedürfnisse auf unteren Stufen müssen in der Regel zunächst befriedigt werden, bevor man sich der Befriedigung weiter obenstehender Bedürfnisse widmet. <image><image>Stell dir vor, du bist auf einer einsamen Insel gestrandet. Um was kümmerst du dich zuerst? Klar, zunächst kümmerst du dich um das, was du zum Überleben brauchst: Essen, Trinken, einen Schlafplatz (Physiologische Grundbedürfnisse). Und dann? Vielleicht baust du dir einen Speer, um dich vor wilden Tieren zu schützen. Oder du baust dir eine wetterfeste Behausung (Sicherheitsbedürfnisse). Wenn alle dies erledigt ist, beginnst du womöglich etwas einsam zu werden – du wünschst dir Kontakt mit Menschen (soziale Bedürfnisse)… → So gelangt man von Bedürfnis zu Bedürfnis – und in der Pyramide immer weiter nach oben. ",
+  "question_type": "multiple-choice",
+  "p_variation": "stammaufgabe",
+  "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+  "p_mathematical_requirement_level": "0",
+  "p_root_text_reference_explanatory_text": "Nicht vorhanden",
+  "p_root_text_obstacle_passive": "Nicht Enthalten",
+  "p_root_text_obstacle_negation": "Nicht Enthalten",
+  "p_root_text_obstacle_complex_np": "Nicht Enthalten",
+  "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+  "p_item_1_obstacle_passive": "Nicht Enthalten",
+  "p_item_1_obstacle_negation": "Nicht Enthalten",
+  "p_item_1_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_2_obstacle_passive": "Nicht Enthalten",
+  "p_item_2_obstacle_negation": "Nicht Enthalten",
+  "p_item_2_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_3_obstacle_passive": "Nicht Enthalten",
+  "p_item_3_obstacle_negation": "Nicht Enthalten",
+  "p_item_3_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_4_obstacle_passive": "Nicht Enthalten",
+  "p_item_4_obstacle_negation": "Nicht Enthalten",
+  "p_item_4_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_5_obstacle_passive": "Nicht Enthalten",
+  "p_item_5_obstacle_negation": "Nicht Enthalten",
+  "p_item_5_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_6_obstacle_passive": "Nicht Enthalten",
+  "p_item_6_obstacle_negation": "Nicht Enthalten",
+  "p_item_6_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_7_obstacle_passive": "Nicht Enthalten",
+  "p_item_7_obstacle_negation": "Nicht Enthalten",
+  "p_item_7_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_8_obstacle_passive": "Nicht Enthalten",
+  "p_item_8_obstacle_negation": "Nicht Enthalten",
+  "p_item_8_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_obstacle_passive": "Nicht Enthalten",
+  "p_instruction_obstacle_negation": "Nicht Enthalten",
+  "p_instruction_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_explicitness_of_instruction": "Explizit"
+}
+2025-08-16 15:28:26,210 - ERROR - ❌ Request failed: HTTP 500
+2025-08-16 15:28:26,211 - ERROR - Error: {"detail":{"error_type":"DSPY_GENERATION_ERROR","message":"Failed to create multiple-choice question: 2 validation errors for MultipleChoiceModel\nquestion_text\n  Value error, Multiple choice needs at least 6 options, found 4 [type=value_error, input_value='Was sind die ersten Bed...erwirklichung)</option>', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/value_error\ncorrect_answer\n  Input should be a valid list [type=list_type, input_value='Physiologische Grundbed..., Schlafplatz)</option>', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.11/v/list_type","c_id":"182-1-3-test","processing_time":0.019138813018798828}}
+2025-08-16 15:28:26,211 - ERROR - Request failed - no result received
+(.venv) ➜  CallersWithTexts git:(master) ✗ python3 single_request_test.py
+2025-08-16 15:28:28,856 - INFO - Starting DSPy server...
+2025-08-16 15:28:28,856 - INFO - Please ensure the DSPy orchestrator is running on port 8000
+2025-08-16 15:28:28,856 - INFO - Run: python3 ALEE_Agent/_server_question_generator.py
+2025-08-16 15:28:30,859 - INFO - ============================================================
+2025-08-16 15:28:30,859 - INFO - SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR
+2025-08-16 15:28:30,859 - INFO - ============================================================
+2025-08-16 15:28:30,859 - INFO - Testing DSPy health endpoint...
+2025-08-16 15:28:30,863 - INFO - DSPy health check: {'status': 'healthy', 'dspy_ready': True, 'expert_lms_configured': 7, 'modular_prompts_enabled': True, 'consensus_architecture': 'single_pass'}
+2025-08-16 15:28:30,866 - INFO - Loaded 16 texts from CSV
+2025-08-16 15:28:30,866 - INFO -
+Selected text: 191-1-6 - 11
+2025-08-16 15:28:30,866 - INFO - Text preview: Märkte sind nicht an einen Ort gebunden. <image><image><image>Denken wir an einen Markt, fällt uns direkt der Wochenmarkt auf dem Marktplatz, oder auch der sonntägige Flohmarkt auf dem Parkplatz eines...
+2025-08-16 15:28:30,866 - INFO - Sending request to DSPy endpoint...
+2025-08-16 15:28:30,866 - INFO - Request parameters: {
+  "c_id": "191-1-6-test",
+  "text": "Märkte sind nicht an einen Ort gebunden. <image><image><image>Denken wir an einen Markt, fällt uns direkt der Wochenmarkt auf dem Marktplatz, oder auch der sonntägige Flohmarkt auf dem Parkplatz eines großen Einkaufszentrums ein. Doch muss ein Markt nicht an ein Gebäude oder einen Platz gebunden sein. Viele Dinge können zum Beispiel auch im Internet gekauft werden oder wir tauschen im Freundeskreis. Auch hierbei handelt es sich um einen Markt.  ",
+  "question_type": "multiple-choice",
+  "p_variation": "stammaufgabe",
+  "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+  "p_mathematical_requirement_level": "0",
+  "p_root_text_reference_explanatory_text": "Nicht vorhanden",
+  "p_root_text_obstacle_passive": "Nicht Enthalten",
+  "p_root_text_obstacle_negation": "Nicht Enthalten",
+  "p_root_text_obstacle_complex_np": "Nicht Enthalten",
+  "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+  "p_item_1_obstacle_passive": "Nicht Enthalten",
+  "p_item_1_obstacle_negation": "Nicht Enthalten",
+  "p_item_1_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_2_obstacle_passive": "Nicht Enthalten",
+  "p_item_2_obstacle_negation": "Nicht Enthalten",
+  "p_item_2_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_3_obstacle_passive": "Nicht Enthalten",
+  "p_item_3_obstacle_negation": "Nicht Enthalten",
+  "p_item_3_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_4_obstacle_passive": "Nicht Enthalten",
+  "p_item_4_obstacle_negation": "Nicht Enthalten",
+  "p_item_4_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_5_obstacle_passive": "Nicht Enthalten",
+  "p_item_5_obstacle_negation": "Nicht Enthalten",
+  "p_item_5_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_6_obstacle_passive": "Nicht Enthalten",
+  "p_item_6_obstacle_negation": "Nicht Enthalten",
+  "p_item_6_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_7_obstacle_passive": "Nicht Enthalten",
+  "p_item_7_obstacle_negation": "Nicht Enthalten",
+  "p_item_7_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_8_obstacle_passive": "Nicht Enthalten",
+  "p_item_8_obstacle_negation": "Nicht Enthalten",
+  "p_item_8_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_obstacle_passive": "Nicht Enthalten",
+  "p_instruction_obstacle_negation": "Nicht Enthalten",
+  "p_instruction_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_explicitness_of_instruction": "Explizit"
+}
+2025-08-16 15:29:46,922 - INFO - ✅ Request successful in 76.06s
+2025-08-16 15:29:46,922 - INFO -
+============================================================
+2025-08-16 15:29:46,922 - INFO - VALIDATING RESULT
+2025-08-16 15:29:46,922 - INFO - ============================================================
+2025-08-16 15:29:46,922 - INFO - ✅ Field 'question_1' present
+2025-08-16 15:29:46,922 - INFO - ✅ Field 'question_2' present
+2025-08-16 15:29:46,922 - INFO - ✅ Field 'question_3' present
+2025-08-16 15:29:46,922 - INFO - ✅ Field 'c_id' present
+2025-08-16 15:29:46,922 - INFO - ✅ Field 'processing_time' present
+2025-08-16 15:29:46,922 - INFO - ✅ Field 'csv_data' present
+2025-08-16 15:29:46,922 - INFO - ✅ question_1 has content (381 chars)
+2025-08-16 15:29:46,922 - INFO - ✅ question_2 has content (181 chars)
+2025-08-16 15:29:46,922 - INFO - ✅ question_3 has content (458 chars)
+2025-08-16 15:29:46,922 - INFO - ✅ CSV field 'c_id' present
+2025-08-16 15:29:46,922 - INFO - ✅ CSV field 'subject' present
+2025-08-16 15:29:46,922 - INFO - ✅ CSV field 'type' present
+2025-08-16 15:29:46,922 - INFO - ✅ CSV field 'text' present
+2025-08-16 15:29:46,922 - INFO - ✅ CSV field 'answers' present
+2025-08-16 15:29:46,922 - INFO - ✅ DSPy consensus architecture used
+2025-08-16 15:29:46,922 - INFO - ✅ All questions approved by experts
+2025-08-16 15:29:46,922 - INFO -
+Validation Summary: 16/16 passed (100.0%)
+2025-08-16 15:29:46,922 - INFO -
+============================================================
+2025-08-16 15:29:46,922 - INFO - GENERATED QUESTIONS
+2025-08-16 15:29:46,922 - INFO - ============================================================
+2025-08-16 15:29:46,922 - INFO -
+Question 1:
+2025-08-16 15:29:46,922 - INFO - Was ist ein Markt?
+
+A) Ein Ort für den Kauf von Waren
+B) Eine Plattform für den Tausch von Gegenständen
+C) Ein Online-Shop für die Bestellung von Produkten
+D) Ein Gebäude, in dem Händler ihre Waren ausstellen
+E) Eine Veranstaltung, auf der Produkte verkauft werden
+F) Ein Netzwerk von Käufern und Verkäufern <option>A<option>B<option>C<option>D<option>F<option>Zusätzliche Option 6
+2025-08-16 15:29:46,922 - INFO -
+Question 2:
+2025-08-16 15:29:46,922 - INFO - Welche Form des Marktes ist auch online möglich? <option>Wochenmarkt<option>Online-Shop<option>Tauschbörse<option>Verkaufsausstellung<option>Marktgebäude<option>Zusätzliche Option 6
+2025-08-16 15:29:46,922 - INFO -
+Question 3:
+2025-08-16 15:29:46,922 - INFO - Wodurch ist ein Markt von einem Ort losgelöst?
+
+A) Durch die Verfügbarkeit von Internet
+B) Durch den Einsatz von Social-Media-Plattformen
+C) Durch den Wechsel von realen zu virtuellen Märkten
+D) Durch die Möglichkeit des Tauschs im Freundeskreis
+E) Durch die Einbindung von Online-Zahlungssystemen
+F) Durch die Einführung neuer Verkaufsstrategien <option>A<option>C<option>D<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:29:46,922 - INFO -
+============================================================
+2025-08-16 15:29:46,922 - INFO - DSPY PROCESSING METADATA
+2025-08-16 15:29:46,922 - INFO - ============================================================
+2025-08-16 15:29:46,922 - INFO - Single-pass consensus: True
+2025-08-16 15:29:46,922 - INFO - Modular prompts used: True
+2025-08-16 15:29:46,922 - INFO - All approved: True
+2025-08-16 15:29:46,922 - INFO - Expert consensus: [True, True, True]
+2025-08-16 15:29:46,922 - INFO -
+============================================================
+2025-08-16 15:29:46,922 - INFO - TEST SUMMARY
+2025-08-16 15:29:46,922 - INFO - ============================================================
+2025-08-16 15:29:46,923 - INFO - Test Status: ✅ PASSED
+2025-08-16 15:29:46,923 - INFO - Processing Time: 76.05s
+2025-08-16 15:29:46,923 - INFO - C_ID: 191-1-6-test
+2025-08-16 15:29:46,923 - INFO - Expert Count: 5
+2025-08-16 15:29:46,923 - INFO - All Approved: True
+(.venv) ➜  CallersWithTexts git:(master) ✗ python3 single_request_test.py
+2025-08-16 15:30:11,856 - INFO - Starting DSPy server...
+2025-08-16 15:30:11,856 - INFO - Please ensure the DSPy orchestrator is running on port 8000
+2025-08-16 15:30:11,856 - INFO - Run: python3 ALEE_Agent/_server_question_generator.py
+2025-08-16 15:30:13,857 - INFO - ============================================================
+2025-08-16 15:30:13,857 - INFO - SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR
+2025-08-16 15:30:13,857 - INFO - ============================================================
+2025-08-16 15:30:13,857 - INFO - Testing DSPy health endpoint...
+2025-08-16 15:30:13,861 - INFO - DSPy health check: {'status': 'healthy', 'dspy_ready': True, 'expert_lms_configured': 7, 'modular_prompts_enabled': True, 'consensus_architecture': 'single_pass'}
+2025-08-16 15:30:13,863 - INFO - Loaded 16 texts from CSV
+2025-08-16 15:30:13,864 - INFO -
+Selected text: 194-1-4 - 16
+2025-08-16 15:30:13,864 - INFO - Text preview: Verschiebungen der Nachfragegerade In unserer Stadt Ökonomia hat ein bekanntes wissenschaftliches Institut eine Studie veröffentlicht. Die Forscher*innen haben herausgefunden, dass Milch sehr gesund i...
+2025-08-16 15:30:13,864 - INFO - Sending request to DSPy endpoint...
+2025-08-16 15:30:13,864 - INFO - Request parameters: {
+  "c_id": "194-1-4-test",
+  "text": "Verschiebungen der Nachfragegerade In unserer Stadt Ökonomia hat ein bekanntes wissenschaftliches Institut eine Studie veröffentlicht. Die Forscher*innen haben herausgefunden, dass Milch sehr gesund ist und vor Krankheiten schützt. Die Bewohner*innen Ökonomias lesen die Studie und sind begeistert. Sie wollen mehr Milch trinken und fragen somit mehr Liter Milch nach. Bei einem Preis von 0,50 € fragen sie jetzt 90l Milch nach (statt wie zuvor 70l), bei einem Preis von 1€ sind es 80l (statt wie zuvor 60l), … : <image>Wie stellt man nun diese Veränderungen in unserem Diagramm dar? Dazu tragen wir die neue Nachfrage in unser Diagramm ein: <image>Du siehst: Der Gleichgewichtspreis erhöht sich. Betrug er zuvor 2€, liegt er jetzt bei 2,50 €.  Wenn etwas passiert, das die Nachfrage zu jedem gegebenen Preis verändert, verschiebt sich die Nachfragegerade. Eine Verschiebung nach rechts zeigt einen Nachfrageanstieg an, nach links einen Nachfragerückgang. Gründe für Verschiebungen können z.B. sein, dass sich die Vorlieben der Nachfrager*innen ändern (wie beim Milch-Beispiel) oder insgesamt mehr oder weniger Einkommen haben (z. B. durch Gehaltserhöhungen oder -kürzungen).  Verschiebungen der Angebotsgerade Gute Neuigkeiten für die Milch-Landwirt*innen in Ökonomia: Durch ein vor Kurzem abgeschlossenes internationales Handelsabkommen sind die Preise für Futtermittel gefallen. Dadurch sinken die Produktionskosten und sie können bei gleichen Kosten mehr Milch anbieten. Bei einem Preis von 0,50 € bieten sie jetzt 30l an (statt wie zuvor 10l), bei einem Preis von 1 € 40l (statt wie zuvor 20l), … : <image>Im Diagramm:  <image>Du siehst: Der Gleichgewichtspreis sinkt, er beträgt jetzt wieder 2 €. Wenn etwas passiert, das das Angebot zu jedem gegebenen Preis verändert, verschiebt sich die Angebotsgerade. Eine Verschiebung nach rechts beschreibt einen Angebotsanstieg, nach links einen Angebotsrückgang. Es gibt verschiedene Gründe für Verschiebungen der Angebotsgerade, z. B. technische Innovationen, veränderte Kosten für Vorprodukte (wie beim Milch-Beispiel) oder Umwelteinflüsse (z. B. eine Dürre, die Futtermittelpreise erhöht).  ",
+  "question_type": "multiple-choice",
+  "p_variation": "stammaufgabe",
+  "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+  "p_mathematical_requirement_level": "0",
+  "p_root_text_reference_explanatory_text": "Nicht vorhanden",
+  "p_root_text_obstacle_passive": "Nicht Enthalten",
+  "p_root_text_obstacle_negation": "Nicht Enthalten",
+  "p_root_text_obstacle_complex_np": "Nicht Enthalten",
+  "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+  "p_item_1_obstacle_passive": "Nicht Enthalten",
+  "p_item_1_obstacle_negation": "Nicht Enthalten",
+  "p_item_1_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_2_obstacle_passive": "Nicht Enthalten",
+  "p_item_2_obstacle_negation": "Nicht Enthalten",
+  "p_item_2_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_3_obstacle_passive": "Nicht Enthalten",
+  "p_item_3_obstacle_negation": "Nicht Enthalten",
+  "p_item_3_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_4_obstacle_passive": "Nicht Enthalten",
+  "p_item_4_obstacle_negation": "Nicht Enthalten",
+  "p_item_4_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_5_obstacle_passive": "Nicht Enthalten",
+  "p_item_5_obstacle_negation": "Nicht Enthalten",
+  "p_item_5_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_6_obstacle_passive": "Nicht Enthalten",
+  "p_item_6_obstacle_negation": "Nicht Enthalten",
+  "p_item_6_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_7_obstacle_passive": "Nicht Enthalten",
+  "p_item_7_obstacle_negation": "Nicht Enthalten",
+  "p_item_7_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_8_obstacle_passive": "Nicht Enthalten",
+  "p_item_8_obstacle_negation": "Nicht Enthalten",
+  "p_item_8_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_obstacle_passive": "Nicht Enthalten",
+  "p_instruction_obstacle_negation": "Nicht Enthalten",
+  "p_instruction_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_explicitness_of_instruction": "Explizit"
+}
+2025-08-16 15:30:13,958 - INFO - ✅ Request successful in 0.09s
+2025-08-16 15:30:13,958 - INFO -
+============================================================
+2025-08-16 15:30:13,958 - INFO - VALIDATING RESULT
+2025-08-16 15:30:13,958 - INFO - ============================================================
+2025-08-16 15:30:13,958 - INFO - ✅ Field 'question_1' present
+2025-08-16 15:30:13,958 - INFO - ✅ Field 'question_2' present
+2025-08-16 15:30:13,958 - INFO - ✅ Field 'question_3' present
+2025-08-16 15:30:13,958 - INFO - ✅ Field 'c_id' present
+2025-08-16 15:30:13,958 - INFO - ✅ Field 'processing_time' present
+2025-08-16 15:30:13,958 - INFO - ✅ Field 'csv_data' present
+2025-08-16 15:30:13,958 - INFO - ✅ question_1 has content (578 chars)
+2025-08-16 15:30:13,958 - INFO - ✅ question_2 has content (796 chars)
+2025-08-16 15:30:13,958 - INFO - ✅ question_3 has content (788 chars)
+2025-08-16 15:30:13,958 - INFO - ✅ CSV field 'c_id' present
+2025-08-16 15:30:13,958 - INFO - ✅ CSV field 'subject' present
+2025-08-16 15:30:13,958 - INFO - ✅ CSV field 'type' present
+2025-08-16 15:30:13,958 - INFO - ✅ CSV field 'text' present
+2025-08-16 15:30:13,958 - INFO - ✅ CSV field 'answers' present
+2025-08-16 15:30:13,958 - INFO - ✅ DSPy consensus architecture used
+2025-08-16 15:30:13,958 - INFO - ✅ All questions approved by experts
+2025-08-16 15:30:13,958 - INFO -
+Validation Summary: 16/16 passed (100.0%)
+2025-08-16 15:30:13,958 - INFO -
+============================================================
+2025-08-16 15:30:13,958 - INFO - GENERATED QUESTIONS
+2025-08-16 15:30:13,958 - INFO - ============================================================
+2025-08-16 15:30:13,958 - INFO -
+Question 1:
+2025-08-16 15:30:13,958 - INFO - Welche Auswirkung hat eine Erhöhung der Nachfrage auf den Gleichgewichtspreis?
+A) Der Gleichgewichtspreis sinkt.
+B) Der Gleichgewichtspreis bleibt gleich.
+C) Der Gleichgewichtspreis steigt.
+D) Es kann nicht bestimmt werden, was mit dem Gleichgewichtspreis passiert. <option>A) Der Gleichgewichtspreis sinkt.
+B) Der Gleichgewichtspreis bleibt gleich.
+C) Der Gleichgewichtspreis steigt.
+D) Es kann nicht bestimmt werden<option>was mit dem Gleichgewichtspreis passiert.<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:30:13,958 - INFO -
+Question 2:
+2025-08-16 15:30:13,958 - INFO - Was tritt ein, wenn die Produktionskosten für Milch-Landwirt*innen in Ökonomia sinken?
+A) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.
+B) Die Verschiebung der Nachfragegeraden führt zu einem Anstieg des Gleichgewichtspreises.
+C) Das Angebot erhöht sich, was zu einem Sinken des Gleichgewichtspreises führt.
+D) Der Gleichgewichtspreis bleibt gleich. <option>A) Das Angebot erhöht sich<option>was zu einem Sinken des Gleichgewichtspreises führt.
+B) Die Verschiebung der Nachfragegeraden führt zu einem Anstieg des Gleichgewichtspreises.
+C) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.
+D) Der Gleichgewichtspreis bleibt gleich.<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:30:13,958 - INFO -
+Question 3:
+2025-08-16 15:30:13,958 - INFO - Was tritt ein, wenn die Nachfrage nach Milch in Ökonomia steigt?
+A) Die Verschiebung der Nachfragegeraden führt zu einem Sinken des Gleichgewichtspreises.
+B) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.
+C) Die Nachfrage nach Milch führt zu einem Anstieg des Gleichgewichtspreises.
+D) Der Gleichgewichtspreis bleibt gleich. <option>A) Die Nachfrage nach Milch führt zu einem Anstieg des Gleichgewichtspreises.
+B) Die Verschiebung der Nachfragegeraden führt zu einem Sinken des Gleichgewichtspreises.
+C) Der Angebotsanstieg führt zu einer Verringerung des Gleichgewichtspreises.
+D) Der Gleichgewichtspreis bleibt gleich.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:30:13,958 - INFO -
+============================================================
+2025-08-16 15:30:13,958 - INFO - DSPY PROCESSING METADATA
+2025-08-16 15:30:13,958 - INFO - ============================================================
+2025-08-16 15:30:13,958 - INFO - Single-pass consensus: True
+2025-08-16 15:30:13,958 - INFO - Modular prompts used: True
+2025-08-16 15:30:13,958 - INFO - All approved: True
+2025-08-16 15:30:13,958 - INFO - Expert consensus: [True, True, True]
+2025-08-16 15:30:13,958 - INFO -
+============================================================
+2025-08-16 15:30:13,958 - INFO - TEST SUMMARY
+2025-08-16 15:30:13,958 - INFO - ============================================================
+2025-08-16 15:30:13,958 - INFO - Test Status: ✅ PASSED
+2025-08-16 15:30:13,958 - INFO - Processing Time: 0.09s
+2025-08-16 15:30:13,958 - INFO - C_ID: 194-1-4-test
+2025-08-16 15:30:13,958 - INFO - Expert Count: 5
+2025-08-16 15:30:13,958 - INFO - All Approved: True
+(.venv) ➜  CallersWithTexts git:(master) ✗ python3 single_request_test.py
+2025-08-16 15:31:16,676 - INFO - Starting DSPy server...
+2025-08-16 15:31:16,676 - INFO - Please ensure the DSPy orchestrator is running on port 8000
+2025-08-16 15:31:16,676 - INFO - Run: python3 ALEE_Agent/_server_question_generator.py
+2025-08-16 15:31:18,678 - INFO - ============================================================
+2025-08-16 15:31:18,679 - INFO - SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR
+2025-08-16 15:31:18,679 - INFO - ============================================================
+2025-08-16 15:31:18,679 - INFO - Testing DSPy health endpoint...
+2025-08-16 15:31:18,692 - INFO - DSPy health check: {'status': 'healthy', 'dspy_ready': True, 'expert_lms_configured': 7, 'modular_prompts_enabled': True, 'consensus_architecture': 'single_pass'}
+2025-08-16 15:31:18,698 - INFO - Loaded 16 texts from CSV
+2025-08-16 15:31:18,699 - INFO -
+Selected text: 183-1-1 - 3
+2025-08-16 15:31:18,699 - INFO - Text preview: Aus Bedürfnis wird Bedarf Vorsicht! In der Alltagssprache unterscheidet man nicht immer genau zwischen Bedürfnis und Bedarf. In der Wirtschaft bedeuten die Begriffe aber, wie du gleich lernst, etwas U...
+2025-08-16 15:31:18,699 - INFO - Sending request to DSPy endpoint...
+2025-08-16 15:31:18,699 - INFO - Request parameters: {
+  "c_id": "183-1-1-test",
+  "text": "Aus Bedürfnis wird Bedarf Vorsicht! In der Alltagssprache unterscheidet man nicht immer genau zwischen Bedürfnis und Bedarf. In der Wirtschaft bedeuten die Begriffe aber, wie du gleich lernst, etwas Unterschiedliches. Du weißt jetzt, was Bedürfnisse sind. In der Wirtschaft unterscheidet man zwischen Bedürfnissen und Bedarf. Als Bedarf bezeichnet man die konkrete Bereitschaft, seine Mittel (bspw. Zeit oder Geld) für bestimmte Dingen oder Leistungen zur Befriedigung von Bedürfnissen zu verwenden. Kompliziert? Hier ein paar Beispiele: Wenn man hungrig ist, will man z. B. einen Apfel, um seinen Hunger zu befriedigen. Aus dem Bedürfnis, etwas zu essen, erwächst der konkrete Bedarf nach einem Apfel. Wenn dir langweilig ist, willst du z. B. ein neues Videospiel haben. Aus dem Bedürfnis nach Unterhaltung erwächst der konkrete Bedarf nach einem bestimmten Videospiel. Wenn man unglücklich mit seinem Haarschnitt ist, geht man zum Friseur. Aus dem Bedürfnis, sein Aussehen zu verbessern, erwächst der konkrete Bedarf nach einem neuen Haarschnitt vom Friseur. Man spricht nicht nur bei dem Einsatz von Mitteln für den Kauf von Gegenständen von Bedarf. Auch bei dem Verlangen nach Leistungen, die andere für dich erbringen, wie z.B. einem Haarschnitt beim Friseur, einer Kleider-Reinigung oder einer Bankberatung, spricht man von Bedarf. ",
+  "question_type": "multiple-choice",
+  "p_variation": "stammaufgabe",
+  "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+  "p_mathematical_requirement_level": "0",
+  "p_root_text_reference_explanatory_text": "Nicht vorhanden",
+  "p_root_text_obstacle_passive": "Nicht Enthalten",
+  "p_root_text_obstacle_negation": "Nicht Enthalten",
+  "p_root_text_obstacle_complex_np": "Nicht Enthalten",
+  "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+  "p_item_1_obstacle_passive": "Nicht Enthalten",
+  "p_item_1_obstacle_negation": "Nicht Enthalten",
+  "p_item_1_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_2_obstacle_passive": "Nicht Enthalten",
+  "p_item_2_obstacle_negation": "Nicht Enthalten",
+  "p_item_2_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_3_obstacle_passive": "Nicht Enthalten",
+  "p_item_3_obstacle_negation": "Nicht Enthalten",
+  "p_item_3_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_4_obstacle_passive": "Nicht Enthalten",
+  "p_item_4_obstacle_negation": "Nicht Enthalten",
+  "p_item_4_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_5_obstacle_passive": "Nicht Enthalten",
+  "p_item_5_obstacle_negation": "Nicht Enthalten",
+  "p_item_5_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_6_obstacle_passive": "Nicht Enthalten",
+  "p_item_6_obstacle_negation": "Nicht Enthalten",
+  "p_item_6_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_7_obstacle_passive": "Nicht Enthalten",
+  "p_item_7_obstacle_negation": "Nicht Enthalten",
+  "p_item_7_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_8_obstacle_passive": "Nicht Enthalten",
+  "p_item_8_obstacle_negation": "Nicht Enthalten",
+  "p_item_8_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_obstacle_passive": "Nicht Enthalten",
+  "p_instruction_obstacle_negation": "Nicht Enthalten",
+  "p_instruction_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_explicitness_of_instruction": "Explizit"
+}
+2025-08-16 15:31:18,806 - INFO - ✅ Request successful in 0.11s
+2025-08-16 15:31:18,806 - INFO -
+============================================================
+2025-08-16 15:31:18,806 - INFO - VALIDATING RESULT
+2025-08-16 15:31:18,806 - INFO - ============================================================
+2025-08-16 15:31:18,806 - INFO - ✅ Field 'question_1' present
+2025-08-16 15:31:18,806 - INFO - ✅ Field 'question_2' present
+2025-08-16 15:31:18,806 - INFO - ✅ Field 'question_3' present
+2025-08-16 15:31:18,806 - INFO - ✅ Field 'c_id' present
+2025-08-16 15:31:18,806 - INFO - ✅ Field 'processing_time' present
+2025-08-16 15:31:18,806 - INFO - ✅ Field 'csv_data' present
+2025-08-16 15:31:18,806 - INFO - ✅ question_1 has content (459 chars)
+2025-08-16 15:31:18,806 - INFO - ✅ question_2 has content (276 chars)
+2025-08-16 15:31:18,806 - INFO - ✅ question_3 has content (482 chars)
+2025-08-16 15:31:18,806 - INFO - ✅ CSV field 'c_id' present
+2025-08-16 15:31:18,806 - INFO - ✅ CSV field 'subject' present
+2025-08-16 15:31:18,806 - INFO - ✅ CSV field 'type' present
+2025-08-16 15:31:18,806 - INFO - ✅ CSV field 'text' present
+2025-08-16 15:31:18,806 - INFO - ✅ CSV field 'answers' present
+2025-08-16 15:31:18,806 - INFO - ✅ DSPy consensus architecture used
+2025-08-16 15:31:18,806 - INFO - ✅ All questions approved by experts
+2025-08-16 15:31:18,806 - INFO -
+Validation Summary: 16/16 passed (100.0%)
+2025-08-16 15:31:18,806 - INFO -
+============================================================
+2025-08-16 15:31:18,806 - INFO - GENERATED QUESTIONS
+2025-08-16 15:31:18,806 - INFO - ============================================================
+2025-08-16 15:31:18,806 - INFO -
+Question 1:
+2025-08-16 15:31:18,806 - INFO - Was bedeutet der Begriff "Bedarf" in der Wirtschaft?
+A) Die Bereitschaft, Mittel für bestimmte Dinge oder Leistungen einzusetzen
+B) Das Gefühl von Hunger oder Langeweile
+C) Der konkrete Bedarf nach einem bestimmten Gegenstand
+D) Die Wunsch nach Unterhaltung <option>A) Die Bereitschaft<option>Mittel für bestimmte Dinge oder Leistungen einzusetzen<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:31:18,806 - INFO -
+Question 2:
+2025-08-16 15:31:18,806 - INFO - Ein Beispiel für den Übergang vom Bedürfnis zur Befriedigung ist: <option>Wenn man langweilig ist, willst du ein neues Videospiel haben.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:31:18,807 - INFO -
+Question 3:
+2025-08-16 15:31:18,807 - INFO - Was spricht man nicht nur bei dem Einsatz von Mitteln für den Kauf von Gegenständen von Bedarf?
+A) Der Verzehr von Nahrung
+B) Das Tragen von Kleidung
+C) Der Einsatz von Dienstleistungen wie Haarschnitten oder Bankberatungen
+D) Alle der oben genannten Beispiele <option>C) Der Einsatz von Dienstleistungen wie Haarschnitten oder Bankberatungen<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:31:18,807 - INFO -
+============================================================
+2025-08-16 15:31:18,807 - INFO - DSPY PROCESSING METADATA
+2025-08-16 15:31:18,807 - INFO - ============================================================
+2025-08-16 15:31:18,807 - INFO - Single-pass consensus: True
+2025-08-16 15:31:18,807 - INFO - Modular prompts used: True
+2025-08-16 15:31:18,807 - INFO - All approved: True
+2025-08-16 15:31:18,807 - INFO - Expert consensus: [True, True, True]
+2025-08-16 15:31:18,807 - INFO -
+============================================================
+2025-08-16 15:31:18,807 - INFO - TEST SUMMARY
+2025-08-16 15:31:18,807 - INFO - ============================================================
+2025-08-16 15:31:18,807 - INFO - Test Status: ✅ PASSED
+2025-08-16 15:31:18,807 - INFO - Processing Time: 0.10s
+2025-08-16 15:31:18,807 - INFO - C_ID: 183-1-1-test
+2025-08-16 15:31:18,807 - INFO - Expert Count: 5
+2025-08-16 15:31:18,807 - INFO - All Approved: True
+(.venv) ➜  CallersWithTexts git:(master) ✗ python3 single_request_test.py
+2025-08-16 15:31:20,984 - INFO - Starting DSPy server...
+2025-08-16 15:31:20,984 - INFO - Please ensure the DSPy orchestrator is running on port 8000
+2025-08-16 15:31:20,984 - INFO - Run: python3 ALEE_Agent/_server_question_generator.py
+2025-08-16 15:31:22,986 - INFO - ============================================================
+2025-08-16 15:31:22,986 - INFO - SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR
+2025-08-16 15:31:22,986 - INFO - ============================================================
+2025-08-16 15:31:22,986 - INFO - Testing DSPy health endpoint...
+2025-08-16 15:31:22,996 - INFO - DSPy health check: {'status': 'healthy', 'dspy_ready': True, 'expert_lms_configured': 7, 'modular_prompts_enabled': True, 'consensus_architecture': 'single_pass'}
+2025-08-16 15:31:23,001 - INFO - Loaded 16 texts from CSV
+2025-08-16 15:31:23,002 - INFO -
+Selected text: 189-1-3 - 8
+2025-08-16 15:31:23,002 - INFO - Text preview: Verteilungsmechanismus ohne Markt Die Mitglieder der Band „Economics“, kommen für ein Konzert in ihre Heimatstadt. Sie treten in dem kleinen Club auf, in dem sie ihr erstes Konzert gegeben haben. Alle...
+2025-08-16 15:31:23,002 - INFO - Sending request to DSPy endpoint...
+2025-08-16 15:31:23,003 - INFO - Request parameters: {
+  "c_id": "189-1-3-test",
+  "text": "Verteilungsmechanismus ohne Markt Die Mitglieder der Band „Economics“, kommen für ein Konzert in ihre Heimatstadt. Sie treten in dem kleinen Club auf, in dem sie ihr erstes Konzert gegeben haben. Allerdings ist hier nur Platz für 300 Menschen. Da nicht genug Plätze für alle da sind, muss die Band entscheiden, wer eines der Tickets bekommt. Hierfür gibt es verschiedene Ansätze: <image>Zuteilung: Die Band könnte die Konzertkarten einfach an die alten Bekannten verteilen. Oder sie verteilt die Tickets an die ältesten Interessenten. Wenn knappe Güter von jemandem aufgrund festgelegter Kriterien verteilt werden, spricht man vom Verteilungsmechanismus der Zuteilung.  <image>Windhund-Verfahren: Natürlich könnte die Band die Tickets auch an die Personen verteilen, die sie als erstes um eines bitten. Nach dem Motto: Wer zuerst kommt – mahlt zuerst. Dieser Verteilungsmechanismus, bei dem diejenigen die Güter bekommen, die zuerst nach ihnen verlangen, wird als Windhund-Verfahren bezeichnet. <image>Verlosung: Alternativ könnten sie auch den Zufall entscheiden lassen. Zum Beispiel könnten die „Economics“ Lose verteilen und die Gewinner bekämen eines der Tickets. Dieser Verteilungsmechanismus, der auf Zufall basiert, wird Verlosung genannt. ",
+  "question_type": "multiple-choice",
+  "p_variation": "stammaufgabe",
+  "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+  "p_mathematical_requirement_level": "0",
+  "p_root_text_reference_explanatory_text": "Nicht vorhanden",
+  "p_root_text_obstacle_passive": "Nicht Enthalten",
+  "p_root_text_obstacle_negation": "Nicht Enthalten",
+  "p_root_text_obstacle_complex_np": "Nicht Enthalten",
+  "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+  "p_item_1_obstacle_passive": "Nicht Enthalten",
+  "p_item_1_obstacle_negation": "Nicht Enthalten",
+  "p_item_1_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_2_obstacle_passive": "Nicht Enthalten",
+  "p_item_2_obstacle_negation": "Nicht Enthalten",
+  "p_item_2_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_3_obstacle_passive": "Nicht Enthalten",
+  "p_item_3_obstacle_negation": "Nicht Enthalten",
+  "p_item_3_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_4_obstacle_passive": "Nicht Enthalten",
+  "p_item_4_obstacle_negation": "Nicht Enthalten",
+  "p_item_4_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_5_obstacle_passive": "Nicht Enthalten",
+  "p_item_5_obstacle_negation": "Nicht Enthalten",
+  "p_item_5_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_6_obstacle_passive": "Nicht Enthalten",
+  "p_item_6_obstacle_negation": "Nicht Enthalten",
+  "p_item_6_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_7_obstacle_passive": "Nicht Enthalten",
+  "p_item_7_obstacle_negation": "Nicht Enthalten",
+  "p_item_7_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_8_obstacle_passive": "Nicht Enthalten",
+  "p_item_8_obstacle_negation": "Nicht Enthalten",
+  "p_item_8_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_obstacle_passive": "Nicht Enthalten",
+  "p_instruction_obstacle_negation": "Nicht Enthalten",
+  "p_instruction_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_explicitness_of_instruction": "Explizit"
+}
+2025-08-16 15:31:23,109 - INFO - ✅ Request successful in 0.11s
+2025-08-16 15:31:23,109 - INFO -
+============================================================
+2025-08-16 15:31:23,109 - INFO - VALIDATING RESULT
+2025-08-16 15:31:23,109 - INFO - ============================================================
+2025-08-16 15:31:23,109 - INFO - ✅ Field 'question_1' present
+2025-08-16 15:31:23,109 - INFO - ✅ Field 'question_2' present
+2025-08-16 15:31:23,109 - INFO - ✅ Field 'question_3' present
+2025-08-16 15:31:23,109 - INFO - ✅ Field 'c_id' present
+2025-08-16 15:31:23,109 - INFO - ✅ Field 'processing_time' present
+2025-08-16 15:31:23,109 - INFO - ✅ Field 'csv_data' present
+2025-08-16 15:31:23,109 - INFO - ✅ question_1 has content (241 chars)
+2025-08-16 15:31:23,109 - INFO - ✅ question_2 has content (284 chars)
+2025-08-16 15:31:23,109 - INFO - ✅ question_3 has content (225 chars)
+2025-08-16 15:31:23,109 - INFO - ✅ CSV field 'c_id' present
+2025-08-16 15:31:23,109 - INFO - ✅ CSV field 'subject' present
+2025-08-16 15:31:23,109 - INFO - ✅ CSV field 'type' present
+2025-08-16 15:31:23,109 - INFO - ✅ CSV field 'text' present
+2025-08-16 15:31:23,109 - INFO - ✅ CSV field 'answers' present
+2025-08-16 15:31:23,109 - INFO - ✅ DSPy consensus architecture used
+2025-08-16 15:31:23,109 - INFO - ✅ All questions approved by experts
+2025-08-16 15:31:23,109 - INFO -
+Validation Summary: 16/16 passed (100.0%)
+2025-08-16 15:31:23,109 - INFO -
+============================================================
+2025-08-16 15:31:23,109 - INFO - GENERATED QUESTIONS
+2025-08-16 15:31:23,110 - INFO - ============================================================
+2025-08-16 15:31:23,110 - INFO -
+Question 1:
+2025-08-16 15:31:23,110 - INFO - Welcher Verteilungsmechanismus ist am ehesten mit dem Motto "Wer zuerst kommt – mahlt zuerst" verbunden? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Losverfahren<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:31:23,110 - INFO -
+Question 2:
+2025-08-16 15:31:23,110 - INFO - Ein Verteilungsmechanismus, bei dem die Konzertkarten an die ältesten Interessenten verteilt werden, gehört zu welchem der folgenden Typen? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:31:23,110 - INFO -
+Question 3:
+2025-08-16 15:31:23,110 - INFO - Bei welchen Verteilungsmechanismus entscheidet der Zufall, wer die Konzertkarten erhält? <option>Zuteilung<option>Windhund-Verfahren<option>Verlosung<option>Losverfahren<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:31:23,110 - INFO -
+============================================================
+2025-08-16 15:31:23,110 - INFO - DSPY PROCESSING METADATA
+2025-08-16 15:31:23,110 - INFO - ============================================================
+2025-08-16 15:31:23,110 - INFO - Single-pass consensus: True
+2025-08-16 15:31:23,110 - INFO - Modular prompts used: True
+2025-08-16 15:31:23,110 - INFO - All approved: True
+2025-08-16 15:31:23,110 - INFO - Expert consensus: [True, True, True]
+2025-08-16 15:31:23,110 - INFO -
+============================================================
+2025-08-16 15:31:23,110 - INFO - TEST SUMMARY
+2025-08-16 15:31:23,110 - INFO - ============================================================
+2025-08-16 15:31:23,110 - INFO - Test Status: ✅ PASSED
+2025-08-16 15:31:23,110 - INFO - Processing Time: 0.10s
+2025-08-16 15:31:23,110 - INFO - C_ID: 189-1-3-test
+2025-08-16 15:31:23,110 - INFO - Expert Count: 5
+2025-08-16 15:31:23,110 - INFO - All Approved: True
+(.venv) ➜  CallersWithTexts git:(master) ✗ python3 single_request_test.py
+2025-08-16 15:31:25,930 - INFO - Starting DSPy server...
+2025-08-16 15:31:25,930 - INFO - Please ensure the DSPy orchestrator is running on port 8000
+2025-08-16 15:31:25,930 - INFO - Run: python3 ALEE_Agent/_server_question_generator.py
+2025-08-16 15:31:27,932 - INFO - ============================================================
+2025-08-16 15:31:27,933 - INFO - SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR
+2025-08-16 15:31:27,933 - INFO - ============================================================
+2025-08-16 15:31:27,933 - INFO - Testing DSPy health endpoint...
+2025-08-16 15:31:27,944 - INFO - DSPy health check: {'status': 'healthy', 'dspy_ready': True, 'expert_lms_configured': 7, 'modular_prompts_enabled': True, 'consensus_architecture': 'single_pass'}
+2025-08-16 15:31:27,950 - INFO - Loaded 16 texts from CSV
+2025-08-16 15:31:27,951 - INFO -
+Selected text: 192-1-1 - 15
+2025-08-16 15:31:27,951 - INFO - Text preview: Preisbildungsmodell im Preismengendiagramm Wie entsteht der Milchpreis? In den letzten Abschnitten hast du bereits gelernt, dass auf Märkten Güter gehandelt werden und dabei deren Preise eine wichtige...
+2025-08-16 15:31:27,951 - INFO - Sending request to DSPy endpoint...
+2025-08-16 15:31:27,951 - INFO - Request parameters: {
+  "c_id": "192-1-1-test",
+  "text": "Preisbildungsmodell im Preismengendiagramm Wie entsteht der Milchpreis? In den letzten Abschnitten hast du bereits gelernt, dass auf Märkten Güter gehandelt werden und dabei deren Preise eine wichtige Rolle spielen. Aber wie entsteht der Preis eines Gutes jetzt genau? Schauen wir uns dafür ein ganz einfaches Beispiel an. Stellt euch vor, in der Stadt „Ökonomia“ gibt es Landwirt*innen, die Milch produzieren. Für sie gilt: Je höher der Preis pro Liter Milch, desto mehr Milch sind sie bereit zu produzieren und zu verkaufen (anzubieten): <image><image>Auf der anderen Seite gilt für die Bewohner*innen des Dorfs: Je höher der Preis pro Liter Milch, desto weniger Milch wollen sie kaufen (nachfragen): <image><image><image>Und wie entsteht jetzt der Preis? Um das zu veranschaulichen, überträgt man beide Tabellen in ein Diagramm. So ergeben sich die Angebotsgerade und die Nachfragegerade. Ein Lesebeispiel: Bei einem Preis von einem Euro würden 20 Liter angeboten (blaue Gerade) und 50 Liter nachgefragt werden (rote Gerade). Also, auf welchen Wert würde sich der Preis und die Menge anpassen? In unserem Beispiel auf zwei Euro und 40 Liter Milch. Das ist im Diagramm der Schnittpunkt von Angebots- und Nachfragegerade!  Diesen Schnittpunkt nennt man Gleichgewichtspreis. Hier halten sich Angebot und Nachfrage im Gleichgewicht: Läge der Preis oberhalb des Gleichgewichtspreis, würde mehr Milch angeboten als nachgefragt (Angebotsüberschuss). Viele Landwirt*innen würden auf der Milch sitzenbleiben. Läge der Preis unterhalb des Gleichgewichtspreises, würde mehr nachgefragt als angeboten. Viele Kund*innen würden also leer ausgehen und müssten auf Milch verzichten (Nachfrageüberschuss). ",
+  "question_type": "multiple-choice",
+  "p_variation": "stammaufgabe",
+  "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+  "p_mathematical_requirement_level": "0",
+  "p_root_text_reference_explanatory_text": "Nicht vorhanden",
+  "p_root_text_obstacle_passive": "Nicht Enthalten",
+  "p_root_text_obstacle_negation": "Nicht Enthalten",
+  "p_root_text_obstacle_complex_np": "Nicht Enthalten",
+  "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+  "p_item_1_obstacle_passive": "Nicht Enthalten",
+  "p_item_1_obstacle_negation": "Nicht Enthalten",
+  "p_item_1_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_2_obstacle_passive": "Nicht Enthalten",
+  "p_item_2_obstacle_negation": "Nicht Enthalten",
+  "p_item_2_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_3_obstacle_passive": "Nicht Enthalten",
+  "p_item_3_obstacle_negation": "Nicht Enthalten",
+  "p_item_3_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_4_obstacle_passive": "Nicht Enthalten",
+  "p_item_4_obstacle_negation": "Nicht Enthalten",
+  "p_item_4_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_5_obstacle_passive": "Nicht Enthalten",
+  "p_item_5_obstacle_negation": "Nicht Enthalten",
+  "p_item_5_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_6_obstacle_passive": "Nicht Enthalten",
+  "p_item_6_obstacle_negation": "Nicht Enthalten",
+  "p_item_6_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_7_obstacle_passive": "Nicht Enthalten",
+  "p_item_7_obstacle_negation": "Nicht Enthalten",
+  "p_item_7_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_8_obstacle_passive": "Nicht Enthalten",
+  "p_item_8_obstacle_negation": "Nicht Enthalten",
+  "p_item_8_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_obstacle_passive": "Nicht Enthalten",
+  "p_instruction_obstacle_negation": "Nicht Enthalten",
+  "p_instruction_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_explicitness_of_instruction": "Explizit"
+}
+2025-08-16 15:32:45,327 - INFO - ✅ Request successful in 77.38s
+2025-08-16 15:32:45,327 - INFO -
+============================================================
+2025-08-16 15:32:45,327 - INFO - VALIDATING RESULT
+2025-08-16 15:32:45,327 - INFO - ============================================================
+2025-08-16 15:32:45,327 - INFO - ✅ Field 'question_1' present
+2025-08-16 15:32:45,327 - INFO - ✅ Field 'question_2' present
+2025-08-16 15:32:45,327 - INFO - ✅ Field 'question_3' present
+2025-08-16 15:32:45,327 - INFO - ✅ Field 'c_id' present
+2025-08-16 15:32:45,327 - INFO - ✅ Field 'processing_time' present
+2025-08-16 15:32:45,327 - INFO - ✅ Field 'csv_data' present
+2025-08-16 15:32:45,327 - INFO - ✅ question_1 has content (478 chars)
+2025-08-16 15:32:45,327 - INFO - ✅ question_2 has content (432 chars)
+2025-08-16 15:32:45,327 - INFO - ✅ question_3 has content (474 chars)
+2025-08-16 15:32:45,327 - INFO - ✅ CSV field 'c_id' present
+2025-08-16 15:32:45,327 - INFO - ✅ CSV field 'subject' present
+2025-08-16 15:32:45,327 - INFO - ✅ CSV field 'type' present
+2025-08-16 15:32:45,327 - INFO - ✅ CSV field 'text' present
+2025-08-16 15:32:45,327 - INFO - ✅ CSV field 'answers' present
+2025-08-16 15:32:45,327 - INFO - ✅ DSPy consensus architecture used
+2025-08-16 15:32:45,327 - INFO - ✅ All questions approved by experts
+2025-08-16 15:32:45,327 - INFO -
+Validation Summary: 16/16 passed (100.0%)
+2025-08-16 15:32:45,327 - INFO -
+============================================================
+2025-08-16 15:32:45,327 - INFO - GENERATED QUESTIONS
+2025-08-16 15:32:45,327 - INFO - ============================================================
+2025-08-16 15:32:45,327 - INFO -
+Question 1:
+2025-08-16 15:32:45,327 - INFO - Welcher Punkt im Diagramm zeigt den Gleichgewichtspreis?
+A) Der Schnittpunkt der Angebots- und Nachfragegeraden
+B) Der höchste Punkt der Angebotsgeraden
+C) Der niedrigste Punkt der Nachfragegeraden
+D) Der Punkt, an dem die Angebots- und Nachfragegeraden sich nicht schneiden <option>A) Der Schnittpunkt der Angebots- und Nachfragegeraden.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:32:45,327 - INFO -
+Question 2:
+2025-08-16 15:32:45,327 - INFO - Was passiert, wenn der Preis oberhalb des Gleichgewichtspreises liegt?
+A) Es gibt einen Angebotsüberschuss.
+B) Es gibt einen Nachfrageüberschuss.
+C) Die Angebot- und Nachfragediagramme sichern sich gegenseitig ab.
+D) Der Gleichgewichtspreis sinkt. <option>A) Es gibt einen Angebotsüberschuss.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:32:45,327 - INFO -
+Question 3:
+2025-08-16 15:32:45,327 - INFO - Was ist der Hauptzweck des Preismengendiagramms?
+A) Die Darstellung von Angebot und Nachfrage in einem Diagramm
+B) Die Berechnung des Gleichgewichtspreises
+C) Die Analyse von Faktoren, die den Preis beeinflussen
+D) Die Vorhersage der zukünftigen Preisentwicklung <option>A) Die Darstellung von Angebot und Nachfrage in einem Diagramm.<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:32:45,327 - INFO -
+============================================================
+2025-08-16 15:32:45,327 - INFO - DSPY PROCESSING METADATA
+2025-08-16 15:32:45,327 - INFO - ============================================================
+2025-08-16 15:32:45,327 - INFO - Single-pass consensus: True
+2025-08-16 15:32:45,327 - INFO - Modular prompts used: True
+2025-08-16 15:32:45,327 - INFO - All approved: True
+2025-08-16 15:32:45,327 - INFO - Expert consensus: [True, True, True]
+2025-08-16 15:32:45,327 - INFO -
+============================================================
+2025-08-16 15:32:45,327 - INFO - TEST SUMMARY
+2025-08-16 15:32:45,327 - INFO - ============================================================
+2025-08-16 15:32:45,327 - INFO - Test Status: ✅ PASSED
+2025-08-16 15:32:45,327 - INFO - Processing Time: 77.36s
+2025-08-16 15:32:45,327 - INFO - C_ID: 192-1-1-test
+2025-08-16 15:32:45,327 - INFO - Expert Count: 5
+2025-08-16 15:32:45,327 - INFO - All Approved: True
+(.venv) ➜  CallersWithTexts git:(master) ✗ python3 single_request_test.py
+2025-08-16 15:32:50,988 - INFO - Starting DSPy server...
+2025-08-16 15:32:50,988 - INFO - Please ensure the DSPy orchestrator is running on port 8000
+2025-08-16 15:32:50,988 - INFO - Run: python3 ALEE_Agent/_server_question_generator.py
+2025-08-16 15:32:52,990 - INFO - ============================================================
+2025-08-16 15:32:52,990 - INFO - SINGLE REQUEST TEST - DSPy EDUCATIONAL QUESTION GENERATOR
+2025-08-16 15:32:52,990 - INFO - ============================================================
+2025-08-16 15:32:52,990 - INFO - Testing DSPy health endpoint...
+2025-08-16 15:32:52,999 - INFO - DSPy health check: {'status': 'healthy', 'dspy_ready': True, 'expert_lms_configured': 7, 'modular_prompts_enabled': True, 'consensus_architecture': 'single_pass'}
+2025-08-16 15:32:53,001 - INFO - Loaded 16 texts from CSV
+2025-08-16 15:32:53,002 - INFO -
+Selected text: 186-1-2 - 7
+2025-08-16 15:32:53,002 - INFO - Text preview: Opportunitätskosten  Entscheidest du dich dafür, Freitagabend ins Kino zu gehen, statt zu jobben, dann entstehen dir nicht nur die Kosten für das Kinoticket. Du verzichtest auch auf das Gehalt, dass d...
+2025-08-16 15:32:53,002 - INFO - Sending request to DSPy endpoint...
+2025-08-16 15:32:53,002 - INFO - Request parameters: {
+  "c_id": "186-1-2-test",
+  "text": "Opportunitätskosten  Entscheidest du dich dafür, Freitagabend ins Kino zu gehen, statt zu jobben, dann entstehen dir nicht nur die Kosten für das Kinoticket. Du verzichtest auch auf das Gehalt, dass du hättest verdienen können, wenn du jobben gegangen wärst.  Das, worauf man verzichtet, wenn man sich für eine Handlungsalternative entscheidet, nennt man Opportunitätskosten (auch: Verzichtskosten). Kosten und Nutzen beziehen sich nicht allein auf Geld. Der Nutzen einer Handlung kann z.B. auch Spaß oder Erholung sein. Die Kosten einer Handlung umfassen z.B. auch die Zeit, die du brauchst, um die Handlung durchzuführen oder Güter, die für die Durchführung der Handlung benötigt werden. ",
+  "question_type": "multiple-choice",
+  "p_variation": "stammaufgabe",
+  "p_taxonomy_level": "Stufe 1 (Wissen/Reproduktion)",
+  "p_mathematical_requirement_level": "0",
+  "p_root_text_reference_explanatory_text": "Nicht vorhanden",
+  "p_root_text_obstacle_passive": "Nicht Enthalten",
+  "p_root_text_obstacle_negation": "Nicht Enthalten",
+  "p_root_text_obstacle_complex_np": "Nicht Enthalten",
+  "p_root_text_contains_irrelevant_information": "Nicht Enthalten",
+  "p_item_1_obstacle_passive": "Nicht Enthalten",
+  "p_item_1_obstacle_negation": "Nicht Enthalten",
+  "p_item_1_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_2_obstacle_passive": "Nicht Enthalten",
+  "p_item_2_obstacle_negation": "Nicht Enthalten",
+  "p_item_2_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_3_obstacle_passive": "Nicht Enthalten",
+  "p_item_3_obstacle_negation": "Nicht Enthalten",
+  "p_item_3_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_4_obstacle_passive": "Nicht Enthalten",
+  "p_item_4_obstacle_negation": "Nicht Enthalten",
+  "p_item_4_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_5_obstacle_passive": "Nicht Enthalten",
+  "p_item_5_obstacle_negation": "Nicht Enthalten",
+  "p_item_5_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_6_obstacle_passive": "Nicht Enthalten",
+  "p_item_6_obstacle_negation": "Nicht Enthalten",
+  "p_item_6_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_7_obstacle_passive": "Nicht Enthalten",
+  "p_item_7_obstacle_negation": "Nicht Enthalten",
+  "p_item_7_obstacle_complex_np": "Nicht Enthalten",
+  "p_item_8_obstacle_passive": "Nicht Enthalten",
+  "p_item_8_obstacle_negation": "Nicht Enthalten",
+  "p_item_8_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_obstacle_passive": "Nicht Enthalten",
+  "p_instruction_obstacle_negation": "Nicht Enthalten",
+  "p_instruction_obstacle_complex_np": "Nicht Enthalten",
+  "p_instruction_explicitness_of_instruction": "Explizit"
+}
+2025-08-16 15:32:53,100 - INFO - ✅ Request successful in 0.10s
+2025-08-16 15:32:53,100 - INFO -
+============================================================
+2025-08-16 15:32:53,100 - INFO - VALIDATING RESULT
+2025-08-16 15:32:53,100 - INFO - ============================================================
+2025-08-16 15:32:53,100 - INFO - ✅ Field 'question_1' present
+2025-08-16 15:32:53,100 - INFO - ✅ Field 'question_2' present
+2025-08-16 15:32:53,100 - INFO - ✅ Field 'question_3' present
+2025-08-16 15:32:53,100 - INFO - ✅ Field 'c_id' present
+2025-08-16 15:32:53,100 - INFO - ✅ Field 'processing_time' present
+2025-08-16 15:32:53,100 - INFO - ✅ Field 'csv_data' present
+2025-08-16 15:32:53,100 - INFO - ✅ question_1 has content (210 chars)
+2025-08-16 15:32:53,100 - INFO - ✅ question_2 has content (252 chars)
+2025-08-16 15:32:53,100 - INFO - ✅ question_3 has content (219 chars)
+2025-08-16 15:32:53,100 - INFO - ✅ CSV field 'c_id' present
+2025-08-16 15:32:53,100 - INFO - ✅ CSV field 'subject' present
+2025-08-16 15:32:53,100 - INFO - ✅ CSV field 'type' present
+2025-08-16 15:32:53,100 - INFO - ✅ CSV field 'text' present
+2025-08-16 15:32:53,100 - INFO - ✅ CSV field 'answers' present
+2025-08-16 15:32:53,100 - INFO - ✅ DSPy consensus architecture used
+2025-08-16 15:32:53,100 - INFO - ✅ All questions approved by experts
+2025-08-16 15:32:53,100 - INFO -
+Validation Summary: 16/16 passed (100.0%)
+2025-08-16 15:32:53,100 - INFO -
+============================================================
+2025-08-16 15:32:53,100 - INFO - GENERATED QUESTIONS
+2025-08-16 15:32:53,100 - INFO - ============================================================
+2025-08-16 15:32:53,100 - INFO -
+Question 1:
+2025-08-16 15:32:53,100 - INFO - Was sind Opportunitätskosten? <option>Zeit, die man nicht benötigt hat<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:32:53,100 - INFO -
+Question 2:
+2025-08-16 15:32:53,100 - INFO - Warum beziehen sich Kosten und Nutzen nicht allein auf Geld? <option>Weil man Zeit auch als Wert betrachten kann<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:32:53,100 - INFO -
+Question 3:
+2025-08-16 15:32:53,100 - INFO - Was sind Beispiele für die Kosten einer Handlung? <option>Keine dieser Optionen<option>Zusätzliche Option 2<option>Zusätzliche Option 3<option>Zusätzliche Option 4<option>Zusätzliche Option 5<option>Zusätzliche Option 6
+2025-08-16 15:32:53,100 - INFO -
+============================================================
+2025-08-16 15:32:53,100 - INFO - DSPY PROCESSING METADATA
+2025-08-16 15:32:53,100 - INFO - ============================================================
+2025-08-16 15:32:53,100 - INFO - Single-pass consensus: True
+2025-08-16 15:32:53,100 - INFO - Modular prompts used: True
+2025-08-16 15:32:53,100 - INFO - All approved: True
+2025-08-16 15:32:53,100 - INFO - Expert consensus: [True, True, True]
+2025-08-16 15:32:53,100 - INFO -
+============================================================
+2025-08-16 15:32:53,100 - INFO - TEST SUMMARY
+2025-08-16 15:32:53,100 - INFO - ============================================================
+2025-08-16 15:32:53,100 - INFO - Test Status: ✅ PASSED
+2025-08-16 15:32:53,100 - INFO - Processing Time: 0.09s
+2025-08-16 15:32:53,100 - INFO - C_ID: 186-1-2-test
+2025-08-16 15:32:53,100 - INFO - Expert Count: 5
+2025-08-16 15:32:53,100 - INFO - All Approved: True
+(.venv) ➜  CallersWithTexts git:(master) ✗

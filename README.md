@@ -1,20 +1,26 @@
-# Research Educational Question Generation System for 9th-Grade Economics using multi-layer small LM expert validation
+# Research Educational Question Generation System for 9th-Grade Economics using multi-layer small LM expert validation and DSPy Prompt Enhancement
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
-![AI Framework](https://img.shields.io/badge/AI-Framework-blue.svg)
+![DSPy](https://img.shields.io/badge/DSPy-0.1.0+-orange.svg)
+![PYdantic](https://img.shields.io/badge/Pydantic-1.10+-blue.svg)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.116+-green.svg)
 ![ROCm](https://img.shields.io/badge/ROCm-6.2+-red.svg)
 ![Ollama](https://img.shields.io/badge/Ollama-Latest-orange.svg)
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![SYSARCH](https://img.shields.io/badge/SYSARCH-Compliant-brightgreen.svg)
 
-educational question generation system designed for 9th-grade economics classes that produces pedagogically validated questions through expert consensus methodology. 
+educational question generation system designed for 9th-grade economics classes that produces pedagogically validated questions through expert consensus methodology and self-improves through DSPy refinement. 
 
-The system implements a three-layered educational architecture with single-pass processing: Request Handler → AI Orchestrator → Parallel Expert Validators.
+The system implements a three-layered educational architecture with single-pass processing: Caller ->  | Orchestrator → Dedicated data backed generator -> Parallel Expert Validators -> Refinement Consensus | -> Callback and Result Save.
 
-The architecture utilizes advanced language model coordination to replace iterative validation cycles with intelligent single-pass expert consensus.
+The architecture utilizes language model coordination to replace iterative validation cycles with refining single-pass expert consensus.
 
-Implementation features include declarative processing modules with external prompt construction (prompt_builder.py), type safety through validation schemas (PYdantic), and comprehensive educational pipeline tracking (Result_Manager.py).
+Implementation features include declarative processing modules with external prompt construction (prompt_builder.py), type safety through validation schemas (Pydantic [2]), and comprehensive educational pipeline tracking (Result_Manager.py).
+
+---
+
+All generated data as well as metadata about the pipeline and the experts as well as DSPy refinement steps is saved in ALEE_Agent/results/YYYY-MM-DD_HH-MM-SS_c_id/ with ISO timestamps for reproducibility and research purposes.
+This project is part of ALEE Tübingens ongoing research into educational AI systems, and we therefore encourage adding your data to it on your branch and collaborating open-source.
+
+---
 
 ## Educational Processing Architecture
 
@@ -119,27 +125,59 @@ graph TB
 | **ObstacleExpertGerman** | `ValidateObstacleGerman` | 8006 | mistral:7b | `p_*_obstacle_*` | Linguistic barriers (passive, negation, complex NP) |
 | **InstructionExpertGerman** | `ValidateInstructionGerman` | 8007 | llama3.1:8b | `p_instruction_*` | Instruction clarity and explicitness |
 
-### Processing Implementation
-- Single-pass processing: Caller → Orchestrator (prompt_builder → Generator → Experts in Parallel → Expert Consensus + Refinement)
-- Expert consensus aggregates feedback and refines questions with parameter guardrails in single step
-- VRAM utilization through context switching across multiple OLLAMA servers
-- Declarative module structure with DSPy framework integration
+### DSPy - Why and how?
 
-### Type Safety Implementation
-- Pydantic model validation for all input and output structures
-- Structured JSON outputs with schema validation
-- Type-safe processing pipeline eliminating runtime parsing errors
-- Complete processing visibility through step-by-step tracking
+The system employs DSPy (Declarative Self-improving Python) as its core orchestration framework, 
+representing a paradigm shift from traditional prompt engineering to systematic language model programming. 
 
-### Maintainability Implementation  
-- Declarative module architecture with functional separation
-- Parameter-driven prompt construction from external .txt files (created in prompt_builder.py - parameter txt given to LMs they are concerned with, includes experts as well as dedicated generator aswell as the refiner)
-- External prompt storage without hardcoded string literals
+DSPy enables declarative specification of educational question generation through 
+**Signatures** (input/output behavioral contracts), 
+**Modules** (composable reasoning strategies like `dspy.ChainOfThought`), and 
+**Optimizers** (automatic prompt and weight improvement algorithms). 
 
-### Question Processing Implementation
-- CSV output generation with initial and expert-refined question versions
-- Comparative analysis capability between pre and post-expert validation
-- Paired column structure for research analysis purposes
+This architectural approach eliminates brittle prompt strings by externalizing all educational content to modular .txt files, 
+enabling the `ModularPromptBuilder` to dynamically construct parameter-specific prompts from the 39 question parameters. 
+
+DSPy's automatic optimization capabilities enable systematic few-shot example synthesis and instruction refinement, 
+with research demonstrating that compiled pipelines outperform standard few-shot prompting and expert-created 
+demonstrations across multiple language models [1]. 
+
+In this implementation, the DSPy-orchestrated single-pass expert consensus architecture achieves 
+question generation and validation in 0.05-70s, representing a so far varied speed gain, with questions needing **either** ~0.5s or ~60s
+(which is too varied for a production system, check ALEE_AGENT/results) that needs further data-backing to test if a sustained self-improving system 
+can achieve a high chance of high-quality educational question generation.
+
+By decoupling educational logic from specific language model implementations, this project explorers if DSPy can enable
+portable, maintainable question generation that can adapt across different model architectures while preserving the
+educational parameter relationships required for 9th-grade economics instruction.
+
+### Expert Validation and Suggestion Aggregated Refinement - Why and how?
+
+The expert validation system implements a multi-agent architecture with five specialized domain validators 
+(variation, taxonomy, mathematical, linguistic obstacle, and instruction clarity experts), 
+each operating on dedicated language model servers (ports 8002-8007) with curated parameter knowledge bases. 
+
+The `ExpertPromptEnhancer` class orchestrates parameter knowledge distribution, ensuring each expert receives contextually 
+relevant information from the .txt prompt library while maintaining format preservation through validation guardrails. 
+
+Expert feedback is captured through type-safe `ExpertSuggestion` Pydantic models [2], enabling systematic aggregation of ratings, 
+feedback, and improvement suggestions across all validators. The `BatchQuestionRefiner` employs decision 
+algorithms with configurable rating thresholds (default 3.0/5.0) and consensus requirements to determine refinement necessity, 
+applying content and format improvements while preserving question type structural integrity through regex-based markup validation. 
+
+This single-pass consensus architecture tries eliminating iterative loops through expert feedback aggregation and immediate refinement application, 
+trying to maintain format compliance through Pydantic models [2] and fallback parsing, as well as ensuring all generated questions meet 
+the specified educational parameters without degrading the carefully crafted `<option>`, `<true-false>`, and `<start-option>/<end-option>` 
+markup structures required for downstream educational assessment systems.
+
+### Ergo -> how can the system be further improved?
+
+More and specific human-overseen data should be added to the modular prompt system to help the small LMs generate more 
+accurate and contextually relevant educational questions. 
+
+This data should furthermore help refine the prompts and the questions generated by the system, as well as the expert validation process.
+
+This should, so the theory, allow for more accurate and contextually relevant question generation, as well as improved educational outcomes.
 
 ## Quick Start
 
@@ -523,5 +561,14 @@ curl -X POST http://localhost:8000/generate-questions-dspy \
 - **FastAPI** - For asynchronous API framework
 - **Educational Research Community** - For parameter frameworks and validation methodologies
 - **Stakeholder Data Contributors (ALEE and Kateryna Lauterbach)** - For educational content provision
+
+## References
+
+[1] Khattab, O., Singhvi, A., Maheshwari, P., Zhang, Z., Santhanam, K., Vardhamanan, S., Haq, S., Sharma, A., Joshi, T. T., 
+Moazam, H., Miller, H., Zaharia, M., & Potts, C. (2024). DSPy: Compiling Declarative Language Model Calls into State-of-the-Art 
+Pipelines. In *The Twelfth International Conference on Learning Representations (ICLR 2024)*. 
+[OpenReview](https://openreview.net/forum?id=sY5N0zY5Od) | [ArXiv](https://arxiv.org/abs/2310.03714)
+
+[2] Colvin, S., Jolibois, E., Ramezani, H., Garcia Badaracco, A., Dorsey, T., Montague, D., Matveenko, S., Trylesinski, M., Runkle, S., Hewitt, D., Hall, A., & Plot, V. (2025). *Pydantic: Data validation using Python type hints* (Version 2.12.0) [Software]. [GitHub](https://github.com/pydantic/pydantic) | [Documentation](https://docs.pydantic.dev/latest/)
 
 ---
