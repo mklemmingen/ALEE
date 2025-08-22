@@ -1,4 +1,4 @@
-# Research Educational Question Generation System for 9th-Grade Economics using one-shot multi-layered small LM expert aggregated validation through DSPy COT and PYdantic type-safety
+# Research: Educational Question Generation System for 9th-Grade Economics | using one-shot multi-layered small LMs, refined & validated through aggregated data-backed expert suggestions & their DSPy Chain-of-thought | PYdantic type-safety to JSON inbetween Levels 
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![DSPy](https://img.shields.io/badge/DSPy-0.1.0+-orange.svg)
@@ -6,8 +6,6 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.116+-green.svg)
 ![ROCm](https://img.shields.io/badge/ROCm-6.2+-red.svg)
 ![Ollama](https://img.shields.io/badge/Ollama-Latest-orange.svg)
-
-educational question generation system designed for 9th-grade economics classes that produces pedagogically validated questions through expert consensus methodology, fueled by DSPYs chain of thought capture to aggregate expert opinions.
 
 The system implements a three-layered educational architecture with single-pass processing: Caller ->  | Orchestrator → Dedicated data backed generator -> Parallel Expert Validators -> Refinement Consensus | -> Callback and Result Save.
 
