@@ -1,0 +1,129 @@
+{
+  "ALEE_Agent_Prompt_Structure": {
+    "mainGen": {
+      "description": "Main generation prompts organized by parameter types",
+      "subdirectories": {
+        "instructionExplicitnessOfInstruction": {
+          "files": ["explizit.txt", "implizit.txt"]
+        },
+        "instructionObstacle": {
+          "subdirectories": {
+            "complex_np": {
+              "files": ["enthalten.txt", "nichtEnthalten.txt"]
+            },
+            "negation": {
+              "files": ["enthalten.txt", "nichtEnthalten.txt"]
+            },
+            "passive": {
+              "files": ["enthalten.txt", "nichtEnthalten.txt"]
+            }
+          }
+        },
+        "itemXObstacle": {
+          "subdirectories": {
+            "complex": {
+              "files": ["enthalten.txt", "nichtEnthalten.txt"]
+            },
+            "negation": {
+              "files": ["enthalten.txt", "nichtEnthalten.txt"]
+            },
+            "passive": {
+              "files": ["enthalten.txt", "nichtEnthalten.txt"]
+            }
+          }
+        },
+        "mathematicalRequirementLevel": {
+          "files": [
+            "0KeinBezug.txt",
+            "1NutzenMathematischerDarstellungen.txt",
+            "2MathematischeOperationen.txt"
+          ]
+        },
+        "rootTextParameterTextPrompts": {
+          "subdirectories": {
+            "containsIrrelevantInformationPrompt": {
+              "files": ["enthalten.txt", "nichtEnthalten.txt"]
+            },
+            "obstacleComplexPrompts": {
+              "files": ["enthalten.txt", "nichtEnthalten.txt"]
+            },
+            "obstacleNegationPrompts": {
+              "files": ["enthalten.txt", "nichtEnthalten.txt"]
+            },
+            "obstaclePassivePrompts": {
+              "files": ["enthalten.txt", "nichtEnthalten.txt"]
+            }
+          }
+        },
+        "taxonomyLevelPrompt": {
+          "files": [
+            "stufe1WissenReproduktion.txt",
+            "stufe2AnwendungTransfer.txt"
+          ]
+        },
+        "variationPrompts": {
+          "files": [
+            "leicht.txt",
+            "mapping.txt",
+            "multiple-choice.txt",
+            "schwer.txt",
+            "single-choice.txt",
+            "stammaufgabe.txt",
+            "true-false.txt"
+          ]
+        }
+      },
+      "total_files": 34,
+      "total_directories": 18
+    },
+    "expertEval": {
+      "description": "Expert evaluation prompts and instructions",
+      "files": [
+        "expertEvaluationInstruction.txt",
+        "questionImprovementInstruction.txt"
+      ],
+      "subdirectories": {
+        "expertPrompts": {
+          "files": [
+            "content_expert.txt",
+            "instruction_expert.txt",
+            "math_expert.txt",
+            "obstacle_expert.txt",
+            "taxonomy_expert.txt",
+            "variation_expert.txt"
+          ]
+        }
+      },
+      "total_files": 8,
+      "total_directories": 2
+    },
+    "dtoAndOutputPrompt": {
+      "description": "Data transfer object and output format prompts",
+      "files": [
+        "dspyExamples.txt",
+        "fallbackGenerationPrompt.txt",
+        "mappingAnnotatedExamples.txt",
+        "multipleChoiceAnnotatedExamples.txt",
+        "outputFormatPrompt.txt",
+        "questionGenerationInstruction.txt",
+        "singleChoiceAnnotatedExamples.txt",
+        "trueFalseAnnotatedExamples.txt"
+      ],
+      "total_files": 8,
+      "total_directories": 1
+    }
+  },
+  "summary": {
+    "total_prompt_files": 50,
+    "total_directories": 21,
+    "parameter_categories": {
+      "variation_prompts": 7,
+      "taxonomy_prompts": 2,
+      "mathematical_prompts": 3,
+      "obstacle_prompts": 18,
+      "instruction_prompts": 8,
+      "expert_prompts": 6,
+      "output_format_prompts": 8
+    }
+  }
+}

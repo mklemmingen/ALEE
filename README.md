@@ -1,4 +1,4 @@
-# Research Educational Question Generation System for 9th-Grade Economics using multi-layer small LM expert validation and DSPy Prompt Enhancement
+# Research Educational Question Generation System for 9th-Grade Economics using one-shot multi-layered small LM expert aggregated validation through DSPy COT and PYdantic type-safety
 
 ![Python](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![DSPy](https://img.shields.io/badge/DSPy-0.1.0+-orange.svg)
@@ -7,13 +7,11 @@
 ![ROCm](https://img.shields.io/badge/ROCm-6.2+-red.svg)
 ![Ollama](https://img.shields.io/badge/Ollama-Latest-orange.svg)
 
-educational question generation system designed for 9th-grade economics classes that produces pedagogically validated questions through expert consensus methodology and self-improves through DSPy refinement. 
-
 The system implements a three-layered educational architecture with single-pass processing: Caller ->  | Orchestrator → Dedicated data backed generator -> Parallel Expert Validators -> Refinement Consensus | -> Callback and Result Save.
 
 The architecture utilizes language model coordination to replace iterative validation cycles with refining single-pass expert consensus.
 
-Implementation features include declarative processing modules with external prompt construction (prompt_builder.py), type safety through validation schemas (Pydantic [2]), and comprehensive educational pipeline tracking (Result_Manager.py).
+Implementation features include declarative processing modules with external prompt construction (prompt_builder.py) adapting to request parameters, type safety through validation schemas (Pydantic [2]), and comprehensive educational pipeline tracking (Result_Manager.py).
 
 ---
 
@@ -21,6 +19,10 @@ All generated data as well as metadata about the pipeline and the experts as wel
 This project is part of ALEE Tübingens ongoing research into educational AI systems, and we therefore encourage adding your data to it on your branch and collaborating open-source.
 
 ---
+
+## Abstract Layer Overview
+
+![ALEE_Agent_UML_Architecture](ALEE_Agent_UML_Architecture.png)
 
 ## Processing Architecture
 
@@ -124,6 +126,14 @@ graph TB
     style M fill:#e8f5e8
 ```
 
+## Result Visualization from 2025-08-16_22-43-00_188-sys-10
+
+![Result Visualization](ALEE_Agent/results/2025-08-16_22-43-00_188-sys-10/visualizations/question_1_pipeline.png)
+
+## Prompt Builder, here symbolised which prompt txt are concerned by which experts (see prompt_builder.py)
+
+![Prompt Builder](prompt_builder_visualization.png)
+
 ### Educational Expert Validators
 
 | Educational Expert Module     | AI Reasoning Signature        | Language Model Port | Model       | Target Parameters                  | Educational Expertise                               |
@@ -192,7 +202,14 @@ This data should furthermore help refine the prompts and the questions generated
 
 This should, so the theory, allow for more accurate and contextually relevant question generation, as well as improved educational outcomes.
 
-## Quick Start
+# What isnt working so well yet:
+
+- Multiple Choice generates 4 questions instead of 6 - possibly okay!
+- Mapping questions sometimes ramble or go off-topic (need better data for what a mapping question is in its question type prompt!)
+- true false questions dont always have the right number of options, or no options at all, or a question as a option. Need better more concise data in its prompt.
+- The threshold for the refinement LM is currently set to 3.0/5.0 (the point underneath it is forced to implement the suggestion, not only as it sees fit) - this might be too low - need testing data with a lower set threshold. 
+
+# Quick Start
 
 ### Prerequisites
 
